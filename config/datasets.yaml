@@ -1,0 +1,10 @@
+esco_ar: C:\Users\domma\Downloads\ESCO dataset - v1.2.1 - classification - ar - csv\occupations_ar.csv
+esco_en: C:\Users\domma\Downloads\ESCO dataset - v1.2.1 - classification - en - csv\occupations_en.csv
+nationality: C:\Users\domma\Downloads\query.csv
+isco: C:\Users\domma\Downloads\ISCO-08 EN.csv
+handoff: C:\Users\domma\Downloads\Finaira_Generalization_DB_Codex_Handoff_2026-11-12_ext
+natural_earth_zip: data/sources/natural_earth/ne_10m_admin_0_countries_v5.1.1.zip
+natural_earth_csv: data/sources/natural_earth/ne_10m_admin_0_countries_v5.1.1.csv
+# m49 is retained only as a legacy compatibility input for the old importer;
+# active NATIONALITY retrieval uses Natural Earth through import-handoff.
+m49_legacy: C:\Users\domma\Downloads\UNSD — Methodology.xlsx

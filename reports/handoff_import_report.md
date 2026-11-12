@@ -1,0 +1,27 @@
+# Handoff import report
+
+- **batch_id**: handoff-2026-11-12-d67cf58c9452
+- **handoff_root**: C:\Users\domma\Downloads\Finaira_Generalization_DB_Codex_Handoff_2026-11-12_ext
+- **status**: COMPLETED
+- **nationality_aliases_v2**: 848
+- **nationality_distinct_qids**: 233
+- **natural_earth_rows**: 258
+- **natural_earth_join_status**: {'MATCHED_QID': 223, 'UNMATCHED': 7, 'MATCHED_ISO': 2, 'MISMATCH': 1}
+- **banks**: 37
+- **bank_model_counts**: {'MIXED': 9, 'CONVENTIONAL': 24, 'ISLAMIC': 4}
+- **bank_evidence**: 24
+- **bank_evidence_bank_ids**: 13
+- **bank_candidates**: 185
+- **bank_arabic_master_names_blank**: 37
+- **organizations**: 312
+- **industry_categories_source_rows**: 63
+- **industry_categories_materialized**: 64
+- **industry_qid_mappings**: 73
+- **organization_review_queue**: 42
+- **organization_exclusions**: 6
+- **organization_arabic_names_missing**: 48
+- **government_entities**: 12
+- **government_categories**: 17
+- **government_aliases**: 24
+- **government_review_candidates**: 63
+- **government_review_queue**: 12

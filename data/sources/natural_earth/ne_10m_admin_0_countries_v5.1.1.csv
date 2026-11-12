@@ -1,0 +1,259 @@
+natural_earth_id,wikidata_qid,iso_a2,name_en,name_ar,subregion,region_un,continent,adm0_a3
+1159320845,Q252,ID,Indonesia,إندونيسيا,South-Eastern Asia,Asia,Asia,IDN
+1159321083,Q833,MY,Malaysia,ماليزيا,South-Eastern Asia,Asia,Asia,MYS
+1159320493,Q298,CL,Chile,تشيلي,South America,Americas,South America,CHL
+1159320439,Q750,BO,Bolivia,بوليفيا,South America,Americas,South America,BOL
+1159321163,Q419,PE,Peru,بيرو,South America,Americas,South America,PER
+1159320331,Q414,AR,Argentina,الأرجنتين,South America,Americas,South America,ARG
+1159320709,Q9206745,,Dhekelia Cantonment,ديكيليا كانتونمنت,Western Asia,Asia,Asia,ESB
+1159320533,Q229,CY,Cyprus,قبرص,Western Asia,Asia,Asia,CYP
+1159320847,Q668,IN,India,الهند,Southern Asia,Asia,Asia,IND
+1159320471,Q148,CN,People's Republic of China,الصين,Eastern Asia,Asia,Asia,CHN
+1159320895,Q801,IL,Israel,إسرائيل,Western Asia,Asia,Asia,ISR
+1159320899,Q23792,PS,Palestine,فلسطين,Western Asia,Asia,Asia,PSX
+1159321013,Q822,LB,Lebanon,لبنان,Western Asia,Asia,Asia,LBN
+1159320617,Q115,ET,Ethiopia,إثيوبيا,Eastern Africa,Africa,Africa,ETH
+1159321235,Q958,SS,South Sudan,جنوب السودان,Eastern Africa,Africa,Africa,SDS
+1159321261,Q1045,SO,Somalia,الصومال,Eastern Africa,Africa,Africa,SOM
+1159320971,Q114,KE,Kenya,كينيا,Eastern Africa,Africa,Africa,KEN
+1159321081,Q1020,MW,Malawi,مالاوي,Eastern Africa,Africa,Africa,MWI
+1159321337,Q924,TZ,Tanzania,تنزانيا,Eastern Africa,Africa,Africa,TZA
+1159321295,Q858,SY,Syria,سوريا,Western Asia,Asia,Asia,SYR
+1159321259,Q34754,,Somaliland,صوماليلاند,Eastern Africa,Africa,Africa,SOL
+1159320637,Q142,,France,فرنسا,Western Europe,Europe,Europe,FRA
+1159321281,Q730,SR,Suriname,سورينام,South America,Americas,South America,SUR
+1159320817,Q734,GY,Guyana,غيانا,South America,Americas,South America,GUY
+1159320985,Q884,KR,South Korea,كوريا الجنوبية,Eastern Asia,Asia,Asia,KOR
+1159321181,Q423,KP,North Korea,كوريا الشمالية,Eastern Asia,Asia,Asia,PRK
+1159321035,Q1028,MA,Morocco,المغرب,Northern Africa,Africa,Africa,MAR
+1159321223,Q6250,EH,Western Sahara,الصحراء الغربية,Northern Africa,Africa,Africa,SAH
+1159320525,Q800,CR,Costa Rica,كوستاريكا,Central America,Americas,North America,CRI
+1159321091,Q811,NI,Nicaragua,نيكاراغوا,Central America,Americas,North America,NIC
+1159320515,Q971,CG,Republic of the Congo,جمهورية الكونغو,Middle Africa,Africa,Africa,COG
+1159320513,Q974,CD,Democratic Republic of the Congo,جمهورية الكونغو الديمقراطية,Middle Africa,Africa,Africa,COD
+1159320453,Q917,BT,Bhutan,بوتان,Southern Asia,Asia,Asia,BTN
+1159321345,Q212,UA,Ukraine,أوكرانيا,Eastern Europe,Europe,Europe,UKR
+1159320427,Q184,BY,Belarus,بيلاروسيا,Eastern Europe,Europe,Europe,BLR
+1159321085,Q1030,NA,Namibia,ناميبيا,Southern Africa,Africa,Africa,NAM
+1159321431,Q258,ZA,South Africa,جنوب أفريقيا,Southern Africa,Africa,Africa,ZAF
+1159320639,Q126125,MF,Saint Martin,تجمع سان مارتين,Caribbean,Americas,North America,MAF
+1159321103,Q26273,SX,Sint Maarten,سينت مارتن,Caribbean,Americas,North America,SXM
+1159321151,Q842,OM,Oman,سلطنة عمان,Western Asia,Asia,Asia,OMN
+1159321405,Q265,UZ,Uzbekistan,أوزبكستان,Central Asia,Asia,Asia,UZB
+1159320967,Q232,KZ,Kazakhstan,كازاخستان,Central Asia,Asia,Asia,KAZ
+1159321307,Q863,TJ,Tajikistan,طاجيكستان,Central Asia,Asia,Asia,TJK
+1159321029,Q37,LT,Lithuania,ليتوانيا,Northern Europe,Europe,Europe,LTU
+1159320441,Q155,BR,Brazil,البرازيل,South America,Americas,South America,BRA
+1159321353,Q77,UY,Uruguay,الأوروغواي,South America,Americas,South America,URY
+1159321071,Q711,MN,Mongolia,منغوليا,Eastern Asia,Asia,Asia,MNG
+1159321201,Q159,RU,Russia,روسيا,Eastern Europe,Europe,Europe,RUS
+1159320535,Q213,CZ,Czech Republic,التشيك,Eastern Europe,Europe,Europe,CZE
+1159320539,Q183,DE,Germany,ألمانيا,Western Europe,Europe,Europe,DEU
+1159320615,Q191,EE,Estonia,إستونيا,Northern Europe,Europe,Europe,EST
+1159321033,Q211,LV,Latvia,لاتفيا,Northern Europe,Europe,Europe,LVA
+1159321109,Q20,,Norway,النرويج,Northern Europe,Europe,Europe,NOR
+1159321287,Q34,SE,Sweden,السويد,Northern Europe,Europe,Europe,SWE
+1159320623,Q33,FI,Finland,فنلندا,Northern Europe,Europe,Europe,FIN
+1159321417,Q881,VN,Vietnam,فيتنام,South-Eastern Asia,Asia,Asia,VNM
+1159320979,Q424,KH,Cambodia,كمبوديا,South-Eastern Asia,Asia,Asia,KHM
+1159321031,Q32,LU,Luxembourg,لوكسمبورغ,Western Europe,Europe,Europe,LUX
+1159320329,Q878,AE,United Arab Emirates,الإمارات العربية المتحدة,Western Asia,Asia,Asia,ARE
+1159320389,Q31,BE,Belgium,بلجيكا,Western Europe,Europe,Europe,BEL
+1159320779,Q230,GE,Georgia,جورجيا,Western Asia,Asia,Asia,GEO
+1159321061,Q221,MK,North Macedonia,مقدونيا الشمالية,Southern Europe,Europe,Europe,MKD
+1159320325,Q222,AL,Albania,ألبانيا,Southern Europe,Europe,Europe,ALB
+1159320381,Q227,AZ,Azerbaijan,أذربيجان,Western Asia,Asia,Asia,AZE
+1159321007,Q1246,,Kosovo,كوسوفو,Southern Europe,Europe,Europe,KOS
+1159321331,Q43,TR,Turkey,تركيا,Western Asia,Asia,Asia,TUR
+1159320587,Q29,ES,Spain,إسبانيا,Southern Europe,Europe,Europe,ESP
+1159321011,Q819,LA,Laos,لاوس,South-Eastern Asia,Asia,Asia,LAO
+1159320977,Q813,KG,Kyrgyzstan,قيرغيزستان,Central Asia,Asia,Asia,KGZ
+1159320333,Q399,AM,Armenia,أرمينيا,Western Asia,Asia,Asia,ARM
+1159320547,Q35,DK,Denmark,الدنمارك,Northern Europe,Europe,Europe,DNK
+1159321017,Q1016,LY,Libya,ليبيا,Northern Africa,Africa,Africa,LBY
+1159321327,Q948,TN,Tunisia,تونس,Northern Africa,Africa,Africa,TUN
+1159321199,Q218,RO,Romania,رومانيا,Eastern Europe,Europe,Europe,ROU
+1159320841,Q28,HU,Hungary,المجر,Eastern Europe,Europe,Europe,HUN
+1159321283,Q214,SK,Slovakia,سلوفاكيا,Eastern Europe,Europe,Europe,SVK
+1159321179,Q36,PL,Poland,بولندا,Eastern Europe,Europe,Europe,POL
+1159320877,Q27,IE,Ireland,جمهورية أيرلندا,Northern Europe,Europe,Europe,IRL
+1159320713,Q145,GB,United Kingdom,المملكة المتحدة,Northern Europe,Europe,Europe,GBR
+1159320811,Q41,GR,Greece,اليونان,Southern Europe,Europe,Europe,GRC
+1159321439,Q953,ZM,Zambia,زامبيا,Eastern Africa,Africa,Africa,ZMB
+1159321251,Q1044,SL,Sierra Leone,سيراليون,Western Africa,Africa,Africa,SLE
+1159320795,Q1006,GN,Guinea,غينيا,Western Africa,Africa,Africa,GIN
+1159321015,Q1014,LR,Liberia,ليبيريا,Western Africa,Africa,Africa,LBR
+1159320463,Q929,CF,Central African Republic,جمهورية أفريقيا الوسطى,Middle Africa,Africa,Africa,CAF
+1159321229,Q1049,SD,Sudan,السودان,Northern Africa,Africa,Africa,SDN
+1159320541,Q977,DJ,Djibouti,جيبوتي,Eastern Africa,Africa,Africa,DJI
+1159320581,Q986,ER,Eritrea,إريتريا,Eastern Africa,Africa,Africa,ERI
+1159320379,Q40,AT,Austria,النمسا,Western Europe,Europe,Europe,AUT
+1159320887,Q796,IQ,Iraq,العراق,Western Asia,Asia,Asia,IRQ
+1159320919,Q38,IT,Italy,إيطاليا,Southern Europe,Europe,Europe,ITA
+1159320491,Q39,CH,Switzerland,سويسرا,Western Europe,Europe,Europe,CHE
+1159320881,Q794,IR,Iran,إيران,Southern Asia,Asia,Asia,IRN
+1159321101,Q55,NL,Netherlands,هولندا,Western Europe,Europe,Europe,NLD
+1159321021,Q347,LI,Liechtenstein,ليختنشتاين,Western Europe,Europe,Europe,LIE
+1159320507,Q1008,CI,Ivory Coast,ساحل العاج,Western Africa,Africa,Africa,CIV
+1159321267,Q403,RS,Serbia,صربيا,Southern Europe,Europe,Europe,SRB
+1159321063,Q912,ML,Mali,مالي,Western Africa,Africa,Africa,MLI
+1159321243,Q1041,SN,Senegal,السنغال,Western Africa,Africa,Africa,SEN
+1159321089,Q1033,NG,Nigeria,نيجيريا,Western Africa,Africa,Africa,NGA
+1159320399,Q962,BJ,Benin,بنين,Western Africa,Africa,Africa,BEN
+1159320323,Q916,AO,Angola,أنغولا,Middle Africa,Africa,Africa,AGO
+1159320833,Q224,HR,Croatia,كرواتيا,Southern Europe,Europe,Europe,HRV
+1159321285,Q215,SI,Slovenia,سلوفينيا,Southern Europe,Europe,Europe,SVN
+1159321197,Q846,QA,Qatar,قطر,Western Asia,Asia,Asia,QAT
+1159321225,Q851,SA,Saudi Arabia,السعودية,Western Asia,Asia,Asia,SAU
+1159320461,Q963,BW,Botswana,بوتسوانا,Southern Africa,Africa,Africa,BWA
+1159321441,Q954,ZW,Zimbabwe,زيمبابوي,Eastern Africa,Africa,Africa,ZWE
+1159321153,Q843,PK,Pakistan,باكستان,Southern Asia,Asia,Asia,PAK
+1159320409,Q219,BG,Bulgaria,بلغاريا,Eastern Europe,Europe,Europe,BGR
+1159321305,Q869,TH,Thailand,تايلاند,South-Eastern Asia,Asia,Asia,THA
+1159321255,Q238,SM,San Marino,سان مارينو,Southern Europe,Europe,Europe,SMR
+1159320839,Q790,HT,Haiti,هايتي,Caribbean,Americas,North America,HTI
+1159320563,Q786,DO,Dominican Republic,جمهورية الدومينيكان,Caribbean,Americas,North America,DOM
+1159321301,Q657,TD,Chad,تشاد,Middle Africa,Africa,Africa,TCD
+1159321009,Q817,KW,Kuwait,الكويت,Western Asia,Asia,Asia,KWT
+1159321253,Q792,SV,El Salvador,السلفادور,Central America,Americas,North America,SLV
+1159320815,Q774,GT,Guatemala,غواتيمالا,Central America,Americas,North America,GTM
+1159321313,Q574,TL,East Timor,تيمور الشرقية,South-Eastern Asia,Asia,Asia,TLS
+1159320451,Q921,BN,Brunei,بروناي,South-Eastern Asia,Asia,Asia,BRN
+1159321043,Q235,MC,Monaco,موناكو,Western Europe,Europe,Europe,MCO
+1159320565,Q262,DZ,Algeria,الجزائر,Northern Africa,Africa,Africa,DZA
+1159321073,Q1029,MZ,Mozambique,موزمبيق,Eastern Africa,Africa,Africa,MOZ
+1159321289,Q1050,SZ,Eswatini,إسواتيني,Southern Africa,Africa,Africa,SWZ
+1159320387,Q967,BI,Burundi,بوروندي,Eastern Africa,Africa,Africa,BDI
+1159321219,Q1037,RW,Rwanda,رواندا,Eastern Africa,Africa,Africa,RWA
+1159321067,Q836,MM,Myanmar,ميانمار,South-Eastern Asia,Asia,Asia,MMR
+1159320407,Q902,BD,Bangladesh,بنغلاديش,Southern Asia,Asia,Asia,BGD
+1159320327,Q228,AD,Andorra,أندورا,Southern Europe,Europe,Europe,AND
+1159320319,Q889,AF,Afghanistan,أفغانستان,Southern Asia,Asia,Asia,AFG
+1159321069,Q236,ME,Montenegro,الجبل الأسود,Southern Europe,Europe,Europe,MNE
+1159320417,Q225,BA,Bosnia and Herzegovina,البوسنة والهرسك,Southern Europe,Europe,Europe,BIH
+1159321343,Q1036,UG,Uganda,أوغندا,Eastern Africa,Africa,Africa,UGA
+1159320529,Q762570,,Guantanamo Bay Naval Base,قاعدة غوانتانامو,Caribbean,Americas,North America,USG
+1159320527,Q241,CU,Cuba,كوبا,Caribbean,Americas,North America,CUB
+1159320827,Q783,HN,Honduras,هندوراس,Central America,Americas,North America,HND
+1159320567,Q736,EC,Ecuador,الإكوادور,South America,Americas,South America,ECU
+1159320517,Q739,CO,Colombia,كولومبيا,South America,Americas,South America,COL
+1159321195,Q733,PY,Paraguay,باراغواي,South America,Americas,South America,PRY
+1729632181,Q2093778,,Brazilian Island,برازيليان آيلاند,South America,Americas,South America,BRI
+1159321187,Q45,PT,Portugal,البرتغال,Southern Europe,Europe,Europe,PRT
+1159321045,Q217,MD,Moldova,مولدوفا,Eastern Europe,Europe,Europe,MDA
+1159321309,Q874,TM,Turkmenistan,تركمانستان,Central Asia,Asia,Asia,TKM
+1159320935,Q810,JO,Jordan,الأردن,Western Asia,Asia,Asia,JOR
+1159321121,Q837,NP,Nepal,نيبال,Southern Asia,Asia,Asia,NPL
+1159321027,Q1013,LS,Lesotho,ليسوتو,Southern Africa,Africa,Africa,LSO
+1159320509,Q1009,CM,Cameroon,الكاميرون,Middle Africa,Africa,Africa,CMR
+1159320693,Q1000,GA,Gabon,الغابون,Middle Africa,Africa,Africa,GAB
+1159321087,Q1032,NE,Niger,النيجر,Western Africa,Africa,Africa,NER
+1159320405,Q965,BF,Burkina Faso,بوركينا فاسو,Western Africa,Africa,Africa,BFA
+1159321303,Q945,TG,Togo,توغو,Western Africa,Africa,Africa,TGO
+1159320793,Q117,GH,Ghana,غانا,Western Africa,Africa,Africa,GHA
+1159320799,Q1007,GW,Guinea-Bissau,غينيا بيساو,Western Africa,Africa,Africa,GNB
+1159320719,Q1410,GI,Gibraltar,جبل طارق,Southern Europe,Europe,Europe,GIB
+1159321369,Q30,US,United States of America,الولايات المتحدة,Northern America,Americas,North America,USA
+1159320467,Q16,CA,Canada,كندا,Northern America,Americas,North America,CAN
+1159321055,Q96,MX,Mexico,المكسيك,Central America,Americas,North America,MEX
+1159320431,Q242,BZ,Belize,بليز,Central America,Americas,North America,BLZ
+1159321161,Q804,PA,Panama,بنما,Central America,Americas,North America,PAN
+1159321411,Q717,VE,Venezuela,فنزويلا,South America,Americas,South America,VEN
+1159321173,Q691,PG,Papua New Guinea,بابوا غينيا الجديدة,Melanesia,Oceania,Oceania,PNG
+1159320575,Q79,EG,Egypt,مصر,Northern Africa,Africa,Africa,EGY
+1159321425,Q805,YE,Yemen,اليمن,Western Asia,Asia,Asia,YEM
+1159321075,Q1025,MR,Mauritania,موريتانيا,Western Africa,Africa,Africa,MRT
+1159320801,Q983,GQ,Equatorial Guinea,غينيا الاستوائية,Middle Africa,Africa,Africa,GNQ
+1159320797,Q1005,GM,The Gambia,غامبيا,Western Africa,Africa,Africa,GMB
+1159320473,Q8646,HK,Hong Kong,هونغ كونغ,Eastern Asia,Asia,Asia,HKG
+1159321407,Q237,VA,Vatican City,الفاتيكان,Southern Europe,Europe,Europe,VAT
+1159320531,Q23681,,Turkish Republic of Northern Cyprus,قبرص الشمالية,Western Asia,Asia,Asia,CYN
+1159320511,Q116970,,United Nations Buffer Zone in Cyprus,مقاطعة الأمم المتحدة العازلة في قبرص,Western Asia,Asia,Asia,CNM
+1159320963,Q333946,,Siachen Glacier,نهر سياتشن الجليدي,Southern Asia,Asia,Asia,KAS
+1159320965,Q165413,,Baikonur,بايكونور,Central Asia,Asia,Asia,KAB
+1159320741,Q9143535,,Akrotiri Sovereign Base Area,أكروتيري,Western Asia,Asia,Asia,WSB
+1729635141,Q1031467,,Southern Patagonian Ice Field,قل الثلج الباتاغوني الجنوبي,South America,Americas,South America,SPI
+1729635091,Q620634,,Bir Tawil,بئر طويل,Northern Africa,Africa,Africa,BRT
+1159320335,Q51,AQ,Antarctica,القارة القطبية الجنوبية,Antarctica,Antarctica,Antarctica,ATA
+1159320355,Q408,AU,Australia,أستراليا,Australia and New Zealand,Oceania,Oceania,AUS
+1159320551,Q223,GL,Greenland,جرينلاند,Northern America,Americas,North America,GRL
+1159320625,Q712,FJ,Fiji,فيجي,Melanesia,Oceania,Oceania,FJI
+1159321135,Q664,NZ,New Zealand,نيوزيلندا,Australia and New Zealand,Oceania,Oceania,NZL
+1159320641,Q33788,NC,New Caledonia,كاليدونيا الجديدة,Melanesia,Oceania,Oceania,NCL
+1159321051,Q1019,MG,Madagascar,مدغشقر,Eastern Africa,Africa,Africa,MDG
+1159321169,Q928,PH,Philippines,الفلبين,South-Eastern Asia,Asia,Asia,PHL
+1159321025,Q854,LK,Sri Lanka,سريلانكا,Southern Asia,Asia,Asia,LKA
+1159321099,Q25279,CW,Curaçao,كوراساو,Caribbean,Americas,North America,CUW
+1159321097,Q21203,AW,Aruba,أروبا,Caribbean,Americas,North America,ABW
+1159320415,Q778,BS,The Bahamas,باهاماس,Caribbean,Americas,North America,BHS
+1159320737,Q18221,TC,Turks and Caicos Islands,جزر توركس وكايكوس,Caribbean,Americas,North America,TCA
+1159321335,Q865,CN-TW,Taiwan,تايوان,Eastern Asia,Asia,Asia,TWN
+1159320937,Q17,JP,Japan,اليابان,Eastern Asia,Asia,Asia,JPN
+1159320647,Q34617,PM,Saint Pierre and Miquelon,سان بيير وميكلون,Northern America,Americas,North America,SPM
+1159320917,Q189,IS,Iceland,آيسلندا,Northern Europe,Europe,Europe,ISL
+1159320729,Q35672,PN,Pitcairn Islands,جزر بيتكيرن,Polynesia,Oceania,Oceania,PCN
+1159320643,Q30971,PF,French Polynesia,بولينزيا الفرنسية,Polynesia,Oceania,Oceania,PYF
+1159320631,Q129003,TF,French Southern and Antarctic Lands,أراض فرنسية جنوبية وأنتارتيكية,Seven seas (open ocean),Africa,Seven seas (open ocean),ATF
+1159321291,Q1042,SC,Seychelles,سيشل,Eastern Africa,Africa,Seven seas (open ocean),SYC
+1159320981,Q710,KI,Kiribati,كيريباتي,Micronesia,Oceania,Oceania,KIR
+1159321057,Q709,MH,Marshall Islands,جزر مارشال,Micronesia,Oceania,Oceania,MHL
+1159321321,Q754,TT,Trinidad and Tobago,ترينيداد وتوباغو,Caribbean,Americas,North America,TTO
+1159320813,Q769,GD,Grenada,غرينادا,Caribbean,Americas,North America,GRD
+1159321409,Q757,VC,Saint Vincent and the Grenadines,سانت فينسنت والغرينادين,Caribbean,Americas,North America,VCT
+1159320449,Q244,BB,Barbados,باربادوس,Caribbean,Americas,North America,BRB
+1159321019,Q760,LC,Saint Lucia,سانت لوسيا,Caribbean,Americas,North America,LCA
+1159320543,Q784,DM,Dominica,دومينيكا,Caribbean,Americas,North America,DMA
+1159321367,Q16645,UM,United States Minor Outlying Islands,جزر الولايات المتحدة الصغيرة النائية,Seven seas (open ocean),Oceania,North America,UMI
+1159320727,Q13353,MS,Montserrat,مونتسرات,Caribbean,Americas,North America,MSR
+1159320345,Q781,AG,Antigua and Barbuda,أنتيغوا وباربودا,Caribbean,Americas,North America,ATG
+1159320983,Q763,KN,Saint Kitts and Nevis,سانت كيتس ونيفيس,Caribbean,Americas,North America,KNA
+1159321371,Q11703,VI,United States Virgin Islands,جزر العذراء الأمريكية,Caribbean,Americas,North America,VIR
+1159320633,Q25362,BL,Saint Barthélemy,سان بارتيلمي,Caribbean,Americas,North America,BLM
+1159321363,Q1183,PR,Puerto Rico,بورتوريكو,Caribbean,Americas,North America,PRI
+1159320703,Q25228,AI,Anguilla,أنغويلا,Caribbean,Americas,North America,AIA
+1159320739,Q25305,VG,British Virgin Islands,جزر العذراء البريطانية,Caribbean,Americas,North America,VGB
+1159320931,Q766,JM,Jamaica,جامايكا,Caribbean,Americas,North America,JAM
+1159320707,Q5785,KY,Cayman Islands,جزر كايمان,Caribbean,Americas,North America,CYM
+1159320705,Q23635,BM,Bermuda,برمودا,Northern America,Americas,North America,BMU
+1159320361,Q131198,HM,Heard Island and McDonald Islands,جزيرة هيرد وجزر ماكدونالد,Seven seas (open ocean),Africa,Seven seas (open ocean),HMD
+1159320733,Q34497,SH,Saint Helena,سانت هيلينا,Western Africa,Africa,Seven seas (open ocean),SHN
+1159321079,Q1027,MU,Mauritius,موريشيوس,Eastern Africa,Africa,Seven seas (open ocean),MUS
+1159320521,Q970,KM,Comoros,جزر القمر,Eastern Africa,Africa,Africa,COM
+1159321273,Q1039,ST,São Tomé and Príncipe,ساو تومي وبرينسيب,Middle Africa,Africa,Africa,STP
+1159320523,Q1011,CV,Cape Verde,الرأس الأخضر,Western Africa,Africa,Africa,CPV
+1159321065,Q233,MT,Malta,مالطا,Southern Europe,Europe,Europe,MLT
+1159320725,Q785,JE,Jersey,جيرزي,Northern Europe,Europe,Europe,JEY
+1159320715,Q25230,GG,Guernsey,غيرنزي,Northern Europe,Europe,Europe,GGY
+1159320721,Q9676,IM,Isle of Man,جزيرة مان,Northern Europe,Europe,Europe,IMN
+1159320621,Q5689,AX,Åland,جزر أولاند,Northern Europe,Europe,Europe,ALD
+1159320549,Q4628,FO,Faroe Islands,جزر فارو,Northern Europe,Europe,Europe,FRO
+1159320363,Q4824275,,Australian Indian Ocean Territories,أقاليم المحيط الهندي الأسترالية,Seven seas (open ocean),Africa,Asia,IOA
+1159320723,Q43448,IO,British Indian Ocean Territory,إقليم المحيط الهندي البريطاني,Seven seas (open ocean),Africa,Seven seas (open ocean),IOT
+1159321247,Q334,SG,Singapore,سنغافورة,South-Eastern Asia,Asia,Asia,SGP
+1159320365,Q31057,NF,Norfolk Island,جزيرة نورفولك,Australia and New Zealand,Oceania,Oceania,NFK
+1159321129,Q26988,CK,Cook Islands,جزر كوك,Polynesia,Oceania,Oceania,COK
+1159321319,Q678,TO,Tonga,تونغا,Polynesia,Oceania,Oceania,TON
+1159320649,Q35555,WF,Wallis and Futuna,واليس وفوتونا,Polynesia,Oceania,Oceania,WLF
+1159321423,Q683,WS,Samoa,ساموا,Polynesia,Oceania,Oceania,WSM
+1159321249,Q685,SB,Solomon Islands,جزر سليمان,Melanesia,Oceania,Oceania,SLB
+1159321333,Q672,TV,Tuvalu,توفالو,Polynesia,Oceania,Oceania,TUV
+1159321053,Q826,MV,Maldives,المالديف,Southern Asia,Asia,Seven seas (open ocean),MDV
+1159321123,Q697,NR,Nauru,ناورو,Micronesia,Oceania,Oceania,NRU
+1159320691,Q702,FM,Federated States of Micronesia,ولايات ميكرونيسيا المتحدة,Micronesia,Oceania,Oceania,FSM
+1159320731,Q35086,GS,South Georgia and the South Sandwich Islands,جورجيا الجنوبية وجزر ساندويتش الجنوبية,Seven seas (open ocean),Americas,Seven seas (open ocean),SGS
+1159320711,Q9648,FK,Falkland Islands,جزر فوكلاند,South America,Americas,South America,FLK
+1159321421,Q686,VU,Vanuatu,فانواتو,Melanesia,Oceania,Oceania,VUT
+1159321133,Q34020,NU,Niue,نييوي,Polynesia,Oceania,Oceania,NIU
+1159321357,Q16641,AS,American Samoa,ساموا الأمريكية,Polynesia,Oceania,Oceania,ASM
+1159321171,Q695,PW,Palau,بالاو,Micronesia,Oceania,Oceania,PLW
+1159321359,Q16635,GU,Guam,غوام,Micronesia,Oceania,Oceania,GUM
+1159321361,Q16644,MP,Northern Mariana Islands,جزر ماريانا الشمالية,Micronesia,Oceania,Oceania,MNP
+1159320413,Q398,BH,Bahrain,البحرين,Western Asia,Asia,Asia,BHR
+1159320359,Q172216,,Coral Sea Islands,جزر بحر المرجان,Australia and New Zealand,Oceania,Oceania,CSI
+1159321165,Q43296,,Wake Island,جزيرة ويك,South-Eastern Asia,Asia,Asia,PGA
+1159320635,Q161258,,Clipperton Island,جزيرة كليبرتون,Central America,Americas,Seven seas (open ocean),CLP
+1159320475,Q14773,MO,Macau,ماكاو,Eastern Asia,Asia,Asia,MAC
+1159320353,Q133888,,Ashmore and Cartier Islands,جزر أشمور وكارتيير,Australia and New Zealand,Oceania,Oceania,ATC
+1159320425,Q1257783,,Bajo Nuevo Bank,ضفة باجو نيوفو,Caribbean,Americas,North America,BJN
+1159321245,Q1169008,,Serranilla Bank,ضفة سيرانيلا,Caribbean,Americas,North America,SER
+1159321227,Q628716,,Scarborough Shoal,سكاربورو شول,South-Eastern Asia,Asia,Asia,SCR

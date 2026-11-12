@@ -1,0 +1,490 @@
+erDiagram
+    age_bands {
+        INTEGER band_id PK
+        VARCHAR(50) scheme
+        INTEGER min_age
+        INTEGER max_age
+        TEXT label_ar
+        TEXT label_en
+    }
+    age_scheme_rules {
+        VARCHAR(80) scheme_id PK
+        INTEGER band_id PK
+    }
+    bank_aliases {
+        VARCHAR(64) alias_id PK
+        VARCHAR(30) bank_id
+        TEXT alias_text
+        TEXT normalized_alias
+        VARCHAR(2) language
+        VARCHAR(50) alias_kind
+        VARCHAR(50) review_status
+        BOOLEAN enabled_for_lookup
+        INTEGER source_id
+    }
+    bank_candidates {
+        VARCHAR(120) candidate_id PK
+        VARCHAR(30) bank_id
+        VARCHAR(40) level_code
+        INTEGER specificity_rank
+        TEXT label_en
+        TEXT label_ar
+        VARCHAR(20) finance_model
+        INTEGER category_population_count
+        BOOLEAN is_exact
+        BOOLEAN is_local_only
+        BOOLEAN is_suppression
+        BOOLEAN disclosure_approved
+        VARCHAR(80) evidence_status
+        VARCHAR(40) verification_status
+        INTEGER source_id
+        VARCHAR(80) derivation_method
+    }
+    bank_evidence {
+        VARCHAR(80) evidence_id PK
+        VARCHAR(30) bank_id
+        VARCHAR(20) finance_model
+        VARCHAR(50) source_type
+        TEXT source_url
+        TEXT evidence_summary_en
+        TEXT source_publication_or_update
+        VARCHAR(20) checked_on
+        VARCHAR(20) source_strength
+        TEXT notes
+        INTEGER source_id
+    }
+    banks {
+        VARCHAR(30) bank_id PK
+        VARCHAR(20) cbe_list_number
+        TEXT name_en
+        TEXT name_ar
+        VARCHAR(20) finance_model
+        TEXT finance_model_label_en
+        TEXT finance_model_label_ar
+        VARCHAR(80) classification_rule
+        VARCHAR(80) evidence_status
+        VARCHAR(30) evidence_confidence
+        VARCHAR(20) as_of_date
+        VARCHAR(50) evidence_review_status
+        INTEGER source_id
+    }
+    build_metadata {
+        TEXT key PK
+        TEXT value
+    }
+    candidate_metadata {
+        VARCHAR(160) candidate_id PK
+        INTEGER specificity_rank
+        INTEGER taxonomy_depth
+        INTEGER underlying_category_count
+        BOOLEAN is_exact
+        BOOLEAN is_suppression
+        BOOLEAN is_local_only
+        BOOLEAN preserves_exact_value
+        BOOLEAN preserves_category
+        BOOLEAN preserves_entity_identity
+        BOOLEAN preserves_numeric_precision
+        VARCHAR(40) representation_kind
+        VARCHAR(30) verification_status
+        VARCHAR(40) interval_start
+        VARCHAR(40) interval_end
+        INTEGER interval_width
+    }
+    candidate_provenance {
+        INTEGER provenance_id PK
+        VARCHAR(160) candidate_id
+        INTEGER source_id
+        VARCHAR(100) source_version
+        VARCHAR(64) source_checksum
+        VARCHAR(80) derivation_method
+        VARCHAR(30) validation_status
+        VARCHAR(30) review_status
+        VARCHAR(40) review_date
+        TEXT notes
+    }
+    countries {
+        VARCHAR(2) iso2 PK
+        TEXT country_ar
+        TEXT country_en
+        VARCHAR(3) m49_code
+        VARCHAR(3) subregion_code
+        TEXT subregion_ar
+        TEXT subregion_en
+        VARCHAR(3) region_code
+        TEXT region_ar
+        TEXT region_en
+    }
+    country_m49_links {
+        VARCHAR(2) iso2 PK
+        VARCHAR(3) subregion_code
+        VARCHAR(3) region_code
+    }
+    data_sources {
+        INTEGER source_id PK
+        VARCHAR(200) name
+        VARCHAR(100) version
+        VARCHAR(500) source_url
+        VARCHAR(40) retrieved_at
+        VARCHAR(300) license
+        VARCHAR(64) checksum
+    }
+    date_rules {
+        INTEGER rule_id PK
+        VARCHAR(20) precision
+        VARCHAR(30) calendar
+        BOOLEAN enabled
+    }
+    date_scheme_rules {
+        VARCHAR(80) scheme_id PK
+        INTEGER rule_id PK
+    }
+    generalization_candidates {
+        VARCHAR(160) candidate_id PK
+        VARCHAR(80) scheme_id
+        INTEGER level_id
+        VARCHAR(300) canonical_entity_id
+        VARCHAR(20) taxonomy_code
+        VARCHAR(160) parent_candidate_id
+        TEXT label_ar
+        TEXT label_en
+        INTEGER source_id
+        VARCHAR(30) review_status
+        VARCHAR(80) derivation_method
+        VARCHAR(40) created_at
+    }
+    generalization_levels {
+        INTEGER level_id PK
+        VARCHAR(80) scheme_id
+        VARCHAR(40) level_code
+        INTEGER specificity_rank
+        TEXT description
+        VARCHAR(40) representation_kind
+        BOOLEAN is_exact
+        BOOLEAN is_suppression
+        BOOLEAN default_local_only
+    }
+    generalization_schemes {
+        VARCHAR(80) scheme_id PK
+        VARCHAR(30) entity_type
+        VARCHAR(120) scheme_name
+        VARCHAR(80) taxonomy_name
+        VARCHAR(40) taxonomy_version
+        TEXT description
+        INTEGER source_id
+        BOOLEAN enabled
+    }
+    government_aliases {
+        VARCHAR(64) alias_id PK
+        VARCHAR(30) entity_id
+        VARCHAR(2) language
+        TEXT alias_text
+        TEXT normalized_alias
+        VARCHAR(50) verification_status
+        BOOLEAN enabled_for_lookup
+        TEXT source_url
+        INTEGER source_id
+    }
+    government_candidate_reviews {
+        VARCHAR(100) candidate_id PK
+        VARCHAR(30) entity_id
+        VARCHAR(50) level_code
+        VARCHAR(30) dimension
+        INTEGER specificity_rank_branch_local
+        TEXT label_ar
+        TEXT label_en
+        TEXT source_url
+        VARCHAR(50) verification_status
+        BOOLEAN requires_policy_approval
+        BOOLEAN is_local_only
+        BOOLEAN is_suppression
+        BOOLEAN default_visible
+        INTEGER source_id
+    }
+    government_categories {
+        VARCHAR(50) category_code PK
+        TEXT label_ar
+        TEXT label_en
+        VARCHAR(50) parent_category_code
+        VARCHAR(30) reidentification_risk_hint
+        VARCHAR(50) status
+        INTEGER source_id
+    }
+    government_entities {
+        VARCHAR(30) entity_id PK
+        TEXT name_ar
+        TEXT name_en_provisional
+        VARCHAR(2) country_iso
+        VARCHAR(50) organization_form_code
+        VARCHAR(50) function_code
+        VARCHAR(20) wikidata_qid
+        TEXT official_source_url
+        VARCHAR(50) identity_verification_status
+        VARCHAR(50) function_verification_status
+        VARCHAR(50) english_name_verification_status
+        BOOLEAN enabled_for_specific_mapping
+        VARCHAR(50) dataset_status
+        TEXT review_notes
+        INTEGER source_id
+    }
+    government_entity_categories {
+        VARCHAR(100) link_id PK
+        VARCHAR(30) entity_id
+        VARCHAR(50) category_code
+        VARCHAR(30) dimension
+        VARCHAR(50) verification_status
+        INTEGER source_id
+    }
+    government_review_queue {
+        VARCHAR(64) review_id PK
+        VARCHAR(30) entity_id
+        VARCHAR(30) review_identity
+        VARCHAR(30) review_current_status
+        VARCHAR(30) review_function_category
+        VARCHAR(30) review_english_name
+        VARCHAR(30) review_wikidata_qid
+        BOOLEAN specific_mapping_enabled
+        INTEGER source_id
+    }
+    import_batches {
+        VARCHAR(100) batch_id PK
+        VARCHAR(40) started_at
+        VARCHAR(40) completed_at
+        VARCHAR(30) status
+        TEXT manifest_path
+        TEXT counts_json
+        TEXT error_text
+    }
+    industry_categories {
+        VARCHAR(50) category_code PK
+        VARCHAR(50) parent_code
+        TEXT label_en
+        TEXT label_ar
+        VARCHAR(30) category_kind
+        VARCHAR(100) license
+        INTEGER source_id
+    }
+    industry_qid_mappings {
+        VARCHAR(64) mapping_id PK
+        VARCHAR(40) industry_qid
+        TEXT source_industry_label_en
+        VARCHAR(50) sector_code
+        VARCHAR(50) subcategory_code
+        TEXT subcategory_label_en
+        TEXT subcategory_label_ar
+        VARCHAR(50) review_status
+        INTEGER source_id
+    }
+    isco_groups {
+        VARCHAR(4) isco_code PK
+        VARCHAR(4) parent_code
+        INTEGER level
+        TEXT label_ar
+        TEXT label_en
+        VARCHAR(30) arabic_label_status
+    }
+    m49_regions {
+        VARCHAR(3) code PK
+        VARCHAR(3) parent_code
+        INTEGER level
+        TEXT label_ar
+        TEXT label_en
+    }
+    nationality_alias_country_refs {
+        INTEGER alias_id PK
+        VARCHAR(2) iso2
+    }
+    nationality_aliases {
+        INTEGER alias_id PK
+        TEXT alias_text
+        TEXT normalized_alias
+        VARCHAR(2) language
+        VARCHAR(2) country_iso2
+        INTEGER source_id
+        VARCHAR(30) review_status
+    }
+    nationality_aliases_v2 {
+        VARCHAR(64) alias_key PK
+        VARCHAR(20) country_qid
+        VARCHAR(2) iso2
+        TEXT alias_text
+        TEXT normalized_alias
+        VARCHAR(2) language
+        INTEGER source_id
+        VARCHAR(40) verification_status
+    }
+    nationality_candidate_refs {
+        VARCHAR(160) candidate_id PK
+        VARCHAR(2) iso2
+    }
+    nationality_countries {
+        VARCHAR(20) country_qid PK
+        VARCHAR(2) iso2
+        TEXT country_label
+        INTEGER source_id
+        VARCHAR(40) verification_status
+    }
+    nationality_geo_joins {
+        VARCHAR(20) country_qid PK
+        VARCHAR(2) iso2
+        VARCHAR(40) natural_earth_id
+        VARCHAR(30) join_status
+        VARCHAR(20) match_method
+        TEXT audit_note
+        INTEGER source_id
+    }
+    natural_earth_countries {
+        VARCHAR(40) natural_earth_id PK
+        VARCHAR(20) wikidata_qid
+        VARCHAR(2) iso_a2
+        TEXT name_en
+        TEXT name_ar
+        TEXT subregion
+        TEXT region_un
+        TEXT continent
+        INTEGER source_id
+        VARCHAR(40) source_version
+    }
+    occupation_aliases {
+        INTEGER alias_id PK
+        VARCHAR(300) occupation_id
+        TEXT alias_text
+        TEXT normalized_alias
+        VARCHAR(2) language
+        INTEGER source_id
+        VARCHAR(30) review_status
+    }
+    occupation_candidate_refs {
+        VARCHAR(160) candidate_id PK
+        VARCHAR(300) occupation_id
+    }
+    occupation_isco_refs {
+        VARCHAR(300) occupation_id PK
+        VARCHAR(4) isco_code
+        INTEGER source_id
+    }
+    occupations {
+        VARCHAR(300) occupation_id PK
+        TEXT label_ar
+        TEXT label_en
+        VARCHAR(4) isco_code
+        INTEGER source_id
+        VARCHAR(30) review_status
+    }
+    organization_aliases {
+        VARCHAR(64) alias_id PK
+        VARCHAR(20) organization_qid
+        TEXT alias_text
+        TEXT normalized_alias
+        VARCHAR(2) language
+        BOOLEAN enabled_for_lookup
+        VARCHAR(50) verification_status
+        INTEGER source_id
+    }
+    organization_exclusions {
+        VARCHAR(64) exclusion_id PK
+        VARCHAR(20) organization_qid
+        TEXT name_en
+        TEXT name_ar
+        TEXT reason
+        VARCHAR(50) import_decision
+        INTEGER source_id
+    }
+    organization_industries {
+        VARCHAR(100) link_id PK
+        VARCHAR(20) organization_qid
+        VARCHAR(64) mapping_id
+        VARCHAR(40) industry_qid
+        VARCHAR(50) sector_code
+        VARCHAR(50) subcategory_code
+        VARCHAR(50) mapping_status
+        VARCHAR(70) import_decision
+        VARCHAR(50) verification_status
+        INTEGER source_id
+    }
+    organization_review_queue {
+        VARCHAR(64) review_id PK
+        VARCHAR(20) organization_qid
+        VARCHAR(50) import_status
+        TEXT review_flags
+        VARCHAR(70) import_decision
+        TEXT review_reason
+        INTEGER source_id
+    }
+    organizations {
+        VARCHAR(20) organization_qid PK
+        TEXT name_en
+        TEXT name_ar
+        VARCHAR(30) semantic_kind
+        VARCHAR(50) identity_verification_status
+        VARCHAR(70) import_decision
+        VARCHAR(70) import_status
+        TEXT review_flags
+        INTEGER source_id
+    }
+    generalization_schemes ||--o{ age_scheme_rules : "scheme_id"
+    age_bands ||--o{ age_scheme_rules : "band_id"
+    banks ||--o{ bank_aliases : "bank_id"
+    data_sources ||--o{ bank_aliases : "source_id"
+    banks ||--o{ bank_candidates : "bank_id"
+    data_sources ||--o{ bank_candidates : "source_id"
+    banks ||--o{ bank_evidence : "bank_id"
+    data_sources ||--o{ bank_evidence : "source_id"
+    data_sources ||--o{ banks : "source_id"
+    generalization_candidates ||--o{ candidate_metadata : "candidate_id"
+    generalization_candidates ||--o{ candidate_provenance : "candidate_id"
+    data_sources ||--o{ candidate_provenance : "source_id"
+    countries ||--o{ country_m49_links : "iso2"
+    m49_regions ||--o{ country_m49_links : "subregion_code"
+    m49_regions ||--o{ country_m49_links : "region_code"
+    generalization_schemes ||--o{ date_scheme_rules : "scheme_id"
+    date_rules ||--o{ date_scheme_rules : "rule_id"
+    generalization_schemes ||--o{ generalization_candidates : "scheme_id"
+    generalization_levels ||--o{ generalization_candidates : "level_id"
+    generalization_candidates ||--o{ generalization_candidates : "parent_candidate_id"
+    data_sources ||--o{ generalization_candidates : "source_id"
+    generalization_schemes ||--o{ generalization_levels : "scheme_id"
+    data_sources ||--o{ generalization_schemes : "source_id"
+    government_entities ||--o{ government_aliases : "entity_id"
+    data_sources ||--o{ government_aliases : "source_id"
+    government_entities ||--o{ government_candidate_reviews : "entity_id"
+    data_sources ||--o{ government_candidate_reviews : "source_id"
+    government_categories ||--o{ government_categories : "parent_category_code"
+    data_sources ||--o{ government_categories : "source_id"
+    data_sources ||--o{ government_entities : "source_id"
+    government_entities ||--o{ government_entity_categories : "entity_id"
+    government_categories ||--o{ government_entity_categories : "category_code"
+    data_sources ||--o{ government_entity_categories : "source_id"
+    government_entities ||--o{ government_review_queue : "entity_id"
+    data_sources ||--o{ government_review_queue : "source_id"
+    industry_categories ||--o{ industry_categories : "parent_code"
+    data_sources ||--o{ industry_categories : "source_id"
+    data_sources ||--o{ industry_qid_mappings : "source_id"
+    m49_regions ||--o{ m49_regions : "parent_code"
+    nationality_aliases ||--o{ nationality_alias_country_refs : "alias_id"
+    countries ||--o{ nationality_alias_country_refs : "iso2"
+    data_sources ||--o{ nationality_aliases : "source_id"
+    nationality_countries ||--o{ nationality_aliases_v2 : "country_qid"
+    data_sources ||--o{ nationality_aliases_v2 : "source_id"
+    generalization_candidates ||--o{ nationality_candidate_refs : "candidate_id"
+    countries ||--o{ nationality_candidate_refs : "iso2"
+    data_sources ||--o{ nationality_countries : "source_id"
+    nationality_countries ||--o{ nationality_geo_joins : "country_qid"
+    natural_earth_countries ||--o{ nationality_geo_joins : "natural_earth_id"
+    data_sources ||--o{ nationality_geo_joins : "source_id"
+    data_sources ||--o{ natural_earth_countries : "source_id"
+    occupations ||--o{ occupation_aliases : "occupation_id"
+    data_sources ||--o{ occupation_aliases : "source_id"
+    generalization_candidates ||--o{ occupation_candidate_refs : "candidate_id"
+    occupations ||--o{ occupation_candidate_refs : "occupation_id"
+    occupations ||--o{ occupation_isco_refs : "occupation_id"
+    isco_groups ||--o{ occupation_isco_refs : "isco_code"
+    data_sources ||--o{ occupation_isco_refs : "source_id"
+    data_sources ||--o{ occupations : "source_id"
+    organizations ||--o{ organization_aliases : "organization_qid"
+    data_sources ||--o{ organization_aliases : "source_id"
+    data_sources ||--o{ organization_exclusions : "source_id"
+    organizations ||--o{ organization_industries : "organization_qid"
+    industry_qid_mappings ||--o{ organization_industries : "mapping_id"
+    data_sources ||--o{ organization_industries : "source_id"
+    data_sources ||--o{ organization_review_queue : "source_id"
+    data_sources ||--o{ organizations : "source_id"

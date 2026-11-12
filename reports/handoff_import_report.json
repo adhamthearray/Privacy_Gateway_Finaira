@@ -1,0 +1,36 @@
+{
+  "bank_arabic_master_names_blank": 37,
+  "bank_candidates": 185,
+  "bank_evidence": 24,
+  "bank_evidence_bank_ids": 13,
+  "bank_model_counts": {
+    "CONVENTIONAL": 24,
+    "ISLAMIC": 4,
+    "MIXED": 9
+  },
+  "banks": 37,
+  "batch_id": "handoff-2026-11-12-d67cf58c9452",
+  "government_aliases": 24,
+  "government_categories": 17,
+  "government_entities": 12,
+  "government_review_candidates": 63,
+  "government_review_queue": 12,
+  "handoff_root": "C:\\Users\\domma\\Downloads\\Finaira_Generalization_DB_Codex_Handoff_2026-11-12_ext",
+  "industry_categories_materialized": 64,
+  "industry_categories_source_rows": 63,
+  "industry_qid_mappings": 73,
+  "nationality_aliases_v2": 848,
+  "nationality_distinct_qids": 233,
+  "natural_earth_join_status": {
+    "MATCHED_ISO": 2,
+    "MATCHED_QID": 223,
+    "MISMATCH": 1,
+    "UNMATCHED": 7
+  },
+  "natural_earth_rows": 258,
+  "organization_arabic_names_missing": 48,
+  "organization_exclusions": 6,
+  "organization_review_queue": 42,
+  "organizations": 312,
+  "status": "COMPLETED"
+}
