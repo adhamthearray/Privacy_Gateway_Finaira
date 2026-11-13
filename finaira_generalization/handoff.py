@@ -57,6 +57,7 @@ DEFAULT_HANDOFF = Path(
 NATURAL_EARTH_ZIP = ROOT / "data/sources/natural_earth/ne_10m_admin_0_countries_v5.1.1.zip"
 NATURAL_EARTH_CSV = ROOT / "data/sources/natural_earth/ne_10m_admin_0_countries_v5.1.1.csv"
 NATURAL_EARTH_URL = "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/"
+NATIONALITY_VARIANT_REVIEW_CSV = ROOT / "reports/nationality_improvement/nationality_variant_review_queue.csv"
 
 
 def _sha256(path: Path) -> str:
@@ -146,6 +147,7 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
     ne_csv = _natural_earth(handoff_root)
     alias_source_name = "wikidata_nationality_aliases_ar_en_v2" if expanded_source_path.exists() else "handoff_nationality_aliases"
     alias_source = _source(session, alias_source_name, source_path, version="wikidata-p1549-ar-en" if expanded_source_path.exists() else "handoff-2026-11-12", license_text="Wikidata structured data CC0")
+    variant_source = _source(session, "nationality_variant_review_queue", NATIONALITY_VARIANT_REVIEW_CSV, version="review-queue-v1", license_text="Human-reviewed derivative of Wikidata CC0 aliases") if NATIONALITY_VARIANT_REVIEW_CSV.exists() else None
     country_alias_source = _source(session, "wikidata_country_aliases_ar_en_v1", country_alias_path, version="wikidata-labels-aliases-ar-en" , license_text="Wikidata structured data CC0") if country_alias_path.exists() else None
     _source(session, "handoff_nationality_qid_index_derived", qid_index_path, license_text="Derived audit; source rows remain Wikidata CC0")
     ne_source = _source(
@@ -275,12 +277,33 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
             {"country_qid": qid, "iso2": iso, "alias_text": alias, "normalized_alias": normalize(alias, lang), "language": lang, "source_id": alias_source.source_id, "verification_status": "SOURCE_VERIFIED"},
         )
         alias_count += 1
+    reviewed_variant_count = 0
+    if variant_source is not None:
+        for variant in _read_csv(NATIONALITY_VARIANT_REVIEW_CSV):
+            if (_text(variant.get("review_decision")) or "").upper() != "APPROVED":
+                continue
+            if not _text(variant.get("evidence_reference")):
+                continue
+            qid = _qid(variant.get("candidate_qid"))
+            lang = (_text(variant.get("language")) or "").lower()
+            alias = _text(variant.get("corpus_value"))
+            iso = (_text(variant.get("candidate_iso2")) or "").upper()
+            if not qid or qid not in by_qid_input or lang not in {"ar", "en"} or not alias:
+                continue
+            key = _stable(qid, iso, lang, normalize(alias, lang), alias)
+            _put(
+                session,
+                NationalityAliasV2,
+                key,
+                {"country_qid": qid, "iso2": iso or by_qid_input[qid][0], "alias_text": alias, "normalized_alias": normalize(alias, lang), "language": lang, "source_id": variant_source.source_id, "verification_status": "REVIEWED"},
+            )
+            reviewed_variant_count += 1
     report_dir.mkdir(parents=True, exist_ok=True)
     with (report_dir / "nationality_natural_earth_join_audit.csv").open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(audit_rows[0]))
         writer.writeheader()
         writer.writerows(audit_rows)
-    metrics.update({"nationality_aliases_v2": alias_count, "natural_earth_country_aliases": country_alias_count, "nationality_distinct_qids": len(by_qid_input), "natural_earth_rows": len(ne_rows), "natural_earth_join_status": dict(status_counts)})
+    metrics.update({"nationality_aliases_v2": alias_count, "nationality_reviewed_variants": reviewed_variant_count, "natural_earth_country_aliases": country_alias_count, "nationality_distinct_qids": len(by_qid_input), "natural_earth_rows": len(ne_rows), "natural_earth_join_status": dict(status_counts)})
 
 
 def _import_banks(session: Session, root: Path, metrics: dict, report_dir: Path):

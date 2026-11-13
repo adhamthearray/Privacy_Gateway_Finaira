@@ -4,7 +4,8 @@
 - **handoff_root**: C:\Users\domma\Downloads\Finaira_Generalization_DB_Codex_Handoff_2026-11-12_ext
 - **status**: COMPLETED
 - **nationality_aliases_v2**: 857
-- **natural_earth_country_aliases**: 2240
+- **nationality_reviewed_variants**: 0
+- **natural_earth_country_aliases**: 2233
 - **nationality_distinct_qids**: 239
 - **natural_earth_rows**: 258
 - **natural_earth_join_status**: {'MATCHED_QID': 230, 'UNMATCHED': 7, 'MATCHED_ISO': 2}

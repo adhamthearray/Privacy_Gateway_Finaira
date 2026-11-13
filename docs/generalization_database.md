@@ -1,6 +1,6 @@
 # Finaira generalization database
 
-Status: implemented and exercised locally on 2026-11-13. This layer is an offline, deterministic Arabic/English reference database. It returns all valid candidates and never selects one. The current NER-v1 coverage audit is in [reports/generalization_coverage_improvement](../reports/generalization_coverage_improvement); its `alias_review_queue.csv` is a review queue only and never promotes corpus text automatically.
+Status: implemented and exercised locally on 2026-11-13. This layer is an offline, deterministic Arabic/English reference database. It returns all valid candidates and never selects one. The current NER-v1 coverage audit is in [reports/generalization_coverage_improvement](../reports/generalization_coverage_improvement); its `alias_review_queue.csv` is a review queue only and never promotes corpus text automatically. NATIONALITY-specific review is documented in [reports/nationality_improvement](../reports/nationality_improvement).
 
 ## Repository layout
 
@@ -115,7 +115,8 @@ erDiagram
 |---|---|---|
 | Supplied handoff aliases plus `data/sources/wikidata/wikidata_nationality_aliases_ar_en_v2.csv` | `nationality_countries`, `nationality_aliases_v2` | 857 preserved/updated Arabic/English Wikidata `P1549` aliases, QIDs extracted from URI, CC0 provenance |
 | Official Natural Earth Admin-0 1:10m v5.1.1 ZIP | `natural_earth_countries` and derived CSV | 258 DBF rows; fields verified before conversion; public-domain terms |
-| Wikidata labels/aliases API export | `natural_earth_country_aliases` | 2,181 deduplicated Arabic/English aliases linked by Wikidata QID; source-verified and enabled for COUNTRY only |
+| Wikidata labels/aliases API export | `natural_earth_country_aliases` | 2,174 deduplicated Arabic/English aliases linked by Wikidata QID; source-verified and enabled for COUNTRY only |
+| Approved nationality variant review queue | `nationality_aliases_v2` | Only rows marked `APPROVED` with non-empty evidence are imported as `REVIEWED`; pending rows remain outside runtime |
 | QID index CSV | source checksum/audit input | consistency audit only; never treated as Natural Earth |
 | `banks_FINAL_evidence.csv` | `banks`, regenerated `bank_candidates` | authoritative 37-row master; blank Arabic names remain null |
 | bank evidence CSV | `bank_evidence` | 24 evidence rows and 13 bank IDs |

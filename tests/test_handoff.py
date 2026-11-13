@@ -1,4 +1,5 @@
 from pathlib import Path
+import csv
 
 from sqlalchemy import text
 
@@ -23,6 +24,16 @@ def test_natural_earth_join_and_runtime_source():
     assert result["resolution_status"] == "MATCHED"
     assert all(candidate["taxonomy"] == "NATURAL_EARTH" for candidate in result["candidates"])
     assert result["candidates"][1]["representation"] == "Northern Africa"
+
+
+def test_nationality_variant_review_queue_is_gated():
+    queue = Path("reports/nationality_improvement/nationality_variant_review_queue.csv")
+    with queue.open(encoding="utf-8", newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    assert len({row["corpus_value"] for row in rows if row["suggestion_status"] == "REVIEW_ONLY"}) == 64
+    assert all(row["review_decision"] == "PENDING" for row in rows)
+    assert scalar("select count(*) from nationality_aliases_v2") == 857
+    assert scalar("select count(*) from nationality_aliases_v2 where verification_status='REVIEWED'") == 0
 
 
 def test_country_resolves_directly_from_natural_earth():

@@ -2133,12 +2133,8 @@ Q963,BW,Lefatshe la Botswana,en,alias,skos:altLabel
 Q963,BW,Republic of Botswana,en,alias,skos:altLabel
 Q963,BW,bw,en,alias,skos:altLabel
 Q9648,FK,جزر فوكلاند,ar,label,rdfs:label
-Q9648,FK,FK,en,alias,skos:altLabel
-Q9648,FK,FLK,en,alias,skos:altLabel
 Q9648,FK,Falkland Islands,en,label,rdfs:label
 Q9648,FK,Falklands,en,alias,skos:altLabel
-Q9648,FK,Islas Malvinas,en,alias,skos:altLabel
-Q9648,FK,Malvinas,en,alias,skos:altLabel
 Q9648,FK,Malvinas Islands,en,alias,skos:altLabel
 Q965,BF,بركينا فاسو,ar,alias,skos:altLabel
 Q965,BF,بوركينا فاسو,ar,label,rdfs:label
@@ -2192,11 +2188,8 @@ Q970,KM,km,en,alias,skos:altLabel
 Q970,KM,ouvoimoja wakomori,en,alias,skos:altLabel
 Q970,KM,the Comoros,en,alias,skos:altLabel
 Q971,CG,جمهورية الكونغو,ar,label,rdfs:label
-Q971,CG,CGO,en,alias,skos:altLabel
-Q971,CG,Congo,en,alias,skos:altLabel
 Q971,CG,Congo (Brazzaville),en,alias,skos:altLabel
 Q971,CG,Congo Republic,en,alias,skos:altLabel
-Q971,CG,Congo-Brazzaville,en,alias,skos:altLabel
 Q971,CG,Rep. Congo,en,alias,skos:altLabel
 Q971,CG,Republic of Congo,en,alias,skos:altLabel
 Q971,CG,Republic of the Congo,en,label,rdfs:label
