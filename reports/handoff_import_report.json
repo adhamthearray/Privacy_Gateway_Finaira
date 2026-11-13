@@ -21,6 +21,7 @@
   "industry_qid_mappings": 73,
   "nationality_aliases_v2": 857,
   "nationality_distinct_qids": 239,
+  "natural_earth_country_aliases": 2240,
   "natural_earth_join_status": {
     "MATCHED_ISO": 2,
     "MATCHED_QID": 230,

@@ -187,7 +187,7 @@ Rows: 248
 
 ## `data_sources`
 
-Rows: 22
+Rows: 24
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|
@@ -495,7 +495,7 @@ Indexes: ix_nationality_aliases_country_iso2, ix_nationality_aliases_language, i
 
 ## `nationality_aliases_v2`
 
-Rows: 848
+Rows: 857
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|
@@ -523,7 +523,7 @@ Indexes: ix_nationality_candidate_refs_iso2
 
 ## `nationality_countries`
 
-Rows: 233
+Rows: 239
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|
@@ -537,7 +537,7 @@ Indexes: ix_nationality_countries_iso2
 
 ## `nationality_geo_joins`
 
-Rows: 233
+Rows: 239
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|
@@ -569,6 +569,25 @@ Rows: 258
 | source_version | VARCHAR(40) |  | NO |  | Persisted Finaira reference data or layered metadata for `natural_earth_countries`. |
 
 Indexes: ix_natural_earth_countries_iso_a2, ix_natural_earth_countries_wikidata_qid
+
+## `natural_earth_country_aliases`
+
+Rows: 2181
+
+| Column | Type | Key | Nullable | References | Purpose |
+|---|---|---|---|---|---|
+| alias_id | VARCHAR(100) | PK | NO |  | Persisted Finaira reference data or layered metadata for `natural_earth_country_aliases`. |
+| natural_earth_id | VARCHAR(40) |  | NO | natural_earth_countries.natural_earth_id | Persisted Finaira reference data or layered metadata for `natural_earth_country_aliases`. |
+| alias_text | TEXT |  | NO |  | Persisted Finaira reference data or layered metadata for `natural_earth_country_aliases`. |
+| normalized_alias | TEXT |  | NO |  | Persisted Finaira reference data or layered metadata for `natural_earth_country_aliases`. |
+| language | VARCHAR(2) |  | NO |  | Persisted Finaira reference data or layered metadata for `natural_earth_country_aliases`. |
+| alias_kind | VARCHAR(30) |  | NO |  | Persisted Finaira reference data or layered metadata for `natural_earth_country_aliases`. |
+| source_property | VARCHAR(50) |  | NO |  | Persisted Finaira reference data or layered metadata for `natural_earth_country_aliases`. |
+| source_id | INTEGER |  | NO | data_sources.source_id | Persisted Finaira reference data or layered metadata for `natural_earth_country_aliases`. |
+| verification_status | VARCHAR(40) |  | NO |  | Persisted Finaira reference data or layered metadata for `natural_earth_country_aliases`. |
+| enabled_for_lookup | BOOLEAN |  | NO |  | Persisted Finaira reference data or layered metadata for `natural_earth_country_aliases`. |
+
+Indexes: ix_natural_earth_country_aliases_language, ix_natural_earth_country_aliases_natural_earth_id, ix_natural_earth_country_aliases_normalized_alias
 
 ## `occupation_aliases`
 

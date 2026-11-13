@@ -1,0 +1,237 @@
+entity_type,value,span_count,source_files,splits,origins,resolution_status,reason_code,lookup_language,canonical_id,candidate_levels,has_exact_candidate,has_non_suppression_candidate,verification_statuses,coverage_category,next_action
+OCCUPATION,المذيع,24,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,المهندس,15,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الموظف,12,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مبرمج,11,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,القاضي,9,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,المحامي,9,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,طالب,7,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضٍ,7,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الأستاذ الدكتور,6,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,المبرمج,6,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,طالبة,6,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,Software Engineer,5,test.jsonl,test,egyptian_twin;gulf_original;refid_insert;variant:card_swap,VERIFIED,,en,http://data.europa.eu/esco/occupation/f2b15a0e-e65a-438a-affb-29b9d50b77d1,EXACT|ISCO_1|ISCO_2|ISCO_3|SUPPRESSED,True,True,OFFICIAL,MATCHED_OR_VERIFIED,none
+OCCUPATION,الصحفي,5,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,جندي,5,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الاستاذ الدكتور,4,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الحلاق,4,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الخبير,4,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,القاضي الشرعي,4,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,المخرج,4,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,المذيعه,4,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,المعلم,4,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,شرطي,4,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,طبيب,4,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,طيار,4,train.jsonl;validation.jsonl,train;validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,فنانة,4,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,كاتب,4,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,محام مزاول,4,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,محامي,4,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,محامٍ,4,train.jsonl;validation.jsonl,train;validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مذيع,4,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,Government Employee,3,train.jsonl,train,egyptian_twin;gulf_original;refid_insert,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,البائع,3,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الجندي,3,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الشاعر,3,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الشاعرة,3,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الشرطي,3,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الطبيبة,3,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الفنان,3,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,المساح,3,train.jsonl;validation.jsonl,train;validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,طبيباً,3,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,طبيبة,3,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,فريلانسر,3,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي الشرع,3,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي حيفا الشرعي,3,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مساح بلدية بيرزيت,3,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطور ويب,3,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مندوب مبيعات,3,train.jsonl,train,egyptian_twin;gulf_original;refid_insert,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مهندس,3,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مهندس بلدية نابلس,3,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مهندس لواء رام الله,3,test.jsonl;validation.jsonl,test;validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مهندس محافظة القدس,3,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الاستاز,2,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الباحث,2,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الراعي,2,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الروائي,2,train.jsonl;validation.jsonl,train;validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,السائق,2,train.jsonl;validation.jsonl,train;validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الشوفير,2,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الطالب,2,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الطبيب,2,train.jsonl;validation.jsonl,train;validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,العامل,2,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,المحامية,2,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الميكانيكي,2,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,باحثة,2,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,راعي,2,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,رسام,2,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,طبيبة أسنان,2,train.jsonl,train,egyptian_twin;gulf_original,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,طوبرجي,2,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,عامل صحي,2,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,فلاح,2,test.jsonl;validation.jsonl,test;validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,فنان,2,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,فني كهرباء,2,train.jsonl,train,egyptian_twin;gulf_original,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي المحكمة الشرعية في حيفا,2,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي طبريا الشرعي,2,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مبرمج node js,2,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مبرمج محترف,2,test.jsonl;validation.jsonl,test;validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,محلل بيانات,2,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مدرس,2,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مدرسة,2,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مصمم,2,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطور الووردبريس,2,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مهندس الشؤون البلدية,2,train.jsonl;validation.jsonl,train;validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مهندس برمجيات,2,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مهندس شبكات,2,test.jsonl,test,egyptian_twin;gulf_original,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,ميكانيكي,2,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,حلاق,1,test.jsonl,test,wojood,VERIFIED,,ar,http://data.europa.eu/esco/occupation/4e0c14d6-b170-40f1-bcdc-703c0b92109b,EXACT|ISCO_1|ISCO_2|ISCO_3|SUPPRESSED,True,True,OFFICIAL,MATCHED_OR_VERIFIED,none
+OCCUPATION,أخصائي سريري,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,أخصائي نفسي,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,أخصائياً نفسياً,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,أستاذ القانون التجاري,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,أستاذ علوم,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,أستاذ متقاعد لشؤون الأمن القومي,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,استاذ تاريخ,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,استاز,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,استشاري,1,validation.jsonl,validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الأستاذة,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الباحثة في الشأن اليمني في هيومن رايتس ووتش,1,validation.jsonl,validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,السائقين,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الشاعر الفلسطيني,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الصحافية,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الصياد,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الصيدلاني,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الصيدلي,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الطالبة,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الطيارين الروس,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الفنانة,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الكاتب,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الكاهن الأكبر,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,المخرج المسرحي,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,المدرب,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,المدقق الداخلي,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,المذيعة,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,المطور,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,المعلمة,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الممرض,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الممرض المسؤول عن الصيدلية,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الممرضة,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,المنقذ,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,المهندس الإقليمي,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,المهندس الرئيسي,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الموظفين,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,الناطور,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,بائع متجول,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,باحث بالمعهد الإيطالي للشؤون الدولية,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,باحثة سوريا في هيومن رايتس ووتش,1,validation.jsonl,validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,جندي اردني,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,جندي اسرائيلي,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,خبير شؤون باسكت,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,خبيرا,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,سائق,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,سمسار اراضي,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,شوفير,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,شيف,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,صحافي,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,صحفي استقصائي متخصص في الأمن,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,صحفيا,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,صحفية,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,صياد,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,صياد بط,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,صيدلاني,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,طالب وطالبة,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,طالبا,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,طالبة جامعية,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,طبيب الموصل,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,طبيب جراح,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,طبيب نفسي,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,طبيبا,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,عامل,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,عامل إغاثة,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,عامل في كازية,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,عامل يمني مغترب,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,عاملة المساعدات الإنسانية الأمريكية,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,فلاح بيارة,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,فنان التشكيلي,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,فنانة التشكليلة,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,فنانة الفلسطينية,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,فني اللجنة,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاض,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي التحقيق,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي الشرع في حيفا,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي القدس الشريف,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي القضاة,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي حيفا,1,validation.jsonl,validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي رام الله الشرعي,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي صلح رام الله,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي قضاة المحكمة الشرعية في رام الله,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي قضاة غزة,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي قضاة فلسطين,1,validation.jsonl,validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي محكمة الصلح,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي محكمة حيفا الشرعية,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي نينوى,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضي يافا,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,قاضٍ بمحكمة مكافحة الإرهاب في نينوى,1,validation.jsonl,validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,كاتب المحكمة,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,كاتب المملكة السعودية,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,كاتبا للمجلس المحلي في البيرة,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,كاشير,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,لاعب,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مؤلف كتاب,1,validation.jsonl,validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مؤلفه,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مبرمج مواقع,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مبرمجة,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مترجم,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مترجم للغة العربية,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,محاسب بلدية نابلس,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,محامي بلدية مدينة البيرة,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,محامية,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,محامية يافاوية,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مداوي,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مدرس مساعد,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مدرس مساعد لشؤون الأمن القومي بكلية الدراسات العليا البحرية,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مدقق حسابات قانوني,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مذيعه,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مسوق,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مصمم الشعارات,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مصمم الويب المخلوق,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مصمم تجربة,1,validation.jsonl,validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مصمم جرافيك,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مصور,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مصور دائرة الاّثار,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطور,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطور البرمجيات,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطور المواقع,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطور الهاتف المحمول,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطور برامج,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطور برامج وتطبيقات,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطور برامج ويب,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطور برمجيات,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطور تطبيقات,1,validation.jsonl,validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطور تطبيقات اندرويد,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطور تطبيقات سطح مكتب,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطور مواقع,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطور واجهات أمامية,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطور ووربريس,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطور ويب متكامل,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطورة تطبيقات الأندرويد,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مطورين,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,معلمه,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,ممرض,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,منقذ,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مهندس الأشغال,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مهندس البرمجة,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مهندس البرمجيات,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مهندس البلدية,1,validation.jsonl,validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مهندس برمجة,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مهندس بلدية مدينة البيرة,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مهندس تنظيم المدن,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مهندس كهرباء,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,مهندس مدينة نابلس,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,موظف الأمن,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,موظف الكهرباء,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,موظف تسجيل الأراضي,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,موظفاً,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,ناطور,1,validation.jsonl,validation,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,هكر,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias
+OCCUPATION,هكر ذو قبعة بيضاء,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_OCCUPATION,en,,SUPPRESSED,False,False,OFFICIAL,SUPPRESSION_ONLY,add verified ESCO/ISCO alias

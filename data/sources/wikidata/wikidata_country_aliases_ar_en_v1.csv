@@ -1,0 +1,2241 @@
+wikidata_qid,iso2,alias_text,language,alias_kind,source_property
+Q1000,GA,الجابون,ar,alias,skos:altLabel
+Q1000,GA,الجمهورية الغابونية,ar,alias,skos:altLabel
+Q1000,GA,الغابون,ar,label,rdfs:label
+Q1000,GA,جمهورية الغابون,ar,alias,skos:altLabel
+Q1000,GA,GAB,en,alias,skos:altLabel
+Q1000,GA,Gabon,en,label,rdfs:label
+Q1000,GA,Gabonese Republic,en,alias,skos:altLabel
+Q1000,GA,Republique Gabonaise,en,alias,skos:altLabel
+Q1000,GA,République Gabonaise,en,alias,skos:altLabel
+Q1000,GA,ga,en,alias,skos:altLabel
+Q1005,GM,جمهورية غامبيا,ar,alias,skos:altLabel
+Q1005,GM,غامبيا,ar,label,rdfs:label
+Q1005,GM,Gambia,en,alias,skos:altLabel
+Q1005,GM,Islamic Republic of the Gambia,en,alias,skos:altLabel
+Q1005,GM,Republic of the Gambia,en,alias,skos:altLabel
+Q1005,GM,The Gambia,en,label,rdfs:label
+Q1006,GN,جمهورية غينيا,ar,alias,skos:altLabel
+Q1006,GN,غينيا,ar,label,rdfs:label
+Q1006,GN,GUI,en,alias,skos:altLabel
+Q1006,GN,Guinea,en,label,rdfs:label
+Q1006,GN,Guinea-Conakry,en,alias,skos:altLabel
+Q1006,GN,Republic of Guinea,en,alias,skos:altLabel
+Q1006,GN,gn,en,alias,skos:altLabel
+Q1007,GW,جمهورية غينيا بيساو,ar,alias,skos:altLabel
+Q1007,GW,غينيا بيساو,ar,label,rdfs:label
+Q1007,GW,GBS,en,alias,skos:altLabel
+Q1007,GW,Guinea-Bissau,en,label,rdfs:label
+Q1007,GW,Republic of Guinea-Bissau,en,alias,skos:altLabel
+Q1007,GW,gw,en,alias,skos:altLabel
+Q1008,CI,جمهورية ساحل العاج,ar,alias,skos:altLabel
+Q1008,CI,جمهورية كوت ديفوار,ar,alias,skos:altLabel
+Q1008,CI,ساحل العاج,ar,label,rdfs:label
+Q1008,CI,كوت ديفوار,ar,alias,skos:altLabel
+Q1008,CI,Cote Ivoire,en,alias,skos:altLabel
+Q1008,CI,Cote d'Ivoire,en,alias,skos:altLabel
+Q1008,CI,Cote d'lvoire,en,alias,skos:altLabel
+Q1008,CI,Cote-d'Ivoire,en,alias,skos:altLabel
+Q1008,CI,Côte-d'Ivoire,en,alias,skos:altLabel
+Q1008,CI,Ivory Coast,en,label,rdfs:label
+Q1008,CI,Republic of Cote d'Ivoire,en,alias,skos:altLabel
+Q1008,CI,Republic of Côte d'Ivoire,en,alias,skos:altLabel
+Q1008,CI,Republic of Ivory Coast,en,alias,skos:altLabel
+Q1008,CI,Republic of the Ivory Coast,en,alias,skos:altLabel
+Q1008,CI,The Ivory Coast,en,alias,skos:altLabel
+Q1008,CI,ci,en,alias,skos:altLabel
+Q1009,CM,الكاميرون,ar,label,rdfs:label
+Q1009,CM,جمهورية الكاميرون,ar,alias,skos:altLabel
+Q1009,CM,جمهورية الكمرون,ar,alias,skos:altLabel
+Q1009,CM,كمرون,ar,alias,skos:altLabel
+Q1009,CM,Cameroon,en,label,rdfs:label
+Q1009,CM,Republic of Cameroon,en,alias,skos:altLabel
+Q1011,CV,الرأس الأخضر,ar,label,rdfs:label
+Q1011,CV,Cape Verde,en,label,rdfs:label
+Q1011,CV,Cape Verde Islands,en,alias,skos:altLabel
+Q1011,CV,Republic of Cabo Verde,en,alias,skos:altLabel
+Q1011,CV,Republic of Cape Verde,en,alias,skos:altLabel
+Q1013,LS,ليسوتو,ar,label,rdfs:label
+Q1013,LS,مملكة ليسوتو,ar,alias,skos:altLabel
+Q1013,LS,Kingdom of Lesotho,en,alias,skos:altLabel
+Q1013,LS,LES,en,alias,skos:altLabel
+Q1013,LS,Lesotho,en,label,rdfs:label
+Q1013,LS,The Mountain Kingdom,en,alias,skos:altLabel
+Q1013,LS,ls,en,alias,skos:altLabel
+Q1014,LR,ليبيريا,ar,label,rdfs:label
+Q1014,LR,Liber,en,alias,skos:altLabel
+Q1014,LR,Liberia,en,label,rdfs:label
+Q1014,LR,Republic of Liberia,en,alias,skos:altLabel
+Q1014,LR,lr,en,alias,skos:altLabel
+Q1016,LY,الجمهورية الليبية,ar,alias,skos:altLabel
+Q1016,LY,الليبي,ar,alias,skos:altLabel
+Q1016,LY,الليبية,ar,alias,skos:altLabel
+Q1016,LY,الليبين,ar,alias,skos:altLabel
+Q1016,LY,دولة ليبيا,ar,alias,skos:altLabel
+Q1016,LY,ليببيا,ar,alias,skos:altLabel
+Q1016,LY,ليبي,ar,alias,skos:altLabel
+Q1016,LY,ليبيا,ar,label,rdfs:label
+Q1016,LY,ليبية,ar,alias,skos:altLabel
+Q1016,LY,LBA,en,alias,skos:altLabel
+Q1016,LY,Libya,en,label,rdfs:label
+Q1016,LY,State of Libya,en,alias,skos:altLabel
+Q1016,LY,ly,en,alias,skos:altLabel
+Q1019,MG,مدغشقر,ar,label,rdfs:label
+Q1019,MG,ملجاش,ar,alias,skos:altLabel
+Q1019,MG,Madagascar,en,label,rdfs:label
+Q1019,MG,Malagascar,en,alias,skos:altLabel
+Q1019,MG,Malagaskar,en,alias,skos:altLabel
+Q1019,MG,Republic of Madagascar,en,alias,skos:altLabel
+Q1019,MG,mg,en,alias,skos:altLabel
+Q1020,MW,جمهورية مالاوي,ar,alias,skos:altLabel
+Q1020,MW,مالاوي,ar,alias,skos:altLabel
+Q1020,MW,ملاوي,ar,label,rdfs:label
+Q1020,MW,MAW,en,alias,skos:altLabel
+Q1020,MW,Malawi,en,label,rdfs:label
+Q1020,MW,Republic of Malawi,en,alias,skos:altLabel
+Q1020,MW,mw,en,alias,skos:altLabel
+Q1025,MR,الجمهورية الإسلامية الموريتانية,ar,alias,skos:altLabel
+Q1025,MR,موريتانيا,ar,label,rdfs:label
+Q1025,MR,🇲🇷,ar,alias,skos:altLabel
+Q1025,MR,Agawej,en,alias,skos:altLabel
+Q1025,MR,Gannaar,en,alias,skos:altLabel
+Q1025,MR,Gànnaar,en,alias,skos:altLabel
+Q1025,MR,Islamic Republic of Mauritania,en,alias,skos:altLabel
+Q1025,MR,Mauretania,en,alias,skos:altLabel
+Q1025,MR,Mauritania,en,label,rdfs:label
+Q1025,MR,Moritani,en,alias,skos:altLabel
+Q1025,MR,Muritanya,en,alias,skos:altLabel
+Q1025,MR,Murutaane,en,alias,skos:altLabel
+Q1025,MR,mr,en,alias,skos:altLabel
+Q1027,MU,بور لوي,ar,alias,skos:altLabel
+Q1027,MU,بور لويس,ar,alias,skos:altLabel
+Q1027,MU,جمهورية موريشيوس,ar,alias,skos:altLabel
+Q1027,MU,عاصمة موريشيوس,ar,alias,skos:altLabel
+Q1027,MU,مورشس,ar,alias,skos:altLabel
+Q1027,MU,موريتيوس,ar,alias,skos:altLabel
+Q1027,MU,موريشوس,ar,alias,skos:altLabel
+Q1027,MU,موريشيوس,ar,label,rdfs:label
+Q1027,MU,MRI,en,alias,skos:altLabel
+Q1027,MU,MU,en,alias,skos:altLabel
+Q1027,MU,Maurice,en,alias,skos:altLabel
+Q1027,MU,Mauritius,en,label,rdfs:label
+Q1027,MU,Moris,en,alias,skos:altLabel
+Q1027,MU,Republic of Mauritius,en,alias,skos:altLabel
+Q1028,MA,المغرب,ar,label,rdfs:label
+Q1028,MA,المملكة المغربية,ar,alias,skos:altLabel
+Q1028,MA,Kingdom of Morocco,en,alias,skos:altLabel
+Q1028,MA,Lmaġrib,en,alias,skos:altLabel
+Q1028,MA,Maroc,en,alias,skos:altLabel
+Q1028,MA,Marocco,en,alias,skos:altLabel
+Q1028,MA,Morocco,en,label,rdfs:label
+Q1028,MA,al-Maġrib,en,alias,skos:altLabel
+Q1029,MZ,موزمبيق,ar,label,rdfs:label
+Q1029,MZ,Mozambique,en,label,rdfs:label
+Q1029,MZ,Moçambique,en,alias,skos:altLabel
+Q1029,MZ,Republic of Mozambique,en,alias,skos:altLabel
+Q1029,MZ,República de Moçambique,en,alias,skos:altLabel
+Q1029,MZ,mz,en,alias,skos:altLabel
+Q1030,NA,نامبيا,ar,alias,skos:altLabel
+Q1030,NA,ناميبي,ar,alias,skos:altLabel
+Q1030,NA,ناميبيا,ar,label,rdfs:label
+Q1030,NA,Namibia,en,label,rdfs:label
+Q1030,NA,Republic of Namibia,en,alias,skos:altLabel
+Q1030,NA,na,en,alias,skos:altLabel
+Q1031467,,Southern Patagonian Ice Field,en,label,rdfs:label
+Q1032,NE,النيجر,ar,label,rdfs:label
+Q1032,NE,جمهورية النيجر,ar,alias,skos:altLabel
+Q1032,NE,زندر,ar,alias,skos:altLabel
+Q1032,NE,عاصمة النيجر,ar,alias,skos:altLabel
+Q1032,NE,قائمة جزر النيجر,ar,alias,skos:altLabel
+Q1032,NE,منطقة حضارية نيامي,ar,alias,skos:altLabel
+Q1032,NE,نيجر,ar,alias,skos:altLabel
+Q1032,NE,Niger,en,label,rdfs:label
+Q1032,NE,Republic Niger,en,alias,skos:altLabel
+Q1032,NE,Republic of Niger,en,alias,skos:altLabel
+Q1032,NE,Republic of the Niger,en,alias,skos:altLabel
+Q1032,NE,The Niger,en,alias,skos:altLabel
+Q1032,NE,ne,en,alias,skos:altLabel
+Q1033,NG,جمهورية نيجيريا الاتحادية,ar,alias,skos:altLabel
+Q1033,NG,نيجيريا,ar,label,rdfs:label
+Q1033,NG,Federal Republic of Nigeria,en,alias,skos:altLabel
+Q1033,NG,Naija,en,alias,skos:altLabel
+Q1033,NG,Nigeria,en,label,rdfs:label
+Q1036,UG,أوغندا,ar,label,rdfs:label
+Q1036,UG,جمهورية أوغندا,ar,alias,skos:altLabel
+Q1036,UG,+256,en,alias,skos:altLabel
+Q1036,UG,Ouganda,en,alias,skos:altLabel
+Q1036,UG,Pearl of Africa,en,alias,skos:altLabel
+Q1036,UG,Republic of Uganda,en,alias,skos:altLabel
+Q1036,UG,The Republic of Uganda,en,alias,skos:altLabel
+Q1036,UG,Uganda,en,label,rdfs:label
+Q1036,UG,Ugandah,en,alias,skos:altLabel
+Q1036,UG,ug,en,alias,skos:altLabel
+Q1037,RW,رواندا,ar,label,rdfs:label
+Q1037,RW,Republic of Rwanda,en,alias,skos:altLabel
+Q1037,RW,Rwanda,en,label,rdfs:label
+Q1037,RW,The Land of a Thousand Hills,en,alias,skos:altLabel
+Q1039,ST,جمهورية ساو تومي وبرينسيب الديمقراطية,ar,alias,skos:altLabel
+Q1039,ST,ساو تومي وبرينسيب,ar,label,rdfs:label
+Q1039,ST,ساو تومي وبرينسيبي,ar,alias,skos:altLabel
+Q1039,ST,Democratic Republic of São Tomé and Príncipe,en,alias,skos:altLabel
+Q1039,ST,Sao Tome & Principe,en,alias,skos:altLabel
+Q1039,ST,Sao Tome and Principe,en,alias,skos:altLabel
+Q1039,ST,São Tomé and Príncipe,en,label,rdfs:label
+Q1039,ST,São Tomé og Príncipe,en,alias,skos:altLabel
+Q1039,ST,st,en,alias,skos:altLabel
+Q1041,SN,السنغال,ar,label,rdfs:label
+Q1041,SN,السنيغال,ar,alias,skos:altLabel
+Q1041,SN,السينغال,ar,alias,skos:altLabel
+Q1041,SN,السينيغال,ar,alias,skos:altLabel
+Q1041,SN,جمهورية السنغال,ar,alias,skos:altLabel
+Q1041,SN,سنغال,ar,alias,skos:altLabel
+Q1041,SN,سنغالي,ar,alias,skos:altLabel
+Q1041,SN,سينيغال,ar,alias,skos:altLabel
+Q1041,SN,Republic of Senegal,en,alias,skos:altLabel
+Q1041,SN,Senegal,en,label,rdfs:label
+Q1042,SC,جمهورية سيشل,ar,alias,skos:altLabel
+Q1042,SC,سيشل,ar,label,rdfs:label
+Q1042,SC,سيشيل,ar,alias,skos:altLabel
+Q1042,SC,Republic of Seychelles,en,alias,skos:altLabel
+Q1042,SC,SEY,en,alias,skos:altLabel
+Q1042,SC,Seychelles,en,label,rdfs:label
+Q1042,SC,sc,en,alias,skos:altLabel
+Q1044,SL,جمهورية سيراليون,ar,alias,skos:altLabel
+Q1044,SL,سيراليون,ar,label,rdfs:label
+Q1044,SL,Republic of Sierra Leone,en,alias,skos:altLabel
+Q1044,SL,SLE,en,alias,skos:altLabel
+Q1044,SL,Sierra Leone,en,label,rdfs:label
+Q1044,SL,sl,en,alias,skos:altLabel
+Q1045,SO,الصومال,ar,label,rdfs:label
+Q1045,SO,جمهورية الصومال,ar,alias,skos:altLabel
+Q1045,SO,جمهورية الصومال الديموقراطية,ar,alias,skos:altLabel
+Q1045,SO,صومال,ar,alias,skos:altLabel
+Q1045,SO,Federal Republic of Somalia,en,alias,skos:altLabel
+Q1045,SO,Somalia,en,label,rdfs:label
+Q1049,SD,السودان,ar,label,rdfs:label
+Q1049,SD,جمهورية السودان,ar,alias,skos:altLabel
+Q1049,SD,North Sudan,en,alias,skos:altLabel
+Q1049,SD,Republic of Sudan,en,alias,skos:altLabel
+Q1049,SD,Republic of the Sudan,en,alias,skos:altLabel
+Q1049,SD,SUD,en,alias,skos:altLabel
+Q1049,SD,Soudan,en,alias,skos:altLabel
+Q1049,SD,Sudan,en,label,rdfs:label
+Q1049,SD,al-Sudan,en,alias,skos:altLabel
+Q1049,SD,as-Sudan,en,alias,skos:altLabel
+Q1049,SD,as-Sūdān,en,alias,skos:altLabel
+Q1049,SD,sd,en,alias,skos:altLabel
+Q1049,SD,the Sudan,en,alias,skos:altLabel
+Q1050,SZ,إسواتيني,ar,label,rdfs:label
+Q1050,SZ,سوازيلاند,ar,alias,skos:altLabel
+Q1050,SZ,مملكة إسواتيني,ar,alias,skos:altLabel
+Q1050,SZ,Eswatini,en,label,rdfs:label
+Q1050,SZ,Kingdom of Eswatini,en,alias,skos:altLabel
+Q1050,SZ,Kingdom of Swaziland,en,alias,skos:altLabel
+Q1050,SZ,Swaziland,en,alias,skos:altLabel
+Q1050,SZ,Umbuso weSwatini,en,alias,skos:altLabel
+Q1050,SZ,eSwatini,en,alias,skos:altLabel
+Q1050,SZ,sz,en,alias,skos:altLabel
+Q114,KE,كينيا,ar,label,rdfs:label
+Q114,KE,Kenya,en,label,rdfs:label
+Q114,KE,Republic of Kenya,en,alias,skos:altLabel
+Q114,KE,ke,en,alias,skos:altLabel
+Q115,ET,إثيوبيا,ar,label,rdfs:label
+Q115,ET,الجمهورية الفدرالية الديمقراطية لإثيوبيا,ar,alias,skos:altLabel
+Q115,ET,جمهورية إثيوبيا الفيدرالية الديمقراطية,ar,alias,skos:altLabel
+Q115,ET,Ethiopia,en,label,rdfs:label
+Q115,ET,Federal Democratic Republic of Ethiopia,en,alias,skos:altLabel
+Q115,ET,et,en,alias,skos:altLabel
+Q1169008,,ضفة سرانيلا,ar,label,rdfs:label
+Q1169008,,Serranilla Bank,en,label,rdfs:label
+Q116970,,خط أخضر,ar,alias,skos:altLabel
+Q116970,,مقاطعة الأمم المتحدة العازلة في قبرص,ar,label,rdfs:label
+Q116970,,Green Line,en,alias,skos:altLabel
+Q116970,,Green Line (Cyprus),en,alias,skos:altLabel
+Q116970,,UN Buffer Zone,en,alias,skos:altLabel
+Q116970,,United Nations Buffer Zone in Cyprus,en,label,rdfs:label
+Q116970,,green line,en,alias,skos:altLabel
+Q117,GH,جمهورية غانا,ar,alias,skos:altLabel
+Q117,GH,غانا,ar,label,rdfs:label
+Q117,GH,Ghana,en,label,rdfs:label
+Q11703,VI,الجزر العذراء الأمريكيه,ar,alias,skos:altLabel
+Q11703,VI,جزر العذراء الأمريكية,ar,alias,skos:altLabel
+Q11703,VI,جزر العذراء الولايات المتحدة,ar,label,rdfs:label
+Q11703,VI,American Virgin Islands,en,alias,skos:altLabel
+Q11703,VI,US Virgin Islands,en,alias,skos:altLabel
+Q11703,VI,United States Virgin Islands,en,label,rdfs:label
+Q11703,VI,Virgin Islands of the United States,en,alias,skos:altLabel
+Q11703,VI,the United States Virgin Islands,en,alias,skos:altLabel
+Q1183,PR,بورتوريكو,ar,label,rdfs:label
+Q1183,PR,دولة بورتوريكو الحرة المرتبطة,ar,alias,skos:altLabel
+Q1183,PR,Borikén,en,alias,skos:altLabel
+Q1183,PR,Borinquen,en,alias,skos:altLabel
+Q1183,PR,Boriquén,en,alias,skos:altLabel
+Q1183,PR,Commonwealth of Puerto Rico,en,alias,skos:altLabel
+Q1183,PR,Free Associated State of Puerto Rico,en,alias,skos:altLabel
+Q1183,PR,Island of Enchantment,en,alias,skos:altLabel
+Q1183,PR,Isle of Enchantment,en,alias,skos:altLabel
+Q1183,PR,Porto Rico,en,alias,skos:altLabel
+Q1183,PR,Puerto Rico,en,label,rdfs:label
+Q1183,PR,Territory of Porto Rico,en,alias,skos:altLabel
+Q1183,PR,Territory of Puerto Rico,en,alias,skos:altLabel
+Q1246,,جمهورية كوسوفو,ar,alias,skos:altLabel
+Q1246,,قوصوة,ar,alias,skos:altLabel
+Q1246,,كوسوفا,ar,alias,skos:altLabel
+Q1246,,كوسوفو,ar,label,rdfs:label
+Q1246,,KOS,en,alias,skos:altLabel
+Q1246,,KV,en,alias,skos:altLabel
+Q1246,,Kosova,en,alias,skos:altLabel
+Q1246,,Kosovo,en,label,rdfs:label
+Q1246,,RKS,en,alias,skos:altLabel
+Q1246,,Republic of Kosovo,en,alias,skos:altLabel
+Q1246,,XK,en,alias,skos:altLabel
+Q1246,,XKX,en,alias,skos:altLabel
+Q1257783,,ضفة باجو نويفو,ar,alias,skos:altLabel
+Q1257783,,ضفة باجو نيوفو,ar,label,rdfs:label
+Q1257783,,Bajo Nuevo,en,alias,skos:altLabel
+Q1257783,,Bajo Nuevo Bank,en,label,rdfs:label
+Q1257783,,Islas Petrel,en,alias,skos:altLabel
+Q1257783,,Petrel Islands,en,alias,skos:altLabel
+Q126125,MF,تجمع سان مارتين,ar,label,rdfs:label
+Q126125,MF,سان مارتن الفرنسية,ar,alias,skos:altLabel
+Q126125,MF,سان مارتن الفرنسيه,ar,alias,skos:altLabel
+Q126125,MF,سان مارتين,ar,alias,skos:altLabel
+Q126125,MF,Collectivity of Saint Martin,en,alias,skos:altLabel
+Q126125,MF,FR-MF,en,alias,skos:altLabel
+Q126125,MF,Saint Martin (France),en,alias,skos:altLabel
+Q126125,MF,Saint Martin (French part),en,alias,skos:altLabel
+Q126125,MF,Saint-Martin,en,label,rdfs:label
+Q126125,MF,St Martin,en,alias,skos:altLabel
+Q126125,MF,St. Martin,en,alias,skos:altLabel
+Q126125,MF,St. Martin (French part),en,alias,skos:altLabel
+Q126125,MF,mf,en,alias,skos:altLabel
+Q129003,TF,أراض فرنسية جنوبية وأنتارتيكية,ar,label,rdfs:label
+Q129003,TF,أراضي فرنسية جنوبية وأنتارتيكية,ar,alias,skos:altLabel
+Q129003,TF,أراضي فرنسية جنوبية وانتارتيكية,ar,alias,skos:altLabel
+Q129003,TF,French Southern Territories,en,alias,skos:altLabel
+Q129003,TF,French Southern and Antarctic Lands,en,label,rdfs:label
+Q129003,TF,tf,en,alias,skos:altLabel
+Q131198,HM,جزيرة هيرد وجزر ماكدونالد,ar,label,rdfs:label
+Q131198,HM,HIMI,en,alias,skos:altLabel
+Q131198,HM,Heard Island and McDonald Islands,en,label,rdfs:label
+Q131198,HM,Heard and Macdonald Islands,en,alias,skos:altLabel
+Q131198,HM,Heard and McDonald Islands,en,alias,skos:altLabel
+Q131198,HM,Territory of Heard Island and McDonald Islands,en,alias,skos:altLabel
+Q131198,HM,hm,en,alias,skos:altLabel
+Q13353,MS,مونتسرات,ar,alias,skos:altLabel
+Q13353,MS,مونتسيرات,ar,label,rdfs:label
+Q13353,MS,Island of Montserrat,en,alias,skos:altLabel
+Q13353,MS,MS,en,alias,skos:altLabel
+Q13353,MS,MSR,en,alias,skos:altLabel
+Q13353,MS,Montserrat,en,label,rdfs:label
+Q13353,MS,ms,en,alias,skos:altLabel
+Q133888,,جزر أشمور وكارتيير,ar,label,rdfs:label
+Q133888,,Ashmore and Cartier Islands,en,label,rdfs:label
+Q1410,GI,جبرلتار,ar,alias,skos:altLabel
+Q1410,GI,جبل طارق,ar,label,rdfs:label
+Q1410,GI,جبل طارق (منطقة حكم ذاتي),ar,alias,skos:altLabel
+Q1410,GI,جبلرتار,ar,alias,skos:altLabel
+Q1410,GI,جيبرالتار,ar,alias,skos:altLabel
+Q1410,GI,محمية جبل طارق,ar,alias,skos:altLabel
+Q1410,GI,مستعمرة جبل طارق,ar,alias,skos:altLabel
+Q1410,GI,Gib,en,alias,skos:altLabel
+Q1410,GI,Gibraltar,en,label,rdfs:label
+Q1410,GI,gi,en,alias,skos:altLabel
+Q142,,فرنسا,ar,label,rdfs:label
+Q142,,France,en,label,rdfs:label
+Q142,,French Republic,en,alias,skos:altLabel
+Q145,GB,المملكة المتحدة,ar,label,rdfs:label
+Q145,GB,المملكة المتحدة في بريطانيا وشمال إيرلندا,ar,alias,skos:altLabel
+Q145,GB,المملكة المتحدة لبريطانيا العظمى وأيرلندا الشمالية,ar,alias,skos:altLabel
+Q145,GB,بريطانيا العظمى,ar,alias,skos:altLabel
+Q145,GB,G B,en,alias,skos:altLabel
+Q145,GB,Great Britain,en,alias,skos:altLabel
+Q145,GB,Great Britain and Northern Ireland,en,alias,skos:altLabel
+Q145,GB,U K,en,alias,skos:altLabel
+Q145,GB,United Kingdom,en,label,rdfs:label
+Q145,GB,United Kingdom of Great Britain and Northern Ireland,en,alias,skos:altLabel
+Q145,GB,the UK,en,alias,skos:altLabel
+Q145,GB,the United Kingdom,en,alias,skos:altLabel
+Q145,GB,the United Kingdom of Great Britain and Northern Ireland,en,alias,skos:altLabel
+Q14773,MO,الماكاو,ar,alias,skos:altLabel
+Q14773,MO,قائمة جزر ماكاو,ar,alias,skos:altLabel
+Q14773,MO,ماكاو,ar,label,rdfs:label
+Q14773,MO,ماكاو، الصين,ar,alias,skos:altLabel
+Q14773,MO,مكاو,ar,alias,skos:altLabel
+Q14773,MO,منطقة ماكاو الإدارية الخاصة,ar,alias,skos:altLabel
+Q14773,MO,Aomen,en,alias,skos:altLabel
+Q14773,MO,Macao S.A.R.,en,alias,skos:altLabel
+Q14773,MO,Macao SAR,en,alias,skos:altLabel
+Q14773,MO,"Macao SAR, China",en,alias,skos:altLabel
+Q14773,MO,Macao Special Administrative Region,en,alias,skos:altLabel
+Q14773,MO,Macao Special Administrative Region of the People's Republic of China,en,alias,skos:altLabel
+Q14773,MO,Macau,en,label,rdfs:label
+Q14773,MO,Macau SAR,en,alias,skos:altLabel
+Q14773,MO,"Macau SAR, China",en,alias,skos:altLabel
+Q14773,MO,Macau Special Administrative Region,en,alias,skos:altLabel
+Q14773,MO,Macau Special Administrative Region of the People's Republic of China,en,alias,skos:altLabel
+Q148,CN,الصين,ar,label,rdfs:label
+Q148,CN,الصين الشعبية,ar,alias,skos:altLabel
+Q148,CN,جمهورية الصين الشعبية,ar,alias,skos:altLabel
+Q148,CN,China PR,en,alias,skos:altLabel
+Q148,CN,Communist China,en,alias,skos:altLabel
+Q148,CN,P.R.C.,en,alias,skos:altLabel
+Q148,CN,PR China,en,alias,skos:altLabel
+Q148,CN,People's Republic of China,en,label,rdfs:label
+Q148,CN,Red China,en,alias,skos:altLabel
+Q148,CN,The PRC,en,alias,skos:altLabel
+Q148,CN,cn,en,alias,skos:altLabel
+Q148,CN,the People's Republic of China,en,alias,skos:altLabel
+Q155,BR,البرازيل,ar,label,rdfs:label
+Q155,BR,البرازيلي,ar,alias,skos:altLabel
+Q155,BR,البرازیل,ar,alias,skos:altLabel
+Q155,BR,الجمهورية البرازيلية,ar,alias,skos:altLabel
+Q155,BR,برازيل,ar,alias,skos:altLabel
+Q155,BR,برازيلي,ar,alias,skos:altLabel
+Q155,BR,برازيلية,ar,alias,skos:altLabel
+Q155,BR,برازیل,ar,alias,skos:altLabel
+Q155,BR,جمهورية البرازيل الإتحادية,ar,alias,skos:altLabel
+Q155,BR,جمهورية البرازيل الاتحادية,ar,alias,skos:altLabel
+Q155,BR,شرق أمريكا الجنوبية,ar,alias,skos:altLabel
+Q155,BR,Brazil,en,label,rdfs:label
+Q155,BR,Federative Republic of Brazil,en,alias,skos:altLabel
+Q159,RU,الاتحاد الروسي,ar,alias,skos:altLabel
+Q159,RU,روسيا,ar,label,rdfs:label
+Q159,RU,روسيا الاتحادية,ar,alias,skos:altLabel
+Q159,RU,Russia,en,label,rdfs:label
+Q159,RU,Russian Federation,en,alias,skos:altLabel
+Q16,CA,كندا,ar,label,rdfs:label
+Q16,CA,CA,en,alias,skos:altLabel
+Q16,CA,CAN,en,alias,skos:altLabel
+Q16,CA,Canada,en,label,rdfs:label
+Q161258,,جزر كلبرتون,ar,alias,skos:altLabel
+Q161258,,جزر كليبرتون,ar,alias,skos:altLabel
+Q161258,,جزيرة كلبرتون,ar,alias,skos:altLabel
+Q161258,,جزيرة كليبرتون,ar,label,rdfs:label
+Q161258,,كلبرتون,ar,alias,skos:altLabel
+Q161258,,Clipperton Island,en,label,rdfs:label
+Q161258,,La Passion–Clipperton,en,alias,skos:altLabel
+Q161258,,Passion Island,en,alias,skos:altLabel
+Q165413,,بايكونور,ar,label,rdfs:label
+Q165413,,بيكونور,ar,alias,skos:altLabel
+Q165413,,Baikonur,en,label,rdfs:label
+Q16635,GU,غوام,ar,label,rdfs:label
+Q16635,GU,GU,en,alias,skos:altLabel
+Q16635,GU,GUM,en,alias,skos:altLabel
+Q16635,GU,Guahan,en,alias,skos:altLabel
+Q16635,GU,Guam,en,label,rdfs:label
+Q16635,GU,Guam (USA),en,alias,skos:altLabel
+Q16635,GU,Guåhan,en,alias,skos:altLabel
+Q16635,GU,Guåhån,en,alias,skos:altLabel
+Q16635,GU,ISO 3166-1:GU,en,alias,skos:altLabel
+Q16635,GU,Island of Guam,en,alias,skos:altLabel
+Q16635,GU,Territory of Guam,en,alias,skos:altLabel
+Q16635,GU,US-GU,en,alias,skos:altLabel
+Q16641,AS,ساموا الأمريكية,ar,label,rdfs:label
+Q16641,AS,ساموا الأمريكيه,ar,alias,skos:altLabel
+Q16641,AS,ساموا الامريكية,ar,alias,skos:altLabel
+Q16641,AS,American Samoa,en,label,rdfs:label
+Q16641,AS,American Sāmoa,en,alias,skos:altLabel
+Q16641,AS,East Samoa,en,alias,skos:altLabel
+Q16641,AS,ISO 3166-1:AS,en,alias,skos:altLabel
+Q16641,AS,Samoa (American),en,alias,skos:altLabel
+Q16641,AS,"Samoa, United States",en,alias,skos:altLabel
+Q16641,AS,Territory of American Samoa,en,alias,skos:altLabel
+Q16641,AS,U.S. Samoa,en,alias,skos:altLabel
+Q16641,AS,US Samoa,en,alias,skos:altLabel
+Q16641,AS,as,en,alias,skos:altLabel
+Q16644,MP,جزر ماريانا الشمالية,ar,label,rdfs:label
+Q16644,MP,ماريانا الشمالية,ar,alias,skos:altLabel
+Q16644,MP,CNMI,en,alias,skos:altLabel
+Q16644,MP,Commonwealth of the Northern Maria Islands,en,alias,skos:altLabel
+Q16644,MP,Commonwealth of the Northern Mariana Islands,en,alias,skos:altLabel
+Q16644,MP,ISO 3166-1:MP,en,alias,skos:altLabel
+Q16644,MP,MP,en,alias,skos:altLabel
+Q16644,MP,NMI,en,alias,skos:altLabel
+Q16644,MP,Northern Mariana Islands,en,label,rdfs:label
+Q16644,MP,Northern Marianas,en,alias,skos:altLabel
+Q16644,MP,US-MP,en,alias,skos:altLabel
+Q16644,MP,mp,en,alias,skos:altLabel
+Q16644,MP,nmi,en,alias,skos:altLabel
+Q16644,MP,the Northern Mariana Islands,en,alias,skos:altLabel
+Q16645,UM,جزر الولايات المتحدة البعيدة الصغيرة,ar,alias,skos:altLabel
+Q16645,UM,جزر الولايات المتحدة الصغيرة النائية,ar,label,rdfs:label
+Q16645,UM,جزر الولايات المتحدة النائية الصغيرة,ar,alias,skos:altLabel
+Q16645,UM,U.S. Minor Outlying Islands,en,alias,skos:altLabel
+Q16645,UM,US Minor Outlying Islands,en,alias,skos:altLabel
+Q16645,UM,US-UM,en,alias,skos:altLabel
+Q16645,UM,USMOI,en,alias,skos:altLabel
+Q16645,UM,United States Minor Outlying Islands,en,label,rdfs:label
+Q16645,UM,um,en,alias,skos:altLabel
+Q17,JP,اليابان,ar,label,rdfs:label
+Q17,JP,دولة اليابان,ar,alias,skos:altLabel
+Q17,JP,يابان,ar,alias,skos:altLabel
+Q17,JP,Iapan,en,alias,skos:altLabel
+Q17,JP,Iapon,en,alias,skos:altLabel
+Q17,JP,Japan,en,label,rdfs:label
+Q17,JP,Land of Rising Sun,en,alias,skos:altLabel
+Q17,JP,Land of the Rising Sun,en,alias,skos:altLabel
+Q17,JP,Nihon-koku,en,alias,skos:altLabel
+Q17,JP,Nippon-koku,en,alias,skos:altLabel
+Q17,JP,State of Japan,en,alias,skos:altLabel
+Q172216,,جزر بحر المرجان,ar,label,rdfs:label
+Q172216,,Coral Sea Islands,en,label,rdfs:label
+Q18221,TC,جزر توركس وكيكوس,ar,label,rdfs:label
+Q18221,TC,TCI,en,alias,skos:altLabel
+Q18221,TC,Turks & Caicos,en,alias,skos:altLabel
+Q18221,TC,Turks and Caicos,en,alias,skos:altLabel
+Q18221,TC,Turks and Caicos Islands,en,label,rdfs:label
+Q18221,TC,tc,en,alias,skos:altLabel
+Q183,DE,ألمانيا,ar,label,rdfs:label
+Q183,DE,جمهورية ألمانيا اﻻتحادية,ar,alias,skos:altLabel
+Q183,DE,BRD,en,alias,skos:altLabel
+Q183,DE,DE,en,alias,skos:altLabel
+Q183,DE,DEU,en,alias,skos:altLabel
+Q183,DE,FRG,en,alias,skos:altLabel
+Q183,DE,Federal Republic of Germany,en,alias,skos:altLabel
+Q183,DE,Germany,en,label,rdfs:label
+Q184,BY,بيلاروس,ar,label,rdfs:label
+Q184,BY,بيلاروسيا,ar,alias,skos:altLabel
+Q184,BY,بيلوروسية,ar,alias,skos:altLabel
+Q184,BY,روسيا البيضاء,ar,alias,skos:altLabel
+Q184,BY,Belarus,en,label,rdfs:label
+Q184,BY,Belorussia,en,alias,skos:altLabel
+Q184,BY,Bielaruś,en,alias,skos:altLabel
+Q184,BY,Bielorussia,en,alias,skos:altLabel
+Q184,BY,Byeloruss,en,alias,skos:altLabel
+Q184,BY,Byelorussia,en,alias,skos:altLabel
+Q184,BY,Republic of Belarus,en,alias,skos:altLabel
+Q184,BY,Respublika Belarus',en,alias,skos:altLabel
+Q184,BY,Respublika Bielaruś,en,alias,skos:altLabel
+Q184,BY,White Russia,en,alias,skos:altLabel
+Q184,BY,White Ruthenia,en,alias,skos:altLabel
+Q184,BY,by,en,alias,skos:altLabel
+Q189,IS,آيسلندا,ar,label,rdfs:label
+Q189,IS,جمهورية آيسلندا,ar,alias,skos:altLabel
+Q189,IS,Iceland,en,label,rdfs:label
+Q189,IS,Icelandic republic,en,alias,skos:altLabel
+Q189,IS,Isl.,en,alias,skos:altLabel
+Q189,IS,Republic of Iceland,en,alias,skos:altLabel
+Q189,IS,Ysland,en,alias,skos:altLabel
+Q191,EE,إستونيا,ar,label,rdfs:label
+Q191,EE,استونيا,ar,alias,skos:altLabel
+Q191,EE,جمهورية إستونيا,ar,alias,skos:altLabel
+Q191,EE,Eesti Vabariik,en,alias,skos:altLabel
+Q191,EE,Estland,en,alias,skos:altLabel
+Q191,EE,Estonia,en,label,rdfs:label
+Q191,EE,Republic of Estonia,en,alias,skos:altLabel
+Q191,EE,ee,en,alias,skos:altLabel
+Q20,,النرويج,ar,label,rdfs:label
+Q20,,مملكة النرويج,ar,alias,skos:altLabel
+Q20,,Kingdom of Norway,en,alias,skos:altLabel
+Q20,,Norway,en,label,rdfs:label
+Q2093778,,Brazilian Island,en,label,rdfs:label
+Q2093778,,Isla Brasilera,en,alias,skos:altLabel
+Q2093778,,Isla Brasileña,en,alias,skos:altLabel
+Q211,LV,بلتفيا,ar,alias,skos:altLabel
+Q211,LV,جيلغافا,ar,alias,skos:altLabel
+Q211,LV,داوغافبلس,ar,alias,skos:altLabel
+Q211,LV,داوغالفس,ar,alias,skos:altLabel
+Q211,LV,لاتفي,ar,alias,skos:altLabel
+Q211,LV,لاتفيا,ar,label,rdfs:label
+Q211,LV,لاتيفيا,ar,alias,skos:altLabel
+Q211,LV,لتفيا,ar,alias,skos:altLabel
+Q211,LV,Latveja,en,alias,skos:altLabel
+Q211,LV,Latvejas Republika,en,alias,skos:altLabel
+Q211,LV,Latvia,en,label,rdfs:label
+Q211,LV,Latvian Republic,en,alias,skos:altLabel
+Q211,LV,Latvija,en,alias,skos:altLabel
+Q211,LV,Latvijas Republika,en,alias,skos:altLabel
+Q211,LV,Leţmо̄,en,alias,skos:altLabel
+Q211,LV,Leţmо̄ Vabāmо̄,en,alias,skos:altLabel
+Q211,LV,Republic of Latvia,en,alias,skos:altLabel
+Q211,LV,lv,en,alias,skos:altLabel
+Q212,UA,أوكرانيا,ar,label,rdfs:label
+Q212,UA,Ukr.,en,alias,skos:altLabel
+Q212,UA,Ukraine,en,label,rdfs:label
+Q212,UA,Ukrainia,en,alias,skos:altLabel
+Q212,UA,Ukraïna,en,alias,skos:altLabel
+Q21203,AW,أروبا,ar,label,rdfs:label
+Q21203,AW,Aruba,en,label,rdfs:label
+Q21203,AW,Country of Aruba,en,alias,skos:altLabel
+Q21203,AW,Island of Aruba,en,alias,skos:altLabel
+Q21203,AW,aw,en,alias,skos:altLabel
+Q213,CZ,التشيكي,ar,alias,skos:altLabel
+Q213,CZ,الجمهورية التشيكية,ar,alias,skos:altLabel
+Q213,CZ,الجمهوريةالتشيكية,ar,alias,skos:altLabel
+Q213,CZ,تشيكي,ar,alias,skos:altLabel
+Q213,CZ,تشيكيا,ar,alias,skos:altLabel
+Q213,CZ,جمهورية التشيك,ar,label,rdfs:label
+Q213,CZ,جمهورية تشيكيا,ar,alias,skos:altLabel
+Q213,CZ,جمهورية تشيكية,ar,alias,skos:altLabel
+Q213,CZ,Czech Republic,en,label,rdfs:label
+Q213,CZ,Czechia,en,alias,skos:altLabel
+Q213,CZ,the Czech Republic,en,alias,skos:altLabel
+Q214,SK,جمهورية سلوفاكيا,ar,alias,skos:altLabel
+Q214,SK,سلوفاكيا,ar,label,rdfs:label
+Q214,SK,SK,en,alias,skos:altLabel
+Q214,SK,SVK,en,alias,skos:altLabel
+Q214,SK,Slovak Republic,en,alias,skos:altLabel
+Q214,SK,Slovakia,en,label,rdfs:label
+Q215,SI,جمهورية سلوفينيا,ar,alias,skos:altLabel
+Q215,SI,سلوفينيا,ar,label,rdfs:label
+Q215,SI,Republic of Slovenia,en,alias,skos:altLabel
+Q215,SI,Slovenia,en,label,rdfs:label
+Q215,SI,Slovenija,en,alias,skos:altLabel
+Q215,SI,si,en,alias,skos:altLabel
+Q215,SI,slo,en,alias,skos:altLabel
+Q215,SI,svn,en,alias,skos:altLabel
+Q217,MD,إمارة البُغدان,ar,alias,skos:altLabel
+Q217,MD,البغدان,ar,alias,skos:altLabel
+Q217,MD,جمهورية مولدوفا,ar,alias,skos:altLabel
+Q217,MD,جمهورية مولدوڤا,ar,alias,skos:altLabel
+Q217,MD,مولدافيا,ar,alias,skos:altLabel
+Q217,MD,مولدوفا,ar,label,rdfs:label
+Q217,MD,Moldavia,en,alias,skos:altLabel
+Q217,MD,Moldova,en,label,rdfs:label
+Q217,MD,Republic of Moldova,en,alias,skos:altLabel
+Q217,MD,Republica Moldova,en,alias,skos:altLabel
+Q218,RO,جمهورية رومانيا,ar,alias,skos:altLabel
+Q218,RO,رومانيا,ar,label,rdfs:label
+Q218,RO,رومانية,ar,alias,skos:altLabel
+Q218,RO,Romania,en,label,rdfs:label
+Q218,RO,Roumania,en,alias,skos:altLabel
+Q218,RO,Rumania,en,alias,skos:altLabel
+Q219,BG,البلغاري,ar,alias,skos:altLabel
+Q219,BG,بلغاري,ar,alias,skos:altLabel
+Q219,BG,بلغاريا,ar,label,rdfs:label
+Q219,BG,بلغارية,ar,alias,skos:altLabel
+Q219,BG,بلقاريا,ar,alias,skos:altLabel
+Q219,BG,Bulgaria,en,label,rdfs:label
+Q219,BG,Bulgarian Republic,en,alias,skos:altLabel
+Q219,BG,Republic of Bulgaria,en,alias,skos:altLabel
+Q221,MK,جمهورية شمال مقدونيا,ar,alias,skos:altLabel
+Q221,MK,جمهورية مقدونيا,ar,alias,skos:altLabel
+Q221,MK,جمهورية مقدونيا الشمالية,ar,alias,skos:altLabel
+Q221,MK,جمهورية مقدونيا اليوغوسلافية السابقة,ar,alias,skos:altLabel
+Q221,MK,شمال مقدونيا,ar,alias,skos:altLabel
+Q221,MK,مقدونيا,ar,alias,skos:altLabel
+Q221,MK,مقدونيا الشمالية,ar,label,rdfs:label
+Q221,MK,FYR Macedonia,en,alias,skos:altLabel
+Q221,MK,Former Yugoslav Republic of Macedonia,en,alias,skos:altLabel
+Q221,MK,MK,en,alias,skos:altLabel
+Q221,MK,MKD,en,alias,skos:altLabel
+Q221,MK,Macedonia,en,alias,skos:altLabel
+Q221,MK,Makedonia,en,alias,skos:altLabel
+Q221,MK,NM,en,alias,skos:altLabel
+Q221,MK,North Macedonia,en,label,rdfs:label
+Q221,MK,Republic of Macedonia,en,alias,skos:altLabel
+Q221,MK,Republic of North Macedonia,en,alias,skos:altLabel
+Q222,AL,ألبانيا,ar,label,rdfs:label
+Q222,AL,Albania,en,label,rdfs:label
+Q222,AL,People's Republic of Albania,en,alias,skos:altLabel
+Q222,AL,People's Socialist Republic of Albania,en,alias,skos:altLabel
+Q222,AL,Republic of Albania,en,alias,skos:altLabel
+Q222,AL,Republika Popullore Socialiste e Shqiperise,en,alias,skos:altLabel
+Q222,AL,Republika Popullore e Shqiperise,en,alias,skos:altLabel
+Q222,AL,Shqipërisë,en,alias,skos:altLabel
+Q223,GL,جرينلاند,ar,alias,skos:altLabel
+Q223,GL,جرينلند,ar,alias,skos:altLabel
+Q223,GL,غرينلاند,ar,label,rdfs:label
+Q223,GL,GL,en,alias,skos:altLabel
+Q223,GL,GRL,en,alias,skos:altLabel
+Q223,GL,Greenland,en,label,rdfs:label
+Q223,GL,Greenlandia,en,alias,skos:altLabel
+Q223,GL,Groenland,en,alias,skos:altLabel
+Q223,GL,Kalaallit Nunaat,en,alias,skos:altLabel
+Q224,HR,كرواتيا,ar,label,rdfs:label
+Q224,HR,CRO,en,alias,skos:altLabel
+Q224,HR,Croatia,en,label,rdfs:label
+Q224,HR,HR,en,alias,skos:altLabel
+Q224,HR,HRV,en,alias,skos:altLabel
+Q224,HR,RH,en,alias,skos:altLabel
+Q224,HR,Republic of Croatia,en,alias,skos:altLabel
+Q225,BA,البوسنة والهرسك,ar,label,rdfs:label
+Q225,BA,B&H,en,alias,skos:altLabel
+Q225,BA,Bosnia & Herzegovina,en,alias,skos:altLabel
+Q225,BA,Bosnia and Hercegovina,en,alias,skos:altLabel
+Q225,BA,Bosnia and Herzegovina,en,label,rdfs:label
+Q225,BA,Bosnia-Herzegovina,en,alias,skos:altLabel
+Q225,BA,ba,en,alias,skos:altLabel
+Q227,AZ,أذربيجان,ar,label,rdfs:label
+Q227,AZ,جمهورية أذربيجان,ar,alias,skos:altLabel
+Q227,AZ,AZE,en,alias,skos:altLabel
+Q227,AZ,Azerbaijan,en,label,rdfs:label
+Q227,AZ,Republic of Azerbaijan,en,alias,skos:altLabel
+Q228,AD,أندورا,ar,label,rdfs:label
+Q228,AD,Andorra,en,label,rdfs:label
+Q228,AD,Principality of Andorra,en,alias,skos:altLabel
+Q228,AD,Principality of the Valleys of Andorra,en,alias,skos:altLabel
+Q229,CY,قبرص,ar,label,rdfs:label
+Q229,CY,Cyprus,en,label,rdfs:label
+Q229,CY,Greek Administration of Southern Cyprus,en,alias,skos:altLabel
+Q229,CY,Greek Cypriot State,en,alias,skos:altLabel
+Q229,CY,Republic of Cyprus,en,alias,skos:altLabel
+Q230,GE,جمهورية جورجيا,ar,alias,skos:altLabel
+Q230,GE,جورجي,ar,alias,skos:altLabel
+Q230,GE,جورجيا,ar,label,rdfs:label
+Q230,GE,جيورجا,ar,alias,skos:altLabel
+Q230,GE,غرجستان,ar,alias,skos:altLabel
+Q230,GE,كرجستان,ar,alias,skos:altLabel
+Q230,GE,Georgia,en,label,rdfs:label
+Q230,GE,Georgia (Sakartvelo),en,alias,skos:altLabel
+Q230,GE,Georgia (country),en,alias,skos:altLabel
+Q230,GE,Republic of Georgia,en,alias,skos:altLabel
+Q230,GE,Sakartvelo,en,alias,skos:altLabel
+Q232,KZ,قازاقستان,ar,alias,skos:altLabel
+Q232,KZ,كازاخستان,ar,label,rdfs:label
+Q232,KZ,Kazakhstan,en,label,rdfs:label
+Q232,KZ,Qazaqstan,en,alias,skos:altLabel
+Q232,KZ,Republic of Kazakhstan,en,alias,skos:altLabel
+Q232,KZ,Republic of Qazaqstan,en,alias,skos:altLabel
+Q232,KZ,kz,en,alias,skos:altLabel
+Q233,MT,جمهورية مالطا,ar,alias,skos:altLabel
+Q233,MT,مالطا,ar,label,rdfs:label
+Q233,MT,Malta,en,label,rdfs:label
+Q233,MT,Republic of Malta,en,alias,skos:altLabel
+Q235,MC,إمارة موناكو,ar,alias,skos:altLabel
+Q235,MC,موناكو,ar,label,rdfs:label
+Q235,MC,Fort-Hercule,en,alias,skos:altLabel
+Q235,MC,Monaco,en,label,rdfs:label
+Q235,MC,Mùnegu,en,alias,skos:altLabel
+Q235,MC,Principality and Diocese of Monaco,en,alias,skos:altLabel
+Q235,MC,Principality of Monaco,en,alias,skos:altLabel
+Q235,MC,Principato di Monaco,en,alias,skos:altLabel
+Q235,MC,Principatu de Mu̍negu,en,alias,skos:altLabel
+Q235,MC,Principauté de Monaco,en,alias,skos:altLabel
+Q235,MC,Prinçipatu de Mùnegu,en,alias,skos:altLabel
+Q235,MC,mc,en,alias,skos:altLabel
+Q236,ME,الجبل الأسود,ar,label,rdfs:label
+Q236,ME,مونتينيغرو,ar,alias,skos:altLabel
+Q236,ME,Montenegro,en,label,rdfs:label
+Q236,ME,Republic of Montenegro,en,alias,skos:altLabel
+Q23635,BM,برمودا,ar,label,rdfs:label
+Q23635,BM,Atlantic/Bermuda,en,alias,skos:altLabel
+Q23635,BM,Barmuda,en,alias,skos:altLabel
+Q23635,BM,Barmuda I.,en,alias,skos:altLabel
+Q23635,BM,Barmuda Isl.,en,alias,skos:altLabel
+Q23635,BM,Barmuda Islands,en,alias,skos:altLabel
+Q23635,BM,Barmudas,en,alias,skos:altLabel
+Q23635,BM,Bermoothes,en,alias,skos:altLabel
+Q23635,BM,Bermuda,en,label,rdfs:label
+Q23635,BM,Bermuda Islands,en,alias,skos:altLabel
+Q23635,BM,Bermudian Islands,en,alias,skos:altLabel
+Q23635,BM,Colony of Bermuda,en,alias,skos:altLabel
+Q23635,BM,Devil's Isles,en,alias,skos:altLabel
+Q23635,BM,Isle of Devils,en,alias,skos:altLabel
+Q23635,BM,Somers Islands,en,alias,skos:altLabel
+Q23635,BM,Somers Isles,en,alias,skos:altLabel
+Q23635,BM,Summer's Isles,en,alias,skos:altLabel
+Q23635,BM,Summers' Isles,en,alias,skos:altLabel
+Q23635,BM,Territory of Bermuda,en,alias,skos:altLabel
+Q23635,BM,The Somers Isles,en,alias,skos:altLabel
+Q23635,BM,Virgineola,en,alias,skos:altLabel
+Q23635,BM,bm,en,alias,skos:altLabel
+Q23681,,Northern Cyprus,ar,alias,skos:altLabel
+Q23681,,جمهورية شمال قبرص,ar,alias,skos:altLabel
+Q23681,,جمهورية شمال قبرص التركية,ar,alias,skos:altLabel
+Q23681,,جمهورية شمال قبرص الغير معترف بها دوليا,ar,alias,skos:altLabel
+Q23681,,جهمورية شمال قبرص التركية,ar,alias,skos:altLabel
+Q23681,,شمال قبرص,ar,alias,skos:altLabel
+Q23681,,شمال قبرص التركية,ar,alias,skos:altLabel
+Q23681,,قبرص التركية,ar,alias,skos:altLabel
+Q23681,,قبرص الشمالية,ar,label,rdfs:label
+Q23681,,قبرص الشماليه,ar,alias,skos:altLabel
+Q23681,,NCY,en,alias,skos:altLabel
+Q23681,,North Cyprus,en,alias,skos:altLabel
+Q23681,,North Cyprus Turkish Republic,en,alias,skos:altLabel
+Q23681,,Northern Cyprus,en,label,rdfs:label
+Q23681,,Republic of Northern Cyprus,en,alias,skos:altLabel
+Q23681,,The Turkish Republic of Northern Cyprus,en,alias,skos:altLabel
+Q23681,,Turkish Cypriot constituent state,en,alias,skos:altLabel
+Q23681,,Turkish Cypriot state,en,alias,skos:altLabel
+Q23681,,Turkish Cyprus,en,alias,skos:altLabel
+Q23681,,Turkish Federative State of North Cyprus,en,alias,skos:altLabel
+Q23681,,Turkish Republic of Cyprus,en,alias,skos:altLabel
+Q23681,,Turkish Republic of North Cyprus,en,alias,skos:altLabel
+Q23681,,Turkish occupied Cyprus,en,alias,skos:altLabel
+Q237,VA,الفاتيكان,ar,label,rdfs:label
+Q237,VA,دولة مدينة الفاتيكان,ar,alias,skos:altLabel
+Q237,VA,Città del Vaticano,en,alias,skos:altLabel
+Q237,VA,Holy See,en,alias,skos:altLabel
+Q237,VA,Papal State,en,alias,skos:altLabel
+Q237,VA,State of Vatican City,en,alias,skos:altLabel
+Q237,VA,Stato della Città del Vaticano,en,alias,skos:altLabel
+Q237,VA,Status Civitatis Vaticanae,en,alias,skos:altLabel
+Q237,VA,The Vatican,en,alias,skos:altLabel
+Q237,VA,Vatican,en,alias,skos:altLabel
+Q237,VA,Vatican City,en,label,rdfs:label
+Q237,VA,Vatican City State,en,alias,skos:altLabel
+Q23792,PS,أرض إسرائيل,ar,alias,skos:altLabel
+Q23792,PS,أرض السلام,ar,alias,skos:altLabel
+Q23792,PS,أرض فلسطين,ar,alias,skos:altLabel
+Q23792,PS,أرض فلسطين التاريخية,ar,alias,skos:altLabel
+Q23792,PS,أرض كنعان,ar,alias,skos:altLabel
+Q23792,PS,الأراضي المقدسة,ar,alias,skos:altLabel
+Q23792,PS,الأرض المقدسة,ar,alias,skos:altLabel
+Q23792,PS,الفلسطيني,ar,alias,skos:altLabel
+Q23792,PS,فلسطين,ar,alias,skos:altLabel
+Q23792,PS,فلسطين التاريخية,ar,alias,skos:altLabel
+Q23792,PS,فلسطينية,ar,alias,skos:altLabel
+Q23792,PS,منطقة فلسطين,ar,alias,skos:altLabel
+Q23792,PS,موقع فلسطين,ar,alias,skos:altLabel
+Q23792,PS,Balesitan,en,alias,skos:altLabel
+Q23792,PS,Canaan,en,alias,skos:altLabel
+Q23792,PS,Falasteen,en,alias,skos:altLabel
+Q23792,PS,Felesteen,en,alias,skos:altLabel
+Q23792,PS,Filasṭīn,en,alias,skos:altLabel
+Q23792,PS,Filistin,en,alias,skos:altLabel
+Q23792,PS,Historic Palestine,en,alias,skos:altLabel
+Q23792,PS,Holy Land,en,alias,skos:altLabel
+Q23792,PS,Land of Israel,en,alias,skos:altLabel
+Q23792,PS,Land of Palestine,en,alias,skos:altLabel
+Q23792,PS,Palastine,en,alias,skos:altLabel
+Q23792,PS,Palestina,en,alias,skos:altLabel
+Q23792,PS,Palestine,en,label,rdfs:label
+Q23792,PS,Palestine region,en,alias,skos:altLabel
+Q23792,PS,Palæstina,en,alias,skos:altLabel
+Q23792,PS,Promised Land,en,alias,skos:altLabel
+Q23792,PS,Region of Palestine,en,alias,skos:altLabel
+Q23792,PS,Western Palestine,en,alias,skos:altLabel
+Q238,SM,جمهورية سان مارينو,ar,alias,skos:altLabel
+Q238,SM,جمهورية سان مارينو الأكثر صفاء,ar,alias,skos:altLabel
+Q238,SM,سان مارينو,ar,label,rdfs:label
+Q238,SM,Most Serene Republic of San Marino,en,alias,skos:altLabel
+Q238,SM,San Marino,en,label,rdfs:label
+Q238,SM,sm,en,alias,skos:altLabel
+Q241,CU,جمهورية كوبا,ar,alias,skos:altLabel
+Q241,CU,كوبا,ar,label,rdfs:label
+Q241,CU,Cuba,en,label,rdfs:label
+Q241,CU,Republic of Cuba,en,alias,skos:altLabel
+Q241,CU,cu,en,alias,skos:altLabel
+Q242,BZ,بليز,ar,label,rdfs:label
+Q242,BZ,Belize,en,label,rdfs:label
+Q242,BZ,bz,en,alias,skos:altLabel
+Q244,BB,البربادوس,ar,alias,skos:altLabel
+Q244,BB,باربادوس,ar,label,rdfs:label
+Q244,BB,باربيدوس,ar,alias,skos:altLabel
+Q244,BB,بربادوس,ar,alias,skos:altLabel
+Q244,BB,بربيدوس,ar,alias,skos:altLabel
+Q244,BB,BAR,en,alias,skos:altLabel
+Q244,BB,Barbadoes,en,alias,skos:altLabel
+Q244,BB,Barbados,en,label,rdfs:label
+Q244,BB,bb,en,alias,skos:altLabel
+Q252,ID,إندونيسيا,ar,label,rdfs:label
+Q252,ID,جمهورية إندونيسيا,ar,alias,skos:altLabel
+Q252,ID,Indonesia,en,label,rdfs:label
+Q252,ID,Republic of Indonesia,en,alias,skos:altLabel
+Q252,ID,id,en,alias,skos:altLabel
+Q25228,AI,أنغويلا,ar,label,rdfs:label
+Q25228,AI,انجويلا,ar,alias,skos:altLabel
+Q25228,AI,AIA,en,alias,skos:altLabel
+Q25228,AI,Anguilla,en,label,rdfs:label
+Q25228,AI,Malliouhana,en,alias,skos:altLabel
+Q25228,AI,ai,en,alias,skos:altLabel
+Q25230,GG,بيليويك غويرنسي,ar,alias,skos:altLabel
+Q25230,GG,جزيرة جرنزي,ar,alias,skos:altLabel
+Q25230,GG,جزيرة جيرنزي,ar,alias,skos:altLabel
+Q25230,GG,جزيرة غيرنزي,ar,alias,skos:altLabel
+Q25230,GG,غيرنزي,ar,label,rdfs:label
+Q25230,GG,غيرنسى,ar,alias,skos:altLabel
+Q25230,GG,Bailliage de Guernesey,en,alias,skos:altLabel
+Q25230,GG,Bailliage dé Guernési,en,alias,skos:altLabel
+Q25230,GG,GB-GSY,en,alias,skos:altLabel
+Q25230,GG,GBG,en,alias,skos:altLabel
+Q25230,GG,Giernési,en,alias,skos:altLabel
+Q25230,GG,Great Britain Guernsey,en,alias,skos:altLabel
+Q25230,GG,Guernsey,en,label,rdfs:label
+Q25230,GG,Lisia,en,alias,skos:altLabel
+Q25230,GG,XA-GG,en,alias,skos:altLabel
+Q25230,GG,gg,en,alias,skos:altLabel
+Q25279,CW,جزر كوراكاو,ar,alias,skos:altLabel
+Q25279,CW,كوراساو,ar,label,rdfs:label
+Q25279,CW,Country of Curaçao,en,alias,skos:altLabel
+Q25279,CW,Curacau,en,alias,skos:altLabel
+Q25279,CW,Curazao,en,alias,skos:altLabel
+Q25279,CW,Curaçao,en,label,rdfs:label
+Q25279,CW,Curaçoa,en,alias,skos:altLabel
+Q25279,CW,Curaςao,en,alias,skos:altLabel
+Q25279,CW,Curocao,en,alias,skos:altLabel
+Q25279,CW,ISO 3166-1:CW,en,alias,skos:altLabel
+Q25279,CW,Island Territory of Curaçao,en,alias,skos:altLabel
+Q25305,VG,الجزر العذراء البريطانيه,ar,alias,skos:altLabel
+Q25305,VG,جزر العذراء البريطانية,ar,alias,skos:altLabel
+Q25305,VG,جزر عذراء بريطانية,ar,label,rdfs:label
+Q25305,VG,B.V.I.,en,alias,skos:altLabel
+Q25305,VG,British Virgin Islands,en,label,rdfs:label
+Q25305,VG,IVB,en,alias,skos:altLabel
+Q25305,VG,Virgin Islands of the United Kingdom,en,alias,skos:altLabel
+Q25305,VG,"Virgin Islands, United Kingdom",en,alias,skos:altLabel
+Q25305,VG,vg,en,alias,skos:altLabel
+Q25362,BL,سان بارتيلمي,ar,label,rdfs:label
+Q25362,BL,سانت بارتليمي,ar,alias,skos:altLabel
+Q25362,BL,Collectivite de Saint-Barthelemy,en,alias,skos:altLabel
+Q25362,BL,Collectivity of Saint Barthelemy,en,alias,skos:altLabel
+Q25362,BL,Collectivity of Saint Barthélemy,en,alias,skos:altLabel
+Q25362,BL,Collectivité de Saint-Barthélemy,en,alias,skos:altLabel
+Q25362,BL,Ile Saint-Barthelemy,en,alias,skos:altLabel
+Q25362,BL,Ile Saint-Barthélemy,en,alias,skos:altLabel
+Q25362,BL,Ouanalao,en,alias,skos:altLabel
+Q25362,BL,Saint Barth,en,alias,skos:altLabel
+Q25362,BL,Saint Barths,en,alias,skos:altLabel
+Q25362,BL,Saint Barthélemy,en,label,rdfs:label
+Q25362,BL,Saint Barthélémy,en,alias,skos:altLabel
+Q25362,BL,Saint Barts,en,alias,skos:altLabel
+Q25362,BL,Saint Bartz,en,alias,skos:altLabel
+Q25362,BL,Saint-Barthélémy,en,alias,skos:altLabel
+Q25362,BL,St barthelemy,en,alias,skos:altLabel
+Q25362,BL,St barths,en,alias,skos:altLabel
+Q25362,BL,St barts,en,alias,skos:altLabel
+Q25362,BL,St. Barth,en,alias,skos:altLabel
+Q25362,BL,St. Barthelemy,en,alias,skos:altLabel
+Q25362,BL,St. Barths,en,alias,skos:altLabel
+Q25362,BL,St. Barthélemy,en,alias,skos:altLabel
+Q25362,BL,St. Barts,en,alias,skos:altLabel
+Q25362,BL,Île Saint-Barthélemy,en,alias,skos:altLabel
+Q258,ZA,جنوب أفريقيا,ar,alias,skos:altLabel
+Q258,ZA,جنوب إفريقيا,ar,label,rdfs:label
+Q258,ZA,R.S.A.,en,alias,skos:altLabel
+Q258,ZA,RSA,en,alias,skos:altLabel
+Q258,ZA,Republic of South Africa,en,alias,skos:altLabel
+Q258,ZA,SA,en,alias,skos:altLabel
+Q258,ZA,South Africa,en,label,rdfs:label
+Q258,ZA,zaf,en,alias,skos:altLabel
+Q262,DZ,الجزائر,ar,label,rdfs:label
+Q262,DZ,الجزاير,ar,alias,skos:altLabel
+Q262,DZ,الدزاير,ar,alias,skos:altLabel
+Q262,DZ,دزاير,ar,alias,skos:altLabel
+Q262,DZ,Algeria,en,label,rdfs:label
+Q262,DZ,Djazaïr,en,alias,skos:altLabel
+Q262,DZ,Dzayer,en,alias,skos:altLabel
+Q262,DZ,People's Democratic Republic of Algeria,en,alias,skos:altLabel
+Q26273,SX,سينت مارتن,ar,label,rdfs:label
+Q26273,SX,NL-SX,en,alias,skos:altLabel
+Q26273,SX,SX,en,alias,skos:altLabel
+Q26273,SX,Saint Martin,en,alias,skos:altLabel
+Q26273,SX,Saint Martin (Dutch part),en,alias,skos:altLabel
+Q26273,SX,Sint Maarten,en,label,rdfs:label
+Q26273,SX,Sint Maarten (Dutch part),en,alias,skos:altLabel
+Q26273,SX,Sint Martin,en,alias,skos:altLabel
+Q26273,SX,St Martin,en,alias,skos:altLabel
+Q26273,SX,St. Maarten,en,alias,skos:altLabel
+Q26273,SX,sxm,en,alias,skos:altLabel
+Q265,UZ,أوزبكستان,ar,label,rdfs:label
+Q265,UZ,جمهورية أوزبكستان,ar,alias,skos:altLabel
+Q265,UZ,Republic of Uzbekistan,en,alias,skos:altLabel
+Q265,UZ,Uzbekistan,en,label,rdfs:label
+Q26988,CK,جزر كوك,ar,label,rdfs:label
+Q26988,CK,Cook Group,en,alias,skos:altLabel
+Q26988,CK,Cook Islands,en,label,rdfs:label
+Q26988,CK,Hervey Islands,en,alias,skos:altLabel
+Q26988,CK,ck,en,alias,skos:altLabel
+Q27,IE,آرسنال,ar,alias,skos:altLabel
+Q27,IE,آيرلندية,ar,alias,skos:altLabel
+Q27,IE,أيرلندا,ar,label,rdfs:label
+Q27,IE,إيرلنده,ar,alias,skos:altLabel
+Q27,IE,إيرلندي,ar,alias,skos:altLabel
+Q27,IE,الجمهورية الأيرلندية,ar,alias,skos:altLabel
+Q27,IE,ايرلاندية,ar,alias,skos:altLabel
+Q27,IE,جمهورية آيرلندا,ar,alias,skos:altLabel
+Q27,IE,جمهورية أيرلندا,ar,alias,skos:altLabel
+Q27,IE,جمهورية أيرلندة,ar,alias,skos:altLabel
+Q27,IE,جمهورية إيرلندا,ar,alias,skos:altLabel
+Q27,IE,جمهورية إيرلندة,ar,alias,skos:altLabel
+Q27,IE,جمهورية ايرلاندا,ar,alias,skos:altLabel
+Q27,IE,جمهورية ايرلندا,ar,alias,skos:altLabel
+Q27,IE,جمهورية ايرلندة,ar,alias,skos:altLabel
+Q27,IE,جمهوريه أيرلندا,ar,alias,skos:altLabel
+Q27,IE,Ireland,en,label,rdfs:label
+Q27,IE,Irish Republic,en,alias,skos:altLabel
+Q27,IE,Republic of Ireland,en,alias,skos:altLabel
+Q27,IE,Southern Ireland,en,alias,skos:altLabel
+Q28,HU,المجر,ar,label,rdfs:label
+Q28,HU,هنجاريا,ar,alias,skos:altLabel
+Q28,HU,هنغاريا,ar,alias,skos:altLabel
+Q28,HU,Hungary,en,label,rdfs:label
+Q29,ES,إسبانيا,ar,label,rdfs:label
+Q29,ES,اسبانيا,ar,alias,skos:altLabel
+Q29,ES,مملكة إسبانيا,ar,alias,skos:altLabel
+Q29,ES,Kingdom of Spain,en,alias,skos:altLabel
+Q29,ES,Spain,en,label,rdfs:label
+Q298,CL,تشيلي,ar,label,rdfs:label
+Q298,CL,جمهورية تشيلي,ar,alias,skos:altLabel
+Q298,CL,CHI,en,alias,skos:altLabel
+Q298,CL,Chile,en,label,rdfs:label
+Q298,CL,Republic of Chile,en,alias,skos:altLabel
+Q30,US,أمريكا,ar,alias,skos:altLabel
+Q30,US,الولايات المتحدة,ar,label,rdfs:label
+Q30,US,الولايات المتحدة الأمريكية,ar,alias,skos:altLabel
+Q30,US,و م,ar,alias,skos:altLabel
+Q30,US,و م أ,ar,alias,skos:altLabel
+Q30,US,و.م,ar,alias,skos:altLabel
+Q30,US,و.م.أ,ar,alias,skos:altLabel
+Q30,US,'Murica,en,alias,skos:altLabel
+Q30,US,Merica,en,alias,skos:altLabel
+Q30,US,Murica,en,alias,skos:altLabel
+Q30,US,U. S.,en,alias,skos:altLabel
+Q30,US,U. S. A.,en,alias,skos:altLabel
+Q30,US,U.S. of America,en,alias,skos:altLabel
+Q30,US,US of A,en,alias,skos:altLabel
+Q30,US,US of America,en,alias,skos:altLabel
+Q30,US,United States,en,label,rdfs:label
+Q30,US,United States of America,en,alias,skos:altLabel
+Q30,US,the States,en,alias,skos:altLabel
+Q30,US,the U.S.,en,alias,skos:altLabel
+Q30,US,the U.S. of A,en,alias,skos:altLabel
+Q30,US,the U.S. of America,en,alias,skos:altLabel
+Q30,US,the U.S.A.,en,alias,skos:altLabel
+Q30,US,the US,en,alias,skos:altLabel
+Q30,US,the US of A,en,alias,skos:altLabel
+Q30,US,the US of America,en,alias,skos:altLabel
+Q30,US,the USA,en,alias,skos:altLabel
+Q30,US,the United States,en,alias,skos:altLabel
+Q30,US,the United States of America,en,alias,skos:altLabel
+Q30971,PF,بولنيزيا الفرنسية,ar,label,rdfs:label
+Q30971,PF,بولينسيا الفرنسية,ar,alias,skos:altLabel
+Q30971,PF,بولينيزيا الفرنسية,ar,alias,skos:altLabel
+Q30971,PF,بولينيسيا الفرنسية,ar,alias,skos:altLabel
+Q30971,PF,French Establishments in Oceania,en,alias,skos:altLabel
+Q30971,PF,French Oceania,en,alias,skos:altLabel
+Q30971,PF,French Polynesia,en,label,rdfs:label
+Q30971,PF,French Settlements in Oceania,en,alias,skos:altLabel
+Q30971,PF,Territory of French Polynesia,en,alias,skos:altLabel
+Q30971,PF,pf,en,alias,skos:altLabel
+Q31,BE,بلجيكا,ar,label,rdfs:label
+Q31,BE,Belgium,en,label,rdfs:label
+Q31,BE,Kingdom of Belgium,en,alias,skos:altLabel
+Q31057,NF,جزير نورفولك,ar,alias,skos:altLabel
+Q31057,NF,جزيرة نورفلوك,ar,alias,skos:altLabel
+Q31057,NF,جزيرة نورفولك,ar,label,rdfs:label
+Q31057,NF,Norfolk Island,en,label,rdfs:label
+Q31057,NF,"Norfolk Island, Australia",en,alias,skos:altLabel
+Q31057,NF,"Norfolk Island, Other Territories",en,alias,skos:altLabel
+Q31057,NF,"Norfolk Island, Other Territories, Australia",en,alias,skos:altLabel
+Q31057,NF,Territory of Norfolk Island,en,alias,skos:altLabel
+Q32,LU,اللكسمبورج,ar,alias,skos:altLabel
+Q32,LU,اللكسمبورغ,ar,alias,skos:altLabel
+Q32,LU,اللوكسمبورج,ar,alias,skos:altLabel
+Q32,LU,اللوكسمبورغ,ar,alias,skos:altLabel
+Q32,LU,دوقية اللوغسمبورغ,ar,alias,skos:altLabel
+Q32,LU,دوقية لوكسمبورغ,ar,alias,skos:altLabel
+Q32,LU,لكسمبرغ,ar,alias,skos:altLabel
+Q32,LU,لكسمبورج,ar,alias,skos:altLabel
+Q32,LU,لكسمبورغ,ar,alias,skos:altLabel
+Q32,LU,لوكسمبرج,ar,alias,skos:altLabel
+Q32,LU,لوكسمبورج,ar,alias,skos:altLabel
+Q32,LU,لوكسمبورغ,ar,label,rdfs:label
+Q32,LU,لوكسمبورگ,ar,alias,skos:altLabel
+Q32,LU,Grand Duchy of Luxembourg,en,alias,skos:altLabel
+Q32,LU,Luxembourg,en,label,rdfs:label
+Q33,FI,فنلندا,ar,label,rdfs:label
+Q33,FI,Finland,en,label,rdfs:label
+Q33,FI,Finnia,en,alias,skos:altLabel
+Q33,FI,Land of Thousand Lakes,en,alias,skos:altLabel
+Q33,FI,Republic of Finland,en,alias,skos:altLabel
+Q33,FI,Republiken Finland,en,alias,skos:altLabel
+Q33,FI,Suomen tasavalta,en,alias,skos:altLabel
+Q33,FI,fi,en,alias,skos:altLabel
+Q333946,,نهر سياتشن الجليدي,ar,label,rdfs:label
+Q333946,,Siachen Glacier,en,label,rdfs:label
+Q334,SG,سنغافورة,ar,label,rdfs:label
+Q334,SG,Garden City,en,alias,skos:altLabel
+Q334,SG,Lion City,en,alias,skos:altLabel
+Q334,SG,Republic of Singapore,en,alias,skos:altLabel
+Q334,SG,S'pore,en,alias,skos:altLabel
+Q334,SG,Singapore,en,label,rdfs:label
+Q334,SG,Singapore City,en,alias,skos:altLabel
+Q334,SG,sg,en,alias,skos:altLabel
+Q33788,NC,كاليدونيا الجديدة,ar,label,rdfs:label
+Q33788,NC,كاليدونيا الجديده,ar,alias,skos:altLabel
+Q33788,NC,كاناكي,ar,alias,skos:altLabel
+Q33788,NC,نيو كاليدونيا,ar,alias,skos:altLabel
+Q33788,NC,نيوكاليدونيا,ar,alias,skos:altLabel
+Q33788,NC,New Cal,en,alias,skos:altLabel
+Q33788,NC,New Caledonia,en,label,rdfs:label
+Q33788,NC,Territory of New Caledonia and Dependencies,en,alias,skos:altLabel
+Q34,SE,السويد,ar,label,rdfs:label
+Q34,SE,مملكة السويد,ar,alias,skos:altLabel
+Q34,SE,Kingdom of Sweden,en,alias,skos:altLabel
+Q34,SE,Sweden,en,label,rdfs:label
+Q34,SE,Swedish Kingdom,en,alias,skos:altLabel
+Q34,SE,se,en,alias,skos:altLabel
+Q34020,NU,نيوي,ar,alias,skos:altLabel
+Q34020,NU,نيويه,ar,alias,skos:altLabel
+Q34020,NU,نييوي,ar,label,rdfs:label
+Q34020,NU,Niue,en,label,rdfs:label
+Q34020,NU,nu,en,alias,skos:altLabel
+Q34497,SH,سانت هلينا,ar,alias,skos:altLabel
+Q34497,SH,سانت هيلانة,ar,alias,skos:altLabel
+Q34497,SH,سانت هيلين,ar,alias,skos:altLabel
+Q34497,SH,سانت هيلينا,ar,label,rdfs:label
+Q34497,SH,سنت هيلانة,ar,alias,skos:altLabel
+Q34497,SH,سينت هلينا,ar,alias,skos:altLabel
+Q34497,SH,SH-HL,en,alias,skos:altLabel
+Q34497,SH,Saint Helena,en,label,rdfs:label
+Q34617,PM,سان بيير وميكلون,ar,label,rdfs:label
+Q34617,PM,سانت بايري وميكلون,ar,alias,skos:altLabel
+Q34617,PM,FR-PM,en,alias,skos:altLabel
+Q34617,PM,Saint Pierre & Miquelon,en,alias,skos:altLabel
+Q34617,PM,Saint Pierre and Miquelon,en,label,rdfs:label
+Q34617,PM,Saint-Pierre & Miquelon,en,alias,skos:altLabel
+Q34617,PM,Saint-Pierre and Miquelon,en,alias,skos:altLabel
+Q34617,PM,St Pierre & Miquelon,en,alias,skos:altLabel
+Q34617,PM,St Pierre and Miquelon,en,alias,skos:altLabel
+Q34617,PM,St-Pierre & Miquelon,en,alias,skos:altLabel
+Q34617,PM,St. Pierre & Miquelon,en,alias,skos:altLabel
+Q34617,PM,St. Pierre and Miquelon,en,alias,skos:altLabel
+Q34617,PM,St.-Pierre & Miquelon,en,alias,skos:altLabel
+Q34617,PM,St.-Pierre and Miquelon,en,alias,skos:altLabel
+Q34617,PM,Territorial Collectivity of Saint Pierre and Miquelon,en,alias,skos:altLabel
+Q34617,PM,pm,en,alias,skos:altLabel
+Q347,LI,ليختنشتاين,ar,label,rdfs:label
+Q347,LI,FL,en,alias,skos:altLabel
+Q347,LI,Liechtenstein,en,label,rdfs:label
+Q347,LI,Principality of Liechtenstein,en,alias,skos:altLabel
+Q347,LI,li,en,alias,skos:altLabel
+Q34754,,أرض الصومال,ar,label,rdfs:label
+Q34754,,ارض الصومال,ar,alias,skos:altLabel
+Q34754,,جمهور ية أرض الصومال,ar,alias,skos:altLabel
+Q34754,,جمهورية أرض الصومال,ar,alias,skos:altLabel
+Q34754,,جمهورية ارض الصومال,ar,alias,skos:altLabel
+Q34754,,جمهورية صومالي لاند,ar,alias,skos:altLabel
+Q34754,,جمهورية صوماليلاند,ar,alias,skos:altLabel
+Q34754,,صومالي لاند,ar,alias,skos:altLabel
+Q34754,,صوماليلاند,ar,alias,skos:altLabel
+Q34754,,Republic of Somaliland,en,alias,skos:altLabel
+Q34754,,Somaliland,en,label,rdfs:label
+Q35,DK,الدنمارك,ar,label,rdfs:label
+Q35,DK,Danemark,en,alias,skos:altLabel
+Q35,DK,Dania,en,alias,skos:altLabel
+Q35,DK,Danmark,en,alias,skos:altLabel
+Q35,DK,Denmark,en,label,rdfs:label
+Q35,DK,Denmark proper,en,alias,skos:altLabel
+Q35,DK,TAN,en,alias,skos:altLabel
+Q35,DK,dk,en,alias,skos:altLabel
+Q35,DK,metropolitan Denmark,en,alias,skos:altLabel
+Q35086,GS,South Georgia and the South Sandwich Islands,ar,alias,skos:altLabel
+Q35086,GS,جزر الشطائر الجنوبية,ar,alias,skos:altLabel
+Q35086,GS,جنوب جورجيا الجنوبية وجزر ساندويتش الجنوبية,ar,alias,skos:altLabel
+Q35086,GS,جورجيا الجنوبية,ar,alias,skos:altLabel
+Q35086,GS,جورجيا الجنوبية و جزر ساندويتش الجنوبية,ar,alias,skos:altLabel
+Q35086,GS,جورجيا الجنوبية وجزر ساندويتش الجنوبية,ar,label,rdfs:label
+Q35086,GS,SGSSI,en,alias,skos:altLabel
+Q35086,GS,South Georgia,en,alias,skos:altLabel
+Q35086,GS,South Georgia and South Sandwich Islands,en,alias,skos:altLabel
+Q35086,GS,South Georgia and the South Sandwich Islands,en,label,rdfs:label
+Q35086,GS,South Sandwich Islands,en,alias,skos:altLabel
+Q35086,GS,gs,en,alias,skos:altLabel
+Q35555,WF,والس وفوتانا,ar,alias,skos:altLabel
+Q35555,WF,واليس وفوتونا,ar,label,rdfs:label
+Q35555,WF,Wallis & Futuna,en,alias,skos:altLabel
+Q35555,WF,Wallis and Futuna,en,label,rdfs:label
+Q35555,WF,Wallis and Futuna Islands,en,alias,skos:altLabel
+Q35672,PN,بيتكرن,ar,alias,skos:altLabel
+Q35672,PN,جزر بيتكيرن,ar,label,rdfs:label
+Q35672,PN,جزيرة بيتكيرن,ar,alias,skos:altLabel
+Q35672,PN,Occas Island,en,alias,skos:altLabel
+Q35672,PN,Pitcairn Islands,en,label,rdfs:label
+Q35672,PN,"Pitcairn, Henderson, Ducie and Oeno Islands",en,alias,skos:altLabel
+Q35672,PN,pn,en,alias,skos:altLabel
+Q36,PL,الجمهورية البولندية,ar,alias,skos:altLabel
+Q36,PL,بولندا,ar,label,rdfs:label
+Q36,PL,Poland,en,label,rdfs:label
+Q36,PL,Republic of Poland,en,alias,skos:altLabel
+Q37,LT,لتوانيا,ar,label,rdfs:label
+Q37,LT,ليتوانيا,ar,alias,skos:altLabel
+Q37,LT,Lithuania,en,label,rdfs:label
+Q37,LT,Republic of Lithuania,en,alias,skos:altLabel
+Q38,IT,إيطاليا,ar,label,rdfs:label
+Q38,IT,Italian Republic,en,alias,skos:altLabel
+Q38,IT,Italy,en,label,rdfs:label
+Q38,IT,Republic of Italy,en,alias,skos:altLabel
+Q39,CH,الاتحاد السويسري,ar,alias,skos:altLabel
+Q39,CH,سويسرا,ar,label,rdfs:label
+Q39,CH,سويسرة,ar,alias,skos:altLabel
+Q39,CH,سويسره,ar,alias,skos:altLabel
+Q39,CH,Confoederatio Helvetica,en,alias,skos:altLabel
+Q39,CH,Swiss,en,alias,skos:altLabel
+Q39,CH,Swiss Confederation,en,alias,skos:altLabel
+Q39,CH,Switzerland,en,label,rdfs:label
+Q398,BH,البحرين,ar,label,rdfs:label
+Q398,BH,Bahrain,en,label,rdfs:label
+Q398,BH,Bahrein Islands,en,alias,skos:altLabel
+Q398,BH,Dawlat al-Bahrain,en,alias,skos:altLabel
+Q398,BH,ISO 3166-1:BH,en,alias,skos:altLabel
+Q398,BH,Kingdom of Bahrain,en,alias,skos:altLabel
+Q398,BH,Mamlakat al-Baḥrayn,en,alias,skos:altLabel
+Q398,BH,bh,en,alias,skos:altLabel
+Q399,AM,أرمنيا,ar,alias,skos:altLabel
+Q399,AM,أرمينيا,ar,label,rdfs:label
+Q399,AM,جمهورية أرمينيا,ar,alias,skos:altLabel
+Q399,AM,Armenia,en,label,rdfs:label
+Q399,AM,Hayastan,en,alias,skos:altLabel
+Q399,AM,Hayastani Hanrapetut’yun,en,alias,skos:altLabel
+Q399,AM,Republic of Armenia,en,alias,skos:altLabel
+Q399,AM,Հայաստան,en,alias,skos:altLabel
+Q40,AT,النمسا,ar,label,rdfs:label
+Q40,AT,Austria,en,label,rdfs:label
+Q40,AT,Republic of Austria,en,alias,skos:altLabel
+Q403,RS,جمهورية صربيا,ar,alias,skos:altLabel
+Q403,RS,صربيا,ar,label,rdfs:label
+Q403,RS,RS,en,alias,skos:altLabel
+Q403,RS,Republic of Serbia,en,alias,skos:altLabel
+Q403,RS,Serbia,en,label,rdfs:label
+Q408,AU,أستراليا,ar,label,rdfs:label
+Q408,AU,أوستراليا,ar,alias,skos:altLabel
+Q408,AU,كومنولث أستراليا,ar,alias,skos:altLabel
+Q408,AU,كومنولث أوستراليا,ar,alias,skos:altLabel
+Q408,AU,'Straya,en,alias,skos:altLabel
+Q408,AU,Aussieland,en,alias,skos:altLabel
+Q408,AU,Australia,en,label,rdfs:label
+Q408,AU,Commonwealth of Australia,en,alias,skos:altLabel
+Q408,AU,Down Under,en,alias,skos:altLabel
+Q408,AU,New Holland,en,alias,skos:altLabel
+Q408,AU,New Hollandia,en,alias,skos:altLabel
+Q408,AU,Nova Hollandia,en,alias,skos:altLabel
+Q408,AU,Oz,en,alias,skos:altLabel
+Q408,AU,Stralia,en,alias,skos:altLabel
+Q408,AU,Straya,en,alias,skos:altLabel
+Q408,AU,Stria,en,alias,skos:altLabel
+Q408,AU,The Commonwealth of Australia,en,alias,skos:altLabel
+Q41,GR,اليونان,ar,label,rdfs:label
+Q41,GR,Ellada,en,alias,skos:altLabel
+Q41,GR,Greece,en,label,rdfs:label
+Q41,GR,Greek Republic,en,alias,skos:altLabel
+Q41,GR,Hellas,en,alias,skos:altLabel
+Q41,GR,"Hellas, Greece",en,alias,skos:altLabel
+Q41,GR,Hellenic Republic,en,alias,skos:altLabel
+Q41,GR,el,en,alias,skos:altLabel
+Q41,GR,gr,en,alias,skos:altLabel
+Q414,AR,أرجنتين,ar,alias,skos:altLabel
+Q414,AR,ارجنتين,ar,alias,skos:altLabel
+Q414,AR,الأرجنتين,ar,label,rdfs:label
+Q414,AR,الارجنتين,ar,alias,skos:altLabel
+Q414,AR,جمهورية الأرجنتين,ar,alias,skos:altLabel
+Q414,AR,Argentina,en,label,rdfs:label
+Q414,AR,Argentine Republic,en,alias,skos:altLabel
+Q414,AR,Republic of Argentina,en,alias,skos:altLabel
+Q414,AR,Republica Argentina,en,alias,skos:altLabel
+Q419,PE,بيرو,ar,label,rdfs:label
+Q419,PE,جمهورية بيرو,ar,alias,skos:altLabel
+Q419,PE,Peru,en,label,rdfs:label
+Q419,PE,Republic of Peru,en,alias,skos:altLabel
+Q419,PE,Republica del Peru,en,alias,skos:altLabel
+Q419,PE,pe,en,alias,skos:altLabel
+Q419,PE,per,en,alias,skos:altLabel
+Q423,KP,جمهورية كوريا الديمقراطية الشعبية,ar,alias,skos:altLabel
+Q423,KP,كوريا الشمالية,ar,label,rdfs:label
+Q423,KP,DPR Korea,en,alias,skos:altLabel
+Q423,KP,DPRK,en,alias,skos:altLabel
+Q423,KP,Democratic People's Republic of Korea,en,alias,skos:altLabel
+Q423,KP,N. Korea,en,alias,skos:altLabel
+Q423,KP,North Korea,en,label,rdfs:label
+Q423,KP,kp,en,alias,skos:altLabel
+Q424,KH,كامبوديا,ar,alias,skos:altLabel
+Q424,KH,كمبوديا,ar,label,rdfs:label
+Q424,KH,Cambodia,en,label,rdfs:label
+Q424,KH,Camboya,en,alias,skos:altLabel
+Q424,KH,Campuchia,en,alias,skos:altLabel
+Q424,KH,Kambodzha,en,alias,skos:altLabel
+Q424,KH,Kamboja,en,alias,skos:altLabel
+Q424,KH,Kampuchea,en,alias,skos:altLabel
+Q424,KH,Kingdom of Cambodia,en,alias,skos:altLabel
+Q424,KH,kh,en,alias,skos:altLabel
+Q43,TR,تركيا,ar,label,rdfs:label
+Q43,TR,جمهورية تركيا,ar,alias,skos:altLabel
+Q43,TR,Republic of Turkey,en,alias,skos:altLabel
+Q43,TR,Republic of Türkiye,en,alias,skos:altLabel
+Q43,TR,Turkey,en,label,rdfs:label
+Q43296,,جزيرة ويك,ar,label,rdfs:label
+Q43296,,Halcyon Island,en,alias,skos:altLabel
+Q43296,,Isla San Francisco,en,alias,skos:altLabel
+Q43296,,Isle Saint Francis,en,alias,skos:altLabel
+Q43296,,Isle Saint Francois,en,alias,skos:altLabel
+Q43296,,Isle St Francis,en,alias,skos:altLabel
+Q43296,,Isle St Francois,en,alias,skos:altLabel
+Q43296,,Isle de Saint Francois,en,alias,skos:altLabel
+Q43296,,Isle de St Francois,en,alias,skos:altLabel
+Q43296,,Isle of Saint Francis,en,alias,skos:altLabel
+Q43296,,Isle of St Francis,en,alias,skos:altLabel
+Q43296,,Saint Francis,en,alias,skos:altLabel
+Q43296,,Saint Francis Island,en,alias,skos:altLabel
+Q43296,,Saint Francois,en,alias,skos:altLabel
+Q43296,,San Francisco,en,alias,skos:altLabel
+Q43296,,San Francisco Island,en,alias,skos:altLabel
+Q43296,,St Francis,en,alias,skos:altLabel
+Q43296,,St Francis Island,en,alias,skos:altLabel
+Q43296,,St Francois,en,alias,skos:altLabel
+Q43296,,Wake Atoll,en,alias,skos:altLabel
+Q43296,,Wake Island,en,label,rdfs:label
+Q43448,IO,British Indian Ocean Territory,ar,alias,skos:altLabel
+Q43448,IO,إقليم المحيط الهندي البريطاني,ar,label,rdfs:label
+Q43448,IO,منطقة المحيط الهندي البريطانية,ar,alias,skos:altLabel
+Q43448,IO,BIOT,en,alias,skos:altLabel
+Q43448,IO,British Indian Ocean Territory,en,label,rdfs:label
+Q43448,IO,The British Indian Ocean Territory,en,alias,skos:altLabel
+Q43448,IO,io,en,alias,skos:altLabel
+Q43448,IO,🇮🇴,en,alias,skos:altLabel
+Q45,PT,البرتغال,ar,label,rdfs:label
+Q45,PT,الجمهورية البرتغالية,ar,alias,skos:altLabel
+Q45,PT,POR,en,alias,skos:altLabel
+Q45,PT,Portugal,en,label,rdfs:label
+Q45,PT,Portuguese Republic,en,alias,skos:altLabel
+Q4628,FO,جزر الفارو,ar,alias,skos:altLabel
+Q4628,FO,جزر فارو,ar,label,rdfs:label
+Q4628,FO,Atlantic/Faroe,en,alias,skos:altLabel
+Q4628,FO,Faer Oer,en,alias,skos:altLabel
+Q4628,FO,Faeroe Is,en,alias,skos:altLabel
+Q4628,FO,Faeroe Islands,en,alias,skos:altLabel
+Q4628,FO,Faeroe Isles,en,alias,skos:altLabel
+Q4628,FO,Faeroer,en,alias,skos:altLabel
+Q4628,FO,Faeroerne,en,alias,skos:altLabel
+Q4628,FO,Faeroes,en,alias,skos:altLabel
+Q4628,FO,Faeroyene,en,alias,skos:altLabel
+Q4628,FO,Far Oer,en,alias,skos:altLabel
+Q4628,FO,Fareo islands,en,alias,skos:altLabel
+Q4628,FO,Faroe Island,en,alias,skos:altLabel
+Q4628,FO,Faroe Islands,en,label,rdfs:label
+Q4628,FO,Faroe Isles,en,alias,skos:altLabel
+Q4628,FO,Faroer,en,alias,skos:altLabel
+Q4628,FO,Faroes,en,alias,skos:altLabel
+Q4628,FO,Faroese Islands,en,alias,skos:altLabel
+Q4628,FO,Farre,en,alias,skos:altLabel
+Q4628,FO,Farre I.,en,alias,skos:altLabel
+Q4628,FO,Farre Is.,en,alias,skos:altLabel
+Q4628,FO,Farre Isl.,en,alias,skos:altLabel
+Q4628,FO,Farre Islands,en,alias,skos:altLabel
+Q4628,FO,Faröe Islands,en,alias,skos:altLabel
+Q4628,FO,Foroyar,en,alias,skos:altLabel
+Q4628,FO,Färöer,en,alias,skos:altLabel
+Q4628,FO,Fær Øer,en,alias,skos:altLabel
+Q4628,FO,Færeyjar,en,alias,skos:altLabel
+Q4628,FO,Færoes,en,alias,skos:altLabel
+Q4628,FO,Færøer,en,alias,skos:altLabel
+Q4628,FO,Færøerne,en,alias,skos:altLabel
+Q4628,FO,Færøyene,en,alias,skos:altLabel
+Q4628,FO,Føroyar,en,alias,skos:altLabel
+Q4628,FO,Sheep Islands,en,alias,skos:altLabel
+Q4628,FO,fo,en,alias,skos:altLabel
+Q4628,FO,the Faeroe Islands,en,alias,skos:altLabel
+Q4628,FO,the Faroe Islands,en,alias,skos:altLabel
+Q4628,FO,🇫🇴,en,alias,skos:altLabel
+Q4824275,,أقاليم المحيط الهندي الأسترالية,ar,label,rdfs:label
+Q4824275,,Australian Indian Ocean Territories,en,label,rdfs:label
+Q51,AQ,أنتارتيكا,ar,alias,skos:altLabel
+Q51,AQ,أنتاركتيكا,ar,alias,skos:altLabel
+Q51,AQ,القارة القطبية الجنوبية,ar,label,rdfs:label
+Q51,AQ,القارة المتجمدة الجنوبية,ar,alias,skos:altLabel
+Q51,AQ,Antarctica,en,label,rdfs:label
+Q55,NL,نذرلندا,ar,alias,skos:altLabel
+Q55,NL,هولندا,ar,label,rdfs:label
+Q55,NL,Holland,en,alias,skos:altLabel
+Q55,NL,Nederland,en,alias,skos:altLabel
+Q55,NL,Nederlanden,en,alias,skos:altLabel
+Q55,NL,Netherlands,en,label,rdfs:label
+Q55,NL,de Nederlanden,en,alias,skos:altLabel
+Q55,NL,the Netherlands,en,alias,skos:altLabel
+Q5689,AX,جزر أولاند,ar,label,rdfs:label
+Q5689,AX,Aaland,en,alias,skos:altLabel
+Q5689,AX,Aaland Islands,en,alias,skos:altLabel
+Q5689,AX,Aland Islands,en,alias,skos:altLabel
+Q5689,AX,Aland Isles,en,alias,skos:altLabel
+Q5689,AX,ax,en,alias,skos:altLabel
+Q5689,AX,Åland,en,label,rdfs:label
+Q5689,AX,Åland Islands,en,alias,skos:altLabel
+Q5689,AX,Åland region,en,alias,skos:altLabel
+Q574,TL,تيمور الشرقية,ar,label,rdfs:label
+Q574,TL,Democratic Republic of Timor-Leste,en,alias,skos:altLabel
+Q574,TL,East Timor,en,alias,skos:altLabel
+Q574,TL,TL,en,alias,skos:altLabel
+Q574,TL,Timor-Leste,en,label,rdfs:label
+Q5785,KY,جزر كايمان,ar,label,rdfs:label
+Q5785,KY,CAY,en,alias,skos:altLabel
+Q5785,KY,Cayman Islands,en,label,rdfs:label
+Q5785,KY,Caymans,en,alias,skos:altLabel
+Q5785,KY,ky,en,alias,skos:altLabel
+Q620634,,بئر طويل,ar,label,rdfs:label
+Q620634,,بيرطويل,ar,alias,skos:altLabel
+Q620634,,مثلث بارتازوجا,ar,alias,skos:altLabel
+Q620634,,Bi'r Tawīl,en,alias,skos:altLabel
+Q620634,,Bir Tawil,en,label,rdfs:label
+Q6250,EH,الأقاليم الجنوبية,ar,alias,skos:altLabel
+Q6250,EH,الصحراء الإسبانية,ar,alias,skos:altLabel
+Q6250,EH,الصحراء الغربية,ar,label,rdfs:label
+Q6250,EH,الصحراء الغربية (المغرب),ar,alias,skos:altLabel
+Q6250,EH,الصحراء المغربية,ar,alias,skos:altLabel
+Q6250,EH,Southern Provinces,en,alias,skos:altLabel
+Q6250,EH,Spanish Sahara,en,alias,skos:altLabel
+Q6250,EH,West Sahara,en,alias,skos:altLabel
+Q6250,EH,Western Sahara,en,label,rdfs:label
+Q628716,,سكاربورو شول,ar,label,rdfs:label
+Q628716,,Bajo de Masinloc,en,alias,skos:altLabel
+Q628716,,Huangyan Island,en,alias,skos:altLabel
+Q628716,,Panatag Shoal,en,alias,skos:altLabel
+Q628716,,Scarborough Reef,en,alias,skos:altLabel
+Q628716,,Scarborough Shoal,en,label,rdfs:label
+Q628716,,"Scarborough Shoal, Scarborough Reef",en,alias,skos:altLabel
+Q657,TD,تشاد,ar,label,rdfs:label
+Q657,TD,تَشَاد,ar,alias,skos:altLabel
+Q657,TD,جمهورية تشاد,ar,alias,skos:altLabel
+Q657,TD,CHA,en,alias,skos:altLabel
+Q657,TD,Chad,en,label,rdfs:label
+Q657,TD,GUM,en,alias,skos:altLabel
+Q657,TD,Republic of Chad,en,alias,skos:altLabel
+Q657,TD,td,en,alias,skos:altLabel
+Q664,NZ,زلندة الجديدة,ar,alias,skos:altLabel
+Q664,NZ,زيلاندا الجديدة,ar,alias,skos:altLabel
+Q664,NZ,نيو زيلندا,ar,alias,skos:altLabel
+Q664,NZ,نيوزيلاندا,ar,alias,skos:altLabel
+Q664,NZ,نيوزيلندا,ar,label,rdfs:label
+Q664,NZ,Aotearoa New Zealand,en,alias,skos:altLabel
+Q664,NZ,Dominion of New Zealand,en,alias,skos:altLabel
+Q664,NZ,New Zealand,en,label,rdfs:label
+Q664,NZ,nz,en,alias,skos:altLabel
+Q668,IN,الهند,ar,label,rdfs:label
+Q668,IN,جمهورية الهند,ar,alias,skos:altLabel
+Q668,IN,Al Hind,en,alias,skos:altLabel
+Q668,IN,Bharat Ganarajya,en,alias,skos:altLabel
+Q668,IN,Bharata,en,alias,skos:altLabel
+Q668,IN,Bharatvarsh,en,alias,skos:altLabel
+Q668,IN,Hindoostan,en,alias,skos:altLabel
+Q668,IN,Hindustan,en,alias,skos:altLabel
+Q668,IN,India,en,label,rdfs:label
+Q668,IN,Indostan,en,alias,skos:altLabel
+Q668,IN,Republic of India,en,alias,skos:altLabel
+Q668,IN,Tenjiku,en,alias,skos:altLabel
+Q668,IN,Tianzhu,en,alias,skos:altLabel
+Q672,TV,توفالو,ar,label,rdfs:label
+Q672,TV,Ellice Islands,en,alias,skos:altLabel
+Q672,TV,TUV,en,alias,skos:altLabel
+Q672,TV,Tuvalu,en,label,rdfs:label
+Q672,TV,tv,en,alias,skos:altLabel
+Q678,TO,تونجا,ar,alias,skos:altLabel
+Q678,TO,تونغا,ar,label,rdfs:label
+Q678,TO,Friendly Islands,en,alias,skos:altLabel
+Q678,TO,Kingdom of Tonga,en,alias,skos:altLabel
+Q678,TO,TGA,en,alias,skos:altLabel
+Q678,TO,Tonga,en,label,rdfs:label
+Q678,TO,Tonga Islands,en,alias,skos:altLabel
+Q678,TO,to,en,alias,skos:altLabel
+Q683,WS,ساموا,ar,label,rdfs:label
+Q683,WS,ساموا الغربية,ar,alias,skos:altLabel
+Q683,WS,Independent State of Samoa,en,alias,skos:altLabel
+Q683,WS,SAM,en,alias,skos:altLabel
+Q683,WS,Samoa,en,label,rdfs:label
+Q683,WS,Western Samoa,en,alias,skos:altLabel
+Q683,WS,ws,en,alias,skos:altLabel
+Q685,SB,جزر سليمان,ar,label,rdfs:label
+Q685,SB,SOL,en,alias,skos:altLabel
+Q685,SB,Solomon Islands,en,label,rdfs:label
+Q685,SB,sb,en,alias,skos:altLabel
+Q685,SB,the Solomon Islands,en,alias,skos:altLabel
+Q686,VU,فانواتو,ar,label,rdfs:label
+Q686,VU,Republic of Vanuatu,en,alias,skos:altLabel
+Q686,VU,VAN,en,alias,skos:altLabel
+Q686,VU,Vanuatu,en,label,rdfs:label
+Q686,VU,van,en,alias,skos:altLabel
+Q686,VU,vu,en,alias,skos:altLabel
+Q686,VU,vut,en,alias,skos:altLabel
+Q691,PG,بابوا غينيا الجديدة,ar,label,rdfs:label
+Q691,PG,بابوا غينيا الجديده,ar,alias,skos:altLabel
+Q691,PG,بابوا نيو غينيا,ar,alias,skos:altLabel
+Q691,PG,بابوا نيوغينيا,ar,alias,skos:altLabel
+Q691,PG,بابوا وغينيا الجديدة,ar,alias,skos:altLabel
+Q691,PG,Independent State of Papua New Guinea,en,alias,skos:altLabel
+Q691,PG,Papua New Guinea,en,label,rdfs:label
+Q695,PW,بالاو,ar,label,rdfs:label
+Q695,PW,Belau,en,alias,skos:altLabel
+Q695,PW,Palau,en,label,rdfs:label
+Q695,PW,Peeloo,en,alias,skos:altLabel
+Q695,PW,Pelew,en,alias,skos:altLabel
+Q695,PW,Pelew islands,en,alias,skos:altLabel
+Q695,PW,Pellew,en,alias,skos:altLabel
+Q695,PW,Republic of Belau,en,alias,skos:altLabel
+Q695,PW,Republic of Palau,en,alias,skos:altLabel
+Q695,PW,pw,en,alias,skos:altLabel
+Q697,NR,ناورو,ar,label,rdfs:label
+Q697,NR,نورو,ar,alias,skos:altLabel
+Q697,NR,Naoero,en,alias,skos:altLabel
+Q697,NR,Nauru,en,label,rdfs:label
+Q697,NR,Pleasant Island,en,alias,skos:altLabel
+Q697,NR,Republic of Naoero,en,alias,skos:altLabel
+Q697,NR,Republic of Nauru,en,alias,skos:altLabel
+Q702,FM,الولايات المتحدة الميكرونيزية,ar,alias,skos:altLabel
+Q702,FM,الولايات المتحدة الميكرونيسية,ar,alias,skos:altLabel
+Q702,FM,مايكرونيزيا,ar,alias,skos:altLabel
+Q702,FM,ولايات ميكرونيسيا المتحدة,ar,label,rdfs:label
+Q702,FM,FSM,en,alias,skos:altLabel
+Q702,FM,Fed. Sts. Micronesia,en,alias,skos:altLabel
+Q702,FM,Fed. Sts. of Micronesia,en,alias,skos:altLabel
+Q702,FM,Federated States of Micronesia,en,label,rdfs:label
+Q702,FM,"Federated States of Micronesia, FSM",en,alias,skos:altLabel
+Q702,FM,Micronesia,en,alias,skos:altLabel
+Q702,FM,fm,en,alias,skos:altLabel
+Q709,MH,جزر مارشال,ar,label,rdfs:label
+Q709,MH,Marshall Islands,en,label,rdfs:label
+Q709,MH,Republic of the Marshall Islands,en,alias,skos:altLabel
+Q709,MH,mh,en,alias,skos:altLabel
+Q710,KI,كيريباتي,ar,label,rdfs:label
+Q710,KI,كيريباس,ar,alias,skos:altLabel
+Q710,KI,Kiribati,en,label,rdfs:label
+Q710,KI,Republic of Kiribati,en,alias,skos:altLabel
+Q710,KI,ki,en,alias,skos:altLabel
+Q711,MN,منغوليا,ar,label,rdfs:label
+Q711,MN,Mongol State,en,alias,skos:altLabel
+Q711,MN,Mongolia,en,label,rdfs:label
+Q711,MN,State of Mongolia,en,alias,skos:altLabel
+Q712,FJ,فيجي,ar,label,rdfs:label
+Q712,FJ,Fiji,en,label,rdfs:label
+Q712,FJ,Fijī,en,alias,skos:altLabel
+Q712,FJ,Fijī Gaṇarājya,en,alias,skos:altLabel
+Q712,FJ,Matanitu Tugalala o Viti,en,alias,skos:altLabel
+Q712,FJ,Republic of Fiji,en,alias,skos:altLabel
+Q712,FJ,Republic of the Fiji Islands,en,alias,skos:altLabel
+Q712,FJ,Viti,en,alias,skos:altLabel
+Q712,FJ,fj,en,alias,skos:altLabel
+Q717,VE,فنزويلا,ar,label,rdfs:label
+Q717,VE,BR Venezuela,en,alias,skos:altLabel
+Q717,VE,Bolivarian Republic of Venezuela,en,alias,skos:altLabel
+Q717,VE,Republic of Venezuela,en,alias,skos:altLabel
+Q717,VE,Venezuela,en,label,rdfs:label
+Q730,SR,جمهورية سورينام,ar,alias,skos:altLabel
+Q730,SR,سورينام,ar,label,rdfs:label
+Q730,SR,Dutch Guiana,en,alias,skos:altLabel
+Q730,SR,Republic of Surinam,en,alias,skos:altLabel
+Q730,SR,Republic of Suriname,en,alias,skos:altLabel
+Q730,SR,Surinam,en,alias,skos:altLabel
+Q730,SR,Suriname,en,label,rdfs:label
+Q730,SR,Surrinam,en,alias,skos:altLabel
+Q730,SR,sr,en,alias,skos:altLabel
+Q733,PY,باراغواي,ar,label,rdfs:label
+Q733,PY,Heart of South America,en,alias,skos:altLabel
+Q733,PY,Paraguay,en,label,rdfs:label
+Q733,PY,Republic of Paraguay,en,alias,skos:altLabel
+Q734,GY,جمهورية التعاونية غويانا,ar,alias,skos:altLabel
+Q734,GY,جمهورية التعاونية غيانا,ar,alias,skos:altLabel
+Q734,GY,جمهورية غيانا التعاونية,ar,alias,skos:altLabel
+Q734,GY,غويانا,ar,alias,skos:altLabel
+Q734,GY,غيانا,ar,label,rdfs:label
+Q734,GY,Co-operative Republic of Guyana,en,alias,skos:altLabel
+Q734,GY,Guyana,en,label,rdfs:label
+Q734,GY,Republic of Guyana,en,alias,skos:altLabel
+Q734,GY,gy,en,alias,skos:altLabel
+Q736,EC,أكوادور,ar,alias,skos:altLabel
+Q736,EC,أكوادوري,ar,alias,skos:altLabel
+Q736,EC,إكوادور,ar,alias,skos:altLabel
+Q736,EC,إکوادور,ar,alias,skos:altLabel
+Q736,EC,اكوادور,ar,alias,skos:altLabel
+Q736,EC,الأكوادور,ar,alias,skos:altLabel
+Q736,EC,الإكوادور,ar,label,rdfs:label
+Q736,EC,الاكوادور,ar,alias,skos:altLabel
+Q736,EC,Ecuador,en,label,rdfs:label
+Q736,EC,Republic of Ecuador,en,alias,skos:altLabel
+Q736,EC,Republic of Equator,en,alias,skos:altLabel
+Q736,EC,Republic of the Equator,en,alias,skos:altLabel
+Q736,EC,The Ecuadorian State,en,alias,skos:altLabel
+Q739,CO,كولومبيا,ar,label,rdfs:label
+Q739,CO,Colombia,en,label,rdfs:label
+Q739,CO,Colombiá,en,alias,skos:altLabel
+Q739,CO,Republic of Colombia,en,alias,skos:altLabel
+Q739,CO,The Republic of Colombia,en,alias,skos:altLabel
+Q750,BO,البوليفية,ar,alias,skos:altLabel
+Q750,BO,بوليفي,ar,alias,skos:altLabel
+Q750,BO,بوليفيا,ar,label,rdfs:label
+Q750,BO,بولیفیا,ar,alias,skos:altLabel
+Q750,BO,Bolivia,en,label,rdfs:label
+Q750,BO,Bolivia (Plurinational State of),en,alias,skos:altLabel
+Q750,BO,Plurinational State of Bolivia,en,alias,skos:altLabel
+Q750,BO,Republic of Bolivia,en,alias,skos:altLabel
+Q754,TT,ترينيداد وتوباغو,ar,label,rdfs:label
+Q754,TT,Republic of Trinidad and Tobago,en,alias,skos:altLabel
+Q754,TT,Trinidad & Tobago,en,alias,skos:altLabel
+Q754,TT,Trinidad and Tobago,en,label,rdfs:label
+Q754,TT,tt,en,alias,skos:altLabel
+Q757,VC,سانت فنسينت والجرينادينز,ar,alias,skos:altLabel
+Q757,VC,سانت فينسنت والغرينادين,ar,label,rdfs:label
+Q757,VC,Saint Vincent,en,alias,skos:altLabel
+Q757,VC,Saint Vincent and the Grenadines,en,label,rdfs:label
+Q757,VC,St Vincent,en,alias,skos:altLabel
+Q757,VC,St Vincent and the Grenadines,en,alias,skos:altLabel
+Q757,VC,St. Vincent,en,alias,skos:altLabel
+Q757,VC,St. Vincent and the Grenadines,en,alias,skos:altLabel
+Q757,VC,vc,en,alias,skos:altLabel
+Q757,VC,vct,en,alias,skos:altLabel
+Q760,LC,سانت لوسيا,ar,label,rdfs:label
+Q760,LC,Hewanorra,en,alias,skos:altLabel
+Q760,LC,Iyonola,en,alias,skos:altLabel
+Q760,LC,Saint Lucia,en,label,rdfs:label
+Q760,LC,St Lucia,en,alias,skos:altLabel
+Q760,LC,St. Lucia,en,alias,skos:altLabel
+Q760,LC,lc,en,alias,skos:altLabel
+Q760,LC,lca,en,alias,skos:altLabel
+Q762570,,القاعدة البحرية في خليج غوانتانامو,ar,alias,skos:altLabel
+Q762570,,قاعدة غوانتانامو,ar,label,rdfs:label
+Q762570,,قاعدة غوانتنامو,ar,alias,skos:altLabel
+Q762570,,GTMO,en,alias,skos:altLabel
+Q762570,,Gitmo,en,alias,skos:altLabel
+Q762570,,Guantanamo Bay Naval Base,en,label,rdfs:label
+Q762570,,United States Naval Station Guantanamo Bay,en,alias,skos:altLabel
+Q763,KN,سانت كيتس ونيفيس,ar,label,rdfs:label
+Q763,KN,Federation of Saint Christopher and Nevis,en,alias,skos:altLabel
+Q763,KN,Federation of Saint Kitts and Nevis,en,alias,skos:altLabel
+Q763,KN,Kitts & Nevis,en,alias,skos:altLabel
+Q763,KN,Kitts and Nevis,en,alias,skos:altLabel
+Q763,KN,Saint Christopher and Nevis,en,alias,skos:altLabel
+Q763,KN,Saint Kitts and Nevis,en,label,rdfs:label
+Q763,KN,St Kitts & Nevis,en,alias,skos:altLabel
+Q763,KN,St Kitts and Nevis,en,alias,skos:altLabel
+Q763,KN,St. Kitts & Nevis,en,alias,skos:altLabel
+Q763,KN,St. Kitts and Nevis,en,alias,skos:altLabel
+Q766,JM,جامايكا,ar,label,rdfs:label
+Q766,JM,جامايكي,ar,alias,skos:altLabel
+Q766,JM,جاميكا,ar,alias,skos:altLabel
+Q766,JM,جمايكا,ar,alias,skos:altLabel
+Q766,JM,Commonwealth of Jamaica,en,alias,skos:altLabel
+Q766,JM,JA,en,alias,skos:altLabel
+Q766,JM,Jamaica,en,label,rdfs:label
+Q769,GD,غرنادة,ar,label,rdfs:label
+Q769,GD,غَرْنَادَة,ar,alias,skos:altLabel
+Q769,GD,GRN,en,alias,skos:altLabel
+Q769,GD,Grenada,en,label,rdfs:label
+Q769,GD,gd,en,alias,skos:altLabel
+Q77,UY,أوروغواي,ar,alias,skos:altLabel
+Q77,UY,الأوروغواي,ar,label,rdfs:label
+Q77,UY,الجمهورية الشرقية للأوروغواي,ar,alias,skos:altLabel
+Q77,UY,جمهورية الأوروغواي الشرقية,ar,alias,skos:altLabel
+Q77,UY,Eastern Republic of Uruguay,en,alias,skos:altLabel
+Q77,UY,Oriental Republic of Uruguay,en,alias,skos:altLabel
+Q77,UY,URU,en,alias,skos:altLabel
+Q77,UY,Uruguay,en,label,rdfs:label
+Q77,UY,uy,en,alias,skos:altLabel
+Q774,GT,جمهورية غواتيمالا,ar,alias,skos:altLabel
+Q774,GT,جواتيمالا,ar,alias,skos:altLabel
+Q774,GT,غواتيمالا,ar,label,rdfs:label
+Q774,GT,GT,en,alias,skos:altLabel
+Q774,GT,GTM,en,alias,skos:altLabel
+Q774,GT,Guatemala,en,label,rdfs:label
+Q774,GT,Republic of Guatemala,en,alias,skos:altLabel
+Q774,GT,gt,en,alias,skos:altLabel
+Q778,BS,الباهاماس,ar,alias,skos:altLabel
+Q778,BS,البهاما,ar,alias,skos:altLabel
+Q778,BS,باهاماس,ar,alias,skos:altLabel
+Q778,BS,جزر البهاما,ar,label,rdfs:label
+Q778,BS,Bahama Islands,en,alias,skos:altLabel
+Q778,BS,Bahamas,en,alias,skos:altLabel
+Q778,BS,"Bahamas, The",en,alias,skos:altLabel
+Q778,BS,Commonwealth of The Bahamas,en,alias,skos:altLabel
+Q778,BS,Commonwealth of the Bahamas,en,alias,skos:altLabel
+Q778,BS,The Bahamas,en,label,rdfs:label
+Q778,BS,bs,en,alias,skos:altLabel
+Q781,AG,أنتيغوا وباربودا,ar,label,rdfs:label
+Q781,AG,أنتيغوا وبربودا,ar,alias,skos:altLabel
+Q781,AG,Antigua & Barbuda,en,alias,skos:altLabel
+Q781,AG,Antigua and Barbuda,en,label,rdfs:label
+Q781,AG,Antigua-Barbuda,en,alias,skos:altLabel
+Q781,AG,Antigua–Barbuda,en,alias,skos:altLabel
+Q783,HN,هندوراس,ar,label,rdfs:label
+Q783,HN,HON,en,alias,skos:altLabel
+Q783,HN,Honduran Republic,en,alias,skos:altLabel
+Q783,HN,Honduras,en,label,rdfs:label
+Q783,HN,Republic of Honduras,en,alias,skos:altLabel
+Q783,HN,hn,en,alias,skos:altLabel
+Q784,DM,دومينيكا,ar,label,rdfs:label
+Q784,DM,Commonwealth of Dominica,en,alias,skos:altLabel
+Q784,DM,DOM,en,alias,skos:altLabel
+Q784,DM,Dominica,en,label,rdfs:label
+Q784,DM,Island of Dominica,en,alias,skos:altLabel
+Q784,DM,The Commonwealth of Dominica,en,alias,skos:altLabel
+Q784,DM,Wai'tu kubuli,en,alias,skos:altLabel
+Q784,DM,Wai‘tu kubuli,en,alias,skos:altLabel
+Q784,DM,dm,en,alias,skos:altLabel
+Q785,JE,جيرزي,ar,label,rdfs:label
+Q785,JE,Bailliage de Jerri,en,alias,skos:altLabel
+Q785,JE,Bailliage de Jersey,en,alias,skos:altLabel
+Q785,JE,Bailliage de Jèrri,en,alias,skos:altLabel
+Q785,JE,Balliwick of Jersey,en,alias,skos:altLabel
+Q785,JE,I. Iersey,en,alias,skos:altLabel
+Q785,JE,I. Jersey,en,alias,skos:altLabel
+Q785,JE,Iersey,en,alias,skos:altLabel
+Q785,JE,Iersey I.,en,alias,skos:altLabel
+Q785,JE,Isle of Jersey,en,alias,skos:altLabel
+Q785,JE,Jerri,en,alias,skos:altLabel
+Q785,JE,Jersey,en,label,rdfs:label
+Q785,JE,Jersey I.,en,alias,skos:altLabel
+Q785,JE,Jersey Island,en,alias,skos:altLabel
+Q785,JE,Jèrri,en,alias,skos:altLabel
+Q785,JE,je,en,alias,skos:altLabel
+Q786,DO,جمهورية الدومنيكان,ar,alias,skos:altLabel
+Q786,DO,جمهورية الدومينيكان,ar,label,rdfs:label
+Q786,DO,DomRep,en,alias,skos:altLabel
+Q786,DO,Dominican Republic,en,label,rdfs:label
+Q786,DO,Dominicana,en,alias,skos:altLabel
+Q786,DO,RD,en,alias,skos:altLabel
+Q786,DO,Republica Dominicana,en,alias,skos:altLabel
+Q786,DO,República Dominicana,en,alias,skos:altLabel
+Q79,EG,جمهوريّة مصر العربيّة,ar,alias,skos:altLabel
+Q79,EG,مصر,ar,label,rdfs:label
+Q79,EG,Arab Rep. Egypt,en,alias,skos:altLabel
+Q79,EG,Arab Republic of Egypt,en,alias,skos:altLabel
+Q79,EG,Egypt,en,label,rdfs:label
+Q79,EG,Misr,en,alias,skos:altLabel
+Q79,EG,Rep. Egypt,en,alias,skos:altLabel
+Q79,EG,Republic of Egypt,en,alias,skos:altLabel
+Q790,HT,هايتي,ar,label,rdfs:label
+Q790,HT,Ayiti,en,alias,skos:altLabel
+Q790,HT,HAI,en,alias,skos:altLabel
+Q790,HT,Haiti,en,label,rdfs:label
+Q790,HT,Haitian Republic,en,alias,skos:altLabel
+Q790,HT,Hayti,en,alias,skos:altLabel
+Q790,HT,Republic of Haiti,en,alias,skos:altLabel
+Q790,HT,ht,en,alias,skos:altLabel
+Q792,SV,السلفادور,ar,label,rdfs:label
+Q792,SV,جمهورية السلفادور,ar,alias,skos:altLabel
+Q792,SV,ESA,en,alias,skos:altLabel
+Q792,SV,El Salvador,en,label,rdfs:label
+Q792,SV,Republic of El Salvador,en,alias,skos:altLabel
+Q792,SV,Salvador,en,alias,skos:altLabel
+Q792,SV,sv,en,alias,skos:altLabel
+Q794,IR,إيران,ar,label,rdfs:label
+Q794,IR,الجمهور الإسلامية الإيرانية,ar,alias,skos:altLabel
+Q794,IR,الجمهورية الإسلامية الإيرانية,ar,alias,skos:altLabel
+Q794,IR,الجمهورية الإسلامية الايرانية,ar,alias,skos:altLabel
+Q794,IR,الجمهورية الإسلامية في إيران,ar,alias,skos:altLabel
+Q794,IR,الجمهورية الاسلامية الايرانية,ar,alias,skos:altLabel
+Q794,IR,الديار الإيرانية,ar,alias,skos:altLabel
+Q794,IR,ايران,ar,alias,skos:altLabel
+Q794,IR,ايران الأکبر,ar,alias,skos:altLabel
+Q794,IR,ایران,ar,alias,skos:altLabel
+Q794,IR,جمهورية إيران,ar,alias,skos:altLabel
+Q794,IR,جمهورية إيران الإسلامية,ar,alias,skos:altLabel
+Q794,IR,جمهوريّة إيران الإسلامية,ar,alias,skos:altLabel
+Q794,IR,جمهوریة إیران الإسلامیة,ar,alias,skos:altLabel
+Q794,IR,IRI,en,alias,skos:altLabel
+Q794,IR,Iran,en,label,rdfs:label
+Q794,IR,Islamic Rep. Iran,en,alias,skos:altLabel
+Q794,IR,Islamic Republic of Iran,en,alias,skos:altLabel
+Q794,IR,ir,en,alias,skos:altLabel
+Q796,IQ,الجمهورية العراقية,ar,alias,skos:altLabel
+Q796,IQ,العراق,ar,label,rdfs:label
+Q796,IQ,جمهورية العراق,ar,alias,skos:altLabel
+Q796,IQ,جُمْهُوريَّة العِرَاق,ar,alias,skos:altLabel
+Q796,IQ,عراق,ar,alias,skos:altLabel
+Q796,IQ,Iraq,en,label,rdfs:label
+Q796,IQ,Republic of Iraq,en,alias,skos:altLabel
+Q796,IQ,iq,en,alias,skos:altLabel
+Q800,CR,كوستاريكا,ar,label,rdfs:label
+Q800,CR,Costa Rica,en,label,rdfs:label
+Q800,CR,Republic of Costa Rica,en,alias,skos:altLabel
+Q800,CR,cr,en,alias,skos:altLabel
+Q801,IL,إسرائيل,ar,label,rdfs:label
+Q801,IL,الدولة العبرية,ar,alias,skos:altLabel
+Q801,IL,الكيان الصهيوني,ar,alias,skos:altLabel
+Q801,IL,دولة إسرائيل,ar,alias,skos:altLabel
+Q801,IL,ISR,en,alias,skos:altLabel
+Q801,IL,Israel,en,label,rdfs:label
+Q801,IL,State of Israel,en,alias,skos:altLabel
+Q801,IL,Yisrael,en,alias,skos:altLabel
+Q801,IL,il,en,alias,skos:altLabel
+Q804,PA,باناما,ar,alias,skos:altLabel
+Q804,PA,بنما,ar,label,rdfs:label
+Q804,PA,جمهورية بنما,ar,alias,skos:altLabel
+Q804,PA,Panama,en,label,rdfs:label
+Q804,PA,Republic of Panama,en,alias,skos:altLabel
+Q804,PA,pa,en,alias,skos:altLabel
+Q805,YE,الجمهورية اليمنية,ar,alias,skos:altLabel
+Q805,YE,اليمن,ar,label,rdfs:label
+Q805,YE,دولة اليمن,ar,alias,skos:altLabel
+Q805,YE,Rep. Yemen,en,alias,skos:altLabel
+Q805,YE,Republic of Yemen,en,alias,skos:altLabel
+Q805,YE,Yemen,en,label,rdfs:label
+Q805,YE,ye,en,alias,skos:altLabel
+Q810,JO,الأردن,ar,label,rdfs:label
+Q810,JO,الاردن,ar,alias,skos:altLabel
+Q810,JO,المملكة الأردنيّة الهاشميّة,ar,alias,skos:altLabel
+Q810,JO,Giordania,en,alias,skos:altLabel
+Q810,JO,HKJ,en,alias,skos:altLabel
+Q810,JO,Hashemite Kingdom of Jordan,en,alias,skos:altLabel
+Q810,JO,ISO 3166-1:JO,en,alias,skos:altLabel
+Q810,JO,Jordan,en,label,rdfs:label
+Q810,JO,Kingdom of Jordan,en,alias,skos:altLabel
+Q810,JO,State of Jordan,en,alias,skos:altLabel
+Q810,JO,Yarden,en,alias,skos:altLabel
+Q811,NI,نيكاراجوا,ar,alias,skos:altLabel
+Q811,NI,نيكاراغوا,ar,label,rdfs:label
+Q811,NI,NCA,en,alias,skos:altLabel
+Q811,NI,NI,en,alias,skos:altLabel
+Q811,NI,NIC,en,alias,skos:altLabel
+Q811,NI,Nicaragua,en,label,rdfs:label
+Q811,NI,Republic of Nicaragua,en,alias,skos:altLabel
+Q811,NI,ni,en,alias,skos:altLabel
+Q813,KG,قرغيزستان,ar,label,rdfs:label
+Q813,KG,قرغيزيا,ar,alias,skos:altLabel
+Q813,KG,قيرغيزستان,ar,alias,skos:altLabel
+Q813,KG,Kyrgyz Republic,en,alias,skos:altLabel
+Q813,KG,Kyrgyzstan,en,label,rdfs:label
+Q813,KG,kg,en,alias,skos:altLabel
+Q817,KW,الكويت,ar,label,rdfs:label
+Q817,KW,دولة الكويت,ar,alias,skos:altLabel
+Q817,KW,كويت,ar,alias,skos:altLabel
+Q817,KW,Kuwait,en,label,rdfs:label
+Q817,KW,State of Kuwait,en,alias,skos:altLabel
+Q817,KW,kw,en,alias,skos:altLabel
+Q819,LA,لاوس,ar,label,rdfs:label
+Q819,LA,Lao PDR,en,alias,skos:altLabel
+Q819,LA,Lao People's Democratic Republic,en,alias,skos:altLabel
+Q819,LA,Laos,en,label,rdfs:label
+Q819,LA,la,en,alias,skos:altLabel
+Q822,LB,الجمهورية اللبنانية,ar,alias,skos:altLabel
+Q822,LB,الجمهوريّة اللبنانيّة,ar,alias,skos:altLabel
+Q822,LB,لبنان,ar,label,rdfs:label
+Q822,LB,Lebanese Republic,en,alias,skos:altLabel
+Q822,LB,Lebanon,en,label,rdfs:label
+Q822,LB,Lubnan,en,alias,skos:altLabel
+Q822,LB,Republic of Lebanon,en,alias,skos:altLabel
+Q822,LB,State of Lebanon,en,alias,skos:altLabel
+Q822,LB,lb,en,alias,skos:altLabel
+Q826,MV,المالديف,ar,label,rdfs:label
+Q826,MV,جزر المالديف,ar,alias,skos:altLabel
+Q826,MV,جمهورية المالديف,ar,alias,skos:altLabel
+Q826,MV,MDV,en,alias,skos:altLabel
+Q826,MV,Maldives,en,label,rdfs:label
+Q826,MV,Republic of Maldives,en,alias,skos:altLabel
+Q826,MV,mv,en,alias,skos:altLabel
+Q833,MY,ماليزيا,ar,label,rdfs:label
+Q833,MY,🇲🇾,ar,alias,skos:altLabel
+Q833,MY,Federation of Malaysia,en,alias,skos:altLabel
+Q833,MY,Malaysia,en,label,rdfs:label
+Q833,MY,Malaysia Federation,en,alias,skos:altLabel
+Q836,MM,اتحاد بورما,ar,alias,skos:altLabel
+Q836,MM,برمانيا,ar,alias,skos:altLabel
+Q836,MM,بورما,ar,alias,skos:altLabel
+Q836,MM,جمهورية اتحاد ميانمار,ar,alias,skos:altLabel
+Q836,MM,ميانمار,ar,label,rdfs:label
+Q836,MM,Birmania,en,alias,skos:altLabel
+Q836,MM,MM,en,alias,skos:altLabel
+Q836,MM,MMR,en,alias,skos:altLabel
+Q836,MM,Myanmar,en,label,rdfs:label
+Q836,MM,Republic of the Union of Myanmar,en,alias,skos:altLabel
+Q836,MM,Union of Burma,en,alias,skos:altLabel
+Q837,NP,النيبال,ar,alias,skos:altLabel
+Q837,NP,جمهورية نيبال الديمقراطية الاتحادية,ar,alias,skos:altLabel
+Q837,NP,نيبال,ar,label,rdfs:label
+Q837,NP,Bal-bo,en,alias,skos:altLabel
+Q837,NP,Bal-po'i yul,en,alias,skos:altLabel
+Q837,NP,Bal-yul,en,alias,skos:altLabel
+Q837,NP,Balbo,en,alias,skos:altLabel
+Q837,NP,Balpo,en,alias,skos:altLabel
+Q837,NP,Balpo-yul,en,alias,skos:altLabel
+Q837,NP,Federal Democratic Republic of Nepal,en,alias,skos:altLabel
+Q837,NP,Naipala,en,alias,skos:altLabel
+Q837,NP,Naipál,en,alias,skos:altLabel
+Q837,NP,Naipála,en,alias,skos:altLabel
+Q837,NP,Ne-pel,en,alias,skos:altLabel
+Q837,NP,Necbal,en,alias,skos:altLabel
+Q837,NP,Nehpal,en,alias,skos:altLabel
+Q837,NP,Nei-pal,en,alias,skos:altLabel
+Q837,NP,Nekbal,en,alias,skos:altLabel
+Q837,NP,Nekpal,en,alias,skos:altLabel
+Q837,NP,Nepal,en,label,rdfs:label
+Q837,NP,Nepall,en,alias,skos:altLabel
+Q837,NP,Nepaul,en,alias,skos:altLabel
+Q837,NP,Nepál,en,alias,skos:altLabel
+Q837,NP,Nercerri,en,alias,skos:altLabel
+Q837,NP,Ni-po-lo,en,alias,skos:altLabel
+Q837,NP,Ni-po-louo,en,alias,skos:altLabel
+Q837,NP,Niepal,en,alias,skos:altLabel
+Q837,NP,Nipal,en,alias,skos:altLabel
+Q837,NP,Népaal,en,alias,skos:altLabel
+Q837,NP,Népál,en,alias,skos:altLabel
+Q837,NP,Pa-eul-pou,en,alias,skos:altLabel
+Q837,NP,Pa-le-pou,en,alias,skos:altLabel
+Q837,NP,Pa-lo-pou,en,alias,skos:altLabel
+Q837,NP,Pai-pou,en,alias,skos:altLabel
+Q837,NP,Palpa,en,alias,skos:altLabel
+Q837,NP,Palpou,en,alias,skos:altLabel
+Q837,NP,Paï-pou,en,alias,skos:altLabel
+Q842,OM,سلطنة عمان,ar,label,rdfs:label
+Q842,OM,عُمان,ar,alias,skos:altLabel
+Q842,OM,Oman,en,label,rdfs:label
+Q842,OM,Sultanate of Oman,en,alias,skos:altLabel
+Q842,OM,Uman,en,alias,skos:altLabel
+Q842,OM,om,en,alias,skos:altLabel
+Q842,OM,omn,en,alias,skos:altLabel
+Q843,PK,باكستان,ar,label,rdfs:label
+Q843,PK,جمهورية باكستان الإسلامية,ar,alias,skos:altLabel
+Q843,PK,Hồi Quốc,en,alias,skos:altLabel
+Q843,PK,Islamic Republic of Pakistan,en,alias,skos:altLabel
+Q843,PK,Pakistan,en,label,rdfs:label
+Q843,PK,Republic of Pakistan,en,alias,skos:altLabel
+Q843,PK,Tây Hồi,en,alias,skos:altLabel
+Q843,PK,pk,en,alias,skos:altLabel
+Q846,QA,إمارة قطر,ar,alias,skos:altLabel
+Q846,QA,قطر,ar,label,rdfs:label
+Q846,QA,Qatar,en,label,rdfs:label
+Q846,QA,State of Qatar,en,alias,skos:altLabel
+Q846,QA,qa,en,alias,skos:altLabel
+Q846,QA,qat,en,alias,skos:altLabel
+Q851,SA,الدولة السعودية,ar,alias,skos:altLabel
+Q851,SA,الدوله السعوديه,ar,alias,skos:altLabel
+Q851,SA,السعودية,ar,label,rdfs:label
+Q851,SA,السعوديه,ar,alias,skos:altLabel
+Q851,SA,المملكة,ar,alias,skos:altLabel
+Q851,SA,المملكة السعودية,ar,alias,skos:altLabel
+Q851,SA,المملكة العربية,ar,alias,skos:altLabel
+Q851,SA,المملكة العربيّة السُعودِيَة,ar,alias,skos:altLabel
+Q851,SA,المملكه,ar,alias,skos:altLabel
+Q851,SA,المملكه العربيه السعوديه,ar,alias,skos:altLabel
+Q851,SA,الْمَمْلَكَة العَرَبيَّة السُّعُودِيَّة,ar,alias,skos:altLabel
+Q851,SA,بلاد الحرمين الشريفين,ar,alias,skos:altLabel
+Q851,SA,دولة آل سعود,ar,alias,skos:altLabel
+Q851,SA,سعودية,ar,alias,skos:altLabel
+Q851,SA,سعوديه,ar,alias,skos:altLabel
+Q851,SA,منبع الرسالة,ar,alias,skos:altLabel
+Q851,SA,مهبط الوحي,ar,alias,skos:altLabel
+Q851,SA,Kingdom of Saudi Arabia,en,alias,skos:altLabel
+Q851,SA,Saudi,en,alias,skos:altLabel
+Q851,SA,Saudi Arabia,en,label,rdfs:label
+Q854,LK,جمهورية سريلنكا الاشتراكية الديمقراطية,ar,alias,skos:altLabel
+Q854,LK,سري لنكا,ar,alias,skos:altLabel
+Q854,LK,سريلانكا,ar,label,rdfs:label
+Q854,LK,سريلنكا,ar,alias,skos:altLabel
+Q854,LK,Ceylan,en,alias,skos:altLabel
+Q854,LK,Democratic Socialist Republic of Sri Lanka,en,alias,skos:altLabel
+Q854,LK,"Lanka, Sri",en,alias,skos:altLabel
+Q854,LK,SRI,en,alias,skos:altLabel
+Q854,LK,Serendib,en,alias,skos:altLabel
+Q854,LK,Sri Lanka,en,label,rdfs:label
+Q854,LK,Srilanka,en,alias,skos:altLabel
+Q854,LK,Taprobane,en,alias,skos:altLabel
+Q854,LK,ce,en,alias,skos:altLabel
+Q854,LK,lk,en,alias,skos:altLabel
+Q854,LK,lke,en,alias,skos:altLabel
+Q854,LK,sri,en,alias,skos:altLabel
+Q858,SY,الجمهورية العربية السورية,ar,alias,skos:altLabel
+Q858,SY,الجمهوريّة العربيّة السّوريّة,ar,alias,skos:altLabel
+Q858,SY,سوريا,ar,label,rdfs:label
+Q858,SY,سورية,ar,alias,skos:altLabel
+Q858,SY,Syria,en,label,rdfs:label
+Q858,SY,Syrian Arab Republic,en,alias,skos:altLabel
+Q858,SY,Sūriyā,en,alias,skos:altLabel
+Q863,TJ,تاجیکستان,ar,alias,skos:altLabel
+Q863,TJ,طاجيكستان,ar,label,rdfs:label
+Q863,TJ,Republic of Tajikistan,en,alias,skos:altLabel
+Q863,TJ,Tajikistan,en,label,rdfs:label
+Q863,TJ,tj,en,alias,skos:altLabel
+Q8646,HK,هونج كونج,ar,alias,skos:altLabel
+Q8646,HK,هونغ كونغ,ar,label,rdfs:label
+Q8646,HK,هونق كونق,ar,alias,skos:altLabel
+Q8646,HK,هونك كونك,ar,alias,skos:altLabel
+Q8646,HK,HKSAR,en,alias,skos:altLabel
+Q8646,HK,Hong Kong,en,label,rdfs:label
+Q8646,HK,Hong Kong SAR,en,alias,skos:altLabel
+Q8646,HK,"Hong Kong SAR, China",en,alias,skos:altLabel
+Q8646,HK,Hong Kong Special Administrative Region,en,alias,skos:altLabel
+Q8646,HK,Hong Kong Special Administrative Region of the People's Republic of China,en,alias,skos:altLabel
+Q8646,HK,"Hong Kong, China",en,alias,skos:altLabel
+Q8646,HK,Hongkong,en,alias,skos:altLabel
+Q865,CN-TW,تايبيه الصينية,ar,alias,skos:altLabel
+Q865,CN-TW,تايوان,ar,label,rdfs:label
+Q865,CN-TW,جمهورية الصين,ar,alias,skos:altLabel
+Q865,CN-TW,"China, Republic of",en,alias,skos:altLabel
+Q865,CN-TW,Chinese Republic,en,alias,skos:altLabel
+Q865,CN-TW,Chinese Taipei,en,alias,skos:altLabel
+Q865,CN-TW,Chunghwa Minkuo,en,alias,skos:altLabel
+Q865,CN-TW,Chunghwa Minkwo,en,alias,skos:altLabel
+Q865,CN-TW,Free China,en,alias,skos:altLabel
+Q865,CN-TW,Nationalist China,en,alias,skos:altLabel
+Q865,CN-TW,ROC,en,alias,skos:altLabel
+Q865,CN-TW,Republic of China,en,alias,skos:altLabel
+Q865,CN-TW,Republic of China (Taiwan),en,alias,skos:altLabel
+Q865,CN-TW,TW,en,alias,skos:altLabel
+Q865,CN-TW,TWN,en,alias,skos:altLabel
+Q865,CN-TW,Taiwan,en,alias,skos:altLabel
+Q865,CN-TW,Taiwan ROC,en,alias,skos:altLabel
+Q865,CN-TW,The ROC,en,alias,skos:altLabel
+Q869,TH,تايلاند,ar,label,rdfs:label
+Q869,TH,تايلند,ar,alias,skos:altLabel
+Q869,TH,مملكة تايلاند,ar,alias,skos:altLabel
+Q869,TH,Kingdom of Siam,en,alias,skos:altLabel
+Q869,TH,Kingdom of Thailand,en,alias,skos:altLabel
+Q869,TH,Prathet Thai,en,alias,skos:altLabel
+Q869,TH,Ratcha-anachak Thai,en,alias,skos:altLabel
+Q869,TH,Thai,en,alias,skos:altLabel
+Q869,TH,Thailand,en,label,rdfs:label
+Q869,TH,The Kingdom of Siam,en,alias,skos:altLabel
+Q869,TH,The Kingdom of Thailand,en,alias,skos:altLabel
+Q869,TH,th,en,alias,skos:altLabel
+Q874,TM,تركمانستان,ar,label,rdfs:label
+Q874,TM,تركمانيا,ar,alias,skos:altLabel
+Q874,TM,TKM,en,alias,skos:altLabel
+Q874,TM,Turkmenia,en,alias,skos:altLabel
+Q874,TM,Turkmenistan,en,label,rdfs:label
+Q874,TM,tm,en,alias,skos:altLabel
+Q878,AE,الإمارات,ar,alias,skos:altLabel
+Q878,AE,الإمارات العربية المتحدة,ar,label,rdfs:label
+Q878,AE,الامارات,ar,alias,skos:altLabel
+Q878,AE,دولة الإمارات العربية المتحدة,ar,alias,skos:altLabel
+Q878,AE,Emirates,en,alias,skos:altLabel
+Q878,AE,U.A.E.,en,alias,skos:altLabel
+Q878,AE,United Arab Emirates,en,label,rdfs:label
+Q878,AE,ae,en,alias,skos:altLabel
+Q878,AE,the Emirates,en,alias,skos:altLabel
+Q878,AE,the U.A.E.,en,alias,skos:altLabel
+Q878,AE,the UAE,en,alias,skos:altLabel
+Q878,AE,the United Arab Emirates,en,alias,skos:altLabel
+Q881,VN,جمهورية فيتنام الاشتراكية,ar,alias,skos:altLabel
+Q881,VN,فيتنام,ar,label,rdfs:label
+Q881,VN,SRV,en,alias,skos:altLabel
+Q881,VN,Socialist Republic of Viet Nam,en,alias,skos:altLabel
+Q881,VN,Socialist Republic of Vietnam,en,alias,skos:altLabel
+Q881,VN,VIE,en,alias,skos:altLabel
+Q881,VN,VN,en,alias,skos:altLabel
+Q881,VN,VNM,en,alias,skos:altLabel
+Q881,VN,Viet Nam,en,alias,skos:altLabel
+Q881,VN,Vietnam,en,label,rdfs:label
+Q881,VN,Việt Nam,en,alias,skos:altLabel
+Q884,KR,الكوريا الجنوبية,ar,alias,skos:altLabel
+Q884,KR,جمهورية كوريا,ar,alias,skos:altLabel
+Q884,KR,كوريا الجنوبية,ar,label,rdfs:label
+Q884,KR,Choson,en,alias,skos:altLabel
+Q884,KR,Daehan Minguk,en,alias,skos:altLabel
+Q884,KR,Daehanminguk,en,alias,skos:altLabel
+Q884,KR,Hanguk,en,alias,skos:altLabel
+Q884,KR,Korea (South),en,alias,skos:altLabel
+Q884,KR,Korea Republic,en,alias,skos:altLabel
+Q884,KR,Rep. Korea,en,alias,skos:altLabel
+Q884,KR,Republic of Korea,en,alias,skos:altLabel
+Q884,KR,S. Korea,en,alias,skos:altLabel
+Q884,KR,Silla,en,alias,skos:altLabel
+Q884,KR,South Korea,en,label,rdfs:label
+Q889,AF,أفغانستان,ar,label,rdfs:label
+Q889,AF,Affghanistan,en,alias,skos:altLabel
+Q889,AF,Affghanisthan,en,alias,skos:altLabel
+Q889,AF,Affghaunistan,en,alias,skos:altLabel
+Q889,AF,Afghania,en,alias,skos:altLabel
+Q889,AF,Afghanistan,en,label,rdfs:label
+Q889,AF,Afghanisthan,en,alias,skos:altLabel
+Q889,AF,Afghaunistan,en,alias,skos:altLabel
+Q889,AF,Afghaunistaun,en,alias,skos:altLabel
+Q902,BD,بنجلاديش,ar,alias,skos:altLabel
+Q902,BD,بنغلاديش,ar,label,rdfs:label
+Q902,BD,جمهورية بنغلاديش الشعبية,ar,alias,skos:altLabel
+Q902,BD,Bangla Desh,en,alias,skos:altLabel
+Q902,BD,Bangladesh,en,label,rdfs:label
+Q902,BD,Country of Bengal,en,alias,skos:altLabel
+Q902,BD,Land of Bengal,en,alias,skos:altLabel
+Q902,BD,People's Republic of Bangladesh,en,alias,skos:altLabel
+Q902,BD,bd,en,alias,skos:altLabel
+Q912,ML,جمهورية مالي,ar,alias,skos:altLabel
+Q912,ML,مالي,ar,label,rdfs:label
+Q912,ML,Mali,en,label,rdfs:label
+Q912,ML,Republic of Mali,en,alias,skos:altLabel
+Q912,ML,ml,en,alias,skos:altLabel
+Q9143535,,Akrotiri,en,alias,skos:altLabel
+Q9143535,,Akrotiri Sovereign Base Area,en,label,rdfs:label
+Q9143535,,Sovereign Base Area of Akrotiri,en,alias,skos:altLabel
+Q9143535,,WSBA,en,alias,skos:altLabel
+Q9143535,,Western Sovereign Base Area,en,alias,skos:altLabel
+Q916,AO,أنجولا,ar,alias,skos:altLabel
+Q916,AO,أنغولا,ar,label,rdfs:label
+Q916,AO,جمهورية أنغولا,ar,alias,skos:altLabel
+Q916,AO,Angola,en,label,rdfs:label
+Q916,AO,Ngola,en,alias,skos:altLabel
+Q916,AO,Republic of Angola,en,alias,skos:altLabel
+Q916,AO,ao,en,alias,skos:altLabel
+Q917,BT,بوتان,ar,label,rdfs:label
+Q917,BT,مملكة بوتان,ar,alias,skos:altLabel
+Q917,BT,BHU,en,alias,skos:altLabel
+Q917,BT,Bhutan,en,label,rdfs:label
+Q917,BT,Kingdom of Bhutan,en,alias,skos:altLabel
+Q9206745,,ديكيليا كانتونمنت,ar,label,rdfs:label
+Q9206745,,Dhekelia,en,alias,skos:altLabel
+Q9206745,,Dhekelia Cantonment,en,label,rdfs:label
+Q9206745,,Dhekelia Sovereign Base Area,en,alias,skos:altLabel
+Q9206745,,ESBA,en,alias,skos:altLabel
+Q9206745,,Eastern Sovereign Base Area,en,alias,skos:altLabel
+Q9206745,,Sovereign Base Area of Dhekelia,en,alias,skos:altLabel
+Q921,BN,bn,ar,alias,skos:altLabel
+Q921,BN,اتحاد بروناي,ar,alias,skos:altLabel
+Q921,BN,بروناي,ar,label,rdfs:label
+Q921,BN,بروناي دار السلام,ar,alias,skos:altLabel
+Q921,BN,🇧🇳,ar,alias,skos:altLabel
+Q921,BN,Brunei,en,label,rdfs:label
+Q921,BN,"Nation of Brunei, the Abode of Peace",en,alias,skos:altLabel
+Q921,BN,Negara Brunei Darussalam,en,alias,skos:altLabel
+Q921,BN,bn,en,alias,skos:altLabel
+Q924,TZ,تنزانيا,ar,label,rdfs:label
+Q924,TZ,جمهورية تنزانيا الاتحادية,ar,alias,skos:altLabel
+Q924,TZ,Tanzania,en,label,rdfs:label
+Q924,TZ,"Tanzania, United Republic of",en,alias,skos:altLabel
+Q924,TZ,United Republic of Tanganyika and Zanzibar,en,alias,skos:altLabel
+Q924,TZ,United Republic of Tanzania,en,alias,skos:altLabel
+Q924,TZ,tz,en,alias,skos:altLabel
+Q924,TZ,tza,en,alias,skos:altLabel
+Q928,PH,الفلبين,ar,label,rdfs:label
+Q928,PH,جمهورية الفلبين,ar,alias,skos:altLabel
+Q928,PH,Philippine Islands,en,alias,skos:altLabel
+Q928,PH,Philippines,en,label,rdfs:label
+Q928,PH,RP,en,alias,skos:altLabel
+Q928,PH,Republic of the Philippines,en,alias,skos:altLabel
+Q928,PH,The Philippines,en,alias,skos:altLabel
+Q929,CF,جمهورية إفريقيا الوسطى,ar,label,rdfs:label
+Q929,CF,Central Africa,en,alias,skos:altLabel
+Q929,CF,Central African Republic,en,label,rdfs:label
+Q929,CF,cf,en,alias,skos:altLabel
+Q945,TG,توغو,ar,label,rdfs:label
+Q945,TG,جمهورية توغو,ar,alias,skos:altLabel
+Q945,TG,Togo,en,label,rdfs:label
+Q945,TG,Togolese Republic,en,alias,skos:altLabel
+Q945,TG,tg,en,alias,skos:altLabel
+Q948,TN,الجمهورية التونسية,ar,alias,skos:altLabel
+Q948,TN,تونس,ar,label,rdfs:label
+Q948,TN,تونس الخضراء,ar,alias,skos:altLabel
+Q948,TN,تُوْنُس,ar,alias,skos:altLabel
+Q948,TN,تُوْنِس,ar,alias,skos:altLabel
+Q948,TN,Republic of Tunisia,en,alias,skos:altLabel
+Q948,TN,Tunisia,en,label,rdfs:label
+Q948,TN,Tunisian Republic,en,alias,skos:altLabel
+Q948,TN,tn,en,alias,skos:altLabel
+Q953,ZM,جمهورية زامبيا,ar,alias,skos:altLabel
+Q953,ZM,زامبيا,ar,label,rdfs:label
+Q953,ZM,Republic of Zambia,en,alias,skos:altLabel
+Q953,ZM,Zambia,en,label,rdfs:label
+Q953,ZM,Zed,en,alias,skos:altLabel
+Q954,ZW,جمهورية زيمبابوي,ar,alias,skos:altLabel
+Q954,ZW,زيمبابوي,ar,label,rdfs:label
+Q954,ZW,Republic of Zimbabwe,en,alias,skos:altLabel
+Q954,ZW,Rhodesia,en,alias,skos:altLabel
+Q954,ZW,Southern Rhodesia,en,alias,skos:altLabel
+Q954,ZW,Zimbabwe,en,label,rdfs:label
+Q954,ZW,Zimbabwe Rhodesia,en,alias,skos:altLabel
+Q958,SS,جمهورية جنوب السودان,ar,alias,skos:altLabel
+Q958,SS,جنوب السودان,ar,label,rdfs:label
+Q958,SS,Republic of South Sudan,en,alias,skos:altLabel
+Q958,SS,SSD,en,alias,skos:altLabel
+Q958,SS,South Sudan,en,label,rdfs:label
+Q958,SS,Southern Sudan,en,alias,skos:altLabel
+Q958,SS,ss,en,alias,skos:altLabel
+Q96,MX,المكسيك,ar,label,rdfs:label
+Q96,MX,الولايات المتحدة المكسيكية,ar,alias,skos:altLabel
+Q96,MX,MXN,en,alias,skos:altLabel
+Q96,MX,Mexican Republic,en,alias,skos:altLabel
+Q96,MX,Mexican United States,en,alias,skos:altLabel
+Q96,MX,Mexico,en,label,rdfs:label
+Q96,MX,US of M,en,alias,skos:altLabel
+Q96,MX,United Mexican States,en,alias,skos:altLabel
+Q96,MX,United States of Mexico,en,alias,skos:altLabel
+Q96,MX,mx,en,alias,skos:altLabel
+Q962,BJ,بنين,ar,label,rdfs:label
+Q962,BJ,Benin,en,label,rdfs:label
+Q962,BJ,Republic of Benin,en,alias,skos:altLabel
+Q963,BW,بوتسوانا,ar,label,rdfs:label
+Q963,BW,Botswana,en,label,rdfs:label
+Q963,BW,Lefatshe la Botswana,en,alias,skos:altLabel
+Q963,BW,Republic of Botswana,en,alias,skos:altLabel
+Q963,BW,bw,en,alias,skos:altLabel
+Q9648,FK,جزر فوكلاند,ar,label,rdfs:label
+Q9648,FK,FK,en,alias,skos:altLabel
+Q9648,FK,FLK,en,alias,skos:altLabel
+Q9648,FK,Falkland Islands,en,label,rdfs:label
+Q9648,FK,Falklands,en,alias,skos:altLabel
+Q9648,FK,Islas Malvinas,en,alias,skos:altLabel
+Q9648,FK,Malvinas,en,alias,skos:altLabel
+Q9648,FK,Malvinas Islands,en,alias,skos:altLabel
+Q965,BF,بركينا فاسو,ar,alias,skos:altLabel
+Q965,BF,بوركينا فاسو,ar,label,rdfs:label
+Q965,BF,بوركينا فاصو,ar,alias,skos:altLabel
+Q965,BF,بوركينافاسو,ar,alias,skos:altLabel
+Q965,BF,بوركينافاصو,ar,alias,skos:altLabel
+Q965,BF,بوركينفاسو,ar,alias,skos:altLabel
+Q965,BF,بوركينياني,ar,alias,skos:altLabel
+Q965,BF,بوركینا فاسو,ar,alias,skos:altLabel
+Q965,BF,بورکینا فاسو,ar,alias,skos:altLabel
+Q965,BF,فولطا العليا,ar,alias,skos:altLabel
+Q965,BF,قائمة جزر بوركينا فاسو,ar,alias,skos:altLabel
+Q965,BF,Burkina Faso,en,label,rdfs:label
+Q965,BF,Republic of Burkina Faso,en,alias,skos:altLabel
+Q965,BF,Republic of Upper Volta (-1984),en,alias,skos:altLabel
+Q965,BF,bf,en,alias,skos:altLabel
+Q967,BI,بوروندي,ar,label,rdfs:label
+Q967,BI,Burundi,en,label,rdfs:label
+Q967,BI,Gouvernement du Burundi,en,alias,skos:altLabel
+Q967,BI,Republic of Burundi,en,alias,skos:altLabel
+Q967,BI,Republika y'Uburundi,en,alias,skos:altLabel
+Q967,BI,bi,en,alias,skos:altLabel
+Q9676,IM,آيل أوف مان,ar,alias,skos:altLabel
+Q9676,IM,جزيرة مان,ar,label,rdfs:label
+Q9676,IM,جزيره مان,ar,alias,skos:altLabel
+Q9676,IM,مان (جزيرة),ar,alias,skos:altLabel
+Q9676,IM,I. M.,en,alias,skos:altLabel
+Q9676,IM,I. Man,en,alias,skos:altLabel
+Q9676,IM,I. Mann,en,alias,skos:altLabel
+Q9676,IM,I. Mannin,en,alias,skos:altLabel
+Q9676,IM,Isle of Man,en,label,rdfs:label
+Q9676,IM,Isle of Mann,en,alias,skos:altLabel
+Q9676,IM,Man,en,alias,skos:altLabel
+Q9676,IM,Mann,en,alias,skos:altLabel
+Q9676,IM,Manx,en,alias,skos:altLabel
+Q9676,IM,the Isle of Man,en,alias,skos:altLabel
+Q970,KM,الاتحاد القمري,ar,alias,skos:altLabel
+Q970,KM,الاتّحاد القُمُري,ar,alias,skos:altLabel
+Q970,KM,القمر,ar,alias,skos:altLabel
+Q970,KM,جزر القمر,ar,label,rdfs:label
+Q970,KM,جزر القُمُر,ar,alias,skos:altLabel
+Q970,KM,Comoros,en,label,rdfs:label
+Q970,KM,Juzur al-Qamar,en,alias,skos:altLabel
+Q970,KM,Juzur al-Qumur,en,alias,skos:altLabel
+Q970,KM,Massiwa ya komori,en,alias,skos:altLabel
+Q970,KM,Udzima wa Komori,en,alias,skos:altLabel
+Q970,KM,Union des Comores,en,alias,skos:altLabel
+Q970,KM,Union of the Comoros,en,alias,skos:altLabel
+Q970,KM,al-Ittiḥād al-Qumurī,en,alias,skos:altLabel
+Q970,KM,km,en,alias,skos:altLabel
+Q970,KM,ouvoimoja wakomori,en,alias,skos:altLabel
+Q970,KM,the Comoros,en,alias,skos:altLabel
+Q971,CG,جمهورية الكونغو,ar,label,rdfs:label
+Q971,CG,CGO,en,alias,skos:altLabel
+Q971,CG,Congo,en,alias,skos:altLabel
+Q971,CG,Congo (Brazzaville),en,alias,skos:altLabel
+Q971,CG,Congo Republic,en,alias,skos:altLabel
+Q971,CG,Congo-Brazzaville,en,alias,skos:altLabel
+Q971,CG,Rep. Congo,en,alias,skos:altLabel
+Q971,CG,Republic of Congo,en,alias,skos:altLabel
+Q971,CG,Republic of the Congo,en,label,rdfs:label
+Q971,CG,Republique du Congo,en,alias,skos:altLabel
+Q971,CG,République du Congo,en,alias,skos:altLabel
+Q971,CG,cg,en,alias,skos:altLabel
+Q974,CD,الكونغو,ar,alias,skos:altLabel
+Q974,CD,الكونغو الديمقراطية,ar,alias,skos:altLabel
+Q974,CD,جمهورية الكونغو الديمقراطية,ar,label,rdfs:label
+Q974,CD,COD,en,alias,skos:altLabel
+Q974,CD,Congo (Kinshasa),en,alias,skos:altLabel
+Q974,CD,D.R.C.,en,alias,skos:altLabel
+Q974,CD,DR Congo,en,alias,skos:altLabel
+Q974,CD,DRC,en,alias,skos:altLabel
+Q974,CD,Dem. Rep. Congo,en,alias,skos:altLabel
+Q974,CD,Dem. Republic of Congo,en,alias,skos:altLabel
+Q974,CD,Dem. Republic of the Congo,en,alias,skos:altLabel
+Q974,CD,Democratic Republic of Congo,en,alias,skos:altLabel
+Q974,CD,Democratic Republic of the Congo,en,label,rdfs:label
+Q974,CD,cd,en,alias,skos:altLabel
+Q977,DJ,جيبوتي,ar,label,rdfs:label
+Q977,DJ,Djibouti,en,label,rdfs:label
+Q977,DJ,Gabuuti,en,alias,skos:altLabel
+Q977,DJ,Jabuuti,en,alias,skos:altLabel
+Q977,DJ,Jībūtī,en,alias,skos:altLabel
+Q977,DJ,Republic of Djibouti,en,alias,skos:altLabel
+Q977,DJ,dj,en,alias,skos:altLabel
+Q983,GQ,غينيا الاستوائية,ar,label,rdfs:label
+Q983,GQ,Equatorial Guinea,en,label,rdfs:label
+Q983,GQ,GEQ,en,alias,skos:altLabel
+Q983,GQ,Republic of Equatorial Guinea,en,alias,skos:altLabel
+Q983,GQ,gq,en,alias,skos:altLabel
+Q986,ER,إرتريا,ar,label,rdfs:label
+Q986,ER,إريتريا,ar,alias,skos:altLabel
+Q986,ER,ارتريا,ar,alias,skos:altLabel
+Q986,ER,دولة إرتريا,ar,alias,skos:altLabel
+Q986,ER,دولة إريتريا,ar,alias,skos:altLabel
+Q986,ER,Eritrea,en,label,rdfs:label
+Q986,ER,Ertrā,en,alias,skos:altLabel
+Q986,ER,Iritriyā,en,alias,skos:altLabel
+Q986,ER,State of Eritrea,en,alias,skos:altLabel
+Q986,ER,er,en,alias,skos:altLabel

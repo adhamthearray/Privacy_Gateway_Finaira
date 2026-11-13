@@ -1,6 +1,6 @@
 # Finaira generalization database
 
-Status: implemented and exercised locally on 2026-11-12. This layer is an offline, deterministic Arabic/English reference database. It returns all valid candidates and never selects one.
+Status: implemented and exercised locally on 2026-11-13. This layer is an offline, deterministic Arabic/English reference database. It returns all valid candidates and never selects one. The current NER-v1 coverage audit is in [reports/generalization_coverage_improvement](../reports/generalization_coverage_improvement); its `alias_review_queue.csv` is a review queue only and never promotes corpus text automatically.
 
 ## Repository layout
 
@@ -54,6 +54,7 @@ The legacy M49 tables are historical compatibility data only. Active NATIONALITY
 |---|---|---|---:|
 | `import_batches` | `batch_id` | import status audit | 1 |
 | `natural_earth_countries` | `natural_earth_id` | `source_id`; indexes on `wikidata_qid`, `iso_a2` | 258 |
+| `natural_earth_country_aliases` | `alias_id` | `natural_earth_id`, `source_id`; normalized alias/language indexes | 2,181 |
 | `nationality_countries` | `country_qid` | `source_id`; index on `iso2` | 239 |
 | `nationality_aliases_v2` | `alias_key` | `country_qid`, `source_id`; indexes on normalized alias/language | 857 |
 | `nationality_geo_joins` | `country_qid` | `country_qid`, `natural_earth_id`, `source_id`; status indexes | 239 |
@@ -88,6 +89,7 @@ erDiagram
   NATIONALITY_COUNTRIES ||--o{ NATIONALITY_ALIASES_V2 : identifies
   NATIONALITY_COUNTRIES ||--|| NATIONALITY_GEO_JOINS : audits
   NATURAL_EARTH_COUNTRIES ||--o{ NATIONALITY_GEO_JOINS : joins
+  NATURAL_EARTH_COUNTRIES ||--o{ NATURAL_EARTH_COUNTRY_ALIASES : has
   DATA_SOURCES ||--o{ BANKS : sources
   BANKS ||--o{ BANK_ALIASES : has
   BANKS ||--o{ BANK_EVIDENCE : supported_by
@@ -113,6 +115,7 @@ erDiagram
 |---|---|---|
 | Supplied handoff aliases plus `data/sources/wikidata/wikidata_nationality_aliases_ar_en_v2.csv` | `nationality_countries`, `nationality_aliases_v2` | 857 preserved/updated Arabic/English Wikidata `P1549` aliases, QIDs extracted from URI, CC0 provenance |
 | Official Natural Earth Admin-0 1:10m v5.1.1 ZIP | `natural_earth_countries` and derived CSV | 258 DBF rows; fields verified before conversion; public-domain terms |
+| Wikidata labels/aliases API export | `natural_earth_country_aliases` | 2,181 deduplicated Arabic/English aliases linked by Wikidata QID; source-verified and enabled for COUNTRY only |
 | QID index CSV | source checksum/audit input | consistency audit only; never treated as Natural Earth |
 | `banks_FINAL_evidence.csv` | `banks`, regenerated `bank_candidates` | authoritative 37-row master; blank Arabic names remain null |
 | bank evidence CSV | `bank_evidence` | 24 evidence rows and 13 bank IDs |
@@ -140,7 +143,7 @@ flowchart LR
 
 The runtime tries `WIKIDATAID` first. ISO A2 is used only when the QID is absent and exactly one Natural Earth row is available. Current audit: 233 QIDs; 223 `MATCHED_QID`, 2 `MATCHED_ISO`, 1 `MISMATCH` (Taiwan ISO representation), and 7 unresolved edge cases. No unresolved row receives a guessed region. See [reports/nationality_natural_earth_join_audit.csv](../reports/nationality_natural_earth_join_audit.csv).
 
-`COUNTRY` is a separate runtime path. It resolves Natural Earth `name_ar`, `name_en`, or validated `ISO_A2` directly and returns Natural Earth exact, subregion, UN region, continent, and suppression candidates. It never treats a country name as a nationality alias. Arabic regional labels remain unavailable unless Natural Earth supplies a verified Arabic field.
+`COUNTRY` is a separate runtime path. It resolves verified Wikidata labels/aliases linked to Natural Earth by QID first, then Natural Earth `name_ar`, `name_en`, or validated `ISO_A2`, and returns Natural Earth exact, subregion, UN region, continent, and suppression candidates. It never treats a country name as a nationality alias. Arabic regional labels remain unavailable unless Natural Earth supplies a verified Arabic field.
 
 Examples:
 
@@ -249,7 +252,7 @@ py -X utf8 -m pytest -q
 ## Counts, verification, and unresolved data
 
 - Natural Earth: 258 rows, source version 5.1.1; 239 nationality QIDs retained; 230 QID matches, 2 guarded ISO matches, and 7 unresolved legacy edge cases. Country lookup uses all 258 Natural Earth rows.
-- Nationality aliases: 857 preserved/updated Arabic and English `P1549` rows across 230 Natural Earth countries. The coverage export records 28 Natural Earth records with no verified Arabic/English demonym; no form is invented for them.
+- Nationality aliases: 857 preserved/updated Arabic and English `P1549` rows across 230 Natural Earth countries. The coverage export records 28 Natural Earth records with no verified Arabic/English demonym; no form is invented for them. COUNTRY has 2,181 deduplicated Wikidata label/alias rows across the Natural Earth source.
 - Banks: 37 total; 24 conventional, 9 mixed, 4 Islamic; 24 evidence rows across 13 bank IDs; 185 regenerated candidates; 37/37 official Arabic master names blank. Conventional labels retain `EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF` limitations.
 - Organizations: 312 QIDs; 360 industry links; 73 concept mappings; 63 bilingual source categories; 48 missing Arabic organization names; all identities pending. No organization is production-verified by this import.
 - Government: 12 seed entities, 24 aliases, 17 categories, 63 review-catalog rows; all 12 identity rows remain `REVIEW_REQUIRED`, and all specific mappings remain review-only.
@@ -261,8 +264,8 @@ Provisional or unresolved: Natural Earth mismatches/unmatched territories, all b
 
 ## Test record and exclusions
 
-Before changes: `py -m pytest -q` → **15 passed in 17.38s**.
+Before the current coverage-improvement changes: `py -m pytest -q` → **21 passed in 17.12s**.
 
-After changes: `py -X utf8 -m pytest -q` → **20 passed in 17.59s**. The final suite includes the existing pipeline tests, updated Natural Earth regression assertions, handoff counts, bank evidence/classification, organization approval gating, government review gating, bilingual/unknown behavior, FK/integrity checks, and a second-import idempotence check.
+After changes: `py -X utf8 -m pytest -q` → **24 passed in 16.39s**. The final suite includes the existing pipeline tests, country alias lookup, Natural Earth regression assertions, handoff counts, bank evidence/classification, organization approval gating, government review gating, bilingual/unknown behavior, deterministic date format/ambiguity checks, FK/integrity checks, unsupported-type gating, and a second-import idempotence check.
 
 This layer does not implement JEV-U, JEV-P, privacy scoring, utility ranking, policy/disclosure selection, external LLM or cloud calls, or a new pseudonymization vault. The existing `finaira` privacy pipeline remains separate and unchanged.

@@ -15,7 +15,7 @@ from .db import (
     GeneralizationCandidate, GeneralizationLevel, GovernmentAlias,
     GovernmentCandidateReview, GovernmentEntity, IndustryQIDMapping,
     NationalityAlias, NationalityAliasV2, NationalityGeoJoin,
-    NationalityCountry, NaturalEarthCountry, Organization, OrganizationAlias,
+    NationalityCountry, NaturalEarthCountry, NaturalEarthCountryAlias, Organization, OrganizationAlias,
     OrganizationExclusion, OrganizationIndustry, OccupationAlias, make_engine,
 )
 from .layers import stable_id
@@ -104,9 +104,19 @@ class GeneralizationDB:
         normalized = normalize(value, lang)
         matches = []
         match_methods = {}
-        for row in session.scalars(select(NaturalEarthCountry)).all():
+        aliases = [row for row in session.scalars(select(NaturalEarthCountryAlias).where(NaturalEarthCountryAlias.enabled_for_lookup.is_(True))).all() if normalize(row.alias_text, row.language) == normalize(value, row.language)]
+        alias_ids = {row.natural_earth_id for row in aliases}
+        if alias_ids:
+            rows = [session.get(NaturalEarthCountry, natural_earth_id) for natural_earth_id in sorted(alias_ids)]
+        else:
+            rows = session.scalars(select(NaturalEarthCountry)).all()
+        for row in rows:
+            if row is None:
+                continue
             method = None
-            if row.name_ar and normalize(row.name_ar, "ar") == normalized:
+            if alias_ids and row.natural_earth_id in alias_ids:
+                method = "WIKIDATA_COUNTRY_ALIAS"
+            elif row.name_ar and normalize(row.name_ar, "ar") == normalized:
                 method = "NATURAL_EARTH_NAME_AR"
             elif row.name_en and normalize(row.name_en, "en") == normalized:
                 method = "NATURAL_EARTH_NAME_EN"

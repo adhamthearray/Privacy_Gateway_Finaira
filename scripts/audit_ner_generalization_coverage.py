@@ -18,6 +18,7 @@ from finaira_generalization.db import (
     BankAlias,
     GovernmentAlias,
     NaturalEarthCountry,
+    NaturalEarthCountryAlias,
     NationalityAliasV2,
     NationalityGeoJoin,
     OccupationAlias,
@@ -80,6 +81,7 @@ class CoverageIndex:
         self.session = Session(make_engine(db_path))
         self.ne = self.session.scalars(select(NaturalEarthCountry)).all()
         self.ne_by_name: dict[tuple[str, str], list[NaturalEarthCountry]] = defaultdict(list)
+        self.country_alias: dict[tuple[str, str], set[str]] = defaultdict(set)
         for row in self.ne:
             if row.name_ar:
                 self.ne_by_name[("ar", normalize(row.name_ar, "ar"))].append(row)
@@ -88,6 +90,9 @@ class CoverageIndex:
             if row.iso_a2 and row.iso_a2 != "-99":
                 self.ne_by_name[("ar", row.iso_a2.casefold())].append(row)
                 self.ne_by_name[("en", row.iso_a2.casefold())].append(row)
+        for alias in self.session.scalars(select(NaturalEarthCountryAlias)).all():
+            if alias.enabled_for_lookup:
+                self.country_alias[(alias.language, alias.normalized_alias)].add(alias.natural_earth_id)
 
         self.bank_alias: dict[tuple[str, str], set[str]] = defaultdict(set)
         self.bank_canonical: dict[tuple[str, str], set[str]] = defaultdict(set)
@@ -129,7 +134,16 @@ class CoverageIndex:
         if entity_type == "COUNTRY":
             attempts = []
             for language in ("ar", "en"):
-                rows = self.ne_by_name.get((language, normalize(value, language)), [])
+                alias_ids = self.country_alias.get((language, normalize(value, language)), set())
+                if alias_ids:
+                    rows = [self.session.get(NaturalEarthCountry, natural_earth_id) for natural_earth_id in sorted(alias_ids)]
+                else:
+                    rows = []
+                    seen = set()
+                    for row in self.ne_by_name.get((language, normalize(value, language)), []):
+                        if row.natural_earth_id not in seen:
+                            rows.append(row)
+                            seen.add(row.natural_earth_id)
                 if len(rows) > 1:
                     attempts.append(_result("AMBIGUOUS", "ALIAS_COLLISION", language, levels=("SUPPRESSED",)))
                 elif len(rows) == 1:
@@ -258,6 +272,22 @@ def next_action(entity_type: str, result_category: str) -> str:
     return "validate input format or source evidence"
 
 
+def review_source(entity_type: str) -> str:
+    return {
+        "BANK": "handoff/input/bank/banks_FINAL_evidence.csv plus regulator evidence",
+        "COUNTRY": "Natural Earth Admin-0 + Wikidata label/alias/QID evidence",
+        "NATIONALITY": "Wikidata P1549 Arabic/English demonym evidence",
+        "CORPORATION": "handoff/input/organization Wikidata directory + approval evidence",
+        "ORGANIZATION": "handoff/input/organization Wikidata directory + approval evidence",
+        "UNIVERSITY": "handoff/input/organization Wikidata directory + approval evidence",
+        "GOVERNMENT_ENTITY": "handoff/input/government seed + official identity evidence",
+        "JOB_TITLE": "existing ESCO/ISCO source files and alias provenance",
+        "OCCUPATION": "existing ESCO/ISCO source files and alias provenance",
+        "AGE": "config age bands and deterministic parser policy",
+        "DATE": "date format context or explicit caller policy",
+    }[entity_type]
+
+
 def read_dataset(dataset: Path) -> dict[str, Counter[str]]:
     values: dict[str, Counter[str]] = defaultdict(Counter)
     details: dict[tuple[str, str], dict[str, set[str]]] = defaultdict(lambda: {"files": set(), "splits": set(), "origins": set()})
@@ -344,6 +374,44 @@ def main() -> None:
         writer = csv.DictWriter(handle, fieldnames=summary_fields)
         writer.writeheader()
         writer.writerows(summary)
+
+    # This is an evidence-preserving work queue, not an automatic alias importer.
+    # Keep every unresolved value and its frequency visible so a later reviewer can
+    # attach a source-backed alias without promoting corpus text by itself.
+    review_fields = [
+        "entity_type",
+        "value",
+        "span_count",
+        "source_files",
+        "splits",
+        "origins",
+        "coverage_category",
+        "resolution_status",
+        "reason_code",
+        "canonical_id",
+        "lookup_language",
+        "next_action",
+        "reviewer_guidance",
+        "candidate_source",
+        "review_decision",
+        "evidence_reference",
+    ]
+    review_rows = []
+    for row in rows:
+        if row["coverage_category"] == "MATCHED_OR_VERIFIED":
+            continue
+        review_rows.append({
+            key: row.get(key, "") for key in review_fields[:-4]
+        } | {
+            "reviewer_guidance": "Do not promote until the candidate identity and source evidence are verified.",
+            "candidate_source": review_source(row["entity_type"]),
+            "review_decision": "PENDING",
+            "evidence_reference": "",
+        })
+    with (args.output / "alias_review_queue.csv").open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=review_fields)
+        writer.writeheader()
+        writer.writerows(sorted(review_rows, key=lambda row: (row["entity_type"], -int(row["span_count"]), row["value"])))
 
     lines = [
         "# finaira_ner_v1 generalization coverage audit",

@@ -35,6 +35,7 @@ from .db import (
     ImportBatch,
     IndustryCategory,
     IndustryQIDMapping,
+    NaturalEarthCountryAlias,
     NaturalEarthCountry,
     NationalityAliasV2,
     NationalityCountry,
@@ -141,9 +142,11 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
     expanded_source_path = ROOT / "data/sources/wikidata/wikidata_nationality_aliases_ar_en_v2.csv"
     source_path = expanded_source_path if expanded_source_path.exists() else handoff_root / "inputs/nationality/wikidata_nationality_aliases.csv"
     qid_index_path = handoff_root / "inputs/nationality/wikidata_country_qid_index_DERIVED.csv"
+    country_alias_path = ROOT / "data/sources/wikidata/wikidata_country_aliases_ar_en_v1.csv"
     ne_csv = _natural_earth(handoff_root)
     alias_source_name = "wikidata_nationality_aliases_ar_en_v2" if expanded_source_path.exists() else "handoff_nationality_aliases"
     alias_source = _source(session, alias_source_name, source_path, version="wikidata-p1549-ar-en" if expanded_source_path.exists() else "handoff-2026-11-12", license_text="Wikidata structured data CC0")
+    country_alias_source = _source(session, "wikidata_country_aliases_ar_en_v1", country_alias_path, version="wikidata-labels-aliases-ar-en" , license_text="Wikidata structured data CC0") if country_alias_path.exists() else None
     _source(session, "handoff_nationality_qid_index_derived", qid_index_path, license_text="Derived audit; source rows remain Wikidata CC0")
     ne_source = _source(
         session,
@@ -162,6 +165,7 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
     session.execute(delete(NationalityAliasV2))
     session.execute(delete(NationalityGeoJoin))
     session.execute(delete(NationalityCountry))
+    session.execute(delete(NaturalEarthCountryAlias))
     if NATURAL_EARTH_ZIP.exists():
         _source(
             session,
@@ -173,6 +177,24 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
         )
     for row in ne_rows:
         _put(session, NaturalEarthCountry, row["natural_earth_id"], {"wikidata_qid": _text(row.get("wikidata_qid")), "iso_a2": _text(row.get("iso_a2")), "name_en": _text(row.get("name_en")), "name_ar": _text(row.get("name_ar")), "subregion": _text(row.get("subregion")), "region_un": _text(row.get("region_un")), "continent": _text(row.get("continent")), "source_id": ne_source.source_id, "source_version": "5.1.1"})
+    country_alias_count = 0
+    if country_alias_source is not None:
+        ne_by_qid = {row.get("wikidata_qid"): row for row in ne_rows if _text(row.get("wikidata_qid"))}
+        for row in _read_csv(country_alias_path):
+            qid = _qid(row.get("wikidata_qid") or row.get("country"))
+            natural = ne_by_qid.get(qid)
+            alias = _text(row.get("alias_text"))
+            language = (_text(row.get("language")) or "").lower()
+            if natural is None or not alias or language not in {"ar", "en"}:
+                continue
+            normalized = normalize(alias, language)
+            # The table intentionally has one lookup row per normalized alias
+            # and language for a Natural Earth country. Raw source spellings
+            # remain preserved in the checked-in source CSV; runtime lookup
+            # must not create duplicate normalized rows.
+            alias_id = _stable("natural-earth-country-alias", natural["natural_earth_id"], language, normalized)
+            _put(session, NaturalEarthCountryAlias, alias_id, {"natural_earth_id": natural["natural_earth_id"], "alias_text": alias, "normalized_alias": normalized, "language": language, "alias_kind": _text(row.get("alias_kind")) or "wikidata_alias", "source_property": _text(row.get("source_property")) or "wikidata", "source_id": country_alias_source.source_id, "verification_status": "SOURCE_VERIFIED", "enabled_for_lookup": True})
+            country_alias_count += 1
     by_qid = {r["wikidata_qid"]: r for r in ne_rows if _text(r.get("wikidata_qid"))}
     by_iso: dict[str, list[dict[str, str]]] = defaultdict(list)
     for row in ne_rows:
@@ -258,7 +280,7 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
         writer = csv.DictWriter(handle, fieldnames=list(audit_rows[0]))
         writer.writeheader()
         writer.writerows(audit_rows)
-    metrics.update({"nationality_aliases_v2": alias_count, "nationality_distinct_qids": len(by_qid_input), "natural_earth_rows": len(ne_rows), "natural_earth_join_status": dict(status_counts)})
+    metrics.update({"nationality_aliases_v2": alias_count, "natural_earth_country_aliases": country_alias_count, "nationality_distinct_qids": len(by_qid_input), "natural_earth_rows": len(ne_rows), "natural_earth_join_status": dict(status_counts)})
 
 
 def _import_banks(session: Session, root: Path, metrics: dict, report_dir: Path):

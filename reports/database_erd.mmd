@@ -344,6 +344,18 @@ erDiagram
         INTEGER source_id
         VARCHAR(40) source_version
     }
+    natural_earth_country_aliases {
+        VARCHAR(100) alias_id PK
+        VARCHAR(40) natural_earth_id
+        TEXT alias_text
+        TEXT normalized_alias
+        VARCHAR(2) language
+        VARCHAR(30) alias_kind
+        VARCHAR(50) source_property
+        INTEGER source_id
+        VARCHAR(40) verification_status
+        BOOLEAN enabled_for_lookup
+    }
     occupation_aliases {
         INTEGER alias_id PK
         VARCHAR(300) occupation_id
@@ -472,6 +484,8 @@ erDiagram
     natural_earth_countries ||--o{ nationality_geo_joins : "natural_earth_id"
     data_sources ||--o{ nationality_geo_joins : "source_id"
     data_sources ||--o{ natural_earth_countries : "source_id"
+    natural_earth_countries ||--o{ natural_earth_country_aliases : "natural_earth_id"
+    data_sources ||--o{ natural_earth_country_aliases : "source_id"
     occupations ||--o{ occupation_aliases : "occupation_id"
     data_sources ||--o{ occupation_aliases : "source_id"
     generalization_candidates ||--o{ occupation_candidate_refs : "candidate_id"

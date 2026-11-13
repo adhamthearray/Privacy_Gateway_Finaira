@@ -1,4 +1,5 @@
 from pathlib import Path
+import pytest
 from finaira_generalization import GeneralizationDB
 from finaira_generalization.layers import generate_levels
 from finaira_generalization.db import make_engine
@@ -31,6 +32,15 @@ def test_dynamic_age_and_date_layers_have_nested_intervals():
     assert date[2]["representation"]=="Q1 2026"
     assert date[2]["metadata"]["interval_start"]=="2026-01-01"
 
+def test_date_numeric_formats_and_ambiguity_are_deterministic():
+    from finaira_generalization.age_date import parse_date
+    assert parse_date("2026/03/14").isoformat()=="2026-03-14"
+    assert parse_date("14-03-2026").isoformat()=="2026-03-14"
+    assert parse_date("١٤/٠٣/٢٠٢٦").isoformat()=="2026-03-14"
+    with pytest.raises(ValueError, match="AMBIGUOUS_DATE"):
+        parse_date("03/04/2026")
+    assert parse_date("03/04/2026", "%d/%m/%Y").isoformat()=="2026-04-03"
+
 def test_ids_stable_and_base_tables_preserved():
     e=make_engine(DB)
     with e.connect() as c:
@@ -46,3 +56,22 @@ def test_unknown_returns_safe_suppression_only():
     r=GeneralizationDB(DB).get_candidates("OCCUPATION","not a real occupation","en")
     assert r["resolution_status"]=="NOT_FOUND"
     assert [x["level_code"] for x in r["candidates"]]==["SUPPRESSED"]
+
+def test_only_supported_generalization_types_are_exposed():
+    supported = {
+        "BANK": "Banque Misr",
+        "COUNTRY": "Egypt",
+        "NATIONALITY": "Egyptian",
+        "CORPORATION": "not a real company",
+        "ORGANIZATION": "not an organization",
+        "UNIVERSITY": "not a university",
+        "GOVERNMENT_ENTITY": "unknown",
+        "JOB_TITLE": "technical director",
+        "OCCUPATION": "technical director",
+        "AGE": "27",
+        "DATE": "2026-03-14",
+    }
+    for entity_type, value in supported.items():
+        result = GeneralizationDB(DB).get_candidates(entity_type, value, "en")
+        assert result["candidates"], entity_type
+    assert GeneralizationDB(DB).get_candidates("PERSON_NAME", "Ada Lovelace", "en")["resolution_status"] == "UNSUPPORTED_ENTITY_TYPE"

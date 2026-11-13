@@ -7,7 +7,7 @@ Categories: `MATCHED_OR_VERIFIED` is production source/configuration coverage; `
 | Entity | Unique | Spans | Matched/verified | Review | Ambiguous | Generic fallback | Suppression/invalid | Out of scope |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | BANK | 73 | 869 | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 73 (100.00%) | 0 (0.00%) | 0 |
-| COUNTRY | 229 | 3,009 | 114 (49.78%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 115 (50.22%) | 0 |
+| COUNTRY | 229 | 3,009 | 143 (62.45%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 86 (37.55%) | 0 |
 | NATIONALITY | 115 | 607 | 41 (35.65%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 74 (64.35%) | 0 |
 | CORPORATION | 1,516 | 6,083 | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 1,516 (100.00%) | 0 (0.00%) | 0 |
 | ORGANIZATION | 0 | 0 | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 |
@@ -16,7 +16,7 @@ Categories: `MATCHED_OR_VERIFIED` is production source/configuration coverage; `
 | JOB_TITLE | 2,214 | 9,444 | 19 (0.86%) | 0 (0.00%) | 1 (0.05%) | 0 (0.00%) | 2,194 (99.10%) | 0 |
 | OCCUPATION | 236 | 472 | 2 (0.85%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 234 (99.15%) | 0 |
 | AGE | 97 | 595 | 97 (100.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 |
-| DATE | 2,823 | 5,937 | 696 (24.65%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 2,127 (75.35%) | 0 |
+| DATE | 2,823 | 5,937 | 2,233 (79.10%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 590 (20.90%) | 0 |
 
 ## Highest-frequency gaps
 
@@ -44,21 +44,21 @@ Categories: `MATCHED_OR_VERIFIED` is production source/configuration coverage; `
 
 | Value | Spans | Category | Reason | Next action |
 |---|---:|---|---|---|
-| جمهورية مصر العربية | 62 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| المملكة العربية السعودية | 50 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| الإمارات | 36 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| الامارات | 33 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| المملكة الأردنية الهاشمية | 32 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| سورية | 27 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| امريكا | 22 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| أمريكا | 21 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
 | دولة فلسطين | 16 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
 | يمن | 15 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| المملكة المغربية | 13 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| كويت | 13 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| الولايات المتحدة الأمريكية | 12 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| عراق | 11 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
 | بريطانيا | 10 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| الاتحاد السوفيتي | 9 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| مغرب | 8 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| المملكة الأردنية | 8 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| ولايات المتحدة | 7 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| جزائر | 7 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| نابلس | 6 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| دولة الإمارات | 6 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| UK | 6 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| KSA | 6 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| الأراضي الفلسطينية | 5 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| بحرين | 4 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| السلطنة | 4 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
 
 ### NATIONALITY
 
@@ -165,17 +165,17 @@ Categories: `MATCHED_OR_VERIFIED` is production source/configuration coverage; `
 | Value | Spans | Category | Reason | Next action |
 |---|---:|---|---|---|
 | 08/02/1997 | 8 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
-| 23-05-1985 | 8 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
-| 25/08/2006 | 8 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
-| 2004/05/06 | 8 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
 | 11/03/1970 | 7 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
 | ٠١/١٠/١٩٩٤ | 7 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
-| 15/12/1997 | 7 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
-| 24-02-1990 | 7 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
-| 26-09-1988 | 7 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
 | 03-01-1982 | 7 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
-| 1952/08/26 | 7 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
-| 20/07/1976 | 7 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
-| 1983/01/18 | 7 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
 | 07-12-1945 | 7 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
 | 08/10/1994 | 7 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
+| ٠٢/١٢/١٩٥٠ | 7 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
+| 07-06-2006 | 7 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
+| ١٠/٠٩/١٩٦٠ | 6 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
+| 08-03-1976 | 6 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
+| 01-09-1999 | 6 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
+| 01/10/1980 | 6 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
+| 05/02/1962 | 6 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
+| 05-05-2007 | 6 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |
+| 03/06/1951 | 6 | INVALID_OR_UNRESOLVED | AMBIGUOUS_DATE | validate input format or source evidence |

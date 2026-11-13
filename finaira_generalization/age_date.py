@@ -21,17 +21,41 @@ def age(value: str, language="en", bands=DEFAULT_BANDS):
 AR_MONTHS = {"يناير":1,"فبراير":2,"مارس":3,"أبريل":4,"ابريل":4,"مايو":5,"يونيو":6,"يوليو":7,"أغسطس":8,"اغسطس":8,"سبتمبر":9,"أكتوبر":10,"اكتوبر":10,"نوفمبر":11,"ديسمبر":12}
 EN_MONTHS = {name.lower(): i for i,name in enumerate(["", "January","February","March","April","May","June","July","August","September","October","November","December"]) if i}
 
+_NUMERIC_DATE = re.compile(r"^(\d{1,4})[/-](\d{1,2})[/-](\d{1,4})$")
+
+
+def _parse_numeric_date(value: str) -> date | None:
+    match = _NUMERIC_DATE.fullmatch(value)
+    if not match:
+        return None
+    first, second, third = (int(part) for part in match.groups())
+    # A four-digit first component is an unambiguous year-first date.
+    if len(match.group(1)) == 4:
+        return date(first, second, third)
+    # A four-digit last component is day/month/year only when the day is
+    # unambiguous.  03/04/2026 must remain ambiguous without policy context.
+    if len(match.group(3)) == 4:
+        if first > 12 and second <= 12:
+            return date(third, second, first)
+        if second > 12 and first <= 12:
+            return date(third, first, second)
+        raise ValueError("AMBIGUOUS_DATE")
+    raise ValueError("AMBIGUOUS_DATE")
+
 def parse_date(value: str, date_format: str | None = None) -> date:
     s = str(value).translate(ARABIC_DIGITS).strip()
     if re.match(r"^\d{4}-\d{2}-\d{2}$", s): return date.fromisoformat(s)
+    if date_format:
+        return datetime.strptime(s, date_format).date()
+    numeric = _parse_numeric_date(s)
+    if numeric is not None:
+        return numeric
     for name, month in {**AR_MONTHS, **EN_MONTHS}.items():
         if name in s.casefold():
             nums = re.findall(r"\d+", s)
             if len(nums) >= 2:
                 y = int(nums[-1]); d = int(nums[0])
                 return date(y, month, d)
-    if date_format:
-        return datetime.strptime(s, date_format).date()
     raise ValueError("AMBIGUOUS_DATE")
 
 def date_generalize(value: str, level: str, language="en", date_format=None):

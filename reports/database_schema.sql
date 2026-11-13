@@ -504,6 +504,24 @@ CREATE TABLE natural_earth_countries (
 	FOREIGN KEY(source_id) REFERENCES data_sources (source_id)
 );
 
+-- table: natural_earth_country_aliases
+CREATE TABLE natural_earth_country_aliases (
+	alias_id VARCHAR(100) NOT NULL,
+	natural_earth_id VARCHAR(40) NOT NULL,
+	alias_text TEXT NOT NULL,
+	normalized_alias TEXT NOT NULL,
+	language VARCHAR(2) NOT NULL,
+	alias_kind VARCHAR(30) NOT NULL,
+	source_property VARCHAR(50) NOT NULL,
+	source_id INTEGER NOT NULL,
+	verification_status VARCHAR(40) NOT NULL,
+	enabled_for_lookup BOOLEAN NOT NULL,
+	PRIMARY KEY (alias_id),
+	CONSTRAINT uq_ne_country_alias UNIQUE (natural_earth_id, normalized_alias, language),
+	FOREIGN KEY(natural_earth_id) REFERENCES natural_earth_countries (natural_earth_id),
+	FOREIGN KEY(source_id) REFERENCES data_sources (source_id)
+);
+
 -- table: occupation_aliases
 CREATE TABLE occupation_aliases (
 	alias_id INTEGER NOT NULL, 
@@ -768,6 +786,15 @@ CREATE INDEX ix_natural_earth_countries_iso_a2 ON natural_earth_countries (iso_a
 
 -- index: ix_natural_earth_countries_wikidata_qid
 CREATE INDEX ix_natural_earth_countries_wikidata_qid ON natural_earth_countries (wikidata_qid);
+
+-- index: ix_natural_earth_country_aliases_language
+CREATE INDEX ix_natural_earth_country_aliases_language ON natural_earth_country_aliases (language);
+
+-- index: ix_natural_earth_country_aliases_natural_earth_id
+CREATE INDEX ix_natural_earth_country_aliases_natural_earth_id ON natural_earth_country_aliases (natural_earth_id);
+
+-- index: ix_natural_earth_country_aliases_normalized_alias
+CREATE INDEX ix_natural_earth_country_aliases_normalized_alias ON natural_earth_country_aliases (normalized_alias);
 
 -- index: ix_occupation_aliases_language
 CREATE INDEX ix_occupation_aliases_language ON occupation_aliases (language);

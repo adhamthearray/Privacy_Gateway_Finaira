@@ -37,6 +37,15 @@ def test_country_resolves_directly_from_natural_earth():
     assert [candidate["level_code"] for candidate in unknown["candidates"]] == ["SUPPRESSED"]
 
 
+def test_country_wikidata_alias_layer_is_source_verified():
+    assert scalar("select count(*) from natural_earth_country_aliases") > 0
+    alias = scalar("select alias_text from natural_earth_country_aliases where language='en' order by alias_id limit 1")
+    result = GeneralizationDB(DB).get_candidates("COUNTRY", alias, "en")
+    assert result["resolution_status"] == "MATCHED"
+    assert result["candidates"][0]["verification_status"] == "SOURCE_VERIFIED"
+    assert result["candidates"][0]["provenance"]["match_method"] == "WIKIDATA_COUNTRY_ALIAS"
+
+
 def test_bank_authority_and_evidence_flags():
     assert scalar("select count(*) from banks") == 37
     assert scalar("select count(*) from bank_candidates") == 185

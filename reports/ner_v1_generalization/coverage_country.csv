@@ -12,44 +12,44 @@ COUNTRY,البحرين,94,test.jsonl;train.jsonl;validation.jsonl,test;train;val
 COUNTRY,الولايات المتحدة,88,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,MATCHED,,ar,US,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,المغرب,87,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,MATCHED,,ar,MA,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,إيران,85,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,MATCHED,,ar,IR,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
-COUNTRY,جمهورية مصر العربية,62,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;refid_insert;variant:account_swap;variant:age_insert;variant:card_insert;variant:card_swap;variant:customer_id_insert;wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
+COUNTRY,جمهورية مصر العربية,62,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;refid_insert;variant:account_swap;variant:age_insert;variant:card_insert;variant:card_swap;variant:customer_id_insert;wojood,MATCHED,,ar,EG,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,العراق,59,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;wojood,MATCHED,,ar,IQ,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
-COUNTRY,المملكة العربية السعودية,50,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,gulf_original;refid_insert;variant:account_swap;variant:age_insert;variant:card_insert;variant:card_swap;variant:customer_id_insert;wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
+COUNTRY,المملكة العربية السعودية,50,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,gulf_original;refid_insert;variant:account_swap;variant:age_insert;variant:card_insert;variant:card_swap;variant:customer_id_insert;wojood,MATCHED,,ar,SA,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,الأردن,43,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;refid_insert;wojood,MATCHED,,ar,JO,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,ليبيا,43,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,MATCHED,,ar,LY,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
-COUNTRY,الإمارات,36,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;refid_insert;wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,الامارات,33,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;refid_insert;wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,المملكة الأردنية الهاشمية,32,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;variant:card_swap;wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
+COUNTRY,الإمارات,36,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;refid_insert;wojood,MATCHED,,ar,AE,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,الامارات,33,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;refid_insert;wojood,MATCHED,,ar,AE,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,المملكة الأردنية الهاشمية,32,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;variant:card_swap;wojood,MATCHED,,ar,JO,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,السعوديه,30,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,gulf_original;refid_insert,MATCHED,,ar,SA,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,الجزائر,29,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,gulf_original;wojood,MATCHED,,ar,DZ,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
-COUNTRY,سورية,27,train.jsonl;validation.jsonl,train;validation,egyptian_twin;gulf_original;refid_insert;variant:account_insert;variant:card_swap;wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
+COUNTRY,سورية,27,train.jsonl;validation.jsonl,train;validation,egyptian_twin;gulf_original;refid_insert;variant:account_insert;variant:card_swap;wojood,MATCHED,,ar,SY,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,الاردن,26,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;refid_insert;wojood,MATCHED,,ar,JO,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,السودان,24,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;refid_insert;wojood,MATCHED,,ar,SD,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,Saudi Arabia,23,train.jsonl,train,egyptian_twin;gulf_original;variant:account_swap;variant:age_insert,MATCHED,,en,SA,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
-COUNTRY,امريكا,22,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;variant:account_insert;wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,أمريكا,21,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;refid_insert;wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
+COUNTRY,امريكا,22,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;variant:account_insert;wojood,MATCHED,,ar,US,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,أمريكا,21,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;refid_insert;wojood,MATCHED,,ar,US,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,تركيا,18,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;wojood,MATCHED,,ar,TR,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,إيطاليا,16,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,MATCHED,,ar,IT,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,دولة فلسطين,16,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,ألمانيا,15,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;wojood,MATCHED,,ar,DE,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,الصين,15,train.jsonl;validation.jsonl,train;validation,egyptian_twin;gulf_original;wojood,MATCHED,,ar,CN,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,يمن,15,test.jsonl;train.jsonl,test;train,egyptian_twin;gulf_original;refid_insert;wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
+COUNTRY,المملكة المغربية,13,test.jsonl;train.jsonl,test;train,gulf_original;wojood,MATCHED,,ar,MA,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,اليابان,13,train.jsonl;validation.jsonl,train;validation,egyptian_twin;gulf_original;wojood,MATCHED,,ar,JP,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,تونس,13,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;wojood,MATCHED,,ar,TN,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,فرنسا,13,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;wojood,MATCHED,,ar,1159320637,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
-COUNTRY,المملكة المغربية,13,test.jsonl;train.jsonl,test;train,gulf_original;wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,كويت,13,train.jsonl;validation.jsonl,train;validation,egyptian_twin;gulf_original;refid_insert,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,الولايات المتحدة الأمريكية,12,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,عراق,11,test.jsonl;train.jsonl,test;train,gulf_original;refid_insert;wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
+COUNTRY,كويت,13,train.jsonl;validation.jsonl,train;validation,egyptian_twin;gulf_original;refid_insert,MATCHED,,ar,KW,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,الولايات المتحدة الأمريكية,12,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,MATCHED,,ar,US,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,عراق,11,test.jsonl;train.jsonl,test;train,gulf_original;refid_insert;wojood,MATCHED,,ar,IQ,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,المملكة المتحدة,10,train.jsonl;validation.jsonl,train;validation,wojood,MATCHED,,ar,GB,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,بريطانيا,10,test.jsonl;train.jsonl,test;train,egyptian_twin;gulf_original;wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,السويد,9,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;wojood,MATCHED,,ar,SE,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,المملكة,9,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,MATCHED,,ar,SA,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,الاتحاد السوفيتي,9,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,المملكة,9,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,الهند,8,test.jsonl;train.jsonl,test;train,egyptian_twin;gulf_original;wojood,MATCHED,,ar,IN,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,سعودية,8,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;wojood,MATCHED,,ar,SA,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,مالي,8,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,MATCHED,,ar,ML,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,المملكة الأردنية,8,train.jsonl;validation.jsonl,train;validation,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,سعودية,8,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,egyptian_twin;gulf_original;wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,مغرب,8,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,أفغانستان,7,test.jsonl;train.jsonl,test;train,wojood,MATCHED,,ar,AF,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,كندا,7,train.jsonl,train,egyptian_twin;gulf_original;wojood,MATCHED,,ar,CA,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
@@ -65,23 +65,24 @@ COUNTRY,UK,6,train.jsonl,train,egyptian_twin;gulf_original;variant:account_inser
 COUNTRY,دولة الإمارات,6,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,نابلس,6,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,السنغال,5,test.jsonl;train.jsonl,test;train,wojood,MATCHED,,ar,SN,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,دولة الكويت,5,train.jsonl;validation.jsonl,train;validation,egyptian_twin;gulf_original;wojood,MATCHED,,ar,KW,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,سعوديه,5,train.jsonl,train,egyptian_twin;gulf_original;refid_insert,MATCHED,,ar,SA,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,الأراضي الفلسطينية,5,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,دولة الكويت,5,train.jsonl;validation.jsonl,train;validation,egyptian_twin;gulf_original;wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,سعوديه,5,train.jsonl,train,egyptian_twin;gulf_original;refid_insert,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,اسبانيا,4,test.jsonl;train.jsonl,test;train,wojood,MATCHED,,ar,ES,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,الإمارات العربية المتحدة,4,test.jsonl;train.jsonl,test;train,wojood,MATCHED,,ar,AE,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,النرويج,4,train.jsonl;validation.jsonl,train;validation,wojood,MATCHED,,ar,1159321109,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,جيبوتي,4,train.jsonl,train,wojood,MATCHED,,ar,DJ,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,دولة الإمارات العربية المتحدة,4,test.jsonl;train.jsonl,test;train,wojood,MATCHED,,ar,AE,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,سيراليون,4,train.jsonl,train,wojood,MATCHED,,ar,SL,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,ماليزيا,4,test.jsonl;train.jsonl,test;train,gulf_original;wojood,MATCHED,,ar,MY,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,هولندا,4,train.jsonl,train,wojood,MATCHED,,ar,NL,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,السلطنة,4,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,بحرين,4,train.jsonl;validation.jsonl,train;validation,egyptian_twin;gulf_original;wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,دولة الإمارات العربية المتحدة,4,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,أثيوبيا,3,test.jsonl;train.jsonl,test;train,wojood,MATCHED,,ar,ET,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,أستراليا,3,train.jsonl,train,egyptian_twin;gulf_original;wojood,MATCHED,,ar,AU,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,افغانستان,3,test.jsonl;train.jsonl,test;train,wojood,MATCHED,,ar,AF,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,البرازيل,3,train.jsonl,train,wojood,MATCHED,,ar,BR,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,الجمهورية العربية السورية,3,train.jsonl,train,wojood,MATCHED,,ar,SY,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,الدنمارك,3,train.jsonl,train,wojood,MATCHED,,ar,DK,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,السلفادور,3,train.jsonl,train,wojood,MATCHED,,ar,SV,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,الصومال,3,test.jsonl;train.jsonl,test;train,wojood,MATCHED,,ar,SO,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
@@ -93,24 +94,23 @@ COUNTRY,ايران,3,train.jsonl,train,wojood,MATCHED,,ar,IR,EXACT|SUBREGION|REG
 COUNTRY,ايطاليا,3,test.jsonl;train.jsonl,test;train,wojood,MATCHED,,ar,IT,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,بلجيكا,3,train.jsonl;validation.jsonl,train;validation,wojood,MATCHED,,ar,BE,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,بلغاريا,3,test.jsonl;train.jsonl,test;train,wojood,MATCHED,,ar,BG,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,بورما,3,test.jsonl;train.jsonl,test;train,wojood,MATCHED,,ar,MM,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,تيمور الشرقية,3,train.jsonl,train,wojood,MATCHED,,ar,TL,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,جنوب السودان,3,train.jsonl;validation.jsonl,train;validation,wojood,MATCHED,,ar,SS,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,رومانيا,3,test.jsonl;train.jsonl,test;train,wojood,MATCHED,,ar,RO,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,ساحل العاج,3,test.jsonl;train.jsonl;validation.jsonl,test;train;validation,wojood,MATCHED,,ar,CI,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,سلطنة عمان,3,test.jsonl;train.jsonl,test;train,wojood,MATCHED,,ar,OM,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,سلوفينيا,3,train.jsonl,train,wojood,MATCHED,,ar,SI,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,عمان,3,test.jsonl,test,wojood,MATCHED,,ar,OM,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,كرواتيا,3,train.jsonl,train,wojood,MATCHED,,ar,HR,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,كوسوفو,3,train.jsonl,train,wojood,MATCHED,,ar,1159321007,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,ليبيريا,3,train.jsonl;validation.jsonl,train;validation,wojood,MATCHED,,ar,LR,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,مالطا,3,train.jsonl,train,wojood,MATCHED,,ar,MT,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,مقدونيا,3,train.jsonl,train,wojood,MATCHED,,ar,MK,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,موريتانيا,3,test.jsonl;train.jsonl,test;train,wojood,MATCHED,,ar,MR,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,USA,3,train.jsonl,train,egyptian_twin;gulf_original;refid_insert,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,الجمهورية العربية السورية,3,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,بغداد,3,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,بورما,3,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,جنوب اليمن,3,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,عمان,3,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,مقدونيا,3,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,مملكة,3,train.jsonl;validation.jsonl,train;validation,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,مملكة العربية السعودية,3,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,مملكة المغربية,3,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
@@ -118,9 +118,11 @@ COUNTRY,نيجريا,3,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,e
 COUNTRY,Qatar,2,validation.jsonl,validation,egyptian_twin;gulf_original,MATCHED,,en,QA,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,المجر,2,test.jsonl;train.jsonl,test;train,wojood,MATCHED,,ar,HU,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,المكسيك,2,train.jsonl,train,egyptian_twin;gulf_original,MATCHED,,ar,MX,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,المملكة السعودية,2,train.jsonl;validation.jsonl,train;validation,wojood,MATCHED,,ar,SA,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,بنين,2,train.jsonl,train,wojood,MATCHED,,ar,BJ,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,بوركينا فاسو,2,train.jsonl,train,wojood,MATCHED,,ar,BF,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,بوروندي,2,train.jsonl,train,wojood,MATCHED,,ar,BI,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,تايلند,2,train.jsonl;validation.jsonl,train;validation,wojood,MATCHED,,ar,TH,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,توغو,2,train.jsonl,train,wojood,MATCHED,,ar,TG,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,جمهورية الكونغو الديمقراطية,2,train.jsonl,train,wojood,MATCHED,,ar,CD,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,سويسرا,2,train.jsonl;validation.jsonl,train;validation,wojood,MATCHED,,ar,CH,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
@@ -136,9 +138,7 @@ COUNTRY,إمارات العربية المتحدة,2,test.jsonl;train.jsonl,test
 COUNTRY,الدولة الروسية,2,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,الدولة السورية,2,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,الدولة الفلسطينية,2,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,المملكة السعودية,2,train.jsonl;validation.jsonl,train;validation,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,بالمنطقة المغاربية,2,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,تايلند,2,train.jsonl;validation.jsonl,train;validation,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,دولة فلسطينية,2,train.jsonl;validation.jsonl,train;validation,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,روما,2,test.jsonl;train.jsonl,test;train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,طهران,2,train.jsonl;validation.jsonl,train;validation,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
@@ -155,7 +155,9 @@ COUNTRY,استراليا,1,train.jsonl,train,wojood,MATCHED,,ar,AU,EXACT|SUBREGI
 COUNTRY,البوسنة والهرسك,1,train.jsonl,train,wojood,MATCHED,,ar,BA,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,الفاتيكان,1,train.jsonl,train,wojood,MATCHED,,ar,VA,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,الكاميرون,1,train.jsonl,train,wojood,MATCHED,,ar,CM,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,الولايات المتحدة الامريكية,1,train.jsonl,train,wojood,MATCHED,,ar,US,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,بنما,1,validation.jsonl,validation,wojood,MATCHED,,ar,PA,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,بوركينافاسو,1,train.jsonl,train,wojood,MATCHED,,ar,BF,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,بولندا,1,test.jsonl,test,wojood,MATCHED,,ar,PL,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,تايوان,1,train.jsonl,train,wojood,MATCHED,,ar,CN-TW,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,تشاد,1,train.jsonl,train,wojood,MATCHED,,ar,TD,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
@@ -163,15 +165,19 @@ COUNTRY,جمهورية أفريقيا الوسطى,1,train.jsonl,train,wojood,MA
 COUNTRY,جنوب افريقيا,1,train.jsonl,train,wojood,MATCHED,,ar,ZA,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,روسياً,1,train.jsonl,train,wojood,MATCHED,,ar,RU,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,سلطنة عُمان,1,test.jsonl,test,wojood,MATCHED,,ar,OM,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,صومال,1,train.jsonl,train,wojood,MATCHED,,ar,SO,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,طاجيكستان,1,train.jsonl,train,wojood,MATCHED,,ar,TJ,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,عُمان,1,train.jsonl,train,wojood,MATCHED,,ar,OM,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,غانا,1,train.jsonl,train,wojood,MATCHED,,ar,GH,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,فنزويلا,1,test.jsonl,test,wojood,MATCHED,,ar,VE,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,فنلندا,1,test.jsonl,test,wojood,MATCHED,,ar,FI,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,فيتنام,1,train.jsonl,train,wojood,MATCHED,,ar,VN,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,قبرص,1,train.jsonl,train,wojood,MATCHED,,ar,CY,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,كوت ديفوار,1,validation.jsonl,validation,wojood,MATCHED,,ar,CI,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,مدغشقر,1,train.jsonl,train,wojood,MATCHED,,ar,MG,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,ناميبيا,1,train.jsonl,train,wojood,MATCHED,,ar,NA,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,هايتي,1,validation.jsonl,validation,wojood,MATCHED,,ar,HT,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
+COUNTRY,هنغاريا,1,train.jsonl,train,wojood,MATCHED,,ar,HU,EXACT|SUBREGION|REGION_UN|CONTINENT|SUPPRESSED,True,True,SOURCE_VERIFIED,MATCHED_OR_VERIFIED,none
 COUNTRY,SADR,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,أردن,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,أميركا,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
@@ -193,7 +199,6 @@ COUNTRY,الشيشان,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY
 COUNTRY,القدس,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,المنطقة المغاربية,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,الولايات المتحدة الأميركية,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,الولايات المتحدة الامريكية,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,اليمن الموحد,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,اليمين,1,validation.jsonl,validation,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,اميركا,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
@@ -201,7 +206,6 @@ COUNTRY,انجلترا,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY
 COUNTRY,اوزبيكستان,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,بأميركا,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,بلغراد,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,بوركينافاسو,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,بيروت,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,جمهورية اليمن,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,جمهورية مقدونيا اليوغسلافية السابقة,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
@@ -213,12 +217,9 @@ COUNTRY,دولة العراقية,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNI
 COUNTRY,دولة الفلسطينية,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,دولة لبنان,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,شمال اليمن,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,صومال,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,صين,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,طرابلس,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,عُمان,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,فسلطينا,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,كوت ديفوار,1,validation.jsonl,validation,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,كوريا,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,لشام,1,test.jsonl,test,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,للیمن,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
@@ -227,4 +228,3 @@ COUNTRY,ليبا,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,S
 COUNTRY,موسكو,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,مينامار,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
 COUNTRY,نيوزلندا,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping
-COUNTRY,هنغاريا,1,train.jsonl,train,wojood,NOT_FOUND,UNRECOGNIZED_COUNTRY,en,,SUPPRESSED,False,False,,SUPPRESSION_ONLY,verify Natural Earth/Wikidata country alias or ISO mapping

@@ -1,6 +1,6 @@
 entity_type,unique_values,spans,matched_or_verified_unique,matched_or_verified_spans,matched_or_verified_unique_pct,matched_or_verified_span_pct,review_only_unique,review_only_spans,review_only_unique_pct,review_only_span_pct,ambiguous_unique,ambiguous_spans,ambiguous_unique_pct,ambiguous_span_pct,generic_fallback_only_unique,generic_fallback_only_spans,generic_fallback_only_unique_pct,generic_fallback_only_span_pct,suppression_only_unique,suppression_only_spans,suppression_only_unique_pct,suppression_only_span_pct,invalid_or_unresolved_unique,invalid_or_unresolved_spans,invalid_or_unresolved_unique_pct,invalid_or_unresolved_span_pct,out_of_scope_unique,out_of_scope_spans,out_of_scope_unique_pct,out_of_scope_span_pct
 BANK,73,869,0,0,0.0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,73,869,100.0,100.0,0,0,0.0,0.0,0,0,0.0,0.0,0,0,0.0,0.0
-COUNTRY,229,3009,114,2408,49.78,80.03,0,0,0.0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,115,601,50.22,19.97,0,0,0.0,0.0,0,0,0.0,0.0
+COUNTRY,229,3009,143,2793,62.45,92.82,0,0,0.0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,86,216,37.55,7.18,0,0,0.0,0.0,0,0,0.0,0.0
 NATIONALITY,115,607,41,337,35.65,55.52,0,0,0.0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,74,270,64.35,44.48,0,0,0.0,0.0,0,0,0.0,0.0
 CORPORATION,1516,6083,0,0,0.0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,1516,6083,100.0,100.0,0,0,0.0,0.0,0,0,0.0,0.0,0,0,0.0,0.0
 ORGANIZATION,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -9,4 +9,4 @@ GOVERNMENT_ENTITY,870,4221,0,0,0.0,0.0,8,85,0.92,2.01,0,0,0.0,0.0,862,4136,99.08
 JOB_TITLE,2214,9444,19,174,0.86,1.84,0,0,0.0,0.0,1,1,0.05,0.01,0,0,0.0,0.0,2194,9269,99.1,98.15,0,0,0.0,0.0,0,0,0.0,0.0
 OCCUPATION,236,472,2,6,0.85,1.27,0,0,0.0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,234,466,99.15,98.73,0,0,0.0,0.0,0,0,0.0,0.0
 AGE,97,595,97,595,100.0,100.0,0,0,0.0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0,0,0.0,0.0
-DATE,2823,5937,696,1465,24.65,24.68,0,0,0.0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,2127,4472,75.35,75.32,0,0,0.0,0.0
+DATE,2823,5937,2233,4696,79.1,79.1,0,0,0.0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,590,1241,20.9,20.9,0,0,0.0,0.0

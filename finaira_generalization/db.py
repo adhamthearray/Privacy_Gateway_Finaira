@@ -229,6 +229,21 @@ class NaturalEarthCountry(Base):
     __table_args__ = (UniqueConstraint("wikidata_qid", name="uq_ne_country_wikidata_qid"),)
 
 
+class NaturalEarthCountryAlias(Base):
+    __tablename__ = "natural_earth_country_aliases"
+    alias_id: Mapped[str] = mapped_column(String(100), primary_key=True)
+    natural_earth_id: Mapped[str] = mapped_column(ForeignKey("natural_earth_countries.natural_earth_id"), index=True)
+    alias_text: Mapped[str] = mapped_column(Text)
+    normalized_alias: Mapped[str] = mapped_column(Text, index=True)
+    language: Mapped[str] = mapped_column(String(2), index=True)
+    alias_kind: Mapped[str] = mapped_column(String(30))
+    source_property: Mapped[str] = mapped_column(String(50))
+    source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
+    verification_status: Mapped[str] = mapped_column(String(40), default="SOURCE_VERIFIED")
+    enabled_for_lookup: Mapped[bool] = mapped_column(Boolean, default=True)
+    __table_args__ = (UniqueConstraint("natural_earth_id", "normalized_alias", "language", name="uq_ne_country_alias"),)
+
+
 class NationalityCountry(Base):
     __tablename__ = "nationality_countries"
     country_qid: Mapped[str] = mapped_column(String(20), primary_key=True)
