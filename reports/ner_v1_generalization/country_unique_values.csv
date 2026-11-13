@@ -1,0 +1,230 @@
+entity_type,value,span_count,source_files
+COUNTRY,سوريا,264,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,مصر,254,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,قطر,166,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,السعودية,151,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,فلسطين,151,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,الكويت,142,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,اليمن,104,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,لبنان,100,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,روسيا,95,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,البحرين,94,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,الولايات المتحدة,88,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,المغرب,87,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,إيران,85,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,جمهورية مصر العربية,62,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,العراق,59,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,المملكة العربية السعودية,50,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,الأردن,43,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,ليبيا,43,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,الإمارات,36,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,الامارات,33,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,المملكة الأردنية الهاشمية,32,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,السعوديه,30,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,الجزائر,29,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,سورية,27,train.jsonl;validation.jsonl
+COUNTRY,الاردن,26,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,السودان,24,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,Saudi Arabia,23,train.jsonl
+COUNTRY,امريكا,22,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,أمريكا,21,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,تركيا,18,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,إيطاليا,16,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,دولة فلسطين,16,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,ألمانيا,15,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,الصين,15,train.jsonl;validation.jsonl
+COUNTRY,يمن,15,test.jsonl;train.jsonl
+COUNTRY,المملكة المغربية,13,test.jsonl;train.jsonl
+COUNTRY,اليابان,13,train.jsonl;validation.jsonl
+COUNTRY,تونس,13,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,فرنسا,13,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,كويت,13,train.jsonl;validation.jsonl
+COUNTRY,الولايات المتحدة الأمريكية,12,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,عراق,11,test.jsonl;train.jsonl
+COUNTRY,المملكة المتحدة,10,train.jsonl;validation.jsonl
+COUNTRY,بريطانيا,10,test.jsonl;train.jsonl
+COUNTRY,الاتحاد السوفيتي,9,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,السويد,9,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,المملكة,9,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,المملكة الأردنية,8,train.jsonl;validation.jsonl
+COUNTRY,الهند,8,test.jsonl;train.jsonl
+COUNTRY,سعودية,8,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,مالي,8,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,مغرب,8,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,أفغانستان,7,test.jsonl;train.jsonl
+COUNTRY,جزائر,7,train.jsonl;validation.jsonl
+COUNTRY,كندا,7,train.jsonl
+COUNTRY,نيجيريا,7,test.jsonl;train.jsonl
+COUNTRY,ولايات المتحدة,7,train.jsonl;validation.jsonl
+COUNTRY,KSA,6,train.jsonl
+COUNTRY,Kuwait,6,train.jsonl
+COUNTRY,UK,6,train.jsonl
+COUNTRY,إريتريا,6,test.jsonl;train.jsonl
+COUNTRY,إسبانيا,6,train.jsonl;validation.jsonl
+COUNTRY,دولة الإمارات,6,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,صربيا,6,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,نابلس,6,test.jsonl;train.jsonl
+COUNTRY,الأراضي الفلسطينية,5,train.jsonl
+COUNTRY,السنغال,5,test.jsonl;train.jsonl
+COUNTRY,دولة الكويت,5,train.jsonl;validation.jsonl
+COUNTRY,سعوديه,5,train.jsonl
+COUNTRY,اسبانيا,4,test.jsonl;train.jsonl
+COUNTRY,الإمارات العربية المتحدة,4,test.jsonl;train.jsonl
+COUNTRY,السلطنة,4,train.jsonl
+COUNTRY,النرويج,4,train.jsonl;validation.jsonl
+COUNTRY,بحرين,4,train.jsonl;validation.jsonl
+COUNTRY,جيبوتي,4,train.jsonl
+COUNTRY,دولة الإمارات العربية المتحدة,4,test.jsonl;train.jsonl
+COUNTRY,سيراليون,4,train.jsonl
+COUNTRY,ماليزيا,4,test.jsonl;train.jsonl
+COUNTRY,هولندا,4,train.jsonl
+COUNTRY,USA,3,train.jsonl
+COUNTRY,أثيوبيا,3,test.jsonl;train.jsonl
+COUNTRY,أستراليا,3,train.jsonl
+COUNTRY,افغانستان,3,test.jsonl;train.jsonl
+COUNTRY,البرازيل,3,train.jsonl
+COUNTRY,الجمهورية العربية السورية,3,train.jsonl
+COUNTRY,الدنمارك,3,train.jsonl
+COUNTRY,السلفادور,3,train.jsonl
+COUNTRY,الصومال,3,test.jsonl;train.jsonl
+COUNTRY,المانيا,3,train.jsonl
+COUNTRY,النمسا,3,train.jsonl;validation.jsonl
+COUNTRY,النيجر,3,test.jsonl;train.jsonl
+COUNTRY,اليونان,3,test.jsonl;validation.jsonl
+COUNTRY,ايران,3,train.jsonl
+COUNTRY,ايطاليا,3,test.jsonl;train.jsonl
+COUNTRY,بغداد,3,train.jsonl
+COUNTRY,بلجيكا,3,train.jsonl;validation.jsonl
+COUNTRY,بلغاريا,3,test.jsonl;train.jsonl
+COUNTRY,بورما,3,test.jsonl;train.jsonl
+COUNTRY,تيمور الشرقية,3,train.jsonl
+COUNTRY,جنوب السودان,3,train.jsonl;validation.jsonl
+COUNTRY,جنوب اليمن,3,train.jsonl
+COUNTRY,رومانيا,3,test.jsonl;train.jsonl
+COUNTRY,ساحل العاج,3,test.jsonl;train.jsonl;validation.jsonl
+COUNTRY,سلطنة عمان,3,test.jsonl;train.jsonl
+COUNTRY,سلوفينيا,3,train.jsonl
+COUNTRY,عمان,3,test.jsonl
+COUNTRY,كرواتيا,3,train.jsonl
+COUNTRY,كوسوفو,3,train.jsonl
+COUNTRY,ليبيريا,3,train.jsonl;validation.jsonl
+COUNTRY,مالطا,3,train.jsonl
+COUNTRY,مقدونيا,3,train.jsonl
+COUNTRY,مملكة,3,train.jsonl;validation.jsonl
+COUNTRY,مملكة العربية السعودية,3,test.jsonl;train.jsonl
+COUNTRY,مملكة المغربية,3,test.jsonl;train.jsonl
+COUNTRY,موريتانيا,3,test.jsonl;train.jsonl
+COUNTRY,نيجريا,3,train.jsonl
+COUNTRY,Qatar,2,validation.jsonl
+COUNTRY,UAE,2,train.jsonl
+COUNTRY,أرتيريا,2,test.jsonl;train.jsonl
+COUNTRY,إمارات العربية المتحدة,2,test.jsonl;train.jsonl
+COUNTRY,الدولة الروسية,2,test.jsonl;train.jsonl
+COUNTRY,الدولة السورية,2,train.jsonl
+COUNTRY,الدولة الفلسطينية,2,test.jsonl;train.jsonl
+COUNTRY,المجر,2,test.jsonl;train.jsonl
+COUNTRY,المكسيك,2,train.jsonl
+COUNTRY,المملكة السعودية,2,train.jsonl;validation.jsonl
+COUNTRY,بالمنطقة المغاربية,2,test.jsonl;train.jsonl
+COUNTRY,بنين,2,train.jsonl
+COUNTRY,بوركينا فاسو,2,train.jsonl
+COUNTRY,بوروندي,2,train.jsonl
+COUNTRY,تايلند,2,train.jsonl;validation.jsonl
+COUNTRY,توغو,2,train.jsonl
+COUNTRY,جمهورية الكونغو الديمقراطية,2,train.jsonl
+COUNTRY,دولة فلسطينية,2,train.jsonl;validation.jsonl
+COUNTRY,روما,2,test.jsonl;train.jsonl
+COUNTRY,سويسرا,2,train.jsonl;validation.jsonl
+COUNTRY,طهران,2,train.jsonl;validation.jsonl
+COUNTRY,غامبيا,2,train.jsonl
+COUNTRY,غواتيمالا,2,train.jsonl
+COUNTRY,غينيا,2,train.jsonl
+COUNTRY,فسطين,2,train.jsonl
+COUNTRY,كازاخستان,2,train.jsonl
+COUNTRY,كمبوديا,2,train.jsonl
+COUNTRY,كينيا,2,train.jsonl
+COUNTRY,مراكش,2,train.jsonl;validation.jsonl
+COUNTRY,موزامبيق,2,train.jsonl
+COUNTRY,واشنطن,2,train.jsonl
+COUNTRY,Egypt,1,train.jsonl
+COUNTRY,SADR,1,train.jsonl
+COUNTRY,Sudan,1,train.jsonl
+COUNTRY,أذربيجان,1,train.jsonl
+COUNTRY,أردن,1,test.jsonl
+COUNTRY,أرمينيا,1,train.jsonl
+COUNTRY,أميركا,1,train.jsonl
+COUNTRY,إثيوبيا,1,train.jsonl
+COUNTRY,استراليا,1,train.jsonl
+COUNTRY,الأراضي التركية,1,test.jsonl
+COUNTRY,الأراضي السعودية,1,train.jsonl
+COUNTRY,الأراضي السورية,1,train.jsonl
+COUNTRY,الأراضي اللبنانية,1,train.jsonl
+COUNTRY,الأراضي اليمنية,1,train.jsonl
+COUNTRY,الإتحاد السوفيتي,1,train.jsonl
+COUNTRY,الإمارات العربية,1,train.jsonl
+COUNTRY,الاندلس,1,train.jsonl
+COUNTRY,البوسنة والهرسك,1,train.jsonl
+COUNTRY,الجمهورية الجزائرية,1,validation.jsonl
+COUNTRY,الجمهورية العربية الصحراوية الديمقراطية,1,train.jsonl
+COUNTRY,الجمهورية اليمنية الموحدة,1,train.jsonl
+COUNTRY,الدولة اليمنية,1,train.jsonl
+COUNTRY,الدينمارك,1,train.jsonl
+COUNTRY,الشام,1,test.jsonl
+COUNTRY,الشيشان,1,train.jsonl
+COUNTRY,الفاتيكان,1,train.jsonl
+COUNTRY,القدس,1,test.jsonl
+COUNTRY,الكاميرون,1,train.jsonl
+COUNTRY,المنطقة المغاربية,1,test.jsonl
+COUNTRY,الولايات المتحدة الأميركية,1,train.jsonl
+COUNTRY,الولايات المتحدة الامريكية,1,train.jsonl
+COUNTRY,اليمن الموحد,1,train.jsonl
+COUNTRY,اليمين,1,validation.jsonl
+COUNTRY,اميركا,1,train.jsonl
+COUNTRY,انجلترا,1,train.jsonl
+COUNTRY,اوزبيكستان,1,train.jsonl
+COUNTRY,بأميركا,1,train.jsonl
+COUNTRY,بلغراد,1,train.jsonl
+COUNTRY,بنما,1,validation.jsonl
+COUNTRY,بوركينافاسو,1,train.jsonl
+COUNTRY,بولندا,1,test.jsonl
+COUNTRY,بيروت,1,train.jsonl
+COUNTRY,تايوان,1,train.jsonl
+COUNTRY,تشاد,1,train.jsonl
+COUNTRY,جمهورية أفريقيا الوسطى,1,train.jsonl
+COUNTRY,جمهورية اليمن,1,train.jsonl
+COUNTRY,جمهورية مقدونيا اليوغسلافية السابقة,1,train.jsonl
+COUNTRY,جنوب افريقيا,1,train.jsonl
+COUNTRY,جنين,1,train.jsonl
+COUNTRY,دارفور,1,validation.jsonl
+COUNTRY,دولة إيران,1,train.jsonl
+COUNTRY,دولة الجمهورية العربية الصحراوية الديمقراطية,1,train.jsonl
+COUNTRY,دولة العراقية,1,train.jsonl
+COUNTRY,دولة الفلسطينية,1,test.jsonl
+COUNTRY,دولة لبنان,1,train.jsonl
+COUNTRY,روسياً,1,train.jsonl
+COUNTRY,سلطنة عُمان,1,test.jsonl
+COUNTRY,شمال اليمن,1,test.jsonl
+COUNTRY,صومال,1,train.jsonl
+COUNTRY,صين,1,train.jsonl
+COUNTRY,طاجيكستان,1,train.jsonl
+COUNTRY,طرابلس,1,train.jsonl
+COUNTRY,عُمان,1,train.jsonl
+COUNTRY,غانا,1,train.jsonl
+COUNTRY,فسلطينا,1,test.jsonl
+COUNTRY,فنزويلا,1,test.jsonl
+COUNTRY,فنلندا,1,test.jsonl
+COUNTRY,فيتنام,1,train.jsonl
+COUNTRY,قبرص,1,train.jsonl
+COUNTRY,كوت ديفوار,1,validation.jsonl
+COUNTRY,كوريا,1,train.jsonl
+COUNTRY,لشام,1,test.jsonl
+COUNTRY,للیمن,1,train.jsonl
+COUNTRY,لندن,1,train.jsonl
+COUNTRY,ليبا,1,train.jsonl
+COUNTRY,مدغشقر,1,train.jsonl
+COUNTRY,موسكو,1,train.jsonl
+COUNTRY,مينامار,1,train.jsonl
+COUNTRY,ناميبيا,1,train.jsonl
+COUNTRY,نيوزلندا,1,train.jsonl
+COUNTRY,هايتي,1,validation.jsonl
+COUNTRY,هنغاريا,1,train.jsonl

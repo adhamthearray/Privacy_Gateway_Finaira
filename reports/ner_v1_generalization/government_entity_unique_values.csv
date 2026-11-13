@@ -1,0 +1,871 @@
+entity_type,value,span_count,source_files
+GOVERNMENT_ENTITY,المرور,359,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,الجوازات,312,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزارة الصحة,284,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,مرور,117,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزاره الصحه,95,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,الجمارك,89,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزارة التجارة,86,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,بلدية مدينة البيرة,85,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,جوازات,74,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,هيئة سوق رأس المال,73,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزارة الداخلية,68,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,هيئة سوق رأس المال الفلسطينية,55,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,الشرطة,41,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزاره الداخليه,38,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزارة التعليم,37,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,بلدية قلقيلية,35,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزارة الاتصالات,35,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,التأمينات الاجتماعية,34,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,البنك المركزي,29,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,جمارك,27,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزارة الداخلية الأردنية,27,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,إسرائيل,25,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,بلدية نابلس,23,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزارة العدل,23,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,حكومة فلسطين,22,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,وزارة النقل,21,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,سلطة النقد,20,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,وزاره التجاره,20,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,بلدية بيرزيت,19,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزارة الإسكان,19,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزارة الموارد البشرية,19,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الدفاع المدني,18,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,التأمينات الاجتماعيه,17,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,المؤسسة العامة للتأمينات الاجتماعية,16,train.jsonl
+GOVERNMENT_ENTITY,الهيئة العامة للعقار,16,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,لجنة الانتخابات,16,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,أمانة المنطقة الشرقية,15,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الشرطه,15,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,مجلس محلي البيرة,15,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزاره الاتصالات,15,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزاره النقل,15,train.jsonl
+GOVERNMENT_ENTITY,التامينات الاجتماعية,14,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,هيئة الاتصالات,14,train.jsonl
+GOVERNMENT_ENTITY,وزارة النقل والخدمات اللوجستية,14,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,وزارة الاسكان,13,train.jsonl
+GOVERNMENT_ENTITY,وزارة الخارجية,13,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,وزارة الموارد البشرية والتنمية الاجتماعية,13,train.jsonl
+GOVERNMENT_ENTITY,حكومة إقليم كردستان,12,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,شرطة,11,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,مجلس محلي قلقيلية,11,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,هيئة الاتصالات والفضاء والتقنية,11,train.jsonl
+GOVERNMENT_ENTITY,وزاره الخارجيه,11,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,بلدية رام الله,10,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,بلدية عقربا,10,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,بلدية محافظة الخرج,10,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,محكمه التنفيذ,10,train.jsonl
+GOVERNMENT_ENTITY,هيئة الزكاة والضريبة والجمارك,10,train.jsonl
+GOVERNMENT_ENTITY,وزارة المالية,10,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,المؤسسه العامه للتأمينات الاجتماعيه,9,train.jsonl
+GOVERNMENT_ENTITY,المديرية العامة للجوازات,9,train.jsonl
+GOVERNMENT_ENTITY,المديريه العامه للتعليم,9,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,ديوان الموظفات,9,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الاحوال المدنيه,8,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,السلطة الوطنية الفلسطينية,8,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,القوات العراقية,8,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,المؤسسة العامة للتدريب التقني والمهني,8,train.jsonl
+GOVERNMENT_ENTITY,المؤسسه العامه للتدريب التقني والمهني,8,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,امانة المنطقة,8,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,صندوق التأمين التعاوني,8,train.jsonl
+GOVERNMENT_ENTITY,صندوق التنمية العقارية,8,train.jsonl
+GOVERNMENT_ENTITY,مؤسسه النقد,8,test.jsonl
+GOVERNMENT_ENTITY,وزارة التربية,8,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزارة الخارجية الأردنية,8,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزاره التعليم,8,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الحكومة اليمنية,7,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,بلدية الرياض,7,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,خفر السواحل الليبي,7,train.jsonl
+GOVERNMENT_ENTITY,ديوان المظالم,7,train.jsonl
+GOVERNMENT_ENTITY,سلطات الإحتلال,7,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,مجلس الوزراء,7,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,مديرية التربية,7,train.jsonl
+GOVERNMENT_ENTITY,وزارة الدفاع,7,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزاره التربيه والتعليم,7,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزاره العدل,7,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزاره الماليه,7,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الحشد الشعبي,6,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,الحكومة العراقية,6,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,السلطات العراقية,6,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,القوات الأمريكية,6,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,اللجنة الوطنية للحوكمة,6,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,المؤسسة العامة للتقاعد,6,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,المجلس الوطني الفلسطيني,6,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,بلدية القديمة,6,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,دائرة تسجيل الأراضي في غزة,6,train.jsonl
+GOVERNMENT_ENTITY,سلطات إقليم كردستان,6,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,مؤسسة النقد,6,train.jsonl
+GOVERNMENT_ENTITY,هيئه المقيمين,6,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,وزارة الصحة الدمام,6,train.jsonl
+GOVERNMENT_ENTITY,وزاره الاسكان,6,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,الاحتلال الإسرائيلي,5,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الاحوال المدنية,5,train.jsonl
+GOVERNMENT_ENTITY,المؤسسة العامة للتدريب التقني,5,train.jsonl
+GOVERNMENT_ENTITY,المجلس التشريعي,5,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,المجلس التشريعي الفلسطيني,5,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,المحكمة الشرعية في طولكرم,5,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,بلدية عصيرة الشمالية,5,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,حكومة الإقليم,5,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,سلطات الانتداب البريطاني على فلسطين,5,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,سلطة النقد الفلسطينية,5,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,شرطه,5,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,قوات الأمن,5,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,لجنة الانتخابات المركزية,5,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,مجلس القضاء الأعلى,5,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,محكمة القنفذه,5,train.jsonl
+GOVERNMENT_ENTITY,هيئه الاتصالات,5,train.jsonl
+GOVERNMENT_ENTITY,وزارة التربية والتعليم الأردنية,5,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,وزارة التربية والتعليم العالي,5,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,وزارة التعليم العالي,5,train.jsonl
+GOVERNMENT_ENTITY,وزارة السياحة,5,train.jsonl
+GOVERNMENT_ENTITY,احوال المدنيه,4,train.jsonl
+GOVERNMENT_ENTITY,اسرائيل,4,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الأحوال المدنيه,4,train.jsonl
+GOVERNMENT_ENTITY,الأوقاف,4,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,الإحتلال الإسرائيلي,4,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,الإدارة الأمريكية,4,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,البرلمان العراقي,4,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,التامينات الاجتماعيه,4,train.jsonl
+GOVERNMENT_ENTITY,الحرس الثوري الإيراني,4,test.jsonl
+GOVERNMENT_ENTITY,الحكومة السورية,4,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,السلطات الإسرائيلية,4,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,السلطة الوطنية,4,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,القيادة العراقية,4,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,المجلس المحلي,4,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,المركز الوطني للمعلومات الصحية,4,train.jsonl
+GOVERNMENT_ENTITY,النيابة العامة,4,train.jsonl
+GOVERNMENT_ENTITY,الهيئة السعودية للتخصصات الصحية,4,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الهيئة العامة للغذاء والدواء,4,train.jsonl
+GOVERNMENT_ENTITY,الهيئة المصرية للتخصصات الصحية,4,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,بلدية الناصرة,4,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,بلدية طولكرم,4,train.jsonl
+GOVERNMENT_ENTITY,بلدية محافظة الخبر,4,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,جنة الانتخابات,4,train.jsonl
+GOVERNMENT_ENTITY,حكومة الانتداب البريطاني على فلسطين,4,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,حكومة العراق,4,train.jsonl
+GOVERNMENT_ENTITY,حكومة العراقية,4,train.jsonl
+GOVERNMENT_ENTITY,دائرة الاحصاءات الأردنية,4,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,دائرة الصحة,4,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,ديوان السفارة,4,train.jsonl
+GOVERNMENT_ENTITY,سلطات الاحتلال,4,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,شرطة والثانى المدير,4,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,صندوق الادخار,4,train.jsonl
+GOVERNMENT_ENTITY,صندوق التنمية الاجتماعية,4,train.jsonl
+GOVERNMENT_ENTITY,صندوق الموارد البشرية,4,train.jsonl
+GOVERNMENT_ENTITY,قوات إقليم كردستان,4,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,قوات الأسايش,4,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,قوات المصرية بفلسطين,4,train.jsonl
+GOVERNMENT_ENTITY,لإسرائيل,4,train.jsonl
+GOVERNMENT_ENTITY,محافظه الاحساء,4,train.jsonl
+GOVERNMENT_ENTITY,محكمة مكافحة الإرهاب في نينوى,4,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,مديرية الشؤون الصحية,4,train.jsonl
+GOVERNMENT_ENTITY,مديريه الشؤون الصحيه,4,train.jsonl
+GOVERNMENT_ENTITY,مكتب الانتخابات المركزي,4,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,هيئة الإحصاء,4,train.jsonl
+GOVERNMENT_ENTITY,هيئة سوق راس المال,4,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,هيئة مجلس محلي البيرة,4,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,هيئه الاتصالات والفضاء والتقنيه,4,train.jsonl
+GOVERNMENT_ENTITY,هيئه الرقابه والتحقيق,4,train.jsonl
+GOVERNMENT_ENTITY,وزارة الشؤون الاجتماعية والعمل,4,train.jsonl
+GOVERNMENT_ENTITY,وزارة الصحة الأردنية,4,train.jsonl
+GOVERNMENT_ENTITY,وزارة الصحة الالكتروني,4,train.jsonl
+GOVERNMENT_ENTITY,وزارة الصحه,4,train.jsonl
+GOVERNMENT_ENTITY,وزارة الموارد,4,train.jsonl
+GOVERNMENT_ENTITY,وزاره الشؤون البلديه,4,validation.jsonl
+GOVERNMENT_ENTITY,أسايش,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,أوقاف عكا,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,احوال المدنية,3,train.jsonl
+GOVERNMENT_ENTITY,الأسايش,3,train.jsonl
+GOVERNMENT_ENTITY,الإدارة المدنية في الضفة الغربية,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الاحتلال الاسرائيلي,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الارتباط الخارجي,3,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,البرلمان,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,البرنامج الوطني للإيدز,3,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,البلدية القابضة,3,train.jsonl
+GOVERNMENT_ENTITY,الجيش الأردني,3,train.jsonl
+GOVERNMENT_ENTITY,الجيش الإسرائيلي,3,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,الجيش الاسرائيلي,3,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,الجيش البريطاني,3,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,الجيش التركي,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الجيش العراقي,3,train.jsonl
+GOVERNMENT_ENTITY,الجيش اللبناني,3,train.jsonl
+GOVERNMENT_ENTITY,الحرس الوطني,3,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,الحكومة الإسرائيلية,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الحكومة الليبية,3,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,السلطات السورية,3,train.jsonl
+GOVERNMENT_ENTITY,السلطات الصحية,3,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,السلطات الصحية المحلية,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,السلطات الصحية اليمنية,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,السلطات المحلية,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الشرطة للحادث,3,train.jsonl
+GOVERNMENT_ENTITY,القوات التركية,3,train.jsonl
+GOVERNMENT_ENTITY,القوات الحكومية,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الكرملين,3,train.jsonl
+GOVERNMENT_ENTITY,الكونغرس,3,train.jsonl
+GOVERNMENT_ENTITY,المجلس الاعلى للتعليم,3,train.jsonl
+GOVERNMENT_ENTITY,المجلس الانتقالي الجنوبي,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,المحكمة الشرعية في حيفا,3,train.jsonl
+GOVERNMENT_ENTITY,المحكمة الشرعية في نابلس,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,المصلحة النظامية,3,train.jsonl
+GOVERNMENT_ENTITY,النظام,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,النظام المغربي,3,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,الهيئة التنظيمية,3,train.jsonl
+GOVERNMENT_ENTITY,الهيئة السعودية للبيانات,3,train.jsonl
+GOVERNMENT_ENTITY,الهيئة العامة,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الهيئة العامة للمناطق اللوجستية,3,train.jsonl
+GOVERNMENT_ENTITY,الهيئة العربية العليا,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الهيئة الوطنية للامن السيبراني,3,train.jsonl
+GOVERNMENT_ENTITY,الهيئه المصرية للتخصصات الصحيه,3,train.jsonl
+GOVERNMENT_ENTITY,بلدية البيرة,3,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,بلدية الخليل,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,بلدية الرام,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,بلدية المجدل,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,بلدية جنين,3,train.jsonl
+GOVERNMENT_ENTITY,بلدية دير دبوان,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,بلدية يافا,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,بلديه محافظه الخرج,3,train.jsonl
+GOVERNMENT_ENTITY,بمنظمة التحرير الفلسطينية,3,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,تأمينات الاجتماعيه,3,validation.jsonl
+GOVERNMENT_ENTITY,حكومة الوفاق الوطني,3,train.jsonl
+GOVERNMENT_ENTITY,حكومة بغداد,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,دائرة أوقاف نابلس,3,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,دائرة الصحة لحكومة فلسطين,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,سلطات الإحتلال الإسرائيلي,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,سلطات الإقليم,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,سلطات الاحتلال الإسرائيلي,3,train.jsonl
+GOVERNMENT_ENTITY,سلطات العراق,3,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,سلطات حكومة إقليم كردستان,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,سلطة الوطنية,3,train.jsonl
+GOVERNMENT_ENTITY,سوق رأس المال,3,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,سوق رأس المال الفلسطيني,3,train.jsonl
+GOVERNMENT_ENTITY,شرطة والثاني المدير,3,test.jsonl
+GOVERNMENT_ENTITY,صندوق التنميه الصناعي,3,train.jsonl
+GOVERNMENT_ENTITY,قوات إقليم كردستان العراق,3,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,قوات الأمن العراقية,3,test.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,قوات الإحتلال الإسرائيلي,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,قوات الإقليم,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,قوات الحشد الشعبي,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,قوات حكومة إقليم كردستان,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,لجنة التوجيه الوطني,3,train.jsonl
+GOVERNMENT_ENTITY,لخفر السواحل الليبي,3,train.jsonl
+GOVERNMENT_ENTITY,مؤتمر الفلسطيني العربي,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,مجلس البيرة,3,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,مجلس الشيوخ,3,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,مجلس بلدية مدينة البيرة,3,test.jsonl;train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,مجلس قروي عقربا,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,محكمة قضايا الانتخابات,3,train.jsonl
+GOVERNMENT_ENTITY,محكمة نينوى,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,مديرية الشؤون الطبية للعلم والاعتماد,3,train.jsonl
+GOVERNMENT_ENTITY,مكتب تسجيل اراضي جنين,3,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,هيئة الأوراق المالية والسلع الإماراتية,3,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,هيئة العربية العليا,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,هيئه التدريس,3,validation.jsonl
+GOVERNMENT_ENTITY,هيئه الزكاه والضريبه والجمارك,3,test.jsonl
+GOVERNMENT_ENTITY,وإسرائيل,3,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,واسرائيل,3,train.jsonl
+GOVERNMENT_ENTITY,وزارة الاقتصاد الوطني,3,train.jsonl
+GOVERNMENT_ENTITY,وزارة التربية الوطنية اللبنانية,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,وزارة الدفاع الأمريكية,3,train.jsonl
+GOVERNMENT_ENTITY,وزارة الشؤون الخارجية,3,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزارة الصحة العامة والسكان,3,train.jsonl
+GOVERNMENT_ENTITY,وزارة الصحةةةة,3,train.jsonl
+GOVERNMENT_ENTITY,وزارة المعارف الأردنية,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,وزارة النقل والمواصلات,3,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,وزاره الشؤون البلديه والقرويه والاسكان,3,train.jsonl
+GOVERNMENT_ENTITY,وزاره الصحه الدمام,3,train.jsonl
+GOVERNMENT_ENTITY,وزاره النقل والخدمات اللوجستيه,3,validation.jsonl
+GOVERNMENT_ENTITY,أمانة المنطقة الحق,2,train.jsonl
+GOVERNMENT_ENTITY,أمانة منطقة الرياض,2,train.jsonl
+GOVERNMENT_ENTITY,أمانه المنطقه,2,test.jsonl
+GOVERNMENT_ENTITY,أمانه المنطقه الشرقيه,2,test.jsonl
+GOVERNMENT_ENTITY,أمانه منطقه الرياض,2,train.jsonl
+GOVERNMENT_ENTITY,إدارة الحكم الذاتي,2,train.jsonl
+GOVERNMENT_ENTITY,الأحوال المدنية,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الأوقاف الإسلامية في حيفا,2,test.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,البوليس,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,البوليس الفلسطيني,2,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,التربية والتعليم,2,train.jsonl
+GOVERNMENT_ENTITY,التشريعي,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الجهاز المركزي للإحصاء الفلسطيني,2,train.jsonl
+GOVERNMENT_ENTITY,الجيش الأمريكي,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الجيش السوري,2,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,الجيش العثماني,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الحرس الوطني السعودي,2,train.jsonl
+GOVERNMENT_ENTITY,الحكومة الأردنية,2,train.jsonl
+GOVERNMENT_ENTITY,الحكومة الأردنية الهاشمية,2,train.jsonl
+GOVERNMENT_ENTITY,الحكومة الأمريكية,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الديوان العام,2,train.jsonl
+GOVERNMENT_ENTITY,السلطات الإيطالية,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,السلطات الحكومية العراقية,2,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,السلطات القضائية,2,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,السلطات الكردية,2,train.jsonl
+GOVERNMENT_ENTITY,السلطة التنفيذية,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الشرطة المحلية,2,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,الشرطة المحلية الأفغانية,2,train.jsonl
+GOVERNMENT_ENTITY,القوات الأردنية,2,train.jsonl
+GOVERNMENT_ENTITY,القوات الاسرائيلية,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,القوات الروسية,2,test.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,القوات المسلحة,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,القوات المسلحة اللبنانية,2,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,القوات اليمنية,2,train.jsonl
+GOVERNMENT_ENTITY,القيادة الفلسطينية,2,train.jsonl
+GOVERNMENT_ENTITY,القيادة المركزية الأمريكية,2,test.jsonl
+GOVERNMENT_ENTITY,اللجنة الفنية للشمول المالي,2,train.jsonl
+GOVERNMENT_ENTITY,المؤسسة العامة للتامينات الاجتماعية,2,train.jsonl
+GOVERNMENT_ENTITY,المؤسسة العامة للمياه,2,train.jsonl
+GOVERNMENT_ENTITY,المؤسسة الوطنية للنفط,2,train.jsonl
+GOVERNMENT_ENTITY,المجلس البلدي,2,train.jsonl
+GOVERNMENT_ENTITY,المحافظة التامة,2,train.jsonl
+GOVERNMENT_ENTITY,المحكمة الجنائية المركزية,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,المحكمة الدستورية العليا,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,المديرية العامة للجوازات والهجرة,2,train.jsonl
+GOVERNMENT_ENTITY,المركز الوطني للأمن السيبراني,2,train.jsonl
+GOVERNMENT_ENTITY,المركز الوطني للامن السيبراني,2,train.jsonl
+GOVERNMENT_ENTITY,المركز الوطني للرعاية الصحية المنزلية,2,train.jsonl
+GOVERNMENT_ENTITY,المصلحة العامة,2,train.jsonl
+GOVERNMENT_ENTITY,النظام الجمهوري,2,test.jsonl
+GOVERNMENT_ENTITY,النظام السوري,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,الهيئة الادارية,2,train.jsonl
+GOVERNMENT_ENTITY,الهيئه السعوديه للتخصصات الصحيه,2,train.jsonl
+GOVERNMENT_ENTITY,الهيئه العامه للعقار,2,train.jsonl
+GOVERNMENT_ENTITY,الهيئه العامه للغذاء والدواء,2,validation.jsonl
+GOVERNMENT_ENTITY,الهيئه العامه للنقل والطرق,2,train.jsonl
+GOVERNMENT_ENTITY,اماره المنطقه,2,train.jsonl
+GOVERNMENT_ENTITY,امانة المدينة,2,train.jsonl
+GOVERNMENT_ENTITY,امانة المدينة الاعلان,2,train.jsonl
+GOVERNMENT_ENTITY,امانة المنطقة الشرقية,2,train.jsonl
+GOVERNMENT_ENTITY,امانه المنطقه الشرقيه,2,train.jsonl
+GOVERNMENT_ENTITY,امانه منطقه الرياض,2,train.jsonl
+GOVERNMENT_ENTITY,بلدية الطيبة,2,train.jsonl
+GOVERNMENT_ENTITY,بلدية المحافظة,2,train.jsonl
+GOVERNMENT_ENTITY,بلدية جماعين,2,train.jsonl
+GOVERNMENT_ENTITY,بلدية سبسطية,2,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,بلدية عكا,2,train.jsonl
+GOVERNMENT_ENTITY,بلدية محافظة,2,train.jsonl
+GOVERNMENT_ENTITY,بلدية محافظة الأحساء,2,train.jsonl
+GOVERNMENT_ENTITY,بلدية محافظة القطيف,2,train.jsonl
+GOVERNMENT_ENTITY,بلدية مدينة البيرة ورام الله,2,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,بلدية مدينة طبريا,2,train.jsonl
+GOVERNMENT_ENTITY,بلديه الخبر,2,train.jsonl
+GOVERNMENT_ENTITY,بلديه القديمه,2,train.jsonl
+GOVERNMENT_ENTITY,بلديه محافظه,2,train.jsonl
+GOVERNMENT_ENTITY,تأمينات الاجتماعية,2,train.jsonl
+GOVERNMENT_ENTITY,جيش الإحتلال,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,جيش الإحتلال الإسرائيلي,2,train.jsonl
+GOVERNMENT_ENTITY,حرس الثوري الإيراني,2,train.jsonl
+GOVERNMENT_ENTITY,حشد الشعبي,2,train.jsonl
+GOVERNMENT_ENTITY,حكومة اليمنية,2,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,دائرة البريد والبرق والتلفون في فلسطين,2,train.jsonl
+GOVERNMENT_ENTITY,سلاح الجو الملكي السعودي,2,train.jsonl
+GOVERNMENT_ENTITY,سلطات الإحتلال الإسرائيلية,2,train.jsonl
+GOVERNMENT_ENTITY,سلطات التركية,2,train.jsonl
+GOVERNMENT_ENTITY,سلطات الحكومة العراقية,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,سلطات الحوثيین,2,train.jsonl
+GOVERNMENT_ENTITY,صندوق البريد,2,train.jsonl
+GOVERNMENT_ENTITY,صندوق البريد الإلكتروني,2,train.jsonl
+GOVERNMENT_ENTITY,صندوق المشغل,2,train.jsonl
+GOVERNMENT_ENTITY,قوات الحكومة السورية,2,train.jsonl
+GOVERNMENT_ENTITY,قوات الحوثيین,2,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,لكيبوتس مجدو,2,test.jsonl
+GOVERNMENT_ENTITY,مجلس إدارة القضاء,2,train.jsonl
+GOVERNMENT_ENTITY,مجلس التشريعي الفلسطيني,2,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,مجلس التنظيم الأعلى,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,مجلس النيابي في قضاء نابلس,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,مجلس الوزراء الفلسطيني,2,train.jsonl
+GOVERNMENT_ENTITY,محافظة الخرج الصناعية,2,train.jsonl
+GOVERNMENT_ENTITY,محافظة القطيف,2,train.jsonl
+GOVERNMENT_ENTITY,محافظة الموقع,2,train.jsonl
+GOVERNMENT_ENTITY,محكمة الإنتداب البريطاني على فلسطين,2,train.jsonl
+GOVERNMENT_ENTITY,محكمة تسوية الأراضي في نابلس,2,train.jsonl
+GOVERNMENT_ENTITY,محكمة جنين الشرعية,2,test.jsonl;train.jsonl
+GOVERNMENT_ENTITY,محكمة صلح نابلس,2,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,محكمة مكافحة الإرهاب بنينوى,2,train.jsonl
+GOVERNMENT_ENTITY,مديرية الصحة,2,train.jsonl
+GOVERNMENT_ENTITY,مديرية النقل الداخلي,2,train.jsonl
+GOVERNMENT_ENTITY,مديريه التربيه,2,train.jsonl
+GOVERNMENT_ENTITY,مصلحة المشتري,2,train.jsonl
+GOVERNMENT_ENTITY,مكتب تسجيل اراضي القدس,2,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,نيابه العامه,2,train.jsonl
+GOVERNMENT_ENTITY,هيئة الأوراق المالية الأردنية,2,train.jsonl
+GOVERNMENT_ENTITY,هيئة الأوراق المالية الأمريكية,2,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,هيئة الأوراق المالية والسلع,2,train.jsonl
+GOVERNMENT_ENTITY,هيئة الاتصالات والفضاء,2,train.jsonl
+GOVERNMENT_ENTITY,هيئة الامن السيبراني,2,train.jsonl
+GOVERNMENT_ENTITY,هيئة الاوراق المالية الاردنية,2,train.jsonl
+GOVERNMENT_ENTITY,هيئة التأمينات الاجتماعية,2,train.jsonl
+GOVERNMENT_ENTITY,هيئة التمريض,2,train.jsonl
+GOVERNMENT_ENTITY,هيئة الرقابة الفلسطينية,2,train.jsonl
+GOVERNMENT_ENTITY,هيئة الرقابة والتحقيق,2,validation.jsonl
+GOVERNMENT_ENTITY,هيئة العقار,2,train.jsonl
+GOVERNMENT_ENTITY,هيئة المحاسبين القانونيين,2,train.jsonl
+GOVERNMENT_ENTITY,هيئة المقيمين,2,train.jsonl
+GOVERNMENT_ENTITY,هيئة النظر,2,train.jsonl
+GOVERNMENT_ENTITY,هيئة النقل,2,train.jsonl
+GOVERNMENT_ENTITY,هيئة سوق المال الفلسطينية,2,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,هيئة سوق رأس ال المال,2,train.jsonl
+GOVERNMENT_ENTITY,هيئه الإشراف,2,train.jsonl
+GOVERNMENT_ENTITY,هيئه الرقابه والسلامه,2,train.jsonl
+GOVERNMENT_ENTITY,هيئه العقار,2,train.jsonl
+GOVERNMENT_ENTITY,وزارة الأشغال العامة,2,train.jsonl;validation.jsonl
+GOVERNMENT_ENTITY,وزارة التجارة الاسبق,2,train.jsonl
+GOVERNMENT_ENTITY,وزارة التجارة والصناعة,2,train.jsonl
+GOVERNMENT_ENTITY,وزارة الخارجية الأمريكية,2,train.jsonl
+GOVERNMENT_ENTITY,وزارة الداخلية للشؤون البلدية والقروية,2,train.jsonl
+GOVERNMENT_ENTITY,وزارة الشؤون والمصاب,2,train.jsonl
+GOVERNMENT_ENTITY,وزارة الصحة النهارده,2,train.jsonl
+GOVERNMENT_ENTITY,وزاره التربيه,2,train.jsonl
+GOVERNMENT_ENTITY,وزاره التربيه الوطنيه,2,train.jsonl
+GOVERNMENT_ENTITY,وزاره الخدمات العامه,2,train.jsonl
+GOVERNMENT_ENTITY,وزاره الموارد,2,train.jsonl
+GOVERNMENT_ENTITY,وزاره الموارد البشريه,2,train.jsonl
+GOVERNMENT_ENTITY,وكالة المخابرات المركزية,2,train.jsonl
+GOVERNMENT_ENTITY,DTIC,1,train.jsonl
+GOVERNMENT_ENTITY,EISA,1,train.jsonl
+GOVERNMENT_ENTITY,SEC,1,train.jsonl
+GOVERNMENT_ENTITY,أجهزة الأمن الروسية,1,train.jsonl
+GOVERNMENT_ENTITY,أجهزة الأمن المدنية,1,train.jsonl
+GOVERNMENT_ENTITY,أرائيل,1,train.jsonl
+GOVERNMENT_ENTITY,أمن الإقليم,1,train.jsonl
+GOVERNMENT_ENTITY,أوقاف,1,train.jsonl
+GOVERNMENT_ENTITY,أوقاف اللواء الشمالي,1,validation.jsonl
+GOVERNMENT_ENTITY,أوقاف رام الله,1,train.jsonl
+GOVERNMENT_ENTITY,إدارة الأمريكية الحالية,1,train.jsonl
+GOVERNMENT_ENTITY,اجهزة الامن الفلسطينية,1,train.jsonl
+GOVERNMENT_ENTITY,اجهزة الدولة الفلسطينة,1,train.jsonl
+GOVERNMENT_ENTITY,اجهزة امن السلطة,1,train.jsonl
+GOVERNMENT_ENTITY,اجهزة امنية,1,train.jsonl
+GOVERNMENT_ENTITY,اريئيل,1,train.jsonl
+GOVERNMENT_ENTITY,الأمن الوطني,1,train.jsonl
+GOVERNMENT_ENTITY,الأوقاف في حيفا,1,validation.jsonl
+GOVERNMENT_ENTITY,الأوقاف للواء الشمالي,1,train.jsonl
+GOVERNMENT_ENTITY,الإدارة البريطانية,1,train.jsonl
+GOVERNMENT_ENTITY,الإدارة العامة للأوراق المالية,1,test.jsonl
+GOVERNMENT_ENTITY,الإدارة المدنية,1,train.jsonl
+GOVERNMENT_ENTITY,الاجهزة الامنية الفلسطينية,1,test.jsonl
+GOVERNMENT_ENTITY,الادارة المدنية في الضفة الغربية وقطاع غزة,1,train.jsonl
+GOVERNMENT_ENTITY,الادارة المدنية في الضفة الغربية ومدينة غزة,1,validation.jsonl
+GOVERNMENT_ENTITY,الاستيطان,1,validation.jsonl
+GOVERNMENT_ENTITY,الانتداب البريطاني,1,validation.jsonl
+GOVERNMENT_ENTITY,الباب العالي,1,train.jsonl
+GOVERNMENT_ENTITY,البحرية الأمريكية,1,validation.jsonl
+GOVERNMENT_ENTITY,البرلمان الإقليمي,1,train.jsonl
+GOVERNMENT_ENTITY,البرلمان الاردني,1,validation.jsonl
+GOVERNMENT_ENTITY,البشمركة,1,train.jsonl
+GOVERNMENT_ENTITY,البنك المركزي التونسي,1,train.jsonl
+GOVERNMENT_ENTITY,التربية في القدس,1,train.jsonl
+GOVERNMENT_ENTITY,التربية والتعليم العالي,1,train.jsonl
+GOVERNMENT_ENTITY,الجهات الحكومية والرسمية,1,train.jsonl
+GOVERNMENT_ENTITY,الجهاز المصرفي الفلسطيني,1,train.jsonl
+GOVERNMENT_ENTITY,الجيش الأذربيجاني,1,train.jsonl
+GOVERNMENT_ENTITY,الجيش الإماراتي,1,test.jsonl
+GOVERNMENT_ENTITY,الجيش البورمي,1,test.jsonl
+GOVERNMENT_ENTITY,الجيش التونسي,1,train.jsonl
+GOVERNMENT_ENTITY,الجيش الجزائر,1,train.jsonl
+GOVERNMENT_ENTITY,الجيش الروماني,1,validation.jsonl
+GOVERNMENT_ENTITY,الجيش السوداني,1,train.jsonl
+GOVERNMENT_ENTITY,الجيش الليبي الوطني,1,train.jsonl
+GOVERNMENT_ENTITY,الجيش الوطني السوري,1,test.jsonl
+GOVERNMENT_ENTITY,الجيش الوطني الليبي,1,train.jsonl
+GOVERNMENT_ENTITY,الجيوش الوطنية,1,train.jsonl
+GOVERNMENT_ENTITY,الحرس الوطني الأردني,1,train.jsonl
+GOVERNMENT_ENTITY,الحكومة الأسترالية,1,train.jsonl
+GOVERNMENT_ENTITY,الحكومة الأميركية,1,train.jsonl
+GOVERNMENT_ENTITY,الحكومة الإيطالية,1,train.jsonl
+GOVERNMENT_ENTITY,الحكومة الائتلافية,1,validation.jsonl
+GOVERNMENT_ENTITY,الحكومة البريطانية,1,train.jsonl
+GOVERNMENT_ENTITY,الحكومة الجديدة,1,train.jsonl
+GOVERNMENT_ENTITY,الحكومة الذاتية الفلسطينية,1,train.jsonl
+GOVERNMENT_ENTITY,الحكومة العراقية المُنتخبة,1,train.jsonl
+GOVERNMENT_ENTITY,الحكومة الكردية,1,train.jsonl
+GOVERNMENT_ENTITY,الحكومة اللبنانية,1,train.jsonl
+GOVERNMENT_ENTITY,الحكومة المركزية,1,train.jsonl
+GOVERNMENT_ENTITY,الخارجية الأمريكية,1,train.jsonl
+GOVERNMENT_ENTITY,الدفاع المدني السوري,1,train.jsonl
+GOVERNMENT_ENTITY,السفارة السوفيتية في جنوب اليمن,1,train.jsonl
+GOVERNMENT_ENTITY,السلطات الألمانية,1,train.jsonl
+GOVERNMENT_ENTITY,السلطات الاحتلالية,1,test.jsonl
+GOVERNMENT_ENTITY,السلطات التركية,1,test.jsonl
+GOVERNMENT_ENTITY,السلطات الحكومية اليمنية,1,train.jsonl
+GOVERNMENT_ENTITY,السلطات العسكرية,1,test.jsonl
+GOVERNMENT_ENTITY,السلطات الفرنسية,1,test.jsonl
+GOVERNMENT_ENTITY,السلطات القضائية الألمانية,1,train.jsonl
+GOVERNMENT_ENTITY,السلطات القضائية الوطنية في أوروبا,1,test.jsonl
+GOVERNMENT_ENTITY,السلطات الكردية والعراقية,1,train.jsonl
+GOVERNMENT_ENTITY,السلطات الليبية,1,train.jsonl
+GOVERNMENT_ENTITY,السلطات المحلية في سوريا,1,train.jsonl
+GOVERNMENT_ENTITY,السلطات المغربية,1,test.jsonl
+GOVERNMENT_ENTITY,السلطات اليونانية,1,train.jsonl
+GOVERNMENT_ENTITY,السلطة التنفيذية العربية,1,test.jsonl
+GOVERNMENT_ENTITY,السلطة الجديدة,1,train.jsonl
+GOVERNMENT_ENTITY,السلطة الجديدة في الجزائر,1,validation.jsonl
+GOVERNMENT_ENTITY,السلطة الحاكمة,1,train.jsonl
+GOVERNMENT_ENTITY,السلطة الفلسطينية,1,validation.jsonl
+GOVERNMENT_ENTITY,السلطة المدنية,1,test.jsonl
+GOVERNMENT_ENTITY,الشرطة الاتحادية,1,validation.jsonl
+GOVERNMENT_ENTITY,الشرطة الكردية المحلية,1,train.jsonl
+GOVERNMENT_ENTITY,القوات الأمنية والعسكرية,1,train.jsonl
+GOVERNMENT_ENTITY,القوات الأميركية,1,validation.jsonl
+GOVERNMENT_ENTITY,القوات البحرية الملكية السعودية,1,validation.jsonl
+GOVERNMENT_ENTITY,القوات البحرية الملكية السعودية الخاصة,1,validation.jsonl
+GOVERNMENT_ENTITY,القوات البرية,1,train.jsonl
+GOVERNMENT_ENTITY,القوات الجوية,1,train.jsonl
+GOVERNMENT_ENTITY,القوات الجوية الحكومية,1,train.jsonl
+GOVERNMENT_ENTITY,القوات الحكومية السورية,1,train.jsonl
+GOVERNMENT_ENTITY,القوات الحكومية العراقية,1,train.jsonl
+GOVERNMENT_ENTITY,القوات السورية,1,train.jsonl
+GOVERNMENT_ENTITY,القوات العسكرية,1,train.jsonl
+GOVERNMENT_ENTITY,القوات العسكرية الأمريكية,1,train.jsonl
+GOVERNMENT_ENTITY,القوات العسكرية العراقية,1,validation.jsonl
+GOVERNMENT_ENTITY,القوات العسكرية المحلية,1,train.jsonl
+GOVERNMENT_ENTITY,القوات الكردية,1,train.jsonl
+GOVERNMENT_ENTITY,القوات المسلحة الحكومية,1,train.jsonl
+GOVERNMENT_ENTITY,القوات المسلحة المصرية,1,train.jsonl
+GOVERNMENT_ENTITY,القواعد المصرية,1,test.jsonl
+GOVERNMENT_ENTITY,القوى الأمنية والعسكرية,1,train.jsonl
+GOVERNMENT_ENTITY,القيادة العامة لقوات العاصفة,1,train.jsonl
+GOVERNMENT_ENTITY,القيادة النيجيرية,1,train.jsonl
+GOVERNMENT_ENTITY,الكونغرس الأميركي,1,train.jsonl
+GOVERNMENT_ENTITY,الكيان,1,train.jsonl
+GOVERNMENT_ENTITY,اللجنة الانتخابية المركزية,1,train.jsonl
+GOVERNMENT_ENTITY,اللجنة التوجيهية لبناء الاستراتيجية الوطنية للشمول المالي,1,train.jsonl
+GOVERNMENT_ENTITY,اللجنة التوجيهية لبناء الاستراتيجية الوطنية للشمول المالي في فلسطين,1,test.jsonl
+GOVERNMENT_ENTITY,اللجنة العربية العليا,1,test.jsonl
+GOVERNMENT_ENTITY,اللجنة العربية العليا في القدس,1,train.jsonl
+GOVERNMENT_ENTITY,اللجنة العليا للمناهج والكتب المدرسية,1,train.jsonl
+GOVERNMENT_ENTITY,اللجنة الوطنية للحوكمة والمبادئ الدولية,1,test.jsonl
+GOVERNMENT_ENTITY,اللجنة الوطنية للشمول المالي,1,train.jsonl
+GOVERNMENT_ENTITY,اللجنة الوطنية لمكافحة غسل الأموال,1,train.jsonl
+GOVERNMENT_ENTITY,اللجنة اليمنية,1,validation.jsonl
+GOVERNMENT_ENTITY,المجلس البلدي في منطقة نابلس,1,train.jsonl
+GOVERNMENT_ENTITY,المجلس البلدي في نابلس,1,train.jsonl
+GOVERNMENT_ENTITY,المجلس الشرعي في نابلس,1,train.jsonl
+GOVERNMENT_ENTITY,المجلس العسكري,1,test.jsonl
+GOVERNMENT_ENTITY,المجلس الوطني الفلسطيني التاسع عشر,1,test.jsonl
+GOVERNMENT_ENTITY,المجمع الصناعي العسكري الأمريكي,1,train.jsonl
+GOVERNMENT_ENTITY,المحكمة الخاصة بلبنان,1,train.jsonl
+GOVERNMENT_ENTITY,المحكمة الشرعية في الرملة,1,train.jsonl
+GOVERNMENT_ENTITY,المحكمة الشرعية في جنين,1,test.jsonl
+GOVERNMENT_ENTITY,المحكمة الشرعية في عكا,1,train.jsonl
+GOVERNMENT_ENTITY,المحكمة الشرعية في يافا,1,train.jsonl
+GOVERNMENT_ENTITY,المحكمة الشرعية قي نابلس,1,validation.jsonl
+GOVERNMENT_ENTITY,المحكمة العليا الإسرائيلية,1,train.jsonl
+GOVERNMENT_ENTITY,المحكمة القضائية,1,train.jsonl
+GOVERNMENT_ENTITY,المحكمة المركزية في نابلس,1,train.jsonl
+GOVERNMENT_ENTITY,المخابرات الاسرائيلية,1,train.jsonl
+GOVERNMENT_ENTITY,المخابرات الليبية,1,validation.jsonl
+GOVERNMENT_ENTITY,المعهد الوطني لتعزيز صحة السكان المهاجرين ومحاربة الفقر والأمراض المرتبطة به,1,train.jsonl
+GOVERNMENT_ENTITY,المكتب الفلسطيني للخدمات المحلية,1,validation.jsonl
+GOVERNMENT_ENTITY,الهيئة العربية العليا لفلسطين,1,test.jsonl
+GOVERNMENT_ENTITY,الهيئة العمانية,1,train.jsonl
+GOVERNMENT_ENTITY,الهيئة القضائية,1,train.jsonl
+GOVERNMENT_ENTITY,الهيئة المصرية للرقابة على التأمين,1,train.jsonl
+GOVERNMENT_ENTITY,الوكالة,1,train.jsonl
+GOVERNMENT_ENTITY,الوكالة السويدية للتعاون الإنمائي الدولي,1,train.jsonl
+GOVERNMENT_ENTITY,بخفر البحر الأحمر,1,train.jsonl
+GOVERNMENT_ENTITY,برلمان إقليم كردستان العراق,1,test.jsonl
+GOVERNMENT_ENTITY,بسوق رأس المال,1,test.jsonl
+GOVERNMENT_ENTITY,بعثة التدريب العسكري,1,train.jsonl
+GOVERNMENT_ENTITY,بعثة التدريب العسكري الأمريكية,1,train.jsonl
+GOVERNMENT_ENTITY,بلدية أريحا,1,test.jsonl
+GOVERNMENT_ENTITY,بلدية الشونة الجنوبية,1,train.jsonl
+GOVERNMENT_ENTITY,بلدية حيفا وطولكرم وتل أبيب والقدس,1,train.jsonl
+GOVERNMENT_ENTITY,بلدية ديردبوان,1,train.jsonl
+GOVERNMENT_ENTITY,بلدية سلفيت,1,test.jsonl
+GOVERNMENT_ENTITY,بلدية عرابة,1,train.jsonl
+GOVERNMENT_ENTITY,بلدية غراند سينت,1,train.jsonl
+GOVERNMENT_ENTITY,بلدية غزة,1,train.jsonl
+GOVERNMENT_ENTITY,بلدية قضاء مدينة جنين,1,train.jsonl
+GOVERNMENT_ENTITY,بلدية مدينة البيرة بلدية رام الله,1,train.jsonl
+GOVERNMENT_ENTITY,بلدية نابلي,1,train.jsonl
+GOVERNMENT_ENTITY,بلدية والبيرة,1,test.jsonl
+GOVERNMENT_ENTITY,بوليس المدينة,1,train.jsonl
+GOVERNMENT_ENTITY,بوليس نابلس,1,train.jsonl
+GOVERNMENT_ENTITY,جمارك الإقليم السوري,1,train.jsonl
+GOVERNMENT_ENTITY,جمهورية الإسلامية الإيرانية,1,train.jsonl
+GOVERNMENT_ENTITY,جهاز أمن الدولة,1,train.jsonl
+GOVERNMENT_ENTITY,جهاز الإحصاء,1,train.jsonl
+GOVERNMENT_ENTITY,جهاز الإحصاء المركزي,1,test.jsonl
+GOVERNMENT_ENTITY,جهاز الشرطة الفلسطيني,1,train.jsonl
+GOVERNMENT_ENTITY,جهاز القضاء الثوري الفلسطيني,1,test.jsonl
+GOVERNMENT_ENTITY,جهاز مكافحة الهجرة غير الشرعية,1,train.jsonl
+GOVERNMENT_ENTITY,جيش الأمريكي,1,train.jsonl
+GOVERNMENT_ENTITY,جيش الإحتلال الاسرائيلي,1,test.jsonl
+GOVERNMENT_ENTITY,جيش الاحتلال,1,train.jsonl
+GOVERNMENT_ENTITY,جيش الاسرائيلي,1,train.jsonl
+GOVERNMENT_ENTITY,جيش البريطاني,1,train.jsonl
+GOVERNMENT_ENTITY,جيش التركي,1,train.jsonl
+GOVERNMENT_ENTITY,جيش التونسي,1,test.jsonl
+GOVERNMENT_ENTITY,جيش الدفاع الإسرائيلي,1,train.jsonl
+GOVERNMENT_ENTITY,جيش العراقي,1,train.jsonl
+GOVERNMENT_ENTITY,حرس الحدود,1,train.jsonl
+GOVERNMENT_ENTITY,حرس الدفاع الجوي,1,train.jsonl
+GOVERNMENT_ENTITY,حكومة إقليم كردستان العراق,1,train.jsonl
+GOVERNMENT_ENTITY,حكومة الاحتلال,1,validation.jsonl
+GOVERNMENT_ENTITY,حكومة الجديدة في جنوب اليمن,1,test.jsonl
+GOVERNMENT_ENTITY,حكومة الجمهورية,1,train.jsonl
+GOVERNMENT_ENTITY,حكومة الشمال في صنعاء,1,test.jsonl
+GOVERNMENT_ENTITY,حكومة المملكة المتحدة,1,validation.jsonl
+GOVERNMENT_ENTITY,حكومة الوفاق الوطني في ليبيا,1,train.jsonl
+GOVERNMENT_ENTITY,حكومة تركيا,1,train.jsonl
+GOVERNMENT_ENTITY,حكومة حزب العمل,1,validation.jsonl
+GOVERNMENT_ENTITY,حكومة شريعة,1,train.jsonl
+GOVERNMENT_ENTITY,حكومة صنعاء,1,train.jsonl
+GOVERNMENT_ENTITY,حكومة طرابلس,1,test.jsonl
+GOVERNMENT_ENTITY,حكومة عموم فلسطين,1,train.jsonl
+GOVERNMENT_ENTITY,حكومة ماليزيا,1,train.jsonl
+GOVERNMENT_ENTITY,خفر السواحل الليبيون,1,train.jsonl
+GOVERNMENT_ENTITY,دائرة أوقاف القدس,1,train.jsonl
+GOVERNMENT_ENTITY,دائرة أوقاف رام الله والبيرة,1,test.jsonl
+GOVERNMENT_ENTITY,دائرة الأحوال المدنية,1,train.jsonl
+GOVERNMENT_ENTITY,دائرة الأوقاف,1,train.jsonl
+GOVERNMENT_ENTITY,دائرة الأوقاف الإسلامية,1,validation.jsonl
+GOVERNMENT_ENTITY,دائرة الإحصاء,1,train.jsonl
+GOVERNMENT_ENTITY,دائرة الإحصاءات,1,train.jsonl
+GOVERNMENT_ENTITY,دائرة الإحصاءات العامة,1,test.jsonl
+GOVERNMENT_ENTITY,دائرة الاشغال العامة,1,test.jsonl
+GOVERNMENT_ENTITY,دائرة البوليس,1,train.jsonl
+GOVERNMENT_ENTITY,دائرة الحراج في القدس,1,train.jsonl
+GOVERNMENT_ENTITY,دائرة الخدمات البيطرية في نابلس,1,train.jsonl
+GOVERNMENT_ENTITY,دائرة النقل,1,train.jsonl
+GOVERNMENT_ENTITY,دائرة تسجيل أراضي الناصرة,1,test.jsonl
+GOVERNMENT_ENTITY,دائرة تسجيل الأراضي,1,train.jsonl
+GOVERNMENT_ENTITY,دائرة تسجيل الاراضي في محافظة الناصرة,1,test.jsonl
+GOVERNMENT_ENTITY,دائرة مكافحة الإرهاب,1,train.jsonl
+GOVERNMENT_ENTITY,دائرة مكافحة الإرهاب في أربيل,1,validation.jsonl
+GOVERNMENT_ENTITY,دائرة مكافحة غسل الأموال,1,train.jsonl
+GOVERNMENT_ENTITY,درك الأردني,1,validation.jsonl
+GOVERNMENT_ENTITY,دفاع الجوي الملكي السعودي,1,validation.jsonl
+GOVERNMENT_ENTITY,دولة الإحتلال الإسرائيلي,1,train.jsonl
+GOVERNMENT_ENTITY,دولة الروسية,1,train.jsonl
+GOVERNMENT_ENTITY,رئاسة الوزراء,1,test.jsonl
+GOVERNMENT_ENTITY,سرائيل,1,train.jsonl
+GOVERNMENT_ENTITY,سفارة إيران بالجزائر,1,test.jsonl
+GOVERNMENT_ENTITY,سفارة الولايات المتحدة في بيروت,1,train.jsonl
+GOVERNMENT_ENTITY,سلطات إقليم كردستان العراق,1,train.jsonl
+GOVERNMENT_ENTITY,سلطات الاحتلال الاسرائيلي,1,train.jsonl
+GOVERNMENT_ENTITY,سلطات التقاضي العراقية,1,test.jsonl
+GOVERNMENT_ENTITY,سلطات التقاضي في إقليم كردستان,1,test.jsonl
+GOVERNMENT_ENTITY,سلطات الحوثيين,1,train.jsonl
+GOVERNMENT_ENTITY,سلطات الرقابة المالية,1,train.jsonl
+GOVERNMENT_ENTITY,سلطات الطبيعة الإسرائيلية,1,train.jsonl
+GOVERNMENT_ENTITY,سلطات العراق وإقليم كردستان القضائية,1,train.jsonl
+GOVERNMENT_ENTITY,سلطات العراقية,1,test.jsonl
+GOVERNMENT_ENTITY,سلطات القضاء,1,test.jsonl
+GOVERNMENT_ENTITY,سلطات القضائية العراقية,1,train.jsonl
+GOVERNMENT_ENTITY,سلطات المخيم,1,train.jsonl
+GOVERNMENT_ENTITY,سلطات بغداد,1,train.jsonl
+GOVERNMENT_ENTITY,سلطات حكومة العراق,1,train.jsonl
+GOVERNMENT_ENTITY,سلطات حكومتيّ العراق وإقليم كردستان,1,train.jsonl
+GOVERNMENT_ENTITY,سلطات نينوى,1,test.jsonl
+GOVERNMENT_ENTITY,سلطة الانتداب البريطاني على فلسطين,1,train.jsonl
+GOVERNMENT_ENTITY,سلطة السياحة لجنة الإصطياف,1,train.jsonl
+GOVERNMENT_ENTITY,سلطة قناة الغور الشرقية,1,train.jsonl
+GOVERNMENT_ENTITY,سوق رأس المال الفلسطينية,1,train.jsonl
+GOVERNMENT_ENTITY,شرطة الإحتلال,1,train.jsonl
+GOVERNMENT_ENTITY,شرطة الحدود,1,test.jsonl
+GOVERNMENT_ENTITY,شرطة فلسطين,1,train.jsonl
+GOVERNMENT_ENTITY,شرطة لواء السامرة,1,train.jsonl
+GOVERNMENT_ENTITY,شرطة مرور,1,train.jsonl
+GOVERNMENT_ENTITY,صندوق التدريب والتجهيز بالعراق,1,validation.jsonl
+GOVERNMENT_ENTITY,صندوق التدريب والتجهيز لمكافحة تنظيم الدولة الإسلامية,1,validation.jsonl
+GOVERNMENT_ENTITY,صندوق الحوادث,1,test.jsonl
+GOVERNMENT_ENTITY,صندوق حوادث الطرق,1,train.jsonl
+GOVERNMENT_ENTITY,عقربا,1,test.jsonl
+GOVERNMENT_ENTITY,قسم التوعية الاستثمارية,1,validation.jsonl
+GOVERNMENT_ENTITY,قوات أمن المنشآت,1,train.jsonl
+GOVERNMENT_ENTITY,قوات أمن حكومية,1,train.jsonl
+GOVERNMENT_ENTITY,قوات إسرائيلية,1,train.jsonl
+GOVERNMENT_ENTITY,قوات الأمريكية,1,test.jsonl
+GOVERNMENT_ENTITY,قوات الأمن الحكومية,1,train.jsonl
+GOVERNMENT_ENTITY,قوات الأمن الكردية,1,train.jsonl
+GOVERNMENT_ENTITY,قوات الأمن المحلية,1,train.jsonl
+GOVERNMENT_ENTITY,قوات الانتداب البريطاني على فلسطين,1,train.jsonl
+GOVERNMENT_ENTITY,قوات البحرية الملكية السعودية,1,train.jsonl
+GOVERNMENT_ENTITY,قوات البرية,1,train.jsonl
+GOVERNMENT_ENTITY,قوات البوليس البريطاني,1,train.jsonl
+GOVERNMENT_ENTITY,قوات الحكومية اليمنية,1,validation.jsonl
+GOVERNMENT_ENTITY,قوات الدفاع المدني,1,train.jsonl
+GOVERNMENT_ENTITY,قوات الشرطة,1,train.jsonl
+GOVERNMENT_ENTITY,قوات الشرطة المحليّة,1,train.jsonl
+GOVERNMENT_ENTITY,قوات العراقية,1,train.jsonl
+GOVERNMENT_ENTITY,قوات العمليات الخاصة,1,train.jsonl
+GOVERNMENT_ENTITY,قوات العمليات الخاصة الأمريكية,1,train.jsonl
+GOVERNMENT_ENTITY,قوات النظام,1,test.jsonl
+GOVERNMENT_ENTITY,قوات الهاجاناة,1,train.jsonl
+GOVERNMENT_ENTITY,قوات الوزارة,1,train.jsonl
+GOVERNMENT_ENTITY,قوات حكومة الإقليم,1,train.jsonl
+GOVERNMENT_ENTITY,قوات مجموعات المهاجرين اليهود المسلحة,1,train.jsonl
+GOVERNMENT_ENTITY,قوات مكافحة الإرهاب,1,validation.jsonl
+GOVERNMENT_ENTITY,قوات يمنية,1,train.jsonl
+GOVERNMENT_ENTITY,قواته العسكرية,1,train.jsonl
+GOVERNMENT_ENTITY,قيادة جيش الإحتلال,1,train.jsonl
+GOVERNMENT_ENTITY,كتيبة المشاة الثالثة,1,test.jsonl
+GOVERNMENT_ENTITY,كيبوتس مجدو,1,train.jsonl
+GOVERNMENT_ENTITY,لاجهزة الامن,1,validation.jsonl
+GOVERNMENT_ENTITY,لجنة أوقاف عكا,1,train.jsonl
+GOVERNMENT_ENTITY,لجنة الأمن والإصلاح,1,train.jsonl
+GOVERNMENT_ENTITY,لجنة الأوقاف بصفد,1,train.jsonl
+GOVERNMENT_ENTITY,لجنة الإقتصاد والتموين,1,train.jsonl
+GOVERNMENT_ENTITY,لجنة الطوارئ العربية,1,train.jsonl
+GOVERNMENT_ENTITY,لجنة الطوارئ العربية بالقدس,1,test.jsonl
+GOVERNMENT_ENTITY,لجنة الطوارئ ضد الغارات الجوية,1,train.jsonl
+GOVERNMENT_ENTITY,لجنة الطوارئ للغارات الجوية,1,train.jsonl
+GOVERNMENT_ENTITY,لجنة انتقاء الموظفين,1,validation.jsonl
+GOVERNMENT_ENTITY,لجنة بلدية قلقيلية,1,train.jsonl
+GOVERNMENT_ENTITY,لجنة تحقيق المحتجزين,1,validation.jsonl
+GOVERNMENT_ENTITY,لجنة تصحيح المسار,1,train.jsonl
+GOVERNMENT_ENTITY,لجنة تقدير الاراضي المستقطعة والمستملكة,1,test.jsonl
+GOVERNMENT_ENTITY,لجنة تنظيم المدن والقرى والابنية,1,train.jsonl
+GOVERNMENT_ENTITY,لجنة لتصحيح المسار,1,train.jsonl
+GOVERNMENT_ENTITY,لجنة مركز الاقتراع,1,train.jsonl
+GOVERNMENT_ENTITY,لجنة مشاريع القرى,1,train.jsonl
+GOVERNMENT_ENTITY,لخفر السواحل,1,train.jsonl
+GOVERNMENT_ENTITY,لخفر السواحل اليمني,1,train.jsonl
+GOVERNMENT_ENTITY,لسوق رأس المال,1,validation.jsonl
+GOVERNMENT_ENTITY,لسوق رأس المال الفلسطيني,1,train.jsonl
+GOVERNMENT_ENTITY,لمركز بلدية مدينة البيرة,1,train.jsonl
+GOVERNMENT_ENTITY,لوزراة الداخلية,1,train.jsonl
+GOVERNMENT_ENTITY,مؤسسة الإقراض الزراعي,1,test.jsonl
+GOVERNMENT_ENTITY,مجلس الاعمار الأردني,1,train.jsonl
+GOVERNMENT_ENTITY,مجلس الاعمار في مدينة عمان,1,train.jsonl
+GOVERNMENT_ENTITY,مجلس التدريب والتشغيل,1,train.jsonl
+GOVERNMENT_ENTITY,مجلس التشريعي,1,train.jsonl
+GOVERNMENT_ENTITY,مجلس التعليم العالي الفلسطيني,1,train.jsonl
+GOVERNMENT_ENTITY,مجلس الرقة المدني,1,train.jsonl
+GOVERNMENT_ENTITY,مجلس الشيوخ الأمريكي,1,test.jsonl
+GOVERNMENT_ENTITY,مجلس القضاء الأعلى العراقي,1,test.jsonl
+GOVERNMENT_ENTITY,مجلس القضاء الأعلى لكردستان العراق,1,test.jsonl
+GOVERNMENT_ENTITY,مجلس القضاء الكردي,1,test.jsonl
+GOVERNMENT_ENTITY,مجلس المحلي,1,train.jsonl
+GOVERNMENT_ENTITY,مجلس الوطني الفلسطيني,1,train.jsonl
+GOVERNMENT_ENTITY,مجلس امانة القدس,1,train.jsonl
+GOVERNMENT_ENTITY,مجلس بلدي,1,validation.jsonl
+GOVERNMENT_ENTITY,مجلس بلدية الطفيلة,1,train.jsonl
+GOVERNMENT_ENTITY,مجلس بلدية قلقيلية,1,train.jsonl
+GOVERNMENT_ENTITY,مجلس بلدية قلقيلية المحلي,1,validation.jsonl
+GOVERNMENT_ENTITY,مجلس بلديتي البيرة ورام الله,1,test.jsonl
+GOVERNMENT_ENTITY,مجلس تشريعي,1,train.jsonl
+GOVERNMENT_ENTITY,مجلس تصريف الحمضيات,1,train.jsonl
+GOVERNMENT_ENTITY,مجلس دبي الاقتصادي,1,train.jsonl
+GOVERNMENT_ENTITY,مجلس عنبتا المحلي,1,train.jsonl
+GOVERNMENT_ENTITY,مجلس قروي بيت نبالا,1,validation.jsonl
+GOVERNMENT_ENTITY,مجلس قلقيلية,1,train.jsonl
+GOVERNMENT_ENTITY,مجلس قلقيلية البلدي,1,train.jsonl
+GOVERNMENT_ENTITY,مجلس قلقيلية المحلي,1,test.jsonl
+GOVERNMENT_ENTITY,مجلس محلي الفالوجة,1,test.jsonl
+GOVERNMENT_ENTITY,مجلس مراقبة الحمضيات في فلسطين,1,train.jsonl
+GOVERNMENT_ENTITY,محكمة أراضي نابلس,1,validation.jsonl
+GOVERNMENT_ENTITY,محكمة اراضي حيفا,1,train.jsonl
+GOVERNMENT_ENTITY,محكمة اراضي مدينة حيفا,1,test.jsonl
+GOVERNMENT_ENTITY,محكمة استئناف جنايات بغداد,1,train.jsonl
+GOVERNMENT_ENTITY,محكمة استئناف حقوق,1,train.jsonl
+GOVERNMENT_ENTITY,محكمة الاراضي المقدسة,1,test.jsonl
+GOVERNMENT_ENTITY,محكمة الاستئناف,1,train.jsonl
+GOVERNMENT_ENTITY,محكمة الاستئناف بالقدس,1,train.jsonl
+GOVERNMENT_ENTITY,محكمة البداية,1,train.jsonl
+GOVERNMENT_ENTITY,محكمة التمييز الاتحادية,1,validation.jsonl
+GOVERNMENT_ENTITY,محكمة التمييز الاتحادية العليا في بغداد,1,train.jsonl
+GOVERNMENT_ENTITY,محكمة الخليل الشرعية,1,train.jsonl
+GOVERNMENT_ENTITY,محكمة العراقية العليا,1,validation.jsonl
+GOVERNMENT_ENTITY,محكمة القدس,1,test.jsonl
+GOVERNMENT_ENTITY,محكمة امن الدولة,1,train.jsonl
+GOVERNMENT_ENTITY,محكمة بداية القدس,1,train.jsonl
+GOVERNMENT_ENTITY,محكمة بداية غزة,1,train.jsonl
+GOVERNMENT_ENTITY,محكمة بغداد الجنائية المركزية,1,train.jsonl
+GOVERNMENT_ENTITY,محكمة حكومة فلسطين,1,test.jsonl
+GOVERNMENT_ENTITY,محكمة حيفا,1,validation.jsonl
+GOVERNMENT_ENTITY,محكمة صلح الرملة,1,train.jsonl
+GOVERNMENT_ENTITY,محكمة صلح مدينة بيسان,1,validation.jsonl
+GOVERNMENT_ENTITY,محكمة غزة الشرعية,1,test.jsonl
+GOVERNMENT_ENTITY,محكمة مكافحة إرهاب نينوى,1,train.jsonl
+GOVERNMENT_ENTITY,محكمة نابلس,1,train.jsonl
+GOVERNMENT_ENTITY,مديرية الإذاعة العامة الأردنية,1,train.jsonl
+GOVERNMENT_ENTITY,مديرية التربية والتعليم,1,train.jsonl
+GOVERNMENT_ENTITY,مديرية التربية والتعليم بلواء مدينة رام الله,1,validation.jsonl
+GOVERNMENT_ENTITY,مديرية الجمارك والمكوس,1,train.jsonl
+GOVERNMENT_ENTITY,مديرية الجمارك والنفوس,1,train.jsonl
+GOVERNMENT_ENTITY,مديرية الحراج,1,train.jsonl
+GOVERNMENT_ENTITY,مديرية الدعاية,1,train.jsonl
+GOVERNMENT_ENTITY,مديرية تجنيد طولكرم,1,train.jsonl
+GOVERNMENT_ENTITY,مديرية تحقيق الأدلة الجنائية,1,train.jsonl
+GOVERNMENT_ENTITY,مديرية زراعة محافظة القدس,1,train.jsonl
+GOVERNMENT_ENTITY,مركز الإحصاء الفلسطيني,1,train.jsonl
+GOVERNMENT_ENTITY,مركز الإعلام الحكومي,1,train.jsonl
+GOVERNMENT_ENTITY,مركز المعلومات الفنية للدفاع,1,train.jsonl
+GOVERNMENT_ENTITY,مركز حراج نابلس,1,train.jsonl
+GOVERNMENT_ENTITY,مستعمرة غيلو,1,train.jsonl
+GOVERNMENT_ENTITY,مستوطنة اريئيل,1,train.jsonl
+GOVERNMENT_ENTITY,مستوطنة كريات أربع,1,train.jsonl
+GOVERNMENT_ENTITY,مصلحة البريد والبرق في المملكة الأردنية الهاشمية,1,train.jsonl
+GOVERNMENT_ENTITY,مصلحة تحصيل الضرائب العثمانية,1,train.jsonl
+GOVERNMENT_ENTITY,مكافحة المخدرات,1,train.jsonl
+GOVERNMENT_ENTITY,مكتب الانتخابات المركزية,1,test.jsonl
+GOVERNMENT_ENTITY,مكتب الشؤون السياسية العسكرية,1,train.jsonl
+GOVERNMENT_ENTITY,مكتب تسجيل اراضي عكا,1,train.jsonl
+GOVERNMENT_ENTITY,مكتب تسجيل الاراضي,1,train.jsonl
+GOVERNMENT_ENTITY,مكتب شؤون الشرق الأدنى,1,train.jsonl
+GOVERNMENT_ENTITY,منظمة التحرير الفلسطينية,1,train.jsonl
+GOVERNMENT_ENTITY,نظام المغربي,1,train.jsonl
+GOVERNMENT_ENTITY,هيئة الأوراق المالية,1,train.jsonl
+GOVERNMENT_ENTITY,هيئة الإسكان الخصوصية لموظفي الحكومة,1,validation.jsonl
+GOVERNMENT_ENTITY,هيئة الدفاع عن مرضى فيروس نقص المناعة البشرية,1,test.jsonl
+GOVERNMENT_ENTITY,هيئة العامة لسوق المال,1,train.jsonl
+GOVERNMENT_ENTITY,هيئة بلدية أريحا,1,validation.jsonl
+GOVERNMENT_ENTITY,هيئة رأس المال,1,test.jsonl
+GOVERNMENT_ENTITY,هيئة سوق المال,1,train.jsonl
+GOVERNMENT_ENTITY,هيئة سوق المال النمساوي,1,train.jsonl
+GOVERNMENT_ENTITY,هيئة سوق رأس المال الفلسطنيية,1,train.jsonl
+GOVERNMENT_ENTITY,هيئة سوق رأس المال لقطاع غزة,1,train.jsonl
+GOVERNMENT_ENTITY,هيئة سوق راس المال الفلسطينية,1,test.jsonl
+GOVERNMENT_ENTITY,وبرلمان إقليم كردستان العراق,1,train.jsonl
+GOVERNMENT_ENTITY,وبرلمان الإقليم,1,train.jsonl
+GOVERNMENT_ENTITY,وجهاز الأمن الفيدرالي,1,train.jsonl
+GOVERNMENT_ENTITY,وحدة شؤون المساهمين,1,test.jsonl
+GOVERNMENT_ENTITY,وحزب المؤتمر الشعبي العام,1,test.jsonl
+GOVERNMENT_ENTITY,وخفر السواحل,1,validation.jsonl
+GOVERNMENT_ENTITY,وزارة  الصحة,1,validation.jsonl
+GOVERNMENT_ENTITY,وزارة الإسكان والكهرباء والمياه العمانية,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة الإقتصاد الأردنية,1,test.jsonl
+GOVERNMENT_ENTITY,وزارة الإقتصاد الوطني,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة الاستثمار,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة الاشغال العامة,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة الاقتصاد,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة الاقتصاد الوطني الفلسطيني,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة التربية والتعليم,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة التنمية الاجتماعية,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة الحرس الوطني,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة الخارجية الإيطالية,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة الخارجية السعودية,1,test.jsonl
+GOVERNMENT_ENTITY,وزارة الخارجية والتعاون الدولي,1,test.jsonl
+GOVERNMENT_ENTITY,وزارة الداخلية الأردنية لشؤون البلديات,1,test.jsonl
+GOVERNMENT_ENTITY,وزارة الداخلية العراقية,1,validation.jsonl
+GOVERNMENT_ENTITY,وزارة الداخلية الليبية,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة الدفاع للعمليات الخاصة بسوريا,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة الزراعة,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة الزراعة الأردنية,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة الشؤون الإجتماعية,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة الشؤون البلدية والقروية,1,validation.jsonl
+GOVERNMENT_ENTITY,وزارة الشهداء والمؤنفلين,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة الصحة العامة,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة الصحة العامة والسكان اليمنية,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة الصحة والسكان,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة العمل الإسرائيلية,1,validation.jsonl
+GOVERNMENT_ENTITY,وزارة العمل والشؤون الاجتماعية,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة المالية الأردنية,1,test.jsonl
+GOVERNMENT_ENTITY,وزارة المالية والتخطيط,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة المستعمرات البريطانية,1,train.jsonl
+GOVERNMENT_ENTITY,وزارة النقل والمواصلات والحكم المحلي,1,test.jsonl
+GOVERNMENT_ENTITY,وزارة شؤون الارض المحتلة,1,test.jsonl
+GOVERNMENT_ENTITY,وزارة شؤون المرأة,1,train.jsonl
+GOVERNMENT_ENTITY,وزاره الإسكان,1,train.jsonl
+GOVERNMENT_ENTITY,وزاره الصحه والسكان,1,train.jsonl
+GOVERNMENT_ENTITY,وزراة الداخلية,1,train.jsonl
+GOVERNMENT_ENTITY,وصحة رام الله,1,train.jsonl
+GOVERNMENT_ENTITY,وفيقة,1,train.jsonl
+GOVERNMENT_ENTITY,وكالة الاستخبارات المركزية,1,validation.jsonl
+GOVERNMENT_ENTITY,وكالة التعاون الأمني الدفاعي,1,train.jsonl
+GOVERNMENT_ENTITY,وكالة النقل,1,train.jsonl
+GOVERNMENT_ENTITY,ولاية نينوى القضائية,1,train.jsonl
+GOVERNMENT_ENTITY,ومختبر الحكومة المركزي,1,train.jsonl
+GOVERNMENT_ENTITY,ووحدة مكافحة الإرهاب,1,test.jsonl
+GOVERNMENT_ENTITY,ّجنة اليمنية,1,train.jsonl

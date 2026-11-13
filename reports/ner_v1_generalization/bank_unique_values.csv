@@ -1,0 +1,74 @@
+entity_type,value,span_count,source_files
+BANK,البنك الأهلي المصري,113,test.jsonl;train.jsonl;validation.jsonl
+BANK,البنك التجاري الدولي,98,test.jsonl;train.jsonl;validation.jsonl
+BANK,بنك مصر,94,test.jsonl;train.jsonl;validation.jsonl
+BANK,بنك الرياض,80,test.jsonl;train.jsonl;validation.jsonl
+BANK,مصرف الراجحي,52,test.jsonl;train.jsonl;validation.jsonl
+BANK,البنك الأهلي,46,test.jsonl;train.jsonl;validation.jsonl
+BANK,البنك الأهلي السعودي,32,test.jsonl;train.jsonl
+BANK,البنك الاهلي السعودي,21,test.jsonl;train.jsonl;validation.jsonl
+BANK,الراجحي,20,test.jsonl;train.jsonl
+BANK,بنك الأهلي,16,test.jsonl;train.jsonl
+BANK,مصرف الرياض,16,train.jsonl
+BANK,البنك الاهلي,13,train.jsonl
+BANK,بنك الإسكندرية,13,test.jsonl;train.jsonl
+BANK,البنك السعودي للاستثمار,12,test.jsonl;train.jsonl
+BANK,بنك الخليج,11,train.jsonl
+BANK,Riyad Bank,10,test.jsonl;train.jsonl
+BANK,Saudi National Bank,10,train.jsonl;validation.jsonl
+BANK,البنك العربي الأفريقي الدولي,9,train.jsonl
+BANK,البنك العربي الوطني,9,train.jsonl
+BANK,بنك الراجحي,9,train.jsonl;validation.jsonl
+BANK,Alinma Bank,8,train.jsonl
+BANK,البنك الأهلي القطري,8,train.jsonl
+BANK,بنك البركة,8,test.jsonl;train.jsonl;validation.jsonl
+BANK,Riyadh Commercial Bank,6,train.jsonl
+BANK,بنك الأمان,6,train.jsonl
+BANK,بنك الاسكان والتنمية,6,train.jsonl
+BANK,بنك الجزيره,6,train.jsonl
+BANK,Al Rajhi Bank,5,train.jsonl
+BANK,Saudi Commercial Bank,5,train.jsonl
+BANK,البنك السعودي الفرنسي,5,train.jsonl
+BANK,البنك العربي,5,train.jsonl;validation.jsonl
+BANK,بنك البلاد,5,train.jsonl
+BANK,بنك التمويل العقاري,5,train.jsonl
+BANK,بنك الراض,5,train.jsonl
+BANK,بنك القاهرة,5,train.jsonl
+BANK,بنك ساب,5,train.jsonl
+BANK,بنك فيصل الإسلامي المصري,5,train.jsonl
+BANK,بنك قناة السويس,5,train.jsonl
+BANK,بنك إتش إس بي سي مصر,4,train.jsonl
+BANK,بنك الأمان التجاري,4,train.jsonl
+BANK,بنك الأمانة التجاري,4,train.jsonl
+BANK,بنك الاهلي,4,test.jsonl
+BANK,بنك الخليج التجاري,4,train.jsonl
+BANK,بنك المستقبل,4,validation.jsonl
+BANK,بنك سامبا,4,train.jsonl
+BANK,SNB,3,train.jsonl
+BANK,البنك الاهلي القطري,3,train.jsonl
+BANK,بنك الأمانة,3,train.jsonl
+BANK,مصرف الإنماء,3,test.jsonl;train.jsonl
+BANK,مصرفففف الإنماء,3,train.jsonl
+BANK,Al-Inma Bank,2,train.jsonl
+BANK,SABB Bank,2,train.jsonl
+BANK,Saudi Investment Bank,2,train.jsonl
+BANK,البنك الراجحي,2,train.jsonl
+BANK,البنك الرياض,2,train.jsonl
+BANK,البنك السعودي الأول,2,validation.jsonl
+BANK,البنك السعودي الفنرسي,2,train.jsonl
+BANK,البنك السعودي للتجارة,2,train.jsonl
+BANK,البنك السعودييي للاستثمار,2,test.jsonl
+BANK,البنك المصري للتجارة,2,train.jsonl
+BANK,البنك الوطني,2,train.jsonl
+BANK,البنككك الاهلي السعودي,2,train.jsonl
+BANK,بنك الانماء,2,validation.jsonl
+BANK,بنك البحرين,2,train.jsonl
+BANK,مصرف الخليج التجاري,2,train.jsonl
+BANK,مصرف الرائد,2,train.jsonl
+BANK,البنك المصري الأول,1,validation.jsonl
+BANK,البنك المصري الفنرسي,1,train.jsonl
+BANK,بنك الإنماء,1,train.jsonl
+BANK,بنك البحرين الوطني,1,train.jsonl
+BANK,مصرف الانماء,1,test.jsonl
+BANK,مصرف الرافدين,1,test.jsonl
+BANK,مصرففففف الراجحي,1,train.jsonl

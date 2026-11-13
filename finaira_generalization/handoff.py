@@ -138,10 +138,12 @@ def _natural_earth(handoff_root: Path) -> Path:
 
 
 def _import_nationality(session: Session, handoff_root: Path, metrics: dict, report_dir: Path):
-    source_path = handoff_root / "inputs/nationality/wikidata_nationality_aliases.csv"
+    expanded_source_path = ROOT / "data/sources/wikidata/wikidata_nationality_aliases_ar_en_v2.csv"
+    source_path = expanded_source_path if expanded_source_path.exists() else handoff_root / "inputs/nationality/wikidata_nationality_aliases.csv"
     qid_index_path = handoff_root / "inputs/nationality/wikidata_country_qid_index_DERIVED.csv"
     ne_csv = _natural_earth(handoff_root)
-    alias_source = _source(session, "handoff_nationality_aliases", source_path, license_text="Wikidata structured data CC0")
+    alias_source_name = "wikidata_nationality_aliases_ar_en_v2" if expanded_source_path.exists() else "handoff_nationality_aliases"
+    alias_source = _source(session, alias_source_name, source_path, version="wikidata-p1549-ar-en" if expanded_source_path.exists() else "handoff-2026-11-12", license_text="Wikidata structured data CC0")
     _source(session, "handoff_nationality_qid_index_derived", qid_index_path, license_text="Derived audit; source rows remain Wikidata CC0")
     ne_source = _source(
         session,
@@ -153,6 +155,13 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
     )
     rows = _read_csv(source_path)
     ne_rows = _read_csv(ne_csv)
+    # The expanded Wikidata source is a complete deterministic snapshot of
+    # the supplied aliases plus the refreshed P1549 response. Rebuild only
+    # these source-shaped rows so repeated refreshes cannot retain aliases
+    # that disappeared from the snapshot or accumulate duplicates.
+    session.execute(delete(NationalityAliasV2))
+    session.execute(delete(NationalityGeoJoin))
+    session.execute(delete(NationalityCountry))
     if NATURAL_EARTH_ZIP.exists():
         _source(
             session,

@@ -69,6 +69,8 @@ class GeneralizationDB:
         with Session(self.engine) as session:
             if et in {"OCCUPATION", "JOB_TITLE"}:
                 return self._occupation(session, et, value, lang)
+            if et == "COUNTRY":
+                return self._country(session, value, lang)
             if et == "NATIONALITY":
                 return self._nationality(session, value, lang)
             if et == "BANK":
@@ -91,6 +93,55 @@ class GeneralizationDB:
         if not ids:
             return self._static_result(session, entity_type, scheme, None, lang, "NOT_FOUND", "UNRECOGNIZED_OCCUPATION")
         return self._static_result(session, entity_type, scheme, next(iter(ids)), lang, "VERIFIED")
+
+    def _country(self, session, value, lang):
+        """Resolve country names directly against Natural Earth Admin 0.
+
+        COUNTRY is deliberately separate from NATIONALITY.  A country name
+        is not treated as a demonym, and Natural Earth region labels are only
+        exposed when the requested output language has a verified label.
+        """
+        normalized = normalize(value, lang)
+        matches = []
+        match_methods = {}
+        for row in session.scalars(select(NaturalEarthCountry)).all():
+            method = None
+            if row.name_ar and normalize(row.name_ar, "ar") == normalized:
+                method = "NATURAL_EARTH_NAME_AR"
+            elif row.name_en and normalize(row.name_en, "en") == normalized:
+                method = "NATURAL_EARTH_NAME_EN"
+            elif row.iso_a2 and row.iso_a2 != "-99" and row.iso_a2.casefold() == normalized:
+                method = "NATURAL_EARTH_ISO_A2"
+            if method:
+                matches.append(row)
+                match_methods[row.natural_earth_id] = method
+        if len(matches) > 1:
+            return self._country_result(session, None, lang, "AMBIGUOUS", "ALIAS_COLLISION", matches, match_methods)
+        if not matches:
+            return self._country_result(session, None, lang, "NOT_FOUND", "UNRECOGNIZED_COUNTRY", [], {})
+        return self._country_result(session, matches[0], lang, "MATCHED", None, matches, match_methods)
+
+    def _country_result(self, session, country, lang, status, reason, matches, match_methods):
+        candidates = []
+        source = self._source(session, country.source_id) if country else None
+        if country and status == "MATCHED":
+            provenance = {
+                "source": source,
+                "natural_earth_id": country.natural_earth_id,
+                "natural_earth_version": country.source_version,
+                "match_method": match_methods.get(country.natural_earth_id),
+                "wikidata_qid": country.wikidata_qid,
+                "iso_a2": country.iso_a2,
+            }
+            exact_id = stable_id("COUNTRY_NATURAL_EARTH", "EXACT", country.natural_earth_id)
+            candidates.append(_candidate_dict(candidate_id=exact_id, level_code="EXACT", rank=0, label_en=country.name_en, label_ar=country.name_ar, language=lang, taxonomy="NATURAL_EARTH", taxonomy_code=country.iso_a2, source=source, verification_status="SOURCE_VERIFIED", is_exact=True, is_local_only=True, provenance=provenance, extra={"country_qid": country.wikidata_qid}))
+            candidates.append(_candidate_dict(candidate_id=stable_id("COUNTRY_NATURAL_EARTH", "SUBREGION", country.subregion), level_code="SUBREGION", rank=1, label_en=country.subregion, label_ar=None, language=lang, taxonomy="NATURAL_EARTH", taxonomy_code=country.subregion, source=source, verification_status="SOURCE_VERIFIED", provenance=provenance))
+            candidates.append(_candidate_dict(candidate_id=stable_id("COUNTRY_NATURAL_EARTH", "REGION_UN", country.region_un), level_code="REGION_UN", rank=2, label_en=country.region_un, label_ar=None, language=lang, taxonomy="NATURAL_EARTH", taxonomy_code=country.region_un, source=source, verification_status="SOURCE_VERIFIED", provenance=provenance))
+            candidates.append(_candidate_dict(candidate_id=stable_id("COUNTRY_NATURAL_EARTH", "CONTINENT", country.continent), level_code="CONTINENT", rank=3, label_en=country.continent, label_ar=None, language=lang, taxonomy="NATURAL_EARTH", taxonomy_code=country.continent, source=source, verification_status="SOURCE_VERIFIED", provenance=provenance))
+            candidates.append(_candidate_dict(candidate_id=stable_id("COUNTRY_NATURAL_EARTH", "SUPPRESSED"), level_code="SUPPRESSED", rank=4, label_en=None, label_ar=None, language=lang, taxonomy="NATURAL_EARTH", taxonomy_code=None, source=source, verification_status="CONFIGURED", is_suppression=True))
+        else:
+            candidates.append(_candidate_dict(candidate_id=stable_id("COUNTRY_NATURAL_EARTH", "SUPPRESSED"), level_code="SUPPRESSED", rank=0, label_en=None, label_ar=None, language=lang, taxonomy="NATURAL_EARTH", taxonomy_code=None, source=source, verification_status="CONFIGURED", is_suppression=True))
+        return self._result("COUNTRY", status, country.iso_a2 if country else None, candidates, reason)
 
     def _nationality(self, session, value, lang):
         # The presence of v2 rows is the runtime switch away from legacy M49.

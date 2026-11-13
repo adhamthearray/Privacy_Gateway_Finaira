@@ -1,0 +1,858 @@
+country,countryLabel,iso2,nationality,language,source_property
+http://www.wikidata.org/entity/Q1000,Gabon,GA,غابوني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1000,Gabon,GA,غابونية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1000,Gabon,GA,غابونيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1000,Gabon,GA,Gabonese,en,wdt:P1549
+http://www.wikidata.org/entity/Q1005,The Gambia,GM,غامبي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1005,The Gambia,GM,غامبية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1005,The Gambia,GM,غامبيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1005,The Gambia,GM,Gambian,en,wdt:P1549
+http://www.wikidata.org/entity/Q1006,Guinea,GN,غيني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1006,Guinea,GN,غينية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1006,Guinea,GN,غينيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1006,Guinea,GN,Guinean,en,wdt:P1549
+http://www.wikidata.org/entity/Q1007,Guinea-Bissau,GW,Bissau-Guinean,en,wdt:P1549
+http://www.wikidata.org/entity/Q1007,Guinea-Bissau,GW,Guinea-Bissauan,en,wdt:P1549
+http://www.wikidata.org/entity/Q1008,Ivory Coast,CI,إيفواري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1008,Ivory Coast,CI,إيفوارية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1008,Ivory Coast,CI,إيفواريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1008,Ivory Coast,CI,Ivoirian,en,wdt:P1549
+http://www.wikidata.org/entity/Q1008,Ivory Coast,CI,Ivorian,en,wdt:P1549
+http://www.wikidata.org/entity/Q1009,Cameroon,CM,كَمْرُونِيٌّ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1009,Cameroon,CM,كَمْرُونِيَّةٌ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1009,Cameroon,CM,كَمْرُونِيُّونَ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1009,Cameroon,CM,Cameroonian,en,wdt:P1549
+http://www.wikidata.org/entity/Q1011,Cape Verde,CV,Cabo Verdean,en,wdt:P1549
+http://www.wikidata.org/entity/Q1011,Cape Verde,CV,Cape Verdean,en,wdt:P1549
+http://www.wikidata.org/entity/Q1013,Lesotho,LS,ليسوثوي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1013,Lesotho,LS,ليسوثوية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1013,Lesotho,LS,Basotho,en,wdt:P1549
+http://www.wikidata.org/entity/Q1013,Lesotho,LS,Mosotho,en,wdt:P1549
+http://www.wikidata.org/entity/Q1014,Liberia,LR,ليبيري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1014,Liberia,LR,ليبيرية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1014,Liberia,LR,ليبيريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1014,Liberia,LR,Liberian,en,wdt:P1549
+http://www.wikidata.org/entity/Q1016,Libya,LY,ليبي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1016,Libya,LY,ليبية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1016,Libya,LY,ليبيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1016,Libya,LY,Libyan,en,wdt:P1549
+http://www.wikidata.org/entity/Q1019,Madagascar,MG,مدغشقري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1019,Madagascar,MG,مدغشقرية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1019,Madagascar,MG,مدغشقريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1019,Madagascar,MG,Malagasy,en,wdt:P1549
+http://www.wikidata.org/entity/Q1020,Malawi,MW,ملاوي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1020,Malawi,MW,ملاوية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1020,Malawi,MW,ملاويون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1020,Malawi,MW,Malawian,en,wdt:P1549
+http://www.wikidata.org/entity/Q1025,Mauritania,MR,موريتاني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1025,Mauritania,MR,موريتانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1025,Mauritania,MR,موريتانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1025,Mauritania,MR,Mauritanian,en,wdt:P1549
+http://www.wikidata.org/entity/Q1027,Mauritius,MU,موريشيوسي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1027,Mauritius,MU,موريشيوسية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1027,Mauritius,MU,موريشيوسيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1027,Mauritius,MU,Mauritian,en,wdt:P1549
+http://www.wikidata.org/entity/Q1028,Morocco,MA,مغاربة,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1028,Morocco,MA,مغربي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1028,Morocco,MA,مغربية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1028,Morocco,MA,Moroccan,en,wdt:P1549
+http://www.wikidata.org/entity/Q1029,Mozambique,MZ,مُوزَنْبِيقِيٌّ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1029,Mozambique,MZ,مُوزَنْبِيقِيَّةٌ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1029,Mozambique,MZ,مُوزَنْبِيقِيُّونَ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1029,Mozambique,MZ,Mozambican,en,wdt:P1549
+http://www.wikidata.org/entity/Q1030,Namibia,NA,ناميبي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1030,Namibia,NA,ناميبية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1030,Namibia,NA,ناميبيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1030,Namibia,NA,Namibian,en,wdt:P1549
+http://www.wikidata.org/entity/Q1032,Niger,NE,نيجري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1032,Niger,NE,نيجرية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1032,Niger,NE,نيجريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1032,Niger,NE,Nigerien,en,wdt:P1549
+http://www.wikidata.org/entity/Q1033,Nigeria,NG,نيجيري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1033,Nigeria,NG,نيجيرية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1033,Nigeria,NG,نيجيريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1033,Nigeria,NG,Nigerian,en,wdt:P1549
+http://www.wikidata.org/entity/Q1033,Nigeria,NG,Nigerians,en,wdt:P1549
+http://www.wikidata.org/entity/Q1036,Uganda,UG,أوغندي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1036,Uganda,UG,أوغندية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1036,Uganda,UG,أوغنديون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1036,Uganda,UG,Ugandan,en,wdt:P1549
+http://www.wikidata.org/entity/Q1037,Rwanda,RW,رُوَنْدِيٌّ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1037,Rwanda,RW,رُوَنْدِيَّةٌ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1037,Rwanda,RW,رُوَنْدِيُّونَ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1037,Rwanda,RW,Rwandan,en,wdt:P1549
+http://www.wikidata.org/entity/Q1037,Rwanda,RW,Rwandese,en,wdt:P1549
+http://www.wikidata.org/entity/Q1039,São Tomé and Príncipe,ST,Santomean,en,wdt:P1549
+http://www.wikidata.org/entity/Q1039,São Tomé and Príncipe,ST,Sao Tomean,en,wdt:P1549
+http://www.wikidata.org/entity/Q1039,São Tomé and Príncipe,ST,Sao Tomeans,en,wdt:P1549
+http://www.wikidata.org/entity/Q1039,São Tomé and Príncipe,ST,São Toméan,en,wdt:P1549
+http://www.wikidata.org/entity/Q1039,São Tomé and Príncipe,ST,São Toméans,en,wdt:P1549
+http://www.wikidata.org/entity/Q1041,Senegal,SN,سنغالي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1041,Senegal,SN,سنغالية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1041,Senegal,SN,سنغاليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1041,Senegal,SN,Senegalese,en,wdt:P1549
+http://www.wikidata.org/entity/Q1042,Seychelles,SC,سيشيلي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1042,Seychelles,SC,سيشيلية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1042,Seychelles,SC,سيشيليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1042,Seychelles,SC,Seychellois,en,wdt:P1549
+http://www.wikidata.org/entity/Q1042,Seychelles,SC,Seychelloise,en,wdt:P1549
+http://www.wikidata.org/entity/Q1044,Sierra Leone,SL,سيراليوني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1044,Sierra Leone,SL,سيراليونية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1044,Sierra Leone,SL,سيراليونيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1044,Sierra Leone,SL,Sierra Leonean,en,wdt:P1549
+http://www.wikidata.org/entity/Q1045,Somalia,SO,صومالي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1045,Somalia,SO,صومالية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1045,Somalia,SO,صوماليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1045,Somalia,SO,Somali,en,wdt:P1549
+http://www.wikidata.org/entity/Q1045,Somalia,SO,Somalian,en,wdt:P1549
+http://www.wikidata.org/entity/Q1049,Sudan,SD,سوداني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1049,Sudan,SD,سودانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1049,Sudan,SD,سودانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1049,Sudan,SD,Sudanese,en,wdt:P1549
+http://www.wikidata.org/entity/Q1050,Eswatini,SZ,Swazi,en,wdt:P1549
+http://www.wikidata.org/entity/Q1050,Eswatini,SZ,Swazis,en,wdt:P1549
+http://www.wikidata.org/entity/Q1050,Eswatini,SZ,emaSwati,en,wdt:P1549
+http://www.wikidata.org/entity/Q1050,Eswatini,SZ,liSwati,en,wdt:P1549
+http://www.wikidata.org/entity/Q114,Kenya,KE,كيني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q114,Kenya,KE,كينية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q114,Kenya,KE,كينيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q114,Kenya,KE,Kenyan,en,wdt:P1549
+http://www.wikidata.org/entity/Q115,Ethiopia,ET,إثيوبي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q115,Ethiopia,ET,إثيوبية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q115,Ethiopia,ET,إثيوبيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q115,Ethiopia,ET,Ethiopian,en,wdt:P1549
+http://www.wikidata.org/entity/Q117,Ghana,GH,Ghanaian,en,wdt:P1549
+http://www.wikidata.org/entity/Q1183,Puerto Rico,PR,Puerto Rican,en,wdt:P1549
+http://www.wikidata.org/entity/Q1246,Kosovo,,قَوْصَوِيٌّ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1246,Kosovo,,قَوْصَوِيَّةٌ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1246,Kosovo,,قَوْصَوِيُّونَ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q1246,Kosovo,,Kosovan,en,wdt:P1549
+http://www.wikidata.org/entity/Q1246,Kosovo,,Kosovar,en,wdt:P1549
+http://www.wikidata.org/entity/Q126125,Saint Martin,MF,Saint-Martinois,en,wdt:P1549
+http://www.wikidata.org/entity/Q129003,French Southern and Antarctic Lands,TF,French,en,wdt:P1549
+http://www.wikidata.org/entity/Q131198,Heard Island and McDonald Islands,HM,Heard and McDonald Islander,en,wdt:P1549
+http://www.wikidata.org/entity/Q13353,Montserrat,MS,Montserratian,en,wdt:P1549
+http://www.wikidata.org/entity/Q1410,Gibraltar,GI,Gibraltarian,en,wdt:P1549
+http://www.wikidata.org/entity/Q142,France,,فرنسي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q142,France,,فرنسية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q142,France,,فرنسيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q142,France,,French,en,wdt:P1549
+http://www.wikidata.org/entity/Q145,United Kingdom,GB,بريطاني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q145,United Kingdom,GB,بريطانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q145,United Kingdom,GB,بريطانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q145,United Kingdom,GB,British,en,wdt:P1549
+http://www.wikidata.org/entity/Q145,United Kingdom,GB,Briton,en,wdt:P1549
+http://www.wikidata.org/entity/Q148,People's Republic of China,CN,صيني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q148,People's Republic of China,CN,صينية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q148,People's Republic of China,CN,صينيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q148,People's Republic of China,CN,Chinese,en,wdt:P1549
+http://www.wikidata.org/entity/Q155,Brazil,BR,برازيلي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q155,Brazil,BR,برازيلية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q155,Brazil,BR,برازيليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q155,Brazil,BR,Brazilian,en,wdt:P1549
+http://www.wikidata.org/entity/Q155,Brazil,BR,Brazilians,en,wdt:P1549
+http://www.wikidata.org/entity/Q159,Russia,RU,روس,ar,wdt:P1549
+http://www.wikidata.org/entity/Q159,Russia,RU,روسي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q159,Russia,RU,Russian,en,wdt:P1549
+http://www.wikidata.org/entity/Q16,Canada,CA,كندي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q16,Canada,CA,كنديات,ar,wdt:P1549
+http://www.wikidata.org/entity/Q16,Canada,CA,كندية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q16,Canada,CA,كنديون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q16,Canada,CA,Canadian,en,wdt:P1549
+http://www.wikidata.org/entity/Q16,Canada,CA,Canadians,en,wdt:P1549
+http://www.wikidata.org/entity/Q16635,Guam,GU,Guamanian,en,wdt:P1549
+http://www.wikidata.org/entity/Q16635,Guam,GU,Guamanians,en,wdt:P1549
+http://www.wikidata.org/entity/Q16641,American Samoa,AS,American Samoan,en,wdt:P1549
+http://www.wikidata.org/entity/Q16644,Northern Mariana Islands,MP,Chamorro,en,wdt:P1549
+http://www.wikidata.org/entity/Q16644,Northern Mariana Islands,MP,Chamorros,en,wdt:P1549
+http://www.wikidata.org/entity/Q16644,Northern Mariana Islands,MP,Northern Mariana Islander,en,wdt:P1549
+http://www.wikidata.org/entity/Q16644,Northern Mariana Islands,MP,Northern Mariana Islanders,en,wdt:P1549
+http://www.wikidata.org/entity/Q16644,Northern Mariana Islands,MP,Northern Marianan,en,wdt:P1549
+http://www.wikidata.org/entity/Q16644,Northern Mariana Islands,MP,Northern Marianans,en,wdt:P1549
+http://www.wikidata.org/entity/Q16957,ألمانيا الشرقية,DD,East German,en,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q17,Japan,JP,ياباني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q17,Japan,JP,يابانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q17,Japan,JP,يابانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q17,Japan,JP,Japanese,en,wdt:P1549
+http://www.wikidata.org/entity/Q17012,غوادلوب,GP,Guadeloupean,en,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q18221,Turks and Caicos Islands,TC,Turks and Caicos Islander,en,wdt:P1549
+http://www.wikidata.org/entity/Q183,Germany,DE,ألمان,ar,wdt:P1549
+http://www.wikidata.org/entity/Q183,Germany,DE,ألماني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q183,Germany,DE,ألمانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q183,Germany,DE,German,en,wdt:P1549
+http://www.wikidata.org/entity/Q184,Belarus,BY,بيلاروسي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q184,Belarus,BY,بيلاروسية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q184,Belarus,BY,بيلاروسيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q184,Belarus,BY,Belarusian,en,wdt:P1549
+http://www.wikidata.org/entity/Q191,Estonia,EE,إستوني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q191,Estonia,EE,إستونية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q191,Estonia,EE,إستونيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q191,Estonia,EE,Estonian,en,wdt:P1549
+http://www.wikidata.org/entity/Q20,Norway,,نرويجي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q20,Norway,,نرويجية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q20,Norway,,نرويجيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q20,Norway,,Norwegian,en,wdt:P1549
+http://www.wikidata.org/entity/Q211,Latvia,LV,لاتفي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q211,Latvia,LV,لاتفية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q211,Latvia,LV,لاتفيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q211,Latvia,LV,Latvian,en,wdt:P1549
+http://www.wikidata.org/entity/Q211,Latvia,LV,Latvians,en,wdt:P1549
+http://www.wikidata.org/entity/Q21203,Aruba,AW,Aruban,en,wdt:P1549
+http://www.wikidata.org/entity/Q213,Czech Republic,CZ,تشيكي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q213,Czech Republic,CZ,تشيكية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q213,Czech Republic,CZ,تشيكيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q213,Czech Republic,CZ,Czech,en,wdt:P1549
+http://www.wikidata.org/entity/Q214,Slovakia,SK,سلوفاكي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q214,Slovakia,SK,سلوفاكية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q214,Slovakia,SK,سلوفاكيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q214,Slovakia,SK,Slovak,en,wdt:P1549
+http://www.wikidata.org/entity/Q215,Slovenia,SI,سلوفيني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q215,Slovenia,SI,سلوفينية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q215,Slovenia,SI,سلوفينيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q215,Slovenia,SI,Slovene,en,wdt:P1549
+http://www.wikidata.org/entity/Q215,Slovenia,SI,Slovenian,en,wdt:P1549
+http://www.wikidata.org/entity/Q217,Moldova,MD,مُلْدَاوِيٌّ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q217,Moldova,MD,مُلْدَاوِيَّةٌ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q217,Moldova,MD,مُلْدَاوِيُّونَ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q217,Moldova,MD,Moldavian,en,wdt:P1549
+http://www.wikidata.org/entity/Q217,Moldova,MD,Moldovan,en,wdt:P1549
+http://www.wikidata.org/entity/Q218,Romania,RO,روماني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q218,Romania,RO,رومانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q218,Romania,RO,رومانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q218,Romania,RO,Romanian,en,wdt:P1549
+http://www.wikidata.org/entity/Q219,Bulgaria,BG,بلغاري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q219,Bulgaria,BG,بلغارية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q219,Bulgaria,BG,بلغاريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q219,Bulgaria,BG,Bulgarian,en,wdt:P1549
+http://www.wikidata.org/entity/Q219060,دولة فلسطين,PS,فلسطيني,ar,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q219060,دولة فلسطين,PS,فلسطينيات,ar,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q219060,دولة فلسطين,PS,فلسطينيان,ar,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q219060,دولة فلسطين,PS,فلسطينية,ar,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q219060,دولة فلسطين,PS,فلسطينيتان,ar,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q219060,دولة فلسطين,PS,فلسطينيون,ar,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q219060,دولة فلسطين,PS,Palestinian,en,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q221,North Macedonia,MK,مقدوني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q221,North Macedonia,MK,مقدونية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q221,North Macedonia,MK,مقدونيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q221,North Macedonia,MK,Macedonian,en,wdt:P1549
+http://www.wikidata.org/entity/Q222,Albania,AL,ألبان,ar,wdt:P1549
+http://www.wikidata.org/entity/Q222,Albania,AL,ألباني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q222,Albania,AL,ألبانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q222,Albania,AL,Albanian,en,wdt:P1549
+http://www.wikidata.org/entity/Q222,Albania,AL,Albanians,en,wdt:P1549
+http://www.wikidata.org/entity/Q223,Greenland,GL,Greenlandic,en,wdt:P1549
+http://www.wikidata.org/entity/Q224,Croatia,HR,كروات,ar,wdt:P1549
+http://www.wikidata.org/entity/Q224,Croatia,HR,كرواتي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q224,Croatia,HR,كرواتية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q224,Croatia,HR,Croatian,en,wdt:P1549
+http://www.wikidata.org/entity/Q225,Bosnia and Herzegovina,BA,Bosnian,en,wdt:P1549
+http://www.wikidata.org/entity/Q225,Bosnia and Herzegovina,BA,Herzegovinian,en,wdt:P1549
+http://www.wikidata.org/entity/Q227,Azerbaijan,AZ,أذربيجاني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q227,Azerbaijan,AZ,أذربيجانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q227,Azerbaijan,AZ,أذربيجانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q227,Azerbaijan,AZ,Azerbaijani,en,wdt:P1549
+http://www.wikidata.org/entity/Q227,Azerbaijan,AZ,Azerbaijanis,en,wdt:P1549
+http://www.wikidata.org/entity/Q227,Azerbaijan,AZ,Azeri,en,wdt:P1549
+http://www.wikidata.org/entity/Q227,Azerbaijan,AZ,Azeris,en,wdt:P1549
+http://www.wikidata.org/entity/Q228,Andorra,AD,أندوري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q228,Andorra,AD,أندورية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q228,Andorra,AD,أندوريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q228,Andorra,AD,Andorran,en,wdt:P1549
+http://www.wikidata.org/entity/Q229,Cyprus,CY,قبرصي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q229,Cyprus,CY,قبرصية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q229,Cyprus,CY,قبرصيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q229,Cyprus,CY,Cypriot,en,wdt:P1549
+http://www.wikidata.org/entity/Q230,Georgia,GE,جورجي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q230,Georgia,GE,جورجية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q230,Georgia,GE,جورجيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q230,Georgia,GE,Georgian,en,wdt:P1549
+http://www.wikidata.org/entity/Q232,Kazakhstan,KZ,قَزَاقٌ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q232,Kazakhstan,KZ,قَزَاقِيٌّ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q232,Kazakhstan,KZ,قَزَاقِيَّةٌ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q232,Kazakhstan,KZ,Kazakh,en,wdt:P1549
+http://www.wikidata.org/entity/Q232,Kazakhstan,KZ,Kazakhstani,en,wdt:P1549
+http://www.wikidata.org/entity/Q233,Malta,MT,مالطي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q233,Malta,MT,مالطية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q233,Malta,MT,مالطيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q233,Malta,MT,Maltese,en,wdt:P1549
+http://www.wikidata.org/entity/Q235,Monaco,MC,موناكي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q235,Monaco,MC,موناكية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q235,Monaco,MC,موناكيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q235,Monaco,MC,Monacan,en,wdt:P1549
+http://www.wikidata.org/entity/Q235,Monaco,MC,Monegasque,en,wdt:P1549
+http://www.wikidata.org/entity/Q235,Monaco,MC,Monégasque,en,wdt:P1549
+http://www.wikidata.org/entity/Q236,Montenegro,ME,مونتينيغري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q236,Montenegro,ME,مونتينيغرية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q236,Montenegro,ME,مونتينيغريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q236,Montenegro,ME,Montenegrin,en,wdt:P1549
+http://www.wikidata.org/entity/Q23635,Bermuda,BM,Bermudan,en,wdt:P1549
+http://www.wikidata.org/entity/Q23635,Bermuda,BM,Bermudian,en,wdt:P1549
+http://www.wikidata.org/entity/Q23681,Turkish Republic of Northern Cyprus,,Turkish Cypriot,en,wdt:P1549
+http://www.wikidata.org/entity/Q237,Vatican City,VA,Vatican,en,wdt:P1549
+http://www.wikidata.org/entity/Q23792,Palestine,PS,فلسطينيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q23792,Palestine,PS,Palestinian,en,wdt:P1549
+http://www.wikidata.org/entity/Q238,San Marino,SM,Sammarinese,en,wdt:P1549
+http://www.wikidata.org/entity/Q241,Cuba,CU,كوبي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q241,Cuba,CU,كوبية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q241,Cuba,CU,كوبيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q241,Cuba,CU,Cuban,en,wdt:P1549
+http://www.wikidata.org/entity/Q242,Belize,BZ,بليزي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q242,Belize,BZ,بليزية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q242,Belize,BZ,بليزيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q242,Belize,BZ,Belizean,en,wdt:P1549
+http://www.wikidata.org/entity/Q244,Barbados,BB,بربادوسي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q244,Barbados,BB,بربادوسية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q244,Barbados,BB,بربادوسيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q244,Barbados,BB,Barbadian,en,wdt:P1549
+http://www.wikidata.org/entity/Q252,Indonesia,ID,إندونيسي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q252,Indonesia,ID,إندونيسية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q252,Indonesia,ID,إندونيسيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q252,Indonesia,ID,Indonesian,en,wdt:P1549
+http://www.wikidata.org/entity/Q25227,جزر الأنتيل الهولندية,AN,Dutch Antillean,en,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q25228,Anguilla,AI,Anguillan,en,wdt:P1549
+http://www.wikidata.org/entity/Q25279,Curaçao,CW,Curaçaoan,en,wdt:P1549
+http://www.wikidata.org/entity/Q258,South Africa,ZA,South African,en,wdt:P1549
+http://www.wikidata.org/entity/Q262,Algeria,DZ,جزائري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q262,Algeria,DZ,جزائريات,ar,wdt:P1549
+http://www.wikidata.org/entity/Q262,Algeria,DZ,جزائرية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q262,Algeria,DZ,جزائريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q262,Algeria,DZ,Algerian,en,wdt:P1549
+http://www.wikidata.org/entity/Q26273,Sint Maarten,SX,St. Maartener,en,wdt:P1549
+http://www.wikidata.org/entity/Q265,Uzbekistan,UZ,أُزْبَكِسْتَانِيٌّ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q265,Uzbekistan,UZ,أُزْبَكِسْتَانِيَّةٌ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q265,Uzbekistan,UZ,أُزْبَكِسْتَانِيُّونَ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q265,Uzbekistan,UZ,Uzbek,en,wdt:P1549
+http://www.wikidata.org/entity/Q265,Uzbekistan,UZ,Uzbekistani,en,wdt:P1549
+http://www.wikidata.org/entity/Q26988,Cook Islands,CK,Cook Islander,en,wdt:P1549
+http://www.wikidata.org/entity/Q27,Ireland,IE,أيرلندي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q27,Ireland,IE,أيرلندية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q27,Ireland,IE,أيرلنديون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q27,Ireland,IE,Irish,en,wdt:P1549
+http://www.wikidata.org/entity/Q28,Hungary,HU,مجري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q28,Hungary,HU,مجرية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q28,Hungary,HU,مجريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q28,Hungary,HU,Hungarian,en,wdt:P1549
+http://www.wikidata.org/entity/Q29,Spain,ES,إسبان,ar,wdt:P1549
+http://www.wikidata.org/entity/Q29,Spain,ES,إسباني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q29,Spain,ES,إسبانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q29,Spain,ES,Spaniard,en,wdt:P1549
+http://www.wikidata.org/entity/Q29,Spain,ES,Spanish,en,wdt:P1549
+http://www.wikidata.org/entity/Q298,Chile,CL,تشيلي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q298,Chile,CL,تشيلية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q298,Chile,CL,تشيليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q298,Chile,CL,Chilean,en,wdt:P1549
+http://www.wikidata.org/entity/Q29999,مملكة هولندا,NL,هولندي,ar,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q29999,مملكة هولندا,NL,هولندية,ar,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q29999,مملكة هولندا,NL,هولنديون,ar,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q29999,مملكة هولندا,NL,Dutch,en,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q30,United States of America,US,أمريكي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q30,United States of America,US,أمريكية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q30,United States of America,US,أمريكيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q30,United States of America,US,American,en,wdt:P1549
+http://www.wikidata.org/entity/Q30,United States of America,US,Americans,en,wdt:P1549
+http://www.wikidata.org/entity/Q30971,French Polynesia,PF,French Polynesian,en,wdt:P1549
+http://www.wikidata.org/entity/Q31,Belgium,BE,بلجيكي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q31,Belgium,BE,بلجيكية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q31,Belgium,BE,بلجيكيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q31,Belgium,BE,Belgian,en,wdt:P1549
+http://www.wikidata.org/entity/Q31057,Norfolk Island,NF,Norfolk Islander,en,wdt:P1549
+http://www.wikidata.org/entity/Q31057,Norfolk Island,NF,Norfolk Islanders,en,wdt:P1549
+http://www.wikidata.org/entity/Q31063,جزيرة عيد الميلاد,CX,Christmas Islander,en,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q31063,جزيرة عيد الميلاد,CX,Christmas Islanders,en,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q32,Luxembourg,LU,لوكسمبورغي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q32,Luxembourg,LU,لوكسمبورغية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q32,Luxembourg,LU,لوكسمبورغيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q32,Luxembourg,LU,Luxembourgian,en,wdt:P1549
+http://www.wikidata.org/entity/Q32,Luxembourg,LU,Luxembourgish,en,wdt:P1549
+http://www.wikidata.org/entity/Q33,Finland,FI,فنلندي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q33,Finland,FI,فنلندية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q33,Finland,FI,فنلنديون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q33,Finland,FI,Finn,en,wdt:P1549
+http://www.wikidata.org/entity/Q33,Finland,FI,Finnish,en,wdt:P1549
+http://www.wikidata.org/entity/Q334,Singapore,SG,سنغافوري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q334,Singapore,SG,سنغافورية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q334,Singapore,SG,سنغافوريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q334,Singapore,SG,Singaporean,en,wdt:P1549
+http://www.wikidata.org/entity/Q33788,New Caledonia,NC,New Caledonian,en,wdt:P1549
+http://www.wikidata.org/entity/Q33788,New Caledonia,NC,New Caledonians,en,wdt:P1549
+http://www.wikidata.org/entity/Q34,Sweden,SE,سُوَيْدِيَّات,ar,wdt:P1549
+http://www.wikidata.org/entity/Q34,Sweden,SE,سُوَيْدِيَّة,ar,wdt:P1549
+http://www.wikidata.org/entity/Q34,Sweden,SE,سُوَيْدِيُّونَ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q34,Sweden,SE,سُوَيْدِيّ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q34,Sweden,SE,Swedish,en,wdt:P1549
+http://www.wikidata.org/entity/Q34020,Niue,NU,Niuean,en,wdt:P1549
+http://www.wikidata.org/entity/Q34497,Saint Helena,SH,Saint Helenians,en,wdt:P1549
+http://www.wikidata.org/entity/Q34497,Saint Helena,SH,Saints,en,wdt:P1549
+http://www.wikidata.org/entity/Q347,Liechtenstein,LI,ليختنشتايني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q347,Liechtenstein,LI,ليختنشتاينية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q347,Liechtenstein,LI,ليختنشتاينيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q347,Liechtenstein,LI,Liechtensteiner,en,wdt:P1549
+http://www.wikidata.org/entity/Q34754,Somaliland,,Somalilander,en,wdt:P1549
+http://www.wikidata.org/entity/Q35,Denmark,DK,Dane,en,wdt:P1549
+http://www.wikidata.org/entity/Q35,Denmark,DK,Danish,en,wdt:P1549
+http://www.wikidata.org/entity/Q35086,South Georgia and the South Sandwich Islands,GS,South Georgian,en,wdt:P1549
+http://www.wikidata.org/entity/Q35086,South Georgia and the South Sandwich Islands,GS,South Sandwich Islander,en,wdt:P1549
+http://www.wikidata.org/entity/Q35555,Wallis and Futuna,WF,Futunan,en,wdt:P1549
+http://www.wikidata.org/entity/Q35555,Wallis and Futuna,WF,Wallisian,en,wdt:P1549
+http://www.wikidata.org/entity/Q35672,Pitcairn Islands,PN,Pitcairn Islander,en,wdt:P1549
+http://www.wikidata.org/entity/Q36,Poland,PL,بولندي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q36,Poland,PL,بولندية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q36,Poland,PL,بولنديون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q36,Poland,PL,Polish,en,wdt:P1549
+http://www.wikidata.org/entity/Q36704,يوغوسلافيا,YU,Yugoslav,en,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q36823,توكيلاو,TK,Tokelauan,en,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q37,Lithuania,LT,ليتواني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q37,Lithuania,LT,ليتوانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q37,Lithuania,LT,ليتوانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q37,Lithuania,LT,Lithuanian,en,wdt:P1549
+http://www.wikidata.org/entity/Q3769,غويانا الفرنسية,GF,French Guianese,en,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q3769,غويانا الفرنسية,GF,Guianese,en,wdt:P1549:handoff
+http://www.wikidata.org/entity/Q38,Italy,IT,إيطالي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q38,Italy,IT,إيطالية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q38,Italy,IT,إِيطَالِيُّونَ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q38,Italy,IT,Italian,en,wdt:P1549
+http://www.wikidata.org/entity/Q39,Switzerland,CH,سويسري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q39,Switzerland,CH,سويسرية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q39,Switzerland,CH,سويسريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q39,Switzerland,CH,Swiss,en,wdt:P1549
+http://www.wikidata.org/entity/Q398,Bahrain,BH,بحارنة,ar,wdt:P1549
+http://www.wikidata.org/entity/Q398,Bahrain,BH,بحريني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q398,Bahrain,BH,بحرينية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q398,Bahrain,BH,Bahraini,en,wdt:P1549
+http://www.wikidata.org/entity/Q399,Armenia,AM,أرمني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q399,Armenia,AM,أرمنية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q399,Armenia,AM,أرمنيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q399,Armenia,AM,Armenian,en,wdt:P1549
+http://www.wikidata.org/entity/Q40,Austria,AT,نمساوي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q40,Austria,AT,نمساوية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q40,Austria,AT,نمساويون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q40,Austria,AT,Austrian,en,wdt:P1549
+http://www.wikidata.org/entity/Q403,Serbia,RS,صرب,ar,wdt:P1549
+http://www.wikidata.org/entity/Q403,Serbia,RS,صربي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q403,Serbia,RS,صربية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q403,Serbia,RS,Serbian,en,wdt:P1549
+http://www.wikidata.org/entity/Q408,Australia,AU,أسترالي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q408,Australia,AU,أسترالية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q408,Australia,AU,أستراليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q408,Australia,AU,Aussie,en,wdt:P1549
+http://www.wikidata.org/entity/Q408,Australia,AU,Aussies,en,wdt:P1549
+http://www.wikidata.org/entity/Q408,Australia,AU,Australian,en,wdt:P1549
+http://www.wikidata.org/entity/Q408,Australia,AU,Australians,en,wdt:P1549
+http://www.wikidata.org/entity/Q41,Greece,GR,يوناني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q41,Greece,GR,يونانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q41,Greece,GR,Greek,en,wdt:P1549
+http://www.wikidata.org/entity/Q414,Argentina,AR,أرجنتيني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q414,Argentina,AR,أرجنتينية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q414,Argentina,AR,أرجنتينيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q414,Argentina,AR,Argentine,en,wdt:P1549
+http://www.wikidata.org/entity/Q414,Argentina,AR,Argentinian,en,wdt:P1549
+http://www.wikidata.org/entity/Q419,Peru,PE,بيروفي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q419,Peru,PE,بيروفية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q419,Peru,PE,بيروفيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q419,Peru,PE,Peruvian,en,wdt:P1549
+http://www.wikidata.org/entity/Q423,North Korea,KP,كوري شمالي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q423,North Korea,KP,كورية شمالية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q423,North Korea,KP,كوريون شماليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q423,North Korea,KP,North Korean,en,wdt:P1549
+http://www.wikidata.org/entity/Q424,Cambodia,KH,كمبودي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q424,Cambodia,KH,كمبودية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q424,Cambodia,KH,كمبوديون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q424,Cambodia,KH,Cambodian,en,wdt:P1549
+http://www.wikidata.org/entity/Q43,Turkey,TR,أترك,ar,wdt:P1549
+http://www.wikidata.org/entity/Q43,Turkey,TR,تركي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q43,Turkey,TR,تركية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q43,Turkey,TR,Turkish,en,wdt:P1549
+http://www.wikidata.org/entity/Q43296,Wake Island,,Wakean,en,wdt:P1549
+http://www.wikidata.org/entity/Q43448,British Indian Ocean Territory,IO,British,en,wdt:P1549
+http://www.wikidata.org/entity/Q45,Portugal,PT,برتغالي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q45,Portugal,PT,برتغالية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q45,Portugal,PT,برتغاليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q45,Portugal,PT,Portuguese,en,wdt:P1549
+http://www.wikidata.org/entity/Q51,Antarctica,AQ,Antarctican,en,wdt:P1549
+http://www.wikidata.org/entity/Q55,Netherlands,NL,هولنديون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q55,Netherlands,NL,Dutch,en,wdt:P1549
+http://www.wikidata.org/entity/Q574,East Timor,TL,تيموري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q574,East Timor,TL,تيمورية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q574,East Timor,TL,تيموريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q574,East Timor,TL,East Timorese,en,wdt:P1549
+http://www.wikidata.org/entity/Q5785,Cayman Islands,KY,Caymanian,en,wdt:P1549
+http://www.wikidata.org/entity/Q6250,Western Sahara,EH,صحراوي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q6250,Western Sahara,EH,صحراوية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q657,Chad,TD,تشادي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q657,Chad,TD,تشادية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q657,Chad,TD,تشاديون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q657,Chad,TD,Chadian,en,wdt:P1549
+http://www.wikidata.org/entity/Q664,New Zealand,NZ,نيوزيلندي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q664,New Zealand,NZ,نيوزيلندية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q664,New Zealand,NZ,نيوزيلنديون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q664,New Zealand,NZ,New Zealand,en,wdt:P1549
+http://www.wikidata.org/entity/Q664,New Zealand,NZ,New Zealander,en,wdt:P1549
+http://www.wikidata.org/entity/Q668,India,IN,هندي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q668,India,IN,هندية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q668,India,IN,هنديون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q668,India,IN,Indian,en,wdt:P1549
+http://www.wikidata.org/entity/Q672,Tuvalu,TV,توفالي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q672,Tuvalu,TV,توفالية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q672,Tuvalu,TV,توفاليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q672,Tuvalu,TV,Tuvaluan,en,wdt:P1549
+http://www.wikidata.org/entity/Q678,Tonga,TO,تونغاني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q678,Tonga,TO,تونغانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q678,Tonga,TO,تونغانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q678,Tonga,TO,Tongan,en,wdt:P1549
+http://www.wikidata.org/entity/Q683,Samoa,WS,ساموي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q683,Samoa,WS,ساموية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q683,Samoa,WS,سامويون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q683,Samoa,WS,Samoan,en,wdt:P1549
+http://www.wikidata.org/entity/Q685,Solomon Islands,SB,Solomon Islander,en,wdt:P1549
+http://www.wikidata.org/entity/Q685,Solomon Islands,SB,Solomon Islands,en,wdt:P1549
+http://www.wikidata.org/entity/Q686,Vanuatu,VU,فانواتوي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q686,Vanuatu,VU,فانواتوية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q686,Vanuatu,VU,فانواتويون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q686,Vanuatu,VU,Ni-Vanuatu,en,wdt:P1549
+http://www.wikidata.org/entity/Q686,Vanuatu,VU,Vanuatuan,en,wdt:P1549
+http://www.wikidata.org/entity/Q686,Vanuatu,VU,Vanuatuans,en,wdt:P1549
+http://www.wikidata.org/entity/Q691,Papua New Guinea,PG,Papua New Guinean,en,wdt:P1549
+http://www.wikidata.org/entity/Q695,Palau,PW,بالاوي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q695,Palau,PW,بالاوية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q695,Palau,PW,بالاويون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q695,Palau,PW,Palauan,en,wdt:P1549
+http://www.wikidata.org/entity/Q697,Nauru,NR,ناوروني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q697,Nauru,NR,ناورونية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q697,Nauru,NR,ناورونيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q697,Nauru,NR,Nauruan,en,wdt:P1549
+http://www.wikidata.org/entity/Q702,Federated States of Micronesia,FM,Micronesian,en,wdt:P1549
+http://www.wikidata.org/entity/Q709,Marshall Islands,MH,Marshallese,en,wdt:P1549
+http://www.wikidata.org/entity/Q710,Kiribati,KI,كيريباتي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q710,Kiribati,KI,كيريباتية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q710,Kiribati,KI,كيريباتيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q710,Kiribati,KI,I-Kiribati,en,wdt:P1549
+http://www.wikidata.org/entity/Q711,Mongolia,MN,منغولي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q711,Mongolia,MN,منغولية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q711,Mongolia,MN,منغوليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q711,Mongolia,MN,Mongol,en,wdt:P1549
+http://www.wikidata.org/entity/Q711,Mongolia,MN,Mongolian,en,wdt:P1549
+http://www.wikidata.org/entity/Q712,Fiji,FJ,فيجي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q712,Fiji,FJ,فيجية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q712,Fiji,FJ,فيجيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q712,Fiji,FJ,Fijian,en,wdt:P1549
+http://www.wikidata.org/entity/Q717,Venezuela,VE,فنزويلي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q717,Venezuela,VE,فنزويلية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q717,Venezuela,VE,فنزويليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q717,Venezuela,VE,Venezuelan,en,wdt:P1549
+http://www.wikidata.org/entity/Q717,Venezuela,VE,Venezuelans,en,wdt:P1549
+http://www.wikidata.org/entity/Q730,Suriname,SR,سورينامي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q730,Suriname,SR,سورينامية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q730,Suriname,SR,سوريناميون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q730,Suriname,SR,Surinamese,en,wdt:P1549
+http://www.wikidata.org/entity/Q733,Paraguay,PY,باراغواياني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q733,Paraguay,PY,باراغوايانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q733,Paraguay,PY,باراغوايانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q733,Paraguay,PY,Paraguayan,en,wdt:P1549
+http://www.wikidata.org/entity/Q734,Guyana,GY,غياني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q734,Guyana,GY,غيانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q734,Guyana,GY,غيانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q734,Guyana,GY,Guyanese,en,wdt:P1549
+http://www.wikidata.org/entity/Q736,Ecuador,EC,إكوادوري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q736,Ecuador,EC,إكوادورية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q736,Ecuador,EC,إكوادوريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q736,Ecuador,EC,Ecuadoran,en,wdt:P1549
+http://www.wikidata.org/entity/Q736,Ecuador,EC,Ecuadorian,en,wdt:P1549
+http://www.wikidata.org/entity/Q739,Colombia,CO,كولومبي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q739,Colombia,CO,كولومبية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q739,Colombia,CO,كولومبيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q739,Colombia,CO,Colombian,en,wdt:P1549
+http://www.wikidata.org/entity/Q750,Bolivia,BO,بوليفي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q750,Bolivia,BO,بوليفية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q750,Bolivia,BO,بوليفيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q750,Bolivia,BO,Bolivian,en,wdt:P1549
+http://www.wikidata.org/entity/Q754,Trinidad and Tobago,TT,Trinidadian,en,wdt:P1549
+http://www.wikidata.org/entity/Q757,Saint Vincent and the Grenadines,VC,Saint Vincentian,en,wdt:P1549
+http://www.wikidata.org/entity/Q757,Saint Vincent and the Grenadines,VC,Saint Vincentians,en,wdt:P1549
+http://www.wikidata.org/entity/Q757,Saint Vincent and the Grenadines,VC,Vincentian,en,wdt:P1549
+http://www.wikidata.org/entity/Q757,Saint Vincent and the Grenadines,VC,Vincentians,en,wdt:P1549
+http://www.wikidata.org/entity/Q757,Saint Vincent and the Grenadines,VC,Vincy,en,wdt:P1549
+http://www.wikidata.org/entity/Q760,Saint Lucia,LC,Saint Lucian,en,wdt:P1549
+http://www.wikidata.org/entity/Q763,Saint Kitts and Nevis,KN,Kittitian,en,wdt:P1549
+http://www.wikidata.org/entity/Q763,Saint Kitts and Nevis,KN,Nevisian,en,wdt:P1549
+http://www.wikidata.org/entity/Q766,Jamaica,JM,جمايكي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q766,Jamaica,JM,جمايكية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q766,Jamaica,JM,جمايكيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q766,Jamaica,JM,Jamaican,en,wdt:P1549
+http://www.wikidata.org/entity/Q769,Grenada,GD,غَرْنَادِيٌّ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q769,Grenada,GD,غَرْنَادِيَّةٌ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q769,Grenada,GD,غَرْنَادِيُّونَ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q769,Grenada,GD,Grenadian,en,wdt:P1549
+http://www.wikidata.org/entity/Q77,Uruguay,UY,أوروغواياني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q77,Uruguay,UY,أوروغوايانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q77,Uruguay,UY,أوروغوايانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q77,Uruguay,UY,Uruguayan,en,wdt:P1549
+http://www.wikidata.org/entity/Q774,Guatemala,GT,غواتيمالي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q774,Guatemala,GT,غواتيمالية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q774,Guatemala,GT,غواتيماليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q774,Guatemala,GT,Guatemalan,en,wdt:P1549
+http://www.wikidata.org/entity/Q778,The Bahamas,BS,باهامي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q778,The Bahamas,BS,باهامية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q778,The Bahamas,BS,باهاميون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q778,The Bahamas,BS,Bahamian,en,wdt:P1549
+http://www.wikidata.org/entity/Q781,Antigua and Barbuda,AG,Antigua and Barbuda,en,wdt:P1549
+http://www.wikidata.org/entity/Q781,Antigua and Barbuda,AG,Antiguan,en,wdt:P1549
+http://www.wikidata.org/entity/Q781,Antigua and Barbuda,AG,Barbudan,en,wdt:P1549
+http://www.wikidata.org/entity/Q783,Honduras,HN,هندوراسي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q783,Honduras,HN,هندوراسية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q783,Honduras,HN,هندوراسيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q783,Honduras,HN,Honduran,en,wdt:P1549
+http://www.wikidata.org/entity/Q784,Dominica,DM,Dominican,en,wdt:P1549
+http://www.wikidata.org/entity/Q785,Jersey,JE,Islander,en,wdt:P1549
+http://www.wikidata.org/entity/Q785,Jersey,JE,Jersey bean,en,wdt:P1549
+http://www.wikidata.org/entity/Q785,Jersey,JE,Jerseyman,en,wdt:P1549
+http://www.wikidata.org/entity/Q785,Jersey,JE,Jerseywoman,en,wdt:P1549
+http://www.wikidata.org/entity/Q786,Dominican Republic,DO,Dominican,en,wdt:P1549
+http://www.wikidata.org/entity/Q79,Egypt,EG,مِصْرِيُّونَ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q79,Egypt,EG,مِصْرِيّ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q79,Egypt,EG,مِصْرّيَّة,ar,wdt:P1549
+http://www.wikidata.org/entity/Q79,Egypt,EG,Egyptian,en,wdt:P1549
+http://www.wikidata.org/entity/Q790,Haiti,HT,هايتي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q790,Haiti,HT,هايتية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q790,Haiti,HT,هايتيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q790,Haiti,HT,Haitian,en,wdt:P1549
+http://www.wikidata.org/entity/Q792,El Salvador,SV,سلفادوري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q792,El Salvador,SV,سلفادورية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q792,El Salvador,SV,سلفادوريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q792,El Salvador,SV,Salvadoran,en,wdt:P1549
+http://www.wikidata.org/entity/Q794,Iran,IR,إيراني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q794,Iran,IR,إيرانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q794,Iran,IR,إيرانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q794,Iran,IR,Iranian,en,wdt:P1549
+http://www.wikidata.org/entity/Q794,Iran,IR,Persian,en,wdt:P1549
+http://www.wikidata.org/entity/Q796,Iraq,IQ,عراقي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q796,Iraq,IQ,عراقية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q796,Iraq,IQ,عراقيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q796,Iraq,IQ,Iraqi,en,wdt:P1549
+http://www.wikidata.org/entity/Q800,Costa Rica,CR,كوستاريكي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q800,Costa Rica,CR,كوستاريكية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q800,Costa Rica,CR,كوستاريكيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q800,Costa Rica,CR,Costa Rican,en,wdt:P1549
+http://www.wikidata.org/entity/Q800,Costa Rica,CR,Costa Ricans,en,wdt:P1549
+http://www.wikidata.org/entity/Q801,Israel,IL,إسرائيليات,ar,wdt:P1549
+http://www.wikidata.org/entity/Q801,Israel,IL,إسرائيليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q801,Israel,IL,إسرائيليّ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q801,Israel,IL,إسرائيليّة,ar,wdt:P1549
+http://www.wikidata.org/entity/Q801,Israel,IL,Israeli,en,wdt:P1549
+http://www.wikidata.org/entity/Q801,Israel,IL,Israelis,en,wdt:P1549
+http://www.wikidata.org/entity/Q804,Panama,PA,بنمي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q804,Panama,PA,بنمية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q804,Panama,PA,بنميون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q804,Panama,PA,Panamanian,en,wdt:P1549
+http://www.wikidata.org/entity/Q805,Yemen,YE,يمني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q805,Yemen,YE,يمنيات,ar,wdt:P1549
+http://www.wikidata.org/entity/Q805,Yemen,YE,يمنية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q805,Yemen,YE,يمنيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q805,Yemen,YE,Yemeni,en,wdt:P1549
+http://www.wikidata.org/entity/Q810,Jordan,JO,أردني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q810,Jordan,JO,أردنية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q810,Jordan,JO,أردنيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q810,Jordan,JO,Jordanian,en,wdt:P1549
+http://www.wikidata.org/entity/Q811,Nicaragua,NI,نيكاراغوي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q811,Nicaragua,NI,نيكاراغوية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q811,Nicaragua,NI,نيكاراغويون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q811,Nicaragua,NI,Nicaraguan,en,wdt:P1549
+http://www.wikidata.org/entity/Q813,Kyrgyzstan,KG,قيرغيزستاني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q813,Kyrgyzstan,KG,قيرغيزستانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q813,Kyrgyzstan,KG,قيرغيزستانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q813,Kyrgyzstan,KG,Kyrgyz,en,wdt:P1549
+http://www.wikidata.org/entity/Q813,Kyrgyzstan,KG,Kyrgyzstani,en,wdt:P1549
+http://www.wikidata.org/entity/Q817,Kuwait,KW,كويتي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q817,Kuwait,KW,كويتية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q817,Kuwait,KW,كويتيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q817,Kuwait,KW,Kuwaiti,en,wdt:P1549
+http://www.wikidata.org/entity/Q819,Laos,LA,لاوسي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q819,Laos,LA,لاوسية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q819,Laos,LA,لاوسيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q819,Laos,LA,Lao,en,wdt:P1549
+http://www.wikidata.org/entity/Q819,Laos,LA,Laos,en,wdt:P1549
+http://www.wikidata.org/entity/Q819,Laos,LA,Laotian,en,wdt:P1549
+http://www.wikidata.org/entity/Q819,Laos,LA,Laotians,en,wdt:P1549
+http://www.wikidata.org/entity/Q822,Lebanon,LB,لبناني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q822,Lebanon,LB,لبنانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q822,Lebanon,LB,لبنانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q822,Lebanon,LB,Lebanese,en,wdt:P1549
+http://www.wikidata.org/entity/Q826,Maldives,MV,مالديفي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q826,Maldives,MV,مالديفية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q826,Maldives,MV,مالديفيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q826,Maldives,MV,Maldivian,en,wdt:P1549
+http://www.wikidata.org/entity/Q833,Malaysia,MY,ماليزي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q833,Malaysia,MY,ماليزية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q833,Malaysia,MY,ماليزيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q833,Malaysia,MY,Malaysian,en,wdt:P1549
+http://www.wikidata.org/entity/Q836,Myanmar,MM,مِيَنْمَارِيٌّ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q836,Myanmar,MM,مِيَنْمَارِيَّةٌ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q836,Myanmar,MM,Burmese,en,wdt:P1549
+http://www.wikidata.org/entity/Q836,Myanmar,MM,Myanma,en,wdt:P1549
+http://www.wikidata.org/entity/Q837,Nepal,NP,نيبالي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q837,Nepal,NP,نيبالية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q837,Nepal,NP,نيباليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q837,Nepal,NP,Nepalese,en,wdt:P1549
+http://www.wikidata.org/entity/Q837,Nepal,NP,Nepali,en,wdt:P1549
+http://www.wikidata.org/entity/Q842,Oman,OM,عماني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q842,Oman,OM,عمانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q842,Oman,OM,عمانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q842,Oman,OM,Omani,en,wdt:P1549
+http://www.wikidata.org/entity/Q843,Pakistan,PK,باكستاني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q843,Pakistan,PK,باكستانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q843,Pakistan,PK,باكستانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q843,Pakistan,PK,Pakistani,en,wdt:P1549
+http://www.wikidata.org/entity/Q846,Qatar,QA,عربي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q846,Qatar,QA,قطري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q846,Qatar,QA,قطرية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q846,Qatar,QA,قطريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q846,Qatar,QA,Qatari,en,wdt:P1549
+http://www.wikidata.org/entity/Q851,Saudi Arabia,SA,سعودي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q851,Saudi Arabia,SA,سعوديات,ar,wdt:P1549
+http://www.wikidata.org/entity/Q851,Saudi Arabia,SA,سعودية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q851,Saudi Arabia,SA,سعوديون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q851,Saudi Arabia,SA,سعوديين,ar,wdt:P1549
+http://www.wikidata.org/entity/Q854,Sri Lanka,LK,سريلنكي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q854,Sri Lanka,LK,سريلنكية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q854,Sri Lanka,LK,سريلنكيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q854,Sri Lanka,LK,Sri Lankan,en,wdt:P1549
+http://www.wikidata.org/entity/Q858,Syria,SY,سوري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q858,Syria,SY,سورية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q858,Syria,SY,سوريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q858,Syria,SY,Syrian,en,wdt:P1549
+http://www.wikidata.org/entity/Q863,Tajikistan,TJ,طاجيكستاني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q863,Tajikistan,TJ,طاجيكستانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q863,Tajikistan,TJ,طاجيكستانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q863,Tajikistan,TJ,Tajikistani,en,wdt:P1549
+http://www.wikidata.org/entity/Q8646,Hong Kong,HK,Hong Kong,en,wdt:P1549
+http://www.wikidata.org/entity/Q8646,Hong Kong,HK,Hong Kong people,en,wdt:P1549
+http://www.wikidata.org/entity/Q8646,Hong Kong,HK,Hongkonger,en,wdt:P1549
+http://www.wikidata.org/entity/Q865,Taiwan,CN-TW,Taiwan,en,wdt:P1549
+http://www.wikidata.org/entity/Q865,Taiwan,CN-TW,Taiwanese,en,wdt:P1549
+http://www.wikidata.org/entity/Q865,Taiwan,CN-TW,taiwanese,en,wdt:P1549
+http://www.wikidata.org/entity/Q869,Thailand,TH,تايلندي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q869,Thailand,TH,تايلندية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q869,Thailand,TH,تايلنديون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q869,Thailand,TH,Thai,en,wdt:P1549
+http://www.wikidata.org/entity/Q874,Turkmenistan,TM,تركمان,ar,wdt:P1549
+http://www.wikidata.org/entity/Q874,Turkmenistan,TM,تركماني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q874,Turkmenistan,TM,تركمانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q874,Turkmenistan,TM,Turkmen,en,wdt:P1549
+http://www.wikidata.org/entity/Q874,Turkmenistan,TM,Turkmenistani,en,wdt:P1549
+http://www.wikidata.org/entity/Q878,United Arab Emirates,AE,إماراتي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q878,United Arab Emirates,AE,إماراتية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q878,United Arab Emirates,AE,إماراتيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q878,United Arab Emirates,AE,Emirati,en,wdt:P1549
+http://www.wikidata.org/entity/Q878,United Arab Emirates,AE,Emiri,en,wdt:P1549
+http://www.wikidata.org/entity/Q878,United Arab Emirates,AE,Emirian,en,wdt:P1549
+http://www.wikidata.org/entity/Q881,Vietnam,VN,فيتنامي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q881,Vietnam,VN,فيتنامية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q881,Vietnam,VN,فيتناميون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q881,Vietnam,VN,Vietnamese,en,wdt:P1549
+http://www.wikidata.org/entity/Q884,South Korea,KR,كوري جنوبي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q884,South Korea,KR,كورية جنوبية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q884,South Korea,KR,كوريون جنوبيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q884,South Korea,KR,South Korean,en,wdt:P1549
+http://www.wikidata.org/entity/Q889,Afghanistan,AF,أفغان,ar,wdt:P1549
+http://www.wikidata.org/entity/Q889,Afghanistan,AF,أفغاني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q889,Afghanistan,AF,أفغانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q889,Afghanistan,AF,Afghan,en,wdt:P1549
+http://www.wikidata.org/entity/Q902,Bangladesh,BD,بنغاليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q902,Bangladesh,BD,بنغلاديشي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q902,Bangladesh,BD,بنغلاديشية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q902,Bangladesh,BD,Bangladeshi,en,wdt:P1549
+http://www.wikidata.org/entity/Q912,Mali,ML,مالي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q912,Mali,ML,مالية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q912,Mali,ML,ماليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q912,Mali,ML,Malian,en,wdt:P1549
+http://www.wikidata.org/entity/Q916,Angola,AO,أنغولي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q916,Angola,AO,أنغولية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q916,Angola,AO,أنغوليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q916,Angola,AO,Angolan,en,wdt:P1549
+http://www.wikidata.org/entity/Q917,Bhutan,BT,بوتاني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q917,Bhutan,BT,بوتانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q917,Bhutan,BT,بوتانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q917,Bhutan,BT,Bhutanese,en,wdt:P1549
+http://www.wikidata.org/entity/Q921,Brunei,BN,بروني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q921,Brunei,BN,برونية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q921,Brunei,BN,برونيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q924,Tanzania,TZ,تنزاني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q924,Tanzania,TZ,تنزانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q924,Tanzania,TZ,تنزانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q924,Tanzania,TZ,Tanzanian,en,wdt:P1549
+http://www.wikidata.org/entity/Q928,Philippines,PH,فلبيني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q928,Philippines,PH,فلبينية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q928,Philippines,PH,فلبينيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q928,Philippines,PH,Filipina,en,wdt:P1549
+http://www.wikidata.org/entity/Q928,Philippines,PH,Filipino,en,wdt:P1549
+http://www.wikidata.org/entity/Q928,Philippines,PH,Philippine,en,wdt:P1549
+http://www.wikidata.org/entity/Q929,Central African Republic,CF,Central African,en,wdt:P1549
+http://www.wikidata.org/entity/Q945,Togo,TG,توغولي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q945,Togo,TG,توغولية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q945,Togo,TG,توغوليون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q945,Togo,TG,Togolese,en,wdt:P1549
+http://www.wikidata.org/entity/Q948,Tunisia,TN,تونسي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q948,Tunisia,TN,تونسيات,ar,wdt:P1549
+http://www.wikidata.org/entity/Q948,Tunisia,TN,تونسيان,ar,wdt:P1549
+http://www.wikidata.org/entity/Q948,Tunisia,TN,تونسية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q948,Tunisia,TN,تونسيتان,ar,wdt:P1549
+http://www.wikidata.org/entity/Q948,Tunisia,TN,تونسيتين,ar,wdt:P1549
+http://www.wikidata.org/entity/Q948,Tunisia,TN,تونسيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q948,Tunisia,TN,تونسيين,ar,wdt:P1549
+http://www.wikidata.org/entity/Q948,Tunisia,TN,Tunisian,en,wdt:P1549
+http://www.wikidata.org/entity/Q953,Zambia,ZM,زامبي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q953,Zambia,ZM,زامبية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q953,Zambia,ZM,زامبيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q953,Zambia,ZM,Zambian,en,wdt:P1549
+http://www.wikidata.org/entity/Q953,Zambia,ZM,Zambians,en,wdt:P1549
+http://www.wikidata.org/entity/Q954,Zimbabwe,ZW,زِنْبَابِيٌّ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q954,Zimbabwe,ZW,زِنْبَابِيَّةٌ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q954,Zimbabwe,ZW,زِنْبَابِيُّونَ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q954,Zimbabwe,ZW,Zimbabwean,en,wdt:P1549
+http://www.wikidata.org/entity/Q954,Zimbabwe,ZW,Zimbabweans,en,wdt:P1549
+http://www.wikidata.org/entity/Q958,South Sudan,SS,South Sudanese,en,wdt:P1549
+http://www.wikidata.org/entity/Q96,Mexico,MX,مكسيكي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q96,Mexico,MX,مكسيكية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q96,Mexico,MX,مكسيكيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q96,Mexico,MX,Mexican,en,wdt:P1549
+http://www.wikidata.org/entity/Q96,Mexico,MX,Mexicans,en,wdt:P1549
+http://www.wikidata.org/entity/Q962,Benin,BJ,بنيني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q962,Benin,BJ,بنينية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q962,Benin,BJ,بنينيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q962,Benin,BJ,Beninese,en,wdt:P1549
+http://www.wikidata.org/entity/Q963,Botswana,BW,بوتسواني,ar,wdt:P1549
+http://www.wikidata.org/entity/Q963,Botswana,BW,بوتسوانية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q963,Botswana,BW,بوتسوانيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q963,Botswana,BW,Batswana,en,wdt:P1549
+http://www.wikidata.org/entity/Q963,Botswana,BW,Botswanan,en,wdt:P1549
+http://www.wikidata.org/entity/Q963,Botswana,BW,Botswanans,en,wdt:P1549
+http://www.wikidata.org/entity/Q963,Botswana,BW,Motswana,en,wdt:P1549
+http://www.wikidata.org/entity/Q965,Burkina Faso,BF,بورتوريكي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q965,Burkina Faso,BF,بورتوريكية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q965,Burkina Faso,BF,بورتوريكيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q965,Burkina Faso,BF,Burkinabe,en,wdt:P1549
+http://www.wikidata.org/entity/Q965,Burkina Faso,BF,Burkinabè,en,wdt:P1549
+http://www.wikidata.org/entity/Q965,Burkina Faso,BF,Burkinabé,en,wdt:P1549
+http://www.wikidata.org/entity/Q967,Burundi,BI,بوروندي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q967,Burundi,BI,بوروندية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q967,Burundi,BI,بورونديون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q967,Burundi,BI,Burundian,en,wdt:P1549
+http://www.wikidata.org/entity/Q9676,Isle of Man,IM,Manx,en,wdt:P1549
+http://www.wikidata.org/entity/Q970,Comoros,KM,قمري,ar,wdt:P1549
+http://www.wikidata.org/entity/Q970,Comoros,KM,قمرية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q970,Comoros,KM,قمريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q970,Comoros,KM,Comoran,en,wdt:P1549
+http://www.wikidata.org/entity/Q970,Comoros,KM,Comorans,en,wdt:P1549
+http://www.wikidata.org/entity/Q970,Comoros,KM,Comorian,en,wdt:P1549
+http://www.wikidata.org/entity/Q970,Comoros,KM,Comorians,en,wdt:P1549
+http://www.wikidata.org/entity/Q971,Republic of the Congo,CG,Congolese,en,wdt:P1549
+http://www.wikidata.org/entity/Q974,Democratic Republic of the Congo,CD,Congolese,en,wdt:P1549
+http://www.wikidata.org/entity/Q977,Djibouti,DJ,جيبوتي,ar,wdt:P1549
+http://www.wikidata.org/entity/Q977,Djibouti,DJ,جيبوتية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q977,Djibouti,DJ,جيبوتيون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q977,Djibouti,DJ,Djiboutian,en,wdt:P1549
+http://www.wikidata.org/entity/Q983,Equatorial Guinea,GQ,Equatoguinean,en,wdt:P1549
+http://www.wikidata.org/entity/Q983,Equatorial Guinea,GQ,Equatorial Guinean,en,wdt:P1549
+http://www.wikidata.org/entity/Q986,Eritrea,ER,إرترية,ar,wdt:P1549
+http://www.wikidata.org/entity/Q986,Eritrea,ER,إرتريون,ar,wdt:P1549
+http://www.wikidata.org/entity/Q986,Eritrea,ER,إِرِتْرِيٌّ,ar,wdt:P1549
+http://www.wikidata.org/entity/Q986,Eritrea,ER,Eritrean,en,wdt:P1549

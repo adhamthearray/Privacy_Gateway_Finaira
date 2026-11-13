@@ -1,0 +1,237 @@
+entity_type,value,span_count,source_files
+OCCUPATION,المذيع,24,test.jsonl;train.jsonl;validation.jsonl
+OCCUPATION,المهندس,15,test.jsonl;train.jsonl
+OCCUPATION,الموظف,12,test.jsonl;train.jsonl
+OCCUPATION,مبرمج,11,test.jsonl;train.jsonl;validation.jsonl
+OCCUPATION,القاضي,9,test.jsonl;train.jsonl;validation.jsonl
+OCCUPATION,المحامي,9,test.jsonl;train.jsonl;validation.jsonl
+OCCUPATION,طالب,7,test.jsonl;train.jsonl
+OCCUPATION,قاضٍ,7,test.jsonl;train.jsonl
+OCCUPATION,الأستاذ الدكتور,6,test.jsonl;train.jsonl
+OCCUPATION,المبرمج,6,test.jsonl;train.jsonl
+OCCUPATION,طالبة,6,test.jsonl;train.jsonl
+OCCUPATION,Software Engineer,5,test.jsonl
+OCCUPATION,الصحفي,5,test.jsonl;train.jsonl
+OCCUPATION,جندي,5,test.jsonl;train.jsonl
+OCCUPATION,الاستاذ الدكتور,4,test.jsonl;train.jsonl
+OCCUPATION,الحلاق,4,test.jsonl;train.jsonl
+OCCUPATION,الخبير,4,train.jsonl
+OCCUPATION,القاضي الشرعي,4,test.jsonl;train.jsonl
+OCCUPATION,المخرج,4,test.jsonl;train.jsonl
+OCCUPATION,المذيعه,4,train.jsonl
+OCCUPATION,المعلم,4,test.jsonl;train.jsonl
+OCCUPATION,شرطي,4,test.jsonl;train.jsonl
+OCCUPATION,طبيب,4,train.jsonl
+OCCUPATION,طيار,4,train.jsonl;validation.jsonl
+OCCUPATION,فنانة,4,test.jsonl;train.jsonl
+OCCUPATION,كاتب,4,test.jsonl;train.jsonl
+OCCUPATION,محام مزاول,4,test.jsonl;train.jsonl
+OCCUPATION,محامي,4,train.jsonl
+OCCUPATION,محامٍ,4,train.jsonl;validation.jsonl
+OCCUPATION,مذيع,4,test.jsonl;train.jsonl
+OCCUPATION,Government Employee,3,train.jsonl
+OCCUPATION,البائع,3,train.jsonl
+OCCUPATION,الجندي,3,test.jsonl;train.jsonl
+OCCUPATION,الشاعر,3,test.jsonl;train.jsonl
+OCCUPATION,الشاعرة,3,train.jsonl
+OCCUPATION,الشرطي,3,test.jsonl;train.jsonl
+OCCUPATION,الطبيبة,3,test.jsonl;train.jsonl
+OCCUPATION,الفنان,3,train.jsonl
+OCCUPATION,المساح,3,train.jsonl;validation.jsonl
+OCCUPATION,طبيباً,3,test.jsonl;train.jsonl
+OCCUPATION,طبيبة,3,train.jsonl
+OCCUPATION,فريلانسر,3,test.jsonl;train.jsonl;validation.jsonl
+OCCUPATION,قاضي الشرع,3,train.jsonl
+OCCUPATION,قاضي حيفا الشرعي,3,train.jsonl
+OCCUPATION,مساح بلدية بيرزيت,3,train.jsonl
+OCCUPATION,مطور ويب,3,test.jsonl;train.jsonl
+OCCUPATION,مندوب مبيعات,3,train.jsonl
+OCCUPATION,مهندس,3,train.jsonl
+OCCUPATION,مهندس بلدية نابلس,3,test.jsonl;train.jsonl
+OCCUPATION,مهندس لواء رام الله,3,test.jsonl;validation.jsonl
+OCCUPATION,مهندس محافظة القدس,3,test.jsonl;train.jsonl
+OCCUPATION,الاستاز,2,train.jsonl
+OCCUPATION,الباحث,2,train.jsonl
+OCCUPATION,الراعي,2,train.jsonl
+OCCUPATION,الروائي,2,train.jsonl;validation.jsonl
+OCCUPATION,السائق,2,train.jsonl;validation.jsonl
+OCCUPATION,الشوفير,2,test.jsonl
+OCCUPATION,الطالب,2,train.jsonl
+OCCUPATION,الطبيب,2,train.jsonl;validation.jsonl
+OCCUPATION,العامل,2,train.jsonl
+OCCUPATION,المحامية,2,test.jsonl;train.jsonl
+OCCUPATION,الميكانيكي,2,train.jsonl
+OCCUPATION,باحثة,2,test.jsonl;train.jsonl
+OCCUPATION,راعي,2,train.jsonl
+OCCUPATION,رسام,2,test.jsonl;train.jsonl
+OCCUPATION,طبيبة أسنان,2,train.jsonl
+OCCUPATION,طوبرجي,2,train.jsonl
+OCCUPATION,عامل صحي,2,test.jsonl;train.jsonl
+OCCUPATION,فلاح,2,test.jsonl;validation.jsonl
+OCCUPATION,فنان,2,train.jsonl
+OCCUPATION,فني كهرباء,2,train.jsonl
+OCCUPATION,قاضي المحكمة الشرعية في حيفا,2,train.jsonl
+OCCUPATION,قاضي طبريا الشرعي,2,train.jsonl
+OCCUPATION,مبرمج node js,2,test.jsonl;train.jsonl
+OCCUPATION,مبرمج محترف,2,test.jsonl;validation.jsonl
+OCCUPATION,محلل بيانات,2,test.jsonl;train.jsonl
+OCCUPATION,مدرس,2,train.jsonl
+OCCUPATION,مدرسة,2,train.jsonl
+OCCUPATION,مصمم,2,train.jsonl
+OCCUPATION,مطور الووردبريس,2,train.jsonl
+OCCUPATION,مهندس الشؤون البلدية,2,train.jsonl;validation.jsonl
+OCCUPATION,مهندس برمجيات,2,test.jsonl
+OCCUPATION,مهندس شبكات,2,test.jsonl
+OCCUPATION,ميكانيكي,2,train.jsonl
+OCCUPATION,أخصائي سريري,1,train.jsonl
+OCCUPATION,أخصائي نفسي,1,test.jsonl
+OCCUPATION,أخصائياً نفسياً,1,train.jsonl
+OCCUPATION,أستاذ القانون التجاري,1,test.jsonl
+OCCUPATION,أستاذ علوم,1,train.jsonl
+OCCUPATION,أستاذ متقاعد لشؤون الأمن القومي,1,test.jsonl
+OCCUPATION,استاذ تاريخ,1,train.jsonl
+OCCUPATION,استاز,1,train.jsonl
+OCCUPATION,استشاري,1,validation.jsonl
+OCCUPATION,الأستاذة,1,train.jsonl
+OCCUPATION,الباحثة في الشأن اليمني في هيومن رايتس ووتش,1,validation.jsonl
+OCCUPATION,السائقين,1,train.jsonl
+OCCUPATION,الشاعر الفلسطيني,1,train.jsonl
+OCCUPATION,الصحافية,1,train.jsonl
+OCCUPATION,الصياد,1,train.jsonl
+OCCUPATION,الصيدلاني,1,test.jsonl
+OCCUPATION,الصيدلي,1,train.jsonl
+OCCUPATION,الطالبة,1,train.jsonl
+OCCUPATION,الطيارين الروس,1,train.jsonl
+OCCUPATION,الفنانة,1,train.jsonl
+OCCUPATION,الكاتب,1,test.jsonl
+OCCUPATION,الكاهن الأكبر,1,train.jsonl
+OCCUPATION,المخرج المسرحي,1,test.jsonl
+OCCUPATION,المدرب,1,train.jsonl
+OCCUPATION,المدقق الداخلي,1,test.jsonl
+OCCUPATION,المذيعة,1,train.jsonl
+OCCUPATION,المطور,1,train.jsonl
+OCCUPATION,المعلمة,1,train.jsonl
+OCCUPATION,الممرض,1,train.jsonl
+OCCUPATION,الممرض المسؤول عن الصيدلية,1,test.jsonl
+OCCUPATION,الممرضة,1,train.jsonl
+OCCUPATION,المنقذ,1,train.jsonl
+OCCUPATION,المهندس الإقليمي,1,train.jsonl
+OCCUPATION,المهندس الرئيسي,1,train.jsonl
+OCCUPATION,الموظفين,1,train.jsonl
+OCCUPATION,الناطور,1,test.jsonl
+OCCUPATION,بائع متجول,1,train.jsonl
+OCCUPATION,باحث بالمعهد الإيطالي للشؤون الدولية,1,test.jsonl
+OCCUPATION,باحثة سوريا في هيومن رايتس ووتش,1,validation.jsonl
+OCCUPATION,جندي اردني,1,train.jsonl
+OCCUPATION,جندي اسرائيلي,1,train.jsonl
+OCCUPATION,حلاق,1,test.jsonl
+OCCUPATION,خبير شؤون باسكت,1,test.jsonl
+OCCUPATION,خبيرا,1,train.jsonl
+OCCUPATION,سائق,1,train.jsonl
+OCCUPATION,سمسار اراضي,1,train.jsonl
+OCCUPATION,شوفير,1,train.jsonl
+OCCUPATION,شيف,1,test.jsonl
+OCCUPATION,صحافي,1,train.jsonl
+OCCUPATION,صحفي استقصائي متخصص في الأمن,1,train.jsonl
+OCCUPATION,صحفيا,1,train.jsonl
+OCCUPATION,صحفية,1,train.jsonl
+OCCUPATION,صياد,1,train.jsonl
+OCCUPATION,صياد بط,1,train.jsonl
+OCCUPATION,صيدلاني,1,test.jsonl
+OCCUPATION,طالب وطالبة,1,train.jsonl
+OCCUPATION,طالبا,1,test.jsonl
+OCCUPATION,طالبة جامعية,1,train.jsonl
+OCCUPATION,طبيب الموصل,1,train.jsonl
+OCCUPATION,طبيب جراح,1,train.jsonl
+OCCUPATION,طبيب نفسي,1,test.jsonl
+OCCUPATION,طبيبا,1,train.jsonl
+OCCUPATION,عامل,1,train.jsonl
+OCCUPATION,عامل إغاثة,1,test.jsonl
+OCCUPATION,عامل في كازية,1,train.jsonl
+OCCUPATION,عامل يمني مغترب,1,train.jsonl
+OCCUPATION,عاملة المساعدات الإنسانية الأمريكية,1,train.jsonl
+OCCUPATION,فلاح بيارة,1,train.jsonl
+OCCUPATION,فنان التشكيلي,1,train.jsonl
+OCCUPATION,فنانة التشكليلة,1,train.jsonl
+OCCUPATION,فنانة الفلسطينية,1,train.jsonl
+OCCUPATION,فني اللجنة,1,test.jsonl
+OCCUPATION,قاض,1,train.jsonl
+OCCUPATION,قاضي,1,train.jsonl
+OCCUPATION,قاضي التحقيق,1,train.jsonl
+OCCUPATION,قاضي الشرع في حيفا,1,test.jsonl
+OCCUPATION,قاضي القدس الشريف,1,test.jsonl
+OCCUPATION,قاضي القضاة,1,train.jsonl
+OCCUPATION,قاضي حيفا,1,validation.jsonl
+OCCUPATION,قاضي رام الله الشرعي,1,train.jsonl
+OCCUPATION,قاضي صلح رام الله,1,train.jsonl
+OCCUPATION,قاضي قضاة المحكمة الشرعية في رام الله,1,train.jsonl
+OCCUPATION,قاضي قضاة غزة,1,train.jsonl
+OCCUPATION,قاضي قضاة فلسطين,1,validation.jsonl
+OCCUPATION,قاضي محكمة الصلح,1,train.jsonl
+OCCUPATION,قاضي محكمة حيفا الشرعية,1,test.jsonl
+OCCUPATION,قاضي نينوى,1,train.jsonl
+OCCUPATION,قاضي يافا,1,train.jsonl
+OCCUPATION,قاضٍ بمحكمة مكافحة الإرهاب في نينوى,1,validation.jsonl
+OCCUPATION,كاتب المحكمة,1,train.jsonl
+OCCUPATION,كاتب المملكة السعودية,1,train.jsonl
+OCCUPATION,كاتبا للمجلس المحلي في البيرة,1,test.jsonl
+OCCUPATION,كاشير,1,test.jsonl
+OCCUPATION,لاعب,1,test.jsonl
+OCCUPATION,مؤلف كتاب,1,validation.jsonl
+OCCUPATION,مؤلفه,1,train.jsonl
+OCCUPATION,مبرمج مواقع,1,test.jsonl
+OCCUPATION,مبرمجة,1,test.jsonl
+OCCUPATION,مترجم,1,train.jsonl
+OCCUPATION,مترجم للغة العربية,1,train.jsonl
+OCCUPATION,محاسب بلدية نابلس,1,train.jsonl
+OCCUPATION,محامي بلدية مدينة البيرة,1,test.jsonl
+OCCUPATION,محامية,1,train.jsonl
+OCCUPATION,محامية يافاوية,1,train.jsonl
+OCCUPATION,مداوي,1,test.jsonl
+OCCUPATION,مدرس مساعد,1,train.jsonl
+OCCUPATION,مدرس مساعد لشؤون الأمن القومي بكلية الدراسات العليا البحرية,1,test.jsonl
+OCCUPATION,مدقق حسابات قانوني,1,train.jsonl
+OCCUPATION,مذيعه,1,train.jsonl
+OCCUPATION,مسوق,1,train.jsonl
+OCCUPATION,مصمم الشعارات,1,test.jsonl
+OCCUPATION,مصمم الويب المخلوق,1,train.jsonl
+OCCUPATION,مصمم تجربة,1,validation.jsonl
+OCCUPATION,مصمم جرافيك,1,test.jsonl
+OCCUPATION,مصور,1,test.jsonl
+OCCUPATION,مصور دائرة الاّثار,1,train.jsonl
+OCCUPATION,مطور,1,test.jsonl
+OCCUPATION,مطور البرمجيات,1,train.jsonl
+OCCUPATION,مطور المواقع,1,train.jsonl
+OCCUPATION,مطور الهاتف المحمول,1,train.jsonl
+OCCUPATION,مطور برامج,1,train.jsonl
+OCCUPATION,مطور برامج وتطبيقات,1,test.jsonl
+OCCUPATION,مطور برامج ويب,1,train.jsonl
+OCCUPATION,مطور برمجيات,1,train.jsonl
+OCCUPATION,مطور تطبيقات,1,validation.jsonl
+OCCUPATION,مطور تطبيقات اندرويد,1,train.jsonl
+OCCUPATION,مطور تطبيقات سطح مكتب,1,train.jsonl
+OCCUPATION,مطور مواقع,1,train.jsonl
+OCCUPATION,مطور واجهات أمامية,1,train.jsonl
+OCCUPATION,مطور ووربريس,1,train.jsonl
+OCCUPATION,مطور ويب متكامل,1,train.jsonl
+OCCUPATION,مطورة تطبيقات الأندرويد,1,test.jsonl
+OCCUPATION,مطورين,1,test.jsonl
+OCCUPATION,معلمه,1,train.jsonl
+OCCUPATION,ممرض,1,train.jsonl
+OCCUPATION,منقذ,1,train.jsonl
+OCCUPATION,مهندس الأشغال,1,train.jsonl
+OCCUPATION,مهندس البرمجة,1,train.jsonl
+OCCUPATION,مهندس البرمجيات,1,train.jsonl
+OCCUPATION,مهندس البلدية,1,validation.jsonl
+OCCUPATION,مهندس برمجة,1,train.jsonl
+OCCUPATION,مهندس بلدية مدينة البيرة,1,test.jsonl
+OCCUPATION,مهندس تنظيم المدن,1,train.jsonl
+OCCUPATION,مهندس كهرباء,1,train.jsonl
+OCCUPATION,مهندس مدينة نابلس,1,train.jsonl
+OCCUPATION,موظف الأمن,1,test.jsonl
+OCCUPATION,موظف الكهرباء,1,train.jsonl
+OCCUPATION,موظف تسجيل الأراضي,1,train.jsonl
+OCCUPATION,موظفاً,1,train.jsonl
+OCCUPATION,ناطور,1,validation.jsonl
+OCCUPATION,هكر,1,test.jsonl
+OCCUPATION,هكر ذو قبعة بيضاء,1,test.jsonl

@@ -54,9 +54,9 @@ The legacy M49 tables are historical compatibility data only. Active NATIONALITY
 |---|---|---|---:|
 | `import_batches` | `batch_id` | import status audit | 1 |
 | `natural_earth_countries` | `natural_earth_id` | `source_id`; indexes on `wikidata_qid`, `iso_a2` | 258 |
-| `nationality_countries` | `country_qid` | `source_id`; index on `iso2` | 233 |
-| `nationality_aliases_v2` | `alias_key` | `country_qid`, `source_id`; indexes on normalized alias/language | 848 |
-| `nationality_geo_joins` | `country_qid` | `country_qid`, `natural_earth_id`, `source_id`; status indexes | 233 |
+| `nationality_countries` | `country_qid` | `source_id`; index on `iso2` | 239 |
+| `nationality_aliases_v2` | `alias_key` | `country_qid`, `source_id`; indexes on normalized alias/language | 857 |
+| `nationality_geo_joins` | `country_qid` | `country_qid`, `natural_earth_id`, `source_id`; status indexes | 239 |
 | `banks` | `bank_id` | `source_id`; finance-model index | 37 |
 | `bank_aliases` | `alias_id` | `bank_id`, `source_id`; normalized alias/language indexes | 86 |
 | `bank_evidence` | `evidence_id` | `bank_id`, `source_id` | 24 |
@@ -111,7 +111,7 @@ erDiagram
 
 | Source | Destination | Authority/status handling |
 |---|---|---|
-| `inputs/nationality/wikidata_nationality_aliases.csv` | `nationality_countries`, `nationality_aliases_v2` | 848 aliases, QID extracted from URI, Arabic/English preserved, CC0 provenance |
+| Supplied handoff aliases plus `data/sources/wikidata/wikidata_nationality_aliases_ar_en_v2.csv` | `nationality_countries`, `nationality_aliases_v2` | 857 preserved/updated Arabic/English Wikidata `P1549` aliases, QIDs extracted from URI, CC0 provenance |
 | Official Natural Earth Admin-0 1:10m v5.1.1 ZIP | `natural_earth_countries` and derived CSV | 258 DBF rows; fields verified before conversion; public-domain terms |
 | QID index CSV | source checksum/audit input | consistency audit only; never treated as Natural Earth |
 | `banks_FINAL_evidence.csv` | `banks`, regenerated `bank_candidates` | authoritative 37-row master; blank Arabic names remain null |
@@ -140,9 +140,12 @@ flowchart LR
 
 The runtime tries `WIKIDATAID` first. ISO A2 is used only when the QID is absent and exactly one Natural Earth row is available. Current audit: 233 QIDs; 223 `MATCHED_QID`, 2 `MATCHED_ISO`, 1 `MISMATCH` (Taiwan ISO representation), and 7 unresolved edge cases. No unresolved row receives a guessed region. See [reports/nationality_natural_earth_join_audit.csv](../reports/nationality_natural_earth_join_audit.csv).
 
+`COUNTRY` is a separate runtime path. It resolves Natural Earth `name_ar`, `name_en`, or validated `ISO_A2` directly and returns Natural Earth exact, subregion, UN region, continent, and suppression candidates. It never treats a country name as a nationality alias. Arabic regional labels remain unavailable unless Natural Earth supplies a verified Arabic field.
+
 Examples:
 
 - `NATIONALITY`, English `Egyptian`: exact `Egyptian` (local-only), `Northern Africa`, `Africa`, suppression; provenance includes Q79, Natural Earth ID, checksum, and `MATCHED_QID`.
+- `COUNTRY`, English `Egypt`: exact `Egypt` (local-only), Natural Earth subregion/region/continent descriptors, suppression.
 - `NATIONALITY`, Arabic `مصرية`: exact Arabic source alias; Natural Earth has no verified Arabic subregion/region descriptor in the extracted required fields, so those two labels are explicitly unavailable rather than invented.
 
 ## Runtime lookup sequence
@@ -235,14 +238,17 @@ py -X utf8 -m finaira_generalization.cli show-schema
 py -X utf8 -m finaira_generalization.cli validate-levels
 py -X utf8 -m finaira_generalization.cli candidate-coverage
 py -X utf8 -m finaira_generalization.cli candidates --type NATIONALITY --value "Egyptian" --language en
+py -X utf8 -m finaira_generalization.cli candidates --type COUNTRY --value "Egypt" --language en
 py -X utf8 -m finaira_generalization.cli candidates --type BANK --value "Banque Misr" --language en
+py scripts/refresh_wikidata_nationalities.py
+py scripts/export_ner_generalization_values.py --dataset C:\path\to\finaira_ner_v1\finaira_ner_v1
 py -X utf8 -m pytest -q
 ```
 
 ## Counts, verification, and unresolved data
 
-- Natural Earth: 258 rows, source version 5.1.1; 233 handoff QIDs; 223 QID matches, 2 guarded ISO matches, 1 mismatch, 7 unresolved.
-- Nationality aliases: 848 rows, 518 Arabic and 330 English in the handoff; exact source aliases are preserved even when normalized forms collide.
+- Natural Earth: 258 rows, source version 5.1.1; 239 nationality QIDs retained; 230 QID matches, 2 guarded ISO matches, and 7 unresolved legacy edge cases. Country lookup uses all 258 Natural Earth rows.
+- Nationality aliases: 857 preserved/updated Arabic and English `P1549` rows across 230 Natural Earth countries. The coverage export records 28 Natural Earth records with no verified Arabic/English demonym; no form is invented for them.
 - Banks: 37 total; 24 conventional, 9 mixed, 4 Islamic; 24 evidence rows across 13 bank IDs; 185 regenerated candidates; 37/37 official Arabic master names blank. Conventional labels retain `EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF` limitations.
 - Organizations: 312 QIDs; 360 industry links; 73 concept mappings; 63 bilingual source categories; 48 missing Arabic organization names; all identities pending. No organization is production-verified by this import.
 - Government: 12 seed entities, 24 aliases, 17 categories, 63 review-catalog rows; all 12 identity rows remain `REVIEW_REQUIRED`, and all specific mappings remain review-only.

@@ -15,14 +15,26 @@ def scalar(sql):
 
 
 def test_natural_earth_join_and_runtime_source():
-    assert scalar("select count(*) from nationality_aliases_v2") == 848
-    assert scalar("select count(*) from nationality_countries") == 233
+    assert scalar("select count(*) from nationality_aliases_v2") == 857
+    assert scalar("select count(*) from nationality_countries") == 239
     assert scalar("select count(*) from natural_earth_countries") == 258
-    assert scalar("select count(*) from nationality_geo_joins where join_status='MATCHED_QID'") == 223
+    assert scalar("select count(*) from nationality_geo_joins where join_status='MATCHED_QID'") == 230
     result = GeneralizationDB(DB).get_candidates("NATIONALITY", "Egyptian", "en")
     assert result["resolution_status"] == "MATCHED"
     assert all(candidate["taxonomy"] == "NATURAL_EARTH" for candidate in result["candidates"])
     assert result["candidates"][1]["representation"] == "Northern Africa"
+
+
+def test_country_resolves_directly_from_natural_earth():
+    result = GeneralizationDB(DB).get_candidates("COUNTRY", "Egypt", "en")
+    assert result["resolution_status"] == "MATCHED"
+    assert result["canonical_id"] == "EG"
+    assert [candidate["level_code"] for candidate in result["candidates"]] == ["EXACT", "SUBREGION", "REGION_UN", "CONTINENT", "SUPPRESSED"]
+    assert result["candidates"][0]["is_local_only"] is True
+    assert result["candidates"][1]["representation"] == "Northern Africa"
+    unknown = GeneralizationDB(DB).get_candidates("COUNTRY", "not-a-country", "en")
+    assert unknown["resolution_status"] == "NOT_FOUND"
+    assert [candidate["level_code"] for candidate in unknown["candidates"]] == ["SUPPRESSED"]
 
 
 def test_bank_authority_and_evidence_flags():
