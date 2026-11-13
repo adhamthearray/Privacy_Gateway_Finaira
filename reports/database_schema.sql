@@ -424,6 +424,22 @@ CREATE TABLE nationality_alias_country_refs (
 	FOREIGN KEY(iso2) REFERENCES countries (iso2)
 );
 
+-- table: nationality_alias_review_provenance
+CREATE TABLE nationality_alias_review_provenance (
+	provenance_id VARCHAR(120) NOT NULL,
+	alias_key VARCHAR(64) NOT NULL,
+	corpus_value TEXT NOT NULL,
+	base_alias TEXT NOT NULL,
+	derivation_rule VARCHAR(120) NOT NULL,
+	evidence_reference TEXT NOT NULL,
+	review_status VARCHAR(40) NOT NULL,
+	source_id INTEGER NOT NULL,
+	PRIMARY KEY (provenance_id),
+	CONSTRAINT uq_nationality_review_provenance UNIQUE (alias_key, base_alias, derivation_rule),
+	FOREIGN KEY(alias_key) REFERENCES nationality_aliases_v2 (alias_key),
+	FOREIGN KEY(source_id) REFERENCES data_sources (source_id)
+);
+
 -- table: nationality_aliases
 CREATE TABLE nationality_aliases (
 	alias_id INTEGER NOT NULL, 
@@ -744,6 +760,9 @@ CREATE INDEX ix_m49_regions_parent_code ON m49_regions (parent_code);
 
 -- index: ix_nationality_alias_country_refs_iso2
 CREATE INDEX ix_nationality_alias_country_refs_iso2 ON nationality_alias_country_refs (iso2);
+
+-- index: ix_nationality_alias_review_provenance_alias_key
+CREATE INDEX ix_nationality_alias_review_provenance_alias_key ON nationality_alias_review_provenance (alias_key);
 
 -- index: ix_nationality_aliases_country_iso2
 CREATE INDEX ix_nationality_aliases_country_iso2 ON nationality_aliases (country_iso2);

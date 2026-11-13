@@ -8,7 +8,7 @@ Categories: `MATCHED_OR_VERIFIED` is production source/configuration coverage; `
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | BANK | 73 | 869 | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 73 (100.00%) | 0 (0.00%) | 0 |
 | COUNTRY | 229 | 3,009 | 143 (62.45%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 86 (37.55%) | 0 |
-| NATIONALITY | 115 | 607 | 41 (35.65%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 74 (64.35%) | 0 |
+| NATIONALITY | 115 | 607 | 100 (86.96%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 15 (13.04%) | 0 |
 | CORPORATION | 1,516 | 6,083 | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 1,516 (100.00%) | 0 (0.00%) | 0 |
 | ORGANIZATION | 0 | 0 | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 |
 | UNIVERSITY | 0 | 0 | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 |
@@ -66,19 +66,19 @@ Categories: `MATCHED_OR_VERIFIED` is production source/configuration coverage; `
 |---|---:|---|---|---|
 | الفلسطيني | 32 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
 | الفلسطينيين | 31 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
-| السوريين | 17 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
-| اللبناني | 13 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
 | الفلسطينية | 11 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
-| اليمنيين | 11 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
-| الفلسطينيون | 9 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
 | فلسطينيين | 7 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
-| الإسرائيليين | 6 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
-| العراقيين | 6 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
-| عراقيين | 6 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
-| المصريين | 5 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
-| الأردنيين | 5 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
-| الليبيين | 5 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
-| بريطانيين | 4 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
+| الروسية | 2 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
+| اللبنانيي | 2 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
+| يبيين | 2 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
+| الأميركي | 2 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
+| لجيكيين | 1 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
+| الأميركيين | 1 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
+| الفلسطينيه | 1 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
+| الإريتريين | 1 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
+| اميركي | 1 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
+| لبنانيي | 1 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
+| أميركي | 1 | SUPPRESSION_ONLY | UNRECOGNIZED_NATIONALITY | add verified Wikidata P1549 demonym if available |
 
 ### CORPORATION
 

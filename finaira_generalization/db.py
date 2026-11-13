@@ -265,6 +265,19 @@ class NationalityAliasV2(Base):
     verification_status: Mapped[str] = mapped_column(String(40), default="SOURCE_VERIFIED")
 
 
+class NationalityAliasReviewProvenance(Base):
+    __tablename__ = "nationality_alias_review_provenance"
+    provenance_id: Mapped[str] = mapped_column(String(120), primary_key=True)
+    alias_key: Mapped[str] = mapped_column(ForeignKey("nationality_aliases_v2.alias_key"), index=True)
+    corpus_value: Mapped[str] = mapped_column(Text)
+    base_alias: Mapped[str] = mapped_column(Text)
+    derivation_rule: Mapped[str] = mapped_column(String(120))
+    evidence_reference: Mapped[str] = mapped_column(Text)
+    review_status: Mapped[str] = mapped_column(String(40))
+    source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
+    __table_args__ = (UniqueConstraint("alias_key", "base_alias", "derivation_rule", name="uq_nationality_review_provenance"),)
+
+
 class NationalityGeoJoin(Base):
     __tablename__ = "nationality_geo_joins"
     country_qid: Mapped[str] = mapped_column(ForeignKey("nationality_countries.country_qid"), primary_key=True)

@@ -187,7 +187,7 @@ Rows: 248
 
 ## `data_sources`
 
-Rows: 24
+Rows: 25
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|
@@ -477,6 +477,23 @@ Rows: 833
 
 Indexes: ix_nationality_alias_country_refs_iso2
 
+## `nationality_alias_review_provenance`
+
+Rows: 67
+
+| Column | Type | Key | Nullable | References | Purpose |
+|---|---|---|---|---|---|
+| provenance_id | VARCHAR(120) | PK | NO |  | Persisted Finaira reference data or layered metadata for `nationality_alias_review_provenance`. |
+| alias_key | VARCHAR(64) |  | NO | nationality_aliases_v2.alias_key | Persisted Finaira reference data or layered metadata for `nationality_alias_review_provenance`. |
+| corpus_value | TEXT |  | NO |  | Persisted Finaira reference data or layered metadata for `nationality_alias_review_provenance`. |
+| base_alias | TEXT |  | NO |  | Persisted Finaira reference data or layered metadata for `nationality_alias_review_provenance`. |
+| derivation_rule | VARCHAR(120) |  | NO |  | Persisted Finaira reference data or layered metadata for `nationality_alias_review_provenance`. |
+| evidence_reference | TEXT |  | NO |  | Persisted Finaira reference data or layered metadata for `nationality_alias_review_provenance`. |
+| review_status | VARCHAR(40) |  | NO |  | Persisted Finaira reference data or layered metadata for `nationality_alias_review_provenance`. |
+| source_id | INTEGER |  | NO | data_sources.source_id | Persisted Finaira reference data or layered metadata for `nationality_alias_review_provenance`. |
+
+Indexes: ix_nationality_alias_review_provenance_alias_key
+
 ## `nationality_aliases`
 
 Rows: 844
@@ -495,7 +512,7 @@ Indexes: ix_nationality_aliases_country_iso2, ix_nationality_aliases_language, i
 
 ## `nationality_aliases_v2`
 
-Rows: 857
+Rows: 916
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|
@@ -572,7 +589,7 @@ Indexes: ix_natural_earth_countries_iso_a2, ix_natural_earth_countries_wikidata_
 
 ## `natural_earth_country_aliases`
 
-Rows: 2181
+Rows: 2174
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|

@@ -38,6 +38,7 @@ from .db import (
     NaturalEarthCountryAlias,
     NaturalEarthCountry,
     NationalityAliasV2,
+    NationalityAliasReviewProvenance,
     NationalityCountry,
     NationalityGeoJoin,
     Organization,
@@ -164,6 +165,7 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
     # the supplied aliases plus the refreshed P1549 response. Rebuild only
     # these source-shaped rows so repeated refreshes cannot retain aliases
     # that disappeared from the snapshot or accumulate duplicates.
+    session.execute(delete(NationalityAliasReviewProvenance))
     session.execute(delete(NationalityAliasV2))
     session.execute(delete(NationalityGeoJoin))
     session.execute(delete(NationalityCountry))
@@ -277,7 +279,8 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
             {"country_qid": qid, "iso2": iso, "alias_text": alias, "normalized_alias": normalize(alias, lang), "language": lang, "source_id": alias_source.source_id, "verification_status": "SOURCE_VERIFIED"},
         )
         alias_count += 1
-    reviewed_variant_count = 0
+    reviewed_variant_keys = set()
+    reviewed_provenance_count = 0
     if variant_source is not None:
         for variant in _read_csv(NATIONALITY_VARIANT_REVIEW_CSV):
             if (_text(variant.get("review_decision")) or "").upper() != "APPROVED":
@@ -290,6 +293,9 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
             iso = (_text(variant.get("candidate_iso2")) or "").upper()
             if not qid or qid not in by_qid_input or lang not in {"ar", "en"} or not alias:
                 continue
+            natural_iso = (_text(by_qid.get(qid, {}).get("iso_a2")) or "").upper() if by_qid.get(qid) else ""
+            if not iso or iso == "-99":
+                iso = natural_iso or by_qid_input[qid][0]
             key = _stable(qid, iso, lang, normalize(alias, lang), alias)
             _put(
                 session,
@@ -297,13 +303,23 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
                 key,
                 {"country_qid": qid, "iso2": iso or by_qid_input[qid][0], "alias_text": alias, "normalized_alias": normalize(alias, lang), "language": lang, "source_id": variant_source.source_id, "verification_status": "REVIEWED"},
             )
-            reviewed_variant_count += 1
+            reviewed_variant_keys.add(key)
+            base_alias = _text(variant.get("base_alias")) or alias
+            derivation_rule = _text(variant.get("derivation_rule")) or "reviewed"
+            provenance_key = _stable("nationality-review-provenance", key, base_alias, derivation_rule)
+            _put(
+                session,
+                NationalityAliasReviewProvenance,
+                provenance_key,
+                {"alias_key": key, "corpus_value": alias, "base_alias": base_alias, "derivation_rule": derivation_rule, "evidence_reference": _text(variant.get("evidence_reference")) or "", "review_status": "REVIEWED", "source_id": variant_source.source_id},
+            )
+            reviewed_provenance_count += 1
     report_dir.mkdir(parents=True, exist_ok=True)
     with (report_dir / "nationality_natural_earth_join_audit.csv").open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(audit_rows[0]))
         writer.writeheader()
         writer.writerows(audit_rows)
-    metrics.update({"nationality_aliases_v2": alias_count, "nationality_reviewed_variants": reviewed_variant_count, "natural_earth_country_aliases": country_alias_count, "nationality_distinct_qids": len(by_qid_input), "natural_earth_rows": len(ne_rows), "natural_earth_join_status": dict(status_counts)})
+    metrics.update({"nationality_aliases_v2": alias_count, "nationality_reviewed_variants": len(reviewed_variant_keys), "nationality_review_provenance": reviewed_provenance_count, "natural_earth_country_aliases": country_alias_count, "nationality_distinct_qids": len(by_qid_input), "natural_earth_rows": len(ne_rows), "natural_earth_join_status": dict(status_counts)})
 
 
 def _import_banks(session: Session, root: Path, metrics: dict, report_dir: Path):

@@ -56,7 +56,8 @@ The legacy M49 tables are historical compatibility data only. Active NATIONALITY
 | `natural_earth_countries` | `natural_earth_id` | `source_id`; indexes on `wikidata_qid`, `iso_a2` | 258 |
 | `natural_earth_country_aliases` | `alias_id` | `natural_earth_id`, `source_id`; normalized alias/language indexes | 2,181 |
 | `nationality_countries` | `country_qid` | `source_id`; index on `iso2` | 239 |
-| `nationality_aliases_v2` | `alias_key` | `country_qid`, `source_id`; indexes on normalized alias/language | 857 |
+| `nationality_aliases_v2` | `alias_key` | `country_qid`, `source_id`; indexes on normalized alias/language | 916 (857 source-verified + 59 reviewed) |
+| `nationality_alias_review_provenance` | `provenance_id` | `alias_key`, `source_id`; unique alias/base/rule provenance | 67 |
 | `nationality_geo_joins` | `country_qid` | `country_qid`, `natural_earth_id`, `source_id`; status indexes | 239 |
 | `banks` | `bank_id` | `source_id`; finance-model index | 37 |
 | `bank_aliases` | `alias_id` | `bank_id`, `source_id`; normalized alias/language indexes | 86 |
@@ -85,8 +86,10 @@ erDiagram
   DATA_SOURCES ||--o{ NATURAL_EARTH_COUNTRIES : sources
   DATA_SOURCES ||--o{ NATIONALITY_COUNTRIES : sources
   DATA_SOURCES ||--o{ NATIONALITY_ALIASES_V2 : sources
+  DATA_SOURCES ||--o{ NATIONALITY_ALIAS_REVIEW_PROVENANCE : sources
   DATA_SOURCES ||--o{ NATIONALITY_GEO_JOINS : sources
   NATIONALITY_COUNTRIES ||--o{ NATIONALITY_ALIASES_V2 : identifies
+  NATIONALITY_ALIASES_V2 ||--o{ NATIONALITY_ALIAS_REVIEW_PROVENANCE : explains
   NATIONALITY_COUNTRIES ||--|| NATIONALITY_GEO_JOINS : audits
   NATURAL_EARTH_COUNTRIES ||--o{ NATIONALITY_GEO_JOINS : joins
   NATURAL_EARTH_COUNTRIES ||--o{ NATURAL_EARTH_COUNTRY_ALIASES : has
@@ -113,7 +116,8 @@ erDiagram
 
 | Source | Destination | Authority/status handling |
 |---|---|---|
-| Supplied handoff aliases plus `data/sources/wikidata/wikidata_nationality_aliases_ar_en_v2.csv` | `nationality_countries`, `nationality_aliases_v2` | 857 preserved/updated Arabic/English Wikidata `P1549` aliases, QIDs extracted from URI, CC0 provenance |
+| Supplied handoff aliases plus `data/sources/wikidata/wikidata_nationality_aliases_ar_en_v2.csv` | `nationality_countries`, `nationality_aliases_v2` | 857 source-verified Arabic/English Wikidata `P1549` aliases, QIDs extracted from URI, CC0 provenance |
+| `reports/nationality_improvement/nationality_variant_review_queue.csv` | `nationality_aliases_v2`, `nationality_alias_review_provenance` | 59 reviewed aliases from 67 approved derivation rows; pending/rejected rows remain disabled |
 | Official Natural Earth Admin-0 1:10m v5.1.1 ZIP | `natural_earth_countries` and derived CSV | 258 DBF rows; fields verified before conversion; public-domain terms |
 | Wikidata labels/aliases API export | `natural_earth_country_aliases` | 2,174 deduplicated Arabic/English aliases linked by Wikidata QID; source-verified and enabled for COUNTRY only |
 | Approved nationality variant review queue | `nationality_aliases_v2` | Only rows marked `APPROVED` with non-empty evidence are imported as `REVIEWED`; pending rows remain outside runtime |
@@ -253,7 +257,7 @@ py -X utf8 -m pytest -q
 ## Counts, verification, and unresolved data
 
 - Natural Earth: 258 rows, source version 5.1.1; 239 nationality QIDs retained; 230 QID matches, 2 guarded ISO matches, and 7 unresolved legacy edge cases. Country lookup uses all 258 Natural Earth rows.
-- Nationality aliases: 857 preserved/updated Arabic and English `P1549` rows across 230 Natural Earth countries. The coverage export records 28 Natural Earth records with no verified Arabic/English demonym; no form is invented for them. COUNTRY has 2,181 deduplicated Wikidata label/alias rows across the Natural Earth source.
+- Nationality aliases: 857 source-verified Arabic and English `P1549` rows plus 59 reviewed Arabic variants across validated QIDs. The coverage export records 28 Natural Earth records with no verified Arabic/English demonym; no form is invented for them. The review provenance table preserves 67 derivation/evidence rows for 59 enabled aliases. COUNTRY has 2,174 deduplicated Wikidata label/alias rows across the Natural Earth source.
 - Banks: 37 total; 24 conventional, 9 mixed, 4 Islamic; 24 evidence rows across 13 bank IDs; 185 regenerated candidates; 37/37 official Arabic master names blank. Conventional labels retain `EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF` limitations.
 - Organizations: 312 QIDs; 360 industry links; 73 concept mappings; 63 bilingual source categories; 48 missing Arabic organization names; all identities pending. No organization is production-verified by this import.
 - Government: 12 seed entities, 24 aliases, 17 categories, 63 review-catalog rows; all 12 identity rows remain `REVIEW_REQUIRED`, and all specific mappings remain review-only.
@@ -267,6 +271,8 @@ Provisional or unresolved: Natural Earth mismatches/unmatched territories, all b
 
 Before the current coverage-improvement changes: `py -m pytest -q` → **21 passed in 17.12s**.
 
-After changes: `py -X utf8 -m pytest -q` → **24 passed in 16.39s**. The final suite includes the existing pipeline tests, country alias lookup, Natural Earth regression assertions, handoff counts, bank evidence/classification, organization approval gating, government review gating, bilingual/unknown behavior, deterministic date format/ambiguity checks, FK/integrity checks, unsupported-type gating, and a second-import idempotence check.
+After coverage changes: `py -X utf8 -m pytest -q` → **26 passed in 72.19s**.
+
+After nationality adjudication: `py -X utf8 -m pytest -q` → **27 passed in 69.62s**. The final suite includes source/QID/derivation adjudication, reviewed-alias gating, Arabic/English nationality lookup, corrected Palestine QID handling, duplicate provenance, malformed/pending cases, FK/integrity checks, and two consecutive idempotent imports.
 
 This layer does not implement JEV-U, JEV-P, privacy scoring, utility ranking, policy/disclosure selection, external LLM or cloud calls, or a new pseudonymization vault. The existing `finaira` privacy pipeline remains separate and unchanged.

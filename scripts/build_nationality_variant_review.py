@@ -63,11 +63,13 @@ def main() -> None:
         missing = [row for row in csv.DictReader(handle) if row["coverage_category"] != "MATCHED_OR_VERIFIED"]
 
     prior_reviews = {}
+    prior_rows_by_key = {}
     if args.output.exists():
         with args.output.open(encoding="utf-8", newline="") as handle:
             for row in csv.DictReader(handle):
                 key = (row.get("corpus_value", ""), row.get("candidate_qid", ""), row.get("derivation_rule", ""))
                 prior_reviews[key] = (row.get("review_decision", "PENDING"), row.get("evidence_reference", ""))
+                prior_rows_by_key[key] = row
 
     aliases: dict[tuple[str, str], list[NationalityAliasV2]] = defaultdict(list)
     with Session(make_engine(args.db)) as session:
@@ -87,6 +89,7 @@ def main() -> None:
         "suggestion_status",
         "review_decision",
         "evidence_reference",
+        "review_notes",
     ]
     output_rows = []
     for row in missing:
@@ -101,7 +104,8 @@ def main() -> None:
                 suggestions.append((candidate, form, rule or "exact-normalized-source-alias"))
 
         if not suggestions:
-            decision, evidence = prior_reviews.get((value, "", "NO_UNIQUE_SOURCE_BACKED_BASE_ALIAS"), ("PENDING", ""))
+            key = (value, "", "NO_UNIQUE_SOURCE_BACKED_BASE_ALIAS")
+            decision, evidence = prior_reviews.get(key, ("PENDING", ""))
             output_rows.append({
                 "corpus_value": value,
                 "span_count": row["span_count"],
@@ -114,6 +118,7 @@ def main() -> None:
                 "suggestion_status": "NO_SUGGESTION",
                 "review_decision": decision,
                 "evidence_reference": evidence,
+                "review_notes": prior_rows_by_key.get(key, {}).get("review_notes", ""),
             })
             continue
 
@@ -137,7 +142,16 @@ def main() -> None:
                 "suggestion_status": "REVIEW_ONLY",
                 "review_decision": decision,
                 "evidence_reference": evidence,
+                "review_notes": prior_rows_by_key.get(review_key, {}).get("review_notes", ""),
             })
+
+    generated_keys = {(row["corpus_value"], row["candidate_qid"], row["derivation_rule"]) for row in output_rows}
+    # Preserve independently adjudicated/corrected rows such as a repaired
+    # QID proposal even when a fresh suggestion build no longer recreates it.
+    for key, prior_row in prior_rows_by_key.items():
+        if key not in generated_keys:
+            preserved = {field: prior_row.get(field, "") for field in fields}
+            output_rows.append(preserved)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("w", encoding="utf-8", newline="") as handle:

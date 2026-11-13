@@ -293,6 +293,16 @@ erDiagram
         INTEGER alias_id PK
         VARCHAR(2) iso2
     }
+    nationality_alias_review_provenance {
+        VARCHAR(120) provenance_id PK
+        VARCHAR(64) alias_key
+        TEXT corpus_value
+        TEXT base_alias
+        VARCHAR(120) derivation_rule
+        TEXT evidence_reference
+        VARCHAR(40) review_status
+        INTEGER source_id
+    }
     nationality_aliases {
         INTEGER alias_id PK
         TEXT alias_text
@@ -474,6 +484,8 @@ erDiagram
     m49_regions ||--o{ m49_regions : "parent_code"
     nationality_aliases ||--o{ nationality_alias_country_refs : "alias_id"
     countries ||--o{ nationality_alias_country_refs : "iso2"
+    nationality_aliases_v2 ||--o{ nationality_alias_review_provenance : "alias_key"
+    data_sources ||--o{ nationality_alias_review_provenance : "source_id"
     data_sources ||--o{ nationality_aliases : "source_id"
     nationality_countries ||--o{ nationality_aliases_v2 : "country_qid"
     data_sources ||--o{ nationality_aliases_v2 : "source_id"
