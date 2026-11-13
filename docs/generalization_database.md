@@ -242,6 +242,7 @@ py -X utf8 -m finaira_generalization.cli candidates --type COUNTRY --value "Egyp
 py -X utf8 -m finaira_generalization.cli candidates --type BANK --value "Banque Misr" --language en
 py scripts/refresh_wikidata_nationalities.py
 py scripts/export_ner_generalization_values.py --dataset C:\path\to\finaira_ner_v1\finaira_ner_v1
+py scripts/audit_ner_generalization_coverage.py --dataset C:\path\to\finaira_ner_v1\finaira_ner_v1 --db data\processed\finaira_generalization.db
 py -X utf8 -m pytest -q
 ```
 
