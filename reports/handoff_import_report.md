@@ -7,6 +7,7 @@
 - **nationality_reviewed_variants**: 59
 - **nationality_review_provenance**: 67
 - **natural_earth_country_aliases**: 2233
+- **natural_earth_reviewed_country_aliases**: 31
 - **nationality_distinct_qids**: 239
 - **natural_earth_rows**: 258
 - **natural_earth_join_status**: {'MATCHED_QID': 230, 'UNMATCHED': 7, 'MATCHED_ISO': 2}

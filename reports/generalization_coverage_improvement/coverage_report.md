@@ -7,7 +7,7 @@ Categories: `MATCHED_OR_VERIFIED` is production source/configuration coverage; `
 | Entity | Unique | Spans | Matched/verified | Review | Ambiguous | Generic fallback | Suppression/invalid | Out of scope |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | BANK | 73 | 869 | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 73 (100.00%) | 0 (0.00%) | 0 |
-| COUNTRY | 229 | 3,009 | 143 (62.45%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 86 (37.55%) | 0 |
+| COUNTRY | 229 | 3,009 | 174 (75.98%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 55 (24.02%) | 0 |
 | NATIONALITY | 115 | 607 | 100 (86.96%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 15 (13.04%) | 0 |
 | CORPORATION | 1,516 | 6,083 | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 1,516 (100.00%) | 0 (0.00%) | 0 |
 | ORGANIZATION | 0 | 0 | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 |
@@ -44,21 +44,21 @@ Categories: `MATCHED_OR_VERIFIED` is production source/configuration coverage; `
 
 | Value | Spans | Category | Reason | Next action |
 |---|---:|---|---|---|
-| دولة فلسطين | 16 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| يمن | 15 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
 | بريطانيا | 10 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
 | الاتحاد السوفيتي | 9 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| مغرب | 8 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| المملكة الأردنية | 8 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| ولايات المتحدة | 7 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| جزائر | 7 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
 | نابلس | 6 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| دولة الإمارات | 6 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| UK | 6 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
 | KSA | 6 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
 | الأراضي الفلسطينية | 5 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
-| بحرين | 4 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
 | السلطنة | 4 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| مملكة | 3 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| جنوب اليمن | 3 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| نيجريا | 3 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| بغداد | 3 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| بالمنطقة المغاربية | 2 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| روما | 2 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| إمارات العربية المتحدة | 2 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| UAE | 2 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
+| واشنطن | 2 | SUPPRESSION_ONLY | UNRECOGNIZED_COUNTRY | verify Natural Earth/Wikidata country alias or ISO mapping |
 
 ### NATIONALITY
 

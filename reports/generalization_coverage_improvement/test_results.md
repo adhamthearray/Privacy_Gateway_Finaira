@@ -4,7 +4,7 @@ Baseline before the current improvement pass: `py -m pytest -q` — 21 passed in
 
 Final verification before nationality adjudication: `py -X utf8 -m pytest -q` — 24 passed in 16.39s.
 
-Final verification after nationality adjudication: `py -X utf8 -m pytest -q` — 27 passed in 69.62s.
+Final verification after country and nationality adjudication: `py -3 -m pytest -q` — 28 passed in 25.22s. The handoff-focused suite passed with 10 tests in 8.81s.
 
 The added regression coverage checks:
 
@@ -15,6 +15,7 @@ The added regression coverage checks:
 - Bank counts/classification/evidence and disclosure flags remain unchanged.
 - Organization approval gating, government review gating, unknown fallbacks, FK integrity, and idempotent handoff imports remain green.
 - Nationality adjudication verifies 59 reviewed aliases, 67 derivation/provenance rows, the corrected Palestine QID, pending/malformed gating, Arabic/English lookup, and two consecutive idempotent imports.
+- Country adjudication verifies 31 approved review rows, 30 deduplicated runtime aliases, current-country resolution, historical/city/ambiguous suppression, Natural Earth joins, and two consecutive idempotent imports.
 
 Database integrity after import: `PRAGMA integrity_check = ok`; `PRAGMA foreign_key_check` returned zero rows.
 

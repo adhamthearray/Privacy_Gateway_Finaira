@@ -7,7 +7,7 @@ The audit counts distinct annotated values and annotated spans. Only the 11 perm
 | Entity | Before matched values | After matched values | Before span coverage | After span coverage | Change made |
 |---|---:|---:|---:|---:|---|
 | BANK | 0.00% | 0.00% | 0.00% | 0.00% | Kept 37-bank authority and review-only Arabic aliases; generated queue for evidence review |
-| COUNTRY | 49.78% | 62.45% | 80.03% | 92.82% | Added verified Wikidata labels/aliases linked to Natural Earth QIDs |
+| COUNTRY | 62.45% | 75.98% | 92.82% | 96.51% | Added 31 approved current-country review rows, deduplicated to 30 runtime aliases; historical, ambiguous, city/region, and malformed values remain suppressed |
 | NATIONALITY | 35.65% | 86.96% | 55.52% | 84.18% | Approved 59 verified reviewed variants; corrected one stale Palestine plan QID; held 15 values |
 | CORPORATION | 0.00% | 0.00% | 0.00% | 0.00% | Kept organization identity approval gate; queued corpus values |
 | ORGANIZATION | 0.00% | 0.00% | 0.00% | 0.00% | No values in the supplied dataset |
@@ -18,4 +18,4 @@ The audit counts distinct annotated values and annotated spans. Only the 11 perm
 | AGE | 100.00% | 100.00% | 100.00% | 100.00% | Preserved deterministic age configuration |
 | DATE | 24.65% | 79.10% | 24.68% | 79.10% | Added deterministic year-first/day-first parsing and explicit-format support; ambiguous dates remain unresolved |
 
-Exact values and counts are in `coverage_summary.csv` and `coverage_values.csv`. The original review queue contained 5,638 non-matched or gated values across all entity types; the nationality adjudication queue now has 15 unresolved values covering 96 spans. Each row has frequency, source context, reason, source-backed reviewer guidance, and a review decision. Only approved nationality rows are imported into production.
+Exact values and counts are in `coverage_summary.csv` and `coverage_values.csv`. The country review queue contains 86 baseline gaps: 31 approved rows covering 111 spans, 25 pending rows covering 41 spans, and 30 rejected rows covering 64 spans. The final COUNTRY audit has 55 suppressed values covering 105 spans. The nationality adjudication queue has 15 unresolved values covering 96 spans. Each row has frequency, source context, reason, source-backed reviewer guidance, and a review decision. Only approved current-country rows are imported into production.

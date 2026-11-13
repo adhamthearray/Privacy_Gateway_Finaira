@@ -59,6 +59,7 @@ NATURAL_EARTH_ZIP = ROOT / "data/sources/natural_earth/ne_10m_admin_0_countries_
 NATURAL_EARTH_CSV = ROOT / "data/sources/natural_earth/ne_10m_admin_0_countries_v5.1.1.csv"
 NATURAL_EARTH_URL = "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/"
 NATIONALITY_VARIANT_REVIEW_CSV = ROOT / "reports/nationality_improvement/nationality_variant_review_queue.csv"
+COUNTRY_REVIEWED_ALIAS_CSV = ROOT / "data/sources/wikidata/wikidata_country_reviewed_aliases_ar_en_v1.csv"
 
 
 def _sha256(path: Path) -> str:
@@ -150,6 +151,7 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
     alias_source = _source(session, alias_source_name, source_path, version="wikidata-p1549-ar-en" if expanded_source_path.exists() else "handoff-2026-11-12", license_text="Wikidata structured data CC0")
     variant_source = _source(session, "nationality_variant_review_queue", NATIONALITY_VARIANT_REVIEW_CSV, version="review-queue-v1", license_text="Human-reviewed derivative of Wikidata CC0 aliases") if NATIONALITY_VARIANT_REVIEW_CSV.exists() else None
     country_alias_source = _source(session, "wikidata_country_aliases_ar_en_v1", country_alias_path, version="wikidata-labels-aliases-ar-en" , license_text="Wikidata structured data CC0") if country_alias_path.exists() else None
+    country_reviewed_source = _source(session, "wikidata_country_reviewed_aliases_ar_en_v1", COUNTRY_REVIEWED_ALIAS_CSV, version="ner-country-review-v1", license_text="Human-reviewed derivative of Wikidata CC0 country identity evidence") if COUNTRY_REVIEWED_ALIAS_CSV.exists() else None
     _source(session, "handoff_nationality_qid_index_derived", qid_index_path, license_text="Derived audit; source rows remain Wikidata CC0")
     ne_source = _source(
         session,
@@ -182,8 +184,9 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
     for row in ne_rows:
         _put(session, NaturalEarthCountry, row["natural_earth_id"], {"wikidata_qid": _text(row.get("wikidata_qid")), "iso_a2": _text(row.get("iso_a2")), "name_en": _text(row.get("name_en")), "name_ar": _text(row.get("name_ar")), "subregion": _text(row.get("subregion")), "region_un": _text(row.get("region_un")), "continent": _text(row.get("continent")), "source_id": ne_source.source_id, "source_version": "5.1.1"})
     country_alias_count = 0
+    country_reviewed_alias_count = 0
+    ne_by_qid = {row.get("wikidata_qid"): row for row in ne_rows if _text(row.get("wikidata_qid"))}
     if country_alias_source is not None:
-        ne_by_qid = {row.get("wikidata_qid"): row for row in ne_rows if _text(row.get("wikidata_qid"))}
         for row in _read_csv(country_alias_path):
             qid = _qid(row.get("wikidata_qid") or row.get("country"))
             natural = ne_by_qid.get(qid)
@@ -199,6 +202,27 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
             alias_id = _stable("natural-earth-country-alias", natural["natural_earth_id"], language, normalized)
             _put(session, NaturalEarthCountryAlias, alias_id, {"natural_earth_id": natural["natural_earth_id"], "alias_text": alias, "normalized_alias": normalized, "language": language, "alias_kind": _text(row.get("alias_kind")) or "wikidata_alias", "source_property": _text(row.get("source_property")) or "wikidata", "source_id": country_alias_source.source_id, "verification_status": "SOURCE_VERIFIED", "enabled_for_lookup": True})
             country_alias_count += 1
+    if country_reviewed_source is not None:
+        for row in _read_csv(COUNTRY_REVIEWED_ALIAS_CSV):
+            if _text(row.get("review_decision")) != "APPROVED" or _text(row.get("verification_status")) != "REVIEWED":
+                continue
+            qid = _qid(row.get("country_qid") or row.get("wikidata_qid"))
+            natural = ne_by_qid.get(qid) if qid else None
+            alias = _text(row.get("candidate_value") or row.get("alias_text"))
+            language = (_text(row.get("language")) or "").lower()
+            if natural is None or not alias or language not in {"ar", "en"} or not _text(row.get("evidence_reference")):
+                continue
+            iso = (_text(row.get("iso2")) or "").upper()
+            if iso and iso != (_text(natural.get("iso_a2")) or "").upper():
+                raise ValueError(f"COUNTRY_REVIEW_ISO_MISMATCH:{alias}:{qid}:{iso}")
+            normalized = normalize(alias, language)
+            existing = session.scalars(select(NaturalEarthCountryAlias).where(NaturalEarthCountryAlias.language == language, NaturalEarthCountryAlias.normalized_alias == normalized)).all()
+            conflicting = {item.natural_earth_id for item in existing if item.natural_earth_id != natural["natural_earth_id"]}
+            if conflicting:
+                raise ValueError(f"COUNTRY_REVIEW_ALIAS_COLLISION:{alias}:{sorted(conflicting)}")
+            alias_id = _stable("natural-earth-country-reviewed-alias", natural["natural_earth_id"], language, normalized)
+            _put(session, NaturalEarthCountryAlias, alias_id, {"natural_earth_id": natural["natural_earth_id"], "alias_text": alias, "normalized_alias": normalized, "language": language, "alias_kind": "reviewed_variant", "source_property": "NER_REVIEW", "source_id": country_reviewed_source.source_id, "verification_status": "REVIEWED", "enabled_for_lookup": True})
+            country_reviewed_alias_count += 1
     by_qid = {r["wikidata_qid"]: r for r in ne_rows if _text(r.get("wikidata_qid"))}
     by_iso: dict[str, list[dict[str, str]]] = defaultdict(list)
     for row in ne_rows:
@@ -319,7 +343,7 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
         writer = csv.DictWriter(handle, fieldnames=list(audit_rows[0]))
         writer.writeheader()
         writer.writerows(audit_rows)
-    metrics.update({"nationality_aliases_v2": alias_count, "nationality_reviewed_variants": len(reviewed_variant_keys), "nationality_review_provenance": reviewed_provenance_count, "natural_earth_country_aliases": country_alias_count, "nationality_distinct_qids": len(by_qid_input), "natural_earth_rows": len(ne_rows), "natural_earth_join_status": dict(status_counts)})
+    metrics.update({"nationality_aliases_v2": alias_count, "nationality_reviewed_variants": len(reviewed_variant_keys), "nationality_review_provenance": reviewed_provenance_count, "natural_earth_country_aliases": country_alias_count, "natural_earth_reviewed_country_aliases": country_reviewed_alias_count, "nationality_distinct_qids": len(by_qid_input), "natural_earth_rows": len(ne_rows), "natural_earth_join_status": dict(status_counts)})
 
 
 def _import_banks(session: Session, root: Path, metrics: dict, report_dir: Path):

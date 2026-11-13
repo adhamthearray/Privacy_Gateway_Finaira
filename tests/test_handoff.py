@@ -1,6 +1,5 @@
 from pathlib import Path
 import csv
-from pathlib import Path
 
 from sqlalchemy import text
 
@@ -21,6 +20,7 @@ def test_natural_earth_join_and_runtime_source():
     assert scalar("select count(*) from nationality_aliases_v2 where verification_status='REVIEWED'") == 59
     assert scalar("select count(*) from nationality_countries") == 239
     assert scalar("select count(*) from natural_earth_countries") == 258
+    assert scalar("select count(*) from natural_earth_country_aliases where verification_status='REVIEWED'") == 30
     assert scalar("select count(*) from nationality_geo_joins where join_status='MATCHED_QID'") == 230
     result = GeneralizationDB(DB).get_candidates("NATIONALITY", "Egyptian", "en")
     assert result["resolution_status"] == "MATCHED"
@@ -75,6 +75,24 @@ def test_country_wikidata_alias_layer_is_source_verified():
     assert result["candidates"][0]["provenance"]["match_method"] == "WIKIDATA_COUNTRY_ALIAS"
 
 
+def test_reviewed_current_country_variants_and_exclusions():
+    for value, language in (("UK", "en"), ("USA", "en"), ("دولة فلسطين", "ar"), ("موزامبيق", "ar"), ("أرتيريا", "ar"), ("نيوزلندا", "ar")):
+        result = GeneralizationDB(DB).get_candidates("COUNTRY", value, language)
+        assert result["resolution_status"] == "MATCHED", value
+        assert result["candidates"][0]["verification_status"] == "REVIEWED", value
+    for value, language in (("KSA", "en"), ("الاتحاد السوفيتي", "ar"), ("نابلس", "ar")):
+        result = GeneralizationDB(DB).get_candidates("COUNTRY", value, language)
+        assert result["resolution_status"] == "NOT_FOUND", value
+        assert [candidate["level_code"] for candidate in result["candidates"]] == ["SUPPRESSED"]
+    queue = Path("reports/ner_v1_generalization/country_review_queue.csv")
+    with queue.open(encoding="utf-8", newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    assert len(rows) == 86
+    assert sum(row["review_decision"] == "APPROVED" for row in rows) == 31
+    assert sum(row["review_decision"] == "PENDING" for row in rows) == 25
+    assert sum(row["review_decision"] == "REJECTED" for row in rows) == 30
+
+
 def test_bank_authority_and_evidence_flags():
     assert scalar("select count(*) from banks") == 37
     assert scalar("select count(*) from bank_candidates") == 185
@@ -120,7 +138,7 @@ def test_government_review_default_and_optional_branches():
 
 
 def test_fk_integrity_and_idempotent_handoff_import():
-    before = {table: scalar(f"select count(*) from {table}") for table in ("banks", "bank_candidates", "organizations", "government_entities", "nationality_aliases_v2", "nationality_alias_review_provenance")}
+    before = {table: scalar(f"select count(*) from {table}") for table in ("banks", "bank_candidates", "organizations", "government_entities", "natural_earth_country_aliases", "nationality_aliases_v2", "nationality_alias_review_provenance")}
     import_handoff(DB, report_dir="reports", backup=False)
     after_first = {table: scalar(f"select count(*) from {table}") for table in before}
     import_handoff(DB, report_dir="reports", backup=False)
