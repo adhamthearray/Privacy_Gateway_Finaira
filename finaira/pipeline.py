@@ -1,4 +1,5 @@
 from .generalization import generalize
+from .jev_selector import DB_ENTITY_TYPES, JEVSelector
 from .llm import MockLLM
 from .mapping import MappingVault
 from .models import Entity, PipelineRequest, PipelineResult
@@ -11,10 +12,11 @@ from .audit import AuditLogger
 
 
 class PrivacyPipeline:
-    def __init__(self, llm=None, date_level: str = "QUARTER", logger=None):
+    def __init__(self, llm=None, date_level: str = "QUARTER", logger=None, jev_selector=None):
         self.llm = llm or MockLLM()
         self.date_level = date_level
         self.logger = logger or AuditLogger()
+        self.jev_selector = jev_selector or JEVSelector()
         self.last_vault_cleared = False
 
     def run(self, request: PipelineRequest) -> PipelineResult:
@@ -38,7 +40,15 @@ class PrivacyPipeline:
                 elif action == Action.GENERALIZE:
                     if identity in vault.by_identity: value = vault.by_identity[identity].sanitized
                     else:
-                        value = generalize(entity, identity, request.scope, entity.language, self.date_level)
+                        if entity.type in DB_ENTITY_TYPES and (entity.language or "en").lower() == "en":
+                            selection = self.jev_selector.select_candidate(
+                                entity.type,
+                                entity.original_value,
+                                request.document,
+                            )
+                            value = selection["replacement"]
+                        else:
+                            value = generalize(entity, identity, request.scope, entity.language, self.date_level)
                         # Avoid duplicating a unit already present immediately after the span.
                         following = request.document[entity.end:] if entity.end is not None else ""
                         if entity.type == "AGE" and entity.language == "ar" and following.lstrip().startswith("سنة"):

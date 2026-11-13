@@ -10,6 +10,7 @@ import time
 from pathlib import Path
 from urllib.error import URLError
 from urllib.request import ProxyHandler, Request, build_opener
+from urllib.parse import urlsplit
 
 from finaira_generalization import GeneralizationDB
 
@@ -55,6 +56,11 @@ class JEVSelector:
         self.base_url = (base_url or os.getenv(
             "JEV_BASE_URL", "http://127.0.0.1:8017"
         )).rstrip("/")
+        parsed_url = urlsplit(self.base_url)
+        if parsed_url.scheme != "http" or parsed_url.hostname not in {
+            "127.0.0.1", "localhost", "::1"
+        }:
+            raise ValueError("JEV_MUST_USE_LOOPBACK")
         exe = jev_exe or os.getenv("JEV_EXE")
         self.jev_exe = Path(exe) if exe else None
         self.model = model

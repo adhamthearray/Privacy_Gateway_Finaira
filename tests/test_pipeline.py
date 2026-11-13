@@ -3,6 +3,7 @@ from finaira import Entity, PipelineRequest, PrivacyPipeline
 from finaira.llm import MockLLM
 from finaira.policy import POLICY, Action
 from finaira.transformer import transform_document
+from finaira.audit import AuditLogger
 
 
 def ent(text, typ, start, entity_id=None, language=None):
@@ -45,6 +46,34 @@ def test_generalization_is_not_restored_and_cleanup_runs():
     assert "Egyptian" not in result.output
     assert "years" in result.output
     assert "Q4 2026" in result.output
+
+
+def test_database_backed_entity_uses_jev_selector(tmp_path):
+    class FakeJEVSelector:
+        def __init__(self):
+            self.call = None
+
+        def select_candidate(self, entity_type, value, sentence):
+            self.call = (entity_type, value, sentence)
+            return {"replacement": "Creative professional"}
+
+    text = "She works as a technical director. Another sentence follows."
+    start = text.index("technical director")
+    selector = FakeJEVSelector()
+    pipeline = PrivacyPipeline(
+        jev_selector=selector,
+        logger=AuditLogger(tmp_path / "pipeline.log", include_output=False),
+    )
+
+    result = pipeline.run(
+        PipelineRequest(text, [ent("technical director", "OCCUPATION", start)])
+    )
+
+    assert result.status == "PASS"
+    assert result.protected_document == "She works as a Creative professional. Another sentence follows."
+    assert selector.call == (
+        "OCCUPATION", "technical director", text
+    )
 
 
 def test_unknown_or_invented_placeholder_fails_before_restoration():
