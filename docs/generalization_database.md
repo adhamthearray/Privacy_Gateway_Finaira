@@ -264,11 +264,18 @@ py -X utf8 -m finaira_generalization.cli candidate-coverage
 py -X utf8 -m finaira_generalization.cli candidates --type NATIONALITY --value "Egyptian" --language en
 py -X utf8 -m finaira_generalization.cli candidates --type COUNTRY --value "Egypt" --language en
 py -X utf8 -m finaira_generalization.cli candidates --type BANK --value "Banque Misr" --language en
+py -X utf8 scripts/run_generalization_ui.py --port 8765
 py scripts/refresh_wikidata_nationalities.py
 py scripts/export_ner_generalization_values.py --dataset C:\path\to\finaira_ner_v1\finaira_ner_v1
 py scripts/audit_ner_generalization_coverage.py --dataset C:\path\to\finaira_ner_v1\finaira_ner_v1 --db data\processed\finaira_generalization.db
 py -X utf8 -m pytest -q
 ```
+
+The local explorer opens at `http://127.0.0.1:8765/`. It accepts Arabic or
+English input, lets the user choose the entity type and returned-label
+language, and displays the full candidate chain including exact, review-only,
+fallback, and suppression candidates. It is a read-only database explorer;
+it does not select a candidate or create pseudonyms.
 
 ## Counts, verification, and unresolved data
 
