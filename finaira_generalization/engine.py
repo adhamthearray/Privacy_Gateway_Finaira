@@ -40,8 +40,19 @@ class Generalizer:
     def _occupation_alias_variants(alias_text):
         return [part.strip() for part in re.split(r"\s*/\s*", alias_text) if part.strip()]
 
-    def _occupation(self,s,value,lang,level):
-        rows=s.scalars(select(OccupationAlias).where(OccupationAlias.language==lang)).all()
+    @staticmethod
+    def _occupation_query_languages(value, output_language):
+        primary = "ar" if re.search(r"[\u0600-\u06ff]", value or "") else "en"
+        languages = [primary]
+        if output_language in {"ar", "en"} and output_language not in languages:
+            languages.append(output_language)
+        for language in ("ar", "en"):
+            if language not in languages:
+                languages.append(language)
+        return languages
+
+    def _occupation_lookup(self, s, value, query_language):
+        rows=s.scalars(select(OccupationAlias).where(OccupationAlias.language==query_language)).all()
         exact_index={}
         variant_exact_index={}
         phrase_index={}
@@ -50,15 +61,15 @@ class Generalizer:
                 continue
             exact_index.setdefault(row.normalized_alias,set()).add(row.occupation_id)
             for variant in self._occupation_alias_variants(row.alias_text):
-                variant_exact_index.setdefault(normalize(variant,lang),set()).add(row.occupation_id)
-                phrase=self._occupation_phrase_key(variant,lang)
+                variant_exact_index.setdefault(normalize(variant,query_language),set()).add(row.occupation_id)
+                phrase=self._occupation_phrase_key(variant,query_language)
                 if phrase:
                     phrase_index.setdefault(phrase,set()).add(row.occupation_id)
-        ids=exact_index.get(normalize(value,lang),set())
-        phrase=self._occupation_phrase_key(value,lang)
+        ids=exact_index.get(normalize(value,query_language),set())
+        phrase=self._occupation_phrase_key(value,query_language)
         shortened=False
         if not ids:
-            ids=variant_exact_index.get(normalize(value,lang),set())
+            ids=variant_exact_index.get(normalize(value,query_language),set())
         if not ids and phrase:
             ids=phrase_index.get(phrase,set())
         if not ids:
@@ -74,13 +85,21 @@ class Generalizer:
                     ids=set().union(*found)
                     shortened=True
                     break
-        if len(ids)>1: return Result("JOB_TITLE",False,language=lang,status="AMBIGUOUS",reason_code="ALIAS_COLLISION")
-        if not ids: return Result("JOB_TITLE",False,replacement="Job title 1" if lang!="ar" else "المسمى الوظيفي 1",language=lang,status="FALLBACK_REQUIRED",reason_code="UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK",source="Finaira safe generic fallback")
-        occ=s.get(Occupation,next(iter(ids))); code=occ.isco_code; target=level or "2"
-        if target not in {"1","2","3","4"}: return Result("JOB_TITLE",False,language=lang,status="UNSUPPORTED_LEVEL",reason_code="INVALID_ISCO_LEVEL")
-        group=s.get(IscoGroup,code[:int(target)])
-        if not group: return Result("JOB_TITLE",False,language=lang,status="FALLBACK_REQUIRED",reason_code="MISSING_ISCO_GROUP")
-        return Result("JOB_TITLE",True,occ.occupation_id,"ISCO-08",group.isco_code,target,group.label_ar if lang=="ar" and group.label_ar else group.label_en,lang,"VERIFIED",reason_code="LONGEST_PHRASE_MATCH" if shortened else None,source="ESCO + ISCO-08")
+        return ids, shortened
+
+    def _occupation(self,s,value,output_language,level):
+        for query_language in self._occupation_query_languages(value, output_language):
+            ids, shortened = self._occupation_lookup(s, value, query_language)
+            if not ids:
+                continue
+            if len(ids)>1:
+                return Result("JOB_TITLE",False,language=output_language,status="AMBIGUOUS",reason_code="ALIAS_COLLISION")
+            occ=s.get(Occupation,next(iter(ids))); code=occ.isco_code; target=level or "2"
+            if target not in {"1","2","3","4"}: return Result("JOB_TITLE",False,language=output_language,status="UNSUPPORTED_LEVEL",reason_code="INVALID_ISCO_LEVEL")
+            group=s.get(IscoGroup,code[:int(target)])
+            if not group: return Result("JOB_TITLE",False,language=output_language,status="FALLBACK_REQUIRED",reason_code="MISSING_ISCO_GROUP")
+            return Result("JOB_TITLE",True,occ.occupation_id,"ISCO-08",group.isco_code,target,group.label_ar if output_language=="ar" and group.label_ar else group.label_en,output_language,"VERIFIED",reason_code="LONGEST_PHRASE_MATCH" if shortened else None,source="ESCO + ISCO-08")
+        return Result("JOB_TITLE",False,replacement="Job title 1" if output_language!="ar" else "المسمى الوظيفي 1",language=output_language,status="FALLBACK_REQUIRED",reason_code="UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK",source="Finaira safe generic fallback")
 
     def _nationality(self,s,value,lang,level):
         rows=s.scalars(select(NationalityAlias).where(NationalityAlias.normalized_alias==normalize(value,lang),NationalityAlias.language==lang)).all()

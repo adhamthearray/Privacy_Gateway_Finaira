@@ -103,16 +103,20 @@ class GeneralizationDB:
         """Return slash-separated ESCO alternatives as independent aliases."""
         return [part.strip() for part in re.split(r"\s*/\s*", alias_text) if part.strip()]
 
-    def _occupation(self, session, value, lang):
-        """Resolve both legacy occupation labels through JOB_TITLE/ESCO/ISCO.
+    @staticmethod
+    def _occupation_query_languages(value, output_language):
+        """Prefer the language signalled by the query, not the output label language."""
+        primary = "ar" if re.search(r"[\u0600-\u06ff]", value or "") else "en"
+        languages = [primary]
+        if output_language in {"ar", "en"} and output_language not in languages:
+            languages.append(output_language)
+        for language in ("ar", "en"):
+            if language not in languages:
+                languages.append(language)
+        return languages
 
-        The full value is attempted first. If it is not an alias, contiguous
-        phrases are tried from longest to shortest. A shortened match is
-        explicitly recorded as such and never treated as an exact match to the
-        original input.
-        """
-        scheme = "JOB_TITLE_ISCO08"
-        rows = session.scalars(select(OccupationAlias).where(OccupationAlias.language == lang)).all()
+    def _occupation_lookup(self, session, value, query_language):
+        rows = session.scalars(select(OccupationAlias).where(OccupationAlias.language == query_language)).all()
         exact_index = {}
         variant_exact_index = {}
         phrase_index = {}
@@ -121,17 +125,17 @@ class GeneralizationDB:
                 continue
             exact_index.setdefault(row.normalized_alias, set()).add(row.occupation_id)
             for variant in self._occupation_alias_variants(row.alias_text):
-                variant_key = normalize(variant, lang)
+                variant_key = normalize(variant, query_language)
                 variant_exact_index.setdefault(variant_key, set()).add(row.occupation_id)
-                phrase_key = self._occupation_phrase_key(variant, lang)
+                phrase_key = self._occupation_phrase_key(variant, query_language)
                 if phrase_key:
                     phrase_index.setdefault(phrase_key, set()).add(row.occupation_id)
 
-        normalized = normalize(value, lang)
+        normalized = normalize(value, query_language)
         ids = exact_index.get(normalized, set())
         matched_phrase = value
         match_method = "EXACT_ALIAS"
-        original_phrase_key = self._occupation_phrase_key(value, lang)
+        original_phrase_key = self._occupation_phrase_key(value, query_language)
         if not ids:
             ids = variant_exact_index.get(normalized, set())
             if ids:
@@ -157,19 +161,32 @@ class GeneralizationDB:
                 matched_phrase = found[0][0] if len(found) == 1 else " | ".join(item[0] for item in found)
                 ids = set().union(*(item[1] for item in found))
                 match_method = "LONGEST_PHRASE_MATCH"
+        return ids, match_method, matched_phrase
 
-        if len(ids) > 1:
-            return self._occupation_result(session, scheme, None, lang, "AMBIGUOUS", "ALIAS_COLLISION", match_method, matched_phrase)
-        if not ids:
-            return self._job_title_fallback(lang, "UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK")
-        reason = None if match_method in {"EXACT_ALIAS", "ALIAS_VARIANT", "NORMALIZED_FULL_PHRASE"} else "LONGEST_PHRASE_MATCH"
-        return self._occupation_result(session, scheme, next(iter(ids)), lang, "VERIFIED", reason, match_method, matched_phrase)
+    def _occupation(self, session, value, lang):
+        """Resolve both legacy occupation labels through JOB_TITLE/ESCO/ISCO.
 
-    def _occupation_result(self, session, scheme, canonical, lang, status, reason, match_method, matched_phrase):
+        The full value is attempted first. If it is not an alias, contiguous
+        phrases are tried from longest to shortest. A shortened match is
+        explicitly recorded as such and never treated as an exact match to the
+        original input.
+        """
+        scheme = "JOB_TITLE_ISCO08"
+        for query_language in self._occupation_query_languages(value, lang):
+            ids, match_method, matched_phrase = self._occupation_lookup(session, value, query_language)
+            if not ids:
+                continue
+            if len(ids) > 1:
+                return self._occupation_result(session, scheme, None, lang, "AMBIGUOUS", "ALIAS_COLLISION", match_method, matched_phrase, query_language)
+            reason = None if match_method in {"EXACT_ALIAS", "ALIAS_VARIANT", "NORMALIZED_FULL_PHRASE"} else "LONGEST_PHRASE_MATCH"
+            return self._occupation_result(session, scheme, next(iter(ids)), lang, "VERIFIED", reason, match_method, matched_phrase, query_language)
+        return self._job_title_fallback(lang, "UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK")
+
+    def _occupation_result(self, session, scheme, canonical, lang, status, reason, match_method, matched_phrase, query_language):
         result = self._static_result(session, "JOB_TITLE", scheme, canonical, lang, status, reason)
         for candidate in result["candidates"]:
             provenance = dict(candidate.get("provenance") or {})
-            provenance.update({"canonical_entity_type": "JOB_TITLE", "match_method": match_method, "matched_phrase": matched_phrase})
+            provenance.update({"canonical_entity_type": "JOB_TITLE", "match_method": match_method, "matched_phrase": matched_phrase, "query_language": query_language, "output_language": lang})
             candidate["provenance"] = provenance
         return result
 

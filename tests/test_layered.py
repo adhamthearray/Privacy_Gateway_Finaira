@@ -35,6 +35,18 @@ def test_arabic_slash_separated_alias_variant_is_resolved():
         assert r["reason_code"] is None
         assert r["candidates"][0]["provenance"]["match_method"]=="ALIAS_VARIANT"
 
+def test_job_title_lookup_detects_query_language_and_preserves_output_language():
+    db=GeneralizationDB(DB)
+    ar_query=db.get_candidates("JOB_TITLE","مدير الموارد البشرية","en")
+    en_query=db.get_candidates("JOB_TITLE","human resources manager","ar")
+    assert ar_query["resolution_status"]=="VERIFIED"
+    assert en_query["resolution_status"]=="VERIFIED"
+    assert ar_query["canonical_id"]==en_query["canonical_id"]
+    assert ar_query["candidates"][0]["language"]=="en"
+    assert en_query["candidates"][0]["language"]=="ar"
+    assert ar_query["candidates"][0]["provenance"]["query_language"]=="ar"
+    assert en_query["candidates"][0]["provenance"]["query_language"]=="en"
+
 def test_nationality_arabic_chain_and_natural_earth_english_labels():
     ar=GeneralizationDB(DB).get_candidates("NATIONALITY","مصرية","ar")
     assert [x["level_code"] for x in ar["candidates"]]==["EXACT","SUBREGION","CONTINENT","SUPPRESSED"]
