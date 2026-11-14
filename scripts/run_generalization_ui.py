@@ -20,8 +20,10 @@ from finaira_generalization.candidates import GeneralizationDB
 from finaira_generalization.db import (
     Bank,
     BankAlias,
+    GeneralizationCandidate,
     GovernmentAlias,
     GovernmentEntity,
+    IscoGroup,
     NaturalEarthCountry,
     NaturalEarthCountryAlias,
     NationalityAliasV2,
@@ -32,6 +34,7 @@ from finaira_generalization.db import (
     make_engine,
 )
 from finaira_generalization.normalization import normalize
+from finaira_generalization.layers import stable_id
 
 
 HTML = r"""<!doctype html>
@@ -118,6 +121,8 @@ HTML = r"""<!doctype html>
     <div class="panel" id="summary"></div>
     <h2>Candidate chain</h2>
     <div id="candidates"></div>
+    <h2 id="aggregate-heading" style="display:none">Generalization from common matched hierarchy</h2>
+    <div id="aggregate"></div>
     <h2 id="suggestion-heading" style="display:none">Substring suggestions</h2>
     <div id="suggestions"></div>
   </section>
@@ -127,6 +132,8 @@ const form = document.getElementById('query-form');
 const result = document.getElementById('result');
 const summary = document.getElementById('summary');
 const candidates = document.getElementById('candidates');
+const aggregateHeading = document.getElementById('aggregate-heading');
+const aggregate = document.getElementById('aggregate');
 const suggestionHeading = document.getElementById('suggestion-heading');
 const suggestions = document.getElementById('suggestions');
 const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -148,6 +155,9 @@ function render(data) {
     const flags = [item.is_exact && 'EXACT', item.is_local_only && 'LOCAL_ONLY', item.is_suppression && 'SUPPRESSION', item.available === false && 'UNAVAILABLE'].filter(Boolean);
     return `<article class="candidate"><div class="candidate-head"><div><div class="candidate-title">${esc(item.representation || item.label_en || item.label_ar || item.level_code || 'Unnamed candidate')}</div><div class="candidate-id">${esc(item.candidate_id)}</div></div><span class="badge">rank ${esc(item.specificity_rank ?? index)}</span></div><div class="grid">${field('Level', item.level_code)}${field('Verification', item.verification_status)}${field('Source', item.source)}${field('Taxonomy', item.taxonomy)}${field('Taxonomy code', item.taxonomy_code)}${field('Flags', flags.join(' · '))}</div><details><summary>Labels and provenance</summary><pre>${json({label_en:item.label_en,label_ar:item.label_ar,provenance:item.provenance,metadata:item.metadata})}</pre></details></article>`;
   }).join('');
+  const common = data.substring_generalization;
+  aggregateHeading.style.display = common && common.candidates && common.candidates.length ? 'block' : 'none';
+  aggregate.innerHTML = common && common.candidates && common.candidates.length ? `<div class="panel"><div class="status"><span class="badge review">REVIEW ONLY</span><span class="badge">${esc(common.reason)}</span></div><div class="grid">${field('Matched occupations', common.matched_occupation_count)}${field('Common ISCO code', common.common_isco_code)}${field('Common ancestor', common.common_isco_label)}${field('Starts at', common.start_level)}</div>${common.candidates.map(item => `<article class="candidate"><div class="candidate-head"><div><div class="candidate-title">${esc(item.representation || item.level_code || 'Unnamed candidate')}</div><div class="candidate-id">${esc(item.candidate_id)}</div></div><span class="badge">${esc(item.level_code)}</span></div><div class="grid">${field('Verification', item.verification_status)}${field('Source', item.source)}${field('Taxonomy code', item.taxonomy_code)}${field('Flags', [item.is_exact && 'EXACT', item.is_local_only && 'LOCAL_ONLY', item.is_suppression && 'SUPPRESSION'].filter(Boolean).join(' · '))}</div></article>`).join('')}</div>` : '';
   const related = data.substring_suggestions || [];
   const attempted = data.substring_search_performed === true;
   suggestionHeading.style.display = attempted ? 'block' : 'none';
@@ -163,6 +173,8 @@ form.addEventListener('submit', async event => {
   const review = document.getElementById('review').checked ? '1' : '0';
   summary.innerHTML = '<div class="empty">Querying the local database…</div>';
   candidates.innerHTML = '';
+  aggregate.innerHTML = '';
+  aggregateHeading.style.display = 'none';
   suggestions.innerHTML = '';
   suggestionHeading.style.display = 'none';
   result.style.display = 'block';
@@ -298,6 +310,69 @@ def substring_suggestions(db_path: Path, entity_type: str, value: str, output_la
     return suggestions[:limit]
 
 
+def substring_occupation_ids(db_path: Path, value: str) -> set[str]:
+    """Find every occupation whose stored alias contains the input fragment."""
+    occupation_ids: set[str] = set()
+    with Session(make_engine(db_path)) as session:
+        for query_language in _query_languages(value, "en"):
+            needle = normalize(value, query_language)
+            if not needle:
+                continue
+            rows = session.scalars(select(OccupationAlias).where(OccupationAlias.language == query_language, OccupationAlias.normalized_alias.contains(needle, autoescape=True))).all()
+            for row in rows:
+                if row.review_status not in {"OFFICIAL", "REVIEWED"}:
+                    continue
+                if any(needle in normalize(alias, query_language) for alias in _split_aliases(row.alias_text)):
+                    occupation_ids.add(row.occupation_id)
+    return occupation_ids
+
+
+def substring_generalization(db_path: Path, entity_type: str, value: str, output_language: str) -> dict | None:
+    """Build a shared ISCO chain for substring-resolved job-title concepts."""
+    canonical_type = {"OCCUPATION": "JOB_TITLE"}.get(entity_type, entity_type)
+    if canonical_type != "JOB_TITLE":
+        return None
+    occupation_ids = substring_occupation_ids(db_path, value)
+    if not occupation_ids:
+        return None
+    db = GeneralizationDB(db_path)
+    with Session(db.engine) as session:
+        occupations = [session.get(Occupation, occupation_id) for occupation_id in sorted(occupation_ids)]
+        codes = sorted({str(row.isco_code) for row in occupations if row and row.isco_code})
+        groups = {row.isco_code: row for row in session.scalars(select(IscoGroup)).all()}
+        common_code = None
+        for length in range(4, 0, -1):
+            prefixes = {code[:length] for code in codes if len(code) >= length}
+            if len(prefixes) == 1 and next(iter(prefixes)) in groups:
+                common_code = next(iter(prefixes))
+                break
+        if common_code is None:
+            suppressed = session.get(GeneralizationCandidate, stable_id("JOB_TITLE_ISCO08", "SUPPRESSED"))
+            candidates = db._rows(session, "JOB_TITLE_ISCO08", [suppressed] if suppressed else [], output_language)
+            return {"status": "NO_COMMON_ISCO_ANCESTOR", "reason": "SUBSTRING_MATCHES_HAVE_NO_SHARED_ISCO_BRANCH", "matched_occupation_count": len(occupation_ids), "matched_occupation_ids": sorted(occupation_ids), "start_level": "SUPPRESSED", "review_required": True, "candidates": candidates}
+        candidate = session.scalar(select(GeneralizationCandidate).where(GeneralizationCandidate.scheme_id == "JOB_TITLE_ISCO08", GeneralizationCandidate.taxonomy_code == common_code))
+        if candidate is None:
+            return None
+        all_candidates = {row.candidate_id: row for row in session.scalars(select(GeneralizationCandidate).where(GeneralizationCandidate.scheme_id == "JOB_TITLE_ISCO08")).all()}
+        chain = []
+        current = candidate
+        while current:
+            chain.append(current)
+            current = all_candidates.get(current.parent_candidate_id)
+        candidates = db._rows(session, "JOB_TITLE_ISCO08", chain, output_language)
+        return {
+            "status": "REVIEW_ONLY",
+            "reason": "SUBSTRING_MATCH_COMMON_ISCO_ANCESTOR",
+            "matched_occupation_count": len(occupation_ids),
+            "matched_occupation_ids": sorted(occupation_ids),
+            "common_isco_code": common_code,
+            "common_isco_label": groups[common_code].label_ar if output_language == "ar" else groups[common_code].label_en,
+            "start_level": candidates[0]["level_code"] if candidates else None,
+            "review_required": True,
+            "candidates": candidates,
+        }
+
+
 class Handler(BaseHTTPRequestHandler):
     db_path: Path
 
@@ -332,6 +407,7 @@ class Handler(BaseHTTPRequestHandler):
                 if not has_exact:
                     payload["substring_search_performed"] = True
                     payload["substring_suggestions"] = substring_suggestions(self.db_path, entity_type, value, language)
+                    payload["substring_generalization"] = substring_generalization(self.db_path, entity_type, value, language)
                 self._send(json.dumps(payload, ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8")
             except Exception as exc:  # Keep the local UI usable while exposing the actual failure.
                 self._send(json.dumps({"error": f"{type(exc).__name__}: {exc}"}, ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8", 500)
