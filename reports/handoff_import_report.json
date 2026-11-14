@@ -8,6 +8,7 @@
     "ISLAMIC": 4,
     "MIXED": 9
   },
+  "bank_user_approved_aliases": 47,
   "banks": 37,
   "batch_id": "handoff-2026-11-12-d67cf58c9452",
   "government_aliases": 24,

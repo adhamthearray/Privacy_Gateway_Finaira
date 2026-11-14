@@ -106,6 +106,8 @@ def test_bank_authority_and_evidence_flags():
     assert result["candidates"][0]["is_local_only"] is True
     assert all(candidate["metadata"].get("disclosure_approved", False) is False for candidate in result["candidates"])
     assert scalar("select count(*) from banks where name_ar is null") == 37
+    assert scalar("select count(*) from bank_aliases where review_status='APPROVED_BY_USER'") == 47
+    assert scalar("select count(*) from bank_aliases where enabled_for_lookup=1") == 86
 
 
 def test_organization_pending_identity_gates_specific_industry():

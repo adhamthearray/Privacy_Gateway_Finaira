@@ -17,6 +17,7 @@
 - **bank_evidence_bank_ids**: 13
 - **bank_candidates**: 185
 - **bank_arabic_master_names_blank**: 37
+- **bank_user_approved_aliases**: 47
 - **organizations**: 312
 - **industry_categories_source_rows**: 63
 - **industry_categories_materialized**: 64

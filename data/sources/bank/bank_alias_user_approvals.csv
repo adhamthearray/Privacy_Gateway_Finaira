@@ -1,0 +1,48 @@
+bank_id,alias,language,alias_kind,approval_status,approval_note
+EG_BANK_001,بنك مصر,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_002,البنك الأهلي المصري,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_003,البنك العقاري المصري العربي,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_004,البنك الزراعي المصري,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_005,بنك التنمية الصناعية,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_006,بنك القاهرة,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_007,المصرف المتحد,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_008,بنك الإسكندرية,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_009,ميدبنك,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_010,البنك التجاري الدولي,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_010,CIB,en,logo_abbreviation,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_011,التجاري وفا بنك,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_012,saib,en,logo_abbreviation,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_013,كريدي أجريكول مصر,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_014,بنك الإمارات دبي الوطني,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_015,بنك قناة السويس,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_016,بنك قطر الوطني,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_016,QNB,en,logo_abbreviation,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_017,بنك نكست,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_018,البنك الأهلي الكويتي,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_018,ABK,en,logo_abbreviation,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_019,بنك أبوظبي الأول مصر,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_019,FABMISR,en,logo_abbreviation,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_020,بيت التمويل الكويتي,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_020,KFH,en,logo_abbreviation,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_021,بنك فيصل الإسلامي المصري,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_022,بنك التعمير والإسكان,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_023,بنك البركة,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_024,البنك الوطني الكويتي,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_025,مصرف أبوظبي الإسلامي,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_025,ADIB,en,logo_abbreviation,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_026,بنك أبوظبي التجاري,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_026,ADCB,en,logo_abbreviation,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_027,البنك المصري الخليجي,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_027,EGbank,en,logo_abbreviation,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_028,البنك العربي الأفريقي الدولي,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_029,بنك إتش إس بي سي,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_030,بنك المؤسسة العربية المصرفية,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_030,ABC,en,logo_abbreviation,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_031,البنك المصري لتنمية الصادرات,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_032,المصرف العربي الدولي,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_033,سيتي بنك,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_034,البنك العربي,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_035,بنك المشرق,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_036,بنك ستاندرد تشارترد,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_037,وان بنك,ar,arabic_candidate,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG_BANK_037,onebank,en,logo_abbreviation,APPROVED_BY_USER,Explicit user approval requested in conversation

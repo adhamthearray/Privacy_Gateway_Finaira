@@ -60,6 +60,7 @@ NATURAL_EARTH_CSV = ROOT / "data/sources/natural_earth/ne_10m_admin_0_countries_
 NATURAL_EARTH_URL = "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/"
 NATIONALITY_VARIANT_REVIEW_CSV = ROOT / "reports/nationality_improvement/nationality_variant_review_queue.csv"
 COUNTRY_REVIEWED_ALIAS_CSV = ROOT / "data/sources/wikidata/wikidata_country_reviewed_aliases_ar_en_v1.csv"
+BANK_ALIAS_APPROVAL_CSV = ROOT / "data/sources/bank/bank_alias_user_approvals.csv"
 
 
 def _sha256(path: Path) -> str:
@@ -354,6 +355,9 @@ def _import_banks(session: Session, root: Path, metrics: dict, report_dir: Path)
     master_source = _source(session, "banks_FINAL_evidence", master_path, license_text="Supplied CBE roster and research evidence; row-level URLs remain evidence only")
     evidence_source = _source(session, "bank_islamic_mixed_source_evidence", evidence_path, license_text="Supplied evidence index")
     alias_source = _source(session, "bank_aliases_REVIEW", alias_path, license_text="Supplied review-only aliases")
+    approval_source = _source(session, "bank_alias_user_approvals", BANK_ALIAS_APPROVAL_CSV, license_text="Explicit user approval decisions; not external evidence") if BANK_ALIAS_APPROVAL_CSV.exists() else None
+    approval_rows = _read_csv(BANK_ALIAS_APPROVAL_CSV) if BANK_ALIAS_APPROVAL_CSV.exists() else []
+    approvals = {(r["bank_id"], r["language"], r["alias"], r["alias_kind"]): r for r in approval_rows}
     rows = _read_csv(master_path)
     model_counts = Counter(r["finance_model"] for r in rows)
     for row in rows:
@@ -366,9 +370,12 @@ def _import_banks(session: Session, root: Path, metrics: dict, report_dir: Path)
         if not alias:
             continue
         status = row["review_status"]
-        enabled = status == "source_supported"
+        approval = approvals.get((row["bank_id"], row["language"], alias, row.get("alias_kind")))
+        if approval:
+            status = approval.get("approval_status") or "APPROVED_BY_USER"
+        enabled = status in {"source_supported", "APPROVED_BY_USER"}
         key = _stable(row["bank_id"], row.get("language"), alias, row.get("alias_kind"))
-        _put(session, BankAlias, key, {"bank_id": row["bank_id"], "alias_text": alias, "normalized_alias": normalize(alias, row.get("language")), "language": row["language"], "alias_kind": row.get("alias_kind"), "review_status": status, "enabled_for_lookup": enabled, "source_id": alias_source.source_id})
+        _put(session, BankAlias, key, {"bank_id": row["bank_id"], "alias_text": alias, "normalized_alias": normalize(alias, row.get("language")), "language": row["language"], "alias_kind": row.get("alias_kind"), "review_status": status, "enabled_for_lookup": enabled, "source_id": approval_source.source_id if approval and approval_source else alias_source.source_id})
     session.execute(delete(BankCandidate))
     generic = {"BANKING_INSTITUTION": ("Banking institution", "مؤسسة مصرفية"), "FINANCIAL_INSTITUTION": ("Financial institution", "مؤسسة مالية")}
     for row in rows:
@@ -378,7 +385,7 @@ def _import_banks(session: Session, root: Path, metrics: dict, report_dir: Path)
             cid = f"{bank.bank_id}__{code}"
             _put(session, BankCandidate, cid, {"bank_id": bank.bank_id, "level_code": code, "specificity_rank": rank, "label_en": en, "label_ar": ar, "finance_model": model, "category_population_count": population, "is_exact": exact, "is_local_only": local, "is_suppression": suppression, "disclosure_approved": False, "evidence_status": bank.evidence_status, "verification_status": "PROVISIONAL", "source_id": master_source.source_id, "derivation_method": "derived:final-bank-master"})
     evidence_bank_ids = {r["bank_id"] for r in evidence_rows}
-    metrics.update({"banks": len(rows), "bank_model_counts": dict(model_counts), "bank_evidence": len(evidence_rows), "bank_evidence_bank_ids": len(evidence_bank_ids), "bank_candidates": len(rows) * 5, "bank_arabic_master_names_blank": sum(not _text(r.get("bank_name_ar")) for r in rows)})
+    metrics.update({"banks": len(rows), "bank_model_counts": dict(model_counts), "bank_evidence": len(evidence_rows), "bank_evidence_bank_ids": len(evidence_bank_ids), "bank_candidates": len(rows) * 5, "bank_arabic_master_names_blank": sum(not _text(r.get("bank_name_ar")) for r in rows), "bank_user_approved_aliases": len(approval_rows)})
 
 
 def _import_organizations(session: Session, root: Path, metrics: dict):
