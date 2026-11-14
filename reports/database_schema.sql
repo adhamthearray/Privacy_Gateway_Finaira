@@ -38,6 +38,35 @@ CREATE TABLE bank_aliases (
 	FOREIGN KEY(source_id) REFERENCES data_sources (source_id)
 );
 
+-- table: bank_audit_classifications
+CREATE TABLE bank_audit_classifications (
+	audit_id VARCHAR(100) NOT NULL, 
+	source_record_id VARCHAR(40) NOT NULL, 
+	bank_id VARCHAR(30) NOT NULL, 
+	country_code VARCHAR(2) NOT NULL, 
+	country VARCHAR(80) NOT NULL, 
+	raw_category VARCHAR(80), 
+	raw_status VARCHAR(50), 
+	banking_model VARCHAR(40) NOT NULL, 
+	banking_model_source VARCHAR(80) NOT NULL, 
+	business_scope VARCHAR(120), 
+	entity_kind VARCHAR(100), 
+	operational_status VARCHAR(50) NOT NULL, 
+	license_confirmation VARCHAR(100), 
+	classification_evidence TEXT, 
+	source_url TEXT, 
+	evidence_url TEXT, 
+	confidence VARCHAR(40), 
+	review_action VARCHAR(80), 
+	review_note TEXT, 
+	license_status VARCHAR(30) NOT NULL, 
+	licensed_count_eligible BOOLEAN NOT NULL, 
+	source_id INTEGER NOT NULL, 
+	PRIMARY KEY (audit_id), 
+	FOREIGN KEY(bank_id) REFERENCES banks (bank_id), 
+	FOREIGN KEY(source_id) REFERENCES data_sources (source_id)
+);
+
 -- table: bank_candidates
 CREATE TABLE bank_candidates (
 	candidate_id VARCHAR(120) NOT NULL, 
@@ -77,6 +106,22 @@ CREATE TABLE bank_evidence (
 	source_id INTEGER NOT NULL, 
 	PRIMARY KEY (evidence_id), 
 	FOREIGN KEY(bank_id) REFERENCES banks (bank_id), 
+	FOREIGN KEY(source_id) REFERENCES data_sources (source_id)
+);
+
+-- table: bank_relationships
+CREATE TABLE bank_relationships (
+	relationship_id VARCHAR(100) NOT NULL, 
+	child_bank_id VARCHAR(30) NOT NULL, 
+	parent_bank_id VARCHAR(30) NOT NULL, 
+	relationship_type VARCHAR(40) NOT NULL, 
+	source_record_id VARCHAR(40), 
+	verification_status VARCHAR(40) NOT NULL, 
+	evidence_note TEXT, 
+	source_id INTEGER NOT NULL, 
+	PRIMARY KEY (relationship_id), 
+	FOREIGN KEY(child_bank_id) REFERENCES banks (bank_id), 
+	FOREIGN KEY(parent_bank_id) REFERENCES banks (bank_id), 
 	FOREIGN KEY(source_id) REFERENCES data_sources (source_id)
 );
 
@@ -426,17 +471,17 @@ CREATE TABLE nationality_alias_country_refs (
 
 -- table: nationality_alias_review_provenance
 CREATE TABLE nationality_alias_review_provenance (
-	provenance_id VARCHAR(120) NOT NULL,
-	alias_key VARCHAR(64) NOT NULL,
-	corpus_value TEXT NOT NULL,
-	base_alias TEXT NOT NULL,
-	derivation_rule VARCHAR(120) NOT NULL,
-	evidence_reference TEXT NOT NULL,
-	review_status VARCHAR(40) NOT NULL,
-	source_id INTEGER NOT NULL,
-	PRIMARY KEY (provenance_id),
-	CONSTRAINT uq_nationality_review_provenance UNIQUE (alias_key, base_alias, derivation_rule),
-	FOREIGN KEY(alias_key) REFERENCES nationality_aliases_v2 (alias_key),
+	provenance_id VARCHAR(120) NOT NULL, 
+	alias_key VARCHAR(64) NOT NULL, 
+	corpus_value TEXT NOT NULL, 
+	base_alias TEXT NOT NULL, 
+	derivation_rule VARCHAR(120) NOT NULL, 
+	evidence_reference TEXT NOT NULL, 
+	review_status VARCHAR(40) NOT NULL, 
+	source_id INTEGER NOT NULL, 
+	PRIMARY KEY (provenance_id), 
+	CONSTRAINT uq_nationality_review_provenance UNIQUE (alias_key, base_alias, derivation_rule), 
+	FOREIGN KEY(alias_key) REFERENCES nationality_aliases_v2 (alias_key), 
 	FOREIGN KEY(source_id) REFERENCES data_sources (source_id)
 );
 
@@ -522,19 +567,19 @@ CREATE TABLE natural_earth_countries (
 
 -- table: natural_earth_country_aliases
 CREATE TABLE natural_earth_country_aliases (
-	alias_id VARCHAR(100) NOT NULL,
-	natural_earth_id VARCHAR(40) NOT NULL,
-	alias_text TEXT NOT NULL,
-	normalized_alias TEXT NOT NULL,
-	language VARCHAR(2) NOT NULL,
-	alias_kind VARCHAR(30) NOT NULL,
-	source_property VARCHAR(50) NOT NULL,
-	source_id INTEGER NOT NULL,
-	verification_status VARCHAR(40) NOT NULL,
-	enabled_for_lookup BOOLEAN NOT NULL,
-	PRIMARY KEY (alias_id),
-	CONSTRAINT uq_ne_country_alias UNIQUE (natural_earth_id, normalized_alias, language),
-	FOREIGN KEY(natural_earth_id) REFERENCES natural_earth_countries (natural_earth_id),
+	alias_id VARCHAR(100) NOT NULL, 
+	natural_earth_id VARCHAR(40) NOT NULL, 
+	alias_text TEXT NOT NULL, 
+	normalized_alias TEXT NOT NULL, 
+	language VARCHAR(2) NOT NULL, 
+	alias_kind VARCHAR(30) NOT NULL, 
+	source_property VARCHAR(50) NOT NULL, 
+	source_id INTEGER NOT NULL, 
+	verification_status VARCHAR(40) NOT NULL, 
+	enabled_for_lookup BOOLEAN NOT NULL, 
+	PRIMARY KEY (alias_id), 
+	CONSTRAINT uq_ne_country_alias UNIQUE (natural_earth_id, normalized_alias, language), 
+	FOREIGN KEY(natural_earth_id) REFERENCES natural_earth_countries (natural_earth_id), 
 	FOREIGN KEY(source_id) REFERENCES data_sources (source_id)
 );
 
@@ -668,6 +713,42 @@ CREATE INDEX ix_bank_aliases_language ON bank_aliases (language);
 -- index: ix_bank_aliases_normalized_alias
 CREATE INDEX ix_bank_aliases_normalized_alias ON bank_aliases (normalized_alias);
 
+-- index: ix_bank_audit_classifications_bank_id
+CREATE INDEX ix_bank_audit_classifications_bank_id ON bank_audit_classifications (bank_id);
+
+-- index: ix_bank_audit_classifications_banking_model
+CREATE INDEX ix_bank_audit_classifications_banking_model ON bank_audit_classifications (banking_model);
+
+-- index: ix_bank_audit_classifications_business_scope
+CREATE INDEX ix_bank_audit_classifications_business_scope ON bank_audit_classifications (business_scope);
+
+-- index: ix_bank_audit_classifications_confidence
+CREATE INDEX ix_bank_audit_classifications_confidence ON bank_audit_classifications (confidence);
+
+-- index: ix_bank_audit_classifications_country_code
+CREATE INDEX ix_bank_audit_classifications_country_code ON bank_audit_classifications (country_code);
+
+-- index: ix_bank_audit_classifications_entity_kind
+CREATE INDEX ix_bank_audit_classifications_entity_kind ON bank_audit_classifications (entity_kind);
+
+-- index: ix_bank_audit_classifications_license_status
+CREATE INDEX ix_bank_audit_classifications_license_status ON bank_audit_classifications (license_status);
+
+-- index: ix_bank_audit_classifications_licensed_count_eligible
+CREATE INDEX ix_bank_audit_classifications_licensed_count_eligible ON bank_audit_classifications (licensed_count_eligible);
+
+-- index: ix_bank_audit_classifications_operational_status
+CREATE INDEX ix_bank_audit_classifications_operational_status ON bank_audit_classifications (operational_status);
+
+-- index: ix_bank_audit_classifications_raw_status
+CREATE INDEX ix_bank_audit_classifications_raw_status ON bank_audit_classifications (raw_status);
+
+-- index: ix_bank_audit_classifications_review_action
+CREATE INDEX ix_bank_audit_classifications_review_action ON bank_audit_classifications (review_action);
+
+-- index: ix_bank_audit_classifications_source_record_id
+CREATE UNIQUE INDEX ix_bank_audit_classifications_source_record_id ON bank_audit_classifications (source_record_id);
+
 -- index: ix_bank_candidates_bank_id
 CREATE INDEX ix_bank_candidates_bank_id ON bank_candidates (bank_id);
 
@@ -676,6 +757,21 @@ CREATE INDEX ix_bank_candidates_level_code ON bank_candidates (level_code);
 
 -- index: ix_bank_evidence_bank_id
 CREATE INDEX ix_bank_evidence_bank_id ON bank_evidence (bank_id);
+
+-- index: ix_bank_relationships_child_bank_id
+CREATE INDEX ix_bank_relationships_child_bank_id ON bank_relationships (child_bank_id);
+
+-- index: ix_bank_relationships_parent_bank_id
+CREATE INDEX ix_bank_relationships_parent_bank_id ON bank_relationships (parent_bank_id);
+
+-- index: ix_bank_relationships_relationship_type
+CREATE INDEX ix_bank_relationships_relationship_type ON bank_relationships (relationship_type);
+
+-- index: ix_bank_relationships_source_record_id
+CREATE INDEX ix_bank_relationships_source_record_id ON bank_relationships (source_record_id);
+
+-- index: ix_bank_relationships_verification_status
+CREATE INDEX ix_bank_relationships_verification_status ON bank_relationships (verification_status);
 
 -- index: ix_banks_finance_model
 CREATE INDEX ix_banks_finance_model ON banks (finance_model);

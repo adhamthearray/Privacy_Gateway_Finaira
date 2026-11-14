@@ -40,7 +40,7 @@ The handoff remains at `C:\Users\domma\Downloads\Finaira_Generalization_DB_Codex
 
 ## Actual database schema
 
-The authoritative generated schema is [reports/database_schema.sql](../reports/database_schema.sql), and the inspected column/PK/FK/index inventory is [reports/schema_after.md](../reports/schema_after.md). SQLite currently contains 52 tables, with foreign keys enabled by the SQLAlchemy connection hook in `finaira_generalization/db.py`.
+The authoritative generated schema is [reports/database_schema.sql](../reports/database_schema.sql), and the inspected column/PK/FK/index inventory is [reports/schema_after.md](../reports/schema_after.md). SQLite currently contains 48 tables, with foreign keys enabled by the SQLAlchemy connection hook in `finaira_generalization/db.py`.
 
 ### Legacy/reference tables retained for compatibility
 
@@ -277,11 +277,72 @@ language, and displays the full candidate chain including exact, review-only,
 fallback, and suppression candidates. It is a read-only database explorer;
 it does not select a candidate or create pseudonyms.
 
+## GCC bank classification integration
+
+The GCC package is stored under
+`data/sources/bank/gcc_2026/`. The audited CSV is the classification
+authority; `gcc_banks_aliases_flat_2026.csv` is the alias authority. Supporting
+JSON, XLSX, and PDF artifacts are registered in `data_sources` for checksum
+and provenance tracking.
+
+The additive tables are `bank_audit_classifications` and
+`bank_relationships`. The first preserves every audited source row and its
+raw model, scope, entity kind, operational status, licence evidence,
+confidence, review action, and review note. The second stores only explicit
+audited relationships such as `ISLAMIC_WINDOW_OF`. Existing `banks`,
+`bank_aliases`, `bank_evidence`, and `bank_candidates` remain the runtime
+tables. The GCC importer regenerates candidates only for GCC records, so the
+existing Egyptian handoff refresh cannot erase them.
+
+Run the importer with:
+
+```powershell
+py -X utf8 scripts/import_gcc_bank_audit.py --dry-run
+py -X utf8 scripts/import_gcc_bank_audit.py --backup
+```
+
+The importer is transactional and idempotent. It preserves existing bank
+rows and aliases, collapses only duplicate normalized aliases required by the
+existing uniqueness constraint, reconciles BH-197/BH-241 as one BOK source
+identity, and reports all collapses in
+`reports/gcc_bank_audit/migration_report.json` and
+`reports/gcc_bank_audit/audit_results.csv`.
+
+Current integrated counts:
+
+- 302 bank identities: 37 existing Egyptian records plus 265 GCC records
+  after the one explicit BOK duplicate reconciliation.
+- 1,569 bank aliases, including all 86 pre-existing Egyptian aliases and
+  1,483 normalized GCC aliases; 2 source duplicates were collapsed.
+- 266 audited classification rows, 5 Islamic-window parent relationships,
+  and 1,510 bank candidates.
+- Source model rows: 175 conventional, 43 Islamic, 5 Islamic windows, 4
+  specialized/development, 16 unknown, 16 historical, and 7 not applicable.
+- Conservative licence status: 94 confirmed, 29 provisional, 40 requiring
+  current-year recheck, 75 unverified, 16 historical, 5 linked windows, and
+  7 not applicable. Only the 94 confirmed rows are eligible for the confirmed
+  licensed-bank count.
+- Operational status: 94 active listed, 138 active but requiring review, 3
+  licensed but not operational, 14 licence-unverified candidates, and 1
+  requiring a 2026 recheck, with 16 historical rows.
+
+Specific safeguards are tested: STC Bank remains `UNKNOWN`; Oman Islamic
+windows link to Bank Muscat, National Bank of Oman, Bank Dhofar, Ahlibank
+Oman, and Sohar International; Alizz remains a separate Islamic bank; Al
+Baraka Group is not counted as a commercial bank; BOK duplicate aliases are
+ambiguous rather than arbitrarily resolved; and Qatar caution rows remain
+provisional.
+
+The generated report is the authoritative list of records requiring review,
+unverified licences, duplicate candidates, operational statuses, and source
+actions. No classification is upgraded merely because an entity appears in a
+directory.
+
 ## Counts, verification, and unresolved data
 
 - Natural Earth: 258 rows, source version 5.1.1; 239 nationality QIDs retained; 230 QID matches, 2 guarded ISO matches, and 7 unresolved legacy edge cases. Country lookup uses all 258 Natural Earth rows. NER-v1 COUNTRY coverage is 174/229 unique values (75.98%) and 2,904/3,009 spans (96.51%) after 31 approved review rows, deduplicated to 30 runtime aliases. The remaining 55 values and 105 spans are suppressed in `reports/ner_v1_generalization/missing_country.csv` and `reports/ner_v1_generalization/country_review_queue.csv`.
 - Nationality aliases: 857 source-verified Arabic and English `P1549` rows plus 59 reviewed Arabic variants across validated QIDs. The coverage export records 28 Natural Earth records with no verified Arabic/English demonym; no form is invented for them. The review provenance table preserves 67 derivation/evidence rows for 59 enabled aliases. COUNTRY has 2,174 source-verified Wikidata label/alias rows plus 30 reviewed current-country variants.
-- Banks: 37 total; 24 conventional, 9 mixed, 4 Islamic; 86 aliases (50 English, 36 Arabic), 50 enabled English aliases and 36 enabled Arabic aliases; 47 are enabled by explicit `APPROVED_BY_USER` review status. 24 evidence rows cover 13 bank IDs; 185 regenerated candidates; 37/37 official Arabic master names remain blank. Conventional labels retain `EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF` limitations. See `reports/bank_inventory.csv`.
+- Egyptian baseline banks: 37 total; 24 conventional, 9 mixed, 4 Islamic; 86 aliases (50 English, 36 Arabic), 50 enabled English aliases and 36 enabled Arabic aliases; 47 are enabled by explicit `APPROVED_BY_USER` review status. 24 evidence rows cover 13 bank IDs; 185 baseline candidates; 37/37 official Arabic master names remain blank. Conventional labels retain `EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF` limitations. See `reports/bank_inventory.csv`.
 - Organizations: 312 QIDs; 191 source rows detected as corporations and 121 as universities, all stored under canonical `semantic_kind=CORPORATION`; 360 industry links; 73 concept mappings; 63 bilingual source categories; 48 missing Arabic organization names; all identities pending. No organization is production-verified by this import.
 - Government: 12 seed entities, 24 aliases, 17 categories, 63 review-catalog rows; all 24 aliases are enabled with explicit `APPROVED_BY_USER` status, while all 12 identity rows remain `REVIEW_REQUIRED` and all specific mappings remain review-only.
 - Existing reference layer: 3,018 occupations, 1,149 ISCO groups, 844 legacy nationality aliases, 7 age bands, 3 date rules.
@@ -322,5 +383,7 @@ After coverage changes: `py -X utf8 -m pytest -q` → **26 passed in 72.19s**.
 After country and nationality adjudication: `py -3 -m pytest -q` → **28 passed in 25.22s**. The final suite includes current-country reviewed aliases, historical/city/ambiguous suppression, Natural Earth joins, source/QID/derivation adjudication, reviewed-alias gating, Arabic/English nationality lookup, corrected Palestine QID handling, duplicate provenance, malformed/pending cases, FK/integrity checks, and two consecutive idempotent imports.
 
 After the rule-based date detector: `py -3 -m pytest -q` → **42 passed in 50.13s**. The added date tests cover multilingual and Unicode-digit parsing, ISO week/ordinal/timestamp forms, partial dates, explicit ambiguity handling, non-Gregorian preservation, relative-date context, invalid input, expanded candidate levels, provenance, and interval metadata.
+
+After GCC bank classification integration: `py -3 -m pytest -q` → **46 passed in 41.33s**. The added tests cover audit provenance, conservative licence counts, Islamic windows and parent links, digital/unknown models, historical and non-bank records, duplicate reconciliation, alias preservation, safe ambiguity, foreign-key integrity, and repeated imports.
 
 This layer does not implement JEV-U, JEV-P, privacy scoring, utility ranking, policy/disclosure selection, external LLM or cloud calls, or a new pseudonymization vault. The existing `finaira` privacy pipeline remains separate and unchanged.

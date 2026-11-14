@@ -12,7 +12,7 @@ from sqlalchemy.orm import Session
 
 from .age_date import parse_age
 from .db import (
-    Bank, BankAlias, BankCandidate, CandidateMetadata, DataSource,
+    Bank, BankAlias, BankAuditClassification, BankCandidate, BankRelationship, CandidateMetadata, DataSource,
     GeneralizationCandidate, GeneralizationLevel, GovernmentAlias,
     GovernmentCandidateReview, GovernmentEntity, IndustryQIDMapping,
     NationalityAlias, NationalityAliasV2, NationalityGeoJoin,
@@ -305,9 +305,12 @@ class GeneralizationDB:
 
     def _bank(self, session, value, lang, include_review):
         norm = normalize(value, lang)
-        aliases = session.scalars(select(BankAlias).where(BankAlias.normalized_alias == norm, BankAlias.language == lang, BankAlias.enabled_for_lookup.is_(True))).all()
-        if include_review and not aliases:
-            aliases = session.scalars(select(BankAlias).where(BankAlias.normalized_alias == norm, BankAlias.language == lang)).all()
+        all_aliases = session.scalars(select(BankAlias).where(BankAlias.normalized_alias == norm, BankAlias.language == lang)).all()
+        enabled_aliases = [row for row in all_aliases if row.enabled_for_lookup]
+        all_ids = {row.bank_id for row in all_aliases}
+        if not include_review and len(all_ids) > 1 and enabled_aliases:
+            return self._bank_fallback("AMBIGUOUS", "ALIAS_COLLISION", lang)
+        aliases = all_aliases if include_review else enabled_aliases
         ids = {row.bank_id for row in aliases}
         if not ids:
             ids = {row.bank_id for row in session.scalars(select(Bank)).all() if normalize(row.name_en, "en") == norm or (row.name_ar and normalize(row.name_ar, "ar") == norm)}
@@ -321,7 +324,38 @@ class GeneralizationDB:
 
     def _bank_row(self, session, row, lang):
         source = self._source(session, row.source_id)
-        return _candidate_dict(candidate_id=row.candidate_id, level_code=row.level_code, rank=row.specificity_rank, label_en=row.label_en, label_ar=row.label_ar, language=lang, taxonomy="FINAIR_BANK", taxonomy_code=row.finance_model, source=source, verification_status=row.verification_status, is_exact=row.is_exact, is_local_only=row.is_local_only, is_suppression=row.is_suppression, provenance={"source": source, "evidence_status": row.evidence_status, "disclosure_approved": row.disclosure_approved}, extra={"category_population_count": row.category_population_count, "finance_model": row.finance_model, "disclosure_approved": row.disclosure_approved})
+        audits = session.scalars(select(BankAuditClassification).where(BankAuditClassification.bank_id == row.bank_id).order_by(BankAuditClassification.source_record_id)).all()
+        relationships = session.scalars(select(BankRelationship).where((BankRelationship.child_bank_id == row.bank_id) | (BankRelationship.parent_bank_id == row.bank_id)).order_by(BankRelationship.relationship_id)).all()
+        audit_payload = [{
+            "source_record_id": item.source_record_id,
+            "country_code": item.country_code,
+            "banking_model": item.banking_model,
+            "banking_model_source": item.banking_model_source,
+            "business_scope": item.business_scope,
+            "entity_kind": item.entity_kind,
+            "operational_status": item.operational_status,
+            "license_status": item.license_status,
+            "licensed_count_eligible": item.licensed_count_eligible,
+            "license_confirmation": item.license_confirmation,
+            "confidence": item.confidence,
+            "review_action": item.review_action,
+            "source_url": item.source_url,
+            "evidence_url": item.evidence_url,
+            "classification_evidence": item.classification_evidence,
+            "review_note": item.review_note,
+        } for item in audits]
+        relationship_payload = [{
+            "relationship_type": item.relationship_type,
+            "child_bank_id": item.child_bank_id,
+            "parent_bank_id": item.parent_bank_id,
+            "verification_status": item.verification_status,
+            "evidence_note": item.evidence_note,
+        } for item in relationships]
+        primary = audits[0] if audits else None
+        provenance = {"source": source, "evidence_status": row.evidence_status, "disclosure_approved": row.disclosure_approved}
+        if primary:
+            provenance.update({"audit_source_record_id": primary.source_record_id, "audit_review_action": primary.review_action, "audit_license_status": primary.license_status})
+        return _candidate_dict(candidate_id=row.candidate_id, level_code=row.level_code, rank=row.specificity_rank, label_en=row.label_en, label_ar=row.label_ar, language=lang, taxonomy="FINAIR_BANK", taxonomy_code=row.finance_model, source=source, verification_status=row.verification_status, is_exact=row.is_exact, is_local_only=row.is_local_only, is_suppression=row.is_suppression, provenance=provenance, extra={"category_population_count": row.category_population_count, "finance_model": row.finance_model, "disclosure_approved": row.disclosure_approved, "audit_classifications": audit_payload, "relationships": relationship_payload})
 
     def _bank_fallback(self, status, reason, lang):
         labels = [("BANKING_INSTITUTION", "Banking institution", "مؤسسة مصرفية"), ("FINANCIAL_INSTITUTION", "Financial institution", "مؤسسة مالية")]

@@ -22,6 +22,30 @@ erDiagram
         BOOLEAN enabled_for_lookup
         INTEGER source_id
     }
+    bank_audit_classifications {
+        VARCHAR(100) audit_id PK
+        VARCHAR(40) source_record_id
+        VARCHAR(30) bank_id
+        VARCHAR(2) country_code
+        VARCHAR(80) country
+        VARCHAR(80) raw_category
+        VARCHAR(50) raw_status
+        VARCHAR(40) banking_model
+        VARCHAR(80) banking_model_source
+        VARCHAR(120) business_scope
+        VARCHAR(100) entity_kind
+        VARCHAR(50) operational_status
+        VARCHAR(100) license_confirmation
+        TEXT classification_evidence
+        TEXT source_url
+        TEXT evidence_url
+        VARCHAR(40) confidence
+        VARCHAR(80) review_action
+        TEXT review_note
+        VARCHAR(30) license_status
+        BOOLEAN licensed_count_eligible
+        INTEGER source_id
+    }
     bank_candidates {
         VARCHAR(120) candidate_id PK
         VARCHAR(30) bank_id
@@ -51,6 +75,16 @@ erDiagram
         VARCHAR(20) checked_on
         VARCHAR(20) source_strength
         TEXT notes
+        INTEGER source_id
+    }
+    bank_relationships {
+        VARCHAR(100) relationship_id PK
+        VARCHAR(30) child_bank_id
+        VARCHAR(30) parent_bank_id
+        VARCHAR(40) relationship_type
+        VARCHAR(40) source_record_id
+        VARCHAR(40) verification_status
+        TEXT evidence_note
         INTEGER source_id
     }
     banks {
@@ -447,10 +481,15 @@ erDiagram
     age_bands ||--o{ age_scheme_rules : "band_id"
     banks ||--o{ bank_aliases : "bank_id"
     data_sources ||--o{ bank_aliases : "source_id"
+    banks ||--o{ bank_audit_classifications : "bank_id"
+    data_sources ||--o{ bank_audit_classifications : "source_id"
     banks ||--o{ bank_candidates : "bank_id"
     data_sources ||--o{ bank_candidates : "source_id"
     banks ||--o{ bank_evidence : "bank_id"
     data_sources ||--o{ bank_evidence : "source_id"
+    banks ||--o{ bank_relationships : "child_bank_id"
+    banks ||--o{ bank_relationships : "parent_bank_id"
+    data_sources ||--o{ bank_relationships : "source_id"
     data_sources ||--o{ banks : "source_id"
     generalization_candidates ||--o{ candidate_metadata : "candidate_id"
     generalization_candidates ||--o{ candidate_provenance : "candidate_id"

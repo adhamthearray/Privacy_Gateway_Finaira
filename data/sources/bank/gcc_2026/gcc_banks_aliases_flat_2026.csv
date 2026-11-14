@@ -1,0 +1,1488 @@
+﻿record_id,country_code,bank_name_en,alias,normalized_alias,alias_type,category,status,review_required
+SA-001,SA,Saudi National Bank,Saudi National Bank,saudi national bank,canonical_en,local,listed,False
+SA-001,SA,Saudi National Bank,البنك الأهلي السعودي,البنك الاهلي السعودي,canonical_ar,local,listed,False
+SA-001,SA,Saudi National Bank,SNB,snb,curated_alias,local,listed,True
+SA-001,SA,Saudi National Bank,AlAhli Saudi,alahli saudi,curated_alias,local,listed,False
+SA-001,SA,Saudi National Bank,Saudi Al Ahli Bank,saudi al ahli bank,curated_alias,local,listed,False
+SA-001,SA,Saudi National Bank,Saudi National Commercial Bank,saudi national commercial bank,curated_alias,local,listed,False
+SA-001,SA,Saudi National Bank,الأهلي السعودي,الاهلي السعودي,curated_alias,local,listed,False
+SA-001,SA,Saudi National Bank,Saudi Alahli Bank,saudi alahli bank,curated_alias,local,listed,False
+SA-001,SA,Saudi National Bank,The National Commercial Bank,the national commercial bank,historic_predecessor_or_previous_name,local,listed,True
+SA-001,SA,Saudi National Bank,NCB,ncb,historic_predecessor_or_previous_name,local,listed,True
+SA-001,SA,Saudi National Bank,Al Ahli Bank Saudi,al ahli bank saudi,historic_predecessor_or_previous_name,local,listed,True
+SA-001,SA,Saudi National Bank,Samba Financial Group,samba financial group,historic_predecessor_or_previous_name,local,listed,True
+SA-001,SA,Saudi National Bank,Samba Bank,samba bank,historic_predecessor_or_previous_name,local,listed,True
+SA-001,SA,Saudi National Bank,سامبا,سامبا,historic_predecessor_or_previous_name,local,listed,True
+SA-001,SA,Saudi National Bank,البنك الأهلي التجاري,البنك الاهلي التجاري,historic_predecessor_or_previous_name,local,listed,True
+SA-002,SA,Al Rajhi Bank,Al Rajhi Bank,al rajhi bank,canonical_en,local,listed,False
+SA-002,SA,Al Rajhi Bank,مصرف الراجحي,مصرف الراجحي,canonical_ar,local,listed,False
+SA-002,SA,Al Rajhi Bank,AlRajhi,alrajhi,curated_alias,local,listed,False
+SA-002,SA,Al Rajhi Bank,Al Rajhi Banking & Investment Corporation,al rajhi banking investment corporation,curated_alias,local,listed,False
+SA-002,SA,Al Rajhi Bank,ARBI,arbi,curated_alias,local,listed,False
+SA-002,SA,Al Rajhi Bank,الراجحي,الراجحي,curated_alias,local,listed,False
+SA-002,SA,Al Rajhi Bank,بنك الراجحي,بنك الراجحي,curated_alias,local,listed,False
+SA-002,SA,Al Rajhi Bank,بنك الراجحي السعودي,بنك الراجحي السعودي,curated_alias,local,listed,False
+SA-003,SA,Riyad Bank,Riyad Bank,riyad bank,canonical_en,local,listed,False
+SA-003,SA,Riyad Bank,بنك الرياض,بنك الرياض,canonical_ar,local,listed,False
+SA-003,SA,Riyad Bank,Riyadh Bank,riyadh bank,curated_alias,local,listed,False
+SA-003,SA,Riyad Bank,Riyadbank,riyadbank,curated_alias,local,listed,False
+SA-003,SA,Riyad Bank,الرياض بنك,الرياض بنك,curated_alias,local,listed,False
+SA-004,SA,Saudi Awwal Bank,Saudi Awwal Bank,saudi awwal bank,canonical_en,local,listed,False
+SA-004,SA,Saudi Awwal Bank,البنك السعودي الأول,البنك السعودي الاول,canonical_ar,local,listed,False
+SA-004,SA,Saudi Awwal Bank,SAB,sab,curated_alias,local,listed,True
+SA-004,SA,Saudi Awwal Bank,Saudi Awwal,saudi awwal,curated_alias,local,listed,False
+SA-004,SA,Saudi Awwal Bank,Saudi First Bank,saudi first bank,curated_alias,local,listed,False
+SA-004,SA,Saudi Awwal Bank,سـاب,ساب,curated_alias,local,listed,True
+SA-004,SA,Saudi Awwal Bank,SABB,sabb,historic_predecessor_or_previous_name,local,listed,True
+SA-004,SA,Saudi Awwal Bank,The Saudi British Bank,the saudi british bank,historic_predecessor_or_previous_name,local,listed,True
+SA-004,SA,Saudi Awwal Bank,البنك السعودي البريطاني,البنك السعودي البريطاني,historic_predecessor_or_previous_name,local,listed,True
+SA-004,SA,Saudi Awwal Bank,Alawwal Bank,alawwal bank,historic_predecessor_or_previous_name,local,listed,True
+SA-004,SA,Saudi Awwal Bank,البنك الأول,البنك الاول,historic_predecessor_or_previous_name,local,listed,True
+SA-004,SA,Saudi Awwal Bank,Saudi Hollandi Bank,saudi hollandi bank,historic_predecessor_or_previous_name,local,listed,True
+SA-004,SA,Saudi Awwal Bank,البنك السعودي الهولندي,البنك السعودي الهولندي,historic_predecessor_or_previous_name,local,listed,True
+SA-005,SA,Arab National Bank,Arab National Bank,arab national bank,canonical_en,local,listed,False
+SA-005,SA,Arab National Bank,البنك العربي الوطني,البنك العربي الوطني,canonical_ar,local,listed,False
+SA-005,SA,Arab National Bank,ANB,anb,curated_alias,local,listed,True
+SA-005,SA,Arab National Bank,anb bank,anb bank,curated_alias,local,listed,False
+SA-005,SA,Arab National Bank,البنك العربي الوطني السعودي,البنك العربي الوطني السعودي,curated_alias,local,listed,False
+SA-006,SA,Alinma Bank,Alinma Bank,alinma bank,canonical_en,local,listed,False
+SA-006,SA,Alinma Bank,مصرف الإنماء,مصرف الانماء,canonical_ar,local,listed,False
+SA-006,SA,Alinma Bank,Al Inma Bank,al inma bank,curated_alias,local,listed,False
+SA-006,SA,Alinma Bank,Alinma,alinma,curated_alias,local,listed,False
+SA-006,SA,Alinma Bank,Al-Inma,al inma,curated_alias,local,listed,False
+SA-006,SA,Alinma Bank,بنك الإنماء,بنك الانماء,curated_alias,local,listed,False
+SA-006,SA,Alinma Bank,الإنماء,الانماء,curated_alias,local,listed,False
+SA-007,SA,Banque Saudi Fransi,Banque Saudi Fransi,banque saudi fransi,canonical_en,local,listed,False
+SA-007,SA,Banque Saudi Fransi,البنك السعودي الفرنسي,البنك السعودي الفرنسي,canonical_ar,local,listed,False
+SA-007,SA,Banque Saudi Fransi,BSF,bsf,curated_alias,local,listed,True
+SA-007,SA,Banque Saudi Fransi,Saudi Fransi Bank,saudi fransi bank,curated_alias,local,listed,False
+SA-007,SA,Banque Saudi Fransi,Bank Saudi Fransi,bank saudi fransi,curated_alias,local,listed,False
+SA-007,SA,Banque Saudi Fransi,البنك الفرنسي,البنك الفرنسي,curated_alias,local,listed,False
+SA-007,SA,Banque Saudi Fransi,السعودي الفرنسي,السعودي الفرنسي,curated_alias,local,listed,False
+SA-008,SA,Saudi Investment Bank,Saudi Investment Bank,saudi investment bank,canonical_en,local,listed,False
+SA-008,SA,Saudi Investment Bank,البنك السعودي للاستثمار,البنك السعودي للاستثمار,canonical_ar,local,listed,False
+SA-008,SA,Saudi Investment Bank,SAIB,saib,curated_alias,local,listed,False
+SA-008,SA,Saudi Investment Bank,The Saudi Investment Bank,the saudi investment bank,curated_alias,local,listed,False
+SA-008,SA,Saudi Investment Bank,Alistithmar Bank,alistithmar bank,curated_alias,local,listed,False
+SA-008,SA,Saudi Investment Bank,الاستثمار بنك,الاستثمار بنك,curated_alias,local,listed,False
+SA-008,SA,Saudi Investment Bank,بنك الاستثمار السعودي,بنك الاستثمار السعودي,curated_alias,local,listed,False
+SA-009,SA,Bank AlJazira,Bank AlJazira,bank aljazira,canonical_en,local,listed,False
+SA-009,SA,Bank AlJazira,بنك الجزيرة,بنك الجزيرة,canonical_ar,local,listed,False
+SA-009,SA,Bank AlJazira,BAJ,baj,curated_alias,local,listed,True
+SA-009,SA,Bank AlJazira,Bank Al Jazira,bank al jazira,curated_alias,local,listed,False
+SA-009,SA,Bank AlJazira,Aljazira Bank,aljazira bank,curated_alias,local,listed,False
+SA-009,SA,Bank AlJazira,Al Jazira Bank,al jazira bank,curated_alias,local,listed,False
+SA-009,SA,Bank AlJazira,الجزيرة بنك,الجزيرة بنك,curated_alias,local,listed,False
+SA-010,SA,Bank Albilad,Bank Albilad,bank albilad,canonical_en,local,listed,False
+SA-010,SA,Bank Albilad,بنك البلاد,بنك البلاد,canonical_ar,local,listed,False
+SA-010,SA,Bank Albilad,Al Bilad Bank,al bilad bank,curated_alias,local,listed,False
+SA-010,SA,Bank Albilad,Albilad Bank,albilad bank,curated_alias,local,listed,False
+SA-010,SA,Bank Albilad,Bilad Bank,bilad bank,curated_alias,local,listed,False
+SA-010,SA,Bank Albilad,البلاد,البلاد,curated_alias,local,listed,False
+SA-011,SA,Gulf International Bank - Saudi Arabia,Gulf International Bank - Saudi Arabia,gulf international bank saudi arabia,canonical_en,local,listed,False
+SA-011,SA,Gulf International Bank - Saudi Arabia,بنك الخليج الدولي - السعودية,بنك الخليج الدولي السعودية,canonical_ar,local,listed,False
+SA-011,SA,Gulf International Bank - Saudi Arabia,GIB-SA,gib sa,curated_alias,local,listed,False
+SA-011,SA,Gulf International Bank - Saudi Arabia,GIB Saudi Arabia,gib saudi arabia,curated_alias,local,listed,False
+SA-011,SA,Gulf International Bank - Saudi Arabia,GIB KSA,gib ksa,curated_alias,local,listed,False
+SA-011,SA,Gulf International Bank - Saudi Arabia,بنك الخليج الدولي السعودي,بنك الخليج الدولي السعودي,curated_alias,local,listed,False
+SA-012,SA,STC Bank,STC Bank,stc bank,canonical_en,digital,listed,False
+SA-012,SA,STC Bank,بنك إس تي سي,بنك اس تي سي,canonical_ar,digital,listed,False
+SA-012,SA,STC Bank,STC Pay Bank,stc pay bank,curated_alias,digital,listed,False
+SA-012,SA,STC Bank,بنك stc,بنك stc,curated_alias,digital,listed,False
+SA-012,SA,STC Bank,اس تي سي بنك,اس تي سي بنك,curated_alias,digital,listed,False
+SA-012,SA,STC Bank,STC Pay,stc pay,historic_predecessor_or_previous_name,digital,listed,True
+SA-012,SA,STC Bank,إس تي سي باي,اس تي سي باي,historic_predecessor_or_previous_name,digital,listed,True
+SA-013,SA,Vision Bank,Vision Bank,vision bank,canonical_en,digital,listed,False
+SA-013,SA,Vision Bank,بنك الرؤية,بنك الروية,canonical_ar,digital,listed,False
+SA-013,SA,Vision Bank,Visionbank,visionbank,curated_alias,digital,listed,False
+SA-013,SA,Vision Bank,Vision Digital Bank,vision digital bank,curated_alias,digital,listed,False
+SA-013,SA,Vision Bank,فيجن بنك,فيجن بنك,curated_alias,digital,listed,False
+SA-014,SA,D360 Bank,D360 Bank,d360 bank,canonical_en,digital,listed,False
+SA-014,SA,D360 Bank,بنك دي 360,بنك دي 360,canonical_ar,digital,listed,False
+SA-014,SA,D360 Bank,D360,d360,curated_alias,digital,listed,False
+SA-014,SA,D360 Bank,D 360 Bank,d 360 bank,curated_alias,digital,listed,False
+SA-014,SA,D360 Bank,D360 Digital Bank,d360 digital bank,curated_alias,digital,listed,False
+SA-014,SA,D360 Bank,بنك دي٣٦٠,بنك دي٣٦٠,curated_alias,digital,listed,False
+SA-014,SA,D360 Bank,دي 360 بنك,دي 360 بنك,curated_alias,digital,listed,False
+SA-015,SA,EZ Bank,EZ Bank,ez bank,canonical_en,digital,licensed_not_operational,False
+SA-015,SA,EZ Bank,بنك إي زد,بنك اي زد,canonical_ar,digital,licensed_not_operational,False
+SA-015,SA,EZ Bank,EZBank,ezbank,curated_alias,digital,licensed_not_operational,False
+SA-015,SA,EZ Bank,EZ Digital Bank,ez digital bank,curated_alias,digital,licensed_not_operational,False
+SA-015,SA,EZ Bank,اي زد بنك,اي زد بنك,curated_alias,digital,licensed_not_operational,False
+SA-016,SA,Emirates NBD,Emirates NBD,emirates nbd,canonical_en,foreign_branch,listed,False
+SA-016,SA,Emirates NBD,بنك الإمارات دبي الوطني,بنك الامارات دبي الوطني,canonical_ar,foreign_branch,listed,False
+SA-016,SA,Emirates NBD,Emirates NBD Saudi,emirates nbd saudi,curated_alias,foreign_branch,listed,False
+SA-016,SA,Emirates NBD,ENBD,enbd,curated_alias,foreign_branch,listed,False
+SA-016,SA,Emirates NBD,الإمارات دبي الوطني,الامارات دبي الوطني,curated_alias,foreign_branch,listed,False
+SA-017,SA,National Bank of Bahrain,National Bank of Bahrain,national bank of bahrain,canonical_en,foreign_branch,listed,False
+SA-017,SA,National Bank of Bahrain,بنك البحرين الوطني,بنك البحرين الوطني,canonical_ar,foreign_branch,listed,False
+SA-017,SA,National Bank of Bahrain,NBB,nbb,curated_alias,foreign_branch,listed,True
+SA-017,SA,National Bank of Bahrain,NBB Saudi,nbb saudi,curated_alias,foreign_branch,listed,False
+SA-017,SA,National Bank of Bahrain,البحرين الوطني,البحرين الوطني,curated_alias,foreign_branch,listed,False
+SA-018,SA,National Bank of Kuwait,National Bank of Kuwait,national bank of kuwait,canonical_en,foreign_branch,listed,False
+SA-018,SA,National Bank of Kuwait,بنك الكويت الوطني,بنك الكويت الوطني,canonical_ar,foreign_branch,listed,False
+SA-018,SA,National Bank of Kuwait,NBK,nbk,curated_alias,foreign_branch,listed,True
+SA-018,SA,National Bank of Kuwait,NBK Saudi,nbk saudi,curated_alias,foreign_branch,listed,False
+SA-018,SA,National Bank of Kuwait,الكويت الوطني,الكويت الوطني,curated_alias,foreign_branch,listed,False
+SA-019,SA,Bank Muscat,Bank Muscat,bank muscat,canonical_en,foreign_branch,listed,False
+SA-019,SA,Bank Muscat,بنك مسقط,بنك مسقط,canonical_ar,foreign_branch,listed,False
+SA-019,SA,Bank Muscat,BankMuscat,bankmuscat,curated_alias,foreign_branch,listed,False
+SA-019,SA,Bank Muscat,Muscat Bank,muscat bank,curated_alias,foreign_branch,listed,False
+SA-019,SA,Bank Muscat,بنك مسقط السعودي,بنك مسقط السعودي,curated_alias,foreign_branch,listed,False
+SA-019,SA,Bank Muscat,Bank Muscat SAOG,bank muscat saog,curated_alias,foreign_branch,listed,False
+SA-019,SA,Bank Muscat,بنك مسقط العماني,بنك مسقط العماني,curated_alias,foreign_branch,listed,False
+SA-020,SA,Deutsche Bank,Deutsche Bank,deutsche bank,canonical_en,foreign_branch,listed,False
+SA-020,SA,Deutsche Bank,دويتشه بنك,دويتشه بنك,canonical_ar,foreign_branch,listed,False
+SA-020,SA,Deutsche Bank,Deutsche Bank AG,deutsche bank ag,curated_alias,foreign_branch,listed,False
+SA-020,SA,Deutsche Bank,DB Bank,db bank,curated_alias,foreign_branch,listed,False
+SA-020,SA,Deutsche Bank,البنك الألماني دويتشه,البنك الالماني دويتشه,curated_alias,foreign_branch,listed,False
+SA-021,SA,BNP Paribas,BNP Paribas,bnp paribas,canonical_en,foreign_branch,listed,False
+SA-021,SA,BNP Paribas,بنك بي إن بي باريبا,بنك بي ان بي باريبا,canonical_ar,foreign_branch,listed,False
+SA-021,SA,BNP Paribas,BNP,bnp,curated_alias,foreign_branch,listed,True
+SA-021,SA,BNP Paribas,BNPP,bnpp,curated_alias,foreign_branch,listed,False
+SA-021,SA,BNP Paribas,BNP Paribas Saudi,bnp paribas saudi,curated_alias,foreign_branch,listed,False
+SA-021,SA,BNP Paribas,بي إن بي باريبا,بي ان بي باريبا,curated_alias,foreign_branch,listed,False
+SA-022,SA,JPMorgan Chase Bank,JPMorgan Chase Bank,jpmorgan chase bank,canonical_en,foreign_branch,listed,False
+SA-022,SA,JPMorgan Chase Bank,جي بي مورغان تشيس,جي بي مورغان تشيس,canonical_ar,foreign_branch,listed,False
+SA-022,SA,JPMorgan Chase Bank,J.P. Morgan Chase N.A.,j p morgan chase n a,curated_alias,foreign_branch,listed,False
+SA-022,SA,JPMorgan Chase Bank,JPMorgan,jpmorgan,curated_alias,foreign_branch,listed,False
+SA-022,SA,JPMorgan Chase Bank,JP Morgan,jp morgan,curated_alias,foreign_branch,listed,False
+SA-022,SA,JPMorgan Chase Bank,J P Morgan,j p morgan,curated_alias,foreign_branch,listed,False
+SA-022,SA,JPMorgan Chase Bank,جي بي مورجان,جي بي مورجان,curated_alias,foreign_branch,listed,False
+SA-022,SA,JPMorgan Chase Bank,جيه بي مورغان,جيه بي مورغان,curated_alias,foreign_branch,listed,False
+SA-023,SA,National Bank of Pakistan,National Bank of Pakistan,national bank of pakistan,canonical_en,foreign_branch,listed,False
+SA-023,SA,National Bank of Pakistan,بنك باكستان الوطني,بنك باكستان الوطني,canonical_ar,foreign_branch,listed,False
+SA-023,SA,National Bank of Pakistan,NBP,nbp,curated_alias,foreign_branch,listed,True
+SA-023,SA,National Bank of Pakistan,National Bank of Pakistan Saudi,national bank of pakistan saudi,curated_alias,foreign_branch,listed,False
+SA-024,SA,Ziraat Bank,Ziraat Bank,ziraat bank,canonical_en,foreign_branch,listed,False
+SA-024,SA,Ziraat Bank,بنك زراعات,بنك زراعات,canonical_ar,foreign_branch,listed,False
+SA-024,SA,Ziraat Bank,T.C. Ziraat Bankasi A.S.,t c ziraat bankasi a s,curated_alias,foreign_branch,listed,False
+SA-024,SA,Ziraat Bank,Ziraat,ziraat,curated_alias,foreign_branch,listed,False
+SA-024,SA,Ziraat Bank,بنك زراعات التركي,بنك زراعات التركي,curated_alias,foreign_branch,listed,False
+SA-025,SA,Industrial and Commercial Bank of China,Industrial and Commercial Bank of China,industrial and commercial bank of china,canonical_en,foreign_branch,listed,False
+SA-025,SA,Industrial and Commercial Bank of China,البنك الصناعي والتجاري الصيني,البنك الصناعي والتجاري الصيني,canonical_ar,foreign_branch,listed,False
+SA-025,SA,Industrial and Commercial Bank of China,ICBC,icbc,curated_alias,foreign_branch,listed,False
+SA-025,SA,Industrial and Commercial Bank of China,ICBC Bank,icbc bank,curated_alias,foreign_branch,listed,False
+SA-025,SA,Industrial and Commercial Bank of China,بنك ICBC,بنك icbc,curated_alias,foreign_branch,listed,False
+SA-026,SA,Qatar National Bank,Qatar National Bank,qatar national bank,canonical_en,foreign_branch,listed,False
+SA-026,SA,Qatar National Bank,بنك قطر الوطني,بنك قطر الوطني,canonical_ar,foreign_branch,listed,False
+SA-026,SA,Qatar National Bank,QNB,qnb,curated_alias,foreign_branch,listed,True
+SA-026,SA,Qatar National Bank,QNB Saudi,qnb saudi,curated_alias,foreign_branch,listed,False
+SA-026,SA,Qatar National Bank,بنك QNB,بنك qnb,curated_alias,foreign_branch,listed,False
+SA-026,SA,Qatar National Bank,Q N B,q n b,curated_alias,foreign_branch,listed,False
+SA-027,SA,MUFG Bank,MUFG Bank,mufg bank,canonical_en,foreign_branch,listed,False
+SA-027,SA,MUFG Bank,بنك إم يو إف جي,بنك ام يو اف جي,canonical_ar,foreign_branch,listed,False
+SA-027,SA,MUFG Bank,MUFG Bank Ltd,mufg bank ltd,curated_alias,foreign_branch,listed,False
+SA-027,SA,MUFG Bank,Bank of Tokyo-Mitsubishi UFJ,bank of tokyo mitsubishi ufj,curated_alias,foreign_branch,listed,False
+SA-027,SA,MUFG Bank,بنك طوكيو ميتسوبيشي,بنك طوكيو ميتسوبيشي,curated_alias,foreign_branch,listed,False
+SA-028,SA,First Abu Dhabi Bank,First Abu Dhabi Bank,first abu dhabi bank,canonical_en,foreign_branch,listed,False
+SA-028,SA,First Abu Dhabi Bank,بنك أبوظبي الأول,بنك ابوظبي الاول,canonical_ar,foreign_branch,listed,False
+SA-028,SA,First Abu Dhabi Bank,FAB,fab,curated_alias,foreign_branch,listed,True
+SA-028,SA,First Abu Dhabi Bank,FAB Saudi,fab saudi,curated_alias,foreign_branch,listed,False
+SA-028,SA,First Abu Dhabi Bank,بنك FAB,بنك fab,curated_alias,foreign_branch,listed,False
+SA-028,SA,First Abu Dhabi Bank,F A B,f a b,curated_alias,foreign_branch,listed,False
+SA-028,SA,First Abu Dhabi Bank,National Bank of Abu Dhabi,national bank of abu dhabi,historic_predecessor_or_previous_name,foreign_branch,listed,True
+SA-028,SA,First Abu Dhabi Bank,NBAD,nbad,historic_predecessor_or_previous_name,foreign_branch,listed,True
+SA-028,SA,First Abu Dhabi Bank,First Gulf Bank,first gulf bank,historic_predecessor_or_previous_name,foreign_branch,listed,True
+SA-028,SA,First Abu Dhabi Bank,FGB,fgb,historic_predecessor_or_previous_name,foreign_branch,listed,True
+SA-029,SA,UBS AG,UBS AG,ubs ag,canonical_en,foreign_branch,listed,False
+SA-029,SA,UBS AG,بنك يو بي إس,بنك يو بي اس,canonical_ar,foreign_branch,listed,False
+SA-029,SA,UBS AG,UBS,ubs,curated_alias,foreign_branch,listed,True
+SA-029,SA,UBS AG,UBS Bank,ubs bank,curated_alias,foreign_branch,listed,False
+SA-029,SA,UBS AG,يو بي اس,يو بي اس,curated_alias,foreign_branch,listed,False
+SA-029,SA,UBS AG,Credit Suisse Bank,credit suisse bank,historic_predecessor_or_previous_name,foreign_branch,listed,True
+SA-029,SA,UBS AG,كريدي سويس,كريدي سويس,historic_predecessor_or_previous_name,foreign_branch,listed,True
+SA-030,SA,Standard Chartered Bank,Standard Chartered Bank,standard chartered bank,canonical_en,foreign_branch,listed,False
+SA-030,SA,Standard Chartered Bank,بنك ستاندرد تشارترد,بنك ستاندرد تشارترد,canonical_ar,foreign_branch,listed,False
+SA-030,SA,Standard Chartered Bank,SCB,scb,curated_alias,foreign_branch,listed,True
+SA-030,SA,Standard Chartered Bank,Standard Chartered Saudi,standard chartered saudi,curated_alias,foreign_branch,listed,False
+SA-030,SA,Standard Chartered Bank,ستاندرد تشارترد,ستاندرد تشارترد,curated_alias,foreign_branch,listed,False
+SA-031,SA,National Bank of Iraq,National Bank of Iraq,national bank of iraq,canonical_en,foreign_branch,listed,False
+SA-031,SA,National Bank of Iraq,المصرف الأهلي العراقي,المصرف الاهلي العراقي,canonical_ar,foreign_branch,listed,False
+SA-031,SA,National Bank of Iraq,NBI,nbi,curated_alias,foreign_branch,listed,True
+SA-031,SA,National Bank of Iraq,National Bank of Iraq Saudi,national bank of iraq saudi,curated_alias,foreign_branch,listed,False
+SA-032,SA,Trade Bank of Iraq,Trade Bank of Iraq,trade bank of iraq,canonical_en,foreign_branch,licensed_not_operational,False
+SA-032,SA,Trade Bank of Iraq,المصرف العراقي للتجارة,المصرف العراقي للتجارة,canonical_ar,foreign_branch,licensed_not_operational,False
+SA-032,SA,Trade Bank of Iraq,TBI,tbi,curated_alias,foreign_branch,licensed_not_operational,True
+SA-032,SA,Trade Bank of Iraq,Iraq Trade Bank,iraq trade bank,curated_alias,foreign_branch,licensed_not_operational,False
+SA-033,SA,Bank of China Limited,Bank of China Limited,bank of china limited,canonical_en,foreign_branch,listed,False
+SA-033,SA,Bank of China Limited,بنك الصين,بنك الصين,canonical_ar,foreign_branch,listed,False
+SA-033,SA,Bank of China Limited,BOC,boc,curated_alias,foreign_branch,listed,True
+SA-033,SA,Bank of China Limited,Bank of China,bank of china,curated_alias,foreign_branch,listed,False
+SA-033,SA,Bank of China Limited,بنك أوف تشاينا,بنك اوف تشاينا,curated_alias,foreign_branch,listed,False
+SA-034,SA,Banque Misr,Banque Misr,banque misr,canonical_en,foreign_branch,listed,False
+SA-034,SA,Banque Misr,بنك مصر,بنك مصر,canonical_ar,foreign_branch,listed,False
+SA-034,SA,Banque Misr,Bank Misr,bank misr,curated_alias,foreign_branch,listed,False
+SA-034,SA,Banque Misr,Banque Misr KSA,banque misr ksa,curated_alias,foreign_branch,listed,False
+SA-034,SA,Banque Misr,بنك مصر السعودي,بنك مصر السعودي,curated_alias,foreign_branch,listed,False
+SA-035,SA,National Bank of Egypt,National Bank of Egypt,national bank of egypt,canonical_en,foreign_branch,listed,False
+SA-035,SA,National Bank of Egypt,البنك الأهلي المصري,البنك الاهلي المصري,canonical_ar,foreign_branch,listed,False
+SA-035,SA,National Bank of Egypt,NBE,nbe,curated_alias,foreign_branch,listed,True
+SA-035,SA,National Bank of Egypt,Ahly Bank Egypt,ahly bank egypt,curated_alias,foreign_branch,listed,False
+SA-036,SA,Sohar International Bank,Sohar International Bank,sohar international bank,canonical_en,foreign_branch,listed,False
+SA-036,SA,Sohar International Bank,بنك صحار الدولي,بنك صحار الدولي,canonical_ar,foreign_branch,listed,False
+SA-036,SA,Sohar International Bank,Sohar International,sohar international,curated_alias,foreign_branch,listed,False
+SA-036,SA,Sohar International Bank,Bank Sohar,bank sohar,curated_alias,foreign_branch,listed,False
+SA-036,SA,Sohar International Bank,بنك صحار,بنك صحار,curated_alias,foreign_branch,listed,False
+SA-037,SA,Bank of Jordan,Bank of Jordan,bank of jordan,canonical_en,foreign_branch,listed,False
+SA-037,SA,Bank of Jordan,بنك الأردن,بنك الاردن,canonical_ar,foreign_branch,listed,False
+SA-037,SA,Bank of Jordan,BOJ,boj,curated_alias,foreign_branch,listed,True
+SA-037,SA,Bank of Jordan,Bank of Jordan Saudi,bank of jordan saudi,curated_alias,foreign_branch,listed,False
+SA-038,SA,Abu Dhabi Commercial Bank,Abu Dhabi Commercial Bank,abu dhabi commercial bank,canonical_en,foreign_branch,listed,False
+SA-038,SA,Abu Dhabi Commercial Bank,بنك أبوظبي التجاري,بنك ابوظبي التجاري,canonical_ar,foreign_branch,listed,False
+SA-038,SA,Abu Dhabi Commercial Bank,ADCB,adcb,curated_alias,foreign_branch,listed,False
+SA-038,SA,Abu Dhabi Commercial Bank,ADCB Saudi,adcb saudi,curated_alias,foreign_branch,listed,False
+SA-038,SA,Abu Dhabi Commercial Bank,أبوظبي التجاري,ابوظبي التجاري,curated_alias,foreign_branch,listed,False
+SA-039,SA,PT Bank Syariah Indonesia,PT Bank Syariah Indonesia,pt bank syariah indonesia,canonical_en,foreign_branch,licensed_not_operational,False
+SA-039,SA,PT Bank Syariah Indonesia,بنك الشريعة الإندونيسي,بنك الشريعة الاندونيسي,canonical_ar,foreign_branch,licensed_not_operational,False
+SA-039,SA,PT Bank Syariah Indonesia,BSI,bsi,curated_alias,foreign_branch,licensed_not_operational,True
+SA-039,SA,PT Bank Syariah Indonesia,Bank Syariah Indonesia,bank syariah indonesia,curated_alias,foreign_branch,licensed_not_operational,False
+SA-039,SA,PT Bank Syariah Indonesia,بنك شريعة إندونيسيا,بنك شريعة اندونيسيا,curated_alias,foreign_branch,licensed_not_operational,False
+AE-040,AE,Emirates NBD Bank,Emirates NBD Bank,emirates nbd bank,canonical_en,national,listed,False
+AE-040,AE,Emirates NBD Bank,بنك الإمارات دبي الوطني,بنك الامارات دبي الوطني,canonical_ar,national,listed,False
+AE-040,AE,Emirates NBD Bank,Emirates NBD,emirates nbd,curated_alias,national,listed,False
+AE-040,AE,Emirates NBD Bank,ENBD,enbd,curated_alias,national,listed,False
+AE-040,AE,Emirates NBD Bank,Emirates National Bank of Dubai,emirates national bank of dubai,curated_alias,national,listed,False
+AE-040,AE,Emirates NBD Bank,EmiratesNBD,emiratesnbd,curated_alias,national,listed,False
+AE-040,AE,Emirates NBD Bank,بنك الإمارات الوطني دبي,بنك الامارات الوطني دبي,curated_alias,national,listed,False
+AE-040,AE,Emirates NBD Bank,الإمارات دبي الوطني,الامارات دبي الوطني,curated_alias,national,listed,False
+AE-040,AE,Emirates NBD Bank,Emirates NBD PJSC,emirates nbd pjsc,curated_alias,national,listed,False
+AE-040,AE,Emirates NBD Bank,Emirates Bank International,emirates bank international,historic_predecessor_or_previous_name,national,listed,True
+AE-040,AE,Emirates NBD Bank,National Bank of Dubai,national bank of dubai,historic_predecessor_or_previous_name,national,listed,True
+AE-040,AE,Emirates NBD Bank,NBD,nbd,historic_predecessor_or_previous_name,national,listed,True
+AE-041,AE,Mashreq Bank,Mashreq Bank,mashreq bank,canonical_en,national,listed,False
+AE-041,AE,Mashreq Bank,بنك المشرق,بنك المشرق,canonical_ar,national,listed,False
+AE-041,AE,Mashreq Bank,Mashreq,mashreq,curated_alias,national,listed,False
+AE-041,AE,Mashreq Bank,Mashreqbank,mashreqbank,curated_alias,national,listed,False
+AE-041,AE,Mashreq Bank,Mashreq Bank PSC,mashreq bank psc,curated_alias,national,listed,False
+AE-041,AE,Mashreq Bank,بنك مشرق,بنك مشرق,curated_alias,national,listed,False
+AE-041,AE,Mashreq Bank,المشرق,المشرق,curated_alias,national,listed,True
+AE-041,AE,Mashreq Bank,Bank of Oman,bank of oman,historic_predecessor_or_previous_name,national,listed,True
+AE-042,AE,First Abu Dhabi Bank,First Abu Dhabi Bank,first abu dhabi bank,canonical_en,national,listed,False
+AE-042,AE,First Abu Dhabi Bank,بنك أبوظبي الأول,بنك ابوظبي الاول,canonical_ar,national,listed,False
+AE-042,AE,First Abu Dhabi Bank,FAB,fab,curated_alias,national,listed,True
+AE-042,AE,First Abu Dhabi Bank,First Abu Dhabi Bank PJSC,first abu dhabi bank pjsc,curated_alias,national,listed,False
+AE-042,AE,First Abu Dhabi Bank,أبوظبي الأول,ابوظبي الاول,curated_alias,national,listed,False
+AE-042,AE,First Abu Dhabi Bank,F A B,f a b,curated_alias,national,listed,False
+AE-042,AE,First Abu Dhabi Bank,National Bank of Abu Dhabi,national bank of abu dhabi,historic_predecessor_or_previous_name,national,listed,True
+AE-042,AE,First Abu Dhabi Bank,NBAD,nbad,historic_predecessor_or_previous_name,national,listed,True
+AE-042,AE,First Abu Dhabi Bank,First Gulf Bank,first gulf bank,historic_predecessor_or_previous_name,national,listed,True
+AE-042,AE,First Abu Dhabi Bank,FGB,fgb,historic_predecessor_or_previous_name,national,listed,True
+AE-043,AE,Commercial Bank of Dubai,Commercial Bank of Dubai,commercial bank of dubai,canonical_en,national,listed,False
+AE-043,AE,Commercial Bank of Dubai,بنك دبي التجاري,بنك دبي التجاري,canonical_ar,national,listed,False
+AE-043,AE,Commercial Bank of Dubai,CBD,cbd,curated_alias,national,listed,True
+AE-043,AE,Commercial Bank of Dubai,Commercial Bank Dubai,commercial bank dubai,curated_alias,national,listed,False
+AE-043,AE,Commercial Bank of Dubai,دبي التجاري,دبي التجاري,curated_alias,national,listed,False
+AE-044,AE,Bank of Sharjah,Bank of Sharjah,bank of sharjah,canonical_en,national,listed,False
+AE-044,AE,Bank of Sharjah,بنك الشارقة,بنك الشارقة,canonical_ar,national,listed,False
+AE-044,AE,Bank of Sharjah,BOS,bos,curated_alias,national,listed,True
+AE-044,AE,Bank of Sharjah,Bank of Sharjah PJSC,bank of sharjah pjsc,curated_alias,national,listed,False
+AE-044,AE,Bank of Sharjah,الشارقة بنك,الشارقة بنك,curated_alias,national,listed,False
+AE-045,AE,Dubai Islamic Bank,Dubai Islamic Bank,dubai islamic bank,canonical_en,national,listed,False
+AE-045,AE,Dubai Islamic Bank,بنك دبي الإسلامي,بنك دبي الاسلامي,canonical_ar,national,listed,False
+AE-045,AE,Dubai Islamic Bank,DIB,dib,curated_alias,national,listed,True
+AE-045,AE,Dubai Islamic Bank,Dubai Islamic,dubai islamic,curated_alias,national,listed,False
+AE-045,AE,Dubai Islamic Bank,دبي الإسلامي,دبي الاسلامي,curated_alias,national,listed,False
+AE-045,AE,Dubai Islamic Bank,مصرف دبي الإسلامي,مصرف دبي الاسلامي,curated_alias,national,listed,False
+AE-046,AE,Sharjah Islamic Bank,Sharjah Islamic Bank,sharjah islamic bank,canonical_en,national,listed,False
+AE-046,AE,Sharjah Islamic Bank,مصرف الشارقة الإسلامي,مصرف الشارقة الاسلامي,canonical_ar,national,listed,False
+AE-046,AE,Sharjah Islamic Bank,SIB,sib,curated_alias,national,listed,True
+AE-046,AE,Sharjah Islamic Bank,Sharjah Islamic,sharjah islamic,curated_alias,national,listed,False
+AE-046,AE,Sharjah Islamic Bank,بنك الشارقة الإسلامي,بنك الشارقة الاسلامي,curated_alias,national,listed,False
+AE-047,AE,United Arab Bank,United Arab Bank,united arab bank,canonical_en,national,listed,False
+AE-047,AE,United Arab Bank,البنك العربي المتحد,البنك العربي المتحد,canonical_ar,national,listed,True
+AE-047,AE,United Arab Bank,UAB,uab,curated_alias,national,listed,True
+AE-047,AE,United Arab Bank,United Arab Bank PJSC,united arab bank pjsc,curated_alias,national,listed,False
+AE-047,AE,United Arab Bank,العربي المتحد,العربي المتحد,curated_alias,national,listed,False
+AE-048,AE,InvestBank,InvestBank,investbank,canonical_en,national,listed,False
+AE-048,AE,InvestBank,بنك الاستثمار,بنك الاستثمار,canonical_ar,national,listed,True
+AE-048,AE,InvestBank,Investbank UAE,investbank uae,curated_alias,national,listed,False
+AE-048,AE,InvestBank,Invest Bank UAE,invest bank uae,curated_alias,national,listed,False
+AE-048,AE,InvestBank,بنك انفست,بنك انفست,curated_alias,national,listed,False
+AE-048,AE,InvestBank,إنفست بنك,انفست بنك,curated_alias,national,listed,False
+AE-049,AE,Al Masraf,Al Masraf,al masraf,canonical_en,national,listed,False
+AE-049,AE,Al Masraf,المصرف,المصرف,canonical_ar,national,listed,False
+AE-049,AE,Al Masraf,Arab Bank for Investment and Foreign Trade,arab bank for investment and foreign trade,curated_alias,national,listed,False
+AE-049,AE,Al Masraf,ABIFT,abift,curated_alias,national,listed,False
+AE-049,AE,Al Masraf,المصرف العربي للاستثمار والتجارة الخارجية,المصرف العربي للاستثمار والتجارة الخارجية,curated_alias,national,listed,False
+AE-049,AE,Al Masraf,Arab Bank for Investment & Foreign Trade,arab bank for investment foreign trade,curated_alias,national,listed,False
+AE-050,AE,Emirates Islamic Bank,Emirates Islamic Bank,emirates islamic bank,canonical_en,national,listed,False
+AE-050,AE,Emirates Islamic Bank,مصرف الإمارات الإسلامي,مصرف الامارات الاسلامي,canonical_ar,national,listed,False
+AE-050,AE,Emirates Islamic Bank,Emirates Islamic,emirates islamic,curated_alias,national,listed,False
+AE-050,AE,Emirates Islamic Bank,EIB,eib,curated_alias,national,listed,True
+AE-050,AE,Emirates Islamic Bank,EI Bank,ei bank,curated_alias,national,listed,False
+AE-050,AE,Emirates Islamic Bank,بنك الإمارات الإسلامي,بنك الامارات الاسلامي,curated_alias,national,listed,False
+AE-050,AE,Emirates Islamic Bank,الإمارات الإسلامي,الامارات الاسلامي,curated_alias,national,listed,False
+AE-051,AE,RAKBANK,RAKBANK,rakbank,canonical_en,national,listed,False
+AE-051,AE,RAKBANK,بنك رأس الخيمة الوطني,بنك راس الخيمة الوطني,canonical_ar,national,listed,False
+AE-051,AE,RAKBANK,National Bank of Ras Al Khaimah,national bank of ras al khaimah,curated_alias,national,listed,False
+AE-051,AE,RAKBANK,National Bank of R.A.K,national bank of r a k,curated_alias,national,listed,False
+AE-051,AE,RAKBANK,RAK Bank,rak bank,curated_alias,national,listed,False
+AE-051,AE,RAKBANK,NBRAK,nbrak,curated_alias,national,listed,False
+AE-051,AE,RAKBANK,بنك راك,بنك راك,curated_alias,national,listed,False
+AE-051,AE,RAKBANK,راك بنك,راك بنك,curated_alias,national,listed,False
+AE-051,AE,RAKBANK,بنك رأس الخيمة,بنك راس الخيمة,curated_alias,national,listed,False
+AE-052,AE,Emirates Investment Bank,Emirates Investment Bank,emirates investment bank,canonical_en,national,listed,False
+AE-052,AE,Emirates Investment Bank,بنك الإمارات للاستثمار,بنك الامارات للاستثمار,canonical_ar,national,listed,False
+AE-052,AE,Emirates Investment Bank,EIBank,eibank,curated_alias,national,listed,False
+AE-052,AE,Emirates Investment Bank,Emirates Investment Bank PJSC,emirates investment bank pjsc,curated_alias,national,listed,False
+AE-052,AE,Emirates Investment Bank,الإمارات للاستثمار,الامارات للاستثمار,curated_alias,national,listed,False
+AE-053,AE,National Bank of Umm Al Quwain,National Bank of Umm Al Quwain,national bank of umm al quwain,canonical_en,national,listed,False
+AE-053,AE,National Bank of Umm Al Quwain,بنك أم القيوين الوطني,بنك ام القيوين الوطني,canonical_ar,national,listed,False
+AE-053,AE,National Bank of Umm Al Quwain,NBQ,nbq,curated_alias,national,listed,True
+AE-053,AE,National Bank of Umm Al Quwain,National Bank of UAQ,national bank of uaq,curated_alias,national,listed,False
+AE-053,AE,National Bank of Umm Al Quwain,NB U.A.Q,nb u a q,curated_alias,national,listed,False
+AE-054,AE,National Bank of Fujairah,National Bank of Fujairah,national bank of fujairah,canonical_en,national,listed,False
+AE-054,AE,National Bank of Fujairah,بنك الفجيرة الوطني,بنك الفجيرة الوطني,canonical_ar,national,listed,False
+AE-054,AE,National Bank of Fujairah,NBF,nbf,curated_alias,national,listed,True
+AE-054,AE,National Bank of Fujairah,Fujairah National Bank,fujairah national bank,curated_alias,national,listed,False
+AE-054,AE,National Bank of Fujairah,الفجيرة الوطني,الفجيرة الوطني,curated_alias,national,listed,False
+AE-055,AE,Abu Dhabi Commercial Bank,Abu Dhabi Commercial Bank,abu dhabi commercial bank,canonical_en,national,listed,False
+AE-055,AE,Abu Dhabi Commercial Bank,بنك أبوظبي التجاري,بنك ابوظبي التجاري,canonical_ar,national,listed,False
+AE-055,AE,Abu Dhabi Commercial Bank,ADCB,adcb,curated_alias,national,listed,False
+AE-055,AE,Abu Dhabi Commercial Bank,Abu Dhabi Commercial Bank PJSC,abu dhabi commercial bank pjsc,curated_alias,national,listed,False
+AE-055,AE,Abu Dhabi Commercial Bank,أبوظبي التجاري,ابوظبي التجاري,curated_alias,national,listed,False
+AE-056,AE,Commercial Bank International,Commercial Bank International,commercial bank international,canonical_en,national,listed,False
+AE-056,AE,Commercial Bank International,البنك التجاري الدولي,البنك التجاري الدولي,canonical_ar,national,listed,False
+AE-056,AE,Commercial Bank International,CBI,cbi,curated_alias,national,listed,True
+AE-056,AE,Commercial Bank International,CBI Bank UAE,cbi bank uae,curated_alias,national,listed,False
+AE-056,AE,Commercial Bank International,Commercial Bank International PJSC,commercial bank international pjsc,curated_alias,national,listed,False
+AE-056,AE,Commercial Bank International,بنك سي بي آي,بنك سي بي اي,curated_alias,national,listed,False
+AE-057,AE,Abu Dhabi Islamic Bank,Abu Dhabi Islamic Bank,abu dhabi islamic bank,canonical_en,national,listed,False
+AE-057,AE,Abu Dhabi Islamic Bank,مصرف أبوظبي الإسلامي,مصرف ابوظبي الاسلامي,canonical_ar,national,listed,False
+AE-057,AE,Abu Dhabi Islamic Bank,ADIB,adib,curated_alias,national,listed,False
+AE-057,AE,Abu Dhabi Islamic Bank,Abu Dhabi Islamic Bank PJSC,abu dhabi islamic bank pjsc,curated_alias,national,listed,False
+AE-057,AE,Abu Dhabi Islamic Bank,بنك أبوظبي الإسلامي,بنك ابوظبي الاسلامي,curated_alias,national,listed,False
+AE-057,AE,Abu Dhabi Islamic Bank,أبوظبي الإسلامي,ابوظبي الاسلامي,curated_alias,national,listed,False
+AE-058,AE,Al Hilal Bank,Al Hilal Bank,al hilal bank,canonical_en,national,listed,False
+AE-058,AE,Al Hilal Bank,مصرف الهلال,مصرف الهلال,canonical_ar,national,listed,False
+AE-058,AE,Al Hilal Bank,AlHilal Bank,alhilal bank,curated_alias,national,listed,False
+AE-058,AE,Al Hilal Bank,Al Hilal Islamic Bank,al hilal islamic bank,curated_alias,national,listed,False
+AE-058,AE,Al Hilal Bank,بنك الهلال,بنك الهلال,curated_alias,national,listed,False
+AE-058,AE,Al Hilal Bank,الهلال بنك,الهلال بنك,curated_alias,national,listed,False
+AE-059,AE,Ajman Bank,Ajman Bank,ajman bank,canonical_en,national,listed,False
+AE-059,AE,Ajman Bank,مصرف عجمان,مصرف عجمان,canonical_ar,national,listed,False
+AE-059,AE,Ajman Bank,Ajman Islamic Bank,ajman islamic bank,curated_alias,national,listed,False
+AE-059,AE,Ajman Bank,بنك عجمان,بنك عجمان,curated_alias,national,listed,False
+AE-060,AE,Al Maryah Community Bank,Al Maryah Community Bank,al maryah community bank,canonical_en,national,listed,False
+AE-060,AE,Al Maryah Community Bank,بنك المارية المحلي,بنك المارية المحلي,canonical_ar,national,listed,False
+AE-060,AE,Al Maryah Community Bank,Mbank,mbank,curated_alias,national,listed,False
+AE-060,AE,Al Maryah Community Bank,M Bank,m bank,curated_alias,national,listed,False
+AE-060,AE,Al Maryah Community Bank,Al Maryah Bank,al maryah bank,curated_alias,national,listed,False
+AE-060,AE,Al Maryah Community Bank,بنك المارية,بنك المارية,curated_alias,national,listed,False
+AE-060,AE,Al Maryah Community Bank,إم بنك,ام بنك,curated_alias,national,listed,False
+AE-061,AE,Wio Bank,Wio Bank,wio bank,canonical_en,national,listed,False
+AE-061,AE,Wio Bank,بنك ويو,بنك ويو,canonical_ar,national,listed,False
+AE-061,AE,Wio Bank,WIO,wio,curated_alias,national,listed,True
+AE-061,AE,Wio Bank,Wio Bank PJSC,wio bank pjsc,curated_alias,national,listed,False
+AE-061,AE,Wio Bank,بنك وايو,بنك وايو,curated_alias,national,listed,False
+AE-061,AE,Wio Bank,ويو بنك,ويو بنك,curated_alias,national,listed,False
+AE-061,AE,Wio Bank,بنك ويو ش م ع,بنك ويو ش م ع,curated_alias,national,listed,False
+AE-062,AE,Zand Bank,Zand Bank,zand bank,canonical_en,national,listed,False
+AE-062,AE,Zand Bank,بنك زاند,بنك زاند,canonical_ar,national,listed,False
+AE-062,AE,Zand Bank,Zand,zand,curated_alias,national,listed,False
+AE-062,AE,Zand Bank,Zand Digital Bank,zand digital bank,curated_alias,national,listed,False
+AE-062,AE,Zand Bank,زاند,زاند,curated_alias,national,listed,False
+AE-063,AE,ruya Community Islamic Bank,ruya Community Islamic Bank,ruya community islamic bank,canonical_en,national,listed,False
+AE-063,AE,ruya Community Islamic Bank,مصرف رؤيا الإسلامي,مصرف رويا الاسلامي,canonical_ar,national,listed,False
+AE-063,AE,ruya Community Islamic Bank,ruya,ruya,curated_alias,national,listed,False
+AE-063,AE,ruya Community Islamic Bank,Ruya Bank,ruya bank,curated_alias,national,listed,False
+AE-063,AE,ruya Community Islamic Bank,Ruya Community Bank,ruya community bank,curated_alias,national,listed,False
+AE-063,AE,ruya Community Islamic Bank,رويا بنك,رويا بنك,curated_alias,national,listed,False
+AE-063,AE,ruya Community Islamic Bank,رؤيا,رويا,curated_alias,national,listed,False
+AE-064,AE,Reem Community Bank,Reem Community Bank,reem community bank,canonical_en,national,listed,False
+AE-064,AE,Reem Community Bank,بنك ريم المحلي,بنك ريم المحلي,canonical_ar,national,listed,False
+AE-064,AE,Reem Community Bank,Reem Bank,reem bank,curated_alias,national,listed,False
+AE-064,AE,Reem Community Bank,Reem Community Bank PSC,reem community bank psc,curated_alias,national,listed,False
+AE-064,AE,Reem Community Bank,بنك ريم,بنك ريم,curated_alias,national,listed,False
+AE-065,AE,HSBC Bank Middle East,HSBC Bank Middle East,hsbc bank middle east,canonical_en,foreign_branch,listed,False
+AE-065,AE,HSBC Bank Middle East,بنك إتش إس بي سي الشرق الأوسط,بنك اتش اس بي سي الشرق الاوسط,canonical_ar,foreign_branch,listed,False
+AE-065,AE,HSBC Bank Middle East,HSBC,hsbc,curated_alias,foreign_branch,listed,False
+AE-065,AE,HSBC Bank Middle East,HSBC Bank Middle East Limited,hsbc bank middle east limited,curated_alias,foreign_branch,listed,False
+AE-065,AE,HSBC Bank Middle East,HSBC UAE,hsbc uae,curated_alias,foreign_branch,listed,False
+AE-065,AE,HSBC Bank Middle East,اتش اس بي سي,اتش اس بي سي,curated_alias,foreign_branch,listed,False
+AE-066,AE,Standard Chartered Bank,Standard Chartered Bank,standard chartered bank,canonical_en,foreign_branch,listed,False
+AE-066,AE,Standard Chartered Bank,بنك ستاندرد تشارترد,بنك ستاندرد تشارترد,canonical_ar,foreign_branch,listed,False
+AE-066,AE,Standard Chartered Bank,SCB,scb,curated_alias,foreign_branch,listed,True
+AE-066,AE,Standard Chartered Bank,Standard Chartered UAE,standard chartered uae,curated_alias,foreign_branch,listed,False
+AE-066,AE,Standard Chartered Bank,ستاندرد تشارترد,ستاندرد تشارترد,curated_alias,foreign_branch,listed,False
+AE-067,AE,Citibank,Citibank,citibank,canonical_en,foreign_branch,listed,False
+AE-067,AE,Citibank,سيتي بنك,سيتي بنك,canonical_ar,foreign_branch,listed,False
+AE-067,AE,Citibank,Citi,citi,curated_alias,foreign_branch,listed,False
+AE-067,AE,Citibank,Citibank N.A.,citibank n a,curated_alias,foreign_branch,listed,False
+AE-067,AE,Citibank,بنك سيتي,بنك سيتي,curated_alias,foreign_branch,listed,False
+AE-068,AE,Habib Bank Limited,Habib Bank Limited,habib bank limited,canonical_en,foreign_branch,listed,False
+AE-068,AE,Habib Bank Limited,بنك حبيب المحدود,بنك حبيب المحدود,canonical_ar,foreign_branch,listed,False
+AE-068,AE,Habib Bank Limited,HBL,hbl,curated_alias,foreign_branch,listed,True
+AE-068,AE,Habib Bank Limited,Habib Bank Ltd.,habib bank ltd,curated_alias,foreign_branch,listed,False
+AE-068,AE,Habib Bank Limited,بنك حبيب,بنك حبيب,curated_alias,foreign_branch,listed,False
+AE-069,AE,United Bank Limited,United Bank Limited,united bank limited,canonical_en,foreign_branch,listed,False
+AE-069,AE,United Bank Limited,بنك يونايتد المحدود,بنك يونايتد المحدود,canonical_ar,foreign_branch,listed,False
+AE-069,AE,United Bank Limited,UBL,ubl,curated_alias,foreign_branch,listed,True
+AE-069,AE,United Bank Limited,United Bank Ltd,united bank ltd,curated_alias,foreign_branch,listed,False
+AE-069,AE,United Bank Limited,بنك يونايتد,بنك يونايتد,curated_alias,foreign_branch,listed,False
+AE-070,AE,Bank Saderat Iran,Bank Saderat Iran,bank saderat iran,canonical_en,foreign_branch,listed,False
+AE-070,AE,Bank Saderat Iran,بنك صادرات إيران,بنك صادرات ايران,canonical_ar,foreign_branch,listed,False
+AE-070,AE,Bank Saderat Iran,BSI Iran,bsi iran,curated_alias,foreign_branch,listed,False
+AE-070,AE,Bank Saderat Iran,Bank Saderat,bank saderat,curated_alias,foreign_branch,listed,False
+AE-070,AE,Bank Saderat Iran,صادرات إيران,صادرات ايران,curated_alias,foreign_branch,listed,False
+AE-071,AE,Al Ahli Bank of Kuwait,Al Ahli Bank of Kuwait,al ahli bank of kuwait,canonical_en,foreign_branch,listed,False
+AE-071,AE,Al Ahli Bank of Kuwait,البنك الأهلي الكويتي,البنك الاهلي الكويتي,canonical_ar,foreign_branch,listed,False
+AE-071,AE,Al Ahli Bank of Kuwait,ABK,abk,curated_alias,foreign_branch,listed,True
+AE-071,AE,Al Ahli Bank of Kuwait,بنك الأهلي الكويتي,بنك الاهلي الكويتي,curated_alias,foreign_branch,listed,False
+AE-072,AE,Bank Melli Iran,Bank Melli Iran,bank melli iran,canonical_en,foreign_branch,listed,False
+AE-072,AE,Bank Melli Iran,بنك ملي إيران,بنك ملي ايران,canonical_ar,foreign_branch,listed,False
+AE-072,AE,Bank Melli Iran,BMI Iran,bmi iran,curated_alias,foreign_branch,listed,False
+AE-072,AE,Bank Melli Iran,Bank Melli,bank melli,curated_alias,foreign_branch,listed,False
+AE-073,AE,Arab African International Bank,Arab African International Bank,arab african international bank,canonical_en,foreign_branch,listed,False
+AE-073,AE,Arab African International Bank,البنك العربي الأفريقي الدولي,البنك العربي الافريقي الدولي,canonical_ar,foreign_branch,listed,False
+AE-073,AE,Arab African International Bank,AAIB,aaib,curated_alias,foreign_branch,listed,True
+AE-073,AE,Arab African International Bank,Arab African Bank,arab african bank,curated_alias,foreign_branch,listed,False
+AE-073,AE,Arab African International Bank,العربي الافريقي الدولي,العربي الافريقي الدولي,curated_alias,foreign_branch,listed,False
+AE-074,AE,Banque Misr,Banque Misr,banque misr,canonical_en,foreign_branch,listed,False
+AE-074,AE,Banque Misr,بنك مصر,بنك مصر,canonical_ar,foreign_branch,listed,False
+AE-074,AE,Banque Misr,Bank Misr,bank misr,curated_alias,foreign_branch,listed,False
+AE-074,AE,Banque Misr,بنك مصر الإمارات,بنك مصر الامارات,curated_alias,foreign_branch,listed,False
+AE-075,AE,Arab Bank PLC,Arab Bank PLC,arab bank plc,canonical_en,foreign_branch,listed,False
+AE-075,AE,Arab Bank PLC,البنك العربي,البنك العربي,canonical_ar,foreign_branch,listed,True
+AE-075,AE,Arab Bank PLC,Arab Bank,arab bank,curated_alias,foreign_branch,listed,False
+AE-075,AE,Arab Bank PLC,Arab Bank UAE,arab bank uae,curated_alias,foreign_branch,listed,False
+AE-075,AE,Arab Bank PLC,بنك العربي,بنك العربي,curated_alias,foreign_branch,listed,False
+AE-076,AE,BNP Paribas,BNP Paribas,bnp paribas,canonical_en,foreign_branch,listed,False
+AE-076,AE,BNP Paribas,بي إن بي باريبا,بي ان بي باريبا,canonical_ar,foreign_branch,listed,False
+AE-076,AE,BNP Paribas,BNP,bnp,curated_alias,foreign_branch,listed,True
+AE-076,AE,BNP Paribas,BNPP,bnpp,curated_alias,foreign_branch,listed,False
+AE-076,AE,BNP Paribas,بنك بي ان بي باريبا,بنك بي ان بي باريبا,curated_alias,foreign_branch,listed,False
+AE-077,AE,Al Khaliji France,Al Khaliji France,al khaliji france,canonical_en,foreign_branch,listed,False
+AE-077,AE,Al Khaliji France,الخليجي فرنسا,الخليجي فرنسا,canonical_ar,foreign_branch,listed,False
+AE-077,AE,Al Khaliji France,Al Khaliji (France) SA,al khaliji france sa,curated_alias,foreign_branch,listed,False
+AE-077,AE,Al Khaliji France,Banque Al Khaliji France,banque al khaliji france,curated_alias,foreign_branch,listed,False
+AE-078,AE,Rafidain Bank,Rafidain Bank,rafidain bank,canonical_en,foreign_branch,listed,False
+AE-078,AE,Rafidain Bank,مصرف الرافدين,مصرف الرافدين,canonical_ar,foreign_branch,listed,False
+AE-078,AE,Rafidain Bank,Al Rafidain Bank,al rafidain bank,curated_alias,foreign_branch,listed,False
+AE-078,AE,Rafidain Bank,بنك الرافدين,بنك الرافدين,curated_alias,foreign_branch,listed,False
+AE-079,AE,Bank of Baroda,Bank of Baroda,bank of baroda,canonical_en,foreign_branch,listed,False
+AE-079,AE,Bank of Baroda,بنك بارودا,بنك بارودا,canonical_ar,foreign_branch,listed,False
+AE-079,AE,Bank of Baroda,BOB,bob,curated_alias,foreign_branch,listed,True
+AE-079,AE,Bank of Baroda,Baroda Bank,baroda bank,curated_alias,foreign_branch,listed,False
+AE-079,AE,Bank of Baroda,Bank Baroda,bank baroda,curated_alias,foreign_branch,listed,False
+AE-080,AE,Janata Bank,Janata Bank,janata bank,canonical_en,foreign_branch,listed,False
+AE-080,AE,Janata Bank,بنك جاناتا,بنك جاناتا,canonical_ar,foreign_branch,listed,False
+AE-080,AE,Janata Bank,Janata Bank PLC,janata bank plc,curated_alias,foreign_branch,listed,False
+AE-080,AE,Janata Bank,بنك جاناتا المحدود,بنك جاناتا المحدود,curated_alias,foreign_branch,listed,False
+AE-081,AE,Habib Bank AG Zurich,Habib Bank AG Zurich,habib bank ag zurich,canonical_en,foreign_branch,listed,False
+AE-081,AE,Habib Bank AG Zurich,حبيب بنك إيه جي زيورخ,حبيب بنك ايه جي زيورخ,canonical_ar,foreign_branch,listed,False
+AE-081,AE,Habib Bank AG Zurich,Habib Bank A.G. Zurich,habib bank a g zurich,curated_alias,foreign_branch,listed,False
+AE-081,AE,Habib Bank AG Zurich,HBZ,hbz,curated_alias,foreign_branch,listed,True
+AE-081,AE,Habib Bank AG Zurich,Habib Bank Zurich,habib bank zurich,curated_alias,foreign_branch,listed,False
+AE-081,AE,Habib Bank AG Zurich,حبيب بنك زيورخ,حبيب بنك زيورخ,curated_alias,foreign_branch,listed,False
+AE-082,AE,Banque Banorient France,Banque Banorient France,banque banorient france,canonical_en,foreign_branch,listed,False
+AE-082,AE,Banque Banorient France,بنك بانورينت فرنسا,بنك بانورينت فرنسا,canonical_ar,foreign_branch,listed,False
+AE-082,AE,Banque Banorient France,Banorient France,banorient france,curated_alias,foreign_branch,listed,False
+AE-082,AE,Banque Banorient France,Banque Banorient,banque banorient,curated_alias,foreign_branch,listed,False
+AE-082,AE,Banque Banorient France,بنك بانوريانت,بنك بانوريانت,curated_alias,foreign_branch,listed,False
+AE-082,AE,Banque Banorient France,Banque de la Méditerranée (historic,banque de la mediterranee historic,historic_predecessor_or_previous_name,foreign_branch,listed,True
+AE-082,AE,Banque Banorient France,verify),verify,historic_predecessor_or_previous_name,foreign_branch,listed,True
+AE-083,AE,Credit Agricole Corporate and Investment Bank,Credit Agricole Corporate and Investment Bank,credit agricole corporate and investment bank,canonical_en,foreign_branch,listed,False
+AE-083,AE,Credit Agricole Corporate and Investment Bank,كريدي أجريكول بنك التمويل والاستثمار,كريدي اجريكول بنك التمويل والاستثمار,canonical_ar,foreign_branch,listed,False
+AE-083,AE,Credit Agricole Corporate and Investment Bank,Credit Agricole CIB,credit agricole cib,curated_alias,foreign_branch,listed,False
+AE-083,AE,Credit Agricole Corporate and Investment Bank,CA CIB,ca cib,curated_alias,foreign_branch,listed,False
+AE-083,AE,Credit Agricole Corporate and Investment Bank,كريدي أجريكول,كريدي اجريكول,curated_alias,foreign_branch,listed,False
+AE-084,AE,El Nilein Bank,El Nilein Bank,el nilein bank,canonical_en,foreign_branch,listed,False
+AE-084,AE,El Nilein Bank,بنك النيلين,بنك النيلين,canonical_ar,foreign_branch,listed,False
+AE-084,AE,El Nilein Bank,Al Nilein Bank,al nilein bank,curated_alias,foreign_branch,listed,False
+AE-084,AE,El Nilein Bank,النيلين بنك,النيلين بنك,curated_alias,foreign_branch,listed,False
+AE-085,AE,National Bank of Oman,National Bank of Oman,national bank of oman,canonical_en,foreign_branch,listed,False
+AE-085,AE,National Bank of Oman,البنك الوطني العماني,البنك الوطني العماني,canonical_ar,foreign_branch,listed,False
+AE-085,AE,National Bank of Oman,NBO,nbo,curated_alias,foreign_branch,listed,True
+AE-085,AE,National Bank of Oman,National Bank of Oman SAOG,national bank of oman saog,curated_alias,foreign_branch,listed,False
+AE-085,AE,National Bank of Oman,بنك عمان الوطني,بنك عمان الوطني,curated_alias,foreign_branch,listed,False
+AE-086,AE,National Bank of Bahrain,National Bank of Bahrain,national bank of bahrain,canonical_en,foreign_branch,listed,False
+AE-086,AE,National Bank of Bahrain,بنك البحرين الوطني,بنك البحرين الوطني,canonical_ar,foreign_branch,listed,False
+AE-086,AE,National Bank of Bahrain,NBB,nbb,curated_alias,foreign_branch,listed,True
+AE-086,AE,National Bank of Bahrain,بنك NBB,بنك nbb,curated_alias,foreign_branch,listed,False
+AE-087,AE,Doha Bank,Doha Bank,doha bank,canonical_en,foreign_branch,listed,False
+AE-087,AE,Doha Bank,بنك الدوحة,بنك الدوحة,canonical_ar,foreign_branch,listed,False
+AE-087,AE,Doha Bank,Doha Bank UAE,doha bank uae,curated_alias,foreign_branch,listed,False
+AE-087,AE,Doha Bank,دوحة بنك,دوحة بنك,curated_alias,foreign_branch,listed,False
+AE-088,AE,Saudi National Bank,Saudi National Bank,saudi national bank,canonical_en,foreign_branch,listed,False
+AE-088,AE,Saudi National Bank,البنك الأهلي السعودي,البنك الاهلي السعودي,canonical_ar,foreign_branch,listed,False
+AE-088,AE,Saudi National Bank,SNB,snb,curated_alias,foreign_branch,listed,True
+AE-088,AE,Saudi National Bank,Saudi National Bank UAE,saudi national bank uae,curated_alias,foreign_branch,listed,False
+AE-088,AE,Saudi National Bank,بنك الأهلي السعودي,بنك الاهلي السعودي,curated_alias,foreign_branch,listed,False
+AE-088,AE,Saudi National Bank,الأهلي السعودي,الاهلي السعودي,curated_alias,foreign_branch,listed,False
+AE-088,AE,Saudi National Bank,Saudi Alahli Bank,saudi alahli bank,curated_alias,foreign_branch,listed,False
+AE-088,AE,Saudi National Bank,NCB,ncb,historic_predecessor_or_previous_name,foreign_branch,listed,True
+AE-088,AE,Saudi National Bank,Samba Financial Group,samba financial group,historic_predecessor_or_previous_name,foreign_branch,listed,True
+AE-089,AE,National Bank of Kuwait,National Bank of Kuwait,national bank of kuwait,canonical_en,foreign_branch,listed,False
+AE-089,AE,National Bank of Kuwait,بنك الكويت الوطني,بنك الكويت الوطني,canonical_ar,foreign_branch,listed,False
+AE-089,AE,National Bank of Kuwait,NBK,nbk,curated_alias,foreign_branch,listed,True
+AE-089,AE,National Bank of Kuwait,Kuwait National Bank,kuwait national bank,curated_alias,foreign_branch,listed,False
+AE-089,AE,National Bank of Kuwait,الكويت الوطني,الكويت الوطني,curated_alias,foreign_branch,listed,False
+AE-090,AE,Industrial and Commercial Bank of China,Industrial and Commercial Bank of China,industrial and commercial bank of china,canonical_en,foreign_branch,listed,False
+AE-090,AE,Industrial and Commercial Bank of China,البنك الصناعي والتجاري الصيني,البنك الصناعي والتجاري الصيني,canonical_ar,foreign_branch,listed,False
+AE-090,AE,Industrial and Commercial Bank of China,ICBC,icbc,curated_alias,foreign_branch,listed,False
+AE-090,AE,Industrial and Commercial Bank of China,ICBC Bank,icbc bank,curated_alias,foreign_branch,listed,False
+AE-090,AE,Industrial and Commercial Bank of China,بنك الصين الصناعي والتجاري,بنك الصين الصناعي والتجاري,curated_alias,foreign_branch,listed,False
+AE-091,AE,Deutsche Bank,Deutsche Bank,deutsche bank,canonical_en,foreign_branch,listed,False
+AE-091,AE,Deutsche Bank,دويتشه بنك,دويتشه بنك,canonical_ar,foreign_branch,listed,False
+AE-091,AE,Deutsche Bank,Deutsche Bank AG,deutsche bank ag,curated_alias,foreign_branch,listed,False
+AE-091,AE,Deutsche Bank,DB Bank,db bank,curated_alias,foreign_branch,listed,False
+AE-091,AE,Deutsche Bank,دويتشه,دويتشه,curated_alias,foreign_branch,listed,False
+AE-092,AE,KEB Hana Bank,KEB Hana Bank,keb hana bank,canonical_en,foreign_branch,listed,False
+AE-092,AE,KEB Hana Bank,بنك كيه إي بي هانا,بنك كيه اي بي هانا,canonical_ar,foreign_branch,listed,False
+AE-092,AE,KEB Hana Bank,KEB Hana,keb hana,curated_alias,foreign_branch,listed,False
+AE-092,AE,KEB Hana Bank,Hana Bank,hana bank,curated_alias,foreign_branch,listed,False
+AE-092,AE,KEB Hana Bank,بنك هانا,بنك هانا,curated_alias,foreign_branch,listed,False
+AE-093,AE,Barclays Bank,Barclays Bank,barclays bank,canonical_en,foreign_branch,listed,False
+AE-093,AE,Barclays Bank,بنك باركليز,بنك باركليز,canonical_ar,foreign_branch,listed,False
+AE-093,AE,Barclays Bank,Barclays,barclays,curated_alias,foreign_branch,listed,False
+AE-093,AE,Barclays Bank,Barclays Bank PLC,barclays bank plc,curated_alias,foreign_branch,listed,False
+AE-093,AE,Barclays Bank,باركليز,باركليز,curated_alias,foreign_branch,listed,False
+AE-094,AE,Bank of China,Bank of China,bank of china,canonical_en,foreign_branch,listed,False
+AE-094,AE,Bank of China,بنك الصين,بنك الصين,canonical_ar,foreign_branch,listed,False
+AE-094,AE,Bank of China,BOC,boc,curated_alias,foreign_branch,listed,True
+AE-094,AE,Bank of China,Bank of China Limited,bank of china limited,curated_alias,foreign_branch,listed,False
+AE-094,AE,Bank of China,بنك أوف تشاينا,بنك اوف تشاينا,curated_alias,foreign_branch,listed,False
+AE-095,AE,Gulf International Bank,Gulf International Bank,gulf international bank,canonical_en,foreign_branch,listed,False
+AE-095,AE,Gulf International Bank,بنك الخليج الدولي,بنك الخليج الدولي,canonical_ar,foreign_branch,listed,False
+AE-095,AE,Gulf International Bank,GIB,gib,curated_alias,foreign_branch,listed,True
+AE-095,AE,Gulf International Bank,Gulf International Bank BSC,gulf international bank bsc,curated_alias,foreign_branch,listed,False
+AE-095,AE,Gulf International Bank,الخليج الدولي,الخليج الدولي,curated_alias,foreign_branch,listed,False
+AE-096,AE,MCB Bank,MCB Bank,mcb bank,canonical_en,foreign_branch,listed,False
+AE-096,AE,MCB Bank,بنك إم سي بي,بنك ام سي بي,canonical_ar,foreign_branch,listed,False
+AE-096,AE,MCB Bank,MCB,mcb,curated_alias,foreign_branch,listed,True
+AE-096,AE,MCB Bank,MCB Bank Limited,mcb bank limited,curated_alias,foreign_branch,listed,False
+AE-097,AE,Intesa Sanpaolo,Intesa Sanpaolo,intesa sanpaolo,canonical_en,foreign_branch,listed,False
+AE-097,AE,Intesa Sanpaolo,بنك إنتيسا سان باولو,بنك انتيسا سان باولو,canonical_ar,foreign_branch,listed,False
+AE-097,AE,Intesa Sanpaolo,Intesa,intesa,curated_alias,foreign_branch,listed,False
+AE-097,AE,Intesa Sanpaolo,Intesa Sanpaolo SPA,intesa sanpaolo spa,curated_alias,foreign_branch,listed,False
+AE-097,AE,Intesa Sanpaolo,إنتيسا سان باولو,انتيسا سان باولو,curated_alias,foreign_branch,listed,False
+AE-098,AE,Agricultural Bank of China,Agricultural Bank of China,agricultural bank of china,canonical_en,foreign_branch,listed,False
+AE-098,AE,Agricultural Bank of China,البنك الزراعي الصيني,البنك الزراعي الصيني,canonical_ar,foreign_branch,listed,False
+AE-098,AE,Agricultural Bank of China,ABC China,abc china,curated_alias,foreign_branch,listed,False
+AE-098,AE,Agricultural Bank of China,AgBank,agbank,curated_alias,foreign_branch,listed,False
+AE-098,AE,Agricultural Bank of China,Agricultural Bank of China Ltd,agricultural bank of china ltd,curated_alias,foreign_branch,listed,False
+AE-098,AE,Agricultural Bank of China,بنك الزراعة الصيني,بنك الزراعة الصيني,curated_alias,foreign_branch,listed,False
+AE-099,AE,Bank Alfalah,Bank Alfalah,bank alfalah,canonical_en,foreign_branch,listed,False
+AE-099,AE,Bank Alfalah,بنك الفلاح,بنك الفلاح,canonical_ar,foreign_branch,listed,False
+AE-099,AE,Bank Alfalah,Bank Al Falah Limited,bank al falah limited,curated_alias,foreign_branch,listed,False
+AE-099,AE,Bank Alfalah,Bank Alfalah Limited,bank alfalah limited,curated_alias,foreign_branch,listed,False
+AE-099,AE,Bank Alfalah,الفلاح بنك,الفلاح بنك,curated_alias,foreign_branch,listed,False
+AE-100,AE,BOK International Bank,BOK International Bank,bok international bank,canonical_en,foreign_branch,listed,False
+AE-100,AE,BOK International Bank,بنك بي أو كيه الدولي,بنك بي او كيه الدولي,canonical_ar,foreign_branch,listed,False
+AE-100,AE,BOK International Bank,BOK International,bok international,curated_alias,foreign_branch,listed,False
+AE-100,AE,BOK International Bank,Bank of Khartoum International,bank of khartoum international,curated_alias,foreign_branch,listed,False
+AE-100,AE,BOK International Bank,بنك الخرطوم الدولي,بنك الخرطوم الدولي,curated_alias,foreign_branch,listed,False
+AE-101,AE,International Development Bank for Investment and Finance,International Development Bank for Investment and Finance,international development bank for investment and finance,canonical_en,foreign_branch,listed,False
+AE-101,AE,International Development Bank for Investment and Finance,مصرف التنمية الدولي للاستثمار والتمويل,مصرف التنمية الدولي للاستثمار والتمويل,canonical_ar,foreign_branch,listed,False
+AE-101,AE,International Development Bank for Investment and Finance,IDB Iraq,idb iraq,curated_alias,foreign_branch,listed,False
+AE-101,AE,International Development Bank for Investment and Finance,International Development Bank,international development bank,curated_alias,foreign_branch,listed,False
+AE-101,AE,International Development Bank for Investment and Finance,بنك التنمية الدولي,بنك التنمية الدولي,curated_alias,foreign_branch,listed,False
+AE-102,AE,Iraqi Islamic Bank for Investment and Development,Iraqi Islamic Bank for Investment and Development,iraqi islamic bank for investment and development,canonical_en,foreign_branch,listed,False
+AE-102,AE,Iraqi Islamic Bank for Investment and Development,المصرف العراقي الإسلامي للاستثمار والتنمية,المصرف العراقي الاسلامي للاستثمار والتنمية,canonical_ar,foreign_branch,listed,False
+AE-102,AE,Iraqi Islamic Bank for Investment and Development,Iraqi Islamic Bank,iraqi islamic bank,curated_alias,foreign_branch,listed,False
+AE-102,AE,Iraqi Islamic Bank for Investment and Development,IIB,iib,curated_alias,foreign_branch,listed,True
+AE-102,AE,Iraqi Islamic Bank for Investment and Development,بنك العراق الإسلامي,بنك العراق الاسلامي,curated_alias,foreign_branch,listed,False
+KW-103,KW,National Bank of Kuwait,National Bank of Kuwait,national bank of kuwait,canonical_en,local_conventional,listed,False
+KW-103,KW,National Bank of Kuwait,بنك الكويت الوطني,بنك الكويت الوطني,canonical_ar,local_conventional,listed,False
+KW-103,KW,National Bank of Kuwait,NBK,nbk,curated_alias,local_conventional,listed,True
+KW-103,KW,National Bank of Kuwait,National Bank Kuwait,national bank kuwait,curated_alias,local_conventional,listed,False
+KW-103,KW,National Bank of Kuwait,البنك الوطني الكويتي,البنك الوطني الكويتي,curated_alias,local_conventional,listed,False
+KW-103,KW,National Bank of Kuwait,الكويت الوطني,الكويت الوطني,curated_alias,local_conventional,listed,False
+KW-104,KW,Commercial Bank of Kuwait,Commercial Bank of Kuwait,commercial bank of kuwait,canonical_en,local_conventional,listed,False
+KW-104,KW,Commercial Bank of Kuwait,البنك التجاري الكويتي,البنك التجاري الكويتي,canonical_ar,local_conventional,listed,False
+KW-104,KW,Commercial Bank of Kuwait,CBK Bank,cbk bank,curated_alias,local_conventional,listed,False
+KW-104,KW,Commercial Bank of Kuwait,Commercial Bank Kuwait,commercial bank kuwait,curated_alias,local_conventional,listed,False
+KW-104,KW,Commercial Bank of Kuwait,التجاري الكويتي,التجاري الكويتي,curated_alias,local_conventional,listed,False
+KW-105,KW,Gulf Bank,Gulf Bank,gulf bank,canonical_en,local_conventional,listed,False
+KW-105,KW,Gulf Bank,بنك الخليج,بنك الخليج,canonical_ar,local_conventional,listed,False
+KW-105,KW,Gulf Bank,Gulf Bank Kuwait,gulf bank kuwait,curated_alias,local_conventional,listed,False
+KW-105,KW,Gulf Bank,Gulfbank,gulfbank,curated_alias,local_conventional,listed,False
+KW-105,KW,Gulf Bank,بنك الخليج الكويتي,بنك الخليج الكويتي,curated_alias,local_conventional,listed,False
+KW-106,KW,Al Ahli Bank of Kuwait,Al Ahli Bank of Kuwait,al ahli bank of kuwait,canonical_en,local_conventional,listed,False
+KW-106,KW,Al Ahli Bank of Kuwait,البنك الأهلي الكويتي,البنك الاهلي الكويتي,canonical_ar,local_conventional,listed,False
+KW-106,KW,Al Ahli Bank of Kuwait,ABK,abk,curated_alias,local_conventional,listed,True
+KW-106,KW,Al Ahli Bank of Kuwait,Al Ahli Kuwait,al ahli kuwait,curated_alias,local_conventional,listed,False
+KW-106,KW,Al Ahli Bank of Kuwait,الأهلي الكويتي,الاهلي الكويتي,curated_alias,local_conventional,listed,False
+KW-107,KW,Burgan Bank,Burgan Bank,burgan bank,canonical_en,local_conventional,listed,False
+KW-107,KW,Burgan Bank,بنك برقان,بنك برقان,canonical_ar,local_conventional,listed,False
+KW-107,KW,Burgan Bank,Burgan,burgan,curated_alias,local_conventional,listed,False
+KW-107,KW,Burgan Bank,Burgan Bank Kuwait,burgan bank kuwait,curated_alias,local_conventional,listed,False
+KW-107,KW,Burgan Bank,برقان بنك,برقان بنك,curated_alias,local_conventional,listed,False
+KW-108,KW,Kuwait Finance House,Kuwait Finance House,kuwait finance house,canonical_en,local_islamic,listed,False
+KW-108,KW,Kuwait Finance House,بيت التمويل الكويتي,بيت التمويل الكويتي,canonical_ar,local_islamic,listed,False
+KW-108,KW,Kuwait Finance House,KFH,kfh,curated_alias,local_islamic,listed,True
+KW-108,KW,Kuwait Finance House,Bayt Al Tamweel Al Kuwaiti,bayt al tamweel al kuwaiti,curated_alias,local_islamic,listed,False
+KW-108,KW,Kuwait Finance House,بيت التمويل,بيت التمويل,curated_alias,local_islamic,listed,False
+KW-108,KW,Kuwait Finance House,بيتك,بيتك,curated_alias,local_islamic,listed,False
+KW-108,KW,Kuwait Finance House,Baitak,baitak,curated_alias,local_islamic,listed,False
+KW-108,KW,Kuwait Finance House,Kuwait Finance House K.S.C.P,kuwait finance house k s c p,curated_alias,local_islamic,listed,False
+KW-109,KW,Boubyan Bank,Boubyan Bank,boubyan bank,canonical_en,local_islamic,listed,False
+KW-109,KW,Boubyan Bank,بنك بوبيان,بنك بوبيان,canonical_ar,local_islamic,listed,False
+KW-109,KW,Boubyan Bank,Boubyan,boubyan,curated_alias,local_islamic,listed,False
+KW-109,KW,Boubyan Bank,Bank Boubyan,bank boubyan,curated_alias,local_islamic,listed,False
+KW-109,KW,Boubyan Bank,بوبيان,بوبيان,curated_alias,local_islamic,listed,False
+KW-110,KW,Kuwait International Bank,Kuwait International Bank,kuwait international bank,canonical_en,local_islamic,listed,False
+KW-110,KW,Kuwait International Bank,بنك الكويت الدولي,بنك الكويت الدولي,canonical_ar,local_islamic,listed,False
+KW-110,KW,Kuwait International Bank,KIB,kib,curated_alias,local_islamic,listed,True
+KW-110,KW,Kuwait International Bank,Kuwait International,kuwait international,curated_alias,local_islamic,listed,False
+KW-110,KW,Kuwait International Bank,الكويت الدولي,الكويت الدولي,curated_alias,local_islamic,listed,False
+KW-110,KW,Kuwait International Bank,Kuwait Real Estate Bank,kuwait real estate bank,historic_predecessor_or_previous_name,local_islamic,listed,True
+KW-110,KW,Kuwait International Bank,البنك العقاري الكويتي,البنك العقاري الكويتي,historic_predecessor_or_previous_name,local_islamic,listed,True
+KW-111,KW,Warba Bank,Warba Bank,warba bank,canonical_en,local_islamic,listed,False
+KW-111,KW,Warba Bank,بنك وربة,بنك وربة,canonical_ar,local_islamic,listed,False
+KW-111,KW,Warba Bank,Warba,warba,curated_alias,local_islamic,listed,False
+KW-111,KW,Warba Bank,Warba Islamic Bank,warba islamic bank,curated_alias,local_islamic,listed,False
+KW-111,KW,Warba Bank,وربة بنك,وربة بنك,curated_alias,local_islamic,listed,False
+KW-112,KW,Industrial Bank of Kuwait,Industrial Bank of Kuwait,industrial bank of kuwait,canonical_en,local_specialized,listed,False
+KW-112,KW,Industrial Bank of Kuwait,بنك الكويت الصناعي,بنك الكويت الصناعي,canonical_ar,local_specialized,listed,False
+KW-112,KW,Industrial Bank of Kuwait,IBK,ibk,curated_alias,local_specialized,listed,True
+KW-112,KW,Industrial Bank of Kuwait,Kuwait Industrial Bank,kuwait industrial bank,curated_alias,local_specialized,listed,False
+KW-112,KW,Industrial Bank of Kuwait,البنك الصناعي الكويتي,البنك الصناعي الكويتي,curated_alias,local_specialized,listed,False
+KW-113,KW,Bank of Bahrain and Kuwait,Bank of Bahrain and Kuwait,bank of bahrain and kuwait,canonical_en,foreign_branch,listed,False
+KW-113,KW,Bank of Bahrain and Kuwait,بنك البحرين والكويت,بنك البحرين والكويت,canonical_ar,foreign_branch,listed,False
+KW-113,KW,Bank of Bahrain and Kuwait,BBK,bbk,curated_alias,foreign_branch,listed,True
+KW-113,KW,Bank of Bahrain and Kuwait,BBK Kuwait,bbk kuwait,curated_alias,foreign_branch,listed,False
+KW-113,KW,Bank of Bahrain and Kuwait,البحرين والكويت,البحرين والكويت,curated_alias,foreign_branch,listed,False
+KW-114,KW,BNP Paribas,BNP Paribas,bnp paribas,canonical_en,foreign_branch,listed,False
+KW-114,KW,BNP Paribas,بنك بي إن بي باريبا,بنك بي ان بي باريبا,canonical_ar,foreign_branch,listed,False
+KW-114,KW,BNP Paribas,BNP,bnp,curated_alias,foreign_branch,listed,True
+KW-114,KW,BNP Paribas,BNPP,bnpp,curated_alias,foreign_branch,listed,False
+KW-114,KW,BNP Paribas,بنك باريبا,بنك باريبا,curated_alias,foreign_branch,listed,False
+KW-115,KW,HSBC Bank Middle East,HSBC Bank Middle East,hsbc bank middle east,canonical_en,foreign_branch,listed,False
+KW-115,KW,HSBC Bank Middle East,بنك إتش إس بي سي الشرق الأوسط,بنك اتش اس بي سي الشرق الاوسط,canonical_ar,foreign_branch,listed,False
+KW-115,KW,HSBC Bank Middle East,HSBC,hsbc,curated_alias,foreign_branch,listed,False
+KW-115,KW,HSBC Bank Middle East,HSBC Kuwait,hsbc kuwait,curated_alias,foreign_branch,listed,False
+KW-115,KW,HSBC Bank Middle East,اتش اس بي سي,اتش اس بي سي,curated_alias,foreign_branch,listed,False
+KW-116,KW,First Abu Dhabi Bank,First Abu Dhabi Bank,first abu dhabi bank,canonical_en,foreign_branch,listed,False
+KW-116,KW,First Abu Dhabi Bank,بنك أبوظبي الأول,بنك ابوظبي الاول,canonical_ar,foreign_branch,listed,False
+KW-116,KW,First Abu Dhabi Bank,FAB,fab,curated_alias,foreign_branch,listed,True
+KW-116,KW,First Abu Dhabi Bank,FAB Kuwait,fab kuwait,curated_alias,foreign_branch,listed,False
+KW-116,KW,First Abu Dhabi Bank,بنك أبو ظبي الاول,بنك ابو ظبي الاول,curated_alias,foreign_branch,listed,False
+KW-116,KW,First Abu Dhabi Bank,F A B,f a b,curated_alias,foreign_branch,listed,False
+KW-116,KW,First Abu Dhabi Bank,NBAD,nbad,historic_predecessor_or_previous_name,foreign_branch,listed,True
+KW-116,KW,First Abu Dhabi Bank,FGB,fgb,historic_predecessor_or_previous_name,foreign_branch,listed,True
+KW-117,KW,Citibank,Citibank,citibank,canonical_en,foreign_branch,listed,False
+KW-117,KW,Citibank,سيتي بنك,سيتي بنك,canonical_ar,foreign_branch,listed,False
+KW-117,KW,Citibank,Citi,citi,curated_alias,foreign_branch,listed,False
+KW-117,KW,Citibank,Citibank NA,citibank na,curated_alias,foreign_branch,listed,False
+KW-117,KW,Citibank,سيتي,سيتي,curated_alias,foreign_branch,listed,False
+KW-118,KW,Qatar National Bank,Qatar National Bank,qatar national bank,canonical_en,foreign_branch,listed,False
+KW-118,KW,Qatar National Bank,بنك قطر الوطني,بنك قطر الوطني,canonical_ar,foreign_branch,listed,False
+KW-118,KW,Qatar National Bank,QNB,qnb,curated_alias,foreign_branch,listed,True
+KW-118,KW,Qatar National Bank,QNB Kuwait,qnb kuwait,curated_alias,foreign_branch,listed,False
+KW-118,KW,Qatar National Bank,قطر الوطني,قطر الوطني,curated_alias,foreign_branch,listed,False
+KW-118,KW,Qatar National Bank,Q N B,q n b,curated_alias,foreign_branch,listed,False
+KW-119,KW,Doha Bank,Doha Bank,doha bank,canonical_en,foreign_branch,listed,False
+KW-119,KW,Doha Bank,بنك الدوحة,بنك الدوحة,canonical_ar,foreign_branch,listed,False
+KW-119,KW,Doha Bank,Doha Bank Kuwait,doha bank kuwait,curated_alias,foreign_branch,listed,False
+KW-119,KW,Doha Bank,الدوحة,الدوحة,curated_alias,foreign_branch,listed,True
+KW-120,KW,Mashreq Bank,Mashreq Bank,mashreq bank,canonical_en,foreign_branch,listed,False
+KW-120,KW,Mashreq Bank,بنك المشرق,بنك المشرق,canonical_ar,foreign_branch,listed,False
+KW-120,KW,Mashreq Bank,Mashreq,mashreq,curated_alias,foreign_branch,listed,False
+KW-120,KW,Mashreq Bank,Mashreqbank,mashreqbank,curated_alias,foreign_branch,listed,False
+KW-120,KW,Mashreq Bank,المشرق,المشرق,curated_alias,foreign_branch,listed,True
+KW-121,KW,Bank Muscat,Bank Muscat,bank muscat,canonical_en,foreign_branch,listed,False
+KW-121,KW,Bank Muscat,بنك مسقط,بنك مسقط,canonical_ar,foreign_branch,listed,False
+KW-121,KW,Bank Muscat,BankMuscat,bankmuscat,curated_alias,foreign_branch,listed,False
+KW-121,KW,Bank Muscat,Muscat Bank,muscat bank,curated_alias,foreign_branch,listed,False
+KW-121,KW,Bank Muscat,مسقط بنك,مسقط بنك,curated_alias,foreign_branch,listed,False
+KW-121,KW,Bank Muscat,Bank Muscat SAOG,bank muscat saog,curated_alias,foreign_branch,listed,False
+KW-121,KW,Bank Muscat,بنك مسقط العماني,بنك مسقط العماني,curated_alias,foreign_branch,listed,False
+KW-122,KW,Industrial and Commercial Bank of China,Industrial and Commercial Bank of China,industrial and commercial bank of china,canonical_en,foreign_branch,listed,False
+KW-122,KW,Industrial and Commercial Bank of China,البنك الصناعي والتجاري الصيني,البنك الصناعي والتجاري الصيني,canonical_ar,foreign_branch,listed,False
+KW-122,KW,Industrial and Commercial Bank of China,ICBC,icbc,curated_alias,foreign_branch,listed,False
+KW-122,KW,Industrial and Commercial Bank of China,ICBC Bank,icbc bank,curated_alias,foreign_branch,listed,False
+KW-122,KW,Industrial and Commercial Bank of China,الصناعي والتجاري الصيني,الصناعي والتجاري الصيني,curated_alias,foreign_branch,listed,False
+KW-123,KW,Al Rajhi Bank,Al Rajhi Bank,al rajhi bank,canonical_en,foreign_branch,listed,False
+KW-123,KW,Al Rajhi Bank,مصرف الراجحي,مصرف الراجحي,canonical_ar,foreign_branch,listed,False
+KW-123,KW,Al Rajhi Bank,Al-Rajhi,al rajhi,curated_alias,foreign_branch,listed,False
+KW-123,KW,Al Rajhi Bank,AlRajhi,alrajhi,curated_alias,foreign_branch,listed,False
+KW-123,KW,Al Rajhi Bank,بنك الراجحي,بنك الراجحي,curated_alias,foreign_branch,listed,False
+KW-123,KW,Al Rajhi Bank,الراجحي,الراجحي,curated_alias,foreign_branch,listed,False
+KW-123,KW,Al Rajhi Bank,بنك الراجحي السعودي,بنك الراجحي السعودي,curated_alias,foreign_branch,listed,False
+QA-124,QA,Qatar National Bank,Qatar National Bank,qatar national bank,canonical_en,local_conventional,listed,False
+QA-124,QA,Qatar National Bank,بنك قطر الوطني,بنك قطر الوطني,canonical_ar,local_conventional,listed,False
+QA-124,QA,Qatar National Bank,QNB,qnb,curated_alias,local_conventional,listed,True
+QA-124,QA,Qatar National Bank,QNB Group,qnb group,curated_alias,local_conventional,listed,False
+QA-124,QA,Qatar National Bank,Qatar National Bank Group,qatar national bank group,curated_alias,local_conventional,listed,False
+QA-124,QA,Qatar National Bank,قطر الوطني,قطر الوطني,curated_alias,local_conventional,listed,False
+QA-124,QA,Qatar National Bank,بنك كيو إن بي,بنك كيو ان بي,curated_alias,local_conventional,listed,False
+QA-124,QA,Qatar National Bank,Q N B,q n b,curated_alias,local_conventional,listed,False
+QA-125,QA,Commercial Bank of Qatar,Commercial Bank of Qatar,commercial bank of qatar,canonical_en,local_conventional,listed,False
+QA-125,QA,Commercial Bank of Qatar,البنك التجاري القطري,البنك التجاري القطري,canonical_ar,local_conventional,listed,False
+QA-125,QA,Commercial Bank of Qatar,CBQ,cbq,curated_alias,local_conventional,listed,True
+QA-125,QA,Commercial Bank of Qatar,Commercial Bank Qatar,commercial bank qatar,curated_alias,local_conventional,listed,False
+QA-125,QA,Commercial Bank of Qatar,The Commercial Bank,the commercial bank,curated_alias,local_conventional,listed,False
+QA-125,QA,Commercial Bank of Qatar,The Commercial Bank of Qatar,the commercial bank of qatar,curated_alias,local_conventional,listed,False
+QA-125,QA,Commercial Bank of Qatar,البنك التجاري,البنك التجاري,curated_alias,local_conventional,listed,True
+QA-125,QA,Commercial Bank of Qatar,التجاري القطري,التجاري القطري,curated_alias,local_conventional,listed,False
+QA-126,QA,Doha Bank,Doha Bank,doha bank,canonical_en,local_conventional,listed,False
+QA-126,QA,Doha Bank,بنك الدوحة,بنك الدوحة,canonical_ar,local_conventional,listed,False
+QA-126,QA,Doha Bank,DohaBank,dohabank,curated_alias,local_conventional,listed,False
+QA-126,QA,Doha Bank,Doha Bank QPSC,doha bank qpsc,curated_alias,local_conventional,listed,False
+QA-126,QA,Doha Bank,بنك دوحة,بنك دوحة,curated_alias,local_conventional,listed,False
+QA-127,QA,Ahlibank Qatar,Ahlibank Qatar,ahlibank qatar,canonical_en,local_conventional,listed,False
+QA-127,QA,Ahlibank Qatar,البنك الأهلي القطري,البنك الاهلي القطري,canonical_ar,local_conventional,listed,False
+QA-127,QA,Ahlibank Qatar,Ahli Bank Qatar,ahli bank qatar,curated_alias,local_conventional,listed,False
+QA-127,QA,Ahlibank Qatar,Ahli Bank QPSC,ahli bank qpsc,curated_alias,local_conventional,listed,False
+QA-127,QA,Ahlibank Qatar,Ahlibank,ahlibank,curated_alias,local_conventional,listed,False
+QA-127,QA,Ahlibank Qatar,البنك الأهلي قطر,البنك الاهلي قطر,curated_alias,local_conventional,listed,False
+QA-127,QA,Ahlibank Qatar,بنك الأهلي,بنك الاهلي,curated_alias,local_conventional,listed,False
+QA-128,QA,Qatar Islamic Bank,Qatar Islamic Bank,qatar islamic bank,canonical_en,local_islamic,listed,False
+QA-128,QA,Qatar Islamic Bank,مصرف قطر الإسلامي,مصرف قطر الاسلامي,canonical_ar,local_islamic,listed,False
+QA-128,QA,Qatar Islamic Bank,QIB,qib,curated_alias,local_islamic,listed,True
+QA-128,QA,Qatar Islamic Bank,Qatar Islamic,qatar islamic,curated_alias,local_islamic,listed,False
+QA-128,QA,Qatar Islamic Bank,بنك قطر الإسلامي,بنك قطر الاسلامي,curated_alias,local_islamic,listed,False
+QA-128,QA,Qatar Islamic Bank,المصرف الإسلامي القطري,المصرف الاسلامي القطري,curated_alias,local_islamic,listed,False
+QA-129,QA,Qatar International Islamic Bank,Qatar International Islamic Bank,qatar international islamic bank,canonical_en,local_islamic,listed,False
+QA-129,QA,Qatar International Islamic Bank,بنك قطر الدولي الإسلامي,بنك قطر الدولي الاسلامي,canonical_ar,local_islamic,listed,False
+QA-129,QA,Qatar International Islamic Bank,QIIB,qiib,curated_alias,local_islamic,listed,False
+QA-129,QA,Qatar International Islamic Bank,Qatar International Islamic,qatar international islamic,curated_alias,local_islamic,listed,False
+QA-129,QA,Qatar International Islamic Bank,International Islamic Bank Qatar,international islamic bank qatar,curated_alias,local_islamic,listed,False
+QA-129,QA,Qatar International Islamic Bank,الدولي الإسلامي,الدولي الاسلامي,curated_alias,local_islamic,listed,False
+QA-129,QA,Qatar International Islamic Bank,بنك الدولي الإسلامي,بنك الدولي الاسلامي,curated_alias,local_islamic,listed,False
+QA-130,QA,Masraf Al Rayan,Masraf Al Rayan,masraf al rayan,canonical_en,local_islamic,listed,False
+QA-130,QA,Masraf Al Rayan,مصرف الريان,مصرف الريان,canonical_ar,local_islamic,listed,False
+QA-130,QA,Masraf Al Rayan,Al Rayan Bank Qatar,al rayan bank qatar,curated_alias,local_islamic,listed,False
+QA-130,QA,Masraf Al Rayan,AlRayan Bank,alrayan bank,curated_alias,local_islamic,listed,False
+QA-130,QA,Masraf Al Rayan,Masraf AlRayan,masraf alrayan,curated_alias,local_islamic,listed,False
+QA-130,QA,Masraf Al Rayan,Al Rayan,al rayan,curated_alias,local_islamic,listed,False
+QA-130,QA,Masraf Al Rayan,الريان,الريان,curated_alias,local_islamic,listed,True
+QA-130,QA,Masraf Al Rayan,بنك الريان,بنك الريان,curated_alias,local_islamic,listed,False
+QA-130,QA,Masraf Al Rayan,Al Khalij Commercial Bank,al khalij commercial bank,historic_predecessor_or_previous_name,local_islamic,listed,True
+QA-130,QA,Masraf Al Rayan,Al Khaliji,al khaliji,historic_predecessor_or_previous_name,local_islamic,listed,True
+QA-130,QA,Masraf Al Rayan,بنك الخليجي,بنك الخليجي,historic_predecessor_or_previous_name,local_islamic,listed,True
+QA-131,QA,Dukhan Bank,Dukhan Bank,dukhan bank,canonical_en,local_islamic,listed,False
+QA-131,QA,Dukhan Bank,بنك دخان,بنك دخان,canonical_ar,local_islamic,listed,False
+QA-131,QA,Dukhan Bank,Dukhan,dukhan,curated_alias,local_islamic,listed,False
+QA-131,QA,Dukhan Bank,Dukhan Islamic Bank,dukhan islamic bank,curated_alias,local_islamic,listed,False
+QA-131,QA,Dukhan Bank,بنك الدخان,بنك الدخان,curated_alias,local_islamic,listed,False
+QA-131,QA,Dukhan Bank,Dukhan Islamic,dukhan islamic,curated_alias,local_islamic,listed,False
+QA-131,QA,Dukhan Bank,دخان بنك,دخان بنك,curated_alias,local_islamic,listed,False
+QA-131,QA,Dukhan Bank,Barwa Bank,barwa bank,historic_predecessor_or_previous_name,local_islamic,listed,True
+QA-131,QA,Dukhan Bank,بنك بروة,بنك بروة,historic_predecessor_or_previous_name,local_islamic,listed,True
+QA-131,QA,Dukhan Bank,International Bank of Qatar,international bank of qatar,historic_predecessor_or_previous_name,local_islamic,listed,True
+QA-131,QA,Dukhan Bank,IBQ,ibq,historic_predecessor_or_previous_name,local_islamic,listed,True
+QA-131,QA,Dukhan Bank,بنك قطر الدولي,بنك قطر الدولي,historic_predecessor_or_previous_name,local_islamic,listed,True
+QA-132,QA,Qatar Development Bank,Qatar Development Bank,qatar development bank,canonical_en,local_development,listed,False
+QA-132,QA,Qatar Development Bank,بنك قطر للتنمية,بنك قطر للتنمية,canonical_ar,local_development,listed,False
+QA-132,QA,Qatar Development Bank,QDB,qdb,curated_alias,local_development,listed,True
+QA-132,QA,Qatar Development Bank,Qatar Development,qatar development,curated_alias,local_development,listed,False
+QA-132,QA,Qatar Development Bank,بنك التنمية القطري,بنك التنمية القطري,curated_alias,local_development,listed,False
+QA-133,QA,HSBC Bank,HSBC Bank,hsbc bank,canonical_en,foreign_branch,listed,False
+QA-133,QA,HSBC Bank,بنك إتش إس بي سي,بنك اتش اس بي سي,canonical_ar,foreign_branch,listed,False
+QA-133,QA,HSBC Bank,HSBC,hsbc,curated_alias,foreign_branch,listed,False
+QA-133,QA,HSBC Bank,HSBC Bank Middle East,hsbc bank middle east,curated_alias,foreign_branch,listed,False
+QA-133,QA,HSBC Bank,اتش اس بي سي,اتش اس بي سي,curated_alias,foreign_branch,listed,False
+QA-134,QA,Mashreq Bank,Mashreq Bank,mashreq bank,canonical_en,foreign_branch,listed,False
+QA-134,QA,Mashreq Bank,بنك المشرق,بنك المشرق,canonical_ar,foreign_branch,listed,False
+QA-134,QA,Mashreq Bank,Mashreq,mashreq,curated_alias,foreign_branch,listed,False
+QA-134,QA,Mashreq Bank,Al Mashreq Bank,al mashreq bank,curated_alias,foreign_branch,listed,False
+QA-134,QA,Mashreq Bank,المشرق,المشرق,curated_alias,foreign_branch,listed,True
+QA-135,QA,Standard Chartered Bank,Standard Chartered Bank,standard chartered bank,canonical_en,foreign_branch,listed,False
+QA-135,QA,Standard Chartered Bank,بنك ستاندرد تشارترد,بنك ستاندرد تشارترد,canonical_ar,foreign_branch,listed,False
+QA-135,QA,Standard Chartered Bank,SCB,scb,curated_alias,foreign_branch,listed,True
+QA-135,QA,Standard Chartered Bank,Standard Chartered Qatar,standard chartered qatar,curated_alias,foreign_branch,listed,False
+QA-135,QA,Standard Chartered Bank,ستاندرد تشارترد,ستاندرد تشارترد,curated_alias,foreign_branch,listed,False
+QA-136,QA,Arab Bank,Arab Bank,arab bank,canonical_en,foreign_branch,listed,False
+QA-136,QA,Arab Bank,البنك العربي,البنك العربي,canonical_ar,foreign_branch,listed,True
+QA-136,QA,Arab Bank,Arab Bank PLC,arab bank plc,curated_alias,foreign_branch,listed,False
+QA-136,QA,Arab Bank,البنك العربي المحدود,البنك العربي المحدود,curated_alias,foreign_branch,listed,False
+QA-137,QA,BNP Paribas,BNP Paribas,bnp paribas,canonical_en,foreign_branch,listed,False
+QA-137,QA,BNP Paribas,بنك بي إن بي باريبا,بنك بي ان بي باريبا,canonical_ar,foreign_branch,listed,False
+QA-137,QA,BNP Paribas,BNP,bnp,curated_alias,foreign_branch,listed,True
+QA-137,QA,BNP Paribas,BNP Paribas Qatar,bnp paribas qatar,curated_alias,foreign_branch,listed,False
+QA-137,QA,BNP Paribas,بي ان بي باريبا,بي ان بي باريبا,curated_alias,foreign_branch,listed,False
+QA-138,QA,Bank Saderat Iran,Bank Saderat Iran,bank saderat iran,canonical_en,foreign_branch,listed,False
+QA-138,QA,Bank Saderat Iran,بنك صادرات إيران,بنك صادرات ايران,canonical_ar,foreign_branch,listed,False
+QA-138,QA,Bank Saderat Iran,Bank Saderat,bank saderat,curated_alias,foreign_branch,listed,False
+QA-138,QA,Bank Saderat Iran,صادرات إيران,صادرات ايران,curated_alias,foreign_branch,listed,False
+QA-139,QA,United Bank Limited,United Bank Limited,united bank limited,canonical_en,foreign_branch,listed,False
+QA-139,QA,United Bank Limited,يونايتد بنك المحدود,يونايتد بنك المحدود,canonical_ar,foreign_branch,listed,False
+QA-139,QA,United Bank Limited,UBL,ubl,curated_alias,foreign_branch,listed,True
+QA-139,QA,United Bank Limited,United Bank Ltd.,united bank ltd,curated_alias,foreign_branch,listed,False
+QA-139,QA,United Bank Limited,بنك يونايتد,بنك يونايتد,curated_alias,foreign_branch,listed,False
+OM-140,OM,Bank Muscat,Bank Muscat,bank muscat,canonical_en,local,listed,False
+OM-140,OM,Bank Muscat,بنك مسقط,بنك مسقط,canonical_ar,local,listed,False
+OM-140,OM,Bank Muscat,BankMuscat,bankmuscat,curated_alias,local,listed,False
+OM-140,OM,Bank Muscat,BM,bm,curated_alias,local,listed,True
+OM-140,OM,Bank Muscat,بنك مسقط ش م ع ع,بنك مسقط ش م ع ع,curated_alias,local,listed,False
+OM-140,OM,Bank Muscat,Bank Muscat SAOG,bank muscat saog,curated_alias,local,listed,False
+OM-140,OM,Bank Muscat,بنك مسقط العماني,بنك مسقط العماني,curated_alias,local,listed,False
+OM-141,OM,National Bank of Oman,National Bank of Oman,national bank of oman,canonical_en,local,listed,False
+OM-141,OM,National Bank of Oman,البنك الوطني العماني,البنك الوطني العماني,canonical_ar,local,listed,False
+OM-141,OM,National Bank of Oman,NBO,nbo,curated_alias,local,listed,True
+OM-141,OM,National Bank of Oman,National Bank Oman,national bank oman,curated_alias,local,listed,False
+OM-141,OM,National Bank of Oman,البنك الوطني العماني ش م ع ع,البنك الوطني العماني ش م ع ع,curated_alias,local,listed,False
+OM-142,OM,Oman Arab Bank,Oman Arab Bank,oman arab bank,canonical_en,local,listed,False
+OM-142,OM,Oman Arab Bank,بنك عمان العربي,بنك عمان العربي,canonical_ar,local,listed,False
+OM-142,OM,Oman Arab Bank,OAB,oab,curated_alias,local,listed,True
+OM-142,OM,Oman Arab Bank,Oman Arab Bank SAOG,oman arab bank saog,curated_alias,local,listed,False
+OM-143,OM,Bank Dhofar,Bank Dhofar,bank dhofar,canonical_en,local,listed,False
+OM-143,OM,Bank Dhofar,بنك ظفار,بنك ظفار,canonical_ar,local,listed,False
+OM-143,OM,Bank Dhofar,BankDhofar,bankdhofar,curated_alias,local,listed,False
+OM-143,OM,Bank Dhofar,Bank Dhofar SAOG,bank dhofar saog,curated_alias,local,listed,False
+OM-143,OM,Bank Dhofar,بنك ضفار,بنك ضفار,curated_alias,local,listed,False
+OM-144,OM,Sohar International,Sohar International,sohar international,canonical_en,local,listed,False
+OM-144,OM,Sohar International,بنك صحار الدولي,بنك صحار الدولي,canonical_ar,local,listed,False
+OM-144,OM,Sohar International,Sohar International Bank,sohar international bank,curated_alias,local,listed,False
+OM-144,OM,Sohar International,Sohar Bank,sohar bank,curated_alias,local,listed,False
+OM-144,OM,Sohar International,بنك صحار,بنك صحار,curated_alias,local,listed,True
+OM-144,OM,Sohar International,صحار الدولي,صحار الدولي,curated_alias,local,listed,False
+OM-144,OM,Sohar International,بنك صحار الدولي ش م ع ع,بنك صحار الدولي ش م ع ع,curated_alias,local,listed,False
+OM-144,OM,Sohar International,Bank Sohar,bank sohar,historic_predecessor_or_previous_name,local,listed,True
+OM-145,OM,Ahlibank Oman,Ahlibank Oman,ahlibank oman,canonical_en,local,listed,False
+OM-145,OM,Ahlibank Oman,البنك الأهلي العماني,البنك الاهلي العماني,canonical_ar,local,listed,False
+OM-145,OM,Ahlibank Oman,Ahli Bank SAOG,ahli bank saog,curated_alias,local,listed,False
+OM-145,OM,Ahlibank Oman,Ahli Bank Oman,ahli bank oman,curated_alias,local,listed,False
+OM-145,OM,Ahlibank Oman,Ahlibank,ahlibank,curated_alias,local,listed,False
+OM-145,OM,Ahlibank Oman,بنك الأهلي العماني,بنك الاهلي العماني,curated_alias,local,listed,False
+OM-146,OM,Oman Investment Bank,Oman Investment Bank,oman investment bank,canonical_en,local,listed,False
+OM-146,OM,Oman Investment Bank,بنك عمان للاستثمار,بنك عمان للاستثمار,canonical_ar,local,listed,False
+OM-146,OM,Oman Investment Bank,OIB,oib,curated_alias,local,listed,True
+OM-146,OM,Oman Investment Bank,Oman Investment Bank SAOC,oman investment bank saoc,curated_alias,local,listed,False
+OM-147,OM,Bank Nizwa,Bank Nizwa,bank nizwa,canonical_en,local_islamic,listed,False
+OM-147,OM,Bank Nizwa,بنك نزوى,بنك نزوي,canonical_ar,local_islamic,listed,False
+OM-147,OM,Bank Nizwa,Nizwa Bank,nizwa bank,curated_alias,local_islamic,listed,False
+OM-147,OM,Bank Nizwa,Nizwa,nizwa,curated_alias,local_islamic,listed,False
+OM-147,OM,Bank Nizwa,بنك نزوا,بنك نزوا,curated_alias,local_islamic,listed,False
+OM-148,OM,Alizz Islamic Bank,Alizz Islamic Bank,alizz islamic bank,canonical_en,local_islamic,listed,False
+OM-148,OM,Alizz Islamic Bank,بنك العز الإسلامي,بنك العز الاسلامي,canonical_ar,local_islamic,listed,False
+OM-148,OM,Alizz Islamic Bank,Al Izz Islamic Bank,al izz islamic bank,curated_alias,local_islamic,listed,False
+OM-148,OM,Alizz Islamic Bank,Alizz,alizz,curated_alias,local_islamic,listed,False
+OM-148,OM,Alizz Islamic Bank,Al Izz Bank,al izz bank,curated_alias,local_islamic,listed,False
+OM-148,OM,Alizz Islamic Bank,بنك العز,بنك العز,curated_alias,local_islamic,listed,False
+OM-148,OM,Alizz Islamic Bank,العز الإسلامي,العز الاسلامي,curated_alias,local_islamic,listed,False
+OM-149,OM,Oman Housing Bank,Oman Housing Bank,oman housing bank,canonical_en,local_specialized,listed,False
+OM-149,OM,Oman Housing Bank,بنك الإسكان العماني,بنك الاسكان العماني,canonical_ar,local_specialized,listed,False
+OM-149,OM,Oman Housing Bank,OHB,ohb,curated_alias,local_specialized,listed,True
+OM-149,OM,Oman Housing Bank,Oman Housing Bank SAOC,oman housing bank saoc,curated_alias,local_specialized,listed,False
+OM-149,OM,Oman Housing Bank,بنك الإسكان,بنك الاسكان,curated_alias,local_specialized,listed,False
+OM-150,OM,Development Bank Oman,Development Bank Oman,development bank oman,canonical_en,local_specialized,listed,False
+OM-150,OM,Development Bank Oman,بنك التنمية العماني,بنك التنمية العماني,canonical_ar,local_specialized,listed,False
+OM-150,OM,Development Bank Oman,Oman Development Bank,oman development bank,curated_alias,local_specialized,listed,False
+OM-150,OM,Development Bank Oman,Development Bank SAOC,development bank saoc,curated_alias,local_specialized,listed,False
+OM-150,OM,Development Bank Oman,ODB,odb,curated_alias,local_specialized,listed,True
+OM-150,OM,Development Bank Oman,بنك التنمية,بنك التنمية,curated_alias,local_specialized,listed,True
+OM-150,OM,Development Bank Oman,Oman Development Bank SAOC,oman development bank saoc,historic_predecessor_or_previous_name,local_specialized,listed,True
+OM-151,OM,Meethaq Islamic Banking,Meethaq Islamic Banking,meethaq islamic banking,canonical_en,islamic_window,listed,False
+OM-151,OM,Meethaq Islamic Banking,ميثاق للصيرفة الإسلامية,ميثاق للصيرفة الاسلامية,canonical_ar,islamic_window,listed,False
+OM-151,OM,Meethaq Islamic Banking,Meethaq,meethaq,curated_alias,islamic_window,listed,False
+OM-151,OM,Meethaq Islamic Banking,Bank Muscat Meethaq,bank muscat meethaq,curated_alias,islamic_window,listed,False
+OM-151,OM,Meethaq Islamic Banking,ميثاق بنك مسقط,ميثاق بنك مسقط,curated_alias,islamic_window,listed,False
+OM-152,OM,Muzn Islamic Banking,Muzn Islamic Banking,muzn islamic banking,canonical_en,islamic_window,listed,False
+OM-152,OM,Muzn Islamic Banking,مزن للصيرفة الإسلامية,مزن للصيرفة الاسلامية,canonical_ar,islamic_window,listed,False
+OM-152,OM,Muzn Islamic Banking,Muzn,muzn,curated_alias,islamic_window,listed,False
+OM-152,OM,Muzn Islamic Banking,National Bank of Oman Muzn,national bank of oman muzn,curated_alias,islamic_window,listed,False
+OM-152,OM,Muzn Islamic Banking,مزن البنك الوطني العماني,مزن البنك الوطني العماني,curated_alias,islamic_window,listed,False
+OM-153,OM,Dhofar Islamic,Dhofar Islamic,dhofar islamic,canonical_en,islamic_window,listed,False
+OM-153,OM,Dhofar Islamic,ظفار الإسلامي,ظفار الاسلامي,canonical_ar,islamic_window,listed,False
+OM-153,OM,Dhofar Islamic,Bank Dhofar Islamic,bank dhofar islamic,curated_alias,islamic_window,listed,False
+OM-153,OM,Dhofar Islamic,Dhofar Islamic Banking,dhofar islamic banking,curated_alias,islamic_window,listed,False
+OM-153,OM,Dhofar Islamic,بنك ظفار الإسلامي,بنك ظفار الاسلامي,curated_alias,islamic_window,listed,False
+OM-154,OM,Ahli Islamic,Ahli Islamic,ahli islamic,canonical_en,islamic_window,listed,False
+OM-154,OM,Ahli Islamic,الأهلي الإسلامي,الاهلي الاسلامي,canonical_ar,islamic_window,listed,False
+OM-154,OM,Ahli Islamic,Ahlibank Islamic,ahlibank islamic,curated_alias,islamic_window,listed,False
+OM-154,OM,Ahli Islamic,Ahli Islamic Banking Oman,ahli islamic banking oman,curated_alias,islamic_window,listed,False
+OM-154,OM,Ahli Islamic,بنك الأهلي الإسلامي,بنك الاهلي الاسلامي,curated_alias,islamic_window,listed,False
+OM-155,OM,Sohar Islamic,Sohar Islamic,sohar islamic,canonical_en,islamic_window,listed,False
+OM-155,OM,Sohar Islamic,صحار الإسلامي,صحار الاسلامي,canonical_ar,islamic_window,listed,False
+OM-155,OM,Sohar Islamic,Sohar Islamic Banking,sohar islamic banking,curated_alias,islamic_window,listed,False
+OM-155,OM,Sohar Islamic,Sohar International Islamic,sohar international islamic,curated_alias,islamic_window,listed,False
+OM-155,OM,Sohar Islamic,بنك صحار الإسلامي,بنك صحار الاسلامي,curated_alias,islamic_window,listed,False
+OM-156,OM,Standard Chartered Bank,Standard Chartered Bank,standard chartered bank,canonical_en,foreign_branch,listed,False
+OM-156,OM,Standard Chartered Bank,بنك ستاندرد تشارترد,بنك ستاندرد تشارترد,canonical_ar,foreign_branch,listed,False
+OM-156,OM,Standard Chartered Bank,SCB,scb,curated_alias,foreign_branch,listed,True
+OM-156,OM,Standard Chartered Bank,Standard Chartered Oman,standard chartered oman,curated_alias,foreign_branch,listed,False
+OM-156,OM,Standard Chartered Bank,ستاندرد تشارترد,ستاندرد تشارترد,curated_alias,foreign_branch,listed,False
+OM-157,OM,Bank Melli Iran,Bank Melli Iran,bank melli iran,canonical_en,foreign_branch,listed,False
+OM-157,OM,Bank Melli Iran,بنك ملي إيران,بنك ملي ايران,canonical_ar,foreign_branch,listed,False
+OM-157,OM,Bank Melli Iran,Bank Melli,bank melli,curated_alias,foreign_branch,listed,False
+OM-157,OM,Bank Melli Iran,بنك ملي,بنك ملي,curated_alias,foreign_branch,listed,False
+OM-158,OM,First Abu Dhabi Bank,First Abu Dhabi Bank,first abu dhabi bank,canonical_en,foreign_branch,listed,False
+OM-158,OM,First Abu Dhabi Bank,بنك أبوظبي الأول,بنك ابوظبي الاول,canonical_ar,foreign_branch,listed,False
+OM-158,OM,First Abu Dhabi Bank,FAB,fab,curated_alias,foreign_branch,listed,True
+OM-158,OM,First Abu Dhabi Bank,FAB Oman,fab oman,curated_alias,foreign_branch,listed,False
+OM-158,OM,First Abu Dhabi Bank,F A B,f a b,curated_alias,foreign_branch,listed,False
+OM-158,OM,First Abu Dhabi Bank,NBAD,nbad,historic_predecessor_or_previous_name,foreign_branch,listed,True
+OM-158,OM,First Abu Dhabi Bank,FGB,fgb,historic_predecessor_or_previous_name,foreign_branch,listed,True
+OM-159,OM,Bank Saderat Iran,Bank Saderat Iran,bank saderat iran,canonical_en,foreign_branch,listed,False
+OM-159,OM,Bank Saderat Iran,بنك صادرات إيران,بنك صادرات ايران,canonical_ar,foreign_branch,listed,False
+OM-159,OM,Bank Saderat Iran,Bank Saderat,bank saderat,curated_alias,foreign_branch,listed,False
+OM-159,OM,Bank Saderat Iran,صادرات ايران,صادرات ايران,curated_alias,foreign_branch,listed,False
+OM-160,OM,Bank of Baroda,Bank of Baroda,bank of baroda,canonical_en,foreign_branch,2024_register_check_current,False
+OM-160,OM,Bank of Baroda,بنك بارودا,بنك بارودا,canonical_ar,foreign_branch,2024_register_check_current,False
+OM-160,OM,Bank of Baroda,BOB,bob,curated_alias,foreign_branch,2024_register_check_current,True
+OM-160,OM,Bank of Baroda,Bank Baroda,bank baroda,curated_alias,foreign_branch,2024_register_check_current,False
+OM-160,OM,Bank of Baroda,بارودا بنك,بارودا بنك,curated_alias,foreign_branch,2024_register_check_current,False
+OM-161,OM,State Bank of India,State Bank of India,state bank of india,canonical_en,foreign_branch,listed,False
+OM-161,OM,State Bank of India,بنك الدولة الهندي,بنك الدولة الهندي,canonical_ar,foreign_branch,listed,False
+OM-161,OM,State Bank of India,SBI,sbi,curated_alias,foreign_branch,listed,True
+OM-161,OM,State Bank of India,State Bank India,state bank india,curated_alias,foreign_branch,listed,False
+OM-161,OM,State Bank of India,بنك الهند الحكومي,بنك الهند الحكومي,curated_alias,foreign_branch,listed,False
+OM-162,OM,Bank of Beirut,Bank of Beirut,bank of beirut,canonical_en,foreign_branch,listed,False
+OM-162,OM,Bank of Beirut,بنك بيروت,بنك بيروت,canonical_ar,foreign_branch,listed,False
+OM-162,OM,Bank of Beirut,BOB Lebanon,bob lebanon,curated_alias,foreign_branch,listed,False
+OM-162,OM,Bank of Beirut,Bank of Beirut Oman,bank of beirut oman,curated_alias,foreign_branch,listed,False
+OM-162,OM,Bank of Beirut,بنك بيروت عمان,بنك بيروت عمان,curated_alias,foreign_branch,listed,False
+OM-163,OM,Qatar National Bank,Qatar National Bank,qatar national bank,canonical_en,foreign_branch,listed,False
+OM-163,OM,Qatar National Bank,بنك قطر الوطني,بنك قطر الوطني,canonical_ar,foreign_branch,listed,False
+OM-163,OM,Qatar National Bank,QNB,qnb,curated_alias,foreign_branch,listed,True
+OM-163,OM,Qatar National Bank,QNB Oman,qnb oman,curated_alias,foreign_branch,listed,False
+OM-163,OM,Qatar National Bank,قطر الوطني,قطر الوطني,curated_alias,foreign_branch,listed,False
+OM-163,OM,Qatar National Bank,Q N B,q n b,curated_alias,foreign_branch,listed,False
+OM-164,OM,Gulf International Bank,Gulf International Bank,gulf international bank,canonical_en,foreign_branch,listed,False
+OM-164,OM,Gulf International Bank,بنك الخليج الدولي,بنك الخليج الدولي,canonical_ar,foreign_branch,listed,False
+OM-164,OM,Gulf International Bank,GIB,gib,curated_alias,foreign_branch,listed,True
+OM-164,OM,Gulf International Bank,GIB Oman,gib oman,curated_alias,foreign_branch,listed,False
+OM-164,OM,Gulf International Bank,الخليج الدولي,الخليج الدولي,curated_alias,foreign_branch,listed,False
+OM-165,OM,Mashreq Bank,Mashreq Bank,mashreq bank,canonical_en,foreign_branch,listed,False
+OM-165,OM,Mashreq Bank,بنك المشرق,بنك المشرق,canonical_ar,foreign_branch,listed,False
+OM-165,OM,Mashreq Bank,Mashreq,mashreq,curated_alias,foreign_branch,listed,False
+OM-165,OM,Mashreq Bank,Al Mashreq Bank,al mashreq bank,curated_alias,foreign_branch,listed,False
+OM-165,OM,Mashreq Bank,المشرق,المشرق,curated_alias,foreign_branch,listed,True
+OM-166,OM,HSBC Bank Middle East,HSBC Bank Middle East,hsbc bank middle east,canonical_en,foreign_branch,listed,False
+OM-166,OM,HSBC Bank Middle East,بنك إتش إس بي سي الشرق الأوسط,بنك اتش اس بي سي الشرق الاوسط,canonical_ar,foreign_branch,listed,False
+OM-166,OM,HSBC Bank Middle East,HSBC,hsbc,curated_alias,foreign_branch,listed,False
+OM-166,OM,HSBC Bank Middle East,HSBC Oman,hsbc oman,curated_alias,foreign_branch,listed,True
+OM-166,OM,HSBC Bank Middle East,اتش اس بي سي,اتش اس بي سي,curated_alias,foreign_branch,listed,False
+BH-167,BH,National Bank of Bahrain,National Bank of Bahrain,national bank of bahrain,canonical_en,local_conventional_retail,listed,False
+BH-167,BH,National Bank of Bahrain,بنك البحرين الوطني,بنك البحرين الوطني,canonical_ar,local_conventional_retail,listed,False
+BH-167,BH,National Bank of Bahrain,NBB,nbb,curated_alias,local_conventional_retail,listed,True
+BH-167,BH,National Bank of Bahrain,National Bank Bahrain,national bank bahrain,curated_alias,local_conventional_retail,listed,False
+BH-167,BH,National Bank of Bahrain,البحرين الوطني,البحرين الوطني,curated_alias,local_conventional_retail,listed,False
+BH-168,BH,Bank of Bahrain and Kuwait,Bank of Bahrain and Kuwait,bank of bahrain and kuwait,canonical_en,local_conventional_retail,listed,False
+BH-168,BH,Bank of Bahrain and Kuwait,بنك البحرين والكويت,بنك البحرين والكويت,canonical_ar,local_conventional_retail,listed,False
+BH-168,BH,Bank of Bahrain and Kuwait,BBK,bbk,curated_alias,local_conventional_retail,listed,True
+BH-168,BH,Bank of Bahrain and Kuwait,BBK Bank,bbk bank,curated_alias,local_conventional_retail,listed,False
+BH-168,BH,Bank of Bahrain and Kuwait,Bank Bahrain Kuwait,bank bahrain kuwait,curated_alias,local_conventional_retail,listed,False
+BH-168,BH,Bank of Bahrain and Kuwait,بنك BBK,بنك bbk,curated_alias,local_conventional_retail,listed,False
+BH-169,BH,Bahrain Development Bank,Bahrain Development Bank,bahrain development bank,canonical_en,local_conventional_retail,listed,False
+BH-169,BH,Bahrain Development Bank,بنك البحرين للتنمية,بنك البحرين للتنمية,canonical_ar,local_conventional_retail,listed,False
+BH-169,BH,Bahrain Development Bank,BDB,bdb,curated_alias,local_conventional_retail,listed,True
+BH-169,BH,Bahrain Development Bank,Bahrain Development Bank BSC,bahrain development bank bsc,curated_alias,local_conventional_retail,listed,False
+BH-169,BH,Bahrain Development Bank,البحرين للتنمية,البحرين للتنمية,curated_alias,local_conventional_retail,listed,False
+BH-170,BH,Eskan Bank,Eskan Bank,eskan bank,canonical_en,local_conventional_retail,listed,False
+BH-170,BH,Eskan Bank,بنك الإسكان,بنك الاسكان,canonical_ar,local_conventional_retail,listed,False
+BH-170,BH,Eskan Bank,Eskan,eskan,curated_alias,local_conventional_retail,listed,False
+BH-170,BH,Eskan Bank,Eskan Bank Bahrain,eskan bank bahrain,curated_alias,local_conventional_retail,listed,False
+BH-170,BH,Eskan Bank,بنك اسكان,بنك اسكان,curated_alias,local_conventional_retail,listed,False
+BH-171,BH,Bank ABC,Bank ABC,bank abc,canonical_en,local_conventional_retail,listed,False
+BH-171,BH,Bank ABC,بنك إيه بي سي,بنك ايه بي سي,canonical_ar,local_conventional_retail,listed,False
+BH-171,BH,Bank ABC,Arab Banking Corporation,arab banking corporation,curated_alias,local_conventional_retail,listed,False
+BH-171,BH,Bank ABC,ABC Bank Bahrain,abc bank bahrain,curated_alias,local_conventional_retail,listed,False
+BH-171,BH,Bank ABC,BankABC,bankabc,curated_alias,local_conventional_retail,listed,False
+BH-171,BH,Bank ABC,ABC,abc,curated_alias,local_conventional_retail,listed,True
+BH-171,BH,Bank ABC,المؤسسة العربية المصرفية,الموسسة العربية المصرفية,curated_alias,local_conventional_retail,listed,False
+BH-171,BH,Bank ABC,ABC Banking Corporation,abc banking corporation,curated_alias,local_conventional_retail,listed,False
+BH-172,BH,Al Salam Bank,Al Salam Bank,al salam bank,canonical_en,local_islamic_retail,listed,False
+BH-172,BH,Al Salam Bank,بنك السلام,بنك السلام,canonical_ar,local_islamic_retail,listed,False
+BH-172,BH,Al Salam Bank,Al Salam Bank Bahrain,al salam bank bahrain,curated_alias,local_islamic_retail,listed,False
+BH-172,BH,Al Salam Bank,ASB,asb,curated_alias,local_islamic_retail,listed,True
+BH-172,BH,Al Salam Bank,مصرف السلام,مصرف السلام,curated_alias,local_islamic_retail,listed,False
+BH-172,BH,Al Salam Bank,بنك السلام البحريني,بنك السلام البحريني,curated_alias,local_islamic_retail,listed,False
+BH-172,BH,Al Salam Bank,Bahrain Saudi Bank,bahrain saudi bank,historic_predecessor_or_previous_name,local_islamic_retail,listed,True
+BH-172,BH,Al Salam Bank,BMI Bank,bmi bank,historic_predecessor_or_previous_name,local_islamic_retail,listed,True
+BH-173,BH,Bahrain Islamic Bank,Bahrain Islamic Bank,bahrain islamic bank,canonical_en,local_islamic_retail,listed,False
+BH-173,BH,Bahrain Islamic Bank,بنك البحرين الإسلامي,بنك البحرين الاسلامي,canonical_ar,local_islamic_retail,listed,False
+BH-173,BH,Bahrain Islamic Bank,BisB,bisb,curated_alias,local_islamic_retail,listed,False
+BH-173,BH,Bahrain Islamic Bank,Bahrain Islamic,bahrain islamic,curated_alias,local_islamic_retail,listed,False
+BH-173,BH,Bahrain Islamic Bank,البحرين الإسلامي,البحرين الاسلامي,curated_alias,local_islamic_retail,listed,False
+BH-174,BH,Khaleeji Bank,Khaleeji Bank,khaleeji bank,canonical_en,local_islamic_retail,listed,False
+BH-174,BH,Khaleeji Bank,بنك الخليجي,بنك الخليجي,canonical_ar,local_islamic_retail,listed,False
+BH-174,BH,Khaleeji Bank,Khaleeji Commercial Bank,khaleeji commercial bank,curated_alias,local_islamic_retail,listed,False
+BH-174,BH,Khaleeji Bank,KCB,kcb,curated_alias,local_islamic_retail,listed,True
+BH-174,BH,Khaleeji Bank,Khaleeji,khaleeji,curated_alias,local_islamic_retail,listed,False
+BH-174,BH,Khaleeji Bank,البنك الخليجي التجاري,البنك الخليجي التجاري,curated_alias,local_islamic_retail,listed,False
+BH-174,BH,Khaleeji Bank,بنك خليجي,بنك خليجي,curated_alias,local_islamic_retail,listed,False
+BH-175,BH,Kuwait Finance House Bahrain,Kuwait Finance House Bahrain,kuwait finance house bahrain,canonical_en,local_islamic_retail,listed,False
+BH-175,BH,Kuwait Finance House Bahrain,بيت التمويل الكويتي - البحرين,بيت التمويل الكويتي البحرين,canonical_ar,local_islamic_retail,listed,False
+BH-175,BH,Kuwait Finance House Bahrain,KFH Bahrain,kfh bahrain,curated_alias,local_islamic_retail,listed,False
+BH-175,BH,Kuwait Finance House Bahrain,Kuwait Finance House BSC,kuwait finance house bsc,curated_alias,local_islamic_retail,listed,False
+BH-175,BH,Kuwait Finance House Bahrain,KFH BH,kfh bh,curated_alias,local_islamic_retail,listed,False
+BH-175,BH,Kuwait Finance House Bahrain,بيتك البحرين,بيتك البحرين,curated_alias,local_islamic_retail,listed,False
+BH-175,BH,Kuwait Finance House Bahrain,Ahli United Bank,ahli united bank,historic_predecessor_or_previous_name,local_islamic_retail,listed,True
+BH-175,BH,Kuwait Finance House Bahrain,AUB,aub,historic_predecessor_or_previous_name,local_islamic_retail,listed,True
+BH-175,BH,Kuwait Finance House Bahrain,البنك الأهلي المتحد,البنك الاهلي المتحد,historic_predecessor_or_previous_name,local_islamic_retail,listed,True
+BH-176,BH,Al Baraka Islamic Bank,Al Baraka Islamic Bank,al baraka islamic bank,canonical_en,local_islamic_retail,listed,False
+BH-176,BH,Al Baraka Islamic Bank,بنك البركة الإسلامي,بنك البركة الاسلامي,canonical_ar,local_islamic_retail,listed,False
+BH-176,BH,Al Baraka Islamic Bank,Albaraka Islamic,albaraka islamic,curated_alias,local_islamic_retail,listed,False
+BH-176,BH,Al Baraka Islamic Bank,Al Baraka Islamic Bank Bahrain,al baraka islamic bank bahrain,curated_alias,local_islamic_retail,listed,False
+BH-176,BH,Al Baraka Islamic Bank,بنك البركة,بنك البركة,curated_alias,local_islamic_retail,listed,False
+BH-176,BH,Al Baraka Islamic Bank,البركة الاسلامي,البركة الاسلامي,curated_alias,local_islamic_retail,listed,False
+BH-177,BH,Ithmaar Bank,Ithmaar Bank,ithmaar bank,canonical_en,local_islamic_retail,listed,False
+BH-177,BH,Ithmaar Bank,بنك الإثمار,بنك الاثمار,canonical_ar,local_islamic_retail,listed,False
+BH-177,BH,Ithmaar Bank,Ithmaar,ithmaar,curated_alias,local_islamic_retail,listed,False
+BH-177,BH,Ithmaar Bank,Ithmaar Bank BSC,ithmaar bank bsc,curated_alias,local_islamic_retail,listed,False
+BH-177,BH,Ithmaar Bank,الإثمار,الاثمار,curated_alias,local_islamic_retail,listed,False
+BH-177,BH,Ithmaar Bank,Faysal Islamic Bank of Bahrain,faysal islamic bank of bahrain,historic_predecessor_or_previous_name,local_islamic_retail,listed,True
+BH-178,BH,Gulf International Bank,Gulf International Bank,gulf international bank,canonical_en,local_wholesale,listed,False
+BH-178,BH,Gulf International Bank,بنك الخليج الدولي,بنك الخليج الدولي,canonical_ar,local_wholesale,listed,False
+BH-178,BH,Gulf International Bank,GIB,gib,curated_alias,local_wholesale,listed,True
+BH-178,BH,Gulf International Bank,Gulf International Bank BSC,gulf international bank bsc,curated_alias,local_wholesale,listed,False
+BH-178,BH,Gulf International Bank,بنك GIB,بنك gib,curated_alias,local_wholesale,listed,False
+BH-178,BH,Gulf International Bank,الخليج الدولي,الخليج الدولي,curated_alias,local_wholesale,listed,False
+BH-179,BH,ABC Islamic Bank,ABC Islamic Bank,abc islamic bank,canonical_en,local_wholesale,listed,False
+BH-179,BH,ABC Islamic Bank,بنك إيه بي سي الإسلامي,بنك ايه بي سي الاسلامي,canonical_ar,local_wholesale,listed,False
+BH-179,BH,ABC Islamic Bank,ABC Islamic,abc islamic,curated_alias,local_wholesale,listed,False
+BH-179,BH,ABC Islamic Bank,ABC Islamic Bank EC,abc islamic bank ec,curated_alias,local_wholesale,listed,False
+BH-179,BH,ABC Islamic Bank,البنك العربي المصرفي الإسلامي,البنك العربي المصرفي الاسلامي,curated_alias,local_wholesale,listed,False
+BH-180,BH,Al Baraka Group,Al Baraka Group,al baraka group,canonical_en,local_wholesale,listed,False
+BH-180,BH,Al Baraka Group,مجموعة البركة,مجموعة البركة,canonical_ar,local_wholesale,listed,False
+BH-180,BH,Al Baraka Group,Albaraka Banking Group,albaraka banking group,curated_alias,local_wholesale,listed,False
+BH-180,BH,Al Baraka Group,ABG,abg,curated_alias,local_wholesale,listed,True
+BH-180,BH,Al Baraka Group,Al Baraka Banking Group,al baraka banking group,curated_alias,local_wholesale,listed,False
+BH-180,BH,Al Baraka Group,مجموعة البركة المصرفية,مجموعة البركة المصرفية,curated_alias,local_wholesale,listed,False
+BH-181,BH,Alubaf Arab International Bank,Alubaf Arab International Bank,alubaf arab international bank,canonical_en,local_wholesale,listed,False
+BH-181,BH,Alubaf Arab International Bank,بنك ألوباف العربي الدولي,بنك الوباف العربي الدولي,canonical_ar,local_wholesale,listed,False
+BH-181,BH,Alubaf Arab International Bank,Alubaf,alubaf,curated_alias,local_wholesale,listed,False
+BH-181,BH,Alubaf Arab International Bank,Alubaf Arab International Bank Bahrain,alubaf arab international bank bahrain,curated_alias,local_wholesale,listed,False
+BH-181,BH,Alubaf Arab International Bank,بنك الوباف,بنك الوباف,curated_alias,local_wholesale,listed,False
+BH-182,BH,Bank Alkhair,Bank Alkhair,bank alkhair,canonical_en,local_wholesale,listed,False
+BH-182,BH,Bank Alkhair,بنك الخير,بنك الخير,canonical_ar,local_wholesale,listed,False
+BH-182,BH,Bank Alkhair,Bank Al Khair,bank al khair,curated_alias,local_wholesale,listed,False
+BH-182,BH,Bank Alkhair,Alkhair Bank,alkhair bank,curated_alias,local_wholesale,listed,False
+BH-182,BH,Bank Alkhair,بنك الخير البحريني,بنك الخير البحريني,curated_alias,local_wholesale,listed,False
+BH-183,BH,Citi Islamic Investment Bank,Citi Islamic Investment Bank,citi islamic investment bank,canonical_en,local_wholesale,listed,False
+BH-183,BH,Citi Islamic Investment Bank,بنك سيتي الإسلامي للاستثمار,بنك سيتي الاسلامي للاستثمار,canonical_ar,local_wholesale,listed,False
+BH-183,BH,Citi Islamic Investment Bank,Citi Islamic,citi islamic,curated_alias,local_wholesale,listed,False
+BH-183,BH,Citi Islamic Investment Bank,Citi Islamic Investment Bank EC,citi islamic investment bank ec,curated_alias,local_wholesale,listed,False
+BH-183,BH,Citi Islamic Investment Bank,سيتي للاستثمار الإسلامي,سيتي للاستثمار الاسلامي,curated_alias,local_wholesale,listed,False
+BH-184,BH,GFH Financial Group,GFH Financial Group,gfh financial group,canonical_en,local_wholesale,listed,False
+BH-184,BH,GFH Financial Group,مجموعة جي إف إتش المالية,مجموعة جي اف اتش المالية,canonical_ar,local_wholesale,listed,False
+BH-184,BH,GFH Financial Group,GFH,gfh,curated_alias,local_wholesale,listed,True
+BH-184,BH,GFH Financial Group,GFH Bank,gfh bank,curated_alias,local_wholesale,listed,False
+BH-184,BH,GFH Financial Group,Gulf Finance House,gulf finance house,curated_alias,local_wholesale,listed,False
+BH-184,BH,GFH Financial Group,بيت التمويل الخليجي,بيت التمويل الخليجي,curated_alias,local_wholesale,listed,False
+BH-185,BH,Arcapita Bank,Arcapita Bank,arcapita bank,canonical_en,local_wholesale,listed,False
+BH-185,BH,Arcapita Bank,بنك أركابيتا,بنك اركابيتا,canonical_ar,local_wholesale,listed,False
+BH-185,BH,Arcapita Bank,Arcapita,arcapita,curated_alias,local_wholesale,listed,False
+BH-185,BH,Arcapita Bank,Arcapita Group,arcapita group,curated_alias,local_wholesale,listed,False
+BH-185,BH,Arcapita Bank,أركابيتا,اركابيتا,curated_alias,local_wholesale,listed,False
+BH-186,BH,Venture Capital Bank,Venture Capital Bank,venture capital bank,canonical_en,local_wholesale,listed,False
+BH-186,BH,Venture Capital Bank,بنك رأس المال الاستثماري,بنك راس المال الاستثماري,canonical_ar,local_wholesale,listed,False
+BH-186,BH,Venture Capital Bank,VCBank,vcbank,curated_alias,local_wholesale,listed,False
+BH-186,BH,Venture Capital Bank,VC Bank,vc bank,curated_alias,local_wholesale,listed,False
+BH-186,BH,Venture Capital Bank,Venture Capital Bank Bahrain,venture capital bank bahrain,curated_alias,local_wholesale,listed,False
+BH-186,BH,Venture Capital Bank,بنك رأس المال المغامر,بنك راس المال المغامر,curated_alias,local_wholesale,listed,False
+BH-187,BH,Burgan Bank BSC Bahrain,Burgan Bank BSC Bahrain,burgan bank bsc bahrain,canonical_en,local_wholesale,listed,False
+BH-187,BH,Burgan Bank BSC Bahrain,بنك برقان - البحرين,بنك برقان البحرين,canonical_ar,local_wholesale,listed,False
+BH-187,BH,Burgan Bank BSC Bahrain,Burgan Bank Bahrain,burgan bank bahrain,curated_alias,local_wholesale,listed,False
+BH-187,BH,Burgan Bank BSC Bahrain,Burgan BSC Closed,burgan bsc closed,curated_alias,local_wholesale,listed,False
+BH-187,BH,Burgan Bank BSC Bahrain,بنك برقان ش م ب مقفلة,بنك برقان ش م ب مقفلة,curated_alias,local_wholesale,listed,False
+BH-187,BH,Burgan Bank BSC Bahrain,United Gulf Bank,united gulf bank,historic_predecessor_or_previous_name,local_wholesale,listed,True
+BH-187,BH,Burgan Bank BSC Bahrain,UGB,ugb,historic_predecessor_or_previous_name,local_wholesale,listed,True
+BH-187,BH,Burgan Bank BSC Bahrain,بنك الخليج المتحد,بنك الخليج المتحد,historic_predecessor_or_previous_name,local_wholesale,listed,True
+BH-188,BH,Bahrain Middle East Bank,Bahrain Middle East Bank,bahrain middle east bank,canonical_en,local_wholesale,candidate_verify_license,False
+BH-188,BH,Bahrain Middle East Bank,بنك البحرين والشرق الأوسط,بنك البحرين والشرق الاوسط,canonical_ar,local_wholesale,candidate_verify_license,False
+BH-188,BH,Bahrain Middle East Bank,BMB,bmb,curated_alias,local_wholesale,candidate_verify_license,True
+BH-188,BH,Bahrain Middle East Bank,Bahrain Middle East Bank BSC,bahrain middle east bank bsc,curated_alias,local_wholesale,candidate_verify_license,False
+BH-189,BH,SICO,SICO,sico,canonical_en,local_wholesale,listed,False
+BH-189,BH,SICO,سيكو,سيكو,canonical_ar,local_wholesale,listed,False
+BH-189,BH,SICO,SICO Bank,sico bank,curated_alias,local_wholesale,listed,False
+BH-189,BH,SICO,Securities & Investment Company,securities investment company,curated_alias,local_wholesale,listed,False
+BH-189,BH,SICO,شركة الأوراق المالية والاستثمار,شركة الاوراق المالية والاستثمار,curated_alias,local_wholesale,listed,False
+BH-189,BH,SICO,بنك سيكو,بنك سيكو,curated_alias,local_wholesale,listed,False
+BH-190,BH,Arab Investment Company,Arab Investment Company,arab investment company,canonical_en,local_wholesale,candidate_verify_license,False
+BH-190,BH,Arab Investment Company,الشركة العربية للاستثمار,الشركة العربية للاستثمار,canonical_ar,local_wholesale,candidate_verify_license,False
+BH-190,BH,Arab Investment Company,TAIC,taic,curated_alias,local_wholesale,candidate_verify_license,False
+BH-190,BH,Arab Investment Company,The Arab Investment Company,the arab investment company,curated_alias,local_wholesale,candidate_verify_license,False
+BH-190,BH,Arab Investment Company,العربية للاستثمار,العربية للاستثمار,curated_alias,local_wholesale,candidate_verify_license,False
+BH-191,BH,Arab Petroleum Investments Corporation,Arab Petroleum Investments Corporation,arab petroleum investments corporation,canonical_en,local_wholesale,candidate_verify_license,False
+BH-191,BH,Arab Petroleum Investments Corporation,الشركة العربية للاستثمارات البترولية,الشركة العربية للاستثمارات البترولية,canonical_ar,local_wholesale,candidate_verify_license,False
+BH-191,BH,Arab Petroleum Investments Corporation,APICORP,apicorp,curated_alias,local_wholesale,candidate_verify_license,False
+BH-191,BH,Arab Petroleum Investments Corporation,Arab Energy Fund,arab energy fund,curated_alias,local_wholesale,candidate_verify_license,False
+BH-191,BH,Arab Petroleum Investments Corporation,الصندوق العربي للطاقة,الصندوق العربي للطاقة,curated_alias,local_wholesale,candidate_verify_license,False
+BH-192,BH,First Energy Bank,First Energy Bank,first energy bank,canonical_en,local_wholesale,candidate_verify_license,False
+BH-192,BH,First Energy Bank,بنك الطاقة الأول,بنك الطاقة الاول,canonical_ar,local_wholesale,candidate_verify_license,False
+BH-192,BH,First Energy Bank,FEB,feb,curated_alias,local_wholesale,candidate_verify_license,True
+BH-192,BH,First Energy Bank,First Energy Bank BSC,first energy bank bsc,curated_alias,local_wholesale,candidate_verify_license,False
+BH-192,BH,First Energy Bank,بنك الطاقة,بنك الطاقة,curated_alias,local_wholesale,candidate_verify_license,False
+BH-193,BH,Global Banking Corporation,Global Banking Corporation,global banking corporation,canonical_en,local_wholesale,candidate_verify_license,False
+BH-193,BH,Global Banking Corporation,المؤسسة المصرفية العالمية,الموسسة المصرفية العالمية,canonical_ar,local_wholesale,candidate_verify_license,False
+BH-193,BH,Global Banking Corporation,GBC,gbc,curated_alias,local_wholesale,candidate_verify_license,True
+BH-193,BH,Global Banking Corporation,Global Banking Corporation BSC,global banking corporation bsc,curated_alias,local_wholesale,candidate_verify_license,False
+BH-194,BH,Liquidity Management Centre,Liquidity Management Centre,liquidity management centre,canonical_en,local_wholesale,candidate_verify_license,False
+BH-194,BH,Liquidity Management Centre,مركز إدارة السيولة,مركز ادارة السيولة,canonical_ar,local_wholesale,candidate_verify_license,False
+BH-194,BH,Liquidity Management Centre,LMC,lmc,curated_alias,local_wholesale,candidate_verify_license,True
+BH-194,BH,Liquidity Management Centre,Liquidity Management Centre BSC,liquidity management centre bsc,curated_alias,local_wholesale,candidate_verify_license,False
+BH-194,BH,Liquidity Management Centre,مركز السيولة,مركز السيولة,curated_alias,local_wholesale,candidate_verify_license,False
+BH-195,BH,Seera Investment Bank,Seera Investment Bank,seera investment bank,canonical_en,local_wholesale,candidate_verify_license,False
+BH-195,BH,Seera Investment Bank,بنك سيرة للاستثمار,بنك سيرة للاستثمار,canonical_ar,local_wholesale,candidate_verify_license,False
+BH-195,BH,Seera Investment Bank,Seera Bank,seera bank,curated_alias,local_wholesale,candidate_verify_license,False
+BH-195,BH,Seera Investment Bank,Seera Investment Bank BSC,seera investment bank bsc,curated_alias,local_wholesale,candidate_verify_license,False
+BH-195,BH,Seera Investment Bank,بنك سيرة,بنك سيرة,curated_alias,local_wholesale,candidate_verify_license,False
+BH-196,BH,Esterad Bank,Esterad Bank,esterad bank,canonical_en,local_wholesale,listed,False
+BH-196,BH,Esterad Bank,بنك استيراد,بنك استيراد,canonical_ar,local_wholesale,listed,False
+BH-196,BH,Esterad Bank,Esterad,esterad,curated_alias,local_wholesale,listed,False
+BH-196,BH,Esterad Bank,Esterad Bank BSC,esterad bank bsc,curated_alias,local_wholesale,listed,False
+BH-197,BH,BOK International,BOK International,bok international,canonical_en,local_wholesale,listed,True
+BH-197,BH,BOK International,بنك بي أو كيه الدولي,بنك بي او كيه الدولي,canonical_ar,local_wholesale,listed,True
+BH-197,BH,BOK International,BOK International Bank,bok international bank,curated_alias,local_wholesale,listed,True
+BH-197,BH,BOK International,Bank of Khartoum International,bank of khartoum international,curated_alias,local_wholesale,listed,True
+BH-197,BH,BOK International,بنك الخرطوم الدولي,بنك الخرطوم الدولي,curated_alias,local_wholesale,listed,False
+BH-198,BH,Arab Bank,Arab Bank,arab bank,canonical_en,foreign_retail,listed,False
+BH-198,BH,Arab Bank,البنك العربي,البنك العربي,canonical_ar,foreign_retail,listed,True
+BH-198,BH,Arab Bank,Arab Bank PLC,arab bank plc,curated_alias,foreign_retail,listed,False
+BH-198,BH,Arab Bank,Arab Bank Bahrain,arab bank bahrain,curated_alias,foreign_retail,listed,False
+BH-198,BH,Arab Bank,بنك العربي,بنك العربي,curated_alias,foreign_retail,listed,False
+BH-199,BH,BNP Paribas,BNP Paribas,bnp paribas,canonical_en,foreign_retail,listed,False
+BH-199,BH,BNP Paribas,بنك بي إن بي باريبا,بنك بي ان بي باريبا,canonical_ar,foreign_retail,listed,False
+BH-199,BH,BNP Paribas,BNP,bnp,curated_alias,foreign_retail,listed,True
+BH-199,BH,BNP Paribas,BNP Paribas Bahrain,bnp paribas bahrain,curated_alias,foreign_retail,listed,False
+BH-199,BH,BNP Paribas,بي ان بي باريبا,بي ان بي باريبا,curated_alias,foreign_retail,listed,False
+BH-200,BH,Citibank,Citibank,citibank,canonical_en,foreign_retail,listed,False
+BH-200,BH,Citibank,سيتي بنك,سيتي بنك,canonical_ar,foreign_retail,listed,False
+BH-200,BH,Citibank,Citi,citi,curated_alias,foreign_retail,listed,False
+BH-200,BH,Citibank,Citibank NA,citibank na,curated_alias,foreign_retail,listed,False
+BH-200,BH,Citibank,سيتي,سيتي,curated_alias,foreign_retail,listed,False
+BH-201,BH,HSBC Bank Middle East,HSBC Bank Middle East,hsbc bank middle east,canonical_en,foreign_retail,listed,False
+BH-201,BH,HSBC Bank Middle East,بنك إتش إس بي سي الشرق الأوسط,بنك اتش اس بي سي الشرق الاوسط,canonical_ar,foreign_retail,listed,False
+BH-201,BH,HSBC Bank Middle East,HSBC,hsbc,curated_alias,foreign_retail,listed,False
+BH-201,BH,HSBC Bank Middle East,HSBC Bahrain,hsbc bahrain,curated_alias,foreign_retail,listed,False
+BH-201,BH,HSBC Bank Middle East,اتش اس بي سي,اتش اس بي سي,curated_alias,foreign_retail,listed,False
+BH-202,BH,Standard Chartered Bank,Standard Chartered Bank,standard chartered bank,canonical_en,foreign_retail,listed,False
+BH-202,BH,Standard Chartered Bank,بنك ستاندرد تشارترد,بنك ستاندرد تشارترد,canonical_ar,foreign_retail,listed,False
+BH-202,BH,Standard Chartered Bank,SCB,scb,curated_alias,foreign_retail,listed,True
+BH-202,BH,Standard Chartered Bank,StanChart,stanchart,curated_alias,foreign_retail,listed,False
+BH-202,BH,Standard Chartered Bank,ستاندرد تشارترد,ستاندرد تشارترد,curated_alias,foreign_retail,listed,False
+BH-203,BH,Mashreq Bank,Mashreq Bank,mashreq bank,canonical_en,foreign_retail,listed,False
+BH-203,BH,Mashreq Bank,بنك المشرق,بنك المشرق,canonical_ar,foreign_retail,listed,False
+BH-203,BH,Mashreq Bank,Mashreq,mashreq,curated_alias,foreign_retail,listed,False
+BH-203,BH,Mashreq Bank,Mashreqbank Bahrain,mashreqbank bahrain,curated_alias,foreign_retail,listed,False
+BH-203,BH,Mashreq Bank,المشرق,المشرق,curated_alias,foreign_retail,listed,True
+BH-204,BH,National Bank of Kuwait,National Bank of Kuwait,national bank of kuwait,canonical_en,foreign_retail,listed,False
+BH-204,BH,National Bank of Kuwait,بنك الكويت الوطني,بنك الكويت الوطني,canonical_ar,foreign_retail,listed,False
+BH-204,BH,National Bank of Kuwait,NBK,nbk,curated_alias,foreign_retail,listed,True
+BH-204,BH,National Bank of Kuwait,NBK Bahrain,nbk bahrain,curated_alias,foreign_retail,listed,False
+BH-204,BH,National Bank of Kuwait,الكويت الوطني,الكويت الوطني,curated_alias,foreign_retail,listed,False
+BH-205,BH,First Abu Dhabi Bank,First Abu Dhabi Bank,first abu dhabi bank,canonical_en,foreign_retail,listed,False
+BH-205,BH,First Abu Dhabi Bank,بنك أبوظبي الأول,بنك ابوظبي الاول,canonical_ar,foreign_retail,listed,False
+BH-205,BH,First Abu Dhabi Bank,FAB,fab,curated_alias,foreign_retail,listed,True
+BH-205,BH,First Abu Dhabi Bank,FAB Bahrain,fab bahrain,curated_alias,foreign_retail,listed,False
+BH-205,BH,First Abu Dhabi Bank,أبوظبي الأول,ابوظبي الاول,curated_alias,foreign_retail,listed,False
+BH-205,BH,First Abu Dhabi Bank,F A B,f a b,curated_alias,foreign_retail,listed,False
+BH-205,BH,First Abu Dhabi Bank,NBAD,nbad,historic_predecessor_or_previous_name,foreign_retail,listed,True
+BH-205,BH,First Abu Dhabi Bank,FGB,fgb,historic_predecessor_or_previous_name,foreign_retail,listed,True
+BH-206,BH,United Bank Limited,United Bank Limited,united bank limited,canonical_en,foreign_retail,listed,False
+BH-206,BH,United Bank Limited,بنك يونايتد المحدود,بنك يونايتد المحدود,canonical_ar,foreign_retail,listed,False
+BH-206,BH,United Bank Limited,UBL,ubl,curated_alias,foreign_retail,listed,True
+BH-206,BH,United Bank Limited,United Bank Ltd,united bank ltd,curated_alias,foreign_retail,listed,False
+BH-206,BH,United Bank Limited,يونايتد بنك,يونايتد بنك,curated_alias,foreign_retail,listed,False
+BH-207,BH,ICICI Bank,ICICI Bank,icici bank,canonical_en,foreign_retail,listed,False
+BH-207,BH,ICICI Bank,بنك آي سي آي سي آي,بنك اي سي اي سي اي,canonical_ar,foreign_retail,listed,False
+BH-207,BH,ICICI Bank,ICICI,icici,curated_alias,foreign_retail,listed,False
+BH-207,BH,ICICI Bank,ICICI Bank Bahrain,icici bank bahrain,curated_alias,foreign_retail,listed,False
+BH-207,BH,ICICI Bank,آي سي آي سي آي,اي سي اي سي اي,curated_alias,foreign_retail,listed,False
+BH-208,BH,Rafidain Bank,Rafidain Bank,rafidain bank,canonical_en,foreign_retail,listed,False
+BH-208,BH,Rafidain Bank,مصرف الرافدين,مصرف الرافدين,canonical_ar,foreign_retail,listed,False
+BH-208,BH,Rafidain Bank,Al Rafidain Bank,al rafidain bank,curated_alias,foreign_retail,listed,False
+BH-208,BH,Rafidain Bank,الرافدين,الرافدين,curated_alias,foreign_retail,listed,False
+BH-209,BH,The Housing Bank for Trade and Finance,The Housing Bank for Trade and Finance,the housing bank for trade and finance,canonical_en,foreign_retail,listed,False
+BH-209,BH,The Housing Bank for Trade and Finance,بنك الإسكان للتجارة والتمويل,بنك الاسكان للتجارة والتمويل,canonical_ar,foreign_retail,listed,False
+BH-209,BH,The Housing Bank for Trade and Finance,HBTF,hbtf,curated_alias,foreign_retail,listed,False
+BH-209,BH,The Housing Bank for Trade and Finance,The Housing Bank,the housing bank,curated_alias,foreign_retail,listed,False
+BH-210,BH,State Bank of India,State Bank of India,state bank of india,canonical_en,foreign_retail,listed,False
+BH-210,BH,State Bank of India,بنك الدولة الهندي,بنك الدولة الهندي,canonical_ar,foreign_retail,listed,False
+BH-210,BH,State Bank of India,SBI,sbi,curated_alias,foreign_retail,listed,True
+BH-210,BH,State Bank of India,State Bank of India Bahrain,state bank of india bahrain,curated_alias,foreign_retail,listed,False
+BH-210,BH,State Bank of India,بنك الهند الحكومي,بنك الهند الحكومي,curated_alias,foreign_retail,listed,False
+BH-211,BH,Credit Libanais,Credit Libanais,credit libanais,canonical_en,foreign_retail,candidate_verify_license,False
+BH-211,BH,Credit Libanais,بنك الاعتماد اللبناني,بنك الاعتماد اللبناني,canonical_ar,foreign_retail,candidate_verify_license,False
+BH-211,BH,Credit Libanais,Credit Libanais SAL,credit libanais sal,curated_alias,foreign_retail,candidate_verify_license,False
+BH-211,BH,Credit Libanais,كريدي ليبانيه,كريدي ليبانيه,curated_alias,foreign_retail,candidate_verify_license,False
+BH-212,BH,Habib Bank Limited,Habib Bank Limited,habib bank limited,canonical_en,foreign_retail,listed,False
+BH-212,BH,Habib Bank Limited,بنك حبيب المحدود,بنك حبيب المحدود,canonical_ar,foreign_retail,listed,False
+BH-212,BH,Habib Bank Limited,HBL,hbl,curated_alias,foreign_retail,listed,True
+BH-212,BH,Habib Bank Limited,Habib Bank Ltd Bahrain,habib bank ltd bahrain,curated_alias,foreign_retail,listed,False
+BH-212,BH,Habib Bank Limited,حبيب بنك,حبيب بنك,curated_alias,foreign_retail,listed,False
+BH-213,BH,JPMorgan Chase Bank,JPMorgan Chase Bank,jpmorgan chase bank,canonical_en,foreign_wholesale,listed,False
+BH-213,BH,JPMorgan Chase Bank,جي بي مورغان تشيس,جي بي مورغان تشيس,canonical_ar,foreign_wholesale,listed,False
+BH-213,BH,JPMorgan Chase Bank,J.P. Morgan Chase,j p morgan chase,curated_alias,foreign_wholesale,listed,False
+BH-213,BH,JPMorgan Chase Bank,JPMorgan,jpmorgan,curated_alias,foreign_wholesale,listed,False
+BH-213,BH,JPMorgan Chase Bank,JP Morgan,jp morgan,curated_alias,foreign_wholesale,listed,False
+BH-213,BH,JPMorgan Chase Bank,جي بي مورجان,جي بي مورجان,curated_alias,foreign_wholesale,listed,False
+BH-214,BH,Bank Alfalah,Bank Alfalah,bank alfalah,canonical_en,foreign_wholesale,listed,False
+BH-214,BH,Bank Alfalah,بنك الفلاح,بنك الفلاح,canonical_ar,foreign_wholesale,listed,False
+BH-214,BH,Bank Alfalah,Bank Al Falah,bank al falah,curated_alias,foreign_wholesale,listed,False
+BH-214,BH,Bank Alfalah,Bank Alfalah Limited,bank alfalah limited,curated_alias,foreign_wholesale,listed,False
+BH-214,BH,Bank Alfalah,الفلاح بنك,الفلاح بنك,curated_alias,foreign_wholesale,listed,False
+BH-215,BH,Bank Al Habib,Bank Al Habib,bank al habib,canonical_en,foreign_wholesale,listed,False
+BH-215,BH,Bank Al Habib,بنك الحبيب,بنك الحبيب,canonical_ar,foreign_wholesale,listed,False
+BH-215,BH,Bank Al Habib,Bank Al Habib Limited,bank al habib limited,curated_alias,foreign_wholesale,listed,False
+BH-215,BH,Bank Al Habib,BAHL,bahl,curated_alias,foreign_wholesale,listed,False
+BH-215,BH,Bank Al Habib,بنك آل حبيب,بنك ال حبيب,curated_alias,foreign_wholesale,listed,False
+BH-216,BH,Allied Bank,Allied Bank,allied bank,canonical_en,foreign_wholesale,listed,False
+BH-216,BH,Allied Bank,بنك ألايد,بنك الايد,canonical_ar,foreign_wholesale,listed,False
+BH-216,BH,Allied Bank,Allied Bank Limited,allied bank limited,curated_alias,foreign_wholesale,listed,False
+BH-216,BH,Allied Bank,ABL,abl,curated_alias,foreign_wholesale,listed,True
+BH-216,BH,Allied Bank,Allied Bank Bahrain,allied bank bahrain,curated_alias,foreign_wholesale,listed,False
+BH-217,BH,Askari Bank,Askari Bank,askari bank,canonical_en,foreign_wholesale,listed,False
+BH-217,BH,Askari Bank,بنك عسكري,بنك عسكري,canonical_ar,foreign_wholesale,listed,False
+BH-217,BH,Askari Bank,Askari Bank Limited,askari bank limited,curated_alias,foreign_wholesale,listed,False
+BH-217,BH,Askari Bank,Askari Wholesale Bank,askari wholesale bank,curated_alias,foreign_wholesale,listed,False
+BH-217,BH,Askari Bank,بنك العسكري,بنك العسكري,curated_alias,foreign_wholesale,listed,False
+BH-218,BH,Bank of Jordan,Bank of Jordan,bank of jordan,canonical_en,foreign_wholesale,listed,False
+BH-218,BH,Bank of Jordan,بنك الأردن,بنك الاردن,canonical_ar,foreign_wholesale,listed,False
+BH-218,BH,Bank of Jordan,BOJ,boj,curated_alias,foreign_wholesale,listed,True
+BH-218,BH,Bank of Jordan,Bank of Jordan Bahrain,bank of jordan bahrain,curated_alias,foreign_wholesale,listed,False
+BH-219,BH,Cairo Amman Bank,Cairo Amman Bank,cairo amman bank,canonical_en,foreign_wholesale,listed,False
+BH-219,BH,Cairo Amman Bank,بنك القاهرة عمان,بنك القاهرة عمان,canonical_ar,foreign_wholesale,listed,False
+BH-219,BH,Cairo Amman Bank,CAB,cab,curated_alias,foreign_wholesale,listed,True
+BH-219,BH,Cairo Amman Bank,Cairo Amman Bank Bahrain,cairo amman bank bahrain,curated_alias,foreign_wholesale,listed,False
+BH-220,BH,DenizBank,DenizBank,denizbank,canonical_en,foreign_wholesale,listed,False
+BH-220,BH,DenizBank,بنك دنيز,بنك دنيز,canonical_ar,foreign_wholesale,listed,False
+BH-220,BH,DenizBank,Deniz Bank,deniz bank,curated_alias,foreign_wholesale,listed,False
+BH-220,BH,DenizBank,Denizbank AS,denizbank as,curated_alias,foreign_wholesale,listed,False
+BH-220,BH,DenizBank,دنيز بنك,دنيز بنك,curated_alias,foreign_wholesale,listed,False
+BH-221,BH,JS Bank,JS Bank,js bank,canonical_en,foreign_wholesale,listed,False
+BH-221,BH,JS Bank,بنك جي إس,بنك جي اس,canonical_ar,foreign_wholesale,listed,False
+BH-221,BH,JS Bank,JS Bank Limited,js bank limited,curated_alias,foreign_wholesale,listed,False
+BH-221,BH,JS Bank,JSBL,jsbl,curated_alias,foreign_wholesale,listed,False
+BH-221,BH,JS Bank,جي إس بنك,جي اس بنك,curated_alias,foreign_wholesale,listed,False
+BH-222,BH,KEB Hana Bank,KEB Hana Bank,keb hana bank,canonical_en,foreign_wholesale,listed,False
+BH-222,BH,KEB Hana Bank,بنك كيه إي بي هانا,بنك كيه اي بي هانا,canonical_ar,foreign_wholesale,listed,False
+BH-222,BH,KEB Hana Bank,KEB Hana,keb hana,curated_alias,foreign_wholesale,listed,False
+BH-222,BH,KEB Hana Bank,Hana Bank,hana bank,curated_alias,foreign_wholesale,listed,False
+BH-222,BH,KEB Hana Bank,هانا بنك,هانا بنك,curated_alias,foreign_wholesale,listed,False
+BH-223,BH,MCB Bank,MCB Bank,mcb bank,canonical_en,foreign_wholesale,listed,False
+BH-223,BH,MCB Bank,بنك إم سي بي,بنك ام سي بي,canonical_ar,foreign_wholesale,listed,False
+BH-223,BH,MCB Bank,MCB,mcb,curated_alias,foreign_wholesale,listed,True
+BH-223,BH,MCB Bank,MCB Bank Limited,mcb bank limited,curated_alias,foreign_wholesale,listed,False
+BH-223,BH,MCB Bank,ام سي بي بنك,ام سي بي بنك,curated_alias,foreign_wholesale,listed,False
+BH-224,BH,Palestine Investment Bank,Palestine Investment Bank,palestine investment bank,canonical_en,foreign_wholesale,listed,False
+BH-224,BH,Palestine Investment Bank,بنك الاستثمار الفلسطيني,بنك الاستثمار الفلسطيني,canonical_ar,foreign_wholesale,listed,False
+BH-224,BH,Palestine Investment Bank,PIB,pib,curated_alias,foreign_wholesale,listed,True
+BH-224,BH,Palestine Investment Bank,Palestine Investment Bank Bahrain,palestine investment bank bahrain,curated_alias,foreign_wholesale,listed,False
+BH-224,BH,Palestine Investment Bank,بنك فلسطين للاستثمار,بنك فلسطين للاستثمار,curated_alias,foreign_wholesale,listed,False
+BH-225,BH,QNB Bank AS,QNB Bank AS,qnb bank as,canonical_en,foreign_wholesale,listed,False
+BH-225,BH,QNB Bank AS,بنك كيو إن بي التركي,بنك كيو ان بي التركي,canonical_ar,foreign_wholesale,listed,False
+BH-225,BH,QNB Bank AS,QNB Finansbank,qnb finansbank,curated_alias,foreign_wholesale,listed,False
+BH-225,BH,QNB Bank AS,QNB Bank AS Bahrain,qnb bank as bahrain,curated_alias,foreign_wholesale,listed,False
+BH-225,BH,QNB Bank AS,QNB Turkey,qnb turkey,curated_alias,foreign_wholesale,listed,False
+BH-225,BH,QNB Bank AS,بنك قطر الوطني التركي,بنك قطر الوطني التركي,curated_alias,foreign_wholesale,listed,False
+BH-225,BH,QNB Bank AS,Finansbank AS,finansbank as,historic_predecessor_or_previous_name,foreign_wholesale,listed,True
+BH-225,BH,QNB Bank AS,Finansbank,finansbank,historic_predecessor_or_previous_name,foreign_wholesale,listed,True
+BH-226,BH,Woori Bank,Woori Bank,woori bank,canonical_en,foreign_wholesale,listed,False
+BH-226,BH,Woori Bank,بنك ووري,بنك ووري,canonical_ar,foreign_wholesale,listed,False
+BH-226,BH,Woori Bank,Woori,woori,curated_alias,foreign_wholesale,listed,False
+BH-226,BH,Woori Bank,Woori Bank Bahrain,woori bank bahrain,curated_alias,foreign_wholesale,listed,False
+BH-226,BH,Woori Bank,ووري بنك,ووري بنك,curated_alias,foreign_wholesale,listed,False
+BH-227,BH,Mizuho Bank,Mizuho Bank,mizuho bank,canonical_en,foreign_wholesale,listed,False
+BH-227,BH,Mizuho Bank,بنك ميزوهو,بنك ميزوهو,canonical_ar,foreign_wholesale,listed,False
+BH-227,BH,Mizuho Bank,Mizuho,mizuho,curated_alias,foreign_wholesale,listed,False
+BH-227,BH,Mizuho Bank,Mizuho Bank Ltd,mizuho bank ltd,curated_alias,foreign_wholesale,listed,False
+BH-227,BH,Mizuho Bank,ميزوهو بنك,ميزوهو بنك,curated_alias,foreign_wholesale,listed,False
+BH-228,BH,MUFG Bank,MUFG Bank,mufg bank,canonical_en,foreign_wholesale,listed,False
+BH-228,BH,MUFG Bank,بنك إم يو إف جي,بنك ام يو اف جي,canonical_ar,foreign_wholesale,listed,False
+BH-228,BH,MUFG Bank,MUFG,mufg,curated_alias,foreign_wholesale,listed,False
+BH-228,BH,MUFG Bank,MUFG Bank Ltd,mufg bank ltd,curated_alias,foreign_wholesale,listed,False
+BH-228,BH,MUFG Bank,بنك طوكيو ميتسوبيشي,بنك طوكيو ميتسوبيشي,curated_alias,foreign_wholesale,listed,False
+BH-228,BH,MUFG Bank,Bank of Tokyo-Mitsubishi UFJ,bank of tokyo mitsubishi ufj,historic_predecessor_or_previous_name,foreign_wholesale,listed,True
+BH-229,BH,Kuwait Turkish Participation Bank,Kuwait Turkish Participation Bank,kuwait turkish participation bank,canonical_en,foreign_wholesale,listed,False
+BH-229,BH,Kuwait Turkish Participation Bank,بنك كويت ترك,بنك كويت ترك,canonical_ar,foreign_wholesale,listed,False
+BH-229,BH,Kuwait Turkish Participation Bank,Kuveyt Turk,kuveyt turk,curated_alias,foreign_wholesale,listed,False
+BH-229,BH,Kuwait Turkish Participation Bank,Kuveyt Turk Katilim Bankasi,kuveyt turk katilim bankasi,curated_alias,foreign_wholesale,listed,False
+BH-229,BH,Kuwait Turkish Participation Bank,كويت ترك,كويت ترك,curated_alias,foreign_wholesale,listed,False
+BH-229,BH,Kuwait Turkish Participation Bank,بنك كويت ترك الإسلامي,بنك كويت ترك الاسلامي,curated_alias,foreign_wholesale,listed,False
+BH-230,BH,Türkiye İş Bankası,Türkiye İş Bankası,turkiye is bankası,canonical_en,foreign_wholesale,listed,False
+BH-230,BH,Türkiye İş Bankası,بنك إيش التركي,بنك ايش التركي,canonical_ar,foreign_wholesale,listed,False
+BH-230,BH,Türkiye İş Bankası,Isbank,isbank,curated_alias,foreign_wholesale,listed,False
+BH-230,BH,Türkiye İş Bankası,Turkiye Is Bankasi,turkiye is bankasi,curated_alias,foreign_wholesale,listed,False
+BH-230,BH,Türkiye İş Bankası,Is Bankasi,is bankasi,curated_alias,foreign_wholesale,listed,False
+BH-230,BH,Türkiye İş Bankası,بنك إيش,بنك ايش,curated_alias,foreign_wholesale,listed,False
+BH-231,BH,Türkiye Halk Bankası,Türkiye Halk Bankası,turkiye halk bankası,canonical_en,foreign_wholesale,listed,False
+BH-231,BH,Türkiye Halk Bankası,بنك هالك التركي,بنك هالك التركي,canonical_ar,foreign_wholesale,listed,False
+BH-231,BH,Türkiye Halk Bankası,Halkbank,halkbank,curated_alias,foreign_wholesale,listed,False
+BH-231,BH,Türkiye Halk Bankası,Turkiye Halk Bankasi,turkiye halk bankasi,curated_alias,foreign_wholesale,listed,False
+BH-231,BH,Türkiye Halk Bankası,هالك بنك,هالك بنك,curated_alias,foreign_wholesale,listed,False
+BH-232,BH,Türkiye Vakıflar Bankası,Türkiye Vakıflar Bankası,turkiye vakıflar bankası,canonical_en,foreign_wholesale,listed,False
+BH-232,BH,Türkiye Vakıflar Bankası,بنك وقف التركي,بنك وقف التركي,canonical_ar,foreign_wholesale,listed,False
+BH-232,BH,Türkiye Vakıflar Bankası,Vakifbank,vakifbank,curated_alias,foreign_wholesale,listed,False
+BH-232,BH,Türkiye Vakıflar Bankası,Turkiye Vakiflar Bankasi,turkiye vakiflar bankasi,curated_alias,foreign_wholesale,listed,False
+BH-232,BH,Türkiye Vakıflar Bankası,بنك واقف,بنك واقف,curated_alias,foreign_wholesale,listed,False
+BH-233,BH,Yapı Kredi Bank,Yapı Kredi Bank,yapı kredi bank,canonical_en,foreign_wholesale,listed,False
+BH-233,BH,Yapı Kredi Bank,بنك يابي كريدي,بنك يابي كريدي,canonical_ar,foreign_wholesale,listed,False
+BH-233,BH,Yapı Kredi Bank,Yapi Kredi,yapi kredi,curated_alias,foreign_wholesale,listed,False
+BH-233,BH,Yapı Kredi Bank,Yapi ve Kredi Bankasi,yapi ve kredi bankasi,curated_alias,foreign_wholesale,listed,False
+BH-233,BH,Yapı Kredi Bank,يابي كريدي,يابي كريدي,curated_alias,foreign_wholesale,listed,False
+BH-234,BH,HDFC Bank,HDFC Bank,hdfc bank,canonical_en,foreign_wholesale,listed,False
+BH-234,BH,HDFC Bank,بنك إتش دي إف سي,بنك اتش دي اف سي,canonical_ar,foreign_wholesale,listed,False
+BH-234,BH,HDFC Bank,HDFC,hdfc,curated_alias,foreign_wholesale,listed,False
+BH-234,BH,HDFC Bank,HDFC Bank Bahrain,hdfc bank bahrain,curated_alias,foreign_wholesale,listed,False
+BH-234,BH,HDFC Bank,اتش دي اف سي,اتش دي اف سي,curated_alias,foreign_wholesale,listed,False
+BH-235,BH,Canara Bank,Canara Bank,canara bank,canonical_en,foreign_wholesale,candidate_verify_license,False
+BH-235,BH,Canara Bank,بنك كانارا,بنك كانارا,canonical_ar,foreign_wholesale,candidate_verify_license,False
+BH-235,BH,Canara Bank,Canara,canara,curated_alias,foreign_wholesale,candidate_verify_license,False
+BH-235,BH,Canara Bank,Canara Bank Bahrain,canara bank bahrain,curated_alias,foreign_wholesale,candidate_verify_license,False
+BH-235,BH,Canara Bank,كانارا بنك,كانارا بنك,curated_alias,foreign_wholesale,candidate_verify_license,False
+BH-236,BH,Bank of Baroda,Bank of Baroda,bank of baroda,canonical_en,foreign_wholesale,candidate_verify_license,False
+BH-236,BH,Bank of Baroda,بنك بارودا,بنك بارودا,canonical_ar,foreign_wholesale,candidate_verify_license,False
+BH-236,BH,Bank of Baroda,BOB,bob,curated_alias,foreign_wholesale,candidate_verify_license,True
+BH-236,BH,Bank of Baroda,Baroda,baroda,curated_alias,foreign_wholesale,candidate_verify_license,False
+BH-236,BH,Bank of Baroda,بارودا بنك,بارودا بنك,curated_alias,foreign_wholesale,candidate_verify_license,False
+BH-237,BH,National Bank of Pakistan,National Bank of Pakistan,national bank of pakistan,canonical_en,foreign_wholesale,candidate_verify_license,False
+BH-237,BH,National Bank of Pakistan,بنك باكستان الوطني,بنك باكستان الوطني,canonical_ar,foreign_wholesale,candidate_verify_license,False
+BH-237,BH,National Bank of Pakistan,NBP,nbp,curated_alias,foreign_wholesale,candidate_verify_license,True
+BH-237,BH,National Bank of Pakistan,National Bank Pakistan,national bank pakistan,curated_alias,foreign_wholesale,candidate_verify_license,False
+BH-237,BH,National Bank of Pakistan,باكستان الوطني,باكستان الوطني,curated_alias,foreign_wholesale,candidate_verify_license,False
+BH-238,BH,State Bank of India Wholesale,State Bank of India Wholesale,state bank of india wholesale,canonical_en,foreign_wholesale,listed,False
+BH-238,BH,State Bank of India Wholesale,بنك الدولة الهندي - الجملة,بنك الدولة الهندي الجملة,canonical_ar,foreign_wholesale,listed,False
+BH-238,BH,State Bank of India Wholesale,SBI OBU,sbi obu,curated_alias,foreign_wholesale,listed,False
+BH-238,BH,State Bank of India Wholesale,State Bank of India OBU,state bank of india obu,curated_alias,foreign_wholesale,listed,False
+BH-238,BH,State Bank of India Wholesale,SBI Wholesale,sbi wholesale,curated_alias,foreign_wholesale,listed,False
+BH-239,BH,The Saudi National Bank,The Saudi National Bank,the saudi national bank,canonical_en,foreign_wholesale,listed,False
+BH-239,BH,The Saudi National Bank,البنك الأهلي السعودي,البنك الاهلي السعودي,canonical_ar,foreign_wholesale,listed,False
+BH-239,BH,The Saudi National Bank,SNB,snb,curated_alias,foreign_wholesale,listed,True
+BH-239,BH,The Saudi National Bank,Saudi National Bank Bahrain,saudi national bank bahrain,curated_alias,foreign_wholesale,listed,False
+BH-239,BH,The Saudi National Bank,الأهلي السعودي,الاهلي السعودي,curated_alias,foreign_wholesale,listed,False
+BH-239,BH,The Saudi National Bank,NCB,ncb,historic_predecessor_or_previous_name,foreign_wholesale,listed,True
+BH-239,BH,The Saudi National Bank,The National Commercial Bank,the national commercial bank,historic_predecessor_or_previous_name,foreign_wholesale,listed,True
+BH-240,BH,Banque Saudi Fransi,Banque Saudi Fransi,banque saudi fransi,canonical_en,foreign_wholesale,candidate_verify_license,False
+BH-240,BH,Banque Saudi Fransi,البنك السعودي الفرنسي,البنك السعودي الفرنسي,canonical_ar,foreign_wholesale,candidate_verify_license,False
+BH-240,BH,Banque Saudi Fransi,BSF,bsf,curated_alias,foreign_wholesale,candidate_verify_license,True
+BH-240,BH,Banque Saudi Fransi,Saudi Fransi Bank,saudi fransi bank,curated_alias,foreign_wholesale,candidate_verify_license,False
+BH-241,BH,BOK International Bank,BOK International Bank,bok international bank,canonical_en,foreign_wholesale,listed,True
+BH-241,BH,BOK International Bank,بنك بي أو كيه الدولي,بنك بي او كيه الدولي,canonical_ar,foreign_wholesale,listed,True
+BH-241,BH,BOK International Bank,BOK International,bok international,curated_alias,foreign_wholesale,listed,True
+BH-241,BH,BOK International Bank,Bank of Khartoum International,bank of khartoum international,curated_alias,foreign_wholesale,listed,True
+BH-242,BH,Bank of Beirut,Bank of Beirut,bank of beirut,canonical_en,foreign_wholesale,candidate_verify_license,False
+BH-242,BH,Bank of Beirut,بنك بيروت,بنك بيروت,canonical_ar,foreign_wholesale,candidate_verify_license,False
+BH-242,BH,Bank of Beirut,Bank of Beirut Bahrain,bank of beirut bahrain,curated_alias,foreign_wholesale,candidate_verify_license,False
+BH-242,BH,Bank of Beirut,بيروت بنك,بيروت بنك,curated_alias,foreign_wholesale,candidate_verify_license,False
+BH-243,BH,Credit Agricole CIB,Credit Agricole CIB,credit agricole cib,canonical_en,foreign_wholesale,candidate_verify_license,False
+BH-243,BH,Credit Agricole CIB,كريدي أجريكول,كريدي اجريكول,canonical_ar,foreign_wholesale,candidate_verify_license,False
+BH-243,BH,Credit Agricole CIB,Credit Agricole Corporate and Investment Bank,credit agricole corporate and investment bank,curated_alias,foreign_wholesale,candidate_verify_license,False
+BH-243,BH,Credit Agricole CIB,CA CIB,ca cib,curated_alias,foreign_wholesale,candidate_verify_license,False
+BH-244,BH,UBS Bank,UBS Bank,ubs bank,canonical_en,foreign_wholesale,listed,False
+BH-244,BH,UBS Bank,بنك يو بي إس,بنك يو بي اس,canonical_ar,foreign_wholesale,listed,False
+BH-244,BH,UBS Bank,UBS,ubs,curated_alias,foreign_wholesale,listed,True
+BH-244,BH,UBS Bank,UBS AG,ubs ag,curated_alias,foreign_wholesale,listed,False
+BH-244,BH,UBS Bank,يو بي إس,يو بي اس,curated_alias,foreign_wholesale,listed,False
+BH-245,BH,Ahli United Bank,Ahli United Bank,ahli united bank,canonical_en,historical,historical,False
+BH-245,BH,Ahli United Bank,البنك الأهلي المتحد,البنك الاهلي المتحد,canonical_ar,historical,historical,False
+BH-245,BH,Ahli United Bank,AUB,aub,curated_alias,historical,historical,True
+BH-245,BH,Ahli United Bank,Ahli United Bank BSC,ahli united bank bsc,curated_alias,historical,historical,False
+BH-245,BH,Ahli United Bank,أهلي متحد,اهلي متحد,curated_alias,historical,historical,False
+BH-245,BH,Ahli United Bank,الأهلي المتحد,الاهلي المتحد,curated_alias,historical,historical,False
+BH-245,BH,Ahli United Bank,KFH Bahrain successor,kfh bahrain successor,historic_predecessor_or_previous_name,historical,historical,True
+BH-246,BH,BMI Bank,BMI Bank,bmi bank,canonical_en,historical,historical,False
+BH-246,BH,BMI Bank,بنك بي إم آي,بنك بي ام اي,canonical_ar,historical,historical,False
+BH-246,BH,BMI Bank,BMI,bmi,curated_alias,historical,historical,True
+BH-246,BH,BMI Bank,BMI Bank Bahrain,bmi bank bahrain,curated_alias,historical,historical,False
+BH-246,BH,BMI Bank,Al Salam Bank successor,al salam bank successor,historic_predecessor_or_previous_name,historical,historical,True
+BH-247,BH,Future Bank,Future Bank,future bank,canonical_en,historical,historical,False
+BH-247,BH,Future Bank,بنك المستقبل,بنك المستقبل,canonical_ar,historical,historical,False
+BH-247,BH,Future Bank,Future Bank Bahrain,future bank bahrain,curated_alias,historical,historical,False
+BH-247,BH,Future Bank,المستقبل بنك,المستقبل بنك,curated_alias,historical,historical,False
+BH-248,BH,Bahrain Saudi Bank,Bahrain Saudi Bank,bahrain saudi bank,canonical_en,historical,historical,False
+BH-248,BH,Bahrain Saudi Bank,بنك البحرين السعودي,بنك البحرين السعودي,canonical_ar,historical,historical,False
+BH-248,BH,Bahrain Saudi Bank,BSB,bsb,curated_alias,historical,historical,True
+BH-248,BH,Bahrain Saudi Bank,Bahrain Saudi Bank BSC,bahrain saudi bank bsc,curated_alias,historical,historical,False
+BH-248,BH,Bahrain Saudi Bank,Al Salam Bank successor,al salam bank successor,historic_predecessor_or_previous_name,historical,historical,True
+BH-249,BH,United Gulf Bank,United Gulf Bank,united gulf bank,canonical_en,historical,historical,False
+BH-249,BH,United Gulf Bank,بنك الخليج المتحد,بنك الخليج المتحد,canonical_ar,historical,historical,False
+BH-249,BH,United Gulf Bank,UGB,ugb,curated_alias,historical,historical,True
+BH-249,BH,United Gulf Bank,United Gulf Bank BSC,united gulf bank bsc,curated_alias,historical,historical,False
+BH-249,BH,United Gulf Bank,الخليج المتحد,الخليج المتحد,curated_alias,historical,historical,False
+BH-249,BH,United Gulf Bank,Burgan Bank BSC Bahrain current (Oct 2026),burgan bank bsc bahrain current oct 2026,historic_predecessor_or_previous_name,historical,historical,True
+SA-250,SA,Saudi Hollandi Bank,Saudi Hollandi Bank,saudi hollandi bank,canonical_en,historical,historical,False
+SA-250,SA,Saudi Hollandi Bank,البنك السعودي الهولندي,البنك السعودي الهولندي,canonical_ar,historical,historical,False
+SA-250,SA,Saudi Hollandi Bank,SHB,shb,curated_alias,historical,historical,True
+SA-250,SA,Saudi Hollandi Bank,Saudi Hollandi,saudi hollandi,curated_alias,historical,historical,False
+SA-250,SA,Saudi Hollandi Bank,Alawwal Bank then SAB,alawwal bank then sab,historic_predecessor_or_previous_name,historical,historical,True
+SA-251,SA,Alawwal Bank,Alawwal Bank,alawwal bank,canonical_en,historical,historical,False
+SA-251,SA,Alawwal Bank,البنك الأول,البنك الاول,canonical_ar,historical,historical,False
+SA-251,SA,Alawwal Bank,Al Awwal,al awwal,curated_alias,historical,historical,False
+SA-251,SA,Alawwal Bank,Alawwal,alawwal,curated_alias,historical,historical,False
+SA-251,SA,Alawwal Bank,Saudi Alawwal Bank,saudi alawwal bank,curated_alias,historical,historical,False
+SA-251,SA,Alawwal Bank,Saudi Awwal Bank successor,saudi awwal bank successor,historic_predecessor_or_previous_name,historical,historical,True
+SA-252,SA,Samba Financial Group,Samba Financial Group,samba financial group,canonical_en,historical,historical,False
+SA-252,SA,Samba Financial Group,مجموعة سامبا المالية,مجموعة سامبا المالية,canonical_ar,historical,historical,False
+SA-252,SA,Samba Financial Group,Samba,samba,curated_alias,historical,historical,True
+SA-252,SA,Samba Financial Group,Samba Bank,samba bank,curated_alias,historical,historical,False
+SA-252,SA,Samba Financial Group,بنك سامبا,بنك سامبا,curated_alias,historical,historical,False
+SA-252,SA,Samba Financial Group,Saudi National Bank successor,saudi national bank successor,historic_predecessor_or_previous_name,historical,historical,True
+SA-253,SA,The National Commercial Bank,The National Commercial Bank,the national commercial bank,canonical_en,historical,historical,False
+SA-253,SA,The National Commercial Bank,البنك الأهلي التجاري,البنك الاهلي التجاري,canonical_ar,historical,historical,False
+SA-253,SA,The National Commercial Bank,NCB,ncb,curated_alias,historical,historical,True
+SA-253,SA,The National Commercial Bank,Saudi NCB,saudi ncb,curated_alias,historical,historical,False
+SA-253,SA,The National Commercial Bank,البنك الاهلي,البنك الاهلي,curated_alias,historical,historical,True
+SA-253,SA,The National Commercial Bank,Saudi National Bank successor,saudi national bank successor,historic_predecessor_or_previous_name,historical,historical,True
+AE-254,AE,National Bank of Abu Dhabi,National Bank of Abu Dhabi,national bank of abu dhabi,canonical_en,historical,historical,False
+AE-254,AE,National Bank of Abu Dhabi,بنك أبوظبي الوطني,بنك ابوظبي الوطني,canonical_ar,historical,historical,False
+AE-254,AE,National Bank of Abu Dhabi,NBAD,nbad,curated_alias,historical,historical,False
+AE-254,AE,National Bank of Abu Dhabi,National Bank of Abu Dhabi PJSC,national bank of abu dhabi pjsc,curated_alias,historical,historical,False
+AE-254,AE,National Bank of Abu Dhabi,أبوظبي الوطني,ابوظبي الوطني,curated_alias,historical,historical,False
+AE-254,AE,National Bank of Abu Dhabi,First Abu Dhabi Bank successor,first abu dhabi bank successor,historic_predecessor_or_previous_name,historical,historical,True
+AE-255,AE,First Gulf Bank,First Gulf Bank,first gulf bank,canonical_en,historical,historical,False
+AE-255,AE,First Gulf Bank,بنك الخليج الأول,بنك الخليج الاول,canonical_ar,historical,historical,False
+AE-255,AE,First Gulf Bank,FGB,fgb,curated_alias,historical,historical,True
+AE-255,AE,First Gulf Bank,First Gulf Bank PJSC,first gulf bank pjsc,curated_alias,historical,historical,False
+AE-255,AE,First Gulf Bank,الخليج الأول,الخليج الاول,curated_alias,historical,historical,False
+AE-255,AE,First Gulf Bank,First Abu Dhabi Bank successor,first abu dhabi bank successor,historic_predecessor_or_previous_name,historical,historical,True
+QA-256,QA,Barwa Bank,Barwa Bank,barwa bank,canonical_en,historical,historical,False
+QA-256,QA,Barwa Bank,بنك بروة,بنك بروة,canonical_ar,historical,historical,False
+QA-256,QA,Barwa Bank,Barwa,barwa,curated_alias,historical,historical,False
+QA-256,QA,Barwa Bank,Barwa Islamic Bank,barwa islamic bank,curated_alias,historical,historical,False
+QA-256,QA,Barwa Bank,Dukhan Bank successor,dukhan bank successor,historic_predecessor_or_previous_name,historical,historical,True
+QA-257,QA,International Bank of Qatar,International Bank of Qatar,international bank of qatar,canonical_en,historical,historical,False
+QA-257,QA,International Bank of Qatar,بنك قطر الدولي,بنك قطر الدولي,canonical_ar,historical,historical,False
+QA-257,QA,International Bank of Qatar,IBQ,ibq,curated_alias,historical,historical,True
+QA-257,QA,International Bank of Qatar,International Bank Qatar,international bank qatar,curated_alias,historical,historical,False
+QA-257,QA,International Bank of Qatar,Dukhan Bank successor,dukhan bank successor,historic_predecessor_or_previous_name,historical,historical,True
+QA-258,QA,Al Khaliji Bank Qatar,Al Khaliji Bank Qatar,al khaliji bank qatar,canonical_en,historical,historical,False
+QA-258,QA,Al Khaliji Bank Qatar,بنك الخليجي القطري,بنك الخليجي القطري,canonical_ar,historical,historical,False
+QA-258,QA,Al Khaliji Bank Qatar,Al Khaliji,al khaliji,curated_alias,historical,historical,False
+QA-258,QA,Al Khaliji Bank Qatar,Al Khalij Commercial Bank,al khalij commercial bank,curated_alias,historical,historical,False
+QA-258,QA,Al Khaliji Bank Qatar,البنك الخليجي,البنك الخليجي,curated_alias,historical,historical,False
+QA-258,QA,Al Khaliji Bank Qatar,Masraf Al Rayan successor,masraf al rayan successor,historic_predecessor_or_previous_name,historical,historical,True
+OM-259,OM,HSBC Bank Oman SAOG,HSBC Bank Oman SAOG,hsbc bank oman saog,canonical_en,historical,historical,False
+OM-259,OM,HSBC Bank Oman SAOG,بنك إتش إس بي سي عمان,بنك اتش اس بي سي عمان,canonical_ar,historical,historical,False
+OM-259,OM,HSBC Bank Oman SAOG,HSBC Oman,hsbc oman,curated_alias,historical,historical,True
+OM-259,OM,HSBC Bank Oman SAOG,HSBC Bank Oman,hsbc bank oman,curated_alias,historical,historical,False
+OM-259,OM,HSBC Bank Oman SAOG,اتش اس بي سي عمان,اتش اس بي سي عمان,curated_alias,historical,historical,False
+OM-259,OM,HSBC Bank Oman SAOG,Sohar International successor,sohar international successor,historic_predecessor_or_previous_name,historical,historical,True
+OM-260,OM,Bank Sohar,Bank Sohar,bank sohar,canonical_en,historical,historical,False
+OM-260,OM,Bank Sohar,بنك صحار,بنك صحار,canonical_ar,historical,historical,True
+OM-260,OM,Bank Sohar,Bank Sohar SAOG,bank sohar saog,curated_alias,historical,historical,False
+OM-260,OM,Bank Sohar,صحار بنك,صحار بنك,curated_alias,historical,historical,False
+OM-260,OM,Bank Sohar,Sohar International current,sohar international current,historic_predecessor_or_previous_name,historical,historical,True
+SA-261,SA,Saudi Central Bank,Saudi Central Bank,saudi central bank,canonical_en,central_bank,listed,False
+SA-261,SA,Saudi Central Bank,البنك المركزي السعودي,البنك المركزي السعودي,canonical_ar,central_bank,listed,False
+SA-261,SA,Saudi Central Bank,SAMA,sama,curated_alias,central_bank,listed,False
+SA-261,SA,Saudi Central Bank,Saudi Arabian Monetary Authority,saudi arabian monetary authority,curated_alias,central_bank,listed,False
+SA-261,SA,Saudi Central Bank,مؤسسة النقد العربي السعودي,موسسة النقد العربي السعودي,curated_alias,central_bank,listed,False
+SA-261,SA,Saudi Central Bank,مؤسسة النقد,موسسة النقد,curated_alias,central_bank,listed,False
+SA-261,SA,Saudi Central Bank,البنك المركزي للسعودية,البنك المركزي للسعودية,curated_alias,central_bank,listed,False
+AE-262,AE,Central Bank of the UAE,Central Bank of the UAE,central bank of the uae,canonical_en,central_bank,listed,False
+AE-262,AE,Central Bank of the UAE,مصرف الإمارات العربية المتحدة المركزي,مصرف الامارات العربية المتحدة المركزي,canonical_ar,central_bank,listed,False
+AE-262,AE,Central Bank of the UAE,CBUAE,cbuae,curated_alias,central_bank,listed,False
+AE-262,AE,Central Bank of the UAE,UAE Central Bank,uae central bank,curated_alias,central_bank,listed,False
+AE-262,AE,Central Bank of the UAE,Central Bank of United Arab Emirates,central bank of united arab emirates,curated_alias,central_bank,listed,False
+AE-262,AE,Central Bank of the UAE,مصرف الإمارات المركزي,مصرف الامارات المركزي,curated_alias,central_bank,listed,False
+AE-262,AE,Central Bank of the UAE,البنك المركزي الإماراتي,البنك المركزي الاماراتي,curated_alias,central_bank,listed,False
+KW-263,KW,Central Bank of Kuwait,Central Bank of Kuwait,central bank of kuwait,canonical_en,central_bank,listed,False
+KW-263,KW,Central Bank of Kuwait,بنك الكويت المركزي,بنك الكويت المركزي,canonical_ar,central_bank,listed,False
+KW-263,KW,Central Bank of Kuwait,CBK,cbk,curated_alias,central_bank,listed,True
+KW-263,KW,Central Bank of Kuwait,Kuwait Central Bank,kuwait central bank,curated_alias,central_bank,listed,False
+KW-263,KW,Central Bank of Kuwait,المركزي الكويتي,المركزي الكويتي,curated_alias,central_bank,listed,False
+QA-264,QA,Qatar Central Bank,Qatar Central Bank,qatar central bank,canonical_en,central_bank,listed,False
+QA-264,QA,Qatar Central Bank,مصرف قطر المركزي,مصرف قطر المركزي,canonical_ar,central_bank,listed,False
+QA-264,QA,Qatar Central Bank,QCB,qcb,curated_alias,central_bank,listed,True
+QA-264,QA,Qatar Central Bank,Central Bank of Qatar,central bank of qatar,curated_alias,central_bank,listed,False
+QA-264,QA,Qatar Central Bank,البنك المركزي القطري,البنك المركزي القطري,curated_alias,central_bank,listed,False
+OM-265,OM,Central Bank of Oman,Central Bank of Oman,central bank of oman,canonical_en,central_bank,listed,False
+OM-265,OM,Central Bank of Oman,البنك المركزي العماني,البنك المركزي العماني,canonical_ar,central_bank,listed,False
+OM-265,OM,Central Bank of Oman,CBO,cbo,curated_alias,central_bank,listed,True
+OM-265,OM,Central Bank of Oman,Oman Central Bank,oman central bank,curated_alias,central_bank,listed,False
+OM-265,OM,Central Bank of Oman,البنك المركزي لسلطنة عمان,البنك المركزي لسلطنة عمان,curated_alias,central_bank,listed,False
+BH-266,BH,Central Bank of Bahrain,Central Bank of Bahrain,central bank of bahrain,canonical_en,central_bank,listed,False
+BH-266,BH,Central Bank of Bahrain,مصرف البحرين المركزي,مصرف البحرين المركزي,canonical_ar,central_bank,listed,False
+BH-266,BH,Central Bank of Bahrain,CBB,cbb,curated_alias,central_bank,listed,True
+BH-266,BH,Central Bank of Bahrain,Bahrain Central Bank,bahrain central bank,curated_alias,central_bank,listed,False
+BH-266,BH,Central Bank of Bahrain,البنك المركزي البحريني,البنك المركزي البحريني,curated_alias,central_bank,listed,False
+BH-266,BH,Central Bank of Bahrain,Bahrain Monetary Agency,bahrain monetary agency,historic_predecessor_or_previous_name,central_bank,listed,True
+BH-266,BH,Central Bank of Bahrain,مؤسسة نقد البحرين,موسسة نقد البحرين,historic_predecessor_or_previous_name,central_bank,listed,True

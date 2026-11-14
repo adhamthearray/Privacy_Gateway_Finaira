@@ -24,7 +24,7 @@ Rows: 7
 
 ## `bank_aliases`
 
-Rows: 86
+Rows: 1569
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|
@@ -40,9 +40,40 @@ Rows: 86
 
 Indexes: ix_bank_aliases_bank_id, ix_bank_aliases_language, ix_bank_aliases_normalized_alias
 
+## `bank_audit_classifications`
+
+Rows: 266
+
+| Column | Type | Key | Nullable | References | Purpose |
+|---|---|---|---|---|---|
+| audit_id | VARCHAR(100) | PK | NO |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| source_record_id | VARCHAR(40) |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| bank_id | VARCHAR(30) |  | NO | banks.bank_id | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| country_code | VARCHAR(2) |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| country | VARCHAR(80) |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| raw_category | VARCHAR(80) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| raw_status | VARCHAR(50) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| banking_model | VARCHAR(40) |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| banking_model_source | VARCHAR(80) |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| business_scope | VARCHAR(120) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| entity_kind | VARCHAR(100) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| operational_status | VARCHAR(50) |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| license_confirmation | VARCHAR(100) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| classification_evidence | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| source_url | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| evidence_url | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| confidence | VARCHAR(40) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| review_action | VARCHAR(80) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| review_note | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| license_status | VARCHAR(30) |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| licensed_count_eligible | BOOLEAN |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+| source_id | INTEGER |  | NO | data_sources.source_id | Persisted Finaira reference data or layered metadata for `bank_audit_classifications`. |
+
+Indexes: ix_bank_audit_classifications_bank_id, ix_bank_audit_classifications_banking_model, ix_bank_audit_classifications_business_scope, ix_bank_audit_classifications_confidence, ix_bank_audit_classifications_country_code, ix_bank_audit_classifications_entity_kind, ix_bank_audit_classifications_license_status, ix_bank_audit_classifications_licensed_count_eligible, ix_bank_audit_classifications_operational_status, ix_bank_audit_classifications_raw_status, ix_bank_audit_classifications_review_action, ix_bank_audit_classifications_source_record_id
+
 ## `bank_candidates`
 
-Rows: 185
+Rows: 1510
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|
@@ -85,9 +116,26 @@ Rows: 24
 
 Indexes: ix_bank_evidence_bank_id
 
+## `bank_relationships`
+
+Rows: 5
+
+| Column | Type | Key | Nullable | References | Purpose |
+|---|---|---|---|---|---|
+| relationship_id | VARCHAR(100) | PK | NO |  | Persisted Finaira reference data or layered metadata for `bank_relationships`. |
+| child_bank_id | VARCHAR(30) |  | NO | banks.bank_id | Persisted Finaira reference data or layered metadata for `bank_relationships`. |
+| parent_bank_id | VARCHAR(30) |  | NO | banks.bank_id | Persisted Finaira reference data or layered metadata for `bank_relationships`. |
+| relationship_type | VARCHAR(40) |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_relationships`. |
+| source_record_id | VARCHAR(40) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_relationships`. |
+| verification_status | VARCHAR(40) |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_relationships`. |
+| evidence_note | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_relationships`. |
+| source_id | INTEGER |  | NO | data_sources.source_id | Persisted Finaira reference data or layered metadata for `bank_relationships`. |
+
+Indexes: ix_bank_relationships_child_bank_id, ix_bank_relationships_parent_bank_id, ix_bank_relationships_relationship_type, ix_bank_relationships_source_record_id, ix_bank_relationships_verification_status
+
 ## `banks`
 
-Rows: 37
+Rows: 302
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|
@@ -187,7 +235,7 @@ Rows: 248
 
 ## `data_sources`
 
-Rows: 25
+Rows: 35
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|
@@ -242,7 +290,7 @@ Indexes: ix_generalization_candidates_canonical_entity_id, ix_generalization_can
 
 ## `generalization_levels`
 
-Rows: 30
+Rows: 33
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|
@@ -589,7 +637,7 @@ Indexes: ix_natural_earth_countries_iso_a2, ix_natural_earth_countries_wikidata_
 
 ## `natural_earth_country_aliases`
 
-Rows: 2174
+Rows: 2204
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|

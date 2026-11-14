@@ -356,6 +356,46 @@ class BankCandidate(Base):
     __table_args__ = (UniqueConstraint("bank_id", "level_code", name="uq_bank_candidate_level"),)
 
 
+class BankAuditClassification(Base):
+    """Source-shaped GCC classification audit, kept separate from aliases."""
+    __tablename__ = "bank_audit_classifications"
+    audit_id: Mapped[str] = mapped_column(String(100), primary_key=True)
+    source_record_id: Mapped[str] = mapped_column(String(40), unique=True, index=True)
+    bank_id: Mapped[str] = mapped_column(ForeignKey("banks.bank_id"), index=True)
+    country_code: Mapped[str] = mapped_column(String(2), index=True)
+    country: Mapped[str] = mapped_column(String(80))
+    raw_category: Mapped[str | None] = mapped_column(String(80))
+    raw_status: Mapped[str | None] = mapped_column(String(50), index=True)
+    banking_model: Mapped[str] = mapped_column(String(40), index=True)
+    banking_model_source: Mapped[str] = mapped_column(String(80))
+    business_scope: Mapped[str | None] = mapped_column(String(120), index=True)
+    entity_kind: Mapped[str | None] = mapped_column(String(100), index=True)
+    operational_status: Mapped[str] = mapped_column(String(50), index=True)
+    license_confirmation: Mapped[str | None] = mapped_column(String(100))
+    classification_evidence: Mapped[str | None] = mapped_column(Text)
+    source_url: Mapped[str | None] = mapped_column(Text)
+    evidence_url: Mapped[str | None] = mapped_column(Text)
+    confidence: Mapped[str | None] = mapped_column(String(40), index=True)
+    review_action: Mapped[str | None] = mapped_column(String(80), index=True)
+    review_note: Mapped[str | None] = mapped_column(Text)
+    license_status: Mapped[str] = mapped_column(String(30), index=True)
+    licensed_count_eligible: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
+    source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
+
+
+class BankRelationship(Base):
+    """Audited parent/child or duplicate relationships between bank records."""
+    __tablename__ = "bank_relationships"
+    relationship_id: Mapped[str] = mapped_column(String(100), primary_key=True)
+    child_bank_id: Mapped[str] = mapped_column(ForeignKey("banks.bank_id"), index=True)
+    parent_bank_id: Mapped[str] = mapped_column(ForeignKey("banks.bank_id"), index=True)
+    relationship_type: Mapped[str] = mapped_column(String(40), index=True)
+    source_record_id: Mapped[str | None] = mapped_column(String(40), index=True)
+    verification_status: Mapped[str] = mapped_column(String(40), index=True)
+    evidence_note: Mapped[str | None] = mapped_column(Text)
+    source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
+
+
 class Organization(Base):
     __tablename__ = "organizations"
     organization_qid: Mapped[str] = mapped_column(String(20), primary_key=True)

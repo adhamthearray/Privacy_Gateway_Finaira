@@ -377,7 +377,11 @@ def _import_banks(session: Session, root: Path, metrics: dict, report_dir: Path)
         enabled = status in {"source_supported", "APPROVED_BY_USER"}
         key = _stable(row["bank_id"], row.get("language"), alias, row.get("alias_kind"))
         _put(session, BankAlias, key, {"bank_id": row["bank_id"], "alias_text": alias, "normalized_alias": normalize(alias, row.get("language")), "language": row["language"], "alias_kind": row.get("alias_kind"), "review_status": status, "enabled_for_lookup": enabled, "source_id": approval_source.source_id if approval and approval_source else alias_source.source_id})
-    session.execute(delete(BankCandidate))
+    # Regenerate only the handoff-owned Egyptian bank candidates.  GCC audit
+    # candidates are maintained by scripts/import_gcc_bank_audit.py and must
+    # survive a later full handoff refresh.
+    legacy_bank_ids = [row["bank_id"] for row in rows]
+    session.execute(delete(BankCandidate).where(BankCandidate.bank_id.in_(legacy_bank_ids)))
     generic = {"BANKING_INSTITUTION": ("Banking institution", "مؤسسة مصرفية"), "FINANCIAL_INSTITUTION": ("Financial institution", "مؤسسة مالية")}
     for row in rows:
         bank = session.get(Bank, row["bank_id"])
