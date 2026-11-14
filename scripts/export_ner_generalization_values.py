@@ -9,7 +9,8 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 
-ENTITY_TYPES = ("BANK", "COUNTRY", "NATIONALITY", "CORPORATION", "GOVERNMENT_ENTITY", "JOB_TITLE", "OCCUPATION", "AGE", "DATE")
+ENTITY_TYPES = ("BANK", "COUNTRY", "NATIONALITY", "CORPORATION", "GOVERNMENT_ENTITY", "JOB_TITLE", "AGE", "DATE")
+INPUT_ENTITY_TYPES = set(ENTITY_TYPES) | {"OCCUPATION"}
 
 
 def main() -> None:
@@ -24,8 +25,9 @@ def main() -> None:
             for line in handle:
                 row = json.loads(line)
                 for span in row.get("spans", []):
-                    entity_type = span["label"]
-                    if entity_type in ENTITY_TYPES:
+                    raw_entity_type = span["label"]
+                    if raw_entity_type in INPUT_ENTITY_TYPES:
+                        entity_type = "JOB_TITLE" if raw_entity_type == "OCCUPATION" else raw_entity_type
                         value = span["text"]
                         values[entity_type][value] += 1
                         files[(entity_type, value)].add(path.name)

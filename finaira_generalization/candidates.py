@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import calendar
+import re
 from datetime import date
 from dataclasses import asdict, dataclass
 
@@ -68,13 +69,15 @@ class GeneralizationDB:
         # not become a separate generalization domain.
         if et in {"ORGANIZATION", "UNIVERSITY"}:
             et = "CORPORATION"
+        if et == "OCCUPATION":
+            et = "JOB_TITLE"
         if et == "AGE":
             return self._age(value, lang)
         if et == "DATE":
             return self._date(value, lang, context)
         with Session(self.engine) as session:
-            if et in {"OCCUPATION", "JOB_TITLE"}:
-                return self._occupation(session, et, value, lang)
+            if et == "JOB_TITLE":
+                return self._occupation(session, value, lang)
             if et == "COUNTRY":
                 return self._country(session, value, lang)
             if et == "NATIONALITY":
@@ -90,15 +93,81 @@ class GeneralizationDB:
     def _result(self, entity_type, status, canonical_id, candidates, reason=None):
         return {"entity_type": entity_type, "resolution_status": status, "reason_code": reason, "canonical_id": canonical_id, "selected_candidate": None, "candidates": candidates}
 
-    def _occupation(self, session, entity_type, value, lang):
-        rows = session.scalars(select(OccupationAlias).where(OccupationAlias.normalized_alias == normalize(value, lang), OccupationAlias.language == lang)).all()
-        ids = {row.occupation_id for row in rows if row.review_status in {"OFFICIAL", "REVIEWED"}}
-        scheme = "OCCUPATION_ISCO08" if entity_type == "OCCUPATION" else "JOB_TITLE_ISCO08"
-        if len(ids) > 1:
-            return self._static_result(session, entity_type, scheme, None, lang, "AMBIGUOUS", "ALIAS_COLLISION")
+    @staticmethod
+    def _occupation_phrase_key(value, lang):
+        normalized = normalize(value, lang)
+        return " ".join(re.findall(r"[^\W_]+", normalized, flags=re.UNICODE))
+
+    def _occupation(self, session, value, lang):
+        """Resolve both legacy occupation labels through JOB_TITLE/ESCO/ISCO.
+
+        The full value is attempted first. If it is not an alias, contiguous
+        phrases are tried from longest to shortest. A shortened match is
+        explicitly recorded as such and never treated as an exact match to the
+        original input.
+        """
+        scheme = "JOB_TITLE_ISCO08"
+        rows = session.scalars(select(OccupationAlias).where(OccupationAlias.language == lang)).all()
+        exact_index = {}
+        phrase_index = {}
+        for row in rows:
+            if row.review_status not in {"OFFICIAL", "REVIEWED"}:
+                continue
+            exact_index.setdefault(row.normalized_alias, set()).add(row.occupation_id)
+            phrase_key = self._occupation_phrase_key(row.alias_text, lang)
+            if phrase_key:
+                phrase_index.setdefault(phrase_key, set()).add(row.occupation_id)
+
+        normalized = normalize(value, lang)
+        ids = exact_index.get(normalized, set())
+        matched_phrase = value
+        match_method = "EXACT_ALIAS"
+        original_phrase_key = self._occupation_phrase_key(value, lang)
+        if not ids and original_phrase_key:
+            ids = phrase_index.get(original_phrase_key, set())
+            if ids:
+                matched_phrase = original_phrase_key
+                match_method = "NORMALIZED_FULL_PHRASE"
+
         if not ids:
-            return self._static_result(session, entity_type, scheme, None, lang, "NOT_FOUND", "UNRECOGNIZED_OCCUPATION")
-        return self._static_result(session, entity_type, scheme, next(iter(ids)), lang, "VERIFIED")
+            tokens = original_phrase_key.split()
+            found = []
+            for size in range(len(tokens) - 1, 0, -1):
+                for start in range(0, len(tokens) - size + 1):
+                    phrase = " ".join(tokens[start:start + size])
+                    candidate_ids = phrase_index.get(phrase, set())
+                    if candidate_ids:
+                        found.append((phrase, candidate_ids))
+                if found:
+                    break
+            if found:
+                matched_phrase = found[0][0] if len(found) == 1 else " | ".join(item[0] for item in found)
+                ids = set().union(*(item[1] for item in found))
+                match_method = "LONGEST_PHRASE_MATCH"
+
+        if len(ids) > 1:
+            return self._occupation_result(session, scheme, None, lang, "AMBIGUOUS", "ALIAS_COLLISION", match_method, matched_phrase)
+        if not ids:
+            return self._job_title_fallback(lang, "UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK")
+        reason = None if match_method == "EXACT_ALIAS" else "LONGEST_PHRASE_MATCH"
+        return self._occupation_result(session, scheme, next(iter(ids)), lang, "VERIFIED", reason, match_method, matched_phrase)
+
+    def _occupation_result(self, session, scheme, canonical, lang, status, reason, match_method, matched_phrase):
+        result = self._static_result(session, "JOB_TITLE", scheme, canonical, lang, status, reason)
+        for candidate in result["candidates"]:
+            provenance = dict(candidate.get("provenance") or {})
+            provenance.update({"canonical_entity_type": "JOB_TITLE", "match_method": match_method, "matched_phrase": matched_phrase})
+            candidate["provenance"] = provenance
+        return result
+
+    def _job_title_fallback(self, lang, reason):
+        labels = [
+            ("JOB_TITLE_1", "Job title 1", "المسمى الوظيفي 1"),
+            ("JOB_TITLE_2", "Job title 2", "المسمى الوظيفي 2"),
+        ]
+        candidates = [_candidate_dict(candidate_id=stable_id("JOB_TITLE_FALLBACK", code), level_code=code, rank=index, label_en=en, label_ar=ar, language=lang, taxonomy="FINAIR_JOB_TITLE", taxonomy_code=None, source="Finaira safe generic fallback", verification_status="CONFIGURED", provenance={"canonical_entity_type": "JOB_TITLE", "fallback_kind": "UNMATCHED_JOB_TITLE"}) for index, (code, en, ar) in enumerate(labels)]
+        candidates.append(_candidate_dict(candidate_id=stable_id("JOB_TITLE_FALLBACK", "SUPPRESSED"), level_code="SUPPRESSED", rank=2, label_en=None, label_ar=None, language=lang, taxonomy="FINAIR_JOB_TITLE", taxonomy_code=None, source="Finaira safe generic fallback", verification_status="CONFIGURED", is_suppression=True, provenance={"canonical_entity_type": "JOB_TITLE", "fallback_kind": "UNMATCHED_JOB_TITLE"}))
+        return self._result("JOB_TITLE", "NOT_FOUND", None, candidates, reason)
 
     def _country(self, session, value, lang):
         """Resolve country names directly against Natural Earth Admin 0.

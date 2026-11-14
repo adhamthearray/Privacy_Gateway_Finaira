@@ -6,15 +6,14 @@ Categories: `MATCHED_OR_VERIFIED` is production source/configuration coverage; `
 
 | Entity | Unique | Spans | Matched/verified | Review | Ambiguous | Generic fallback | Suppression/invalid | Out of scope |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| BANK | 73 | 869 | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 73 (100.00%) | 0 (0.00%) | 0 |
+| BANK | 73 | 869 | 10 (13.70%) | 0 (0.00%) | 0 (0.00%) | 63 (86.30%) | 0 (0.00%) | 0 |
 | COUNTRY | 229 | 3,009 | 174 (75.98%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 55 (24.02%) | 0 |
 | NATIONALITY | 115 | 607 | 100 (86.96%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 15 (13.04%) | 0 |
 | CORPORATION | 1,516 | 6,083 | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 1,516 (100.00%) | 0 (0.00%) | 0 |
 | ORGANIZATION | 0 | 0 | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 |
 | UNIVERSITY | 0 | 0 | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 |
 | GOVERNMENT_ENTITY | 870 | 4,221 | 0 (0.00%) | 8 (0.92%) | 0 (0.00%) | 862 (99.08%) | 0 (0.00%) | 0 |
-| JOB_TITLE | 2,214 | 9,444 | 19 (0.86%) | 0 (0.00%) | 1 (0.05%) | 0 (0.00%) | 2,194 (99.10%) | 0 |
-| OCCUPATION | 236 | 472 | 2 (0.85%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 234 (99.15%) | 0 |
+| JOB_TITLE | 2,442 | 9,916 | 31 (1.27%) | 0 (0.00%) | 5 (0.20%) | 2,406 (98.53%) | 0 (0.00%) | 0 |
 | AGE | 97 | 595 | 97 (100.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 |
 | DATE | 2,823 | 5,937 | 2,233 (79.10%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 590 (20.90%) | 0 |
 
@@ -24,9 +23,6 @@ Categories: `MATCHED_OR_VERIFIED` is production source/configuration coverage; `
 
 | Value | Spans | Category | Reason | Next action |
 |---|---:|---|---|---|
-| البنك الأهلي المصري | 113 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_BANK | verify and add bank alias |
-| البنك التجاري الدولي | 98 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_BANK | verify and add bank alias |
-| بنك مصر | 94 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_BANK | verify and add bank alias |
 | بنك الرياض | 80 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_BANK | verify and add bank alias |
 | مصرف الراجحي | 52 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_BANK | verify and add bank alias |
 | البنك الأهلي | 46 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_BANK | verify and add bank alias |
@@ -35,10 +31,13 @@ Categories: `MATCHED_OR_VERIFIED` is production source/configuration coverage; `
 | الراجحي | 20 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_BANK | verify and add bank alias |
 | بنك الأهلي | 16 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_BANK | verify and add bank alias |
 | مصرف الرياض | 16 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_BANK | verify and add bank alias |
-| بنك الإسكندرية | 13 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_BANK | verify and add bank alias |
 | البنك الاهلي | 13 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_BANK | verify and add bank alias |
 | البنك السعودي للاستثمار | 12 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_BANK | verify and add bank alias |
 | بنك الخليج | 11 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_BANK | verify and add bank alias |
+| Riyad Bank | 10 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_BANK | verify and add bank alias |
+| Saudi National Bank | 10 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_BANK | verify and add bank alias |
+| البنك العربي الوطني | 9 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_BANK | verify and add bank alias |
+| بنك الراجحي | 9 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_BANK | verify and add bank alias |
 
 ### COUNTRY
 
@@ -124,41 +123,21 @@ Categories: `MATCHED_OR_VERIFIED` is production source/configuration coverage; `
 
 | Value | Spans | Category | Reason | Next action |
 |---|---:|---|---|---|
-| مدير الموارد البشرية | 310 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| سكرتير اللجنة القومية العربية في نابلس | 282 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| المدير المالي | 271 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| رئيس اللجنة | 226 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| رئيس بلدية نابلس | 211 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| المدير التنفيذي | 210 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| مدير المشروع | 126 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| مدير القسم | 119 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| مدير المبيعات | 119 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| مدير الموارد البشريه | 117 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| مدير الفرع | 90 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| رئيس بلدية بيرزيت | 79 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| مديرة المدرسة | 75 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| رئيس بلدية مدينة البيرة | 74 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| المدير المباشر | 66 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-
-### OCCUPATION
-
-| Value | Spans | Category | Reason | Next action |
-|---|---:|---|---|---|
-| المذيع | 24 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| المهندس | 15 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| الموظف | 12 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| مبرمج | 11 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| القاضي | 9 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| المحامي | 9 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| قاضٍ | 7 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| طالب | 7 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| الأستاذ الدكتور | 6 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| المبرمج | 6 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| طالبة | 6 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| الصحفي | 5 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| جندي | 5 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| الحلاق | 4 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
-| المعلم | 4 | SUPPRESSION_ONLY | UNRECOGNIZED_OCCUPATION | add verified ESCO/ISCO alias |
+| مدير الموارد البشرية | 310 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| سكرتير اللجنة القومية العربية في نابلس | 282 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| المدير المالي | 271 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| رئيس اللجنة | 226 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| رئيس بلدية نابلس | 211 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| المدير التنفيذي | 210 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| مدير المشروع | 126 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| مدير القسم | 119 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| مدير المبيعات | 119 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| مدير الموارد البشريه | 117 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| مدير الفرع | 90 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| رئيس بلدية بيرزيت | 79 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| مديرة المدرسة | 75 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| رئيس بلدية مدينة البيرة | 74 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| المدير المباشر | 66 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
 
 ### DATE
 

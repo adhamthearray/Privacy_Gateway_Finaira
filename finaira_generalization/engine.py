@@ -1,5 +1,6 @@
 from dataclasses import dataclass, asdict
 from pathlib import Path
+import re
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 from .age_date import age, date_generalize
@@ -20,26 +21,57 @@ class Generalizer:
 
     def generalize(self, entity_type, value, output_language="en", level=None, context=None):
         t = entity_type.upper()
+        if t == "OCCUPATION":
+            t = "JOB_TITLE"
         if t not in SUPPORTED: return Result(t,False,status="UNSUPPORTED_LEVEL",reason_code="UNSUPPORTED_ENTITY_TYPE")
         try:
             if t == "AGE": return Result(t,True,replacement=age(value,output_language),language=output_language,status="VERIFIED",source="Finaira policy")
             if t == "DATE": return Result(t,True,replacement=date_generalize(value,level or "quarter",output_language,(context or {}).get("date_format")),language=output_language,status="VERIFIED",source="Finaira policy")
             with Session(self.engine) as s:
                 if t == "NATIONALITY": return self._nationality(s,value,output_language,level)
-                return self._occupation(s,value,output_language,level,t)
+                return self._occupation(s,value,output_language,level)
         except ValueError as e: return Result(t,False,language=output_language,status=str(e),reason_code=str(e))
 
-    def _occupation(self,s,value,lang,level,entity_type="OCCUPATION"):
-        q=select(OccupationAlias).where(OccupationAlias.normalized_alias==normalize(value,lang), OccupationAlias.language==lang)
-        rows=s.scalars(q).all()
-        ids={r.occupation_id for r in rows if r.review_status in ("OFFICIAL","REVIEWED")}
-        if len(ids)>1: return Result(entity_type,False,language=lang,status="AMBIGUOUS",reason_code="ALIAS_COLLISION")
-        if not ids: return Result(entity_type,False,language=lang,status="FALLBACK_REQUIRED",reason_code="UNRECOGNIZED_OCCUPATION")
+    @staticmethod
+    def _occupation_phrase_key(value, lang):
+        return " ".join(re.findall(r"[^\W_]+", normalize(value, lang), flags=re.UNICODE))
+
+    def _occupation(self,s,value,lang,level):
+        rows=s.scalars(select(OccupationAlias).where(OccupationAlias.language==lang)).all()
+        exact_index={}
+        phrase_index={}
+        for row in rows:
+            if row.review_status not in ("OFFICIAL","REVIEWED"):
+                continue
+            exact_index.setdefault(row.normalized_alias,set()).add(row.occupation_id)
+            phrase=self._occupation_phrase_key(row.alias_text,lang)
+            if phrase:
+                phrase_index.setdefault(phrase,set()).add(row.occupation_id)
+        ids=exact_index.get(normalize(value,lang),set())
+        phrase=self._occupation_phrase_key(value,lang)
+        shortened=False
+        if not ids and phrase:
+            ids=phrase_index.get(phrase,set())
+        if not ids:
+            tokens=phrase.split()
+            for size in range(len(tokens)-1,0,-1):
+                found=[]
+                for start in range(0,len(tokens)-size+1):
+                    candidate=" ".join(tokens[start:start+size])
+                    candidate_ids=phrase_index.get(candidate,set())
+                    if candidate_ids:
+                        found.append(candidate_ids)
+                if found:
+                    ids=set().union(*found)
+                    shortened=True
+                    break
+        if len(ids)>1: return Result("JOB_TITLE",False,language=lang,status="AMBIGUOUS",reason_code="ALIAS_COLLISION")
+        if not ids: return Result("JOB_TITLE",False,replacement="Job title 1" if lang!="ar" else "المسمى الوظيفي 1",language=lang,status="FALLBACK_REQUIRED",reason_code="UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK",source="Finaira safe generic fallback")
         occ=s.get(Occupation,next(iter(ids))); code=occ.isco_code; target=level or "2"
-        if target not in {"1","2","3","4"}: return Result(entity_type,False,language=lang,status="UNSUPPORTED_LEVEL",reason_code="INVALID_ISCO_LEVEL")
+        if target not in {"1","2","3","4"}: return Result("JOB_TITLE",False,language=lang,status="UNSUPPORTED_LEVEL",reason_code="INVALID_ISCO_LEVEL")
         group=s.get(IscoGroup,code[:int(target)])
-        if not group: return Result(entity_type,False,language=lang,status="FALLBACK_REQUIRED",reason_code="MISSING_ISCO_GROUP")
-        return Result(entity_type,True,occ.occupation_id,"ISCO-08",group.isco_code,target,group.label_ar if lang=="ar" and group.label_ar else group.label_en,lang,"VERIFIED",source="ESCO + ISCO-08")
+        if not group: return Result("JOB_TITLE",False,language=lang,status="FALLBACK_REQUIRED",reason_code="MISSING_ISCO_GROUP")
+        return Result("JOB_TITLE",True,occ.occupation_id,"ISCO-08",group.isco_code,target,group.label_ar if lang=="ar" and group.label_ar else group.label_en,lang,"VERIFIED",reason_code="LONGEST_PHRASE_MATCH" if shortened else None,source="ESCO + ISCO-08")
 
     def _nationality(self,s,value,lang,level):
         rows=s.scalars(select(NationalityAlias).where(NationalityAlias.normalized_alias==normalize(value,lang),NationalityAlias.language==lang)).all()

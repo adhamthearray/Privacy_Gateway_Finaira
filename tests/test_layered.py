@@ -1,6 +1,6 @@
 from pathlib import Path
 import pytest
-from finaira_generalization import GeneralizationDB
+from finaira_generalization import GeneralizationDB, Generalizer
 from finaira_generalization.layers import generate_levels
 from finaira_generalization.db import make_engine
 from sqlalchemy import text
@@ -9,9 +9,21 @@ DB=Path("data/processed/finaira_generalization.db")
 
 def test_occupation_returns_ordered_verified_chain():
     r=GeneralizationDB(DB).get_candidates("OCCUPATION","technical director","en")
+    assert r["entity_type"]=="JOB_TITLE"
     assert r["resolution_status"]=="VERIFIED"
     assert [x["level_code"] for x in r["candidates"]]==["EXACT","ISCO_UNIT","ISCO_MINOR","ISCO_SUB_MAJOR","ISCO_MAJOR","SUPPRESSED"]
     assert all(x["verification_status"]=="OFFICIAL" for x in r["candidates"])
+
+def test_occupation_and_job_title_share_longest_phrase_resolution():
+    db=GeneralizationDB(DB)
+    occupation=db.get_candidates("OCCUPATION","senior technical director","en")
+    title=db.get_candidates("JOB_TITLE","senior technical director","en")
+    assert occupation["entity_type"]==title["entity_type"]=="JOB_TITLE"
+    assert occupation["resolution_status"]==title["resolution_status"]=="VERIFIED"
+    assert occupation["reason_code"]==title["reason_code"]=="LONGEST_PHRASE_MATCH"
+    assert occupation["canonical_id"]==title["canonical_id"]
+    assert occupation["candidates"][0]["provenance"]["matched_phrase"]=="technical director"
+    assert occupation["candidates"][0]["provenance"]["match_method"]=="LONGEST_PHRASE_MATCH"
 
 def test_nationality_arabic_chain_and_natural_earth_english_labels():
     ar=GeneralizationDB(DB).get_candidates("NATIONALITY","مصرية","ar")
@@ -52,10 +64,25 @@ def test_ids_stable_and_base_tables_preserved():
     with e.connect() as c:
         assert c.execute(text("select count(*) from occupations")).scalar()==before
 
-def test_unknown_returns_safe_suppression_only():
+def test_unknown_returns_safe_generic_job_title_fallback():
     r=GeneralizationDB(DB).get_candidates("OCCUPATION","not a real occupation","en")
+    assert r["entity_type"]=="JOB_TITLE"
     assert r["resolution_status"]=="NOT_FOUND"
-    assert [x["level_code"] for x in r["candidates"]]==["SUPPRESSED"]
+    assert r["reason_code"]=="UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK"
+    assert [x["level_code"] for x in r["candidates"]]==["JOB_TITLE_1","JOB_TITLE_2","SUPPRESSED"]
+    assert all(x["verification_status"]=="CONFIGURED" for x in r["candidates"])
+
+def test_legacy_generalizer_uses_canonical_job_title_and_fallback():
+    db=Generalizer(DB)
+    matched=db.generalize("OCCUPATION","senior technical director","en")
+    assert matched.entity_type=="JOB_TITLE"
+    assert matched.matched is True
+    assert matched.reason_code=="LONGEST_PHRASE_MATCH"
+    unknown=db.generalize("JOB_TITLE","not a real job","en")
+    assert unknown.entity_type=="JOB_TITLE"
+    assert unknown.matched is False
+    assert unknown.replacement=="Job title 1"
+    assert unknown.reason_code=="UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK"
 
 def test_only_supported_generalization_types_are_exposed():
     supported = {

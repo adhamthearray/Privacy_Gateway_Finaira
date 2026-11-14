@@ -1,6 +1,6 @@
 # Finaira generalization database
 
-Status: implemented and exercised locally on 2026-11-13. This layer is an offline, deterministic Arabic/English reference database. It returns all valid candidates and never selects one. The current NER-v1 coverage audit is in [reports/generalization_coverage_improvement](../reports/generalization_coverage_improvement); its `alias_review_queue.csv` is a review queue only and never promotes corpus text automatically. NATIONALITY-specific review is documented in [reports/nationality_improvement](../reports/nationality_improvement).
+Status: implemented and exercised locally on 2026-11-14. This layer is an offline, deterministic Arabic/English reference database. It returns all valid candidates and never selects one. The current NER-v1 coverage audit is in [reports/ner_v1_generalization](../reports/ner_v1_generalization); its `alias_review_queue.csv` is a review queue only and never promotes corpus text automatically. Historical integration notes and before/after comparisons are in [reports/generalization_coverage_improvement](../reports/generalization_coverage_improvement). NATIONALITY-specific review is documented in [reports/nationality_improvement](../reports/nationality_improvement).
 
 ## Repository layout
 
@@ -194,9 +194,17 @@ Bank candidates are regenerated from the final master: `EXACT → FINANCE_MODEL 
 | `BANK` | `Banque Misr` → mixed finance model and broad institution levels | Arabic bank exact name is unavailable because all 37 master Arabic fields are blank; bilingual finance labels remain source-provided |
 | `CORPORATION` / `ORGANIZATION` / `UNIVERSITY` | `Edita Food Industries S.A.E.` or `New Cairo Technological University` → canonical CORPORATION pending exact/company/suppression only | `شركة` is the safe generic fallback; source university kind is provenance only and no unapproved industry claim is exposed |
 | `GOVERNMENT_ENTITY` | unknown → Government entity/suppression | `وزارة المالية` → review-only exact + generic government entity + suppression; narrow function/form branches require review flag |
-| `OCCUPATION` / `JOB_TITLE` | `technical director` → ESCO exact and ISCO chain | existing Arabic ESCO aliases and labels are reused |
+| `OCCUPATION` / `JOB_TITLE` | `technical director` → canonical `JOB_TITLE`, ESCO exact and ISCO chain; `senior technical director` → longest phrase `technical director` | both accepted labels share the ESCO/ISCO resolver; Arabic ESCO aliases and labels are reused |
 | `AGE` | `27` → exact, 25–29, 25–34, Adult, suppression | `٢٧` follows the same deterministic intervals |
 | `DATE` | `2026-03-14` → exact, March, Q1, year, suppression | Arabic labels use `14 مارس 2026`; `03/04/2026` is rejected unless a format is supplied |
+
+### Job-title and occupation compatibility behavior
+
+`OCCUPATION` is a compatibility input label only. The shared candidate API and the legacy `Generalizer` normalize it to `JOB_TITLE`, and both labels use `JOB_TITLE_ISCO08` backed by the existing ESCO aliases and ISCO-08 groups.
+
+Resolution is deterministic: try the complete normalized alias, then the complete punctuation-normalized phrase, then contiguous phrases from longest to shortest. A shortened match is marked `LONGEST_PHRASE_MATCH` and records the matched phrase in candidate provenance; it is not reported as an exact match to the original value. Alias collisions remain `AMBIGUOUS`.
+
+An unresolved value returns `JOB_TITLE_1`, `JOB_TITLE_2`, and `SUPPRESSED`, with reason `UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK`. These are safe generic configured fallbacks, not unique pseudonyms, a vault, or a claim that the input was recognized. The 2026-11-14 audit merged both source labels: 2,442 unique values and 9,916 spans; 31 values / 203 spans resolved through ESCO/ISCO, 5 values / 6 spans remain ambiguous, and 2,406 values / 9,707 spans use the generic fallback.
 
 ## SQL inspection examples
 

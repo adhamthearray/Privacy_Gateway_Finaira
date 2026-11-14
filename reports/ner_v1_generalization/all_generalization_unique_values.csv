@@ -2846,6 +2846,7 @@ JOB_TITLE,مدير العقود,30,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,رئيس الجمعية,29,train.jsonl;validation.jsonl
 JOB_TITLE,مدير المالية,27,test.jsonl;train.jsonl
 JOB_TITLE,أمين اللجنة,26,test.jsonl;train.jsonl;validation.jsonl
+JOB_TITLE,المذيع,24,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,سكرتير اللجنة,23,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,مدير العيادة,23,test.jsonl;train.jsonl
 JOB_TITLE,مدير المطالبات,23,test.jsonl;train.jsonl;validation.jsonl
@@ -2871,14 +2872,15 @@ JOB_TITLE,مدير المالي,18,test.jsonl;train.jsonl
 JOB_TITLE,مسؤول الحساب,18,train.jsonl
 JOB_TITLE,العضو المنتدب,17,train.jsonl;validation.jsonl
 JOB_TITLE,رئيس المجلس الإسلامي الأعلى,17,test.jsonl;train.jsonl;validation.jsonl
+JOB_TITLE,مهندس شبكات,17,test.jsonl;train.jsonl
 JOB_TITLE,الحاكم العسكري الإسرائيلي,16,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,مدير الأمن السيبراني,16,train.jsonl
 JOB_TITLE,الرئيس التنفيذي,15,train.jsonl;validation.jsonl
+JOB_TITLE,المهندس,15,test.jsonl;train.jsonl
 JOB_TITLE,سكرتير لجنة الأمن والإصلاح,15,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,مدير عام الهيئة,15,test.jsonl;train.jsonl
 JOB_TITLE,مسؤول الجودة,15,train.jsonl;validation.jsonl
 JOB_TITLE,مشرفة النقل,15,train.jsonl
-JOB_TITLE,مهندس شبكات,15,train.jsonl
 JOB_TITLE,وزير الداخلية الأردني,15,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,المدير الطبي,14,test.jsonl;train.jsonl
 JOB_TITLE,المسؤول المالي,14,test.jsonl;train.jsonl
@@ -2895,6 +2897,7 @@ JOB_TITLE,مدير الإداره,13,train.jsonl
 JOB_TITLE,مدير العقارات,13,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,مدير العلاقات,13,train.jsonl
 JOB_TITLE,مسؤول العلاقات,13,train.jsonl
+JOB_TITLE,الموظف,12,test.jsonl;train.jsonl
 JOB_TITLE,امين الصندوق,12,train.jsonl
 JOB_TITLE,رئيس البلدية,12,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,رئيس الفريق,12,train.jsonl
@@ -2910,6 +2913,7 @@ JOB_TITLE,الوزير,11,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,الوكيل العقاري,11,test.jsonl;train.jsonl
 JOB_TITLE,امين السر,11,train.jsonl
 JOB_TITLE,قائمقام نابلس,11,test.jsonl;train.jsonl;validation.jsonl
+JOB_TITLE,مبرمج,11,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,متصرف لواء رام الله,11,test.jsonl;train.jsonl
 JOB_TITLE,مدير إدارة المشتريات,11,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,مدير التنفيذي,11,train.jsonl;validation.jsonl
@@ -2925,6 +2929,7 @@ JOB_TITLE,وكيل الوزارة,11,test.jsonl;validation.jsonl
 JOB_TITLE,رئيس اللجنة القومية العربية في نابلس,10,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,رئيس بلدية طولكرم,10,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,عضو اللجنة,10,train.jsonl
+JOB_TITLE,فني كهرباء,10,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,مدير ادارة المشاريع,10,test.jsonl;train.jsonl
 JOB_TITLE,مدير اداره العقارات,10,test.jsonl;train.jsonl
 JOB_TITLE,مدير الائتمان,10,train.jsonl
@@ -2936,7 +2941,10 @@ JOB_TITLE,مدير المعهد,10,test.jsonl;train.jsonl
 JOB_TITLE,مدير النظام,10,train.jsonl
 JOB_TITLE,مسؤول الحسابات,10,train.jsonl
 JOB_TITLE,مسؤول الرواتب,10,train.jsonl;validation.jsonl
+JOB_TITLE,مطور برمجيات,10,train.jsonl;validation.jsonl
 JOB_TITLE,وكيلة الشؤون التعليمية,10,train.jsonl;validation.jsonl
+JOB_TITLE,القاضي,9,test.jsonl;train.jsonl;validation.jsonl
+JOB_TITLE,المحامي,9,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,رئيس بلدية قلقيلية,9,test.jsonl;train.jsonl
 JOB_TITLE,سكرتير اللجنة الإقتصادية المتفرعة,9,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,مدير الأوقاف,9,train.jsonl
@@ -2947,12 +2955,10 @@ JOB_TITLE,مدير اللجنة,9,test.jsonl;train.jsonl
 JOB_TITLE,مدير المباشر,9,test.jsonl;train.jsonl
 JOB_TITLE,مدير عام الإدارة,9,train.jsonl;validation.jsonl
 JOB_TITLE,مشرف القسم,9,test.jsonl;train.jsonl
-JOB_TITLE,مطور برمجيات,9,train.jsonl;validation.jsonl
 JOB_TITLE,نائبة الرئيس,9,train.jsonl
 JOB_TITLE,المشرف المباشر,8,train.jsonl
 JOB_TITLE,امين المجلس,8,train.jsonl
 JOB_TITLE,رئيس الجمعيه,8,train.jsonl;validation.jsonl
-JOB_TITLE,فني كهرباء,8,test.jsonl;validation.jsonl
 JOB_TITLE,قائمقام طولكرم,8,test.jsonl;train.jsonl
 JOB_TITLE,محاسبة,8,test.jsonl;train.jsonl
 JOB_TITLE,محلل مالي,8,train.jsonl;validation.jsonl
@@ -2975,14 +2981,20 @@ JOB_TITLE,مسؤول الشبكات,8,train.jsonl;validation.jsonl
 JOB_TITLE,مشرف المشروع,8,test.jsonl;train.jsonl
 JOB_TITLE,منسق المشروع,8,test.jsonl;train.jsonl
 JOB_TITLE,منسق المواعيد,8,train.jsonl
+JOB_TITLE,مهندس برمجيات,8,test.jsonl;train.jsonl
 JOB_TITLE,نائب المدير,8,train.jsonl
 JOB_TITLE,نائب المدير العام,8,train.jsonl
+JOB_TITLE,Software Engineer,7,test.jsonl;train.jsonl
 JOB_TITLE,أخصائي مشتريات,7,test.jsonl;train.jsonl
 JOB_TITLE,اخصائي مبيعات اول,7,validation.jsonl
 JOB_TITLE,الرئيس الأمريكي,7,test.jsonl;train.jsonl
 JOB_TITLE,المدير,7,train.jsonl;validation.jsonl
 JOB_TITLE,المشرف الفني,7,train.jsonl
+JOB_TITLE,سائق,7,test.jsonl;train.jsonl
+JOB_TITLE,طالب,7,test.jsonl;train.jsonl
+JOB_TITLE,قاضٍ,7,test.jsonl;train.jsonl
 JOB_TITLE,مأمور أوقاف عكا,7,test.jsonl;train.jsonl
+JOB_TITLE,محلل بيانات,7,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,مختار قرية الدوايمة,7,test.jsonl;train.jsonl
 JOB_TITLE,مدير إدارة التوظيف,7,train.jsonl
 JOB_TITLE,مدير إدارة المطالبات,7,train.jsonl
@@ -3007,7 +3019,9 @@ JOB_TITLE,وزير الشؤون الخارجية والتعاون الإفريق
 JOB_TITLE,أمين الاجتماع,6,train.jsonl
 JOB_TITLE,أمين الجلسة,6,train.jsonl
 JOB_TITLE,أمين المحضر,6,train.jsonl
+JOB_TITLE,الأستاذ الدكتور,6,test.jsonl;train.jsonl
 JOB_TITLE,القائد,6,test.jsonl;train.jsonl
+JOB_TITLE,المبرمج,6,test.jsonl;train.jsonl
 JOB_TITLE,المدير الإداري,6,test.jsonl;validation.jsonl
 JOB_TITLE,المدير الإقليمي,6,train.jsonl
 JOB_TITLE,المدير التجاري,6,train.jsonl
@@ -3023,9 +3037,9 @@ JOB_TITLE,رئيس قسم المكافآت,6,validation.jsonl
 JOB_TITLE,رئيس وحدة الامتثال,6,train.jsonl
 JOB_TITLE,رئيس وحدة المراقبة,6,validation.jsonl
 JOB_TITLE,رئيسة قسم السجلات الطبية,6,train.jsonl
-JOB_TITLE,سائق,6,test.jsonl;train.jsonl
 JOB_TITLE,سكرتير اللجنه,6,train.jsonl;validation.jsonl
 JOB_TITLE,سكرتير المجلس,6,test.jsonl;validation.jsonl
+JOB_TITLE,طالبة,6,test.jsonl;train.jsonl
 JOB_TITLE,قائد منطقة نابلس,6,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,مختار نابلس,6,test.jsonl;train.jsonl
 JOB_TITLE,مدير إدارة الالتزام,6,train.jsonl
@@ -3050,9 +3064,9 @@ JOB_TITLE,مشرف الشبكات,6,train.jsonl
 JOB_TITLE,مشرف المشتريات,6,train.jsonl
 JOB_TITLE,مندوب المرور,6,train.jsonl;validation.jsonl
 JOB_TITLE,مندوب الموارد البشرية,6,test.jsonl;train.jsonl
+JOB_TITLE,مندوب مبيعات,6,train.jsonl
 JOB_TITLE,منسق البرنامج,6,train.jsonl;validation.jsonl
 JOB_TITLE,منسق المشتريات,6,train.jsonl
-JOB_TITLE,مهندس برمجيات,6,train.jsonl
 JOB_TITLE,مهندس مدني,6,test.jsonl;train.jsonl
 JOB_TITLE,أخصائي دعم فني,5,test.jsonl;train.jsonl
 JOB_TITLE,أخصائية موارد بشرية,5,train.jsonl
@@ -3060,12 +3074,14 @@ JOB_TITLE,أمين اللجنه,5,test.jsonl;train.jsonl
 JOB_TITLE,أمين المستودع,5,train.jsonl;validation.jsonl
 JOB_TITLE,الامين العام,5,test.jsonl;train.jsonl
 JOB_TITLE,الرئيس التنفيذي للمخاطر,5,test.jsonl
+JOB_TITLE,الصحفي,5,test.jsonl;train.jsonl
 JOB_TITLE,المختار,5,train.jsonl;validation.jsonl
 JOB_TITLE,المستشار المالي,5,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,المشرف الميداني,5,train.jsonl
 JOB_TITLE,المقدم,5,train.jsonl;validation.jsonl
 JOB_TITLE,الممثل المقيم لمؤسسة التمويل الدولية,5,train.jsonl;validation.jsonl
 JOB_TITLE,امين الاجتماع,5,train.jsonl;validation.jsonl
+JOB_TITLE,جندي,5,test.jsonl;train.jsonl
 JOB_TITLE,رئيس بلدية الناصرة,5,train.jsonl;validation.jsonl
 JOB_TITLE,رئيس بلدية بيت لحم,5,train.jsonl;validation.jsonl
 JOB_TITLE,رئيس جامعة بيرزيت,5,train.jsonl;validation.jsonl
@@ -3078,7 +3094,6 @@ JOB_TITLE,قائمقام اللد,5,train.jsonl
 JOB_TITLE,متصرف لواء القدس,5,train.jsonl
 JOB_TITLE,محافظ القدس,5,train.jsonl
 JOB_TITLE,محافظ سلطة النقد,5,test.jsonl;train.jsonl
-JOB_TITLE,محلل بيانات,5,train.jsonl;validation.jsonl
 JOB_TITLE,مدير إدارة العقارات,5,test.jsonl;train.jsonl
 JOB_TITLE,مدير إدارة المعاشات,5,train.jsonl
 JOB_TITLE,مدير الالتزام,5,train.jsonl
@@ -3119,8 +3134,14 @@ JOB_TITLE,أخصائي موارد بشرية,4,test.jsonl;train.jsonl
 JOB_TITLE,أمينة السر,4,train.jsonl;validation.jsonl
 JOB_TITLE,اخصائي ضمان جوده,4,test.jsonl
 JOB_TITLE,الأمين العام للأمم المتحدة,4,train.jsonl;validation.jsonl
+JOB_TITLE,الاستاذ الدكتور,4,test.jsonl;train.jsonl
+JOB_TITLE,الحلاق,4,test.jsonl;train.jsonl
+JOB_TITLE,الخبير,4,train.jsonl
 JOB_TITLE,الرئيس المصري,4,train.jsonl
+JOB_TITLE,القاضي الشرعي,4,test.jsonl;train.jsonl
+JOB_TITLE,المخرج,4,test.jsonl;train.jsonl
 JOB_TITLE,المدير  المالي,4,train.jsonl
+JOB_TITLE,المذيعه,4,train.jsonl
 JOB_TITLE,المسؤول المالييييي,4,train.jsonl
 JOB_TITLE,المسؤول الميداني,4,train.jsonl
 JOB_TITLE,المسؤول والموعد,4,train.jsonl
@@ -3128,6 +3149,7 @@ JOB_TITLE,المستشار البطاقة البنكية,4,train.jsonl
 JOB_TITLE,المستشارة القانونية,4,test.jsonl
 JOB_TITLE,المشرف الإداري,4,train.jsonl
 JOB_TITLE,المشرفة الإدارية,4,train.jsonl
+JOB_TITLE,المعلم,4,test.jsonl;train.jsonl
 JOB_TITLE,المندوب الوظيفي,4,train.jsonl
 JOB_TITLE,المندوب والتعليمات,4,train.jsonl
 JOB_TITLE,الوكيل القانوني,4,train.jsonl
@@ -3155,15 +3177,23 @@ JOB_TITLE,رئيسة جمعية إنعاش الأسرة,4,test.jsonl;train.jsonl
 JOB_TITLE,سكرتير الجلسة,4,validation.jsonl
 JOB_TITLE,سكرتير الفريق,4,test.jsonl
 JOB_TITLE,سكرتير اللجنة المنظمة,4,train.jsonl
+JOB_TITLE,شرطي,4,test.jsonl;train.jsonl
+JOB_TITLE,طبيب,4,train.jsonl
+JOB_TITLE,طيار,4,train.jsonl;validation.jsonl
 JOB_TITLE,عضو الفريق,4,test.jsonl;train.jsonl
 JOB_TITLE,عضو المجلس التشريعي الفلسطيني,4,test.jsonl;train.jsonl;validation.jsonl
+JOB_TITLE,فنانة,4,test.jsonl;train.jsonl
 JOB_TITLE,فني صيانة,4,train.jsonl
 JOB_TITLE,فني مختبر,4,test.jsonl
 JOB_TITLE,قائمقام طبريا,4,train.jsonl
 JOB_TITLE,قائمقام قضاء رام الله,4,test.jsonl;train.jsonl;validation.jsonl
+JOB_TITLE,كاتب,4,test.jsonl;train.jsonl
 JOB_TITLE,مأمور أوقاف القدس,4,test.jsonl;train.jsonl
 JOB_TITLE,مامور أوقاف اللواء الشمالي,4,test.jsonl;train.jsonl
 JOB_TITLE,متصرف نابلس,4,train.jsonl
+JOB_TITLE,محام مزاول,4,test.jsonl;train.jsonl
+JOB_TITLE,محامي,4,train.jsonl
+JOB_TITLE,محامٍ,4,train.jsonl;validation.jsonl
 JOB_TITLE,محللة نظم,4,train.jsonl
 JOB_TITLE,مختار قرية بيت نبالا,4,train.jsonl
 JOB_TITLE,مختار قرية عصيرة الشمالية,4,train.jsonl;validation.jsonl
@@ -3216,6 +3246,7 @@ JOB_TITLE,مدير قسم الموارد البشرية,4,train.jsonl
 JOB_TITLE,مديرة إدارة التعليم,4,train.jsonl
 JOB_TITLE,مديرة العيادة,4,train.jsonl
 JOB_TITLE,مديره الموارد البشريه,4,train.jsonl
+JOB_TITLE,مذيع,4,test.jsonl;train.jsonl
 JOB_TITLE,مسؤول الإعداد,4,train.jsonl
 JOB_TITLE,مسؤول الامن,4,train.jsonl
 JOB_TITLE,مسؤول التأمين,4,test.jsonl;train.jsonl
@@ -3272,10 +3303,13 @@ JOB_TITLE,وزير الداخلية الأردني للشؤون البلدية �
 JOB_TITLE,وكيل أوقاف صفد,4,train.jsonl
 JOB_TITLE,وكيلة المقاول,4,train.jsonl
 JOB_TITLE,Business Development Executive,3,test.jsonl
+JOB_TITLE,Government Employee,3,train.jsonl
 JOB_TITLE,full stack,3,train.jsonl
 JOB_TITLE,أمين الجمعية,3,train.jsonl
 JOB_TITLE,أمين عام الأمم المتحدة,3,train.jsonl
 JOB_TITLE,أمينة الحسيني,3,train.jsonl
+JOB_TITLE,البائع,3,train.jsonl
+JOB_TITLE,الجندي,3,test.jsonl;train.jsonl
 JOB_TITLE,الحاكم العسكري,3,train.jsonl
 JOB_TITLE,الحاكم العسكري الإسرائيلي للضفة الغربية,3,train.jsonl;validation.jsonl
 JOB_TITLE,الرئيس الحالي,3,test.jsonl;train.jsonl
@@ -3289,7 +3323,12 @@ JOB_TITLE,السكرتير,3,train.jsonl
 JOB_TITLE,السكرتير الاخ,3,train.jsonl
 JOB_TITLE,السكرتير التنفيذي,3,train.jsonl
 JOB_TITLE,السكرتيرة التنفيذية,3,train.jsonl
+JOB_TITLE,الشاعر,3,test.jsonl;train.jsonl
+JOB_TITLE,الشاعرة,3,train.jsonl
+JOB_TITLE,الشرطي,3,test.jsonl;train.jsonl
+JOB_TITLE,الطبيبة,3,test.jsonl;train.jsonl
 JOB_TITLE,العضو القانوني,3,train.jsonl
+JOB_TITLE,الفنان,3,train.jsonl
 JOB_TITLE,القس,3,test.jsonl;train.jsonl
 JOB_TITLE,المدير التنفيذي للاعتماد,3,train.jsonl
 JOB_TITLE,المدير التنفيذي للتشغيل,3,train.jsonl
@@ -3304,6 +3343,7 @@ JOB_TITLE,المسؤول الثالثثثثث,3,validation.jsonl
 JOB_TITLE,المسؤول الفني والمسؤول المالي,3,train.jsonl
 JOB_TITLE,المسؤول المباشر,3,train.jsonl
 JOB_TITLE,المسؤولة المفوض,3,train.jsonl
+JOB_TITLE,المساح,3,train.jsonl;validation.jsonl
 JOB_TITLE,المستشار الثقافي,3,train.jsonl
 JOB_TITLE,المستشار الخاص,3,test.jsonl;train.jsonl
 JOB_TITLE,المشرف العام للوجه,3,train.jsonl
@@ -3360,8 +3400,11 @@ JOB_TITLE,سكرتير لجنة المناهج الأردنية,3,train.jsonl
 JOB_TITLE,سكرتيرة اللجنة,3,train.jsonl
 JOB_TITLE,صبي القهوة,3,train.jsonl
 JOB_TITLE,ضابط القيادة للشؤون الداخلية,3,test.jsonl;train.jsonl
+JOB_TITLE,طبيباً,3,test.jsonl;train.jsonl
+JOB_TITLE,طبيبة,3,train.jsonl
 JOB_TITLE,عامل صيانة,3,validation.jsonl
 JOB_TITLE,عضو اللجنه,3,train.jsonl
+JOB_TITLE,فريلانسر,3,test.jsonl;train.jsonl;validation.jsonl
 JOB_TITLE,فني تكييف,3,validation.jsonl
 JOB_TITLE,قائد القوات العراقية,3,train.jsonl;validation.jsonl
 JOB_TITLE,قائد جيش الإنقاذ,3,train.jsonl;validation.jsonl
@@ -3369,6 +3412,8 @@ JOB_TITLE,قائد قوات الإنقاذ,3,test.jsonl;train.jsonl
 JOB_TITLE,قائمقام بلدية نابلس,3,train.jsonl
 JOB_TITLE,قائمقام صفد,3,test.jsonl;train.jsonl
 JOB_TITLE,قائمقام قضاء نابلس,3,train.jsonl
+JOB_TITLE,قاضي الشرع,3,train.jsonl
+JOB_TITLE,قاضي حيفا الشرعي,3,train.jsonl
 JOB_TITLE,مأمور أوقاف صفد,3,train.jsonl;validation.jsonl
 JOB_TITLE,مأمور أوقاف غزة,3,train.jsonl
 JOB_TITLE,مأمور أوقاف نابلس,3,train.jsonl;validation.jsonl
@@ -3459,6 +3504,7 @@ JOB_TITLE,مسؤولة المبيعات,3,train.jsonl
 JOB_TITLE,مسؤولة المطابقة,3,test.jsonl
 JOB_TITLE,مسؤوله الاحتفاظ,3,train.jsonl
 JOB_TITLE,مسئول للقبول,3,train.jsonl
+JOB_TITLE,مساح بلدية بيرزيت,3,train.jsonl
 JOB_TITLE,مساعد حاكم لواء القدس,3,train.jsonl
 JOB_TITLE,مساعد حاكم لواء اللد,3,train.jsonl
 JOB_TITLE,مساعد حاكم لواء رام الله,3,test.jsonl;validation.jsonl
@@ -3471,6 +3517,7 @@ JOB_TITLE,مشرف صيانة,3,train.jsonl
 JOB_TITLE,مشرف عمليات,3,train.jsonl
 JOB_TITLE,مشرف ورشة,3,validation.jsonl
 JOB_TITLE,مشرفة الرصد,3,validation.jsonl
+JOB_TITLE,مطور ويب,3,test.jsonl;train.jsonl
 JOB_TITLE,مفتش المؤن,3,train.jsonl;validation.jsonl
 JOB_TITLE,مفتش المؤن في نابلس,3,train.jsonl
 JOB_TITLE,مفتش بوليس نابلس,3,train.jsonl;validation.jsonl
@@ -3481,7 +3528,6 @@ JOB_TITLE,مندوب التأمين,3,train.jsonl
 JOB_TITLE,مندوب التركيب,3,train.jsonl
 JOB_TITLE,مندوب التقديم,3,train.jsonl
 JOB_TITLE,مندوب الدعم,3,train.jsonl
-JOB_TITLE,مندوب مبيعات,3,train.jsonl
 JOB_TITLE,منسق الاجتماع,3,train.jsonl
 JOB_TITLE,منسق البرامج,3,test.jsonl
 JOB_TITLE,منسق التأمينات,3,test.jsonl
@@ -3491,6 +3537,10 @@ JOB_TITLE,منسق المركز,3,train.jsonl
 JOB_TITLE,منسق المورد,3,test.jsonl
 JOB_TITLE,منسقة الاستقبال,3,train.jsonl
 JOB_TITLE,منسقة الجلسات,3,test.jsonl
+JOB_TITLE,مهندس,3,train.jsonl
+JOB_TITLE,مهندس بلدية نابلس,3,test.jsonl;train.jsonl
+JOB_TITLE,مهندس لواء رام الله,3,test.jsonl;validation.jsonl
+JOB_TITLE,مهندس محافظة القدس,3,test.jsonl;train.jsonl
 JOB_TITLE,مهندسه برمجيات,3,train.jsonl;validation.jsonl
 JOB_TITLE,ود.,3,test.jsonl;train.jsonl
 JOB_TITLE,وزير,3,test.jsonl;train.jsonl
@@ -3518,7 +3568,6 @@ JOB_TITLE,Sales Manager,2,train.jsonl
 JOB_TITLE,Senior Accountant,2,train.jsonl
 JOB_TITLE,Senior Analyst,2,train.jsonl
 JOB_TITLE,Senior Project Manager,2,train.jsonl
-JOB_TITLE,Software Engineer,2,train.jsonl
 JOB_TITLE,mobile developer,2,train.jsonl
 JOB_TITLE,scrum master,2,train.jsonl
 JOB_TITLE,ux designer,2,train.jsonl
@@ -3537,6 +3586,8 @@ JOB_TITLE,أمينه المختبر,2,train.jsonl
 JOB_TITLE,اخصائي موارد بشرية,2,train.jsonl
 JOB_TITLE,الأمين العام لعصبة الأمم,2,test.jsonl;train.jsonl
 JOB_TITLE,الأمين للمقاولات,2,train.jsonl
+JOB_TITLE,الاستاز,2,train.jsonl
+JOB_TITLE,الباحث,2,train.jsonl
 JOB_TITLE,الجنرال,2,test.jsonl;train.jsonl
 JOB_TITLE,الحاكم,2,train.jsonl
 JOB_TITLE,الحاكم العسكري الإسرائيلي لمنطقة رام الله,2,test.jsonl;validation.jsonl
@@ -3546,10 +3597,17 @@ JOB_TITLE,الرئيس التنفيذي للعمليات,2,test.jsonl
 JOB_TITLE,الرئيس التنفيذي للهيئة,2,train.jsonl
 JOB_TITLE,الرئيس الجلسه الساعه,2,train.jsonl
 JOB_TITLE,الرئيس المباشر,2,train.jsonl
+JOB_TITLE,الراعي,2,train.jsonl
+JOB_TITLE,الروائي,2,train.jsonl;validation.jsonl
+JOB_TITLE,السائق,2,train.jsonl;validation.jsonl
 JOB_TITLE,السكرتير التنفيذي للجنة,2,validation.jsonl
 JOB_TITLE,السكرتير الصحفي,2,train.jsonl
 JOB_TITLE,السكرتير العام,2,train.jsonl;validation.jsonl
 JOB_TITLE,السكرتير لحكومة فلسطين,2,train.jsonl
+JOB_TITLE,الشوفير,2,test.jsonl
+JOB_TITLE,الطالب,2,train.jsonl
+JOB_TITLE,الطبيب,2,train.jsonl;validation.jsonl
+JOB_TITLE,العامل,2,train.jsonl
 JOB_TITLE,العضو الأو,2,train.jsonl
 JOB_TITLE,العضو الثني,2,train.jsonl
 JOB_TITLE,العضو الرابع الاسم,2,train.jsonl
@@ -3559,6 +3617,7 @@ JOB_TITLE,القائد للضفة الغربية,2,train.jsonl
 JOB_TITLE,القائم باعمال قاضي القضاة,2,test.jsonl
 JOB_TITLE,الكولونيل,2,train.jsonl
 JOB_TITLE,المتعهد,2,train.jsonl
+JOB_TITLE,المحامية,2,test.jsonl;train.jsonl
 JOB_TITLE,المدير الإقليمي لليونيسف,2,test.jsonl;train.jsonl
 JOB_TITLE,المدير الاقليمي,2,test.jsonl
 JOB_TITLE,المدير الالي,2,train.jsonl
@@ -3613,6 +3672,7 @@ JOB_TITLE,المنسق الإداري,2,train.jsonl
 JOB_TITLE,المنسق الاداي,2,validation.jsonl
 JOB_TITLE,المنسق اللوجستي,2,train.jsonl
 JOB_TITLE,المنسقة العامة,2,train.jsonl
+JOB_TITLE,الميكانيكي,2,train.jsonl
 JOB_TITLE,النائب,2,test.jsonl;train.jsonl
 JOB_TITLE,النائب الإداري,2,train.jsonl
 JOB_TITLE,الوزير البحريني,2,train.jsonl
@@ -3624,6 +3684,7 @@ JOB_TITLE,الوكيل المفوض,2,train.jsonl
 JOB_TITLE,امين السجل,2,train.jsonl
 JOB_TITLE,امين القدس,2,train.jsonl
 JOB_TITLE,امينة السر,2,train.jsonl
+JOB_TITLE,باحثة,2,test.jsonl;train.jsonl
 JOB_TITLE,حاكم اللواء,2,test.jsonl;train.jsonl
 JOB_TITLE,حاكم المقاطعة الشمالية في مدينة حيفا,2,train.jsonl
 JOB_TITLE,رئيس الأدخار التجدد,2,train.jsonl
@@ -3688,6 +3749,8 @@ JOB_TITLE,رئيساً,2,test.jsonl
 JOB_TITLE,رئيساً لمجلس إدارة هيئة سوق رأس المال,2,train.jsonl;validation.jsonl
 JOB_TITLE,رئيساً لمجلس إدارة هيئة سوق رأس المال الفلسطينية,2,train.jsonl;validation.jsonl
 JOB_TITLE,رئيسة قسم الصفوف العليا,2,validation.jsonl
+JOB_TITLE,راعي,2,train.jsonl
+JOB_TITLE,رسام,2,test.jsonl;train.jsonl
 JOB_TITLE,سكرتير الأمم المتحدة,2,test.jsonl;train.jsonl
 JOB_TITLE,سكرتير الاداره,2,train.jsonl
 JOB_TITLE,سكرتير المجلس الشرعي الإسلامي الأعلى,2,train.jsonl
@@ -3699,6 +3762,9 @@ JOB_TITLE,ضابط المرور,2,train.jsonl
 JOB_TITLE,ضابط المشروع,2,train.jsonl
 JOB_TITLE,ضابط ركن المساحة,2,train.jsonl;validation.jsonl
 JOB_TITLE,ضابط قيادة جهاز التربية والتعليم,2,train.jsonl
+JOB_TITLE,طبيبة أسنان,2,train.jsonl
+JOB_TITLE,طوبرجي,2,train.jsonl
+JOB_TITLE,عامل صحي,2,test.jsonl;train.jsonl
 JOB_TITLE,عضو الاسرة,2,test.jsonl
 JOB_TITLE,عضو التاكد,2,validation.jsonl
 JOB_TITLE,عضو اللجنة التنفيذي,2,train.jsonl
@@ -3706,6 +3772,8 @@ JOB_TITLE,عضو المشتريات,2,validation.jsonl
 JOB_TITLE,عضو مراقب,2,train.jsonl
 JOB_TITLE,عضواً,2,test.jsonl;train.jsonl
 JOB_TITLE,عميدة الكلية,2,train.jsonl
+JOB_TITLE,فلاح,2,test.jsonl;validation.jsonl
+JOB_TITLE,فنان,2,train.jsonl
 JOB_TITLE,فني أشعة,2,train.jsonl
 JOB_TITLE,فني تشغيل,2,train.jsonl
 JOB_TITLE,قائد الحمايه,2,validation.jsonl
@@ -3716,11 +3784,15 @@ JOB_TITLE,قائد فريق تطوير,2,train.jsonl
 JOB_TITLE,قائد قوة الإنقاذ,2,train.jsonl
 JOB_TITLE,قائد منطقة الضفة الغربية,2,train.jsonl
 JOB_TITLE,قائمقام,2,test.jsonl;train.jsonl
+JOB_TITLE,قاضي المحكمة الشرعية في حيفا,2,train.jsonl
+JOB_TITLE,قاضي طبريا الشرعي,2,train.jsonl
 JOB_TITLE,لواء القدس,2,train.jsonl;validation.jsonl
 JOB_TITLE,مأمور إجراء نابلس,2,train.jsonl
 JOB_TITLE,مأمور الأوقاف,2,train.jsonl
 JOB_TITLE,مأمور الإيرادات,2,train.jsonl
 JOB_TITLE,مأمور حراج القدس,2,train.jsonl
+JOB_TITLE,مبرمج node js,2,test.jsonl;train.jsonl
+JOB_TITLE,مبرمج محترف,2,test.jsonl;validation.jsonl
 JOB_TITLE,متصرف رام الله,2,train.jsonl
 JOB_TITLE,متصرف لواء دمشق,2,test.jsonl;train.jsonl
 JOB_TITLE,محاسبه,2,train.jsonl
@@ -3736,6 +3808,8 @@ JOB_TITLE,مختار قرية عقربا,2,test.jsonl;train.jsonl
 JOB_TITLE,مختار قرية عورتا,2,train.jsonl
 JOB_TITLE,مختار قرية عوريف,2,train.jsonl;validation.jsonl
 JOB_TITLE,مختار قرية كفر قدوم,2,train.jsonl;validation.jsonl
+JOB_TITLE,مدرس,2,train.jsonl
+JOB_TITLE,مدرسة,2,train.jsonl
 JOB_TITLE,مدير  الفريق,2,test.jsonl
 JOB_TITLE,مدير  الموارد البشريه,2,train.jsonl
 JOB_TITLE,مدير أشغال محافظة القدس,2,test.jsonl;train.jsonl
@@ -3969,7 +4043,9 @@ JOB_TITLE,مشرف عمال,2,validation.jsonl
 JOB_TITLE,مشرف للعمل,2,train.jsonl
 JOB_TITLE,مشرف وحدة السجلات,2,train.jsonl
 JOB_TITLE,مشرفة صيانة,2,validation.jsonl
+JOB_TITLE,مصمم,2,train.jsonl
 JOB_TITLE,مصممة تجربة,2,train.jsonl
+JOB_TITLE,مطور الووردبريس,2,train.jsonl
 JOB_TITLE,مطور واجهات,2,train.jsonl
 JOB_TITLE,مفتش البوليس,2,train.jsonl
 JOB_TITLE,مفتش الجودة,2,train.jsonl
@@ -4008,8 +4084,10 @@ JOB_TITLE,منسقة الملفات,2,train.jsonl
 JOB_TITLE,منسقه الجوده,2,train.jsonl
 JOB_TITLE,منسقه الزيارات,2,test.jsonl
 JOB_TITLE,منسقه للوثيقه,2,train.jsonl
+JOB_TITLE,مهندس الشؤون البلدية,2,train.jsonl;validation.jsonl
 JOB_TITLE,مهندس برمجيات أول,2,train.jsonl
 JOB_TITLE,مهندسة سلامة,2,validation.jsonl
+JOB_TITLE,ميكانيكي,2,train.jsonl
 JOB_TITLE,نائب رئيس بلدية بيرزيت,2,train.jsonl
 JOB_TITLE,نائب رئيس بلدية نابلس,2,train.jsonl
 JOB_TITLE,نائب محافظ سلطة النقد الفلسطينية,2,train.jsonl
@@ -4071,7 +4149,13 @@ JOB_TITLE,آمر فوج,1,train.jsonl
 JOB_TITLE,آمر فوج الكرمل,1,train.jsonl
 JOB_TITLE,آمر فوج اليرموك,1,train.jsonl
 JOB_TITLE,أخصائي دعم فني أول,1,train.jsonl
+JOB_TITLE,أخصائي سريري,1,train.jsonl
 JOB_TITLE,أخصائي عمليات,1,train.jsonl
+JOB_TITLE,أخصائي نفسي,1,test.jsonl
+JOB_TITLE,أخصائياً نفسياً,1,train.jsonl
+JOB_TITLE,أستاذ القانون التجاري,1,test.jsonl
+JOB_TITLE,أستاذ علوم,1,train.jsonl
+JOB_TITLE,أستاذ متقاعد لشؤون الأمن القومي,1,test.jsonl
 JOB_TITLE,أمين السجل العقاري,1,train.jsonl
 JOB_TITLE,أمين العاصمة الأردنية,1,test.jsonl
 JOB_TITLE,أمين العام,1,train.jsonl
@@ -4091,6 +4175,10 @@ JOB_TITLE,إمام جامع التليل,1,train.jsonl
 JOB_TITLE,ئيس البلدية,1,train.jsonl
 JOB_TITLE,اخصائي دعم فني,1,train.jsonl
 JOB_TITLE,اركان حربه,1,train.jsonl
+JOB_TITLE,استاذ تاريخ,1,train.jsonl
+JOB_TITLE,استاز,1,train.jsonl
+JOB_TITLE,استشاري,1,validation.jsonl
+JOB_TITLE,الأستاذة,1,train.jsonl
 JOB_TITLE,الأمباشي,1,test.jsonl
 JOB_TITLE,الأمين الطبي,1,validation.jsonl
 JOB_TITLE,الأمين العام لجامعة الدول العربية,1,train.jsonl
@@ -4099,6 +4187,7 @@ JOB_TITLE,الأمين لعصبة الأمم,1,test.jsonl
 JOB_TITLE,الإستاز,1,train.jsonl
 JOB_TITLE,الاعلامي,1,train.jsonl
 JOB_TITLE,الامين العام لجامعة الدول العربية,1,validation.jsonl
+JOB_TITLE,الباحثة في الشأن اليمني في هيومن رايتس ووتش,1,validation.jsonl
 JOB_TITLE,البطريرك الأرثوذكسي,1,train.jsonl
 JOB_TITLE,البطريرك الارثوذكسي,1,test.jsonl
 JOB_TITLE,الحاكم الاداري,1,train.jsonl
@@ -4124,6 +4213,7 @@ JOB_TITLE,الرئيس المؤقت,1,train.jsonl
 JOB_TITLE,الرئيس المنتخب,1,test.jsonl
 JOB_TITLE,الرئيس الوزراء الاسرائيلي,1,train.jsonl
 JOB_TITLE,الزعيم الليبي,1,train.jsonl
+JOB_TITLE,السائقين,1,train.jsonl
 JOB_TITLE,السامي في فلسطين,1,test.jsonl
 JOB_TITLE,السفير,1,train.jsonl
 JOB_TITLE,السفير الروسي السابق إلى الأمم المتحدة,1,validation.jsonl
@@ -4131,10 +4221,18 @@ JOB_TITLE,السفير السابق,1,train.jsonl
 JOB_TITLE,السفير السعودي لدى الولايات المتحدة,1,train.jsonl
 JOB_TITLE,السكرتير العام في حيفا,1,train.jsonl
 JOB_TITLE,السكرتير المالي لحكومة فلسطين,1,train.jsonl
+JOB_TITLE,الشاعر الفلسطيني,1,train.jsonl
+JOB_TITLE,الصحافية,1,train.jsonl
+JOB_TITLE,الصياد,1,train.jsonl
+JOB_TITLE,الصيدلاني,1,test.jsonl
+JOB_TITLE,الصيدلي,1,train.jsonl
 JOB_TITLE,الضابط في الجيش الشوري,1,validation.jsonl
+JOB_TITLE,الطالبة,1,train.jsonl
+JOB_TITLE,الطيارين الروس,1,train.jsonl
 JOB_TITLE,العريف,1,train.jsonl
 JOB_TITLE,العقيد,1,test.jsonl
 JOB_TITLE,العميد,1,train.jsonl
+JOB_TITLE,الفنانة,1,train.jsonl
 JOB_TITLE,القائد العام لفلسطين وشرق الأردن,1,test.jsonl
 JOB_TITLE,القائد العام لقوات الإنقاذ,1,train.jsonl
 JOB_TITLE,القائد جيش الإنقاذ,1,train.jsonl
@@ -4148,6 +4246,8 @@ JOB_TITLE,القائم بأعمال قاضي القضاة في القدس,1,trai
 JOB_TITLE,القائم بأعمال مدير عام البنك,1,test.jsonl
 JOB_TITLE,القنصل البلجيكي,1,train.jsonl
 JOB_TITLE,القنصل للولايات المتحدة,1,train.jsonl
+JOB_TITLE,الكاتب,1,test.jsonl
+JOB_TITLE,الكاهن الأكبر,1,train.jsonl
 JOB_TITLE,الكوفيرجيه,1,train.jsonl
 JOB_TITLE,الكولونيل كش الإنجليزي,1,train.jsonl
 JOB_TITLE,الكومبراسير,1,train.jsonl
@@ -4164,6 +4264,9 @@ JOB_TITLE,المتحدث باسم قسد,1,test.jsonl
 JOB_TITLE,المتحدثة باسم وزارة الخارجية,1,validation.jsonl
 JOB_TITLE,المحاضر في كلية الحقوق,1,train.jsonl
 JOB_TITLE,المحافظ,1,test.jsonl
+JOB_TITLE,المخرج المسرحي,1,test.jsonl
+JOB_TITLE,المدرب,1,train.jsonl
+JOB_TITLE,المدقق الداخلي,1,test.jsonl
 JOB_TITLE,المدير الإقليمي للصندوق الوطني,1,train.jsonl
 JOB_TITLE,المدير الإقليمي لليونيسف في الشّرق الأوسط وشمال أفريقيا,1,validation.jsonl
 JOB_TITLE,المدير الاقليمي لمؤسسة (GIZ),1,train.jsonl
@@ -4186,6 +4289,7 @@ JOB_TITLE,المدير للإذاعة,1,train.jsonl
 JOB_TITLE,المديرة التنفيذية لليونيسف,1,validation.jsonl
 JOB_TITLE,المديرة التنفيذية لمؤسسة امان,1,train.jsonl
 JOB_TITLE,المديرة المشاركة,1,train.jsonl
+JOB_TITLE,المذيعة,1,train.jsonl
 JOB_TITLE,المرشد السياسي,1,train.jsonl
 JOB_TITLE,المسؤول التركي في محافظة غزة,1,train.jsonl
 JOB_TITLE,المسؤولة عن الوقاية من العدوى ومكافحتها في مستشفى أطباء بلا حدود للرعاية ما بعد عمليات الجراحية في الموصل,1,train.jsonl
@@ -4201,7 +4305,9 @@ JOB_TITLE,المشرف الأكاديمي,1,train.jsonl
 JOB_TITLE,المشرف الأمني,1,train.jsonl
 JOB_TITLE,المشرف للاثنين,1,train.jsonl
 JOB_TITLE,المطربة,1,train.jsonl
+JOB_TITLE,المطور,1,train.jsonl
 JOB_TITLE,المعلق,1,test.jsonl
+JOB_TITLE,المعلمة,1,train.jsonl
 JOB_TITLE,المفتش لقوات الإنقاذ,1,train.jsonl
 JOB_TITLE,المفتي الأكبر,1,test.jsonl
 JOB_TITLE,المفوض السامي,1,test.jsonl
@@ -4215,17 +4321,25 @@ JOB_TITLE,الممثل المقيم لليونيسف في اليمن,1,validatio
 JOB_TITLE,الممثل المقيم نيابة عن مؤسسة التمويل الدولية,1,train.jsonl
 JOB_TITLE,الممثلة,1,train.jsonl
 JOB_TITLE,الممثله,1,validation.jsonl
+JOB_TITLE,الممرض,1,train.jsonl
+JOB_TITLE,الممرض المسؤول عن الصيدلية,1,test.jsonl
+JOB_TITLE,الممرضة,1,train.jsonl
 JOB_TITLE,المندوب الوحيد,1,train.jsonl
 JOB_TITLE,المنسق,1,train.jsonl
 JOB_TITLE,المنسق العام,1,train.jsonl
 JOB_TITLE,المنسقة الطبية لمنظمة أطباء بلا حدود,1,test.jsonl
 JOB_TITLE,المنسقه الإداريه,1,test.jsonl
+JOB_TITLE,المنقذ,1,train.jsonl
+JOB_TITLE,المهندس الإقليمي,1,train.jsonl
+JOB_TITLE,المهندس الرئيسي,1,train.jsonl
+JOB_TITLE,الموظفين,1,train.jsonl
 JOB_TITLE,المُقدم,1,train.jsonl
 JOB_TITLE,الناطق الرسمي,1,train.jsonl
 JOB_TITLE,الناطق الرسمي باسم وحدات حماية الشعب,1,train.jsonl
 JOB_TITLE,الناطق الرسمي لجروب نقطة مي,1,train.jsonl
 JOB_TITLE,الناطق باسم حكومة إقليم كردستان,1,train.jsonl
 JOB_TITLE,الناطق باسم حكومة الإقليم,1,validation.jsonl
+JOB_TITLE,الناطور,1,test.jsonl
 JOB_TITLE,الوزيرة المنتدبة,1,train.jsonl
 JOB_TITLE,الوكيل,1,validation.jsonl
 JOB_TITLE,امن,1,train.jsonl
@@ -4237,8 +4351,13 @@ JOB_TITLE,امين سر اتحاد عمال فلسطين فرع لبنان,1,tes
 JOB_TITLE,امين سر اللجنة القومية العربية,1,test.jsonl
 JOB_TITLE,امين سر اللجنه التنفيذيه لمنظمة التحرير,1,train.jsonl
 JOB_TITLE,اّمر فوج اليرموك,1,train.jsonl
+JOB_TITLE,بائع متجول,1,train.jsonl
+JOB_TITLE,باحث بالمعهد الإيطالي للشؤون الدولية,1,test.jsonl
+JOB_TITLE,باحثة سوريا في هيومن رايتس ووتش,1,validation.jsonl
 JOB_TITLE,جراح,1,train.jsonl
 JOB_TITLE,جرّاح تجميل وترميم في الجامعة الأميركية في بيروت,1,test.jsonl
+JOB_TITLE,جندي اردني,1,train.jsonl
+JOB_TITLE,جندي اسرائيلي,1,train.jsonl
 JOB_TITLE,جنرال الليبي,1,train.jsonl
 JOB_TITLE,جنرال سنغالي,1,train.jsonl
 JOB_TITLE,حارس مرمى,1,train.jsonl
@@ -4260,6 +4379,9 @@ JOB_TITLE,حاكم منطقة السامرة / نابلس,1,train.jsonl
 JOB_TITLE,حاكم منطقة السامرة في نابلس,1,train.jsonl
 JOB_TITLE,حاكم منطقة نابلس,1,train.jsonl
 JOB_TITLE,حاكم نابلس,1,validation.jsonl
+JOB_TITLE,حلاق,1,test.jsonl
+JOB_TITLE,خبير شؤون باسكت,1,test.jsonl
+JOB_TITLE,خبيرا,1,train.jsonl
 JOB_TITLE,"رئيس """" مجلس القضاء الأعلى",1,train.jsonl
 JOB_TITLE,رئيس أركان الجيش العربي الأردني,1,validation.jsonl
 JOB_TITLE,رئيس أطباء القدس,1,train.jsonl
@@ -4478,11 +4600,21 @@ JOB_TITLE,سكرتير لجنة شؤون المناضلين المتفرعة,1,t
 JOB_TITLE,سكرتير لجنة شؤون النازحين,1,test.jsonl
 JOB_TITLE,سكرتير منظمة الشباب,1,test.jsonl
 JOB_TITLE,سكرتير هيئة إتحاد التجارة الدولية الحرة,1,train.jsonl
+JOB_TITLE,سمسار اراضي,1,train.jsonl
 JOB_TITLE,سواق,1,train.jsonl
 JOB_TITLE,شاويش,1,test.jsonl
+JOB_TITLE,شوفير,1,train.jsonl
+JOB_TITLE,شيف,1,test.jsonl
 JOB_TITLE,صاحب بزنس,1,train.jsonl
 JOB_TITLE,صبي المقهى,1,train.jsonl
+JOB_TITLE,صحافي,1,train.jsonl
+JOB_TITLE,صحفي استقصائي متخصص في الأمن,1,train.jsonl
+JOB_TITLE,صحفيا,1,train.jsonl
+JOB_TITLE,صحفية,1,train.jsonl
 JOB_TITLE,صنايعي كود,1,test.jsonl
+JOB_TITLE,صياد,1,train.jsonl
+JOB_TITLE,صياد بط,1,train.jsonl
+JOB_TITLE,صيدلاني,1,test.jsonl
 JOB_TITLE,ضابط,1,train.jsonl
 JOB_TITLE,ضابط الأمن,1,train.jsonl
 JOB_TITLE,ضابط الإدارة المدنية في مدينة نابلس,1,train.jsonl
@@ -4500,10 +4632,22 @@ JOB_TITLE,ضابط قيادة الاثار,1,validation.jsonl
 JOB_TITLE,ضابطا,1,train.jsonl
 JOB_TITLE,ضابطة,1,train.jsonl
 JOB_TITLE,ضابطًا حاليًا في الجيش الأمريكي,1,train.jsonl
+JOB_TITLE,طالب وطالبة,1,train.jsonl
+JOB_TITLE,طالبا,1,test.jsonl
+JOB_TITLE,طالبة جامعية,1,train.jsonl
+JOB_TITLE,طبيب الموصل,1,train.jsonl
+JOB_TITLE,طبيب جراح,1,train.jsonl
+JOB_TITLE,طبيب نفسي,1,test.jsonl
+JOB_TITLE,طبيبا,1,train.jsonl
 JOB_TITLE,عازف اكورديون,1,test.jsonl
 JOB_TITLE,عالدكنجي,1,train.jsonl
 JOB_TITLE,عالمة الفلك,1,train.jsonl
 JOB_TITLE,عالِم بيانات,1,train.jsonl
+JOB_TITLE,عامل,1,train.jsonl
+JOB_TITLE,عامل إغاثة,1,test.jsonl
+JOB_TITLE,عامل في كازية,1,train.jsonl
+JOB_TITLE,عامل يمني مغترب,1,train.jsonl
+JOB_TITLE,عاملة المساعدات الإنسانية الأمريكية,1,train.jsonl
 JOB_TITLE,عضو اللجنة الرقم الوظيفييييي,1,train.jsonl
 JOB_TITLE,عضو اللجنة القومية العربية,1,train.jsonl
 JOB_TITLE,عضو اللجنة المركزية لمنظمة التحرير الفلسطينية,1,train.jsonl
@@ -4518,6 +4662,11 @@ JOB_TITLE,عميد الازهر,1,train.jsonl
 JOB_TITLE,عميد كلية الأعمال والاقتصاد,1,test.jsonl
 JOB_TITLE,عميدة كلية فلسطين التقنية – رام الله للبنات,1,train.jsonl
 JOB_TITLE,فريلانس,1,validation.jsonl
+JOB_TITLE,فلاح بيارة,1,train.jsonl
+JOB_TITLE,فنان التشكيلي,1,train.jsonl
+JOB_TITLE,فنانة التشكليلة,1,train.jsonl
+JOB_TITLE,فنانة الفلسطينية,1,train.jsonl
+JOB_TITLE,فني اللجنة,1,test.jsonl
 JOB_TITLE,فني دعم,1,train.jsonl
 JOB_TITLE,قائد,1,train.jsonl
 JOB_TITLE,"قائد """" """" قوات الجهاد المقدس """" """"",1,validation.jsonl
@@ -4558,11 +4707,33 @@ JOB_TITLE,قائمقام قضاء الخليل,1,train.jsonl
 JOB_TITLE,قائمقام مدينة طولكرم,1,train.jsonl
 JOB_TITLE,قائمقام منطقة الشمال,1,test.jsonl
 JOB_TITLE,قاثمقام نابلس,1,train.jsonl
+JOB_TITLE,قاض,1,train.jsonl
+JOB_TITLE,قاضي,1,train.jsonl
+JOB_TITLE,قاضي التحقيق,1,train.jsonl
+JOB_TITLE,قاضي الشرع في حيفا,1,test.jsonl
+JOB_TITLE,قاضي القدس الشريف,1,test.jsonl
+JOB_TITLE,قاضي القضاة,1,train.jsonl
+JOB_TITLE,قاضي حيفا,1,validation.jsonl
+JOB_TITLE,قاضي رام الله الشرعي,1,train.jsonl
+JOB_TITLE,قاضي صلح رام الله,1,train.jsonl
+JOB_TITLE,قاضي قضاة المحكمة الشرعية في رام الله,1,train.jsonl
+JOB_TITLE,قاضي قضاة غزة,1,train.jsonl
+JOB_TITLE,قاضي قضاة فلسطين,1,validation.jsonl
+JOB_TITLE,قاضي محكمة الصلح,1,train.jsonl
+JOB_TITLE,قاضي محكمة حيفا الشرعية,1,test.jsonl
+JOB_TITLE,قاضي نينوى,1,train.jsonl
+JOB_TITLE,قاضي يافا,1,train.jsonl
+JOB_TITLE,قاضٍ بمحكمة مكافحة الإرهاب في نينوى,1,validation.jsonl
 JOB_TITLE,قبطان السفينة,1,train.jsonl
+JOB_TITLE,كاتب المحكمة,1,train.jsonl
+JOB_TITLE,كاتب المملكة السعودية,1,train.jsonl
+JOB_TITLE,كاتبا للمجلس المحلي في البيرة,1,test.jsonl
+JOB_TITLE,كاشير,1,test.jsonl
 JOB_TITLE,كجنود,1,train.jsonl
 JOB_TITLE,كومبترولر,1,train.jsonl
 JOB_TITLE,لأمير ابو ظبي,1,test.jsonl
 JOB_TITLE,لاشوفير,1,train.jsonl
+JOB_TITLE,لاعب,1,test.jsonl
 JOB_TITLE,لسفيره في المملكة العربية السعودية,1,validation.jsonl
 JOB_TITLE,لـنائب مدير الشؤون الطبية لدى منظمة أطباء بلا حدود,1,validation.jsonl
 JOB_TITLE,للاختصاصي,1,train.jsonl
@@ -4577,11 +4748,17 @@ JOB_TITLE,مأمور الانتخابات في مدينة نابلس,1,validatio
 JOB_TITLE,مأمور البلدية,1,train.jsonl
 JOB_TITLE,مأمور التفتيش,1,train.jsonl
 JOB_TITLE,مأمور دائرة الأوقاف الإسلامية,1,train.jsonl
+JOB_TITLE,مؤلف كتاب,1,validation.jsonl
+JOB_TITLE,مؤلفه,1,train.jsonl
 JOB_TITLE,مامور أراضي,1,validation.jsonl
+JOB_TITLE,مبرمج مواقع,1,test.jsonl
+JOB_TITLE,مبرمجة,1,test.jsonl
 JOB_TITLE,مبعوث الأمم المتحدة,1,train.jsonl
 JOB_TITLE,متحدث باسم إقليم كردستان العراق,1,test.jsonl
 JOB_TITLE,متحدث رسمي,1,train.jsonl
 JOB_TITLE,متخصص في الأمن السيبراني,1,train.jsonl
+JOB_TITLE,مترجم,1,train.jsonl
+JOB_TITLE,مترجم للغة العربية,1,train.jsonl
 JOB_TITLE,متسلم نابلس,1,train.jsonl
 JOB_TITLE,متصرف اللواء في نابلس,1,train.jsonl
 JOB_TITLE,متصرف لواء,1,train.jsonl
@@ -4590,11 +4767,15 @@ JOB_TITLE,متعهد انارة لوكسات البلدية,1,train.jsonl
 JOB_TITLE,متولي الوقف,1,train.jsonl
 JOB_TITLE,متوليا لوقف الجامع بشفا عمرو,1,validation.jsonl
 JOB_TITLE,محاسب أول,1,validation.jsonl
+JOB_TITLE,محاسب بلدية نابلس,1,train.jsonl
 JOB_TITLE,محافظ البلقاء,1,test.jsonl
 JOB_TITLE,محافظ العاصمة,1,train.jsonl
 JOB_TITLE,محافظ اللواء,1,validation.jsonl
 JOB_TITLE,محافظ مأرب,1,train.jsonl
 JOB_TITLE,محافظ نابلس,1,train.jsonl
+JOB_TITLE,محامي بلدية مدينة البيرة,1,test.jsonl
+JOB_TITLE,محامية,1,train.jsonl
+JOB_TITLE,محامية يافاوية,1,train.jsonl
 JOB_TITLE,محرر,1,train.jsonl
 JOB_TITLE,محلل أمن معلومات,1,train.jsonl
 JOB_TITLE,مختار بلدية عقربا,1,train.jsonl
@@ -4644,8 +4825,12 @@ JOB_TITLE,مختار يافا,1,train.jsonl
 JOB_TITLE,مختارالريفي,1,train.jsonl
 JOB_TITLE,مختبر البرمجيات,1,train.jsonl
 JOB_TITLE,مخترق ابيض القبعة,1,test.jsonl
+JOB_TITLE,مداوي,1,test.jsonl
+JOB_TITLE,مدرس مساعد,1,train.jsonl
+JOB_TITLE,مدرس مساعد لشؤون الأمن القومي بكلية الدراسات العليا البحرية,1,test.jsonl
 JOB_TITLE,مدعي عام مدينة رام الله,1,validation.jsonl
 JOB_TITLE,مدعية المحكمة,1,train.jsonl
+JOB_TITLE,مدقق حسابات قانوني,1,train.jsonl
 JOB_TITLE,مدير / مخيم شعفاط,1,test.jsonl
 JOB_TITLE,مدير أوقاف الشمال بعكا,1,train.jsonl
 JOB_TITLE,مدير أوقاف رام الله,1,train.jsonl
@@ -4780,6 +4965,7 @@ JOB_TITLE,مديرة مكتبي,1,test.jsonl
 JOB_TITLE,مديره العمليات,1,train.jsonl
 JOB_TITLE,مديره العياده,1,test.jsonl
 JOB_TITLE,مديره العيداه,1,train.jsonl
+JOB_TITLE,مذيعه,1,train.jsonl
 JOB_TITLE,"مراسلا لجريدة """" """" فلسطين """" """"",1,train.jsonl
 JOB_TITLE,مراقب إتحاد النوادي والجمعيات,1,train.jsonl
 JOB_TITLE,مراقب التأمين,1,train.jsonl
@@ -4838,6 +5024,7 @@ JOB_TITLE,مستشارا للأمن القومي,1,train.jsonl
 JOB_TITLE,مستشارة العمليات في منظمة أطباء بلا حدود في لليمن,1,test.jsonl
 JOB_TITLE,مستشارًا أمريكيًا,1,train.jsonl
 JOB_TITLE,مسعف,1,validation.jsonl
+JOB_TITLE,مسوق,1,train.jsonl
 JOB_TITLE,مشرف الصيانه,1,train.jsonl
 JOB_TITLE,مشرف القاعة,1,validation.jsonl
 JOB_TITLE,مشرف الوردية المسائية,1,train.jsonl
@@ -4847,13 +5034,36 @@ JOB_TITLE,مشرفة المختبر في مستشفى أطباء بلا حدود
 JOB_TITLE,مشرفة المشروع,1,train.jsonl
 JOB_TITLE,مصرفي شامل معتمد,1,test.jsonl
 JOB_TITLE,مصلح احذية جلدية,1,train.jsonl
+JOB_TITLE,مصمم الشعارات,1,test.jsonl
+JOB_TITLE,مصمم الويب المخلوق,1,train.jsonl
+JOB_TITLE,مصمم تجربة,1,validation.jsonl
+JOB_TITLE,مصمم جرافيك,1,test.jsonl
+JOB_TITLE,مصور,1,test.jsonl
+JOB_TITLE,مصور دائرة الاّثار,1,train.jsonl
 JOB_TITLE,مطاهر,1,test.jsonl
 JOB_TITLE,مطرب,1,train.jsonl
+JOB_TITLE,مطور,1,test.jsonl
+JOB_TITLE,مطور البرمجيات,1,train.jsonl
+JOB_TITLE,مطور المواقع,1,train.jsonl
+JOB_TITLE,مطور الهاتف المحمول,1,train.jsonl
+JOB_TITLE,مطور برامج,1,train.jsonl
+JOB_TITLE,مطور برامج وتطبيقات,1,test.jsonl
+JOB_TITLE,مطور برامج ويب,1,train.jsonl
+JOB_TITLE,مطور تطبيقات,1,validation.jsonl
+JOB_TITLE,مطور تطبيقات اندرويد,1,train.jsonl
 JOB_TITLE,مطور تطبيقات جوال,1,train.jsonl
+JOB_TITLE,مطور تطبيقات سطح مكتب,1,train.jsonl
+JOB_TITLE,مطور مواقع,1,train.jsonl
+JOB_TITLE,مطور واجهات أمامية,1,train.jsonl
+JOB_TITLE,مطور ووربريس,1,train.jsonl
+JOB_TITLE,مطور ويب متكامل,1,train.jsonl
+JOB_TITLE,مطورة تطبيقات الأندرويد,1,test.jsonl
+JOB_TITLE,مطورين,1,test.jsonl
 JOB_TITLE,مطوّرة تطبيقات,1,train.jsonl
 JOB_TITLE,معتمد اللجنة في فقوعة,1,train.jsonl
 JOB_TITLE,معتمد قرية تعنك,1,train.jsonl
 JOB_TITLE,معتمد لجنة اعانة منكوبي الزلزال,1,train.jsonl
+JOB_TITLE,معلمه,1,train.jsonl
 JOB_TITLE,مفتش الآثار,1,train.jsonl
 JOB_TITLE,مفتش الأبنية,1,validation.jsonl
 JOB_TITLE,مفتش التوزيع,1,train.jsonl
@@ -4891,6 +5101,7 @@ JOB_TITLE,ممثل وحدة المتابعة المالية,1,test.jsonl
 JOB_TITLE,ممثلة,1,train.jsonl
 JOB_TITLE,ممثلة بمديرها العام,1,train.jsonl
 JOB_TITLE,ممثلة منظمة الصحة العالمية في الجمهورية العربية السورية,1,validation.jsonl
+JOB_TITLE,ممرض,1,train.jsonl
 JOB_TITLE,مندوب إدارة العقود,1,train.jsonl
 JOB_TITLE,مندوب الأردن,1,train.jsonl
 JOB_TITLE,مندوب الأمم المتحدة,1,test.jsonl
@@ -4913,8 +5124,22 @@ JOB_TITLE,منسق لجنة النشاطات في نقابة العاملين ف
 JOB_TITLE,منسقة ادارية,1,train.jsonl
 JOB_TITLE,منسقة مشاريع,1,train.jsonl
 JOB_TITLE,منسّق الطوارئ في منظمة أطباء بلا حدود,1,validation.jsonl
+JOB_TITLE,منقذ,1,train.jsonl
+JOB_TITLE,مهندس الأشغال,1,train.jsonl
+JOB_TITLE,مهندس البرمجة,1,train.jsonl
+JOB_TITLE,مهندس البرمجيات,1,train.jsonl
+JOB_TITLE,مهندس البلدية,1,validation.jsonl
+JOB_TITLE,مهندس برمجة,1,train.jsonl
+JOB_TITLE,مهندس بلدية مدينة البيرة,1,test.jsonl
+JOB_TITLE,مهندس تنظيم المدن,1,train.jsonl
+JOB_TITLE,مهندس كهرباء,1,train.jsonl
+JOB_TITLE,مهندس مدينة نابلس,1,train.jsonl
 JOB_TITLE,مهندس مشاريع,1,test.jsonl
 JOB_TITLE,مهندسة أنظمة,1,train.jsonl
+JOB_TITLE,موظف الأمن,1,test.jsonl
+JOB_TITLE,موظف الكهرباء,1,train.jsonl
+JOB_TITLE,موظف تسجيل الأراضي,1,train.jsonl
+JOB_TITLE,موظفاً,1,train.jsonl
 JOB_TITLE,موظفوعمال بلدية نابلس,1,train.jsonl
 JOB_TITLE,مُبرمجًا للكمبيوتر,1,validation.jsonl
 JOB_TITLE,مُهندس البرمجيات,1,train.jsonl
@@ -4941,8 +5166,11 @@ JOB_TITLE,نائبة الرئيس المساعدة للمشغل,1,train.jsonl
 JOB_TITLE,نائبة مديرة قسم الشرق الأوسط في هيومن رايتس ووتش,1,test.jsonl
 JOB_TITLE,ناطق باسم الإقليم,1,validation.jsonl
 JOB_TITLE,ناطق باسم الحكومة الإقليمية,1,train.jsonl
+JOB_TITLE,ناطور,1,validation.jsonl
 JOB_TITLE,نقيب,1,validation.jsonl
 JOB_TITLE,نقيب المهندسين,1,train.jsonl
+JOB_TITLE,هكر,1,test.jsonl
+JOB_TITLE,هكر ذو قبعة بيضاء,1,test.jsonl
 JOB_TITLE,وأ.,1,test.jsonl
 JOB_TITLE,وأميناً عاماً,1,test.jsonl
 JOB_TITLE,وزير الإقتصاد السوري,1,train.jsonl
@@ -5016,242 +5244,6 @@ JOB_TITLE,ونائبه,1,train.jsonl
 JOB_TITLE,ووزيراً للتخطيط,1,validation.jsonl
 JOB_TITLE,ووزيراً للسياحة والاثار,1,validation.jsonl
 JOB_TITLE,ووزيراً مكلفاً بمشروع بيت لحم 2000,1,validation.jsonl
-OCCUPATION,المذيع,24,test.jsonl;train.jsonl;validation.jsonl
-OCCUPATION,المهندس,15,test.jsonl;train.jsonl
-OCCUPATION,الموظف,12,test.jsonl;train.jsonl
-OCCUPATION,مبرمج,11,test.jsonl;train.jsonl;validation.jsonl
-OCCUPATION,القاضي,9,test.jsonl;train.jsonl;validation.jsonl
-OCCUPATION,المحامي,9,test.jsonl;train.jsonl;validation.jsonl
-OCCUPATION,طالب,7,test.jsonl;train.jsonl
-OCCUPATION,قاضٍ,7,test.jsonl;train.jsonl
-OCCUPATION,الأستاذ الدكتور,6,test.jsonl;train.jsonl
-OCCUPATION,المبرمج,6,test.jsonl;train.jsonl
-OCCUPATION,طالبة,6,test.jsonl;train.jsonl
-OCCUPATION,Software Engineer,5,test.jsonl
-OCCUPATION,الصحفي,5,test.jsonl;train.jsonl
-OCCUPATION,جندي,5,test.jsonl;train.jsonl
-OCCUPATION,الاستاذ الدكتور,4,test.jsonl;train.jsonl
-OCCUPATION,الحلاق,4,test.jsonl;train.jsonl
-OCCUPATION,الخبير,4,train.jsonl
-OCCUPATION,القاضي الشرعي,4,test.jsonl;train.jsonl
-OCCUPATION,المخرج,4,test.jsonl;train.jsonl
-OCCUPATION,المذيعه,4,train.jsonl
-OCCUPATION,المعلم,4,test.jsonl;train.jsonl
-OCCUPATION,شرطي,4,test.jsonl;train.jsonl
-OCCUPATION,طبيب,4,train.jsonl
-OCCUPATION,طيار,4,train.jsonl;validation.jsonl
-OCCUPATION,فنانة,4,test.jsonl;train.jsonl
-OCCUPATION,كاتب,4,test.jsonl;train.jsonl
-OCCUPATION,محام مزاول,4,test.jsonl;train.jsonl
-OCCUPATION,محامي,4,train.jsonl
-OCCUPATION,محامٍ,4,train.jsonl;validation.jsonl
-OCCUPATION,مذيع,4,test.jsonl;train.jsonl
-OCCUPATION,Government Employee,3,train.jsonl
-OCCUPATION,البائع,3,train.jsonl
-OCCUPATION,الجندي,3,test.jsonl;train.jsonl
-OCCUPATION,الشاعر,3,test.jsonl;train.jsonl
-OCCUPATION,الشاعرة,3,train.jsonl
-OCCUPATION,الشرطي,3,test.jsonl;train.jsonl
-OCCUPATION,الطبيبة,3,test.jsonl;train.jsonl
-OCCUPATION,الفنان,3,train.jsonl
-OCCUPATION,المساح,3,train.jsonl;validation.jsonl
-OCCUPATION,طبيباً,3,test.jsonl;train.jsonl
-OCCUPATION,طبيبة,3,train.jsonl
-OCCUPATION,فريلانسر,3,test.jsonl;train.jsonl;validation.jsonl
-OCCUPATION,قاضي الشرع,3,train.jsonl
-OCCUPATION,قاضي حيفا الشرعي,3,train.jsonl
-OCCUPATION,مساح بلدية بيرزيت,3,train.jsonl
-OCCUPATION,مطور ويب,3,test.jsonl;train.jsonl
-OCCUPATION,مندوب مبيعات,3,train.jsonl
-OCCUPATION,مهندس,3,train.jsonl
-OCCUPATION,مهندس بلدية نابلس,3,test.jsonl;train.jsonl
-OCCUPATION,مهندس لواء رام الله,3,test.jsonl;validation.jsonl
-OCCUPATION,مهندس محافظة القدس,3,test.jsonl;train.jsonl
-OCCUPATION,الاستاز,2,train.jsonl
-OCCUPATION,الباحث,2,train.jsonl
-OCCUPATION,الراعي,2,train.jsonl
-OCCUPATION,الروائي,2,train.jsonl;validation.jsonl
-OCCUPATION,السائق,2,train.jsonl;validation.jsonl
-OCCUPATION,الشوفير,2,test.jsonl
-OCCUPATION,الطالب,2,train.jsonl
-OCCUPATION,الطبيب,2,train.jsonl;validation.jsonl
-OCCUPATION,العامل,2,train.jsonl
-OCCUPATION,المحامية,2,test.jsonl;train.jsonl
-OCCUPATION,الميكانيكي,2,train.jsonl
-OCCUPATION,باحثة,2,test.jsonl;train.jsonl
-OCCUPATION,راعي,2,train.jsonl
-OCCUPATION,رسام,2,test.jsonl;train.jsonl
-OCCUPATION,طبيبة أسنان,2,train.jsonl
-OCCUPATION,طوبرجي,2,train.jsonl
-OCCUPATION,عامل صحي,2,test.jsonl;train.jsonl
-OCCUPATION,فلاح,2,test.jsonl;validation.jsonl
-OCCUPATION,فنان,2,train.jsonl
-OCCUPATION,فني كهرباء,2,train.jsonl
-OCCUPATION,قاضي المحكمة الشرعية في حيفا,2,train.jsonl
-OCCUPATION,قاضي طبريا الشرعي,2,train.jsonl
-OCCUPATION,مبرمج node js,2,test.jsonl;train.jsonl
-OCCUPATION,مبرمج محترف,2,test.jsonl;validation.jsonl
-OCCUPATION,محلل بيانات,2,test.jsonl;train.jsonl
-OCCUPATION,مدرس,2,train.jsonl
-OCCUPATION,مدرسة,2,train.jsonl
-OCCUPATION,مصمم,2,train.jsonl
-OCCUPATION,مطور الووردبريس,2,train.jsonl
-OCCUPATION,مهندس الشؤون البلدية,2,train.jsonl;validation.jsonl
-OCCUPATION,مهندس برمجيات,2,test.jsonl
-OCCUPATION,مهندس شبكات,2,test.jsonl
-OCCUPATION,ميكانيكي,2,train.jsonl
-OCCUPATION,أخصائي سريري,1,train.jsonl
-OCCUPATION,أخصائي نفسي,1,test.jsonl
-OCCUPATION,أخصائياً نفسياً,1,train.jsonl
-OCCUPATION,أستاذ القانون التجاري,1,test.jsonl
-OCCUPATION,أستاذ علوم,1,train.jsonl
-OCCUPATION,أستاذ متقاعد لشؤون الأمن القومي,1,test.jsonl
-OCCUPATION,استاذ تاريخ,1,train.jsonl
-OCCUPATION,استاز,1,train.jsonl
-OCCUPATION,استشاري,1,validation.jsonl
-OCCUPATION,الأستاذة,1,train.jsonl
-OCCUPATION,الباحثة في الشأن اليمني في هيومن رايتس ووتش,1,validation.jsonl
-OCCUPATION,السائقين,1,train.jsonl
-OCCUPATION,الشاعر الفلسطيني,1,train.jsonl
-OCCUPATION,الصحافية,1,train.jsonl
-OCCUPATION,الصياد,1,train.jsonl
-OCCUPATION,الصيدلاني,1,test.jsonl
-OCCUPATION,الصيدلي,1,train.jsonl
-OCCUPATION,الطالبة,1,train.jsonl
-OCCUPATION,الطيارين الروس,1,train.jsonl
-OCCUPATION,الفنانة,1,train.jsonl
-OCCUPATION,الكاتب,1,test.jsonl
-OCCUPATION,الكاهن الأكبر,1,train.jsonl
-OCCUPATION,المخرج المسرحي,1,test.jsonl
-OCCUPATION,المدرب,1,train.jsonl
-OCCUPATION,المدقق الداخلي,1,test.jsonl
-OCCUPATION,المذيعة,1,train.jsonl
-OCCUPATION,المطور,1,train.jsonl
-OCCUPATION,المعلمة,1,train.jsonl
-OCCUPATION,الممرض,1,train.jsonl
-OCCUPATION,الممرض المسؤول عن الصيدلية,1,test.jsonl
-OCCUPATION,الممرضة,1,train.jsonl
-OCCUPATION,المنقذ,1,train.jsonl
-OCCUPATION,المهندس الإقليمي,1,train.jsonl
-OCCUPATION,المهندس الرئيسي,1,train.jsonl
-OCCUPATION,الموظفين,1,train.jsonl
-OCCUPATION,الناطور,1,test.jsonl
-OCCUPATION,بائع متجول,1,train.jsonl
-OCCUPATION,باحث بالمعهد الإيطالي للشؤون الدولية,1,test.jsonl
-OCCUPATION,باحثة سوريا في هيومن رايتس ووتش,1,validation.jsonl
-OCCUPATION,جندي اردني,1,train.jsonl
-OCCUPATION,جندي اسرائيلي,1,train.jsonl
-OCCUPATION,حلاق,1,test.jsonl
-OCCUPATION,خبير شؤون باسكت,1,test.jsonl
-OCCUPATION,خبيرا,1,train.jsonl
-OCCUPATION,سائق,1,train.jsonl
-OCCUPATION,سمسار اراضي,1,train.jsonl
-OCCUPATION,شوفير,1,train.jsonl
-OCCUPATION,شيف,1,test.jsonl
-OCCUPATION,صحافي,1,train.jsonl
-OCCUPATION,صحفي استقصائي متخصص في الأمن,1,train.jsonl
-OCCUPATION,صحفيا,1,train.jsonl
-OCCUPATION,صحفية,1,train.jsonl
-OCCUPATION,صياد,1,train.jsonl
-OCCUPATION,صياد بط,1,train.jsonl
-OCCUPATION,صيدلاني,1,test.jsonl
-OCCUPATION,طالب وطالبة,1,train.jsonl
-OCCUPATION,طالبا,1,test.jsonl
-OCCUPATION,طالبة جامعية,1,train.jsonl
-OCCUPATION,طبيب الموصل,1,train.jsonl
-OCCUPATION,طبيب جراح,1,train.jsonl
-OCCUPATION,طبيب نفسي,1,test.jsonl
-OCCUPATION,طبيبا,1,train.jsonl
-OCCUPATION,عامل,1,train.jsonl
-OCCUPATION,عامل إغاثة,1,test.jsonl
-OCCUPATION,عامل في كازية,1,train.jsonl
-OCCUPATION,عامل يمني مغترب,1,train.jsonl
-OCCUPATION,عاملة المساعدات الإنسانية الأمريكية,1,train.jsonl
-OCCUPATION,فلاح بيارة,1,train.jsonl
-OCCUPATION,فنان التشكيلي,1,train.jsonl
-OCCUPATION,فنانة التشكليلة,1,train.jsonl
-OCCUPATION,فنانة الفلسطينية,1,train.jsonl
-OCCUPATION,فني اللجنة,1,test.jsonl
-OCCUPATION,قاض,1,train.jsonl
-OCCUPATION,قاضي,1,train.jsonl
-OCCUPATION,قاضي التحقيق,1,train.jsonl
-OCCUPATION,قاضي الشرع في حيفا,1,test.jsonl
-OCCUPATION,قاضي القدس الشريف,1,test.jsonl
-OCCUPATION,قاضي القضاة,1,train.jsonl
-OCCUPATION,قاضي حيفا,1,validation.jsonl
-OCCUPATION,قاضي رام الله الشرعي,1,train.jsonl
-OCCUPATION,قاضي صلح رام الله,1,train.jsonl
-OCCUPATION,قاضي قضاة المحكمة الشرعية في رام الله,1,train.jsonl
-OCCUPATION,قاضي قضاة غزة,1,train.jsonl
-OCCUPATION,قاضي قضاة فلسطين,1,validation.jsonl
-OCCUPATION,قاضي محكمة الصلح,1,train.jsonl
-OCCUPATION,قاضي محكمة حيفا الشرعية,1,test.jsonl
-OCCUPATION,قاضي نينوى,1,train.jsonl
-OCCUPATION,قاضي يافا,1,train.jsonl
-OCCUPATION,قاضٍ بمحكمة مكافحة الإرهاب في نينوى,1,validation.jsonl
-OCCUPATION,كاتب المحكمة,1,train.jsonl
-OCCUPATION,كاتب المملكة السعودية,1,train.jsonl
-OCCUPATION,كاتبا للمجلس المحلي في البيرة,1,test.jsonl
-OCCUPATION,كاشير,1,test.jsonl
-OCCUPATION,لاعب,1,test.jsonl
-OCCUPATION,مؤلف كتاب,1,validation.jsonl
-OCCUPATION,مؤلفه,1,train.jsonl
-OCCUPATION,مبرمج مواقع,1,test.jsonl
-OCCUPATION,مبرمجة,1,test.jsonl
-OCCUPATION,مترجم,1,train.jsonl
-OCCUPATION,مترجم للغة العربية,1,train.jsonl
-OCCUPATION,محاسب بلدية نابلس,1,train.jsonl
-OCCUPATION,محامي بلدية مدينة البيرة,1,test.jsonl
-OCCUPATION,محامية,1,train.jsonl
-OCCUPATION,محامية يافاوية,1,train.jsonl
-OCCUPATION,مداوي,1,test.jsonl
-OCCUPATION,مدرس مساعد,1,train.jsonl
-OCCUPATION,مدرس مساعد لشؤون الأمن القومي بكلية الدراسات العليا البحرية,1,test.jsonl
-OCCUPATION,مدقق حسابات قانوني,1,train.jsonl
-OCCUPATION,مذيعه,1,train.jsonl
-OCCUPATION,مسوق,1,train.jsonl
-OCCUPATION,مصمم الشعارات,1,test.jsonl
-OCCUPATION,مصمم الويب المخلوق,1,train.jsonl
-OCCUPATION,مصمم تجربة,1,validation.jsonl
-OCCUPATION,مصمم جرافيك,1,test.jsonl
-OCCUPATION,مصور,1,test.jsonl
-OCCUPATION,مصور دائرة الاّثار,1,train.jsonl
-OCCUPATION,مطور,1,test.jsonl
-OCCUPATION,مطور البرمجيات,1,train.jsonl
-OCCUPATION,مطور المواقع,1,train.jsonl
-OCCUPATION,مطور الهاتف المحمول,1,train.jsonl
-OCCUPATION,مطور برامج,1,train.jsonl
-OCCUPATION,مطور برامج وتطبيقات,1,test.jsonl
-OCCUPATION,مطور برامج ويب,1,train.jsonl
-OCCUPATION,مطور برمجيات,1,train.jsonl
-OCCUPATION,مطور تطبيقات,1,validation.jsonl
-OCCUPATION,مطور تطبيقات اندرويد,1,train.jsonl
-OCCUPATION,مطور تطبيقات سطح مكتب,1,train.jsonl
-OCCUPATION,مطور مواقع,1,train.jsonl
-OCCUPATION,مطور واجهات أمامية,1,train.jsonl
-OCCUPATION,مطور ووربريس,1,train.jsonl
-OCCUPATION,مطور ويب متكامل,1,train.jsonl
-OCCUPATION,مطورة تطبيقات الأندرويد,1,test.jsonl
-OCCUPATION,مطورين,1,test.jsonl
-OCCUPATION,معلمه,1,train.jsonl
-OCCUPATION,ممرض,1,train.jsonl
-OCCUPATION,منقذ,1,train.jsonl
-OCCUPATION,مهندس الأشغال,1,train.jsonl
-OCCUPATION,مهندس البرمجة,1,train.jsonl
-OCCUPATION,مهندس البرمجيات,1,train.jsonl
-OCCUPATION,مهندس البلدية,1,validation.jsonl
-OCCUPATION,مهندس برمجة,1,train.jsonl
-OCCUPATION,مهندس بلدية مدينة البيرة,1,test.jsonl
-OCCUPATION,مهندس تنظيم المدن,1,train.jsonl
-OCCUPATION,مهندس كهرباء,1,train.jsonl
-OCCUPATION,مهندس مدينة نابلس,1,train.jsonl
-OCCUPATION,موظف الأمن,1,test.jsonl
-OCCUPATION,موظف الكهرباء,1,train.jsonl
-OCCUPATION,موظف تسجيل الأراضي,1,train.jsonl
-OCCUPATION,موظفاً,1,train.jsonl
-OCCUPATION,ناطور,1,validation.jsonl
-OCCUPATION,هكر,1,test.jsonl
-OCCUPATION,هكر ذو قبعة بيضاء,1,test.jsonl
 AGE,57,18,test.jsonl;train.jsonl;validation.jsonl
 AGE,79,16,test.jsonl;train.jsonl
 AGE,18,14,train.jsonl;validation.jsonl

@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -41,10 +42,10 @@ ENTITY_TYPES = (
     "UNIVERSITY",
     "GOVERNMENT_ENTITY",
     "JOB_TITLE",
-    "OCCUPATION",
     "AGE",
     "DATE",
 )
+INPUT_ENTITY_TYPES = set(ENTITY_TYPES) | {"OCCUPATION"}
 SUPPORTED = set(ENTITY_TYPES)
 STATUS_RANK = {
     "MATCHED": 6,
@@ -61,6 +62,11 @@ STATUS_RANK = {
 
 def _ids(index: dict[tuple[str, str], set[str]], language: str, value: str) -> set[str]:
     return index.get((language, normalize(value, language)), set())
+
+
+def _occupation_phrase_key(value: str, language: str) -> str:
+    normalized = normalize(value, language)
+    return " ".join(re.findall(r"[^\W_]+", normalized, flags=re.UNICODE))
 
 
 def _result(status: str, reason: str | None, language: str, canonical_id=None, levels=(), exact=False, non_suppression=False, verification=()):
@@ -123,9 +129,13 @@ class CoverageIndex:
                 self.gov_alias[(row.language, row.normalized_alias)].add(row.entity_id)
 
         self.occupation_alias: dict[tuple[str, str], set[str]] = defaultdict(set)
+        self.occupation_phrase: dict[tuple[str, str], set[str]] = defaultdict(set)
         for row in self.session.scalars(select(OccupationAlias)).all():
             if row.review_status in {"OFFICIAL", "REVIEWED"}:
                 self.occupation_alias[(row.language, row.normalized_alias)].add(row.occupation_id)
+                phrase = _occupation_phrase_key(row.alias_text, row.language)
+                if phrase:
+                    self.occupation_phrase[(row.language, phrase)].add(row.occupation_id)
 
     def close(self):
         self.session.close()
@@ -209,16 +219,19 @@ class CoverageIndex:
                         verified = org.identity_verification_status in {"VERIFIED", "APPROVED", "OFFICIAL"} and org.import_decision in {"VERIFIED", "APPROVED"}
                         attempts.append(_result("MATCHED" if verified else "REVIEW_ONLY", None, language, oid, levels=("EXACT", "ORGANIZATION_GENERIC", "SUPPRESSED"), exact=True, non_suppression=True, verification=(org.identity_verification_status,)))
             return self._choose(attempts)
-        if entity_type in {"JOB_TITLE", "OCCUPATION"}:
+        if entity_type == "OCCUPATION":
+            entity_type = "JOB_TITLE"
+        if entity_type == "JOB_TITLE":
             attempts = []
             for language in ("ar", "en"):
-                ids = _ids(self.occupation_alias, language, value)
+                ids, method, matched_phrase = self._occupation_lookup(value, language)
                 if len(ids) > 1:
                     attempts.append(_result("AMBIGUOUS", "ALIAS_COLLISION", language, levels=("SUPPRESSED",)))
                 elif len(ids) == 1:
-                    attempts.append(_result("VERIFIED", None, language, next(iter(ids)), levels=("EXACT", "ISCO_1", "ISCO_2", "ISCO_3", "SUPPRESSED"), exact=True, non_suppression=True, verification=("OFFICIAL",)))
+                    shortened = method == "LONGEST_PHRASE_MATCH"
+                    attempts.append(_result("VERIFIED", "LONGEST_PHRASE_MATCH" if shortened else None, language, next(iter(ids)), levels=("EXACT", "ISCO_UNIT", "ISCO_MINOR", "ISCO_SUB_MAJOR", "ISCO_MAJOR", "SUPPRESSED"), exact=not shortened, non_suppression=True, verification=("OFFICIAL",)))
                 else:
-                    attempts.append(_result("NOT_FOUND", "UNRECOGNIZED_OCCUPATION", language, levels=("SUPPRESSED",), verification=("OFFICIAL",)))
+                    attempts.append(_result("NOT_FOUND", "UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK", language, levels=("JOB_TITLE_1", "JOB_TITLE_2", "SUPPRESSED"), non_suppression=True, verification=("CONFIGURED",)))
             return self._choose(attempts)
         if entity_type == "AGE":
             try:
@@ -233,6 +246,27 @@ class CoverageIndex:
             except ValueError as exc:
                 return _result(str(exc), str(exc), "ar")
         return _result("UNSUPPORTED_ENTITY_TYPE", "UNSUPPORTED_ENTITY_TYPE", "ar")
+
+    def _occupation_lookup(self, value: str, language: str) -> tuple[set[str], str, str]:
+        ids = _ids(self.occupation_alias, language, value)
+        phrase = _occupation_phrase_key(value, language)
+        if ids:
+            return ids, "EXACT_ALIAS", value
+        if phrase:
+            ids = self.occupation_phrase.get((language, phrase), set())
+            if ids:
+                return ids, "NORMALIZED_FULL_PHRASE", phrase
+        tokens = phrase.split()
+        for size in range(len(tokens) - 1, 0, -1):
+            found: list[tuple[str, set[str]]] = []
+            for start in range(0, len(tokens) - size + 1):
+                candidate = " ".join(tokens[start:start + size])
+                candidate_ids = self.occupation_phrase.get((language, candidate), set())
+                if candidate_ids:
+                    found.append((candidate, candidate_ids))
+            if found:
+                return set().union(*(candidate_ids for _, candidate_ids in found)), "LONGEST_PHRASE_MATCH", " | ".join(candidate for candidate, _ in found)
+        return set(), "NO_MATCH", ""
 
     @staticmethod
     def _choose(attempts: list[dict]) -> dict:
@@ -296,9 +330,10 @@ def read_dataset(dataset: Path) -> dict[str, Counter[str]]:
             for line in handle:
                 row = json.loads(line)
                 for span in row.get("spans", []):
-                    entity_type = span["label"]
-                    if entity_type not in ENTITY_TYPES:
+                    raw_entity_type = span["label"]
+                    if raw_entity_type not in INPUT_ENTITY_TYPES:
                         continue
+                    entity_type = "JOB_TITLE" if raw_entity_type == "OCCUPATION" else raw_entity_type
                     value = span["text"]
                     values[entity_type][value] += 1
                     details[(entity_type, value)]["files"].add(path.name)
