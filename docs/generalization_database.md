@@ -290,6 +290,29 @@ Implemented and tested: additive schema, backup, FK enforcement, Natural Earth e
 
 Provisional or unresolved: Natural Earth mismatches/unmatched territories, all bank Arabic exact names, pending organizations and government identities, and any review-only category. These are explicitly surfaced; no missing evidence is guessed.
 
+## Rule-based date atlas detector
+
+`finaira_generalization/date_detector.py` is the deterministic detector and
+generalizer used by both `age_date.py` compatibility functions and the shared
+`GeneralizationDB` DATE path. It preserves the raw value and reports
+`VERIFIED`, `AMBIGUOUS`, `INVALID_INPUT`, `UNSUPPORTED`, or `NEEDS_CONTEXT`.
+
+Implemented rule families include ISO calendar/week/ordinal/timestamp forms,
+compact YYYYMMDD, explicit and unambiguous numeric DMY/MDY/YMD, space and
+labeled numeric forms, English/Arabic/regional Gregorian month names,
+Unicode digit scripts, partial dates, fiscal quarter/year, relative dates
+with an anchor, epoch values with an explicit hint, and named Hijri/Solar
+Hijri dates. Requested non-Gregorian calendars are retained as raw calendar
+components; they are never converted without a supplied conversion method.
+
+Full Gregorian dates expose `EXACT`, `MONTH`, `QUARTER`, `SEASON`,
+`HALF_YEAR`, `YEAR`, `DECADE`, and `SUPPRESSED`. Each runtime candidate has
+the source, configured verification status, exact/local-only/suppression
+flags, detector provenance, calendar, precision, format family, confidence,
+raw value, and closed interval bounds where a Gregorian interval is safe.
+Ambiguous values such as `03/04/2026` require `date_format`, `date_order`, or
+equivalent caller context; they are not silently guessed.
+
 ## Test record and exclusions
 
 Before the current coverage-improvement changes: `py -m pytest -q` → **21 passed in 17.12s**.
@@ -297,5 +320,7 @@ Before the current coverage-improvement changes: `py -m pytest -q` → **21 pass
 After coverage changes: `py -X utf8 -m pytest -q` → **26 passed in 72.19s**.
 
 After country and nationality adjudication: `py -3 -m pytest -q` → **28 passed in 25.22s**. The final suite includes current-country reviewed aliases, historical/city/ambiguous suppression, Natural Earth joins, source/QID/derivation adjudication, reviewed-alias gating, Arabic/English nationality lookup, corrected Palestine QID handling, duplicate provenance, malformed/pending cases, FK/integrity checks, and two consecutive idempotent imports.
+
+After the rule-based date detector: `py -3 -m pytest -q` → **42 passed in 50.13s**. The added date tests cover multilingual and Unicode-digit parsing, ISO week/ordinal/timestamp forms, partial dates, explicit ambiguity handling, non-Gregorian preservation, relative-date context, invalid input, expanded candidate levels, provenance, and interval metadata.
 
 This layer does not implement JEV-U, JEV-P, privacy scoring, utility ranking, policy/disclosure selection, external LLM or cloud calls, or a new pseudonymization vault. The existing `finaira` privacy pipeline remains separate and unchanged.

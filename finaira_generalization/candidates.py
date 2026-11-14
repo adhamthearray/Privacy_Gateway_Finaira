@@ -435,17 +435,38 @@ class GeneralizationDB:
         return self._result("AGE", "VERIFIED", None, candidates)
 
     def _date(self, value, lang, context):
-        from .age_date import parse_date
-        try:
-            d = parse_date(value, context.get("date_format"))
-        except ValueError as exc:
-            return self._result("DATE", str(exc), None, [], str(exc))
-        quarter = (d.month - 1) // 3 + 1
-        month_start = d.replace(day=1)
-        month_end = d.replace(day=calendar.monthrange(d.year, d.month)[1])
-        quarter_start = date(d.year, 3 * (quarter - 1) + 1, 1)
-        quarter_end = date(d.year, 3 * quarter, calendar.monthrange(d.year, 3 * quarter)[1])
-        year_start, year_end = date(d.year, 1, 1), date(d.year, 12, 31)
-        values = [("EXACT", f"{d.day} {EN_MONTHS[d.month - 1]} {d.year}", f"{d.day} {AR_MONTHS[d.month - 1]} {d.year}", d, d, "date"), ("MONTH", f"{EN_MONTHS[d.month - 1]} {d.year}", f"{AR_MONTHS[d.month - 1]} {d.year}", month_start, month_end, "month"), ("QUARTER", f"Q{quarter} {d.year}", f"الربع {quarter} من {d.year}", quarter_start, quarter_end, "quarter"), ("YEAR", str(d.year), str(d.year), year_start, year_end, "year"), ("SUPPRESSED", "Date unspecified", "التاريخ غير محدد", None, None, "suppression")]
-        candidates = [_candidate_dict(candidate_id=stable_id("DATE_GREGORIAN", code, d.isoformat()), level_code=code, rank=index, label_en=en, label_ar=ar, language=lang, taxonomy="Gregorian", taxonomy_code=None, source="Finaira policy", verification_status="CONFIGURED", is_exact=code == "EXACT", is_local_only=code == "EXACT", is_suppression=code == "SUPPRESSED", extra={"interval_start": lo.isoformat() if lo else None, "interval_end": hi.isoformat() if hi else None, "interval_width": (hi - lo).days + 1 if lo and hi else None, "temporal_precision": precision}) for index, (code, en, ar, lo, hi, precision) in enumerate(values)]
+        from .date_detector import date_interval, date_levels, detect_date
+        detected = detect_date(value, context)
+        if detected.status != "VERIFIED":
+            return self._result("DATE", detected.status, None, [], detected.reason_code)
+        levels = date_levels(detected)
+        key = detected.date_iso or f"{detected.calendar}:{detected.year}:{detected.month}:{detected.day}:{detected.raw}"
+        candidates = []
+        for row in levels:
+            code = row["code"]
+            interval_start, interval_end = date_interval(detected, code)
+            candidates.append(_candidate_dict(
+                candidate_id=stable_id("DATE_DETECTOR", detected.calendar, code, key),
+                level_code=code,
+                rank=row["rank"],
+                label_en=row["label_en"],
+                label_ar=row["label_ar"],
+                language=lang,
+                taxonomy=detected.calendar,
+                taxonomy_code=None,
+                source="Finaira rule-based date detector",
+                verification_status="CONFIGURED",
+                is_exact=row["is_exact"],
+                is_local_only=row["is_exact"],
+                is_suppression=row["suppression"],
+                provenance={"raw": detected.raw, "calendar": detected.calendar, "precision": detected.precision, "format_family": detected.format_family, "confidence": detected.confidence, "detector_status": detected.status},
+                extra={
+                    "temporal_precision": code.lower(),
+                    "calendar": detected.calendar,
+                    "date_iso": detected.date_iso,
+                    "timezone": detected.metadata.get("timezone"),
+                    "interval_start": interval_start.isoformat() if interval_start else None,
+                    "interval_end": interval_end.isoformat() if interval_end else None,
+                },
+            ))
         return self._result("DATE", "VERIFIED", None, candidates)

@@ -65,3 +65,22 @@ def date_generalize(value: str, level: str, language="en", date_format=None):
     if level == "month": return (f"{d.strftime('%B')} {d.year}" if language != "ar" else f"{d.month}/{d.year}")
     if level == "quarter": return (f"Q{(d.month-1)//3+1} {d.year}" if language != "ar" else f"الربع {(d.month-1)//3+1} من {d.year}")
     raise ValueError("UNSUPPORTED_LEVEL")
+
+
+# The atlas-aware implementation keeps these legacy function names stable for
+# existing callers while expanding parsing and generalization underneath them.
+from .date_detector import (  # noqa: E402
+    DateDetection,
+    date_levels,
+    detect_date,
+    generalize_date as _atlas_generalize_date,
+    parse_date as _atlas_parse_date,
+)
+
+
+def parse_date(value: str, date_format: str | None = None) -> date:
+    return _atlas_parse_date(value, date_format)
+
+
+def date_generalize(value: str, level: str, language="en", date_format=None):
+    return _atlas_generalize_date(value, level, language, date_format)
