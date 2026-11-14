@@ -98,6 +98,11 @@ class GeneralizationDB:
         normalized = normalize(value, lang)
         return " ".join(re.findall(r"[^\W_]+", normalized, flags=re.UNICODE))
 
+    @staticmethod
+    def _occupation_alias_variants(alias_text):
+        """Return slash-separated ESCO alternatives as independent aliases."""
+        return [part.strip() for part in re.split(r"\s*/\s*", alias_text) if part.strip()]
+
     def _occupation(self, session, value, lang):
         """Resolve both legacy occupation labels through JOB_TITLE/ESCO/ISCO.
 
@@ -109,20 +114,28 @@ class GeneralizationDB:
         scheme = "JOB_TITLE_ISCO08"
         rows = session.scalars(select(OccupationAlias).where(OccupationAlias.language == lang)).all()
         exact_index = {}
+        variant_exact_index = {}
         phrase_index = {}
         for row in rows:
             if row.review_status not in {"OFFICIAL", "REVIEWED"}:
                 continue
             exact_index.setdefault(row.normalized_alias, set()).add(row.occupation_id)
-            phrase_key = self._occupation_phrase_key(row.alias_text, lang)
-            if phrase_key:
-                phrase_index.setdefault(phrase_key, set()).add(row.occupation_id)
+            for variant in self._occupation_alias_variants(row.alias_text):
+                variant_key = normalize(variant, lang)
+                variant_exact_index.setdefault(variant_key, set()).add(row.occupation_id)
+                phrase_key = self._occupation_phrase_key(variant, lang)
+                if phrase_key:
+                    phrase_index.setdefault(phrase_key, set()).add(row.occupation_id)
 
         normalized = normalize(value, lang)
         ids = exact_index.get(normalized, set())
         matched_phrase = value
         match_method = "EXACT_ALIAS"
         original_phrase_key = self._occupation_phrase_key(value, lang)
+        if not ids:
+            ids = variant_exact_index.get(normalized, set())
+            if ids:
+                match_method = "ALIAS_VARIANT"
         if not ids and original_phrase_key:
             ids = phrase_index.get(original_phrase_key, set())
             if ids:
@@ -149,7 +162,7 @@ class GeneralizationDB:
             return self._occupation_result(session, scheme, None, lang, "AMBIGUOUS", "ALIAS_COLLISION", match_method, matched_phrase)
         if not ids:
             return self._job_title_fallback(lang, "UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK")
-        reason = None if match_method == "EXACT_ALIAS" else "LONGEST_PHRASE_MATCH"
+        reason = None if match_method in {"EXACT_ALIAS", "ALIAS_VARIANT", "NORMALIZED_FULL_PHRASE"} else "LONGEST_PHRASE_MATCH"
         return self._occupation_result(session, scheme, next(iter(ids)), lang, "VERIFIED", reason, match_method, matched_phrase)
 
     def _occupation_result(self, session, scheme, canonical, lang, status, reason, match_method, matched_phrase):

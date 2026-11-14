@@ -25,6 +25,16 @@ def test_occupation_and_job_title_share_longest_phrase_resolution():
     assert occupation["candidates"][0]["provenance"]["matched_phrase"]=="technical director"
     assert occupation["candidates"][0]["provenance"]["match_method"]=="LONGEST_PHRASE_MATCH"
 
+def test_arabic_slash_separated_alias_variant_is_resolved():
+    value="\u0645\u062f\u064a\u0631 \u0627\u0644\u0645\u0648\u0627\u0631\u062f \u0627\u0644\u0628\u0634\u0631\u064a\u0629"
+    db=GeneralizationDB(DB)
+    for entity_type in ("JOB_TITLE", "OCCUPATION"):
+        r=db.get_candidates(entity_type,value,"ar")
+        assert r["entity_type"]=="JOB_TITLE"
+        assert r["resolution_status"]=="VERIFIED"
+        assert r["reason_code"] is None
+        assert r["candidates"][0]["provenance"]["match_method"]=="ALIAS_VARIANT"
+
 def test_nationality_arabic_chain_and_natural_earth_english_labels():
     ar=GeneralizationDB(DB).get_candidates("NATIONALITY","مصرية","ar")
     assert [x["level_code"] for x in ar["candidates"]]==["EXACT","SUBREGION","CONTINENT","SUPPRESSED"]

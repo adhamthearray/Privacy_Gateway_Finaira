@@ -202,9 +202,9 @@ Bank candidates are regenerated from the final master: `EXACT → FINANCE_MODEL 
 
 `OCCUPATION` is a compatibility input label only. The shared candidate API and the legacy `Generalizer` normalize it to `JOB_TITLE`, and both labels use `JOB_TITLE_ISCO08` backed by the existing ESCO aliases and ISCO-08 groups.
 
-Resolution is deterministic: try the complete normalized alias, then the complete punctuation-normalized phrase, then contiguous phrases from longest to shortest. A shortened match is marked `LONGEST_PHRASE_MATCH` and records the matched phrase in candidate provenance; it is not reported as an exact match to the original value. Alias collisions remain `AMBIGUOUS`.
+Resolution is deterministic: try the complete normalized alias, each slash-separated alias variant, the complete punctuation-normalized phrase, then contiguous phrases from longest to shortest. A slash-separated variant such as `مدير الموارد البشرية / مديرة الموارد البشرية` is indexed as two independently queryable variants. A shortened match is marked `LONGEST_PHRASE_MATCH` and records the matched phrase in candidate provenance; it is not reported as an exact match to the original value. Alias collisions remain `AMBIGUOUS`.
 
-An unresolved value returns `JOB_TITLE_1`, `JOB_TITLE_2`, and `SUPPRESSED`, with reason `UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK`. These are safe generic configured fallbacks, not unique pseudonyms, a vault, or a claim that the input was recognized. The 2026-11-14 audit merged both source labels: 2,442 unique values and 9,916 spans; 31 values / 203 spans resolved through ESCO/ISCO, 5 values / 6 spans remain ambiguous, and 2,406 values / 9,707 spans use the generic fallback.
+An unresolved value returns `JOB_TITLE_1`, `JOB_TITLE_2`, and `SUPPRESSED`, with reason `UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK`. These are safe generic configured fallbacks, not unique pseudonyms, a vault, or a claim that the input was recognized. After slash-variant indexing, the 2026-11-14 audit merged both source labels: 2,442 unique values and 9,916 spans; 268 values / 2,259 spans resolved through ESCO/ISCO, 8 values / 9 spans remain ambiguous, and 2,166 values / 7,648 spans use the generic fallback.
 
 ### Independent benchmark
 

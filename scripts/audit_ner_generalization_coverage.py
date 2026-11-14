@@ -69,6 +69,10 @@ def _occupation_phrase_key(value: str, language: str) -> str:
     return " ".join(re.findall(r"[^\W_]+", normalized, flags=re.UNICODE))
 
 
+def _occupation_alias_variants(alias_text: str) -> list[str]:
+    return [part.strip() for part in re.split(r"\s*/\s*", alias_text) if part.strip()]
+
+
 def _result(status: str, reason: str | None, language: str, canonical_id=None, levels=(), exact=False, non_suppression=False, verification=()):
     return {
         "resolution_status": status,
@@ -129,13 +133,17 @@ class CoverageIndex:
                 self.gov_alias[(row.language, row.normalized_alias)].add(row.entity_id)
 
         self.occupation_alias: dict[tuple[str, str], set[str]] = defaultdict(set)
+        self.occupation_alias_variant: dict[tuple[str, str], set[str]] = defaultdict(set)
         self.occupation_phrase: dict[tuple[str, str], set[str]] = defaultdict(set)
         for row in self.session.scalars(select(OccupationAlias)).all():
             if row.review_status in {"OFFICIAL", "REVIEWED"}:
                 self.occupation_alias[(row.language, row.normalized_alias)].add(row.occupation_id)
-                phrase = _occupation_phrase_key(row.alias_text, row.language)
-                if phrase:
-                    self.occupation_phrase[(row.language, phrase)].add(row.occupation_id)
+                for variant in _occupation_alias_variants(row.alias_text):
+                    variant_key = normalize(variant, row.language)
+                    self.occupation_alias_variant[(row.language, variant_key)].add(row.occupation_id)
+                    phrase = _occupation_phrase_key(variant, row.language)
+                    if phrase:
+                        self.occupation_phrase[(row.language, phrase)].add(row.occupation_id)
 
     def close(self):
         self.session.close()
@@ -252,6 +260,9 @@ class CoverageIndex:
         phrase = _occupation_phrase_key(value, language)
         if ids:
             return ids, "EXACT_ALIAS", value
+        ids = _ids(self.occupation_alias_variant, language, value)
+        if ids:
+            return ids, "ALIAS_VARIANT", value
         if phrase:
             ids = self.occupation_phrase.get((language, phrase), set())
             if ids:

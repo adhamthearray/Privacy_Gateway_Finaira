@@ -13,7 +13,7 @@ Categories: `MATCHED_OR_VERIFIED` is production source/configuration coverage; `
 | ORGANIZATION | 0 | 0 | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 |
 | UNIVERSITY | 0 | 0 | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 |
 | GOVERNMENT_ENTITY | 870 | 4,221 | 0 (0.00%) | 8 (0.92%) | 0 (0.00%) | 862 (99.08%) | 0 (0.00%) | 0 |
-| JOB_TITLE | 2,442 | 9,916 | 31 (1.27%) | 0 (0.00%) | 5 (0.20%) | 2,406 (98.53%) | 0 (0.00%) | 0 |
+| JOB_TITLE | 2,442 | 9,916 | 268 (10.97%) | 0 (0.00%) | 8 (0.33%) | 2,166 (88.70%) | 0 (0.00%) | 0 |
 | AGE | 97 | 595 | 97 (100.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 0 |
 | DATE | 2,823 | 5,937 | 2,233 (79.10%) | 0 (0.00%) | 0 (0.00%) | 0 (0.00%) | 590 (20.90%) | 0 |
 
@@ -123,21 +123,21 @@ Categories: `MATCHED_OR_VERIFIED` is production source/configuration coverage; `
 
 | Value | Spans | Category | Reason | Next action |
 |---|---:|---|---|---|
-| مدير الموارد البشرية | 310 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
-| سكرتير اللجنة القومية العربية في نابلس | 282 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
-| المدير المالي | 271 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
 | رئيس اللجنة | 226 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
 | رئيس بلدية نابلس | 211 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
 | المدير التنفيذي | 210 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
 | مدير المشروع | 126 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
-| مدير القسم | 119 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
-| مدير المبيعات | 119 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
-| مدير الموارد البشريه | 117 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
 | مدير الفرع | 90 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
 | رئيس بلدية بيرزيت | 79 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
-| مديرة المدرسة | 75 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
 | رئيس بلدية مدينة البيرة | 74 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
 | المدير المباشر | 66 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| رئيس المجلس | 65 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| الرئيس | 62 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| مندوب المبيعات | 57 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| قائمقام رام الله | 55 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| مدير المشاريع | 54 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| رئيس القسم | 49 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
+| رئيس اللجنه | 46 | GENERIC_FALLBACK_ONLY | UNRECOGNIZED_JOB_TITLE_GENERIC_FALLBACK | add verified alias |
 
 ### DATE
 

@@ -36,20 +36,29 @@ class Generalizer:
     def _occupation_phrase_key(value, lang):
         return " ".join(re.findall(r"[^\W_]+", normalize(value, lang), flags=re.UNICODE))
 
+    @staticmethod
+    def _occupation_alias_variants(alias_text):
+        return [part.strip() for part in re.split(r"\s*/\s*", alias_text) if part.strip()]
+
     def _occupation(self,s,value,lang,level):
         rows=s.scalars(select(OccupationAlias).where(OccupationAlias.language==lang)).all()
         exact_index={}
+        variant_exact_index={}
         phrase_index={}
         for row in rows:
             if row.review_status not in ("OFFICIAL","REVIEWED"):
                 continue
             exact_index.setdefault(row.normalized_alias,set()).add(row.occupation_id)
-            phrase=self._occupation_phrase_key(row.alias_text,lang)
-            if phrase:
-                phrase_index.setdefault(phrase,set()).add(row.occupation_id)
+            for variant in self._occupation_alias_variants(row.alias_text):
+                variant_exact_index.setdefault(normalize(variant,lang),set()).add(row.occupation_id)
+                phrase=self._occupation_phrase_key(variant,lang)
+                if phrase:
+                    phrase_index.setdefault(phrase,set()).add(row.occupation_id)
         ids=exact_index.get(normalize(value,lang),set())
         phrase=self._occupation_phrase_key(value,lang)
         shortened=False
+        if not ids:
+            ids=variant_exact_index.get(normalize(value,lang),set())
         if not ids and phrase:
             ids=phrase_index.get(phrase,set())
         if not ids:
