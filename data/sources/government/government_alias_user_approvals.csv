@@ -1,0 +1,25 @@
+alias_id,entity_id,alias,language,approval_status,approval_note
+EG-GOV-0001-AR-01,EG-GOV-0001,وزارة المالية,ar,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0001-EN-01,EG-GOV-0001,Ministry of Finance,en,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0002-AR-01,EG-GOV-0002,مصلحة الضرائب المصرية,ar,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0002-EN-01,EG-GOV-0002,Egyptian Tax Authority,en,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0003-AR-01,EG-GOV-0003,مصلحة الجمارك المصرية,ar,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0003-EN-01,EG-GOV-0003,Egyptian Customs Authority,en,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0004-AR-01,EG-GOV-0004,الهيئة العامة للرقابة المالية,ar,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0004-EN-01,EG-GOV-0004,Financial Regulatory Authority,en,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0005-AR-01,EG-GOV-0005,الهيئة القومية للتأمين الاجتماعي,ar,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0005-EN-01,EG-GOV-0005,National Organization for Social Insurance,en,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0006-AR-01,EG-GOV-0006,وزارة الصحة والسكان,ar,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0006-EN-01,EG-GOV-0006,Ministry of Health and Population,en,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0007-AR-01,EG-GOV-0007,وزارة التربية والتعليم والتعليم الفني,ar,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0007-EN-01,EG-GOV-0007,Ministry of Education and Technical Education,en,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0008-AR-01,EG-GOV-0008,وزارة الاتصالات وتكنولوجيا المعلومات,ar,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0008-EN-01,EG-GOV-0008,Ministry of Communications and Information Technology,en,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0009-AR-01,EG-GOV-0009,وزارة العدل,ar,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0009-EN-01,EG-GOV-0009,Ministry of Justice,en,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0010-AR-01,EG-GOV-0010,وزارة التضامن الاجتماعي,ar,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0010-EN-01,EG-GOV-0010,Ministry of Social Solidarity,en,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0011-AR-01,EG-GOV-0011,رئاسة مجلس الوزراء,ar,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0011-EN-01,EG-GOV-0011,Egyptian Cabinet,en,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0012-AR-01,EG-GOV-0012,وزارة النقل,ar,APPROVED_BY_USER,Explicit user approval requested in conversation
+EG-GOV-0012-EN-01,EG-GOV-0012,Ministry of Transport,en,APPROVED_BY_USER,Explicit user approval requested in conversation

@@ -28,5 +28,6 @@
 - **government_entities**: 12
 - **government_categories**: 17
 - **government_aliases**: 24
+- **government_user_approved_aliases**: 24
 - **government_review_candidates**: 63
 - **government_review_queue**: 12

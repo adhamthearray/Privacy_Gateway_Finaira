@@ -134,6 +134,8 @@ def test_organization_pending_identity_gates_specific_industry():
 
 def test_government_review_default_and_optional_branches():
     assert scalar("select count(*) from government_entities") == 12
+    assert scalar("select count(*) from government_aliases where verification_status='APPROVED_BY_USER'") == 24
+    assert scalar("select count(*) from government_aliases where enabled_for_lookup=1") == 24
     assert scalar("select count(*) from government_categories") == 17
     result = GeneralizationDB(DB).get_candidates("GOVERNMENT_ENTITY", "وزارة المالية", "ar")
     assert result["resolution_status"] == "REVIEW_ONLY"

@@ -61,6 +61,7 @@ NATURAL_EARTH_URL = "https://www.naturalearthdata.com/downloads/10m-cultural-vec
 NATIONALITY_VARIANT_REVIEW_CSV = ROOT / "reports/nationality_improvement/nationality_variant_review_queue.csv"
 COUNTRY_REVIEWED_ALIAS_CSV = ROOT / "data/sources/wikidata/wikidata_country_reviewed_aliases_ar_en_v1.csv"
 BANK_ALIAS_APPROVAL_CSV = ROOT / "data/sources/bank/bank_alias_user_approvals.csv"
+GOVERNMENT_ALIAS_APPROVAL_CSV = ROOT / "data/sources/government/government_alias_user_approvals.csv"
 
 
 def _sha256(path: Path) -> str:
@@ -470,6 +471,9 @@ def _import_government(session: Session, root: Path, metrics: dict):
     queue_path = gov_dir / "government_review_queue.csv"
     entity_source = _source(session, "government_entities_SEED", entity_path, license_text="Supplied optional review-only seed")
     alias_source = _source(session, "government_aliases_SEED", alias_path, license_text="Supplied review-only aliases")
+    approval_source = _source(session, "government_alias_user_approvals", GOVERNMENT_ALIAS_APPROVAL_CSV, license_text="Explicit user approval decisions; not external evidence") if GOVERNMENT_ALIAS_APPROVAL_CSV.exists() else None
+    approval_rows = _read_csv(GOVERNMENT_ALIAS_APPROVAL_CSV) if GOVERNMENT_ALIAS_APPROVAL_CSV.exists() else []
+    approvals = {r["alias_id"]: r for r in approval_rows}
     category_source = _source(session, "government_categories_ar_en", category_path, license_text="Finaira-authored bilingual category structure")
     candidate_source = _source(session, "government_candidate_catalog_REVIEW", candidate_path, license_text="Supplied review-only candidate catalog")
     queue_source = _source(session, "government_review_queue", queue_path, license_text="Supplied review queue")
@@ -488,7 +492,10 @@ def _import_government(session: Session, root: Path, metrics: dict):
         if not progressed:
             raise ValueError("GOVERNMENT_CATEGORY_PARENT_MISSING")
     for row in _read_csv(alias_path):
-        _put(session, GovernmentAlias, row["alias_id"], {"entity_id": row["entity_id"], "language": row["language"], "alias_text": row["alias"], "normalized_alias": normalize(row["alias"], row["language"]), "verification_status": row["verification_status"], "enabled_for_lookup": _bool(row.get("enabled_for_lookup")), "source_url": _text(row.get("source_url")), "source_id": alias_source.source_id})
+        approval = approvals.get(row["alias_id"])
+        status = approval.get("approval_status") if approval else row["verification_status"]
+        enabled = True if approval else _bool(row.get("enabled_for_lookup"))
+        _put(session, GovernmentAlias, row["alias_id"], {"entity_id": row["entity_id"], "language": row["language"], "alias_text": row["alias"], "normalized_alias": normalize(row["alias"], row["language"]), "verification_status": status, "enabled_for_lookup": enabled, "source_url": _text(row.get("source_url")), "source_id": approval_source.source_id if approval and approval_source else alias_source.source_id})
     for row in _read_csv(candidate_path):
         _put(session, GovernmentCandidateReview, row["candidate_id"], {"entity_id": row["entity_id"], "level_code": row["level_code"], "dimension": row["dimension"], "specificity_rank_branch_local": int(row["specificity_rank_branch_local"]), "label_ar": _text(row.get("label_ar")), "label_en": _text(row.get("label_en")), "source_url": _text(row.get("source_url")), "verification_status": row["verification_status"], "requires_policy_approval": _bool(row.get("requires_policy_approval")), "is_local_only": _bool(row.get("is_local_only")), "is_suppression": _bool(row.get("is_suppression")), "default_visible": _bool(row.get("default_visible")), "source_id": candidate_source.source_id})
     category_codes = {r["category_code"] for r in _read_csv(category_path)}
@@ -499,7 +506,7 @@ def _import_government(session: Session, root: Path, metrics: dict):
                 _put(session, GovernmentEntityCategory, lid, {"entity_id": row["entity_id"], "category_code": code, "dimension": dimension, "verification_status": status, "source_id": entity_source.source_id})
     for row in _read_csv(queue_path):
         _put(session, GovernmentReviewQueue, row["entity_id"], {"entity_id": row["entity_id"], "review_identity": _text(row.get("review_identity")), "review_current_status": _text(row.get("review_current_status")), "review_function_category": _text(row.get("review_function_category")), "review_english_name": _text(row.get("review_english_name")), "review_wikidata_qid": _text(row.get("review_wikidata_qid")), "specific_mapping_enabled": _bool(row.get("specific_mapping_enabled")), "source_id": queue_source.source_id})
-    metrics.update({"government_entities": len(entity_rows), "government_categories": len(_read_csv(category_path)), "government_aliases": len(_read_csv(alias_path)), "government_review_candidates": len(_read_csv(candidate_path)), "government_review_queue": len(_read_csv(queue_path))})
+    metrics.update({"government_entities": len(entity_rows), "government_categories": len(_read_csv(category_path)), "government_aliases": len(_read_csv(alias_path)), "government_user_approved_aliases": len(approval_rows), "government_review_candidates": len(_read_csv(candidate_path)), "government_review_queue": len(_read_csv(queue_path))})
 
 
 def import_handoff(

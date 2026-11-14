@@ -16,6 +16,7 @@
   "government_entities": 12,
   "government_review_candidates": 63,
   "government_review_queue": 12,
+  "government_user_approved_aliases": 24,
   "handoff_root": "C:\\Users\\domma\\Downloads\\Finaira_Generalization_DB_Codex_Handoff_2026-11-12_ext",
   "industry_categories_materialized": 64,
   "industry_categories_source_rows": 63,
