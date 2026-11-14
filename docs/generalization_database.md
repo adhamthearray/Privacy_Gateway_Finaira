@@ -277,6 +277,13 @@ language, and displays the full candidate chain including exact, review-only,
 fallback, and suppression candidates. It is a read-only database explorer;
 it does not select a candidate or create pseudonyms.
 
+When `DATE` is selected, the explorer exposes optional explicit-format,
+numeric-order, calendar, value-hint, relative-anchor, and two-digit-year-base
+controls. The response includes a Date detection details panel showing the
+detector status, calendar, precision, format family, confidence, detected ISO
+date when available, and the raw detector metadata. Leaving the controls
+automatic preserves ambiguity instead of guessing.
+
 ## GCC bank classification integration
 
 The GCC package is stored under

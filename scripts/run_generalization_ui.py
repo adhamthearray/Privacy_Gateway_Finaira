@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from finaira_generalization.candidates import GeneralizationDB
+from finaira_generalization.date_detector import detect_date
 from finaira_generalization.db import (
     Bank,
     BankAlias,
@@ -60,6 +61,9 @@ HTML = r"""<!doctype html>
     button:hover { background:#1d4ed8; }
     .options { display:flex; align-items:center; gap:8px; margin-top:13px; color:var(--muted); }
     .options input { width:auto; }
+    .date-context { margin-top:14px; padding-top:14px; border-top:1px solid var(--line); }
+    .date-context[hidden] { display:none; }
+    .date-context-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:10px 12px; }
     .hint { color:var(--muted); font-size:12px; margin-top:10px; }
     .status { display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
     .badge { display:inline-block; border-radius:999px; padding:4px 10px; font-weight:700; font-size:12px; background:#374151; }
@@ -113,6 +117,35 @@ HTML = r"""<!doctype html>
       <input id="review" type="checkbox">
       <label for="review" style="margin:0">Include review-only candidates</label>
     </div>
+    <div id="date-context" class="date-context" hidden>
+      <div class="hint" style="margin-top:0;margin-bottom:10px">Date controls are optional. Leave them automatic to see ambiguity safely; provide context only when the source format is known.</div>
+      <div class="date-context-grid">
+        <div>
+          <label for="date-format">Explicit format</label>
+          <input id="date-format" placeholder="e.g. %d/%m/%Y" autocomplete="off">
+        </div>
+        <div>
+          <label for="date-order">Numeric order</label>
+          <select id="date-order"><option value="">Automatic</option><option value="DMY">Day / month / year</option><option value="MDY">Month / day / year</option><option value="YMD">Year / month / day</option></select>
+        </div>
+        <div>
+          <label for="date-calendar">Calendar hint</label>
+          <select id="date-calendar"><option value="">Automatic</option><option value="GREGORIAN">Gregorian</option><option value="HIJRI">Hijri</option><option value="SOLAR_HIJRI">Solar Hijri</option></select>
+        </div>
+        <div>
+          <label for="date-hint">Value hint</label>
+          <select id="date-hint"><option value="">Automatic</option><option value="year">Year only</option><option value="epoch_seconds">Epoch seconds</option><option value="epoch_milliseconds">Epoch milliseconds</option></select>
+        </div>
+        <div>
+          <label for="anchor-date">Relative-date anchor</label>
+          <input id="anchor-date" type="date">
+        </div>
+        <div>
+          <label for="two-digit-year-base">2-digit year base</label>
+          <input id="two-digit-year-base" type="number" min="0" max="9900" placeholder="e.g. 2000">
+        </div>
+      </div>
+    </div>
     <div class="hint">The input language is detected automatically. Review-only results remain gated. This tool shows database candidates; it does not pseudonymize or select a disclosure policy.</div>
   </section>
 
@@ -136,9 +169,18 @@ const aggregateHeading = document.getElementById('aggregate-heading');
 const aggregate = document.getElementById('aggregate');
 const suggestionHeading = document.getElementById('suggestion-heading');
 const suggestions = document.getElementById('suggestions');
+const typeSelect = document.getElementById('type');
+const dateContext = document.getElementById('date-context');
 const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const json = value => esc(JSON.stringify(value ?? {}, null, 2));
 const cls = status => String(status || '').toLowerCase().replace(/[^a-z]/g, '');
+
+function syncDateContext() {
+  dateContext.hidden = typeSelect.value !== 'DATE';
+}
+
+typeSelect.addEventListener('change', syncDateContext);
+syncDateContext();
 
 function field(label, value) {
   return `<div class="field">${esc(label)}<strong>${esc(value === undefined || value === null || value === '' ? '—' : value)}</strong></div>`;
@@ -148,7 +190,8 @@ function render(data) {
   result.style.display = 'block';
   const status = data.resolution_status || 'UNKNOWN';
   summary.innerHTML = `<div class="status"><span class="badge ${cls(status)}">${esc(status)}</span>${data.reason_code ? `<span class="badge">${esc(data.reason_code)}</span>` : ''}</div>`
-    + `<div class="grid">${field('Entity type', data.entity_type)}${field('Canonical ID', data.canonical_id)}${field('Candidates', (data.candidates || []).length)}</div>`;
+    + `<div class="grid">${field('Entity type', data.entity_type)}${field('Canonical ID', data.canonical_id)}${field('Candidates', (data.candidates || []).length)}</div>`
+    + (data.date_detection ? `<details><summary>Date detection details</summary><div class="grid">${field('Detector status', data.date_detection.status)}${field('Calendar', data.date_detection.calendar)}${field('Precision', data.date_detection.precision)}${field('Format family', data.date_detection.format_family)}${field('Detected date', data.date_detection.date_iso)}${field('Confidence', data.date_detection.confidence)}${field('Time', data.date_detection.time_text)}${field('Timezone', data.date_detection.timezone_text)}</div><pre>${json(data.date_detection)}</pre></details>` : '');
   const rows = data.candidates || [];
   if (!rows.length) { candidates.innerHTML = '<div class="empty">No candidates returned.</div>'; return; }
   candidates.innerHTML = rows.map((item, index) => {
@@ -171,6 +214,18 @@ form.addEventListener('submit', async event => {
   const type = document.getElementById('type').value;
   const language = document.getElementById('language').value;
   const review = document.getElementById('review').checked ? '1' : '0';
+  const params = new URLSearchParams({value, type, language, review});
+  if (type === 'DATE') {
+    const dateFields = {
+      date_format: document.getElementById('date-format').value.trim(),
+      date_order: document.getElementById('date-order').value,
+      calendar: document.getElementById('date-calendar').value,
+      date_hint: document.getElementById('date-hint').value,
+      anchor_date: document.getElementById('anchor-date').value,
+      two_digit_year_base: document.getElementById('two-digit-year-base').value.trim(),
+    };
+    Object.entries(dateFields).forEach(([key, fieldValue]) => { if (fieldValue) params.set(key, fieldValue); });
+  }
   summary.innerHTML = '<div class="empty">Querying the local database…</div>';
   candidates.innerHTML = '';
   aggregate.innerHTML = '';
@@ -179,7 +234,7 @@ form.addEventListener('submit', async event => {
   suggestionHeading.style.display = 'none';
   result.style.display = 'block';
   try {
-    const response = await fetch(`/api/query?value=${encodeURIComponent(value)}&type=${encodeURIComponent(type)}&language=${encodeURIComponent(language)}&review=${review}`);
+    const response = await fetch(`/api/query?${params.toString()}`);
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || 'Query failed');
     render(data);
@@ -373,6 +428,43 @@ def substring_generalization(db_path: Path, entity_type: str, value: str, output
         }
 
 
+def _date_context(params: dict[str, list[str]]) -> dict:
+    """Build only supported detector context from browser query parameters."""
+    context = {}
+    for key in ("date_format", "date_order", "calendar", "date_hint", "anchor_date"):
+        value = params.get(key, [""])[0].strip()
+        if value:
+            context[key] = value
+    year_base = params.get("two_digit_year_base", [""])[0].strip()
+    if year_base:
+        try:
+            context["two_digit_year_base"] = int(year_base)
+        except ValueError:
+            raise ValueError("2-digit year base must be an integer")
+    return context
+
+
+def _date_detection_payload(value: str, context: dict) -> dict:
+    detected = detect_date(value, context)
+    return {
+        "raw": detected.raw,
+        "status": detected.status,
+        "reason_code": detected.reason_code,
+        "calendar": detected.calendar,
+        "precision": detected.precision,
+        "language": detected.language,
+        "format_family": detected.format_family,
+        "confidence": detected.confidence,
+        "date_iso": detected.date_iso,
+        "time_text": detected.time_text,
+        "timezone_text": detected.timezone_text,
+        "is_relative": detected.is_relative,
+        "is_ambiguous": detected.is_ambiguous,
+        "candidates": detected.candidates,
+        "metadata": detected.metadata,
+    }
+
+
 class Handler(BaseHTTPRequestHandler):
     db_path: Path
 
@@ -402,7 +494,10 @@ class Handler(BaseHTTPRequestHandler):
                 self._send(json.dumps({"error": "Output language must be ar or en."}).encode(), "application/json", 400)
                 return
             try:
-                payload = GeneralizationDB(self.db_path).get_candidates(entity_type, value, language, include_review_candidates=include_review)
+                context = _date_context(params) if entity_type == "DATE" else {}
+                payload = GeneralizationDB(self.db_path).get_candidates(entity_type, value, language, context=context, include_review_candidates=include_review)
+                if entity_type == "DATE":
+                    payload["date_detection"] = _date_detection_payload(value, context)
                 has_exact = any(item.get("is_exact") and not item.get("is_suppression") for item in payload.get("candidates", []))
                 if not has_exact:
                     payload["substring_search_performed"] = True

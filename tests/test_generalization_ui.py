@@ -1,6 +1,11 @@
+import json
+import threading
+from http.server import ThreadingHTTPServer
+from urllib.parse import urlencode
+from urllib.request import urlopen
 from pathlib import Path
 
-from scripts.run_generalization_ui import substring_generalization, substring_suggestions
+from scripts.run_generalization_ui import HTML, Handler, substring_generalization, substring_suggestions
 
 
 DB = Path("data/processed/finaira_generalization.db")
@@ -28,3 +33,45 @@ def test_ui_substring_aggregation_starts_at_shared_isco_ancestor():
     assert result["start_level"] == "ISCO_UNIT"
     assert [item["level_code"] for item in result["candidates"]] == ["ISCO_UNIT", "ISCO_MINOR", "ISCO_SUB_MAJOR", "ISCO_MAJOR"]
     assert all(item["is_exact"] is False for item in result["candidates"])
+
+
+def _query_ui(params):
+    Handler.db_path = DB
+    server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    try:
+        url = f"http://127.0.0.1:{server.server_port}/api/query?{urlencode(params)}"
+        with urlopen(url, timeout=5) as response:
+            return json.loads(response.read().decode("utf-8"))
+    finally:
+        server.shutdown()
+        server.server_close()
+        thread.join(timeout=5)
+
+
+def test_ui_date_query_exposes_detector_and_contextual_generalization():
+    ambiguous = _query_ui({"value": "03/04/2026", "type": "DATE", "language": "en"})
+    assert ambiguous["resolution_status"] == "AMBIGUOUS"
+    assert ambiguous["date_detection"]["reason_code"] == "AMBIGUOUS_DATE"
+
+    resolved = _query_ui({"value": "03/04/2026", "type": "DATE", "language": "en", "date_order": "DMY"})
+    assert resolved["resolution_status"] == "VERIFIED"
+    assert resolved["date_detection"]["date_iso"] == "2026-04-03"
+    assert [item["level_code"] for item in resolved["candidates"]] == ["EXACT", "MONTH", "QUARTER", "SEASON", "HALF_YEAR", "YEAR", "DECADE", "SUPPRESSED"]
+
+
+def test_ui_date_query_supports_relative_and_non_gregorian_context():
+    relative = _query_ui({"value": "tomorrow", "type": "DATE", "language": "en", "anchor_date": "2026-11-14"})
+    assert relative["date_detection"]["date_iso"] == "2026-11-15"
+    assert relative["date_detection"]["is_relative"] is True
+
+    hijri = _query_ui({"value": "١٤ رمضان ١٤٤٨ هـ", "type": "DATE", "language": "ar"})
+    assert hijri["date_detection"]["calendar"] == "HIJRI"
+    assert hijri["date_detection"]["date_iso"] is None
+    assert hijri["candidates"][0]["taxonomy"] == "HIJRI"
+
+
+def test_ui_contains_date_context_controls():
+    for control in ("date-context", "date-format", "date-order", "date-calendar", "date-hint", "anchor-date", "two-digit-year-base"):
+        assert f'id="{control}"' in HTML
