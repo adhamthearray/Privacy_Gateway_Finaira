@@ -37,8 +37,8 @@ This benchmark is separate from the Finaira NER corpus. It measures the existing
 
 | Source | Language | Unique | Exact/normalized | Phrase candidate | Ambiguous | Generic fallback | Exact + phrase |
 |---|---|---:|---:|---:|---:|---:|---:|
-| ONET_JOB_TITLE | en | 44,779 | 3,866 (8.63%) | 15,742 | 3,706 | 21,465 | 19,608 (43.79%) |
-| ONET_REPORTED_TITLE | en | 7,041 | 1,254 (17.81%) | 2,320 | 857 | 2,610 | 3,574 (50.76%) |
+| ONET_JOB_TITLE | en | 44,779 | 3,880 (8.66%) | 12,883 | 10,288 | 17,728 | 16,763 (37.43%) |
+| ONET_REPORTED_TITLE | en | 7,041 | 1,260 (17.90%) | 1,902 | 1,610 | 2,269 | 3,162 (44.91%) |
 
 ## Interpretation
 
