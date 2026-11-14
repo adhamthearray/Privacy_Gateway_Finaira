@@ -422,7 +422,12 @@ def _import_organizations(session: Session, root: Path, metrics: dict):
             continue
         flags = _text(row.get("review_flags"))
         names = " ".join([row.get("nameEn", ""), row.get("industryNames", ""), row.get("finaira_sector_codes", "")]).lower()
-        kind = "UNIVERSITY" if "university" in names or "EDU_UNIVERSITY" in names else "CORPORATION"
+        source_kind = "UNIVERSITY" if "university" in names or "EDU_UNIVERSITY" in names else "CORPORATION"
+        # All organization-like records share the CORPORATION runtime entity.
+        # Preserve the source classification for audit and later review.
+        kind = "CORPORATION"
+        source_kind_flag = f"source_semantic_kind={source_kind}"
+        flags = f"{flags};{source_kind_flag}" if flags else source_kind_flag
         _put(session, Organization, qid, {"name_en": _text(row.get("nameEn")), "name_ar": _text(row.get("nameAr")), "semantic_kind": kind, "identity_verification_status": "PENDING_IDENTITY_VALIDATION", "import_decision": row.get("import_decision") or "CANDIDATE_PENDING_IDENTITY_VALIDATION", "import_status": _text(row.get("import_status")), "review_flags": flags, "source_id": org_source.source_id})
         for lang, field in (("en", "nameEn"), ("ar", "nameAr")):
             alias = _text(row.get(field))

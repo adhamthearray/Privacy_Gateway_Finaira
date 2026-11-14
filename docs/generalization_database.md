@@ -125,13 +125,17 @@ erDiagram
 | `banks_FINAL_evidence.csv` | `banks`, regenerated `bank_candidates` | authoritative 37-row master; blank Arabic names remain null |
 | bank evidence CSV | `bank_evidence` | 24 evidence rows and 13 bank IDs |
 | bank aliases CSV | `bank_aliases` | old review source retained; only source-supported aliases enabled |
-| organization directory | `organizations`, aliases, industry bridge | all 312 remain pending identity validation |
+| organization directory | `organizations`, aliases, industry bridge | all 312 use canonical `CORPORATION`; original UNIVERSITY/CORPORATION source kind is retained in `review_flags`; identities remain pending validation |
 | taxonomy/mapping CSVs | `industry_categories`, `industry_qid_mappings` | 63 bilingual source categories + virtual root; mapping review state retained |
 | organization review/exclusion CSVs | review/exclusion tables | no source row is promoted to verified |
 | government seed/aliases/categories/catalog/review queue | government tables | all 12 identity rows remain review-only; narrow branches gated |
 | existing ESCO/ISCO sources | legacy occupation tables and schemes | reused unchanged; no taxonomy fabricated |
 
 `py -m finaira_generalization.cli import-handoff` performs a timestamped copy of the existing DB, creates additive tables, imports in one transaction, regenerates bank candidates, writes `reports/handoff_import_report.*`, and writes the full Natural Earth audit. A repeat import updates stable keys and leaves row counts unchanged. Failure rolls back the transaction.
+
+The runtime accepts `CORPORATION`, `ORGANIZATION`, and `UNIVERSITY` as compatible input labels and canonicalizes all three to `CORPORATION`. Organization-like exact candidates retain `source_semantic_kind` and source review flags in provenance. Industry candidates remain review-gated because the 312 identities are not production-verified.
+
+`reports/bank_inventory.csv` is a database export containing one row per bank alias, including the bank classification, evidence status, language, alias kind, review status, and enabled-for-lookup flag.
 
 ## Nationality lineage and join results
 
@@ -188,9 +192,7 @@ Bank candidates are regenerated from the final master: `EXACT → FINANCE_MODEL 
 |---|---|---|
 | `NATIONALITY` | `Egyptian` → Natural Earth descriptors | `مصرية` → Arabic exact alias; unavailable region translations are explicit |
 | `BANK` | `Banque Misr` → mixed finance model and broad institution levels | Arabic bank exact name is unavailable because all 37 master Arabic fields are blank; bilingual finance labels remain source-provided |
-| `CORPORATION` | `Edita Food Industries S.A.E.` → pending exact/company/suppression only | `شركة` is the safe generic fallback; no unapproved food-industry claim |
-| `ORGANIZATION` | unknown organization → Organization/suppression | `منظمة` generic fallback |
-| `UNIVERSITY` | `New Cairo Technological University` → pending exact/University/suppression | `جامعة القاهرة الجديدة التكنولوجية` is retained as a pending Arabic alias |
+| `CORPORATION` / `ORGANIZATION` / `UNIVERSITY` | `Edita Food Industries S.A.E.` or `New Cairo Technological University` → canonical CORPORATION pending exact/company/suppression only | `شركة` is the safe generic fallback; source university kind is provenance only and no unapproved industry claim is exposed |
 | `GOVERNMENT_ENTITY` | unknown → Government entity/suppression | `وزارة المالية` → review-only exact + generic government entity + suppression; narrow function/form branches require review flag |
 | `OCCUPATION` / `JOB_TITLE` | `technical director` → ESCO exact and ISCO chain | existing Arabic ESCO aliases and labels are reused |
 | `AGE` | `27` → exact, 25–29, 25–34, Adult, suppression | `٢٧` follows the same deterministic intervals |
@@ -258,8 +260,8 @@ py -X utf8 -m pytest -q
 
 - Natural Earth: 258 rows, source version 5.1.1; 239 nationality QIDs retained; 230 QID matches, 2 guarded ISO matches, and 7 unresolved legacy edge cases. Country lookup uses all 258 Natural Earth rows. NER-v1 COUNTRY coverage is 174/229 unique values (75.98%) and 2,904/3,009 spans (96.51%) after 31 approved review rows, deduplicated to 30 runtime aliases. The remaining 55 values and 105 spans are suppressed in `reports/ner_v1_generalization/missing_country.csv` and `reports/ner_v1_generalization/country_review_queue.csv`.
 - Nationality aliases: 857 source-verified Arabic and English `P1549` rows plus 59 reviewed Arabic variants across validated QIDs. The coverage export records 28 Natural Earth records with no verified Arabic/English demonym; no form is invented for them. The review provenance table preserves 67 derivation/evidence rows for 59 enabled aliases. COUNTRY has 2,174 source-verified Wikidata label/alias rows plus 30 reviewed current-country variants.
-- Banks: 37 total; 24 conventional, 9 mixed, 4 Islamic; 24 evidence rows across 13 bank IDs; 185 regenerated candidates; 37/37 official Arabic master names blank. Conventional labels retain `EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF` limitations.
-- Organizations: 312 QIDs; 360 industry links; 73 concept mappings; 63 bilingual source categories; 48 missing Arabic organization names; all identities pending. No organization is production-verified by this import.
+- Banks: 37 total; 24 conventional, 9 mixed, 4 Islamic; 86 aliases (50 English, 36 Arabic), 39 enabled English aliases and 0 enabled Arabic aliases; 24 evidence rows across 13 bank IDs; 185 regenerated candidates; 37/37 official Arabic master names blank. Conventional labels retain `EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF` limitations. See `reports/bank_inventory.csv`.
+- Organizations: 312 QIDs; 191 source rows detected as corporations and 121 as universities, all stored under canonical `semantic_kind=CORPORATION`; 360 industry links; 73 concept mappings; 63 bilingual source categories; 48 missing Arabic organization names; all identities pending. No organization is production-verified by this import.
 - Government: 12 seed entities, 24 aliases, 17 categories, 63 review-catalog rows; all 12 identity rows remain `REVIEW_REQUIRED`, and all specific mappings remain review-only.
 - Existing reference layer: 3,018 occupations, 1,149 ISCO groups, 844 legacy nationality aliases, 7 age bands, 3 date rules.
 

@@ -110,10 +110,17 @@ def test_bank_authority_and_evidence_flags():
 
 def test_organization_pending_identity_gates_specific_industry():
     assert scalar("select count(*) from organizations") == 312
+    assert scalar("select count(*) from organizations where semantic_kind='CORPORATION'") == 312
+    assert scalar("select count(*) from organizations where semantic_kind='UNIVERSITY'") == 0
     assert scalar("select count(*) from industry_categories where category_code <> 'ORGANIZATION'") == 63
     result = GeneralizationDB(DB).get_candidates("UNIVERSITY", "New Cairo Technological University", "en")
     assert result["resolution_status"] == "REVIEW_ONLY"
+    assert result["entity_type"] == "CORPORATION"
+    assert result["candidates"][0]["provenance"]["canonical_entity_type"] == "CORPORATION"
     assert all(candidate["level_code"] not in {"MFG_FOOD", "ICT_SOFTWARE"} for candidate in result["candidates"])
+    organization = GeneralizationDB(DB).get_candidates("ORGANIZATION", "New Cairo Technological University", "en")
+    assert organization["entity_type"] == "CORPORATION"
+    assert organization["candidates"][1]["representation"] == "Company"
     company = GeneralizationDB(DB).get_candidates("CORPORATION", "Edita Food Industries S.A.E.", "en")
     assert all(candidate["level_code"] not in {"MFG_FOOD", "MFG"} for candidate in company["candidates"])
     review = GeneralizationDB(DB).get_candidates("CORPORATION", "Edita Food Industries S.A.E.", "en", include_review_candidates=True)

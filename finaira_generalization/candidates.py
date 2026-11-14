@@ -62,6 +62,12 @@ class GeneralizationDB:
         et = entity_type.upper()
         lang = output_language.lower()
         context = context or {}
+        # The public taxonomy has one organization-like runtime type.  Keep
+        # accepting legacy/source labels for compatibility, but resolve them
+        # through CORPORATION so universities and generic organizations do
+        # not become a separate generalization domain.
+        if et in {"ORGANIZATION", "UNIVERSITY"}:
+            et = "CORPORATION"
         if et == "AGE":
             return self._age(value, lang)
         if et == "DATE":
@@ -75,7 +81,7 @@ class GeneralizationDB:
                 return self._nationality(session, value, lang)
             if et == "BANK":
                 return self._bank(session, value, lang, include_review_candidates)
-            if et in {"CORPORATION", "ORGANIZATION", "UNIVERSITY"}:
+            if et == "CORPORATION":
                 return self._organization(session, et, value, lang, include_review_candidates)
             if et == "GOVERNMENT_ENTITY":
                 return self._government(session, value, lang, include_review_candidates)
@@ -235,16 +241,17 @@ class GeneralizationDB:
         org = session.get(Organization, qid)
         if session.scalar(select(OrganizationExclusion.exclusion_id).where(OrganizationExclusion.organization_qid == qid)):
             return self._organization_fallback(entity_type, lang, "EXCLUDED", "EXCLUDED_ORGANIZATION")
-        if entity_type in {"CORPORATION", "UNIVERSITY"} and org.semantic_kind != entity_type:
-            return self._organization_fallback(entity_type, lang, "NOT_FOUND", "ENTITY_KIND_MISMATCH")
-        kind = org.semantic_kind if entity_type == "ORGANIZATION" else entity_type
-        label_en = org.name_en or ("University" if kind == "UNIVERSITY" else "Company" if kind == "CORPORATION" else "Organization")
+        # Source rows may retain their original semantic kind in review_flags,
+        # but the runtime taxonomy is deliberately CORPORATION for every
+        # organization-like record.
+        kind = "CORPORATION"
+        label_en = org.name_en or "Company"
         label_ar = org.name_ar
         source = self._source(session, org.source_id)
         verified_identity = org.identity_verification_status in {"VERIFIED", "APPROVED", "OFFICIAL"} and org.import_decision in {"VERIFIED", "APPROVED"}
         status = "MATCHED" if verified_identity else "REVIEW_ONLY"
-        candidates = [_candidate_dict(candidate_id=stable_id("ORG", qid, "EXACT"), level_code="EXACT", rank=0, label_en=label_en, label_ar=label_ar, language=lang, taxonomy="WIKIDATA_ORGANIZATION", taxonomy_code=qid, source=source, verification_status=org.identity_verification_status, is_exact=True, is_local_only=True, provenance={"source": source, "import_decision": org.import_decision, "review_flags": org.review_flags})]
-        generic = {"UNIVERSITY": ("ORGANIZATION_GENERIC", "University", "جامعة"), "CORPORATION": ("ORGANIZATION_GENERIC", "Company", "شركة"), "ORGANIZATION": ("ORGANIZATION_GENERIC", "Organization", "منظمة")}[kind]
+        candidates = [_candidate_dict(candidate_id=stable_id("ORG", qid, "EXACT"), level_code="EXACT", rank=0, label_en=label_en, label_ar=label_ar, language=lang, taxonomy="WIKIDATA_ORGANIZATION", taxonomy_code=qid, source=source, verification_status=org.identity_verification_status, is_exact=True, is_local_only=True, provenance={"source": source, "import_decision": org.import_decision, "review_flags": org.review_flags, "canonical_entity_type": "CORPORATION", "source_semantic_kind": org.semantic_kind})]
+        generic = ("ORGANIZATION_GENERIC", "Company", "شركة")
         candidates.append(_candidate_dict(candidate_id=stable_id("ORG", kind, "GENERIC"), level_code=generic[0], rank=1, label_en=generic[1], label_ar=generic[2], language=lang, taxonomy="FINAIR_ORGANIZATION", taxonomy_code=None, source="Finaira taxonomy", verification_status="CONFIGURED"))
         for link in session.scalars(select(OrganizationIndustry).where(OrganizationIndustry.organization_qid == qid)).all():
             mapping = session.get(IndustryQIDMapping, link.mapping_id) if link.mapping_id else None
@@ -255,10 +262,9 @@ class GeneralizationDB:
         return self._result(entity_type, status, qid, sorted(candidates, key=lambda row: (row["specificity_rank"], row["candidate_id"])))
 
     def _organization_fallback(self, entity_type, lang, status, reason):
-        kind = entity_type if entity_type in {"CORPORATION", "UNIVERSITY"} else "ORGANIZATION"
-        code, en, ar = ("ORGANIZATION_GENERIC", "University", "جامعة") if kind == "UNIVERSITY" else ("ORGANIZATION_GENERIC", "Company", "شركة") if kind == "CORPORATION" else ("ORGANIZATION_GENERIC", "Organization", "منظمة")
+        code, en, ar = "ORGANIZATION_GENERIC", "Company", "شركة"
         candidates = [_candidate_dict(candidate_id=stable_id("ORG_FALLBACK", code), level_code=code, rank=0, label_en=en, label_ar=ar, language=lang, taxonomy="FINAIR_ORGANIZATION", taxonomy_code=None, source="Finaira taxonomy", verification_status="CONFIGURED"), _candidate_dict(candidate_id=stable_id("ORG_FALLBACK", "SUPPRESSED"), level_code="SUPPRESSED", rank=1, label_en=None, label_ar=None, language=lang, taxonomy="FINAIR_ORGANIZATION", taxonomy_code=None, source="Finaira taxonomy", verification_status="CONFIGURED", is_suppression=True)]
-        return self._result(entity_type, status, None, candidates, reason)
+        return self._result("CORPORATION", status, None, candidates, reason)
 
     def _government(self, session, value, lang, include_review):
         aliases = session.scalars(select(GovernmentAlias).where(GovernmentAlias.normalized_alias == normalize(value, lang), GovernmentAlias.language == lang)).all()
