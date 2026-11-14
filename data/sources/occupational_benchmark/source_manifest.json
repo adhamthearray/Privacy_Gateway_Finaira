@@ -1,0 +1,53 @@
+{
+  "purpose": "Independent JOB_TITLE coverage benchmark; never a production alias import",
+  "sources": [
+    {
+      "id": "onet31_job_titles",
+      "provider": "U.S. Department of Labor / O*NET",
+      "version": "31.0",
+      "url": "https://www.onetcenter.org/dl_files/database/db_31_0_csv/job_titles.csv",
+      "language": "en",
+      "sha256": "75a3b46d6edc5996117c10c9ed488c9a06f7495d02969e9d12873ab14a21540c"
+    },
+    {
+      "id": "onet31_sample_of_reported_titles",
+      "provider": "U.S. Department of Labor / O*NET",
+      "version": "31.0",
+      "url": "https://www.onetcenter.org/dl_files/database/db_31_0_csv/sample_of_reported_titles.csv",
+      "language": "en",
+      "sha256": "5d76040b7b0602ea217660648f8363e7980edd1870f96574a2eeaa6a822d2666"
+    },
+    {
+      "id": "bls_soc2018_direct_match_titles",
+      "provider": "U.S. Bureau of Labor Statistics / OMB SOCPC",
+      "version": "2018 SOC",
+      "url": "https://www.bls.gov/soc/2018/soc_2018_direct_match_title_file.xlsx",
+      "language": "en",
+      "status": "supported_by_script_not_downloaded_in_current_environment"
+    },
+    {
+      "id": "capmas_unified_occupational_classification",
+      "provider": "CAPMAS / Egyptian government",
+      "version": "2016",
+      "url": "https://capmas.gov.eg/Admin/Pages%20Files/%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D9%85%D9%87%D9%86%D9%89%202016.pdf",
+      "language": "ar",
+      "status": "supported_by_script_not_downloaded_in_current_environment"
+    },
+    {
+      "id": "egypt_occupational_outlook",
+      "provider": "Egypt Ministry of Planning / Ministry of Labor / CAPMAS",
+      "version": "current platform export",
+      "url": "https://occupational-outlook.mped.gov.eg/",
+      "language": "ar",
+      "status": "supported_by_script_not_downloaded_in_current_environment"
+    },
+    {
+      "id": "asco2008",
+      "provider": "Jordan NCHRD / Arab-German Regional TVET Project",
+      "version": "2008",
+      "url": "https://nchrd.gov.jo/ArabOccupation_En.aspx",
+      "language": "ar",
+      "status": "supported_by_script_not_downloaded_in_current_environment"
+    }
+  ]
+}

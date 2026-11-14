@@ -1,0 +1,3 @@
+source_kind,language,unique_values,verified_exact_or_normalized_unique,longest_phrase_candidate_unique,ambiguous_unique,review_only_unique,generic_fallback_only_unique,unresolved_unique,exact_pct,candidate_recall_pct
+ONET_JOB_TITLE,en,44779,3866,15742,3706,0,21465,0,8.63,43.79
+ONET_REPORTED_TITLE,en,7041,1254,2320,857,0,2610,0,17.81,50.76
