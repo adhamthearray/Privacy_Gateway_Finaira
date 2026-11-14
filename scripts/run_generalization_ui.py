@@ -10,10 +10,28 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
+from sqlalchemy import select
+from sqlalchemy.orm import Session
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from finaira_generalization.candidates import GeneralizationDB
+from finaira_generalization.db import (
+    Bank,
+    BankAlias,
+    GovernmentAlias,
+    GovernmentEntity,
+    NaturalEarthCountry,
+    NaturalEarthCountryAlias,
+    NationalityAliasV2,
+    Occupation,
+    OccupationAlias,
+    Organization,
+    OrganizationAlias,
+    make_engine,
+)
+from finaira_generalization.normalization import normalize
 
 
 HTML = r"""<!doctype html>
@@ -100,6 +118,8 @@ HTML = r"""<!doctype html>
     <div class="panel" id="summary"></div>
     <h2>Candidate chain</h2>
     <div id="candidates"></div>
+    <h2 id="suggestion-heading" style="display:none">Substring suggestions</h2>
+    <div id="suggestions"></div>
   </section>
 </main>
 <script>
@@ -107,6 +127,8 @@ const form = document.getElementById('query-form');
 const result = document.getElementById('result');
 const summary = document.getElementById('summary');
 const candidates = document.getElementById('candidates');
+const suggestionHeading = document.getElementById('suggestion-heading');
+const suggestions = document.getElementById('suggestions');
 const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const json = value => esc(JSON.stringify(value ?? {}, null, 2));
 const cls = status => String(status || '').toLowerCase().replace(/[^a-z]/g, '');
@@ -126,6 +148,10 @@ function render(data) {
     const flags = [item.is_exact && 'EXACT', item.is_local_only && 'LOCAL_ONLY', item.is_suppression && 'SUPPRESSION', item.available === false && 'UNAVAILABLE'].filter(Boolean);
     return `<article class="candidate"><div class="candidate-head"><div><div class="candidate-title">${esc(item.representation || item.label_en || item.label_ar || item.level_code || 'Unnamed candidate')}</div><div class="candidate-id">${esc(item.candidate_id)}</div></div><span class="badge">rank ${esc(item.specificity_rank ?? index)}</span></div><div class="grid">${field('Level', item.level_code)}${field('Verification', item.verification_status)}${field('Source', item.source)}${field('Taxonomy', item.taxonomy)}${field('Taxonomy code', item.taxonomy_code)}${field('Flags', flags.join(' · '))}</div><details><summary>Labels and provenance</summary><pre>${json({label_en:item.label_en,label_ar:item.label_ar,provenance:item.provenance,metadata:item.metadata})}</pre></details></article>`;
   }).join('');
+  const related = data.substring_suggestions || [];
+  const attempted = data.substring_search_performed === true;
+  suggestionHeading.style.display = attempted ? 'block' : 'none';
+  suggestions.innerHTML = related.length ? related.map(item => `<article class="candidate"><div class="candidate-head"><div><div class="candidate-title">${esc(item.label || item.alias_text || 'Unnamed suggestion')}</div><div class="candidate-id">${esc(item.canonical_id)}</div></div><span class="badge review">REVIEW ONLY</span></div><div class="grid">${field('Matched alias', item.alias_text)}${field('Language', item.language)}${field('Match kind', item.match_kind)}${field('Verification', item.verification_status)}${field('Lookup enabled', item.enabled_for_lookup ? 'yes' : 'no')}${field('Source', item.source)}</div><details><summary>Suggestion details</summary><pre>${json(item)}</pre></details></article>`).join('') : attempted ? '<div class="empty">No stored alias contains this text. This is a database-breadth gap, not a verified match.</div>' : '';
   result.scrollIntoView({behavior:'smooth', block:'start'});
 }
 
@@ -137,6 +163,8 @@ form.addEventListener('submit', async event => {
   const review = document.getElementById('review').checked ? '1' : '0';
   summary.innerHTML = '<div class="empty">Querying the local database…</div>';
   candidates.innerHTML = '';
+  suggestions.innerHTML = '';
+  suggestionHeading.style.display = 'none';
   result.style.display = 'block';
   try {
     const response = await fetch(`/api/query?value=${encodeURIComponent(value)}&type=${encodeURIComponent(type)}&language=${encodeURIComponent(language)}&review=${review}`);
@@ -152,6 +180,122 @@ form.addEventListener('submit', async event => {
 </body>
 </html>
 """
+
+
+def _query_languages(value: str, output_language: str) -> list[str]:
+    primary = "ar" if any("\u0600" <= char <= "\u06ff" for char in value) else "en"
+    languages = [primary]
+    if output_language in {"ar", "en"} and output_language not in languages:
+        languages.append(output_language)
+    for language in ("ar", "en"):
+        if language not in languages:
+            languages.append(language)
+    return languages
+
+
+def _split_aliases(value: str) -> list[str]:
+    return [part.strip() for part in value.split("/") if part.strip()]
+
+
+def _match_kind(needle: str, haystack: str, index: int) -> str:
+    if index == 0:
+        return "PREFIX_SUBSTRING"
+    before = haystack[index - 1] if index else " "
+    return "TOKEN_SUBSTRING" if before.isspace() else "MIDDLE_SUBSTRING"
+
+
+def substring_suggestions(db_path: Path, entity_type: str, value: str, output_language: str, limit: int = 40) -> list[dict]:
+    """Return deterministic, review-only alias substring suggestions.
+
+    This intentionally does not change the resolver result. It is an explorer
+    aid for finding possible aliases such as ``مدرسة`` inside longer titles.
+    """
+    canonical_type = {"OCCUPATION": "JOB_TITLE", "ORGANIZATION": "CORPORATION", "UNIVERSITY": "CORPORATION"}.get(entity_type, entity_type)
+    if canonical_type in {"AGE", "DATE"}:
+        return []
+    suggestions = []
+    seen = set()
+    with Session(make_engine(db_path)) as session:
+        for query_language in _query_languages(value, output_language):
+            needle = normalize(value, query_language)
+            if not needle:
+                continue
+            if canonical_type == "JOB_TITLE":
+                rows = session.scalars(select(OccupationAlias).where(OccupationAlias.language == query_language, OccupationAlias.normalized_alias.contains(needle, autoescape=True))).all()
+                for row in rows:
+                    if row.review_status not in {"OFFICIAL", "REVIEWED"}:
+                        continue
+                    occupation = session.get(Occupation, row.occupation_id)
+                    for alias in _split_aliases(row.alias_text):
+                        haystack = normalize(alias, query_language)
+                        index = haystack.find(needle)
+                        key = (row.occupation_id, haystack, query_language)
+                        if index < 0 or key in seen:
+                            continue
+                        seen.add(key)
+                        suggestions.append({
+                            "canonical_id": row.occupation_id,
+                            "alias_text": alias,
+                            "label": (occupation.label_ar if output_language == "ar" else occupation.label_en) if occupation else alias,
+                            "language": query_language,
+                            "match_kind": _match_kind(needle, haystack, index),
+                            "match_position": index,
+                            "verification_status": row.review_status,
+                            "enabled_for_lookup": True,
+                            "source": "ESCO substring suggestion",
+                            "review_required": True,
+                        })
+            elif canonical_type == "BANK":
+                rows = session.scalars(select(BankAlias).where(BankAlias.language == query_language, BankAlias.normalized_alias.contains(needle, autoescape=True))).all()
+                for row in rows:
+                    haystack = normalize(row.alias_text, query_language)
+                    index = haystack.find(needle)
+                    if index < 0:
+                        continue
+                    bank = session.get(Bank, row.bank_id)
+                    key = (row.bank_id, haystack, query_language)
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    suggestions.append({"canonical_id": row.bank_id, "alias_text": row.alias_text, "label": (bank.name_ar if output_language == "ar" else bank.name_en) if bank else row.alias_text, "language": query_language, "match_kind": _match_kind(needle, haystack, index), "match_position": index, "verification_status": row.review_status, "enabled_for_lookup": row.enabled_for_lookup, "source": "Bank alias substring suggestion", "review_required": True})
+            elif canonical_type == "COUNTRY":
+                rows = session.scalars(select(NaturalEarthCountryAlias).where(NaturalEarthCountryAlias.language == query_language, NaturalEarthCountryAlias.normalized_alias.contains(needle, autoescape=True))).all()
+                for row in rows:
+                    haystack = normalize(row.alias_text, query_language); index = haystack.find(needle)
+                    if index < 0: continue
+                    country = session.get(NaturalEarthCountry, row.natural_earth_id); key = (row.natural_earth_id, haystack, query_language)
+                    if key in seen: continue
+                    seen.add(key)
+                    suggestions.append({"canonical_id": country.iso_a2 if country else row.natural_earth_id, "alias_text": row.alias_text, "label": (country.name_ar if output_language == "ar" else country.name_en) if country else row.alias_text, "language": query_language, "match_kind": _match_kind(needle, haystack, index), "match_position": index, "verification_status": row.verification_status, "enabled_for_lookup": row.enabled_for_lookup, "source": "Natural Earth alias substring suggestion", "review_required": True})
+            elif canonical_type == "NATIONALITY":
+                rows = session.scalars(select(NationalityAliasV2).where(NationalityAliasV2.language == query_language, NationalityAliasV2.normalized_alias.contains(needle, autoescape=True))).all()
+                for row in rows:
+                    haystack = normalize(row.alias_text, query_language); index = haystack.find(needle)
+                    if index < 0: continue
+                    key = (row.country_qid, haystack, query_language)
+                    if key in seen: continue
+                    seen.add(key)
+                    suggestions.append({"canonical_id": row.country_qid, "alias_text": row.alias_text, "label": row.alias_text, "language": query_language, "match_kind": _match_kind(needle, haystack, index), "match_position": index, "verification_status": row.verification_status, "enabled_for_lookup": True, "source": "Wikidata demonym substring suggestion", "review_required": True})
+            elif canonical_type == "CORPORATION":
+                rows = session.scalars(select(OrganizationAlias).where(OrganizationAlias.language == query_language, OrganizationAlias.normalized_alias.contains(needle, autoescape=True))).all()
+                for row in rows:
+                    haystack = normalize(row.alias_text, query_language); index = haystack.find(needle)
+                    if index < 0: continue
+                    organization = session.get(Organization, row.organization_qid); key = (row.organization_qid, haystack, query_language)
+                    if key in seen: continue
+                    seen.add(key)
+                    suggestions.append({"canonical_id": row.organization_qid, "alias_text": row.alias_text, "label": (organization.name_ar if output_language == "ar" else organization.name_en) if organization else row.alias_text, "language": query_language, "match_kind": _match_kind(needle, haystack, index), "match_position": index, "verification_status": row.verification_status, "enabled_for_lookup": row.enabled_for_lookup, "source": "Wikidata organization substring suggestion", "review_required": True})
+            elif canonical_type == "GOVERNMENT_ENTITY":
+                rows = session.scalars(select(GovernmentAlias).where(GovernmentAlias.language == query_language, GovernmentAlias.normalized_alias.contains(needle, autoescape=True))).all()
+                for row in rows:
+                    haystack = normalize(row.alias_text, query_language); index = haystack.find(needle)
+                    if index < 0: continue
+                    government = session.get(GovernmentEntity, row.entity_id); key = (row.entity_id, haystack, query_language)
+                    if key in seen: continue
+                    seen.add(key)
+                    suggestions.append({"canonical_id": row.entity_id, "alias_text": row.alias_text, "label": (government.name_ar if output_language == "ar" else government.name_en_provisional) if government else row.alias_text, "language": query_language, "match_kind": _match_kind(needle, haystack, index), "match_position": index, "verification_status": row.verification_status, "enabled_for_lookup": row.enabled_for_lookup, "source": "Government alias substring suggestion", "review_required": True})
+    suggestions.sort(key=lambda item: (item["match_position"], len(item["alias_text"]), item["canonical_id"]))
+    return suggestions[:limit]
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -184,6 +328,10 @@ class Handler(BaseHTTPRequestHandler):
                 return
             try:
                 payload = GeneralizationDB(self.db_path).get_candidates(entity_type, value, language, include_review_candidates=include_review)
+                has_exact = any(item.get("is_exact") and not item.get("is_suppression") for item in payload.get("candidates", []))
+                if not has_exact:
+                    payload["substring_search_performed"] = True
+                    payload["substring_suggestions"] = substring_suggestions(self.db_path, entity_type, value, language)
                 self._send(json.dumps(payload, ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8")
             except Exception as exc:  # Keep the local UI usable while exposing the actual failure.
                 self._send(json.dumps({"error": f"{type(exc).__name__}: {exc}"}, ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8", 500)
