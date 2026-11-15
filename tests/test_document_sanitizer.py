@@ -58,6 +58,37 @@ def test_monetary_amount_is_generalized_with_three_unselected_options():
     assert entity["generalization_candidates"][2]["missing_reason"] == "REQUIRES_THRESHOLD"
 
 
+def test_generalization_without_a_production_candidate_falls_back_to_counter_pseudonym():
+    request = {
+        "document_id": "doc-fallbacks",
+        "text": "[[E1]] [[E1]] [[E2]]",
+        "entity_map": {
+            "E1": {
+                "label": "DATE",
+                "original_text": "03/04/2026",
+                "placeholder": "[[E1]]",
+            },
+            "E2": {
+                "label": "CORPORATION",
+                "original_text": "Unknown Holdings",
+                "placeholder": "[[E2]]",
+            },
+        },
+    }
+
+    result = prepare_document(request, DB)
+    date_entity = result["entities"]["E1"]
+    corporation = result["entities"]["E2"]
+
+    assert date_entity["generalization"]["status"] == "AMBIGUOUS"
+    assert date_entity["effective_action"] == "PSEUDONYMIZE"
+    assert date_entity["pseudonymization_form"] == "__FN_DATE_0001__"
+    assert date_entity["fallback_reason"] == "NO_PRODUCTION_GENERALIZATION_CANDIDATE"
+    assert corporation["generalization"]["status"] == "NOT_FOUND"
+    assert corporation["effective_action"] == "PSEUDONYMIZE"
+    assert corporation["pseudonymization_form"] == "__FN_CORPORATION_0001__"
+
+
 def test_placeholder_document_returns_pseudonym_forms_without_echoing_originals():
     request = {
         "document_id": "doc-001",

@@ -114,6 +114,7 @@ class DocumentSanitizer:
                     "placeholder": placeholder,
                     "input_language": language,
                     "policy_action": action,
+                    "effective_action": action,
                     "pseudonymization": None,
                     "pseudonymization_form": None,
                     "generalization": None,
@@ -130,13 +131,27 @@ class DocumentSanitizer:
                     }
                     entry["pseudonymization_form"] = token
                 elif action == Action.GENERALIZE.value:
-                    entry.update(self._generalization_package(
+                    package = self._generalization_package(
                         source_type,
                         canonical_type,
                         original_text,
                         language,
                         supplied,
-                    ))
+                    )
+                    has_replacement = package.pop("_has_production_replacement", False)
+                    entry.update(package)
+                    if not has_replacement:
+                        entity = Entity(canonical_type, original_text, entity_id=entity_id)
+                        token = vault.token_for(entity, entity_id, Action.PSEUDONYMIZE.value)
+                        entry["effective_action"] = Action.PSEUDONYMIZE.value
+                        entry["pseudonymization"] = {
+                            "form": token,
+                            "reversible": True,
+                            "scope": "document_request",
+                            "fallback_for": Action.GENERALIZE.value,
+                        }
+                        entry["pseudonymization_form"] = token
+                        entry["fallback_reason"] = "NO_PRODUCTION_GENERALIZATION_CANDIDATE"
 
                 counts[action] += 1
                 output_entities[entity_id] = entry
@@ -184,9 +199,10 @@ class DocumentSanitizer:
             input_language=language,
         )
         candidates = []
+        result_allows_production = result.get("resolution_status") in {"MATCHED", "VERIFIED"}
         for item in result.get("candidates", []):
             candidate = deepcopy(item)
-            candidate["production_eligible"] = _production_eligible(candidate)
+            candidate["production_eligible"] = result_allows_production and _production_eligible(candidate)
             candidates.append(candidate)
         return {
             "generalization": {
@@ -198,6 +214,7 @@ class DocumentSanitizer:
                 "selected_candidate": None,
             },
             "generalization_candidates": candidates,
+            "_has_production_replacement": any(item["production_eligible"] for item in candidates),
         }
 
     @staticmethod
@@ -262,6 +279,7 @@ class DocumentSanitizer:
             },
             "monetary_result": result,
             "generalization_candidates": candidates,
+            "_has_production_replacement": any(item["production_eligible"] for item in candidates),
         }
 
     @staticmethod
