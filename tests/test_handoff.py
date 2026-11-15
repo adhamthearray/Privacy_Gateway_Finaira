@@ -174,6 +174,18 @@ def test_organization_pending_identity_gates_specific_industry():
     assert scalar("select count(*) from corporation_aliases") == 2135
 
 
+def test_unified_corporation_bank_identity_collapses_country_operations():
+    result = GeneralizationDB(DB).get_candidates("CORPORATION", "Banque Misr", "en")
+    assert result["resolution_status"] == "REVIEW_ONLY"
+    assert result["reason_code"] == "BANK_MODEL_REVIEW_REQUIRED"
+    assert result["canonical_id"] == "BANK_BANQUE_MISR"
+    assert result["source_entity_type"] == "BANK"
+    assert result["source_entity_ids"] == ["AE-074", "EG_BANK_001", "SA-034"]
+    assert [candidate["level_code"] for candidate in result["candidates"]] == [
+        "BANKING_INSTITUTION", "FINANCIAL_INSTITUTION", "CORPORATION_GENERIC", "SUPPRESSED",
+    ]
+
+
 def test_government_review_default_and_optional_branches():
     assert scalar("select count(*) from government_entities") == 12
     assert scalar("select count(*) from government_aliases where verification_status='APPROVED_BY_USER'") == 24

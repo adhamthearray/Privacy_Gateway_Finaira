@@ -21,6 +21,7 @@ from finaira_generalization.date_detector import detect_date
 from finaira_generalization.db import (
     Bank,
     BankAlias,
+    BankIdentityModel,
     GeneralizationCandidate,
     GovernmentAlias,
     GovernmentEntity,
@@ -375,13 +376,23 @@ def substring_suggestions(db_path: Path, entity_type: str, value: str, output_la
                     suggestions.append({"canonical_id": row.country_qid, "alias_text": row.alias_text, "label": row.alias_text, "language": query_language, "match_kind": _match_kind(needle, haystack, index), "match_position": index, "verification_status": row.verification_status, "enabled_for_lookup": True, "source": "Wikidata demonym substring suggestion", "review_required": True})
             elif canonical_type == "CORPORATION":
                 rows = session.scalars(select(CorporationAlias).where(CorporationAlias.language == query_language, CorporationAlias.normalized_alias.contains(needle, autoescape=True))).all()
+                grouped = {}
                 for row in rows:
                     haystack = normalize(row.alias_text, query_language); index = haystack.find(needle)
                     if index < 0: continue
                     entity = session.get(CorporationEntity, row.corporation_id); key = (row.corporation_id, haystack, query_language)
-                    if key in seen: continue
-                    seen.add(key)
-                    suggestions.append({"canonical_id": row.source_entity_id, "alias_text": row.alias_text, "label": (entity.name_ar if output_language == "ar" else entity.name_en) if entity else row.alias_text, "language": query_language, "match_kind": _match_kind(needle, haystack, index), "match_position": index, "verification_status": row.verification_status, "enabled_for_lookup": row.enabled_for_lookup, "source": "Unified corporation alias substring suggestion", "source_entity_type": row.source_entity_type, "review_required": True})
+                    identity = row.source_entity_id
+                    if row.source_entity_type == "BANK":
+                        model = session.get(BankIdentityModel, row.source_entity_id)
+                        identity = model.bank_identity_id if model and model.bank_identity_id else row.source_entity_id
+                    key = (row.source_entity_type, identity, row.normalized_alias, query_language)
+                    if key in grouped:
+                        grouped[key]["source_record_ids"].append(row.source_entity_id)
+                        grouped[key]["source_record_count"] = len(grouped[key]["source_record_ids"])
+                        continue
+                    suggestion = {"canonical_id": identity, "alias_text": row.alias_text, "label": (entity.name_ar if output_language == "ar" else entity.name_en) if entity else row.alias_text, "language": query_language, "match_kind": _match_kind(needle, haystack, index), "match_position": index, "verification_status": row.verification_status, "enabled_for_lookup": row.enabled_for_lookup, "source": "Unified corporation alias substring suggestion", "source_entity_type": row.source_entity_type, "source_record_ids": [row.source_entity_id], "source_record_count": 1, "review_required": True}
+                    grouped[key] = suggestion
+                    suggestions.append(suggestion)
             elif canonical_type == "GOVERNMENT_ENTITY":
                 rows = session.scalars(select(GovernmentAlias).where(GovernmentAlias.language == query_language, GovernmentAlias.normalized_alias.contains(needle, autoescape=True))).all()
                 for row in rows:

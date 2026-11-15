@@ -614,6 +614,25 @@ class GeneralizationDB:
             CorporationAlias.enabled_for_lookup.is_(True),
         )).all()
         corporation_ids = {row.corporation_id for row in aliases}
+        bank_identity_groups = {}
+        non_bank_ids = set()
+        for row in aliases:
+            if row.source_entity_type == "BANK":
+                model = session.get(BankIdentityModel, row.source_entity_id)
+                identity = model.bank_identity_id if model and model.bank_identity_id else row.source_entity_id
+                bank_identity_groups.setdefault(identity, set()).add(row.source_entity_id)
+            else:
+                non_bank_ids.add(row.corporation_id)
+        # Country operations for one legal bank identity are one runtime bank.
+        # Their source rows remain separate in the audit tables, and conflicting
+        # model classifications are still handled by _bank_model_result.
+        if len(bank_identity_groups) == 1 and not non_bank_ids:
+            identity, source_records = next(iter(bank_identity_groups.items()))
+            result = self._corporationize_bank_result(self._bank(session, value, lang, include_review, query_lang), lang)
+            result["canonical_id"] = result.get("canonical_id") or identity
+            result["source_entity_ids"] = sorted(source_records)
+            result["source_entity_type"] = "BANK"
+            return result
         if len(corporation_ids) > 1:
             return self._organization_fallback("CORPORATION", lang, "AMBIGUOUS", "ALIAS_COLLISION", "CORPORATION")
         if not corporation_ids:

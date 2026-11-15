@@ -91,6 +91,17 @@ def test_ui_uses_one_corporation_selection_for_banks_universities_and_companies(
     assert university["source_entity_type"] == "UNIVERSITY"
 
 
+def test_ui_collapses_country_operations_for_same_bank_identity():
+    suggestions = [
+        item for item in substring_suggestions(DB, "CORPORATION", "Banque Misr", "en", limit=20)
+        if item["alias_text"] == "Banque Misr"
+    ]
+    assert len(suggestions) == 1
+    assert suggestions[0]["canonical_id"] == "BANK_BANQUE_MISR"
+    assert suggestions[0]["source_record_ids"] == ["AE-074", "EG_BANK_001", "SA-034"]
+    assert suggestions[0]["source_record_count"] == 3
+
+
 def test_ui_uses_one_job_title_selection_for_job_titles_and_occupations():
     assert 'value="JOB_TITLE">JOB_TITLE (job titles and occupations)' in HTML
     assert '<option>OCCUPATION</option>' not in HTML
