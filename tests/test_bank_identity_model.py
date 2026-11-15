@@ -115,7 +115,7 @@ def test_bank_pipeline_uses_safe_key_and_pseudonym_fallback():
     ]
     result = PrivacyPipeline().run(PipelineRequest(document, entities))
     assert result.status == "PASS"
-    assert result.protected_document == "GEN_EMIRATES_NBD_CONVENTIONAL worked with GEN_EMIRATES_NBD_CONVENTIONAL."
+    assert result.protected_document == "Conventional bank worked with Conventional bank."
 
     unknown = "Unresolved Bank Identity"
     fallback = PrivacyPipeline().run(PipelineRequest(unknown, [Entity("BANK", unknown, 0, len(unknown), "unknown-bank", "en")]))

@@ -75,3 +75,36 @@ def test_ui_date_query_supports_relative_and_non_gregorian_context():
 def test_ui_contains_date_context_controls():
     for control in ("date-context", "date-format", "date-order", "date-calendar", "date-hint", "anchor-date", "two-digit-year-base"):
         assert f'id="{control}"' in HTML
+
+
+def test_ui_exposes_final_decision_for_all_generalizable_entity_types():
+    cases = [
+        ("JOB_TITLE", "technical director", "en", "GENERALIZE"),
+        ("COUNTRY", "Egypt", "en", "GENERALIZE"),
+        ("NATIONALITY", "Egyptian", "en", "GENERALIZE"),
+        ("BANK", "Emirates NBD Bank", "en", "GENERALIZE"),
+        ("AGE", "27", "en", "GENERALIZE"),
+        ("DATE", "2026-03-14", "en", "GENERALIZE"),
+    ]
+    for entity_type, value, language, expected_action in cases:
+        result = _query_ui({"value": value, "type": entity_type, "language": language})
+        assert result["final_decision"]["action"] == expected_action, entity_type
+        assert result["final_decision"]["final_response"]
+        assert result["final_decision"]["why"]
+
+
+def test_ui_final_decision_uses_common_ancestor_or_pseudonymizes():
+    common = _query_ui({"value": "human resources man", "type": "JOB_TITLE", "language": "en"})
+    assert common["final_decision"]["action"] == "GENERALIZE"
+    assert common["final_decision"]["reason_code"] == "SUBSTRING_COMMON_ANCESTOR"
+    assert common["final_decision"]["common_ancestor"] == "1212"
+    assert common["final_decision"]["final_response"] == "Managers"
+
+    no_match = _query_ui({"value": "not a real entity", "type": "CORPORATION", "language": "en"})
+    assert no_match["final_decision"]["action"] == "PSEUDONYMIZE"
+    assert no_match["final_decision"]["reason_code"] == "NO_MATCH"
+    assert no_match["final_decision"]["final_response"] == "PSEUDONYMIZE_REQUIRED"
+
+    ambiguous_date = _query_ui({"value": "8/6/2024", "type": "DATE", "language": "en"})
+    assert ambiguous_date["final_decision"]["action"] == "PSEUDONYMIZE"
+    assert ambiguous_date["final_decision"]["reason_code"] == "AMBIGUOUS_DATE"

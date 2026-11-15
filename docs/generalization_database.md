@@ -216,7 +216,7 @@ sequenceDiagram
   API-->>Caller: selected_candidate = null
 ```
 
-Bank model-aware lookup now exposes `EXACT → FINANCE_MODEL → MODEL_SAFE_GROUP → BANKING_INSTITUTION → FINANCIAL_INSTITUTION → SUPPRESSED`. `FINANCE_MODEL` is the shared human-facing form: different banks with the same verified model converge on the same candidate ID and bilingual label, such as `Conventional bank`, `Bank offering conventional and Islamic banking services`, or `Islamic bank`. `MODEL_SAFE_GROUP` remains the more specific supplied cohort form and retains the source safe key in provenance. Finance-model forms are persisted in `bank_generalization_forms` and are enabled only for active source operations whose model record is not review-required; pending, historical, unknown, non-bank, and conflicting rows remain review-only. A model-safe key is shared only when the source cohort permits it and all member records pass relationship, model, active-bank, and review gates. Organization-specific industry candidates are absent by default until both identity and company-to-industry links are approved; `include_review_candidates=True` exposes them only as `REVIEW_ONLY`. Government function/form branches are separate and hidden by default.
+Bank model-aware lookup now exposes `EXACT → MODEL_SAFE_GROUP → FINANCE_MODEL → BANKING_INSTITUTION → FINANCIAL_INSTITUTION → SUPPRESSED`. `FINANCE_MODEL` is the broader shared human-facing form: different banks with the same verified model converge on the same candidate ID and bilingual label, such as `Conventional bank`, `Bank offering conventional and Islamic banking services`, or `Islamic bank`. `MODEL_SAFE_GROUP` remains the more specific supplied cohort form and retains the source safe key in provenance. Finance-model forms are persisted in `bank_generalization_forms` and are enabled only for active source operations whose model record is not review-required; pending, historical, unknown, non-bank, and conflicting rows remain review-only. A model-safe key is shared only when the source cohort permits it and all member records pass relationship, model, active-bank, and review gates. Organization-specific industry candidates are absent by default until both identity and company-to-industry links are approved; `include_review_candidates=True` exposes them only as `REVIEW_ONLY`. Government function/form branches are separate and hidden by default.
 
 ## Bilingual examples for every supported type
 
@@ -307,7 +307,10 @@ The local explorer opens at `http://127.0.0.1:8765/`. It accepts Arabic or
 English input, lets the user choose the entity type and returned-label
 language, and displays the full candidate chain including exact, review-only,
 fallback, and suppression candidates. It is a read-only database explorer;
-it does not select a candidate or create pseudonyms.
+it does not select a candidate or create pseudonyms. The final-decision panel
+also previews the deterministic outcome: `GENERALIZE` with the retained upper
+hierarchy and common-ancestor explanation, or `PSEUDONYMIZE` with the reason
+that no safe direct or substring-derived generalization exists.
 
 When `DATE` is selected, the explorer exposes optional explicit-format,
 numeric-order, calendar, value-hint, relative-anchor, and two-digit-year-base

@@ -432,7 +432,7 @@ class GeneralizationDB:
         candidates.append(_candidate_dict(
             candidate_id=f"BANK_FINANCE_MODEL__{banking_model}",
             level_code="FINANCE_MODEL",
-            rank=1,
+            rank=2,
             label_en=model_label_en,
             label_ar=model_label_ar,
             language=lang,
@@ -468,7 +468,7 @@ class GeneralizationDB:
         candidates.append(_candidate_dict(
             candidate_id=f"BANK_SAFE__{key}",
             level_code="MODEL_SAFE_GROUP",
-            rank=2,
+            rank=1,
             label_en=key,
             label_ar=key,
             language=lang,

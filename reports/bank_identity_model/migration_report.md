@@ -1,6 +1,6 @@
 # Bank identity/model-safe migration report
 
-Generated: 2026-11-15T12:00:29.075918+00:00
+Generated: 2026-11-15T12:55:02.015599+00:00
 
 - **database**: "C:\\Users\\domma\\poc_4\\data\\processed\\finaira_generalization.db"
 - **source_dir**: "C:\\Users\\domma\\poc_4\\data\\sources\\bank\\model_safe_2026"
@@ -29,4 +29,4 @@ Generated: 2026-11-15T12:00:29.075918+00:00
 - **model_counts**: {"CONVENTIONAL": 192, "HISTORICAL_UNDETERMINED": 16, "ISLAMIC": 47, "ISLAMIC_WINDOW": 5, "MIXED": 3, "NOT_A_BANK": 7, "SPECIALIZED": 4, "UNKNOWN": 29}
 - **record_class_counts**: {"BANK": 274, "DUPLICATE_SOURCE_ROW": 1, "HISTORICAL": 16, "ISLAMIC_WINDOW": 5, "NON_BANK_OR_REGULATOR": 7}
 - **unresolved_records**: []
-- **backup_path**: "C:\\Users\\domma\\poc_4\\data\\processed\\finaira_generalization_backup_bank_model_20261115_140029.db"
+- **backup_path**: null

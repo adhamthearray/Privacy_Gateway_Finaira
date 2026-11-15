@@ -16,7 +16,7 @@ from sqlalchemy.orm import Session
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from finaira_generalization.candidates import GeneralizationDB
+from finaira_generalization.candidates import BANK_MODEL_FORM_LABELS, GeneralizationDB
 from finaira_generalization.date_detector import detect_date
 from finaira_generalization.db import (
     Bank,
@@ -27,6 +27,7 @@ from finaira_generalization.db import (
     IscoGroup,
     NaturalEarthCountry,
     NaturalEarthCountryAlias,
+    NationalityGeoJoin,
     NationalityAliasV2,
     Occupation,
     OccupationAlias,
@@ -69,6 +70,8 @@ HTML = r"""<!doctype html>
     .badge { display:inline-block; border-radius:999px; padding:4px 10px; font-weight:700; font-size:12px; background:#374151; }
     .verified { color:#052e16; background:var(--good); }
     .matched { color:#052e16; background:var(--good); }
+    .generalize { color:#052e16; background:var(--good); }
+    .pseudonymize { color:#450a0a; background:var(--bad); }
     .review { color:#422006; background:var(--warn); }
     .ambiguous { color:#431407; background:#fb923c; }
     .notfound, .invalid { color:#450a0a; background:var(--bad); }
@@ -152,6 +155,8 @@ HTML = r"""<!doctype html>
   <section id="result" style="display:none">
     <h2>Resolution</h2>
     <div class="panel" id="summary"></div>
+    <h2>Final decision</h2>
+    <div class="panel" id="final-decision"></div>
     <h2>Candidate chain</h2>
     <div id="candidates"></div>
     <h2 id="aggregate-heading" style="display:none">Generalization from common matched hierarchy</h2>
@@ -164,6 +169,7 @@ HTML = r"""<!doctype html>
 const form = document.getElementById('query-form');
 const result = document.getElementById('result');
 const summary = document.getElementById('summary');
+const finalDecision = document.getElementById('final-decision');
 const candidates = document.getElementById('candidates');
 const aggregateHeading = document.getElementById('aggregate-heading');
 const aggregate = document.getElementById('aggregate');
@@ -186,8 +192,26 @@ function field(label, value) {
   return `<div class="field">${esc(label)}<strong>${esc(value === undefined || value === null || value === '' ? '—' : value)}</strong></div>`;
 }
 
+function renderFinalDecision(data) {
+  const decision = data.final_decision;
+  if (!decision) {
+    finalDecision.innerHTML = '<div class="empty">No final decision was produced.</div>';
+    return;
+  }
+  const action = decision.action || 'PSEUDONYMIZE';
+  const why = (decision.why || []).map(item => `<li>${esc(item)}</li>`).join('');
+  const path = (decision.path || []).map(item => `${esc(item.level_code)}${item.representation ? `: ${esc(item.representation)}` : ''}`).join(' â†’ ');
+  finalDecision.innerHTML = `<div class="status"><span class="badge ${action === 'GENERALIZE' ? 'generalize' : 'pseudonymize'}">${esc(action)}</span><span class="badge">${esc(decision.reason_code)}</span></div>`
+    + `<div class="grid">${field('Final response', decision.final_response)}${field('Match method', decision.match_method)}${field('Common ancestor', decision.common_ancestor)}${field('Matched values', decision.matched_count)}</div>`
+    + `<div class="meta"><strong>Why</strong><ul>${why}</ul></div>`
+    + `<div class="meta"><strong>Retained hierarchy</strong><div>${path || 'None'}</div></div>`
+    + (decision.selected_candidate ? `<details><summary>Final candidate provenance</summary><pre>${json(decision.selected_candidate)}</pre></details>` : '')
+    + `<details><summary>Decision trace</summary><pre>${json(decision)}</pre></details>`;
+}
+
 function render(data) {
   result.style.display = 'block';
+  renderFinalDecision(data);
   const status = data.resolution_status || 'UNKNOWN';
   summary.innerHTML = `<div class="status"><span class="badge ${cls(status)}">${esc(status)}</span>${data.reason_code ? `<span class="badge">${esc(data.reason_code)}</span>` : ''}</div>`
     + `<div class="grid">${field('Entity type', data.entity_type)}${field('Canonical ID', data.canonical_id)}${field('Candidates', (data.candidates || []).length)}</div>`
@@ -227,6 +251,7 @@ form.addEventListener('submit', async event => {
     Object.entries(dateFields).forEach(([key, fieldValue]) => { if (fieldValue) params.set(key, fieldValue); });
   }
   summary.innerHTML = '<div class="empty">Querying the local database…</div>';
+  finalDecision.innerHTML = '<div class="empty">Calculating the final deterministic decision...</div>';
   candidates.innerHTML = '';
   aggregate.innerHTML = '';
   aggregateHeading.style.display = 'none';
@@ -428,6 +453,362 @@ def substring_generalization(db_path: Path, entity_type: str, value: str, output
         }
 
 
+def _canonical_entity_type(entity_type: str) -> str:
+    return {
+        "OCCUPATION": "JOB_TITLE",
+        "ORGANIZATION": "CORPORATION",
+        "UNIVERSITY": "CORPORATION",
+    }.get(entity_type.upper(), entity_type.upper())
+
+
+def _candidate_usable(candidate: dict, resolution_status: str) -> bool:
+    metadata = candidate.get("metadata") or {}
+    provenance = candidate.get("provenance") or metadata.get("provenance") or {}
+    if candidate.get("is_exact", metadata.get("is_exact", False)):
+        return False
+    if candidate.get("is_suppression", metadata.get("is_suppression", False)):
+        return False
+    if not candidate.get("available", True) or not candidate.get("representation"):
+        return False
+    if metadata.get("review_only") or provenance.get("requires_policy_approval"):
+        return False
+    if metadata.get("disclosure_approved") is False:
+        return False
+    return resolution_status in {"MATCHED", "VERIFIED"}
+
+
+def _final_from_direct(payload: dict) -> dict | None:
+    has_exact = any(
+        item.get("is_exact") and not item.get("is_suppression")
+        for item in payload.get("candidates", [])
+    )
+    if not has_exact or payload.get("resolution_status") not in {"MATCHED", "VERIFIED"}:
+        return None
+    eligible = [
+        item for item in payload.get("candidates", [])
+        if _candidate_usable(item, payload.get("resolution_status", ""))
+    ]
+    if not eligible:
+        return {
+            "action": "PSEUDONYMIZE",
+            "final_response": "PSEUDONYMIZE_REQUIRED",
+            "reason_code": "DIRECT_MATCH_HAS_NO_USABLE_GENERALIZATION",
+            "match_method": "DIRECT_MATCH",
+            "why": [
+                "A direct entity match was found.",
+                "All non-exact candidates are unavailable, review-only, suppressed, or not disclosure-approved.",
+            ],
+            "path": [
+                {"level_code": item.get("level_code"), "representation": item.get("representation")}
+                for item in payload.get("candidates", [])
+            ],
+            "matched_count": 1,
+        }
+    selected = max(eligible, key=lambda item: (item.get("specificity_rank", 0), item.get("candidate_id", "")))
+    return {
+        "action": "GENERALIZE",
+        "final_response": selected.get("representation"),
+        "reason_code": "DIRECT_MATCH_UPPER_HIERARCHY",
+        "match_method": "DIRECT_MATCH",
+        "why": [
+            "A unique direct or normalized alias match was found.",
+            "The exact value was excluded from the final response.",
+            "The broadest verified, disclosure-approved upper-layer candidate was selected.",
+        ],
+        "selected_candidate": selected,
+        "path": [
+            {"level_code": item.get("level_code"), "representation": item.get("representation")}
+            for item in payload.get("candidates", [])
+        ],
+        "matched_count": 1,
+    }
+
+
+def _simple_final_candidate(candidate_id: str, level_code: str, label_en: str | None, label_ar: str | None, language: str, *, taxonomy: str, taxonomy_code: str | None = None, reason: str | None = None) -> dict:
+    representation = label_ar if language == "ar" else label_en
+    return {
+        "candidate_id": candidate_id,
+        "level_code": level_code,
+        "specificity_rank": 1,
+        "representation": representation,
+        "language": language,
+        "taxonomy": taxonomy,
+        "taxonomy_code": taxonomy_code,
+        "source": "Finaira common-ancestor resolver",
+        "verification_status": "SOURCE_VERIFIED",
+        "available": representation is not None,
+        "missing_reason": None if representation is not None else "MISSING_VERIFIED_TRANSLATION",
+        "label_en": label_en,
+        "label_ar": label_ar,
+        "is_exact": False,
+        "is_local_only": False,
+        "is_suppression": False,
+        "provenance": {"common_ancestor_reason": reason} if reason else {},
+        "metadata": {"disclosure_approved": representation is not None},
+    }
+
+
+def _pseudonym_decision(reason_code: str, why: list[str], *, match_method: str, suggestions: list[dict] | None = None, path: list[dict] | None = None) -> dict:
+    return {
+        "action": "PSEUDONYMIZE",
+        "final_response": "PSEUDONYMIZE_REQUIRED",
+        "reason_code": reason_code,
+        "match_method": match_method,
+        "why": why,
+        "matched_count": len(suggestions or []),
+        "matched_suggestions": suggestions or [],
+        "path": path or [],
+    }
+
+
+def _country_common_ancestor(db_path: Path, entity_type: str, suggestions: list[dict], language: str) -> tuple[dict | None, list[dict], str | None]:
+    countries = []
+    with Session(make_engine(db_path)) as session:
+        for suggestion in suggestions:
+            if entity_type == "NATIONALITY":
+                join = session.get(NationalityGeoJoin, suggestion["canonical_id"])
+                country = session.get(NaturalEarthCountry, join.natural_earth_id) if join and join.natural_earth_id else None
+            else:
+                country = session.scalar(select(NaturalEarthCountry).where(NaturalEarthCountry.iso_a2 == suggestion["canonical_id"]))
+            if country:
+                countries.append(country)
+    if not countries:
+        return None, [], None
+    for field, level in (("subregion", "SUBREGION"), ("region_un", "REGION_UN"), ("continent", "CONTINENT")):
+        values = {getattr(country, field) for country in countries if getattr(country, field)}
+        if len(values) == 1:
+            value = next(iter(values))
+            candidate = _simple_final_candidate(
+                stable_id("COUNTRY_NATURAL_EARTH", level, value),
+                level,
+                value if language == "en" else None,
+                None,
+                language,
+                taxonomy="NATURAL_EARTH",
+                taxonomy_code=value,
+                reason=f"All {len(countries)} substring matches share {level}={value}.",
+            )
+            return candidate, [{"level_code": level, "representation": candidate["representation"]}], value
+    return None, [], None
+
+
+def _substring_final_decision(db_path: Path, entity_type: str, value: str, language: str, suggestions: list[dict], payload: dict) -> dict:
+    canonical_type = _canonical_entity_type(entity_type)
+    enabled = [
+        item for item in suggestions
+        if item.get("enabled_for_lookup")
+        and str(item.get("verification_status", "")).upper() not in {"HISTORICAL", "REJECTED", "UNVERIFIED"}
+    ]
+    if not enabled:
+        return _pseudonym_decision(
+            "NO_ENABLED_SUBSTRING_MATCH",
+            [
+                "No direct match was found.",
+                "Substring suggestions were absent or all were disabled, historical, or unverified.",
+            ],
+            match_method="NONE" if not suggestions else "SUBSTRING_MATCH",
+            suggestions=suggestions,
+        )
+
+    if canonical_type == "JOB_TITLE":
+        aggregate = substring_generalization(db_path, canonical_type, value, language)
+        if aggregate and aggregate.get("status") == "REVIEW_ONLY" and aggregate.get("candidates"):
+            candidates = [item for item in aggregate["candidates"] if not item.get("is_suppression") and item.get("representation")]
+            if candidates:
+                selected = max(candidates, key=lambda item: (item.get("specificity_rank", 0), item.get("candidate_id", "")))
+                return {
+                    "action": "GENERALIZE",
+                    "final_response": selected["representation"],
+                    "reason_code": "SUBSTRING_COMMON_ANCESTOR",
+                    "match_method": "SUBSTRING_COMMON_ANCESTOR",
+                    "why": [
+                        "No direct alias match was found.",
+                        f"{len(enabled)} verified substring matches were traced through ESCO/ISCO.",
+                        f"All matches share the ISCO ancestor {aggregate.get('common_isco_code')}.",
+                        "Only the common ancestor and its upper layers were retained.",
+                    ],
+                    "selected_candidate": selected,
+                    "common_ancestor": aggregate.get("common_isco_code"),
+                    "path": [
+                        {"level_code": item.get("level_code"), "representation": item.get("representation")}
+                        for item in aggregate["candidates"]
+                    ],
+                    "matched_count": len(enabled),
+                    "matched_suggestions": enabled,
+                }
+        return _pseudonym_decision(
+            "NO_COMMON_ANCESTOR",
+            [
+                "No direct alias match was found.",
+                f"{len(enabled)} verified substring matches were found.",
+                "Their ESCO/ISCO branches have no usable common ancestor.",
+            ],
+            match_method="SUBSTRING_MATCH",
+            suggestions=enabled,
+        )
+
+    if canonical_type in {"COUNTRY", "NATIONALITY"}:
+        candidate, path, ancestor = _country_common_ancestor(db_path, canonical_type, enabled, language)
+        if candidate and candidate.get("representation"):
+            return {
+                "action": "GENERALIZE",
+                "final_response": candidate["representation"],
+                "reason_code": "SUBSTRING_COMMON_ANCESTOR",
+                "match_method": "SUBSTRING_COMMON_ANCESTOR",
+                "why": [
+                    "No direct alias match was found.",
+                    f"{len(enabled)} verified country or nationality matches were traced to Natural Earth.",
+                    f"All matches share the {candidate['level_code']} ancestor {ancestor}.",
+                ],
+                "selected_candidate": candidate,
+                "common_ancestor": ancestor,
+                "path": path,
+                "matched_count": len(enabled),
+                "matched_suggestions": enabled,
+            }
+        return _pseudonym_decision(
+            "NO_COMMON_ANCESTOR",
+            [
+                "No direct alias match was found.",
+                f"{len(enabled)} country or nationality matches were found.",
+                "They do not share a usable verified Natural Earth ancestor in the requested language.",
+            ],
+            match_method="SUBSTRING_MATCH",
+            suggestions=enabled,
+        )
+
+    if canonical_type == "BANK":
+        with Session(make_engine(db_path)) as session:
+            models = {session.get(Bank, item["canonical_id"]).finance_model for item in enabled if session.get(Bank, item["canonical_id"])}
+        if len(models) == 1:
+            model = next(iter(models))
+            label_en, label_ar = BANK_MODEL_FORM_LABELS.get(model, (None, None))
+            candidate = _simple_final_candidate(
+                f"BANK_FINANCE_MODEL__{model}", "FINANCE_MODEL", label_en, label_ar, language,
+                taxonomy="FINAIR_BANK", taxonomy_code=model,
+                reason=f"All {len(enabled)} substring matches share banking model {model}.",
+            )
+            if candidate["representation"]:
+                return {
+                    "action": "GENERALIZE",
+                    "final_response": candidate["representation"],
+                    "reason_code": "SUBSTRING_COMMON_ANCESTOR",
+                    "match_method": "SUBSTRING_COMMON_ANCESTOR",
+                    "why": [
+                        "No direct bank alias match was found.",
+                        f"{len(enabled)} enabled bank substring matches were traced.",
+                        f"All matches share the verified banking model {model}.",
+                    ],
+                    "selected_candidate": candidate,
+                    "common_ancestor": model,
+                    "path": [{"level_code": "FINANCE_MODEL", "representation": candidate["representation"]}],
+                    "matched_count": len(enabled),
+                    "matched_suggestions": enabled,
+                }
+        candidate = _simple_final_candidate(
+            "BANKING_INSTITUTION__COMMON", "BANKING_INSTITUTION", "Banking institution", "مؤسسة مصرفية", language,
+            taxonomy="FINAIR_BANK", reason=f"All {len(enabled)} bank matches share the banking-institution ancestor.",
+        )
+        if candidate["representation"]:
+            return {
+                "action": "GENERALIZE",
+                "final_response": candidate["representation"],
+                "reason_code": "SUBSTRING_COMMON_ANCESTOR",
+                "match_method": "SUBSTRING_COMMON_ANCESTOR",
+                "why": [
+                    "No direct bank alias match was found.",
+                    f"{len(enabled)} enabled bank substring matches were traced.",
+                    "The matches have different banking models, so the shared ancestor is Banking institution.",
+                ],
+                "selected_candidate": candidate,
+                "common_ancestor": "BANKING_INSTITUTION",
+                "path": [{"level_code": "BANKING_INSTITUTION", "representation": candidate["representation"]}],
+                "matched_count": len(enabled),
+                "matched_suggestions": enabled,
+            }
+
+    if canonical_type == "CORPORATION":
+        fallback = GeneralizationDB(db_path).get_candidates("CORPORATION", "__no_direct_match__", language)
+        candidate = next((item for item in fallback.get("candidates", []) if not item.get("is_suppression")), None)
+        if candidate:
+            return {
+                "action": "GENERALIZE",
+                "final_response": candidate["representation"],
+                "reason_code": "SUBSTRING_COMMON_ANCESTOR",
+                "match_method": "SUBSTRING_COMMON_ANCESTOR",
+                "why": [
+                    "No direct corporation alias match was found.",
+                    f"{len(enabled)} corporation-like substring matches were traced.",
+                    "All organization, university, and corporation matches share the generic Corporation form.",
+                ],
+                "selected_candidate": candidate,
+                "common_ancestor": "CORPORATION_GENERIC",
+                "path": [{"level_code": candidate.get("level_code"), "representation": candidate.get("representation")}],
+                "matched_count": len(enabled),
+                "matched_suggestions": enabled,
+            }
+
+    if canonical_type == "GOVERNMENT_ENTITY":
+        fallback = GeneralizationDB(db_path).get_candidates("GOVERNMENT_ENTITY", "__no_direct_match__", language)
+        candidate = next((item for item in fallback.get("candidates", []) if not item.get("is_suppression")), None)
+        if candidate:
+            return {
+                "action": "GENERALIZE",
+                "final_response": candidate["representation"],
+                "reason_code": "SUBSTRING_COMMON_ANCESTOR",
+                "match_method": "SUBSTRING_COMMON_ANCESTOR",
+                "why": [
+                    "No direct government-entity alias match was found.",
+                    f"{len(enabled)} government substring matches were traced.",
+                    "All matches share the generic Government entity form.",
+                ],
+                "selected_candidate": candidate,
+                "common_ancestor": "GOVERNMENT_ENTITY_GENERIC",
+                "path": [{"level_code": candidate.get("level_code"), "representation": candidate.get("representation")}],
+                "matched_count": len(enabled),
+                "matched_suggestions": enabled,
+            }
+
+    return _pseudonym_decision(
+        "NO_COMMON_ANCESTOR",
+        [
+            "No direct alias match was found.",
+            f"{len(enabled)} substring matches were found.",
+            f"No common verified hierarchy is defined for {canonical_type}.",
+        ],
+        match_method="SUBSTRING_MATCH",
+        suggestions=enabled,
+    )
+
+
+def final_decision(db_path: Path, entity_type: str, value: str, language: str, payload: dict, suggestions: list[dict]) -> dict:
+    direct = _final_from_direct(payload)
+    if direct:
+        return direct
+    if payload.get("resolution_status") in {"AMBIGUOUS", "INVALID_INPUT", "NEEDS_CONTEXT", "UNSUPPORTED"}:
+        reason = payload.get("reason_code") or payload.get("resolution_status")
+        return _pseudonym_decision(
+            reason,
+            [
+                f"The resolver returned {payload.get('resolution_status')}.",
+                "A deterministic generalized representation cannot be selected safely.",
+            ],
+            match_method="AMBIGUOUS_OR_INVALID",
+            suggestions=suggestions,
+        )
+    if not suggestions:
+        return _pseudonym_decision(
+            "NO_MATCH",
+            [
+                "No direct alias match was found.",
+                "No enabled substring match was found.",
+                "No verified generalization form is available.",
+            ],
+            match_method="NONE",
+        )
+    return _substring_final_decision(db_path, entity_type, value, language, suggestions, payload)
+
+
 def _date_context(params: dict[str, list[str]]) -> dict:
     """Build only supported detector context from browser query parameters."""
     context = {}
@@ -499,10 +880,13 @@ class Handler(BaseHTTPRequestHandler):
                 if entity_type == "DATE":
                     payload["date_detection"] = _date_detection_payload(value, context)
                 has_exact = any(item.get("is_exact") and not item.get("is_suppression") for item in payload.get("candidates", []))
+                suggestions = []
                 if not has_exact:
                     payload["substring_search_performed"] = True
-                    payload["substring_suggestions"] = substring_suggestions(self.db_path, entity_type, value, language)
+                    suggestions = substring_suggestions(self.db_path, entity_type, value, language)
+                    payload["substring_suggestions"] = suggestions
                     payload["substring_generalization"] = substring_generalization(self.db_path, entity_type, value, language)
+                payload["final_decision"] = final_decision(self.db_path, entity_type, value, language, payload, suggestions)
                 self._send(json.dumps(payload, ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8")
             except Exception as exc:  # Keep the local UI usable while exposing the actual failure.
                 self._send(json.dumps({"error": f"{type(exc).__name__}: {exc}"}, ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8", 500)
