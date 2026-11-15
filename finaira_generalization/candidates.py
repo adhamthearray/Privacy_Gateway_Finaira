@@ -73,9 +73,10 @@ class GeneralizationDB:
     def __init__(self, path="data/processed/finaira_generalization.db"):
         self.engine = make_engine(path)
 
-    def get_candidates(self, entity_type, value, output_language="en", context=None, include_review_candidates=False):
+    def get_candidates(self, entity_type, value, output_language="en", context=None, include_review_candidates=False, input_language=None):
         et = entity_type.upper()
         lang = output_language.lower()
+        query_lang = (input_language or lang).lower()
         context = context or {}
         # The public taxonomy has one organization-like runtime type.  Keep
         # accepting legacy/source labels for compatibility, but resolve them
@@ -93,15 +94,15 @@ class GeneralizationDB:
             if et == "JOB_TITLE":
                 return self._occupation(session, value, lang)
             if et == "COUNTRY":
-                return self._country(session, value, lang)
+                return self._country(session, value, lang, query_lang)
             if et == "NATIONALITY":
-                return self._nationality(session, value, lang)
+                return self._nationality(session, value, lang, query_lang)
             if et == "BANK":
-                return self._bank(session, value, lang, include_review_candidates)
+                return self._bank(session, value, lang, include_review_candidates, query_lang)
             if et == "CORPORATION":
-                return self._organization(session, et, value, lang, include_review_candidates)
+                return self._organization(session, et, value, lang, include_review_candidates, query_lang)
             if et == "GOVERNMENT_ENTITY":
-                return self._government(session, value, lang, include_review_candidates)
+                return self._government(session, value, lang, include_review_candidates, query_lang)
         return self._result(et, "UNSUPPORTED_ENTITY_TYPE", None, [], "UNSUPPORTED_ENTITY_TYPE")
 
     def _result(self, entity_type, status, canonical_id, candidates, reason=None):
@@ -213,14 +214,15 @@ class GeneralizationDB:
         candidates.append(_candidate_dict(candidate_id=stable_id("JOB_TITLE_FALLBACK", "SUPPRESSED"), level_code="SUPPRESSED", rank=2, label_en=None, label_ar=None, language=lang, taxonomy="FINAIR_JOB_TITLE", taxonomy_code=None, source="Finaira safe generic fallback", verification_status="CONFIGURED", is_suppression=True, provenance={"canonical_entity_type": "JOB_TITLE", "fallback_kind": "UNMATCHED_JOB_TITLE"}))
         return self._result("JOB_TITLE", "NOT_FOUND", None, candidates, reason)
 
-    def _country(self, session, value, lang):
+    def _country(self, session, value, lang, query_lang=None):
         """Resolve country names directly against Natural Earth Admin 0.
 
         COUNTRY is deliberately separate from NATIONALITY.  A country name
         is not treated as a demonym, and Natural Earth region labels are only
         exposed when the requested output language has a verified label.
         """
-        normalized = normalize(value, lang)
+        query_lang = query_lang or lang
+        normalized = normalize(value, query_lang)
         matches = []
         match_methods = {}
         match_verification = {}
@@ -240,9 +242,9 @@ class GeneralizationDB:
             method = None
             if alias_ids and row.natural_earth_id in alias_ids:
                 method = "WIKIDATA_COUNTRY_ALIAS"
-            elif row.name_ar and normalize(row.name_ar, "ar") == normalized:
+            elif row.name_ar and query_lang == "ar" and normalize(row.name_ar, "ar") == normalized:
                 method = "NATURAL_EARTH_NAME_AR"
-            elif row.name_en and normalize(row.name_en, "en") == normalized:
+            elif row.name_en and query_lang == "en" and normalize(row.name_en, "en") == normalized:
                 method = "NATURAL_EARTH_NAME_EN"
             elif row.iso_a2 and row.iso_a2 != "-99" and row.iso_a2.casefold() == normalized:
                 method = "NATURAL_EARTH_ISO_A2"
@@ -280,17 +282,18 @@ class GeneralizationDB:
             candidates.append(_candidate_dict(candidate_id=stable_id("COUNTRY_NATURAL_EARTH", "SUPPRESSED"), level_code="SUPPRESSED", rank=0, label_en=None, label_ar=None, language=lang, taxonomy="NATURAL_EARTH", taxonomy_code=None, source=source, verification_status="CONFIGURED", is_suppression=True))
         return self._result("COUNTRY", status, country.iso_a2 if country else None, candidates, reason)
 
-    def _nationality(self, session, value, lang):
+    def _nationality(self, session, value, lang, query_lang=None):
+        query_lang = query_lang or lang
         # The presence of v2 rows is the runtime switch away from legacy M49.
         if session.scalar(select(NationalityAliasV2.alias_key).limit(1)) is None:
-            rows = session.scalars(select(NationalityAlias).where(NationalityAlias.normalized_alias == normalize(value, lang), NationalityAlias.language == lang)).all()
+            rows = session.scalars(select(NationalityAlias).where(NationalityAlias.normalized_alias == normalize(value, query_lang), NationalityAlias.language == query_lang)).all()
             ids = {row.country_iso2 for row in rows if row.review_status in {"OFFICIAL", "REVIEWED"}}
             if len(ids) > 1:
                 return self._static_result(session, "NATIONALITY", "NATIONALITY_M49", None, lang, "AMBIGUOUS", "ALIAS_COLLISION")
             if not ids:
                 return self._static_result(session, "NATIONALITY", "NATIONALITY_M49", None, lang, "NOT_FOUND", "UNRECOGNIZED_NATIONALITY")
             return self._static_result(session, "NATIONALITY", "NATIONALITY_M49", next(iter(ids)), lang, "VERIFIED")
-        rows = session.scalars(select(NationalityAliasV2).where(NationalityAliasV2.normalized_alias == normalize(value, lang), NationalityAliasV2.language == lang)).all()
+        rows = session.scalars(select(NationalityAliasV2).where(NationalityAliasV2.normalized_alias == normalize(value, query_lang), NationalityAliasV2.language == query_lang)).all()
         qids = {row.country_qid for row in rows}
         if len(qids) > 1:
             return self._natural_earth_result(session, None, lang, "AMBIGUOUS", "ALIAS_COLLISION")
@@ -307,19 +310,23 @@ class GeneralizationDB:
         join = session.get(NationalityGeoJoin, qid) if qid else None
         country = session.get(NationalityCountry, qid) if qid else None
         ne = session.get(NaturalEarthCountry, join.natural_earth_id) if join and join.natural_earth_id else None
-        alias = session.scalar(select(NationalityAliasV2).where(NationalityAliasV2.country_qid == qid, NationalityAliasV2.language == lang).order_by(NationalityAliasV2.alias_key)) if qid else None
+        aliases = session.scalars(select(NationalityAliasV2).where(NationalityAliasV2.country_qid == qid).order_by(NationalityAliasV2.alias_key)).all() if qid else []
+        alias = next((item for item in aliases if item.language == lang), aliases[0] if aliases else None)
+        alias_en = next((item.alias_text for item in aliases if item.language == "en"), None)
+        alias_ar = next((item.alias_text for item in aliases if item.language == "ar"), None)
         source = self._source(session, alias.source_id if alias else (join.source_id if join else None))
         if status == "MATCHED" and alias and ne:
             provenance = {"source": source, "join_status": join.join_status, "match_method": join.match_method, "natural_earth_id": ne.natural_earth_id, "natural_earth_version": "5.1.1"}
-            candidates.append(_candidate_dict(candidate_id=stable_id("NATIONALITY_NATURAL_EARTH", "EXACT", qid), level_code="EXACT", rank=0, label_en=alias.alias_text if lang == "en" else None, label_ar=alias.alias_text if lang == "ar" else None, language=lang, taxonomy="NATURAL_EARTH", taxonomy_code=ne.iso_a2, source=source, verification_status="SOURCE_VERIFIED", is_exact=True, is_local_only=True, provenance=provenance, extra={"join_status": join.join_status, "country_qid": country.country_qid if country else qid}))
+            candidates.append(_candidate_dict(candidate_id=stable_id("NATIONALITY_NATURAL_EARTH", "EXACT", qid), level_code="EXACT", rank=0, label_en=alias_en, label_ar=alias_ar, language=lang, taxonomy="NATURAL_EARTH", taxonomy_code=ne.iso_a2, source=source, verification_status=alias.verification_status, is_exact=True, is_local_only=True, provenance=provenance, extra={"join_status": join.join_status, "country_qid": country.country_qid if country else qid}))
             candidates.append(_candidate_dict(candidate_id=stable_id("NATIONALITY_NATURAL_EARTH", "SUBREGION", ne.subregion), level_code="SUBREGION", rank=1, label_en=ne.subregion, label_ar=None, language=lang, taxonomy="NATURAL_EARTH", taxonomy_code=ne.subregion, source=source, verification_status="SOURCE_VERIFIED", provenance=provenance))
             candidates.append(_candidate_dict(candidate_id=stable_id("NATIONALITY_NATURAL_EARTH", "CONTINENT", ne.continent), level_code="CONTINENT", rank=2, label_en=ne.continent, label_ar=None, language=lang, taxonomy="NATURAL_EARTH", taxonomy_code=ne.continent, source=source, verification_status="SOURCE_VERIFIED", provenance={**provenance, "region_un": ne.region_un}))
         candidates.append(_candidate_dict(candidate_id=stable_id("NATIONALITY_NATURAL_EARTH", "SUPPRESSED"), level_code="SUPPRESSED", rank=3, label_en=None, label_ar=None, language=lang, taxonomy="NATURAL_EARTH", taxonomy_code=None, source=source, verification_status="CONFIGURED", is_suppression=True))
         return self._result("NATIONALITY", status, qid, candidates, reason)
 
-    def _bank(self, session, value, lang, include_review):
-        norm = normalize(value, lang)
-        model_aliases = session.scalars(select(BankModelAlias).where(BankModelAlias.normalized_alias == norm, BankModelAlias.language == lang)).all()
+    def _bank(self, session, value, lang, include_review, query_lang=None):
+        query_lang = query_lang or lang
+        norm = normalize(value, query_lang)
+        model_aliases = session.scalars(select(BankModelAlias).where(BankModelAlias.normalized_alias == norm, BankModelAlias.language == query_lang)).all()
         if model_aliases:
             enabled_aliases = [row for row in model_aliases if row.enabled_for_lookup]
             enabled_keys = {row.safe_generalization_key for row in enabled_aliases if row.safe_generalization_key}
@@ -336,7 +343,7 @@ class GeneralizationDB:
                 records = [row for row in records if row is not None]
                 return self._bank_model_result(session, records, lang)
             return self._bank_fallback("REVIEW_ONLY", "BANK_MODEL_REVIEW_REQUIRED", lang)
-        all_aliases = session.scalars(select(BankAlias).where(BankAlias.normalized_alias == norm, BankAlias.language == lang)).all()
+        all_aliases = session.scalars(select(BankAlias).where(BankAlias.normalized_alias == norm, BankAlias.language == query_lang)).all()
         enabled_aliases = [row for row in all_aliases if row.enabled_for_lookup]
         all_ids = {row.bank_id for row in all_aliases}
         if not include_review and len(all_ids) > 1 and enabled_aliases:
@@ -550,8 +557,9 @@ class GeneralizationDB:
         candidates.append(_candidate_dict(candidate_id=stable_id("BANK_FALLBACK", "SUPPRESSED"), level_code="SUPPRESSED", rank=2, label_en=None, label_ar=None, language=lang, taxonomy="FINAIR_BANK", taxonomy_code=None, source="Finaira taxonomy", verification_status="CONFIGURED", is_suppression=True))
         return self._result("BANK", status, None, candidates, reason)
 
-    def _organization(self, session, entity_type, value, lang, include_review):
-        rows = session.scalars(select(OrganizationAlias).where(OrganizationAlias.normalized_alias == normalize(value, lang), OrganizationAlias.language == lang, OrganizationAlias.enabled_for_lookup.is_(True))).all()
+    def _organization(self, session, entity_type, value, lang, include_review, query_lang=None):
+        query_lang = query_lang or lang
+        rows = session.scalars(select(OrganizationAlias).where(OrganizationAlias.normalized_alias == normalize(value, query_lang), OrganizationAlias.language == query_lang, OrganizationAlias.enabled_for_lookup.is_(True))).all()
         ids = {row.organization_qid for row in rows}
         if len(ids) > 1:
             return self._organization_fallback(entity_type, lang, "AMBIGUOUS", "ALIAS_COLLISION")
@@ -586,8 +594,9 @@ class GeneralizationDB:
         candidates = [_candidate_dict(candidate_id=stable_id("ORG_FALLBACK", code), level_code=code, rank=0, label_en=en, label_ar=ar, language=lang, taxonomy="FINAIR_ORGANIZATION", taxonomy_code=None, source="Finaira taxonomy", verification_status="CONFIGURED"), _candidate_dict(candidate_id=stable_id("ORG_FALLBACK", "SUPPRESSED"), level_code="SUPPRESSED", rank=1, label_en=None, label_ar=None, language=lang, taxonomy="FINAIR_ORGANIZATION", taxonomy_code=None, source="Finaira taxonomy", verification_status="CONFIGURED", is_suppression=True)]
         return self._result("CORPORATION", status, None, candidates, reason)
 
-    def _government(self, session, value, lang, include_review):
-        aliases = session.scalars(select(GovernmentAlias).where(GovernmentAlias.normalized_alias == normalize(value, lang), GovernmentAlias.language == lang)).all()
+    def _government(self, session, value, lang, include_review, query_lang=None):
+        query_lang = query_lang or lang
+        aliases = session.scalars(select(GovernmentAlias).where(GovernmentAlias.normalized_alias == normalize(value, query_lang), GovernmentAlias.language == query_lang)).all()
         enabled = [row for row in aliases if row.enabled_for_lookup]
         aliases = enabled if enabled or not include_review else aliases
         ids = {row.entity_id for row in aliases}

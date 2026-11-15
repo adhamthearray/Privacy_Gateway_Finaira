@@ -75,6 +75,18 @@ def test_ui_date_query_supports_relative_and_non_gregorian_context():
 def test_ui_contains_date_context_controls():
     for control in ("date-context", "date-format", "date-order", "date-calendar", "date-hint", "anchor-date", "two-digit-year-base"):
         assert f'id="{control}"' in HTML
+    assert 'id="language"' not in HTML
+
+
+def test_ui_detects_input_language_and_returns_bilingual_nationality_labels():
+    result = _query_ui({"value": "سوري", "type": "NATIONALITY", "language": "en"})
+    assert result["input_language"] == "ar"
+    assert result["resolution_status"] == "MATCHED"
+    assert result["canonical_id"] == "Q858"
+    exact = result["candidates"][0]
+    assert exact["label_en"]
+    assert exact["label_ar"]
+    assert result["final_decision"]["action"] == "GENERALIZE"
 
 
 def test_ui_exposes_final_decision_for_all_generalizable_entity_types():

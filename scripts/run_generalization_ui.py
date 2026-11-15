@@ -93,7 +93,7 @@ HTML = r"""<!doctype html>
 <body>
 <main>
   <h1>Finaira Generalization DB Explorer</h1>
-  <p class="sub">Local, deterministic lookup. Search Arabic or English; choose the language of the returned labels.</p>
+  <p class="sub">Local, deterministic lookup. Search Arabic or English; all available English and Arabic labels are returned.</p>
 
   <section class="panel">
     <form id="query-form">
@@ -109,10 +109,6 @@ HTML = r"""<!doctype html>
           <option>ORGANIZATION</option><option>UNIVERSITY</option><option>GOVERNMENT_ENTITY</option>
           <option>AGE</option><option>DATE</option>
         </select>
-      </div>
-      <div>
-        <label for="language">Return labels in</label>
-        <select id="language" name="language"><option value="en">English</option><option value="ar">العربية</option></select>
       </div>
       <button type="submit">Query database</button>
     </form>
@@ -192,6 +188,10 @@ function field(label, value) {
   return `<div class="field">${esc(label)}<strong>${esc(value === undefined || value === null || value === '' ? '—' : value)}</strong></div>`;
 }
 
+function bilingualFields(item) {
+  return `${field('English label', item.label_en)}${field('Arabic label', item.label_ar)}`;
+}
+
 function renderFinalDecision(data) {
   const decision = data.final_decision;
   if (!decision) {
@@ -201,8 +201,9 @@ function renderFinalDecision(data) {
   const action = decision.action || 'PSEUDONYMIZE';
   const why = (decision.why || []).map(item => `<li>${esc(item)}</li>`).join('');
   const path = (decision.path || []).map(item => `${esc(item.level_code)}${item.representation ? `: ${esc(item.representation)}` : ''}`).join(' â†’ ');
+  const selected = decision.selected_candidate || {};
   finalDecision.innerHTML = `<div class="status"><span class="badge ${action === 'GENERALIZE' ? 'generalize' : 'pseudonymize'}">${esc(action)}</span><span class="badge">${esc(decision.reason_code)}</span></div>`
-    + `<div class="grid">${field('Final response', decision.final_response)}${field('Match method', decision.match_method)}${field('Common ancestor', decision.common_ancestor)}${field('Matched values', decision.matched_count)}</div>`
+    + `<div class="grid">${field('Final response', decision.final_response)}${field('English response', selected.label_en)}${field('Arabic response', selected.label_ar)}${field('Match method', decision.match_method)}${field('Common ancestor', decision.common_ancestor)}${field('Matched values', decision.matched_count)}</div>`
     + `<div class="meta"><strong>Why</strong><ul>${why}</ul></div>`
     + `<div class="meta"><strong>Retained hierarchy</strong><div>${path || 'None'}</div></div>`
     + (decision.selected_candidate ? `<details><summary>Final candidate provenance</summary><pre>${json(decision.selected_candidate)}</pre></details>` : '')
@@ -220,7 +221,7 @@ function render(data) {
   if (!rows.length) { candidates.innerHTML = '<div class="empty">No candidates returned.</div>'; return; }
   candidates.innerHTML = rows.map((item, index) => {
     const flags = [item.is_exact && 'EXACT', item.is_local_only && 'LOCAL_ONLY', item.is_suppression && 'SUPPRESSION', item.available === false && 'UNAVAILABLE'].filter(Boolean);
-    return `<article class="candidate"><div class="candidate-head"><div><div class="candidate-title">${esc(item.representation || item.label_en || item.label_ar || item.level_code || 'Unnamed candidate')}</div><div class="candidate-id">${esc(item.candidate_id)}</div></div><span class="badge">rank ${esc(item.specificity_rank ?? index)}</span></div><div class="grid">${field('Level', item.level_code)}${field('Verification', item.verification_status)}${field('Source', item.source)}${field('Taxonomy', item.taxonomy)}${field('Taxonomy code', item.taxonomy_code)}${field('Flags', flags.join(' · '))}</div><details><summary>Labels and provenance</summary><pre>${json({label_en:item.label_en,label_ar:item.label_ar,provenance:item.provenance,metadata:item.metadata})}</pre></details></article>`;
+    return `<article class="candidate"><div class="candidate-head"><div><div class="candidate-title">${esc(item.label_en || item.label_ar || item.representation || item.level_code || 'Unnamed candidate')}</div><div class="candidate-id">${esc(item.candidate_id)}</div></div><span class="badge">rank ${esc(item.specificity_rank ?? index)}</span></div><div class="grid">${bilingualFields(item)}${field('Level', item.level_code)}${field('Verification', item.verification_status)}${field('Source', item.source)}${field('Taxonomy', item.taxonomy)}${field('Taxonomy code', item.taxonomy_code)}${field('Flags', flags.join(' · '))}</div><details><summary>Labels and provenance</summary><pre>${json({label_en:item.label_en,label_ar:item.label_ar,provenance:item.provenance,metadata:item.metadata})}</pre></details></article>`;
   }).join('');
   const common = data.substring_generalization;
   aggregateHeading.style.display = common && common.candidates && common.candidates.length ? 'block' : 'none';
@@ -236,9 +237,8 @@ form.addEventListener('submit', async event => {
   event.preventDefault();
   const value = document.getElementById('value').value.trim();
   const type = document.getElementById('type').value;
-  const language = document.getElementById('language').value;
   const review = document.getElementById('review').checked ? '1' : '0';
-  const params = new URLSearchParams({value, type, language, review});
+  const params = new URLSearchParams({value, type, review});
   if (type === 'DATE') {
     const dateFields = {
       date_format: document.getElementById('date-format').value.trim(),
@@ -866,7 +866,7 @@ class Handler(BaseHTTPRequestHandler):
             params = parse_qs(parsed.query)
             value = params.get("value", [""])[0].strip()
             entity_type = params.get("type", [""])[0].strip().upper()
-            language = params.get("language", ["en"])[0].strip().lower()
+            language = "ar" if any("\u0600" <= char <= "\u06ff" for char in value) else "en"
             include_review = params.get("review", ["0"])[0] == "1"
             if not value:
                 self._send(json.dumps({"error": "Enter a value to query."}).encode(), "application/json", 400)
@@ -876,7 +876,8 @@ class Handler(BaseHTTPRequestHandler):
                 return
             try:
                 context = _date_context(params) if entity_type == "DATE" else {}
-                payload = GeneralizationDB(self.db_path).get_candidates(entity_type, value, language, context=context, include_review_candidates=include_review)
+                payload = GeneralizationDB(self.db_path).get_candidates(entity_type, value, "en", context=context, include_review_candidates=include_review, input_language=language)
+                payload["input_language"] = language
                 if entity_type == "DATE":
                     payload["date_detection"] = _date_detection_payload(value, context)
                 has_exact = any(item.get("is_exact") and not item.get("is_suppression") for item in payload.get("candidates", []))
