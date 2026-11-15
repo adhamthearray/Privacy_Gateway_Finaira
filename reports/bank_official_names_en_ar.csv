@@ -1,0 +1,303 @@
+﻿bank_id,official_name_en,official_name_ar,finance_model,finance_model_label_en,finance_model_label_ar,evidence_status,source_id
+AE-040,Emirates NBD Bank,بنك الإمارات دبي الوطني,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-041,Mashreq Bank,بنك المشرق,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-042,First Abu Dhabi Bank,بنك أبوظبي الأول,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-043,Commercial Bank of Dubai,بنك دبي التجاري,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-044,Bank of Sharjah,بنك الشارقة,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-045,Dubai Islamic Bank,بنك دبي الإسلامي,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+AE-046,Sharjah Islamic Bank,مصرف الشارقة الإسلامي,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+AE-047,United Arab Bank,البنك العربي المتحد,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-048,InvestBank,بنك الاستثمار,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-049,Al Masraf,المصرف,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-050,Emirates Islamic Bank,مصرف الإمارات الإسلامي,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+AE-051,RAKBANK,بنك رأس الخيمة الوطني,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-052,Emirates Investment Bank,بنك الإمارات للاستثمار,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-053,National Bank of Umm Al Quwain,بنك أم القيوين الوطني,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-054,National Bank of Fujairah,بنك الفجيرة الوطني,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-055,Abu Dhabi Commercial Bank,بنك أبوظبي التجاري,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-056,Commercial Bank International,البنك التجاري الدولي,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-057,Abu Dhabi Islamic Bank,مصرف أبوظبي الإسلامي,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+AE-058,Al Hilal Bank,مصرف الهلال,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+AE-059,Ajman Bank,مصرف عجمان,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+AE-060,Al Maryah Community Bank,بنك المارية المحلي,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-061,Wio Bank,بنك ويو,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-062,Zand Bank,بنك زاند,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-063,ruya Community Islamic Bank,مصرف رؤيا الإسلامي,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+AE-064,Reem Community Bank,بنك ريم المحلي,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-065,HSBC Bank Middle East,بنك إتش إس بي سي الشرق الأوسط,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-066,Standard Chartered Bank,بنك ستاندرد تشارترد,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-067,Citibank,سيتي بنك,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-068,Habib Bank Limited,بنك حبيب المحدود,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-069,United Bank Limited,بنك يونايتد المحدود,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-070,Bank Saderat Iran,بنك صادرات إيران,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-071,Al Ahli Bank of Kuwait,البنك الأهلي الكويتي,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-072,Bank Melli Iran,بنك ملي إيران,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-073,Arab African International Bank,البنك العربي الأفريقي الدولي,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-074,Banque Misr,بنك مصر,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-075,Arab Bank PLC,البنك العربي,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-076,BNP Paribas,بي إن بي باريبا,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-077,Al Khaliji France,الخليجي فرنسا,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-078,Rafidain Bank,مصرف الرافدين,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-079,Bank of Baroda,بنك بارودا,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-080,Janata Bank,بنك جاناتا,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-081,Habib Bank AG Zurich,حبيب بنك إيه جي زيورخ,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-082,Banque Banorient France,بنك بانورينت فرنسا,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-083,Credit Agricole Corporate and Investment Bank,كريدي أجريكول بنك التمويل والاستثمار,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-084,El Nilein Bank,بنك النيلين,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+AE-085,National Bank of Oman,البنك الوطني العماني,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-086,National Bank of Bahrain,بنك البحرين الوطني,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-087,Doha Bank,بنك الدوحة,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-088,Saudi National Bank,البنك الأهلي السعودي,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-089,National Bank of Kuwait,بنك الكويت الوطني,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-090,Industrial and Commercial Bank of China,البنك الصناعي والتجاري الصيني,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-091,Deutsche Bank,دويتشه بنك,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-092,KEB Hana Bank,بنك كيه إي بي هانا,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-093,Barclays Bank,بنك باركليز,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-094,Bank of China,بنك الصين,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-095,Gulf International Bank,بنك الخليج الدولي,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-096,MCB Bank,بنك إم سي بي,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-097,Intesa Sanpaolo,بنك إنتيسا سان باولو,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-098,Agricultural Bank of China,البنك الزراعي الصيني,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-099,Bank Alfalah,بنك الفلاح,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-100,BOK International Bank,بنك بي أو كيه الدولي,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+AE-101,International Development Bank for Investment and Finance,مصرف التنمية الدولي للاستثمار والتمويل,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-102,Iraqi Islamic Bank for Investment and Development,المصرف العراقي الإسلامي للاستثمار والتنمية,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+AE-254,National Bank of Abu Dhabi,بنك أبوظبي الوطني,HISTORICAL,Historical / not currently classified,تاريخي / غير مصنف حاليًا,HISTORICAL,29
+AE-255,First Gulf Bank,بنك الخليج الأول,HISTORICAL,Historical / not currently classified,تاريخي / غير مصنف حاليًا,HISTORICAL,29
+AE-262,Central Bank of the UAE,مصرف الإمارات العربية المتحدة المركزي,NOT_APPLICABLE,Not applicable,لا ينطبق,NOT_APPLICABLE,29
+BH-167,National Bank of Bahrain,بنك البحرين الوطني,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-168,Bank of Bahrain and Kuwait,بنك البحرين والكويت,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-169,Bahrain Development Bank,بنك البحرين للتنمية,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-170,Eskan Bank,بنك الإسكان,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-171,Bank ABC,بنك إيه بي سي,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-172,Al Salam Bank,بنك السلام,ISLAMIC,Islamic,إسلامي,UNVERIFIED,29
+BH-173,Bahrain Islamic Bank,بنك البحرين الإسلامي,ISLAMIC,Islamic,إسلامي,UNVERIFIED,29
+BH-174,Khaleeji Bank,بنك الخليجي,ISLAMIC,Islamic,إسلامي,UNVERIFIED,29
+BH-175,Kuwait Finance House Bahrain,بيت التمويل الكويتي - البحرين,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+BH-176,Al Baraka Islamic Bank,بنك البركة الإسلامي,ISLAMIC,Islamic,إسلامي,UNVERIFIED,29
+BH-177,Ithmaar Bank,بنك الإثمار,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+BH-178,Gulf International Bank,بنك الخليج الدولي,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-179,ABC Islamic Bank,بنك إيه بي سي الإسلامي,ISLAMIC,Islamic,إسلامي,UNVERIFIED,29
+BH-180,Al Baraka Group,مجموعة البركة,NOT_APPLICABLE,Not applicable,لا ينطبق,NOT_APPLICABLE,29
+BH-181,Alubaf Arab International Bank,بنك ألوباف العربي الدولي,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-182,Bank Alkhair,بنك الخير,ISLAMIC,Islamic,إسلامي,UNVERIFIED,29
+BH-183,Citi Islamic Investment Bank,بنك سيتي الإسلامي للاستثمار,ISLAMIC,Islamic,إسلامي,UNVERIFIED,29
+BH-184,GFH Financial Group,مجموعة جي إف إتش المالية,ISLAMIC,Islamic,إسلامي,UNVERIFIED,29
+BH-185,Arcapita Bank,بنك أركابيتا,ISLAMIC,Islamic,إسلامي,UNVERIFIED,29
+BH-186,Venture Capital Bank,بنك رأس المال الاستثماري,ISLAMIC,Islamic,إسلامي,UNVERIFIED,29
+BH-187,Burgan Bank BSC Bahrain,بنك برقان - البحرين,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-188,Bahrain Middle East Bank,بنك البحرين والشرق الأوسط,UNKNOWN,Unknown,غير معروف,UNVERIFIED,29
+BH-189,SICO,سيكو,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+BH-190,Arab Investment Company,الشركة العربية للاستثمار,UNKNOWN,Unknown,غير معروف,UNVERIFIED,29
+BH-191,Arab Petroleum Investments Corporation,الشركة العربية للاستثمارات البترولية,UNKNOWN,Unknown,غير معروف,UNVERIFIED,29
+BH-192,First Energy Bank,بنك الطاقة الأول,UNKNOWN,Unknown,غير معروف,UNVERIFIED,29
+BH-193,Global Banking Corporation,المؤسسة المصرفية العالمية,UNKNOWN,Unknown,غير معروف,UNVERIFIED,29
+BH-194,Liquidity Management Centre,مركز إدارة السيولة,UNKNOWN,Unknown,غير معروف,UNVERIFIED,29
+BH-195,Seera Investment Bank,بنك سيرة للاستثمار,UNKNOWN,Unknown,غير معروف,UNVERIFIED,29
+BH-196,Esterad Bank,بنك استيراد,ISLAMIC,Islamic,إسلامي,UNVERIFIED,29
+BH-197,BOK International,بنك بي أو كيه الدولي,ISLAMIC,Islamic,إسلامي,UNVERIFIED,29
+BH-198,Arab Bank,البنك العربي,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-199,BNP Paribas,بنك بي إن بي باريبا,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-200,Citibank,سيتي بنك,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-201,HSBC Bank Middle East,بنك إتش إس بي سي الشرق الأوسط,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-202,Standard Chartered Bank,بنك ستاندرد تشارترد,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-203,Mashreq Bank,بنك المشرق,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-204,National Bank of Kuwait,بنك الكويت الوطني,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-205,First Abu Dhabi Bank,بنك أبوظبي الأول,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-206,United Bank Limited,بنك يونايتد المحدود,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-207,ICICI Bank,بنك آي سي آي سي آي,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-208,Rafidain Bank,مصرف الرافدين,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-209,The Housing Bank for Trade and Finance,بنك الإسكان للتجارة والتمويل,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-210,State Bank of India,بنك الدولة الهندي,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-211,Credit Libanais,بنك الاعتماد اللبناني,UNKNOWN,Unknown,غير معروف,UNVERIFIED,29
+BH-212,Habib Bank Limited,بنك حبيب المحدود,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-213,JPMorgan Chase Bank,جي بي مورغان تشيس,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-214,Bank Alfalah,بنك الفلاح,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-215,Bank Al Habib,بنك الحبيب,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-216,Allied Bank,بنك ألايد,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-217,Askari Bank,بنك عسكري,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-218,Bank of Jordan,بنك الأردن,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-219,Cairo Amman Bank,بنك القاهرة عمان,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-220,DenizBank,بنك دنيز,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-221,JS Bank,بنك جي إس,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-222,KEB Hana Bank,بنك كيه إي بي هانا,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-223,MCB Bank,بنك إم سي بي,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-224,Palestine Investment Bank,بنك الاستثمار الفلسطيني,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-225,QNB Bank AS,بنك كيو إن بي التركي,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-226,Woori Bank,بنك ووري,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-227,Mizuho Bank,بنك ميزوهو,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-228,MUFG Bank,بنك إم يو إف جي,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-229,Kuwait Turkish Participation Bank,بنك كويت ترك,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+BH-230,Türkiye İş Bankası,بنك إيش التركي,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-231,Türkiye Halk Bankası,بنك هالك التركي,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-232,Türkiye Vakıflar Bankası,بنك وقف التركي,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-233,Yapı Kredi Bank,بنك يابي كريدي,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-234,HDFC Bank,بنك إتش دي إف سي,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-235,Canara Bank,بنك كانارا,UNKNOWN,Unknown,غير معروف,UNVERIFIED,29
+BH-236,Bank of Baroda,بنك بارودا,UNKNOWN,Unknown,غير معروف,UNVERIFIED,29
+BH-237,National Bank of Pakistan,بنك باكستان الوطني,UNKNOWN,Unknown,غير معروف,UNVERIFIED,29
+BH-238,State Bank of India Wholesale,بنك الدولة الهندي - الجملة,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-239,The Saudi National Bank,البنك الأهلي السعودي,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-240,Banque Saudi Fransi,البنك السعودي الفرنسي,UNKNOWN,Unknown,غير معروف,UNVERIFIED,29
+BH-242,Bank of Beirut,بنك بيروت,UNKNOWN,Unknown,غير معروف,UNVERIFIED,29
+BH-243,Credit Agricole CIB,كريدي أجريكول,UNKNOWN,Unknown,غير معروف,UNVERIFIED,29
+BH-244,UBS Bank,بنك يو بي إس,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+BH-245,Ahli United Bank,البنك الأهلي المتحد,HISTORICAL,Historical / not currently classified,تاريخي / غير مصنف حاليًا,HISTORICAL,29
+BH-246,BMI Bank,بنك بي إم آي,HISTORICAL,Historical / not currently classified,تاريخي / غير مصنف حاليًا,HISTORICAL,29
+BH-247,Future Bank,بنك المستقبل,HISTORICAL,Historical / not currently classified,تاريخي / غير مصنف حاليًا,HISTORICAL,29
+BH-248,Bahrain Saudi Bank,بنك البحرين السعودي,HISTORICAL,Historical / not currently classified,تاريخي / غير مصنف حاليًا,HISTORICAL,29
+BH-249,United Gulf Bank,بنك الخليج المتحد,HISTORICAL,Historical / not currently classified,تاريخي / غير مصنف حاليًا,HISTORICAL,29
+BH-266,Central Bank of Bahrain,مصرف البحرين المركزي,NOT_APPLICABLE,Not applicable,لا ينطبق,NOT_APPLICABLE,29
+EG_BANK_001,Banque Misr,,MIXED,Bank offering conventional and Islamic banking services,بنك يقدم خدمات مصرفية تقليدية وإسلامية,SUPPORTED_PRIMARY,10
+EG_BANK_002,National Bank of Egypt,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_003,Egyptian Arab Land Bank,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_004,Agricultural Bank of Egypt,,MIXED,Bank offering conventional and Islamic banking services,بنك يقدم خدمات مصرفية تقليدية وإسلامية,SUPPORTED_SECONDARY_RECHECK,10
+EG_BANK_005,Industrial Development Bank,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_006,Banque Du Caire,,CONVENTIONAL,Conventional bank,بنك تقليدي,CONVENTIONAL_OPERATION_WITH_NONQUALIFYING_SHARIA_OFFERING,10
+EG_BANK_007,The United Bank,,MIXED,Bank offering conventional and Islamic banking services,بنك يقدم خدمات مصرفية تقليدية وإسلامية,SUPPORTED_PRIMARY,10
+EG_BANK_008,Bank of Alexandria,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_009,MIDBank S.A. E,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_010,Commercial International Bank (Egypt),,CONVENTIONAL,Conventional bank,بنك تقليدي,CONVENTIONAL_OPERATION_WITH_NONQUALIFYING_SHARIA_OFFERING,10
+EG_BANK_011,Attijariwafa bank Egypt S.A.E,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_012,Societe Arabe Internationale de Banque,,MIXED,Bank offering conventional and Islamic banking services,بنك يقدم خدمات مصرفية تقليدية وإسلامية,SUPPORTED_PRIMARY,10
+EG_BANK_013,Credit Agricole Egypt S.A.E,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_014,Emirates NBD Bank S.A.E,,CONVENTIONAL,Conventional bank,بنك تقليدي,CONVENTIONAL_OPERATION_WITH_NONQUALIFYING_SHARIA_OFFERING,10
+EG_BANK_015,Suez Canal Bank,,MIXED,Bank offering conventional and Islamic banking services,بنك يقدم خدمات مصرفية تقليدية وإسلامية,SUPPORTED_PRIMARY,10
+EG_BANK_016,Qatar National Bank S.A.E,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_017,Bank NXT S.A.E,,MIXED,Bank offering conventional and Islamic banking services,بنك يقدم خدمات مصرفية تقليدية وإسلامية,SUPPORTED_SECONDARY_RECHECK,10
+EG_BANK_018,AL Ahli Bank of Kuwait - Egypt,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_019,First Abu Dhabi Bank - Misr,,MIXED,Bank offering conventional and Islamic banking services,بنك يقدم خدمات مصرفية تقليدية وإسلامية,SUPPORTED_PRIMARY,10
+EG_BANK_020,Kuwait Finance House Bank - Egypt,,ISLAMIC,Islamic bank,بنك إسلامي,SUPPORTED_PRIMARY,10
+EG_BANK_021,Faisal Islamic Bank of Egypt,,ISLAMIC,Islamic bank,بنك إسلامي,SUPPORTED_PRIMARY,10
+EG_BANK_022,Housing and Development Bank,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_023,Al Baraka Bank of Egypt S.A.E.,,ISLAMIC,Islamic bank,بنك إسلامي,SUPPORTED_PRIMARY,10
+EG_BANK_024,National Bank of Kuwait - Egypt (NBK),,MIXED,Bank offering conventional and Islamic banking services,بنك يقدم خدمات مصرفية تقليدية وإسلامية,SUPPORTED_PRIMARY,10
+EG_BANK_025,Abu Dhabi Islamic Bank - Egypt,,ISLAMIC,Islamic bank,بنك إسلامي,SUPPORTED_PRIMARY,10
+EG_BANK_026,ABU DHABI COMMERCIAL BANK EGYPT,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_027,Egyptian Gulf Bank,,MIXED,Bank offering conventional and Islamic banking services,بنك يقدم خدمات مصرفية تقليدية وإسلامية,SUPPORTED_PRIMARY,10
+EG_BANK_028,Arab African International Bank,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_029,HSBC Bank Egypt S.A.E,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_030,Arab Banking Corporation – Egypt S.A. E,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_031,Export Development Bank of Egypt,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_032,Arab International Bank,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_033,Citi Bank N A / Egypt,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_034,Arab Bank PLC,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_035,Mashreq Bank,,CONVENTIONAL,Conventional bank,بنك تقليدي,CONVENTIONAL_OPERATION_WITH_NONQUALIFYING_SHARIA_OFFERING,10
+EG_BANK_036,Standard Chartered Bank,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+EG_BANK_037,Onebank S.A.E,,CONVENTIONAL,Conventional bank,بنك تقليدي,EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF,10
+KW-103,National Bank of Kuwait,بنك الكويت الوطني,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+KW-104,Commercial Bank of Kuwait,البنك التجاري الكويتي,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+KW-105,Gulf Bank,بنك الخليج,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+KW-106,Al Ahli Bank of Kuwait,البنك الأهلي الكويتي,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+KW-107,Burgan Bank,بنك برقان,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+KW-108,Kuwait Finance House,بيت التمويل الكويتي,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+KW-109,Boubyan Bank,بنك بوبيان,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+KW-110,Kuwait International Bank,بنك الكويت الدولي,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+KW-111,Warba Bank,بنك وربة,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+KW-112,Industrial Bank of Kuwait,بنك الكويت الصناعي,SPECIALIZED,Specialized / development,متخصص / تنموي,CONFIRMED,29
+KW-113,Bank of Bahrain and Kuwait,بنك البحرين والكويت,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+KW-114,BNP Paribas,بنك بي إن بي باريبا,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+KW-115,HSBC Bank Middle East,بنك إتش إس بي سي الشرق الأوسط,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+KW-116,First Abu Dhabi Bank,بنك أبوظبي الأول,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+KW-117,Citibank,سيتي بنك,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+KW-118,Qatar National Bank,بنك قطر الوطني,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+KW-119,Doha Bank,بنك الدوحة,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+KW-120,Mashreq Bank,بنك المشرق,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+KW-121,Bank Muscat,بنك مسقط,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+KW-122,Industrial and Commercial Bank of China,البنك الصناعي والتجاري الصيني,CONVENTIONAL,Conventional,تقليدي,CONFIRMED,29
+KW-123,Al Rajhi Bank,مصرف الراجحي,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+KW-263,Central Bank of Kuwait,بنك الكويت المركزي,NOT_APPLICABLE,Not applicable,لا ينطبق,NOT_APPLICABLE,29
+OM-140,Bank Muscat,بنك مسقط,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+OM-141,National Bank of Oman,البنك الوطني العماني,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+OM-142,Oman Arab Bank,بنك عمان العربي,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+OM-143,Bank Dhofar,بنك ظفار,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+OM-144,Sohar International,بنك صحار الدولي,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+OM-145,Ahlibank Oman,البنك الأهلي العماني,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+OM-146,Oman Investment Bank,بنك عمان للاستثمار,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+OM-147,Bank Nizwa,بنك نزوى,ISLAMIC,Islamic,إسلامي,RECHECK_REQUIRED,29
+OM-148,Alizz Islamic Bank,بنك العز الإسلامي,ISLAMIC,Islamic,إسلامي,RECHECK_REQUIRED,29
+OM-149,Oman Housing Bank,بنك الإسكان العماني,SPECIALIZED,Specialized / development,متخصص / تنموي,RECHECK_REQUIRED,29
+OM-150,Development Bank Oman,بنك التنمية العماني,SPECIALIZED,Specialized / development,متخصص / تنموي,RECHECK_REQUIRED,29
+OM-151,Meethaq Islamic Banking,ميثاق للصيرفة الإسلامية,ISLAMIC_WINDOW,Islamic window,نافذة إسلامية,LINKED_WINDOW,29
+OM-152,Muzn Islamic Banking,مزن للصيرفة الإسلامية,ISLAMIC_WINDOW,Islamic window,نافذة إسلامية,LINKED_WINDOW,29
+OM-153,Dhofar Islamic,ظفار الإسلامي,ISLAMIC_WINDOW,Islamic window,نافذة إسلامية,LINKED_WINDOW,29
+OM-154,Ahli Islamic,الأهلي الإسلامي,ISLAMIC_WINDOW,Islamic window,نافذة إسلامية,LINKED_WINDOW,29
+OM-155,Sohar Islamic,صحار الإسلامي,ISLAMIC_WINDOW,Islamic window,نافذة إسلامية,LINKED_WINDOW,29
+OM-156,Standard Chartered Bank,بنك ستاندرد تشارترد,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+OM-157,Bank Melli Iran,بنك ملي إيران,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+OM-158,First Abu Dhabi Bank,بنك أبوظبي الأول,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+OM-159,Bank Saderat Iran,بنك صادرات إيران,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+OM-160,Bank of Baroda,بنك بارودا,CONVENTIONAL,Conventional,تقليدي,UNVERIFIED,29
+OM-161,State Bank of India,بنك الدولة الهندي,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+OM-162,Bank of Beirut,بنك بيروت,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+OM-163,Qatar National Bank,بنك قطر الوطني,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+OM-164,Gulf International Bank,بنك الخليج الدولي,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+OM-165,Mashreq Bank,بنك المشرق,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+OM-166,HSBC Bank Middle East,بنك إتش إس بي سي الشرق الأوسط,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+OM-259,HSBC Bank Oman SAOG,بنك إتش إس بي سي عمان,HISTORICAL,Historical / not currently classified,تاريخي / غير مصنف حاليًا,HISTORICAL,29
+OM-260,Bank Sohar,بنك صحار,HISTORICAL,Historical / not currently classified,تاريخي / غير مصنف حاليًا,HISTORICAL,29
+OM-265,Central Bank of Oman,البنك المركزي العماني,NOT_APPLICABLE,Not applicable,لا ينطبق,NOT_APPLICABLE,29
+QA-124,Qatar National Bank,بنك قطر الوطني,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+QA-125,Commercial Bank of Qatar,البنك التجاري القطري,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+QA-126,Doha Bank,بنك الدوحة,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+QA-127,Ahlibank Qatar,البنك الأهلي القطري,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+QA-128,Qatar Islamic Bank,مصرف قطر الإسلامي,ISLAMIC,Islamic,إسلامي,RECHECK_REQUIRED,29
+QA-129,Qatar International Islamic Bank,بنك قطر الدولي الإسلامي,ISLAMIC,Islamic,إسلامي,RECHECK_REQUIRED,29
+QA-130,Masraf Al Rayan,مصرف الريان,ISLAMIC,Islamic,إسلامي,RECHECK_REQUIRED,29
+QA-131,Dukhan Bank,بنك دخان,ISLAMIC,Islamic,إسلامي,RECHECK_REQUIRED,29
+QA-132,Qatar Development Bank,بنك قطر للتنمية,SPECIALIZED,Specialized / development,متخصص / تنموي,RECHECK_REQUIRED,29
+QA-133,HSBC Bank,بنك إتش إس بي سي,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+QA-134,Mashreq Bank,بنك المشرق,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+QA-135,Standard Chartered Bank,بنك ستاندرد تشارترد,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+QA-136,Arab Bank,البنك العربي,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+QA-137,BNP Paribas,بنك بي إن بي باريبا,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+QA-138,Bank Saderat Iran,بنك صادرات إيران,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+QA-139,United Bank Limited,يونايتد بنك المحدود,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+QA-256,Barwa Bank,بنك بروة,HISTORICAL,Historical / not currently classified,تاريخي / غير مصنف حاليًا,HISTORICAL,29
+QA-257,International Bank of Qatar,بنك قطر الدولي,HISTORICAL,Historical / not currently classified,تاريخي / غير مصنف حاليًا,HISTORICAL,29
+QA-258,Al Khaliji Bank Qatar,بنك الخليجي القطري,HISTORICAL,Historical / not currently classified,تاريخي / غير مصنف حاليًا,HISTORICAL,29
+QA-264,Qatar Central Bank,مصرف قطر المركزي,NOT_APPLICABLE,Not applicable,لا ينطبق,NOT_APPLICABLE,29
+SA-001,Saudi National Bank,البنك الأهلي السعودي,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-002,Al Rajhi Bank,مصرف الراجحي,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+SA-003,Riyad Bank,بنك الرياض,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-004,Saudi Awwal Bank,البنك السعودي الأول,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-005,Arab National Bank,البنك العربي الوطني,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-006,Alinma Bank,مصرف الإنماء,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+SA-007,Banque Saudi Fransi,البنك السعودي الفرنسي,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-008,Saudi Investment Bank,البنك السعودي للاستثمار,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-009,Bank AlJazira,بنك الجزيرة,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+SA-010,Bank Albilad,بنك البلاد,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+SA-011,Gulf International Bank - Saudi Arabia,بنك الخليج الدولي - السعودية,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-012,STC Bank,بنك إس تي سي,UNKNOWN,Unknown,غير معروف,UNVERIFIED,29
+SA-013,Vision Bank,بنك الرؤية,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+SA-014,D360 Bank,بنك دي 360,ISLAMIC,Islamic,إسلامي,CONFIRMED,29
+SA-015,EZ Bank,بنك إي زد,UNKNOWN,Unknown,غير معروف,RECHECK_REQUIRED,29
+SA-016,Emirates NBD,بنك الإمارات دبي الوطني,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-017,National Bank of Bahrain,بنك البحرين الوطني,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-018,National Bank of Kuwait,بنك الكويت الوطني,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-019,Bank Muscat,بنك مسقط,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-020,Deutsche Bank,دويتشه بنك,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-021,BNP Paribas,بنك بي إن بي باريبا,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-022,JPMorgan Chase Bank,جي بي مورغان تشيس,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-023,National Bank of Pakistan,بنك باكستان الوطني,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-024,Ziraat Bank,بنك زراعات,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-025,Industrial and Commercial Bank of China,البنك الصناعي والتجاري الصيني,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-026,Qatar National Bank,بنك قطر الوطني,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-027,MUFG Bank,بنك إم يو إف جي,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-028,First Abu Dhabi Bank,بنك أبوظبي الأول,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-029,UBS AG,بنك يو بي إس,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-030,Standard Chartered Bank,بنك ستاندرد تشارترد,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-031,National Bank of Iraq,المصرف الأهلي العراقي,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-032,Trade Bank of Iraq,المصرف العراقي للتجارة,CONVENTIONAL,Conventional,تقليدي,RECHECK_REQUIRED,29
+SA-033,Bank of China Limited,بنك الصين,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-034,Banque Misr,بنك مصر,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-035,National Bank of Egypt,البنك الأهلي المصري,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-036,Sohar International Bank,بنك صحار الدولي,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-037,Bank of Jordan,بنك الأردن,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-038,Abu Dhabi Commercial Bank,بنك أبوظبي التجاري,CONVENTIONAL,Conventional,تقليدي,PROVISIONAL,29
+SA-039,PT Bank Syariah Indonesia,بنك الشريعة الإندونيسي,ISLAMIC,Islamic,إسلامي,RECHECK_REQUIRED,29
+SA-250,Saudi Hollandi Bank,البنك السعودي الهولندي,HISTORICAL,Historical / not currently classified,تاريخي / غير مصنف حاليًا,HISTORICAL,29
+SA-251,Alawwal Bank,البنك الأول,HISTORICAL,Historical / not currently classified,تاريخي / غير مصنف حاليًا,HISTORICAL,29
+SA-252,Samba Financial Group,مجموعة سامبا المالية,HISTORICAL,Historical / not currently classified,تاريخي / غير مصنف حاليًا,HISTORICAL,29
+SA-253,The National Commercial Bank,البنك الأهلي التجاري,HISTORICAL,Historical / not currently classified,تاريخي / غير مصنف حاليًا,HISTORICAL,29
+SA-261,Saudi Central Bank,البنك المركزي السعودي,NOT_APPLICABLE,Not applicable,لا ينطبق,NOT_APPLICABLE,29
