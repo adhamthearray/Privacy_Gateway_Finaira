@@ -90,6 +90,24 @@ erDiagram
         TEXT eligibility_reason
         INTEGER source_id
     }
+    bank_generalization_forms {
+        VARCHAR(160) form_id PK
+        VARCHAR(40) source_record_id
+        VARCHAR(30) canonical_bank_id
+        VARCHAR(120) safe_generalization_key
+        VARCHAR(40) level_code
+        INTEGER specificity_rank
+        TEXT label_en
+        TEXT label_ar
+        VARCHAR(60) banking_model
+        VARCHAR(40) verification_status
+        BOOLEAN enabled_for_lookup
+        BOOLEAN disclosure_approved
+        BOOLEAN is_exact
+        BOOLEAN is_local_only
+        BOOLEAN is_suppression
+        INTEGER source_id
+    }
     bank_identity_model_records {
         VARCHAR(40) record_id PK
         VARCHAR(30) canonical_bank_id
@@ -610,6 +628,10 @@ erDiagram
     banks ||--o{ bank_evidence : "bank_id"
     data_sources ||--o{ bank_evidence : "source_id"
     data_sources ||--o{ bank_generalization_cohorts : "source_id"
+    bank_identity_model_records ||--o{ bank_generalization_forms : "source_record_id"
+    banks ||--o{ bank_generalization_forms : "canonical_bank_id"
+    bank_generalization_cohorts ||--o{ bank_generalization_forms : "safe_generalization_key"
+    data_sources ||--o{ bank_generalization_forms : "source_id"
     banks ||--o{ bank_identity_model_records : "canonical_bank_id"
     data_sources ||--o{ bank_identity_model_records : "source_id"
     bank_identity_model_records ||--o{ bank_model_aliases : "record_id"

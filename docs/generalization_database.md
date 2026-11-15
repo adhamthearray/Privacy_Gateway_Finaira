@@ -40,7 +40,7 @@ The handoff remains at `C:\Users\domma\Downloads\Finaira_Generalization_DB_Codex
 
 ## Actual database schema
 
-The authoritative generated schema is [reports/database_schema.sql](../reports/database_schema.sql), and the inspected column/PK/FK/index inventory is [reports/schema_after.md](../reports/schema_after.md). SQLite currently contains 55 tables, with foreign keys enabled by the SQLAlchemy connection hook in `finaira_generalization/db.py`.
+The authoritative generated schema is [reports/database_schema.sql](../reports/database_schema.sql), and the inspected column/PK/FK/index inventory is [reports/schema_after.md](../reports/schema_after.md). SQLite currently contains 56 tables, with foreign keys enabled by the SQLAlchemy connection hook in `finaira_generalization/db.py`.
 
 ### Legacy/reference tables retained for compatibility
 
@@ -65,7 +65,8 @@ The legacy M49 tables are historical compatibility data only. Active NATIONALITY
 | `bank_candidates` | `candidate_id` | `bank_id`, `source_id`; unique `(bank_id, level_code)` | 1,510 |
 | `bank_identity_model_records` | `record_id` | `canonical_bank_id`, `source_id`; family/model/review indexes | 303 |
 | `bank_model_aliases` | `alias_id` | source record, canonical bank, normalized alias, enabled indexes | 1,524 |
-| `bank_generalization_cohorts` | `safe_generalization_key` | source ID; model/eligibility indexes | 198 |
+| `bank_generalization_cohorts` | `safe_generalization_key` | source ID; model/eligibility indexes | 227 (198 supplied + 29 derived review-only) |
+| `bank_generalization_forms` | `form_id` | source record, bank, cohort, enabled indexes | 303 |
 | `bank_model_relationship_evidence` | `relationship_id` | two source-record FKs, source ID | 21 |
 | `bank_model_do_not_merge` | `exclusion_id` | two source-record FKs, collision index | 12 |
 | `bank_model_research_corrections` | `correction_id` | source-record FK, evidence index | 30 |
@@ -110,6 +111,9 @@ erDiagram
   BANKS ||--o{ BANK_MODEL_ALIASES : resolves_to
   DATA_SOURCES ||--o{ BANK_MODEL_ALIASES : sources
   DATA_SOURCES ||--o{ BANK_GENERALIZATION_COHORTS : sources
+  BANK_GENERALIZATION_COHORTS ||--o{ BANK_GENERALIZATION_FORMS : contains
+  BANK_IDENTITY_MODEL_RECORDS ||--o{ BANK_GENERALIZATION_FORMS : source_operation
+  BANKS ||--o{ BANK_GENERALIZATION_FORMS : bank
   BANK_IDENTITY_MODEL_RECORDS ||--o{ BANK_MODEL_RELATIONSHIP_EVIDENCE : from_record
   BANK_IDENTITY_MODEL_RECORDS ||--o{ BANK_MODEL_RELATIONSHIP_EVIDENCE : to_record
   BANK_IDENTITY_MODEL_RECORDS ||--o{ BANK_MODEL_DO_NOT_MERGE : excluded_a
@@ -151,7 +155,8 @@ erDiagram
 | existing ESCO/ISCO sources | legacy occupation tables and schemes | reused unchanged; no taxonomy fabricated |
 | model-safe identity CSV | `bank_identity_model_records` | 303 source operations preserved; `BH-241` maps to existing `BH-197` as a duplicate source row |
 | model-safe alias CSV | `bank_model_aliases` | all 1,524 aliases preserved; 525 enabled, 999 review/historical/blocked |
-| model-safe cohort CSV | `bank_generalization_cohorts` | 198 proposed keys; 46 usable keys, with 152 kept separate or review-gated |
+| model-safe cohort CSV | `bank_generalization_cohorts` | 198 supplied keys plus 29 derived review-only keys; 46 usable keys, with 152 supplied keys kept separate or review-gated |
+| generated generalization forms | `bank_generalization_forms` | 303 source operations linked to their supplied model-safe cohort form |
 | relationship CSV | `bank_model_relationship_evidence` | 21 source relationships retained; relationship text does not override model/review gates |
 | do-not-merge CSV | `bank_model_do_not_merge` | 12 explicit exclusions enforced during alias/cohort resolution |
 | correction/evidence CSVs | `bank_model_research_corrections`, `bank_model_evidence_notes` | 30 corrections and 14 model-risk notes retained as provenance |

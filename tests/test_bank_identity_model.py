@@ -19,7 +19,8 @@ def test_model_safe_tables_and_source_counts_are_integrated():
     with sqlite3.connect(DB) as connection:
         assert connection.execute("select count(*) from bank_identity_model_records").fetchone()[0] == 303
         assert connection.execute("select count(*) from bank_model_aliases").fetchone()[0] == 1524
-        assert connection.execute("select count(*) from bank_generalization_cohorts").fetchone()[0] == 198
+        assert connection.execute("select count(*) from bank_generalization_cohorts").fetchone()[0] == 227
+        assert connection.execute("select count(*) from bank_generalization_forms").fetchone()[0] == 303
         assert connection.execute("select count(*) from bank_model_relationship_evidence").fetchone()[0] == 21
         assert connection.execute("select count(*) from bank_model_do_not_merge").fetchone()[0] == 12
         assert connection.execute("select count(*) from bank_model_research_corrections").fetchone()[0] == 30
@@ -39,7 +40,20 @@ def test_model_safe_import_is_idempotent_and_preserves_legacy_bank_rows(tmp_path
         assert connection.execute("select count(*) from banks").fetchone()[0] == 302
         assert connection.execute("select count(*) from bank_identity_model_records").fetchone()[0] == 303
         assert connection.execute("select count(*) from bank_model_aliases").fetchone()[0] == 1524
-        assert connection.execute("select count(*) from bank_generalization_cohorts").fetchone()[0] == 198
+        assert connection.execute("select count(*) from bank_generalization_cohorts").fetchone()[0] == 227
+        assert connection.execute("select count(*) from bank_generalization_forms").fetchone()[0] == 303
+
+
+def test_bank_safe_candidate_is_linked_to_persisted_generalization_form():
+    result = GeneralizationDB(DB).get_candidates("BANK", "Emirates NBD Bank", "en")
+    candidate = next(item for item in result["candidates"] if item["level_code"] == "MODEL_SAFE_GROUP")
+    form_id = candidate["provenance"]["generalization_form_id"]
+    with sqlite3.connect(DB) as connection:
+        row = connection.execute(
+            "select safe_generalization_key, level_code, enabled_for_lookup from bank_generalization_forms where form_id = ?",
+            (form_id,),
+        ).fetchone()
+    assert row == ("GEN_EMIRATES_NBD_CONVENTIONAL", "MODEL_SAFE_GROUP", 1)
 
 
 def test_verified_cross_country_and_model_aware_keys():

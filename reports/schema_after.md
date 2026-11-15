@@ -118,7 +118,7 @@ Indexes: ix_bank_evidence_bank_id
 
 ## `bank_generalization_cohorts`
 
-Rows: 198
+Rows: 227
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|
@@ -135,6 +135,31 @@ Rows: 198
 | source_id | INTEGER |  | NO | data_sources.source_id | Persisted Finaira reference data or layered metadata for `bank_generalization_cohorts`. |
 
 Indexes: ix_bank_generalization_cohorts_automatic_grouping, ix_bank_generalization_cohorts_eligible_for_lookup, ix_bank_generalization_cohorts_family_id, ix_bank_generalization_cohorts_model
+
+## `bank_generalization_forms`
+
+Rows: 303
+
+| Column | Type | Key | Nullable | References | Purpose |
+|---|---|---|---|---|---|
+| form_id | VARCHAR(160) | PK | NO |  | Persisted Finaira reference data or layered metadata for `bank_generalization_forms`. |
+| source_record_id | VARCHAR(40) |  | NO | bank_identity_model_records.record_id | Persisted Finaira reference data or layered metadata for `bank_generalization_forms`. |
+| canonical_bank_id | VARCHAR(30) |  | NO | banks.bank_id | Persisted Finaira reference data or layered metadata for `bank_generalization_forms`. |
+| safe_generalization_key | VARCHAR(120) |  | NO | bank_generalization_cohorts.safe_generalization_key | Persisted Finaira reference data or layered metadata for `bank_generalization_forms`. |
+| level_code | VARCHAR(40) |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_generalization_forms`. |
+| specificity_rank | INTEGER |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_generalization_forms`. |
+| label_en | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_generalization_forms`. |
+| label_ar | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_generalization_forms`. |
+| banking_model | VARCHAR(60) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_generalization_forms`. |
+| verification_status | VARCHAR(40) |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_generalization_forms`. |
+| enabled_for_lookup | BOOLEAN |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_generalization_forms`. |
+| disclosure_approved | BOOLEAN |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_generalization_forms`. |
+| is_exact | BOOLEAN |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_generalization_forms`. |
+| is_local_only | BOOLEAN |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_generalization_forms`. |
+| is_suppression | BOOLEAN |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_generalization_forms`. |
+| source_id | INTEGER |  | NO | data_sources.source_id | Persisted Finaira reference data or layered metadata for `bank_generalization_forms`. |
+
+Indexes: ix_bank_generalization_forms_banking_model, ix_bank_generalization_forms_canonical_bank_id, ix_bank_generalization_forms_enabled_for_lookup, ix_bank_generalization_forms_level_code, ix_bank_generalization_forms_safe_generalization_key, ix_bank_generalization_forms_source_record_id, ix_bank_generalization_forms_verification_status
 
 ## `bank_identity_model_records`
 

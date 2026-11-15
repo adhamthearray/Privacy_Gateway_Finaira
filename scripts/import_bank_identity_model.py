@@ -30,6 +30,7 @@ from finaira_generalization.db import (
     BankAuditClassification,
     BankDoNotMerge,
     BankGeneralizationCohort,
+    BankGeneralizationForm,
     BankIdentityModel,
     BankModelAlias,
     BankModelEvidenceNote,
@@ -211,6 +212,22 @@ def import_bank_identity_model(
             reason = ";".join(sorted(set(member_reasons)))
         cohort_validation.append((row, source_eligible, reason))
 
+    source_cohort_keys = {row["safe_generalization_key"] for row, _, _ in cohort_validation}
+    derived_review_cohorts = []
+    for record_id, identity in identity_by_id.items():
+        safe_key = _text(identity.get("safe_generalization_key"))
+        if safe_key and safe_key not in source_cohort_keys:
+            derived_review_cohorts.append(({
+                "safe_generalization_key": safe_key,
+                "model": _text(identity.get("banking_model_effective")) or "UNKNOWN",
+                "records": "1",
+                "countries": _text(identity.get("country_code")),
+                "names": _text(identity.get("canonical_name_2026")) or _text(identity.get("source_name_en")),
+                "bank_record_ids": record_id,
+                "automatic_grouping": "NO",
+                "family_id": _text(identity.get("family_id")),
+            }, False, "IDENTITY_SAFE_KEY_WITHOUT_APPROVED_COHORT"))
+
     for row in alias_rows:
         if row.get("record_id") not in identity_by_id:
             raise ValueError(f"ALIAS_RECORD_NOT_FOUND:{row.get('record_id')}")
@@ -237,8 +254,11 @@ def import_bank_identity_model(
         "aliases_enabled_for_lookup": sum(_alias_enabled(row, identity_by_id[row["record_id"]], eligible_by_record[row["record_id"]]) for row in alias_rows),
         "aliases_review_or_historical": sum(not _alias_enabled(row, identity_by_id[row["record_id"]], eligible_by_record[row["record_id"]]) for row in alias_rows),
         "cohorts_imported": len(cohort_rows),
+        "derived_review_cohorts": len(derived_review_cohorts),
+        "cohorts_materialized": len(cohort_rows) + len(derived_review_cohorts),
         "cohorts_enabled_for_lookup": sum(enabled for _, enabled, _ in cohort_validation),
         "cohorts_review_or_separate": sum(not enabled for _, enabled, _ in cohort_validation),
+        "generalization_forms_imported": len(identity_rows),
         "approved_shared_cohort_keys": sum(enabled and _bool(row.get("automatic_grouping")) and int(row.get("records") or 0) > 1 for row, enabled, _ in cohort_validation),
         "identities_in_approved_shared_cohorts": sum(int(row.get("records") or 0) for row, enabled, _ in cohort_validation if enabled and _bool(row.get("automatic_grouping")) and int(row.get("records") or 0) > 1),
         "review_required_identity_records": sum(_bool(row.get("review_required")) for row in identity_rows),
@@ -321,6 +341,45 @@ def import_bank_identity_model(
                 "family_id": _text(row.get("family_id")),
                 "eligible_for_lookup": enabled,
                 "eligibility_reason": reason,
+                "source_id": source_cohort.source_id,
+            })
+
+        for row, enabled, reason in derived_review_cohorts:
+            _put(session, BankGeneralizationCohort, row["safe_generalization_key"], {
+                "model": row["model"],
+                "record_count": 1,
+                "countries": row["countries"],
+                "names": row["names"],
+                "bank_record_ids": row["bank_record_ids"],
+                "automatic_grouping": False,
+                "family_id": row["family_id"],
+                "eligible_for_lookup": False,
+                "eligibility_reason": reason,
+                "source_id": source_cohort.source_id,
+            })
+
+        cohort_by_key = {row["safe_generalization_key"]: (row, enabled) for row, enabled, _ in cohort_validation + derived_review_cohorts}
+        for record_id, identity in identity_by_id.items():
+            safe_key = _text(identity.get("safe_generalization_key"))
+            if not safe_key or safe_key not in cohort_by_key:
+                continue
+            cohort_row, enabled = cohort_by_key[safe_key]
+            form_id = _stable("bank-generalization-form-2026", record_id, safe_key)
+            _put(session, BankGeneralizationForm, form_id, {
+                "source_record_id": record_id,
+                "canonical_bank_id": bank_map[record_id],
+                "safe_generalization_key": safe_key,
+                "level_code": "MODEL_SAFE_GROUP",
+                "specificity_rank": 1,
+                "label_en": safe_key,
+                "label_ar": safe_key,
+                "banking_model": _text(identity.get("banking_model_effective")),
+                "verification_status": "SOURCE_VERIFIED" if enabled else "REVIEW_ONLY",
+                "enabled_for_lookup": enabled,
+                "disclosure_approved": enabled,
+                "is_exact": False,
+                "is_local_only": False,
+                "is_suppression": False,
                 "source_id": source_cohort.source_id,
             })
 

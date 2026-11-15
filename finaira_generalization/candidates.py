@@ -13,7 +13,7 @@ from sqlalchemy.orm import Session
 from .age_date import parse_age
 from .db import (
     Bank, BankAlias, BankAuditClassification, BankCandidate, BankRelationship, CandidateMetadata, DataSource,
-    BankIdentityModel, BankModelAlias, BankGeneralizationCohort, BankDoNotMerge,
+    BankIdentityModel, BankModelAlias, BankGeneralizationCohort, BankGeneralizationForm, BankDoNotMerge,
     GeneralizationCandidate, GeneralizationLevel, GovernmentAlias,
     GovernmentCandidateReview, GovernmentEntity, IndustryQIDMapping,
     NationalityAlias, NationalityAliasV2, NationalityGeoJoin,
@@ -367,6 +367,10 @@ class GeneralizationDB:
         cohort = session.get(BankGeneralizationCohort, key)
         eligible = bool(cohort and cohort.eligible_for_lookup)
         representative = records[0]
+        form = session.scalar(select(BankGeneralizationForm).where(
+            BankGeneralizationForm.source_record_id.in_(record_ids),
+            BankGeneralizationForm.safe_generalization_key == key,
+        ).order_by(BankGeneralizationForm.form_id))
         canonical_id = representative.bank_identity_id or representative.canonical_bank_id
         exact_row = session.scalar(select(BankCandidate).where(BankCandidate.bank_id == representative.canonical_bank_id, BankCandidate.is_exact.is_(True)))
         candidates = []
@@ -401,6 +405,8 @@ class GeneralizationDB:
             "eligible_for_lookup": eligible,
             "eligibility_reason": cohort.eligibility_reason if cohort else "MISSING_COHORT",
             "review_required": any(row.review_required for row in records),
+            "generalization_form_id": form.form_id if form else None,
+            "generalization_form_level": form.level_code if form else "MODEL_SAFE_GROUP",
         }
         candidates.append(_candidate_dict(
             candidate_id=f"BANK_SAFE__{key}",

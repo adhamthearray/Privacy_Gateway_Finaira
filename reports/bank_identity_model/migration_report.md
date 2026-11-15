@@ -1,6 +1,6 @@
 # Bank identity/model-safe migration report
 
-Generated: 2026-11-15T11:37:36.687558+00:00
+Generated: 2026-11-15T11:47:21.136700+00:00
 
 - **database**: "C:\\Users\\domma\\poc_4\\data\\processed\\finaira_generalization.db"
 - **source_dir**: "C:\\Users\\domma\\poc_4\\data\\sources\\bank\\model_safe_2026"
@@ -13,8 +13,11 @@ Generated: 2026-11-15T11:37:36.687558+00:00
 - **aliases_enabled_for_lookup**: 525
 - **aliases_review_or_historical**: 999
 - **cohorts_imported**: 198
+- **derived_review_cohorts**: 29
+- **cohorts_materialized**: 227
 - **cohorts_enabled_for_lookup**: 46
 - **cohorts_review_or_separate**: 152
+- **generalization_forms_imported**: 303
 - **approved_shared_cohort_keys**: 33
 - **identities_in_approved_shared_cohorts**: 109
 - **review_required_identity_records**: 174

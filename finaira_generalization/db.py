@@ -401,6 +401,27 @@ class BankGeneralizationCohort(Base):
     source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
 
 
+class BankGeneralizationForm(Base):
+    """A persisted bank generalization form linked to a model-safe cohort."""
+    __tablename__ = "bank_generalization_forms"
+    form_id: Mapped[str] = mapped_column(String(160), primary_key=True)
+    source_record_id: Mapped[str] = mapped_column(ForeignKey("bank_identity_model_records.record_id"), index=True)
+    canonical_bank_id: Mapped[str] = mapped_column(ForeignKey("banks.bank_id"), index=True)
+    safe_generalization_key: Mapped[str] = mapped_column(ForeignKey("bank_generalization_cohorts.safe_generalization_key"), index=True)
+    level_code: Mapped[str] = mapped_column(String(40), index=True)
+    specificity_rank: Mapped[int] = mapped_column(Integer)
+    label_en: Mapped[str | None] = mapped_column(Text)
+    label_ar: Mapped[str | None] = mapped_column(Text)
+    banking_model: Mapped[str | None] = mapped_column(String(60), index=True)
+    verification_status: Mapped[str] = mapped_column(String(40), index=True)
+    enabled_for_lookup: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
+    disclosure_approved: Mapped[bool] = mapped_column(Boolean, default=False)
+    is_exact: Mapped[bool] = mapped_column(Boolean, default=False)
+    is_local_only: Mapped[bool] = mapped_column(Boolean, default=False)
+    is_suppression: Mapped[bool] = mapped_column(Boolean, default=False)
+    source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
+
+
 class BankModelRelationshipEvidence(Base):
     __tablename__ = "bank_model_relationship_evidence"
     relationship_id: Mapped[str] = mapped_column(String(100), primary_key=True)
