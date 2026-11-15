@@ -96,3 +96,19 @@ py -X utf8 examples/multiple_documents.py
 ```
 
 The detailed trace is saved to `logs/multiple-documents.log`.
+
+## Placeholder document policy package
+
+For an upstream detector that has already replaced entity spans with
+placeholders, run:
+
+```powershell
+py -X utf8 scripts/sanitize_document.py examples/document_sanitizer_input.json
+```
+
+The JSON output preserves the placeholder document and returns one decision
+per entity. `PSEUDONYMIZE` entities receive a request-scoped form such as
+`__FN_PERSON_0001__`. `GENERALIZE` entities receive the local database
+candidate chain, including review status and `production_eligible`; no
+generalization candidate is selected. Use `--hide-review-candidates` only
+when a caller explicitly wants the gated candidates omitted.

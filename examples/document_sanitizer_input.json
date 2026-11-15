@@ -1,0 +1,16 @@
+{
+  "document_id": "doc-001",
+  "text": "[[E0001]] emailed [[E0002]]. [[E0001]] requested a refund.",
+  "entity_map": {
+    "E0001": {
+      "label": "PERSON_NAME",
+      "original_text": "Ahmed Ali",
+      "placeholder": "[[E0001]]"
+    },
+    "E0002": {
+      "label": "EMAIL_ADDRESS",
+      "original_text": "ahmed@example.com",
+      "placeholder": "[[E0002]]"
+    }
+  }
+}
