@@ -138,7 +138,7 @@ Indexes: ix_bank_generalization_cohorts_automatic_grouping, ix_bank_generalizati
 
 ## `bank_generalization_forms`
 
-Rows: 303
+Rows: 606
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|

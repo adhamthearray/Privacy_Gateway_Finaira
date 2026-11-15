@@ -66,7 +66,7 @@ The legacy M49 tables are historical compatibility data only. Active NATIONALITY
 | `bank_identity_model_records` | `record_id` | `canonical_bank_id`, `source_id`; family/model/review indexes | 303 |
 | `bank_model_aliases` | `alias_id` | source record, canonical bank, normalized alias, enabled indexes | 1,524 |
 | `bank_generalization_cohorts` | `safe_generalization_key` | source ID; model/eligibility indexes | 227 (198 supplied + 29 derived review-only) |
-| `bank_generalization_forms` | `form_id` | source record, bank, cohort, enabled indexes | 303 |
+| `bank_generalization_forms` | `form_id` | source record, bank, cohort, level/model/enabled indexes | 606 (303 shared finance-model + 303 model-safe) |
 | `bank_model_relationship_evidence` | `relationship_id` | two source-record FKs, source ID | 21 |
 | `bank_model_do_not_merge` | `exclusion_id` | two source-record FKs, collision index | 12 |
 | `bank_model_research_corrections` | `correction_id` | source-record FK, evidence index | 30 |
@@ -156,7 +156,7 @@ erDiagram
 | model-safe identity CSV | `bank_identity_model_records` | 303 source operations preserved; `BH-241` maps to existing `BH-197` as a duplicate source row |
 | model-safe alias CSV | `bank_model_aliases` | all 1,524 aliases preserved; 525 enabled, 999 review/historical/blocked |
 | model-safe cohort CSV | `bank_generalization_cohorts` | 198 supplied keys plus 29 derived review-only keys; 46 usable keys, with 152 supplied keys kept separate or review-gated |
-| generated generalization forms | `bank_generalization_forms` | 303 source operations linked to their supplied model-safe cohort form |
+| generated generalization forms | `bank_generalization_forms` | 303 source operations linked to a shared finance-model form and a model-safe cohort form (606 rows total) |
 | relationship CSV | `bank_model_relationship_evidence` | 21 source relationships retained; relationship text does not override model/review gates |
 | do-not-merge CSV | `bank_model_do_not_merge` | 12 explicit exclusions enforced during alias/cohort resolution |
 | correction/evidence CSVs | `bank_model_research_corrections`, `bank_model_evidence_notes` | 30 corrections and 14 model-risk notes retained as provenance |
@@ -216,7 +216,7 @@ sequenceDiagram
   API-->>Caller: selected_candidate = null
 ```
 
-Legacy bank candidates remain `EXACT → FINANCE_MODEL → BANKING_INSTITUTION → FINANCIAL_INSTITUTION → SUPPRESSED`. Model-safe source aliases use `EXACT → MODEL_SAFE_GROUP → SUPPRESSED`; the model-safe candidate representation is the supplied `safe_generalization_key`, not a fabricated bank label. A key is shared only when the source cohort permits it and all member records pass relationship, model, active-bank, and review gates. Conflicting, historical, unknown, mixed-review, or explicitly excluded aliases remain unresolved/review-only. Organization-specific industry candidates are absent by default until both identity and company-to-industry links are approved; `include_review_candidates=True` exposes them only as `REVIEW_ONLY`. Government function/form branches are separate and hidden by default.
+Bank model-aware lookup now exposes `EXACT → FINANCE_MODEL → MODEL_SAFE_GROUP → BANKING_INSTITUTION → FINANCIAL_INSTITUTION → SUPPRESSED`. `FINANCE_MODEL` is the shared human-facing form: different banks with the same verified model converge on the same candidate ID and bilingual label, such as `Conventional bank`, `Bank offering conventional and Islamic banking services`, or `Islamic bank`. `MODEL_SAFE_GROUP` remains the more specific supplied cohort form and retains the source safe key in provenance. Finance-model forms are persisted in `bank_generalization_forms` and are enabled only for active source operations whose model record is not review-required; pending, historical, unknown, non-bank, and conflicting rows remain review-only. A model-safe key is shared only when the source cohort permits it and all member records pass relationship, model, active-bank, and review gates. Organization-specific industry candidates are absent by default until both identity and company-to-industry links are approved; `include_review_candidates=True` exposes them only as `REVIEW_ONLY`. Government function/form branches are separate and hidden by default.
 
 ## Bilingual examples for every supported type
 

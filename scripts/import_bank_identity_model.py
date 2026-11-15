@@ -72,6 +72,20 @@ MODEL_ALIASES = {
     "CONVENTIONAL", "ISLAMIC", "MIXED", "ISLAMIC_WINDOW", "SPECIALIZED"
 }
 
+# These are the shared, human-facing bank generalization forms.  They are
+# deliberately keyed by the authoritative banking model rather than by a
+# bank family, so different banks can converge on the same safe form.
+BANK_MODEL_FORMS = {
+    "CONVENTIONAL": ("Conventional bank", "بنك تقليدي"),
+    "MIXED": ("Bank offering conventional and Islamic banking services", "بنك يقدم خدمات مصرفية تقليدية وإسلامية"),
+    "ISLAMIC": ("Islamic bank", "بنك إسلامي"),
+    "ISLAMIC_WINDOW": ("Bank with an Islamic window", "بنك ذو نافذة إسلامية"),
+    "SPECIALIZED": ("Specialized or development bank", "بنك متخصص أو تنموي"),
+    "UNKNOWN": ("Unknown banking model", "نموذج مصرفي غير معروف"),
+    "HISTORICAL_UNDETERMINED": ("Historical or undetermined banking model", "نموذج مصرفي تاريخي أو غير محدد"),
+    "NOT_A_BANK": ("Not a bank", "ليس بنكًا"),
+}
+
 
 def _read_csv(path: Path) -> list[dict[str, str]]:
     with path.open(encoding="utf-8-sig", newline="") as handle:
@@ -258,7 +272,8 @@ def import_bank_identity_model(
         "cohorts_materialized": len(cohort_rows) + len(derived_review_cohorts),
         "cohorts_enabled_for_lookup": sum(enabled for _, enabled, _ in cohort_validation),
         "cohorts_review_or_separate": sum(not enabled for _, enabled, _ in cohort_validation),
-        "generalization_forms_imported": len(identity_rows),
+        "generalization_forms_imported": len(identity_rows) * 2,
+        "shared_finance_model_forms": len(identity_rows),
         "approved_shared_cohort_keys": sum(enabled and _bool(row.get("automatic_grouping")) and int(row.get("records") or 0) > 1 for row, enabled, _ in cohort_validation),
         "identities_in_approved_shared_cohorts": sum(int(row.get("records") or 0) for row, enabled, _ in cohort_validation if enabled and _bool(row.get("automatic_grouping")) and int(row.get("records") or 0) > 1),
         "review_required_identity_records": sum(_bool(row.get("review_required")) for row in identity_rows),
@@ -364,13 +379,44 @@ def import_bank_identity_model(
             if not safe_key or safe_key not in cohort_by_key:
                 continue
             cohort_row, enabled = cohort_by_key[safe_key]
+            bank = session.get(Bank, bank_map[record_id])
+            model = _text(bank.finance_model if bank else None) or _text(identity.get("banking_model_effective")) or "UNKNOWN"
+            model_label_en, model_label_ar = BANK_MODEL_FORMS.get(model, BANK_MODEL_FORMS["UNKNOWN"])
+            # The shared model form is enabled only for an active, source-
+            # verified bank operation.  Family-level cohort approval is not
+            # required for this broader form; it is exactly what lets
+            # different banks with the same verified banking model converge.
+            model_enabled = (
+                bool(bank)
+                and identity.get("record_class") == "BANK"
+                and not _bool(identity.get("review_required"))
+                and model in MODEL_ALIASES
+            )
+            model_form_id = _stable("bank-generalization-form-model-2026", record_id, model)
+            _put(session, BankGeneralizationForm, model_form_id, {
+                "source_record_id": record_id,
+                "canonical_bank_id": bank_map[record_id],
+                "safe_generalization_key": safe_key,
+                "level_code": "FINANCE_MODEL",
+                "specificity_rank": 1,
+                "label_en": model_label_en,
+                "label_ar": model_label_ar,
+                "banking_model": model,
+                "verification_status": "SOURCE_VERIFIED" if model_enabled else "REVIEW_ONLY",
+                "enabled_for_lookup": model_enabled,
+                "disclosure_approved": model_enabled,
+                "is_exact": False,
+                "is_local_only": False,
+                "is_suppression": False,
+                "source_id": source_cohort.source_id,
+            })
             form_id = _stable("bank-generalization-form-2026", record_id, safe_key)
             _put(session, BankGeneralizationForm, form_id, {
                 "source_record_id": record_id,
                 "canonical_bank_id": bank_map[record_id],
                 "safe_generalization_key": safe_key,
                 "level_code": "MODEL_SAFE_GROUP",
-                "specificity_rank": 1,
+                "specificity_rank": 2,
                 "label_en": safe_key,
                 "label_ar": safe_key,
                 "banking_model": _text(identity.get("banking_model_effective")),

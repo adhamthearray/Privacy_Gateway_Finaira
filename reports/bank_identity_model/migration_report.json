@@ -3,7 +3,7 @@
   "aliases_processed": 1524,
   "aliases_review_or_historical": 999,
   "approved_shared_cohort_keys": 33,
-  "backup_path": null,
+  "backup_path": "C:\\Users\\domma\\poc_4\\data\\processed\\finaira_generalization_backup_bank_model_20261115_140029.db",
   "canonical_bank_records_reused": 302,
   "cohorts_enabled_for_lookup": 46,
   "cohorts_imported": 198,
@@ -15,8 +15,8 @@
   "dry_run": false,
   "duplicate_source_records_mapped": 1,
   "existing_bank_records_before": 302,
-  "generalization_forms_imported": 303,
-  "generated_at": "2026-11-15T11:47:21.136700+00:00",
+  "generalization_forms_imported": 606,
+  "generated_at": "2026-11-15T12:00:29.075918+00:00",
   "identities_in_approved_shared_cohorts": 109,
   "input_records": 303,
   "model_counts": {
@@ -40,6 +40,7 @@
   "relationships_imported": 21,
   "research_corrections_imported": 30,
   "review_required_identity_records": 174,
+  "shared_finance_model_forms": 303,
   "source_dir": "C:\\Users\\domma\\poc_4\\data\\sources\\bank\\model_safe_2026",
   "unresolved_records": []
 }

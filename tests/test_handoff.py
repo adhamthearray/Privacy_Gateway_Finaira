@@ -105,10 +105,17 @@ def test_bank_authority_and_evidence_flags():
     assert GeneralizationDB(DB).get_candidates("BANK", "Banque Misr", "en")["resolution_status"] == "REVIEW_ONLY"
     result = GeneralizationDB(DB).get_candidates("BANK", "Banque Du Caire", "en")
     assert result["resolution_status"] == "MATCHED"
-    assert [candidate["level_code"] for candidate in result["candidates"]] == ["EXACT", "MODEL_SAFE_GROUP", "SUPPRESSED"]
+    assert [candidate["level_code"] for candidate in result["candidates"]] == [
+        "EXACT", "FINANCE_MODEL", "MODEL_SAFE_GROUP", "BANKING_INSTITUTION",
+        "FINANCIAL_INSTITUTION", "SUPPRESSED",
+    ]
     assert result["candidates"][0]["is_local_only"] is True
     assert result["candidates"][0]["metadata"].get("disclosure_approved", False) is False
-    assert result["candidates"][1]["metadata"].get("disclosure_approved", False) is True
+    finance_model = next(candidate for candidate in result["candidates"] if candidate["level_code"] == "FINANCE_MODEL")
+    safe_group = next(candidate for candidate in result["candidates"] if candidate["level_code"] == "MODEL_SAFE_GROUP")
+    assert finance_model["representation"] == "Conventional bank"
+    assert finance_model["metadata"].get("disclosure_approved", False) is True
+    assert safe_group["metadata"].get("disclosure_approved", False) is True
     assert scalar("select count(*) from banks where name_ar is null") == 37
     assert scalar("select count(*) from bank_aliases where review_status='APPROVED_BY_USER'") == 47
     assert scalar("select count(*) from bank_aliases where enabled_for_lookup=1") == 1440

@@ -20,7 +20,9 @@ def test_model_safe_tables_and_source_counts_are_integrated():
         assert connection.execute("select count(*) from bank_identity_model_records").fetchone()[0] == 303
         assert connection.execute("select count(*) from bank_model_aliases").fetchone()[0] == 1524
         assert connection.execute("select count(*) from bank_generalization_cohorts").fetchone()[0] == 227
-        assert connection.execute("select count(*) from bank_generalization_forms").fetchone()[0] == 303
+        assert connection.execute("select count(*) from bank_generalization_forms").fetchone()[0] == 606
+        assert connection.execute("select count(*) from bank_generalization_forms where level_code='FINANCE_MODEL'").fetchone()[0] == 303
+        assert connection.execute("select count(*) from bank_generalization_forms where level_code='MODEL_SAFE_GROUP'").fetchone()[0] == 303
         assert connection.execute("select count(*) from bank_model_relationship_evidence").fetchone()[0] == 21
         assert connection.execute("select count(*) from bank_model_do_not_merge").fetchone()[0] == 12
         assert connection.execute("select count(*) from bank_model_research_corrections").fetchone()[0] == 30
@@ -41,7 +43,7 @@ def test_model_safe_import_is_idempotent_and_preserves_legacy_bank_rows(tmp_path
         assert connection.execute("select count(*) from bank_identity_model_records").fetchone()[0] == 303
         assert connection.execute("select count(*) from bank_model_aliases").fetchone()[0] == 1524
         assert connection.execute("select count(*) from bank_generalization_cohorts").fetchone()[0] == 227
-        assert connection.execute("select count(*) from bank_generalization_forms").fetchone()[0] == 303
+        assert connection.execute("select count(*) from bank_generalization_forms").fetchone()[0] == 606
 
 
 def test_bank_safe_candidate_is_linked_to_persisted_generalization_form():
@@ -54,6 +56,21 @@ def test_bank_safe_candidate_is_linked_to_persisted_generalization_form():
             (form_id,),
         ).fetchone()
     assert row == ("GEN_EMIRATES_NBD_CONVENTIONAL", "MODEL_SAFE_GROUP", 1)
+
+
+def test_bank_model_forms_are_shared_across_banks_and_bilingual():
+    db = GeneralizationDB(DB)
+    conventional_a = db.get_candidates("BANK", "Emirates NBD Bank", "en")
+    conventional_b = db.get_candidates("BANK", "First Abu Dhabi Bank", "en")
+    islamic = db.get_candidates("BANK", "مصرف الراجحي", "ar")
+    a = next(item for item in conventional_a["candidates"] if item["level_code"] == "FINANCE_MODEL")
+    b = next(item for item in conventional_b["candidates"] if item["level_code"] == "FINANCE_MODEL")
+    i = next(item for item in islamic["candidates"] if item["level_code"] == "FINANCE_MODEL")
+    assert (a["candidate_id"], a["representation"]) == ("BANK_FINANCE_MODEL__CONVENTIONAL", "Conventional bank")
+    assert (b["candidate_id"], b["representation"]) == ("BANK_FINANCE_MODEL__CONVENTIONAL", "Conventional bank")
+    assert (i["candidate_id"], i["representation"]) == ("BANK_FINANCE_MODEL__ISLAMIC", "بنك إسلامي")
+    assert a["provenance"]["generalization_form_id"]
+    assert a["metadata"]["disclosure_approved"] is True
 
 
 def test_verified_cross_country_and_model_aware_keys():

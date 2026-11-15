@@ -26,6 +26,19 @@ from .normalization import normalize
 AR_MONTHS = ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"]
 EN_MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
+BANK_MODEL_FORM_LABELS = {
+    "CONVENTIONAL": ("Conventional bank", "\u0628\u0646\u0643 \u062a\u0642\u0644\u064a\u062f\u064a"),
+    "MIXED": ("Bank offering conventional and Islamic banking services", "\u0628\u0646\u0643 \u064a\u0642\u062f\u0645 \u062e\u062f\u0645\u0627\u062a \u0645\u0635\u0631\u0641\u064a\u0629 \u062a\u0642\u0644\u064a\u062f\u064a\u0629 \u0648\u0625\u0633\u0644\u0627\u0645\u064a\u0629"),
+    "ISLAMIC": ("Islamic bank", "\u0628\u0646\u0643 \u0625\u0633\u0644\u0627\u0645\u064a"),
+    "ISLAMIC_WINDOW": ("Bank with an Islamic window", "\u0628\u0646\u0643 \u0630\u0648 \u0646\u0627\u0641\u0630\u0629 \u0625\u0633\u0644\u0627\u0645\u064a\u0629"),
+    "SPECIALIZED": ("Specialized or development bank", "\u0628\u0646\u0643 \u0645\u062a\u062e\u0635\u0635 \u0623\u0648 \u062a\u0646\u0645\u0648\u064a"),
+    "UNKNOWN": ("Unknown banking model", "\u0646\u0645\u0648\u0630\u062c \u0645\u0635\u0631\u0641\u064a \u063a\u064a\u0631 \u0645\u0639\u0631\u0648\u0641"),
+    "HISTORICAL": ("Historical or undetermined banking model", "\u0646\u0645\u0648\u0630\u062c \u0645\u0635\u0631\u0641\u064a \u062a\u0627\u0631\u064a\u062e\u064a \u0623\u0648 \u063a\u064a\u0631 \u0645\u062d\u062f\u062f"),
+    "HISTORICAL_UNDETERMINED": ("Historical or undetermined banking model", "\u0646\u0645\u0648\u0630\u062c \u0645\u0635\u0631\u0641\u064a \u062a\u0627\u0631\u064a\u062e\u064a \u0623\u0648 \u063a\u064a\u0631 \u0645\u062d\u062f\u062f"),
+    "NOT_APPLICABLE": ("Not a bank", "\u0644\u064a\u0633 \u0628\u0646\u0643\u064b\u0627"),
+    "NOT_A_BANK": ("Not a bank", "\u0644\u064a\u0633 \u0628\u0646\u0643\u064b\u0627"),
+}
+
 
 @dataclass
 class Candidate:
@@ -370,6 +383,12 @@ class GeneralizationDB:
         form = session.scalar(select(BankGeneralizationForm).where(
             BankGeneralizationForm.source_record_id.in_(record_ids),
             BankGeneralizationForm.safe_generalization_key == key,
+            BankGeneralizationForm.level_code == "MODEL_SAFE_GROUP",
+        ).order_by(BankGeneralizationForm.form_id))
+        finance_form = session.scalar(select(BankGeneralizationForm).where(
+            BankGeneralizationForm.source_record_id.in_(record_ids),
+            BankGeneralizationForm.safe_generalization_key == key,
+            BankGeneralizationForm.level_code == "FINANCE_MODEL",
         ).order_by(BankGeneralizationForm.form_id))
         canonical_id = representative.bank_identity_id or representative.canonical_bank_id
         exact_row = session.scalar(select(BankCandidate).where(BankCandidate.bank_id == representative.canonical_bank_id, BankCandidate.is_exact.is_(True)))
@@ -393,6 +412,42 @@ class GeneralizationDB:
                 "automatic_grouping": representative.automatic_grouping,
             }
             candidates.append(exact)
+        bank = session.get(Bank, representative.canonical_bank_id)
+        banking_model = (bank.finance_model if bank else None) or representative.banking_model_effective or "UNKNOWN"
+        model_label_en, model_label_ar = BANK_MODEL_FORM_LABELS.get(banking_model, BANK_MODEL_FORM_LABELS["UNKNOWN"])
+        model_enabled = bool(finance_form and finance_form.enabled_for_lookup)
+        finance_provenance = {
+            "source": self._source(session, finance_form.source_id) if finance_form else self._source(session, cohort.source_id) if cohort else None,
+            "generalization_form_id": finance_form.form_id if finance_form else None,
+            "generalization_form_level": "FINANCE_MODEL",
+            "shared_form_key": f"BANK_FINANCE_MODEL__{banking_model}",
+            "banking_model": banking_model,
+            "safe_generalization_key": key,
+            "family_id": cohort.family_id if cohort else representative.family_id,
+            "source_record_ids": sorted(record_ids),
+            "review_required": any(row.review_required for row in records),
+            "eligible_for_lookup": model_enabled,
+            "disclosure_approved": model_enabled,
+        }
+        candidates.append(_candidate_dict(
+            candidate_id=f"BANK_FINANCE_MODEL__{banking_model}",
+            level_code="FINANCE_MODEL",
+            rank=1,
+            label_en=model_label_en,
+            label_ar=model_label_ar,
+            language=lang,
+            taxonomy="FINAIR_BANK",
+            taxonomy_code=banking_model,
+            source=self._source(session, finance_form.source_id) if finance_form else self._source(session, cohort.source_id) if cohort else None,
+            verification_status="SOURCE_VERIFIED" if model_enabled else "REVIEW_ONLY",
+            provenance=finance_provenance,
+            extra={
+                "finance_model": banking_model,
+                "shared_form_key": f"BANK_FINANCE_MODEL__{banking_model}",
+                "review_only": not model_enabled,
+                "disclosure_approved": model_enabled,
+            },
+        ))
         provenance = {
             "source": self._source(session, cohort.source_id) if cohort else None,
             "safe_generalization_key": key,
@@ -407,11 +462,13 @@ class GeneralizationDB:
             "review_required": any(row.review_required for row in records),
             "generalization_form_id": form.form_id if form else None,
             "generalization_form_level": form.level_code if form else "MODEL_SAFE_GROUP",
+            "finance_model_form_id": finance_form.form_id if finance_form else None,
+            "finance_model_form_key": f"BANK_FINANCE_MODEL__{banking_model}",
         }
         candidates.append(_candidate_dict(
             candidate_id=f"BANK_SAFE__{key}",
             level_code="MODEL_SAFE_GROUP",
-            rank=1,
+            rank=2,
             label_en=key,
             label_ar=key,
             language=lang,
@@ -422,6 +479,20 @@ class GeneralizationDB:
             provenance=provenance,
             extra={"safe_generalization_key": key, "review_only": not eligible, "disclosure_approved": eligible},
         ))
+        generic_rows = session.scalars(select(BankCandidate).where(
+            BankCandidate.bank_id == representative.canonical_bank_id,
+            BankCandidate.level_code.in_(("BANKING_INSTITUTION", "FINANCIAL_INSTITUTION")),
+        ).order_by(BankCandidate.specificity_rank)).all()
+        for generic_row in generic_rows:
+            generic_candidate = self._bank_row(session, generic_row, lang)
+            generic_candidate["provenance"] = {
+                **(generic_candidate.get("provenance") or {}),
+                "safe_generalization_key": key,
+                "finance_model_form_id": finance_form.form_id if finance_form else None,
+                "shared_form_key": f"BANK_FINANCE_MODEL__{banking_model}",
+                "review_required": any(row.review_required for row in records),
+            }
+            candidates.append(generic_candidate)
         candidates.append(_candidate_dict(
             candidate_id=f"BANK_SAFE__{key}__SUPPRESSED",
             level_code="SUPPRESSED",
