@@ -22,6 +22,7 @@ C:\Users\domma\poc_4\
 │   ├── handoff.py                   # idempotent handoff importer
 │   ├── layers.py                    # existing ESCO/ISCO/M49 layers + NE scheme
 │   ├── natural_earth.py              # DBF-to-CSV extraction
+│   ├── monetary.py                   # currency-optional amount interpretation and representations
 │   └── schema_tools.py
 ├── reports/
 │   ├── database_schema.sql           # exact SQLite DDL export
@@ -37,6 +38,11 @@ C:\Users\domma\poc_4\
 ```
 
 The handoff remains at `C:\Users\domma\Downloads\Finaira_Generalization_DB_Codex_Handoff_2026-11-12_ext`. ESCO/ISCO source files are existing external Downloads inputs configured in `config/datasets.yaml`; they were reused, not fabricated.
+
+Monetary entity interpretation is documented separately in
+[docs/monetary_generalization.md](monetary_generalization.md). It accepts one
+already-detected `MONETARY_AMOUNT`, returns all three representation options,
+and is intentionally not wired into NER, JEV, or automatic policy selection.
 
 ## Actual database schema
 
