@@ -345,6 +345,12 @@ unverified licences, duplicate candidates, operational statuses, and source
 actions. No classification is upgraded merely because an entity appears in a
 directory.
 
+For alias-family research, run
+`py -X utf8 scripts/export_bank_alias_collision_queue.py`. It writes
+`reports/gcc_bank_audit/bank_alias_collision_research_queue.csv`, containing
+all 203 exact normalized alias collision groups with member IDs, countries,
+banking models, entity kinds, licence statuses, and a research question.
+
 ## Counts, verification, and unresolved data
 
 - Natural Earth: 258 rows, source version 5.1.1; 239 nationality QIDs retained; 230 QID matches, 2 guarded ISO matches, and 7 unresolved legacy edge cases. Country lookup uses all 258 Natural Earth rows. NER-v1 COUNTRY coverage is 174/229 unique values (75.98%) and 2,904/3,009 spans (96.51%) after 31 approved review rows, deduplicated to 30 runtime aliases. The remaining 55 values and 105 spans are suppressed in `reports/ner_v1_generalization/missing_country.csv` and `reports/ner_v1_generalization/country_review_queue.csv`.
