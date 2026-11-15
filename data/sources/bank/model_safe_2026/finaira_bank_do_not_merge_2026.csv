@@ -1,0 +1,13 @@
+﻿record_a,record_b,why,collision_type
+QA-127,OM-145,Ahlibank Qatar versus Ahlibank Oman (unrelated),NAME_SIMILARITY
+SA-008,EG_BANK_012,Saudi Investment Bank vs saib Egypt (same acronym),ACRONYM_COLLISION
+AE-056,EG_BANK_010,Commercial Bank International UAE vs Commercial International Bank Egypt,SIMILAR_NAMES
+BH-174,QA-130,Khaleeji Bank Bahrain (GFH) vs Masraf Al Rayan Qatar,HISTORICAL_NAME_COLLISION
+SA-005,AE-075,"Arab National Bank Saudi is 40% affiliate, not same legal or controlled subsidiary of Arab Bank plc",MINORITY_AFFILIATE
+SA-005,OM-142,Arab National Bank Saudi vs Oman Arab Bank (Arab Bank PLC group),MINORITY_AFFILIATE
+AE-056,QA-124,"QNB owns 40% of CBI UAE, but CBI is an associate and distinct bank identity",MINORITY_AFFILIATE
+AE-045,AE-100,Dubai Islamic Bank has minority 29.49% stake in Bank of Khartoum; not same group for substitution,MINORITY_AFFILIATE
+AE-057,AE-100,Abu Dhabi Islamic Bank has minority 3.21% stake in Bank of Khartoum; no merger,MINORITY_AFFILIATE
+AE-046,AE-100,Sharjah Islamic Bank has minority stake in Bank of Khartoum; no grouping,MINORITY_AFFILIATE
+OM-147,OM-148,Bank Nizwa / Alizz proposed merger July 2026 remains unconsummated at latest evidence,PENDING_MERGER
+KW-105,KW-109,Gulf Bank conversion is not relation to Boubyan Bank,SIMILAR_MODEL_IS_NOT_IDENTITY

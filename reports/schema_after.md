@@ -116,6 +116,177 @@ Rows: 24
 
 Indexes: ix_bank_evidence_bank_id
 
+## `bank_generalization_cohorts`
+
+Rows: 198
+
+| Column | Type | Key | Nullable | References | Purpose |
+|---|---|---|---|---|---|
+| safe_generalization_key | VARCHAR(120) | PK | NO |  | Persisted Finaira reference data or layered metadata for `bank_generalization_cohorts`. |
+| model | VARCHAR(60) |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_generalization_cohorts`. |
+| record_count | INTEGER |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_generalization_cohorts`. |
+| countries | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_generalization_cohorts`. |
+| names | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_generalization_cohorts`. |
+| bank_record_ids | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_generalization_cohorts`. |
+| automatic_grouping | BOOLEAN |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_generalization_cohorts`. |
+| family_id | VARCHAR(80) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_generalization_cohorts`. |
+| eligible_for_lookup | BOOLEAN |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_generalization_cohorts`. |
+| eligibility_reason | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_generalization_cohorts`. |
+| source_id | INTEGER |  | NO | data_sources.source_id | Persisted Finaira reference data or layered metadata for `bank_generalization_cohorts`. |
+
+Indexes: ix_bank_generalization_cohorts_automatic_grouping, ix_bank_generalization_cohorts_eligible_for_lookup, ix_bank_generalization_cohorts_family_id, ix_bank_generalization_cohorts_model
+
+## `bank_identity_model_records`
+
+Rows: 303
+
+| Column | Type | Key | Nullable | References | Purpose |
+|---|---|---|---|---|---|
+| record_id | VARCHAR(40) | PK | NO |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| canonical_bank_id | VARCHAR(30) |  | NO | banks.bank_id | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| country_code | VARCHAR(2) |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| source_name_en | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| source_name_ar | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| family_id | VARCHAR(80) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| family_display_name | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| generalization_key | VARCHAR(120) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| bank_identity_id | VARCHAR(120) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| is_same_legal_bank_as_parent | VARCHAR(40) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| relationship_to_family | VARCHAR(80) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| banking_model_from_audit | VARCHAR(60) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| source_entity_kind | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| source_license_confirmation | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| group_relation_status | VARCHAR(100) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| family_evidence_basis | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| verified_family_source_urls | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| import_action | VARCHAR(100) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| historical_successor_record_id | VARCHAR(40) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| transition_effective_date | VARCHAR(40) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| review_note | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| country_license_review_needed | VARCHAR(20) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| original_category | VARCHAR(100) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| canonical_name_2026 | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| former_legal_name | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| banking_model_effective | VARCHAR(60) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| historical_operating_model_pre_transition | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| banking_service_profile | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| model_evidence_tier | VARCHAR(120) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| banking_model_verified_source | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| status_asof_2026_11_15 | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| record_class | VARCHAR(40) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| source_original_generalization_key | VARCHAR(120) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| proposed_model_aware_key | VARCHAR(120) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| safe_generalization_key | VARCHAR(120) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| automatic_grouping | BOOLEAN |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| identity_resolution_confidence | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| review_required | BOOLEAN |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| review_reason | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| successor_model_aware_key_if_post_transition | VARCHAR(120) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| non_merge_reason | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| source_bank_register_url | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| banking_business_scope | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| original_model_confidence | VARCHAR(60) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| aliases_en | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| aliases_ar | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| former_names | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| arabic_name_confidence | VARCHAR(80) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+| source_id | INTEGER |  | NO | data_sources.source_id | Persisted Finaira reference data or layered metadata for `bank_identity_model_records`. |
+
+Indexes: ix_bank_identity_model_records_automatic_grouping, ix_bank_identity_model_records_bank_identity_id, ix_bank_identity_model_records_banking_model_effective, ix_bank_identity_model_records_banking_model_from_audit, ix_bank_identity_model_records_canonical_bank_id, ix_bank_identity_model_records_country_code, ix_bank_identity_model_records_family_id, ix_bank_identity_model_records_generalization_key, ix_bank_identity_model_records_group_relation_status, ix_bank_identity_model_records_historical_successor_record_id, ix_bank_identity_model_records_import_action, ix_bank_identity_model_records_model_evidence_tier, ix_bank_identity_model_records_proposed_model_aware_key, ix_bank_identity_model_records_record_class, ix_bank_identity_model_records_relationship_to_family, ix_bank_identity_model_records_review_required, ix_bank_identity_model_records_safe_generalization_key
+
+## `bank_model_aliases`
+
+Rows: 1524
+
+| Column | Type | Key | Nullable | References | Purpose |
+|---|---|---|---|---|---|
+| alias_id | VARCHAR(64) | PK | NO |  | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| record_id | VARCHAR(40) |  | NO | bank_identity_model_records.record_id | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| canonical_bank_id | VARCHAR(30) |  | NO | banks.bank_id | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| country_code | VARCHAR(2) |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| bank_name_en | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| alias_text | TEXT |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| normalized_alias | TEXT |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| language | VARCHAR(2) |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| alias_type | VARCHAR(80) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| category | VARCHAR(80) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| status | VARCHAR(50) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| review_required | BOOLEAN |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| safe_generalization_key | VARCHAR(120) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| proposed_model_aware_key | VARCHAR(120) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| family_id | VARCHAR(80) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| bank_identity_id | VARCHAR(120) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| banking_model_effective | VARCHAR(60) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| automatic_grouping | BOOLEAN |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| enabled_for_lookup | BOOLEAN |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+| source_id | INTEGER |  | NO | data_sources.source_id | Persisted Finaira reference data or layered metadata for `bank_model_aliases`. |
+
+Indexes: ix_bank_model_aliases_alias_type, ix_bank_model_aliases_automatic_grouping, ix_bank_model_aliases_bank_identity_id, ix_bank_model_aliases_banking_model_effective, ix_bank_model_aliases_canonical_bank_id, ix_bank_model_aliases_country_code, ix_bank_model_aliases_enabled_for_lookup, ix_bank_model_aliases_family_id, ix_bank_model_aliases_language, ix_bank_model_aliases_normalized_alias, ix_bank_model_aliases_record_id, ix_bank_model_aliases_review_required, ix_bank_model_aliases_safe_generalization_key, ix_bank_model_aliases_status
+
+## `bank_model_do_not_merge`
+
+Rows: 12
+
+| Column | Type | Key | Nullable | References | Purpose |
+|---|---|---|---|---|---|
+| exclusion_id | VARCHAR(64) | PK | NO |  | Persisted Finaira reference data or layered metadata for `bank_model_do_not_merge`. |
+| record_a | VARCHAR(40) |  | NO | bank_identity_model_records.record_id | Persisted Finaira reference data or layered metadata for `bank_model_do_not_merge`. |
+| record_b | VARCHAR(40) |  | NO | bank_identity_model_records.record_id | Persisted Finaira reference data or layered metadata for `bank_model_do_not_merge`. |
+| why | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_do_not_merge`. |
+| collision_type | VARCHAR(80) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_do_not_merge`. |
+| source_id | INTEGER |  | NO | data_sources.source_id | Persisted Finaira reference data or layered metadata for `bank_model_do_not_merge`. |
+
+Indexes: ix_bank_model_do_not_merge_collision_type, ix_bank_model_do_not_merge_record_a, ix_bank_model_do_not_merge_record_b
+
+## `bank_model_evidence_notes`
+
+Rows: 14
+
+| Column | Type | Key | Nullable | References | Purpose |
+|---|---|---|---|---|---|
+| note_id | VARCHAR(64) | PK | NO |  | Persisted Finaira reference data or layered metadata for `bank_model_evidence_notes`. |
+| record_id | VARCHAR(40) |  | NO | bank_identity_model_records.record_id | Persisted Finaira reference data or layered metadata for `bank_model_evidence_notes`. |
+| risk | VARCHAR(80) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_evidence_notes`. |
+| detail | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_evidence_notes`. |
+| source_url | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_evidence_notes`. |
+| source_id | INTEGER |  | NO | data_sources.source_id | Persisted Finaira reference data or layered metadata for `bank_model_evidence_notes`. |
+
+Indexes: ix_bank_model_evidence_notes_record_id, ix_bank_model_evidence_notes_risk
+
+## `bank_model_relationship_evidence`
+
+Rows: 21
+
+| Column | Type | Key | Nullable | References | Purpose |
+|---|---|---|---|---|---|
+| relationship_id | VARCHAR(100) | PK | NO |  | Persisted Finaira reference data or layered metadata for `bank_model_relationship_evidence`. |
+| from_record_id | VARCHAR(40) |  | NO | bank_identity_model_records.record_id | Persisted Finaira reference data or layered metadata for `bank_model_relationship_evidence`. |
+| to_record_id | VARCHAR(40) |  | NO | bank_identity_model_records.record_id | Persisted Finaira reference data or layered metadata for `bank_model_relationship_evidence`. |
+| relationship_type | VARCHAR(80) |  | NO |  | Persisted Finaira reference data or layered metadata for `bank_model_relationship_evidence`. |
+| impact_on_generalization | VARCHAR(100) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_relationship_evidence`. |
+| explanation | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_relationship_evidence`. |
+| source_url | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_relationship_evidence`. |
+| source_id | INTEGER |  | NO | data_sources.source_id | Persisted Finaira reference data or layered metadata for `bank_model_relationship_evidence`. |
+
+Indexes: ix_bank_model_relationship_evidence_from_record_id, ix_bank_model_relationship_evidence_relationship_type, ix_bank_model_relationship_evidence_to_record_id
+
+## `bank_model_research_corrections`
+
+Rows: 30
+
+| Column | Type | Key | Nullable | References | Purpose |
+|---|---|---|---|---|---|
+| correction_id | VARCHAR(64) | PK | NO |  | Persisted Finaira reference data or layered metadata for `bank_model_research_corrections`. |
+| record_id | VARCHAR(40) |  | NO | bank_identity_model_records.record_id | Persisted Finaira reference data or layered metadata for `bank_model_research_corrections`. |
+| description | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_research_corrections`. |
+| old_values | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_research_corrections`. |
+| new_values | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_research_corrections`. |
+| source_url | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_research_corrections`. |
+| evidence_tier | VARCHAR(80) |  | YES |  | Persisted Finaira reference data or layered metadata for `bank_model_research_corrections`. |
+| source_id | INTEGER |  | NO | data_sources.source_id | Persisted Finaira reference data or layered metadata for `bank_model_research_corrections`. |
+
+Indexes: ix_bank_model_research_corrections_evidence_tier, ix_bank_model_research_corrections_record_id
+
 ## `bank_relationships`
 
 Rows: 5
@@ -235,7 +406,7 @@ Rows: 248
 
 ## `data_sources`
 
-Rows: 35
+Rows: 42
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|

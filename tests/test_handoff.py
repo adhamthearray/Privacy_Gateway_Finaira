@@ -100,14 +100,15 @@ def test_bank_authority_and_evidence_flags():
     assert scalar("select count(*) from banks where finance_model='CONVENTIONAL'") == 199
     assert scalar("select count(*) from banks where finance_model='MIXED'") == 9
     assert scalar("select count(*) from banks where finance_model='ISLAMIC'") == 46
-    # GCC foreign-bank aliases make Banque Misr ambiguous across legal
-    # entities; a unique Egyptian canonical name still resolves normally.
-    assert GeneralizationDB(DB).get_candidates("BANK", "Banque Misr", "en")["resolution_status"] == "AMBIGUOUS"
+    # The model-safe source contains a conflicting reviewed mixed-model
+    # operation for this spelling, so default lookup remains gated.
+    assert GeneralizationDB(DB).get_candidates("BANK", "Banque Misr", "en")["resolution_status"] == "REVIEW_ONLY"
     result = GeneralizationDB(DB).get_candidates("BANK", "Banque Du Caire", "en")
     assert result["resolution_status"] == "MATCHED"
-    assert [candidate["level_code"] for candidate in result["candidates"]] == ["EXACT", "FINANCE_MODEL", "BANKING_INSTITUTION", "FINANCIAL_INSTITUTION", "SUPPRESSED"]
+    assert [candidate["level_code"] for candidate in result["candidates"]] == ["EXACT", "MODEL_SAFE_GROUP", "SUPPRESSED"]
     assert result["candidates"][0]["is_local_only"] is True
-    assert all(candidate["metadata"].get("disclosure_approved", False) is False for candidate in result["candidates"])
+    assert result["candidates"][0]["metadata"].get("disclosure_approved", False) is False
+    assert result["candidates"][1]["metadata"].get("disclosure_approved", False) is True
     assert scalar("select count(*) from banks where name_ar is null") == 37
     assert scalar("select count(*) from bank_aliases where review_status='APPROVED_BY_USER'") == 47
     assert scalar("select count(*) from bank_aliases where enabled_for_lookup=1") == 1440

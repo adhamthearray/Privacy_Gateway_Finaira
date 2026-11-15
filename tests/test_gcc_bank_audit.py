@@ -46,22 +46,22 @@ def test_gcc_model_scope_status_and_relationships_are_not_collapsed():
 
 def test_runtime_bank_lookup_exposes_audit_and_blocks_ambiguous_aliases():
     db = GeneralizationDB(DB)
-    meethaq = db.get_candidates("BANK", "Meethaq Islamic Banking", "en")
-    assert meethaq["resolution_status"] == "MATCHED"
-    assert meethaq["canonical_id"] == "OM-151"
+    meethaq = db.get_candidates("BANK", "Meethaq Islamic Banking", "en", include_review_candidates=True)
+    assert meethaq["resolution_status"] == "REVIEW_ONLY"
+    assert meethaq["canonical_id"] == "BANK_WINDOW_OM_151"
     assert meethaq["candidates"][0]["verification_status"] == "REVIEW_ONLY"
     assert meethaq["candidates"][0]["provenance"]["audit_license_status"] == "LINKED_WINDOW"
     assert meethaq["candidates"][0]["metadata"]["relationships"][0]["parent_bank_id"] == "OM-140"
 
-    unknown_model = db.get_candidates("BANK", "STC Bank", "en")
-    assert unknown_model["resolution_status"] == "MATCHED"
+    unknown_model = db.get_candidates("BANK", "STC Bank", "en", include_review_candidates=True)
+    assert unknown_model["resolution_status"] == "REVIEW_ONLY"
     assert unknown_model["candidates"][0]["metadata"]["audit_classifications"][0]["banking_model"] == "UNKNOWN"
 
-    ambiguous = db.get_candidates("BANK", "BOK International Bank", "en")
+    ambiguous = db.get_candidates("BANK", "BOK International Bank", "en", include_review_candidates=True)
     assert ambiguous["resolution_status"] == "AMBIGUOUS"
     assert ambiguous["reason_code"] == "ALIAS_COLLISION"
 
-    historical = db.get_candidates("BANK", "Saudi Hollandi Bank", "en")
+    historical = db.get_candidates("BANK", "Saudi Hollandi Bank", "en", include_review_candidates=True)
     assert historical["resolution_status"] == "AMBIGUOUS"
     assert historical["reason_code"] == "ALIAS_COLLISION"
 

@@ -13,6 +13,7 @@ from sqlalchemy.orm import Session
 from .age_date import parse_age
 from .db import (
     Bank, BankAlias, BankAuditClassification, BankCandidate, BankRelationship, CandidateMetadata, DataSource,
+    BankIdentityModel, BankModelAlias, BankGeneralizationCohort, BankDoNotMerge,
     GeneralizationCandidate, GeneralizationLevel, GovernmentAlias,
     GovernmentCandidateReview, GovernmentEntity, IndustryQIDMapping,
     NationalityAlias, NationalityAliasV2, NationalityGeoJoin,
@@ -305,6 +306,23 @@ class GeneralizationDB:
 
     def _bank(self, session, value, lang, include_review):
         norm = normalize(value, lang)
+        model_aliases = session.scalars(select(BankModelAlias).where(BankModelAlias.normalized_alias == norm, BankModelAlias.language == lang)).all()
+        if model_aliases:
+            enabled_aliases = [row for row in model_aliases if row.enabled_for_lookup]
+            enabled_keys = {row.safe_generalization_key for row in enabled_aliases if row.safe_generalization_key}
+            blocked_keys = {row.safe_generalization_key for row in model_aliases if not row.enabled_for_lookup and row.safe_generalization_key}
+            # A reviewed or historical operation with the same spelling but a
+            # different model-safe key makes the alias unsafe to auto-resolve.
+            # Do not let a verified conventional alias hide a reviewed mixed,
+            # Islamic, historical, or otherwise conflicting operation.
+            if enabled_aliases and blocked_keys - enabled_keys and not include_review:
+                return self._bank_fallback("REVIEW_ONLY", "BANK_MODEL_REVIEW_REQUIRED", lang)
+            aliases = model_aliases if include_review else enabled_aliases
+            if aliases:
+                records = [session.get(BankIdentityModel, row.record_id) for row in aliases]
+                records = [row for row in records if row is not None]
+                return self._bank_model_result(session, records, lang)
+            return self._bank_fallback("REVIEW_ONLY", "BANK_MODEL_REVIEW_REQUIRED", lang)
         all_aliases = session.scalars(select(BankAlias).where(BankAlias.normalized_alias == norm, BankAlias.language == lang)).all()
         enabled_aliases = [row for row in all_aliases if row.enabled_for_lookup]
         all_ids = {row.bank_id for row in all_aliases}
@@ -318,9 +336,101 @@ class GeneralizationDB:
             return self._bank_fallback("AMBIGUOUS", "ALIAS_COLLISION", lang)
         if not ids:
             return self._bank_fallback("NOT_FOUND", "UNRECOGNIZED_BANK", lang)
+        model_records = session.scalars(select(BankIdentityModel).where(BankIdentityModel.canonical_bank_id.in_(ids))).all()
+        if model_records:
+            return self._bank_model_result(session, model_records, lang)
         bank_id = next(iter(ids))
         rows = session.scalars(select(BankCandidate).where(BankCandidate.bank_id == bank_id).order_by(BankCandidate.specificity_rank)).all()
         return self._result("BANK", "MATCHED", bank_id, [self._bank_row(session, row, lang) for row in rows])
+
+    @staticmethod
+    def _bank_record_key(record):
+        return record.safe_generalization_key or record.proposed_model_aware_key
+
+    def _bank_model_result(self, session, records, lang):
+        """Resolve source aliases to a verified model-aware cohort.
+
+        Country operations remain separate source records. They collapse only
+        when the supplied safe key agrees and no explicit do-not-merge pair
+        blocks the collapse. Review-required or unknown-model rows remain
+        review-only and are never selected by the privacy pipeline.
+        """
+        records = sorted({row.record_id: row for row in records}.values(), key=lambda row: row.record_id)
+        keys = {self._bank_record_key(row) for row in records if self._bank_record_key(row)}
+        if len(keys) != 1:
+            return self._bank_fallback("AMBIGUOUS", "ALIAS_COLLISION", lang)
+        key = next(iter(keys))
+        record_ids = {row.record_id for row in records}
+        blocked = session.scalars(select(BankDoNotMerge)).all()
+        if any({row.record_a, row.record_b}.issubset(record_ids) for row in blocked):
+            return self._bank_fallback("AMBIGUOUS", "EXPLICIT_DO_NOT_MERGE", lang)
+        cohort = session.get(BankGeneralizationCohort, key)
+        eligible = bool(cohort and cohort.eligible_for_lookup)
+        representative = records[0]
+        canonical_id = representative.bank_identity_id or representative.canonical_bank_id
+        exact_row = session.scalar(select(BankCandidate).where(BankCandidate.bank_id == representative.canonical_bank_id, BankCandidate.is_exact.is_(True)))
+        candidates = []
+        if exact_row is not None:
+            exact = self._bank_row(session, exact_row, lang)
+            exact_label_en = representative.canonical_name_2026 or representative.source_name_en or exact.get("label_en")
+            exact_label_ar = representative.source_name_ar or exact.get("label_ar")
+            exact["label_en"] = exact_label_en
+            exact["label_ar"] = exact_label_ar
+            exact["representation"] = exact_label_ar if lang == "ar" else exact_label_en
+            exact["provenance"] = {
+                **(exact.get("provenance") or {}),
+                "canonical_entity_record_id": representative.record_id,
+                "bank_identity_id": representative.bank_identity_id,
+                "family_id": representative.family_id,
+                "family_display_name": representative.family_display_name,
+                "safe_generalization_key": key,
+                "banking_model_effective": representative.banking_model_effective,
+                "review_required": representative.review_required,
+                "automatic_grouping": representative.automatic_grouping,
+            }
+            candidates.append(exact)
+        provenance = {
+            "source": self._source(session, cohort.source_id) if cohort else None,
+            "safe_generalization_key": key,
+            "family_id": cohort.family_id if cohort else representative.family_id,
+            "family_display_name": representative.family_display_name,
+            "model": cohort.model if cohort else representative.banking_model_effective,
+            "source_record_ids": sorted(record_ids),
+            "bank_identity_ids": sorted({row.bank_identity_id for row in records if row.bank_identity_id}),
+            "automatic_grouping": cohort.automatic_grouping if cohort else False,
+            "eligible_for_lookup": eligible,
+            "eligibility_reason": cohort.eligibility_reason if cohort else "MISSING_COHORT",
+            "review_required": any(row.review_required for row in records),
+        }
+        candidates.append(_candidate_dict(
+            candidate_id=f"BANK_SAFE__{key}",
+            level_code="MODEL_SAFE_GROUP",
+            rank=1,
+            label_en=key,
+            label_ar=key,
+            language=lang,
+            taxonomy="FINAIR_BANK_MODEL_SAFE",
+            taxonomy_code=key,
+            source=self._source(session, cohort.source_id) if cohort else None,
+            verification_status="SOURCE_VERIFIED" if eligible else "REVIEW_ONLY",
+            provenance=provenance,
+            extra={"safe_generalization_key": key, "review_only": not eligible, "disclosure_approved": eligible},
+        ))
+        candidates.append(_candidate_dict(
+            candidate_id=f"BANK_SAFE__{key}__SUPPRESSED",
+            level_code="SUPPRESSED",
+            rank=99,
+            label_en=None,
+            label_ar=None,
+            language=lang,
+            taxonomy="FINAIR_BANK_MODEL_SAFE",
+            taxonomy_code=None,
+            source=self._source(session, cohort.source_id) if cohort else None,
+            verification_status="CONFIGURED",
+            is_suppression=True,
+            provenance=provenance,
+        ))
+        return self._result("BANK", "MATCHED" if eligible else "REVIEW_ONLY", canonical_id, candidates, None if eligible else "BANK_MODEL_REVIEW_REQUIRED")
 
     def _bank_row(self, session, row, lang):
         source = self._source(session, row.source_id)

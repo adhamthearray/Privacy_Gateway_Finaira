@@ -77,6 +77,128 @@ erDiagram
         TEXT notes
         INTEGER source_id
     }
+    bank_generalization_cohorts {
+        VARCHAR(120) safe_generalization_key PK
+        VARCHAR(60) model
+        INTEGER record_count
+        TEXT countries
+        TEXT names
+        TEXT bank_record_ids
+        BOOLEAN automatic_grouping
+        VARCHAR(80) family_id
+        BOOLEAN eligible_for_lookup
+        TEXT eligibility_reason
+        INTEGER source_id
+    }
+    bank_identity_model_records {
+        VARCHAR(40) record_id PK
+        VARCHAR(30) canonical_bank_id
+        VARCHAR(2) country_code
+        TEXT source_name_en
+        TEXT source_name_ar
+        VARCHAR(80) family_id
+        TEXT family_display_name
+        VARCHAR(120) generalization_key
+        VARCHAR(120) bank_identity_id
+        VARCHAR(40) is_same_legal_bank_as_parent
+        VARCHAR(80) relationship_to_family
+        VARCHAR(60) banking_model_from_audit
+        TEXT source_entity_kind
+        TEXT source_license_confirmation
+        VARCHAR(100) group_relation_status
+        TEXT family_evidence_basis
+        TEXT verified_family_source_urls
+        VARCHAR(100) import_action
+        VARCHAR(40) historical_successor_record_id
+        VARCHAR(40) transition_effective_date
+        TEXT review_note
+        VARCHAR(20) country_license_review_needed
+        VARCHAR(100) original_category
+        TEXT canonical_name_2026
+        TEXT former_legal_name
+        VARCHAR(60) banking_model_effective
+        TEXT historical_operating_model_pre_transition
+        TEXT banking_service_profile
+        VARCHAR(120) model_evidence_tier
+        TEXT banking_model_verified_source
+        TEXT status_asof_2026_11_15
+        VARCHAR(40) record_class
+        VARCHAR(120) source_original_generalization_key
+        VARCHAR(120) proposed_model_aware_key
+        VARCHAR(120) safe_generalization_key
+        BOOLEAN automatic_grouping
+        TEXT identity_resolution_confidence
+        BOOLEAN review_required
+        TEXT review_reason
+        VARCHAR(120) successor_model_aware_key_if_post_transition
+        TEXT non_merge_reason
+        TEXT source_bank_register_url
+        TEXT banking_business_scope
+        VARCHAR(60) original_model_confidence
+        TEXT aliases_en
+        TEXT aliases_ar
+        TEXT former_names
+        VARCHAR(80) arabic_name_confidence
+        INTEGER source_id
+    }
+    bank_model_aliases {
+        VARCHAR(64) alias_id PK
+        VARCHAR(40) record_id
+        VARCHAR(30) canonical_bank_id
+        VARCHAR(2) country_code
+        TEXT bank_name_en
+        TEXT alias_text
+        TEXT normalized_alias
+        VARCHAR(2) language
+        VARCHAR(80) alias_type
+        VARCHAR(80) category
+        VARCHAR(50) status
+        BOOLEAN review_required
+        VARCHAR(120) safe_generalization_key
+        VARCHAR(120) proposed_model_aware_key
+        VARCHAR(80) family_id
+        VARCHAR(120) bank_identity_id
+        VARCHAR(60) banking_model_effective
+        BOOLEAN automatic_grouping
+        BOOLEAN enabled_for_lookup
+        INTEGER source_id
+    }
+    bank_model_do_not_merge {
+        VARCHAR(64) exclusion_id PK
+        VARCHAR(40) record_a
+        VARCHAR(40) record_b
+        TEXT why
+        VARCHAR(80) collision_type
+        INTEGER source_id
+    }
+    bank_model_evidence_notes {
+        VARCHAR(64) note_id PK
+        VARCHAR(40) record_id
+        VARCHAR(80) risk
+        TEXT detail
+        TEXT source_url
+        INTEGER source_id
+    }
+    bank_model_relationship_evidence {
+        VARCHAR(100) relationship_id PK
+        VARCHAR(40) from_record_id
+        VARCHAR(40) to_record_id
+        VARCHAR(80) relationship_type
+        VARCHAR(100) impact_on_generalization
+        TEXT explanation
+        TEXT source_url
+        INTEGER source_id
+    }
+    bank_model_research_corrections {
+        VARCHAR(64) correction_id PK
+        VARCHAR(40) record_id
+        TEXT description
+        TEXT old_values
+        TEXT new_values
+        TEXT source_url
+        VARCHAR(80) evidence_tier
+        INTEGER source_id
+    }
     bank_relationships {
         VARCHAR(100) relationship_id PK
         VARCHAR(30) child_bank_id
@@ -487,6 +609,22 @@ erDiagram
     data_sources ||--o{ bank_candidates : "source_id"
     banks ||--o{ bank_evidence : "bank_id"
     data_sources ||--o{ bank_evidence : "source_id"
+    data_sources ||--o{ bank_generalization_cohorts : "source_id"
+    banks ||--o{ bank_identity_model_records : "canonical_bank_id"
+    data_sources ||--o{ bank_identity_model_records : "source_id"
+    bank_identity_model_records ||--o{ bank_model_aliases : "record_id"
+    banks ||--o{ bank_model_aliases : "canonical_bank_id"
+    data_sources ||--o{ bank_model_aliases : "source_id"
+    bank_identity_model_records ||--o{ bank_model_do_not_merge : "record_a"
+    bank_identity_model_records ||--o{ bank_model_do_not_merge : "record_b"
+    data_sources ||--o{ bank_model_do_not_merge : "source_id"
+    bank_identity_model_records ||--o{ bank_model_evidence_notes : "record_id"
+    data_sources ||--o{ bank_model_evidence_notes : "source_id"
+    bank_identity_model_records ||--o{ bank_model_relationship_evidence : "from_record_id"
+    bank_identity_model_records ||--o{ bank_model_relationship_evidence : "to_record_id"
+    data_sources ||--o{ bank_model_relationship_evidence : "source_id"
+    bank_identity_model_records ||--o{ bank_model_research_corrections : "record_id"
+    data_sources ||--o{ bank_model_research_corrections : "source_id"
     banks ||--o{ bank_relationships : "child_bank_id"
     banks ||--o{ bank_relationships : "parent_bank_id"
     data_sources ||--o{ bank_relationships : "source_id"

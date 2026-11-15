@@ -1,0 +1,15 @@
+﻿record_id,risk,detail,source_url
+AE-100,MODEL_CORRECTION,BOK Intl UAE Islamic Retail licence; Sharia compliant operations.,https://centralbank.ae/media/ffco0wgo/cb-register-oct-2026.pdf
+AE-102,MODEL_CORRECTION,UAE licence explicitly conventional wholesale notwithstanding Islamic in the name.,https://centralbank.ae/media/ffco0wgo/cb-register-oct-2026.pdf
+BH-174,MODEL_CORRECTION,Khaleeji Bank Islamic retail licensed and 82.95% GFH owned.,https://khaleeji.bank/wp-content/uploads/2026/05/Khaleeji-AR-English-2025.pdf
+BH-183,MODEL_CORRECTION,Citi Islamic Investment Bank operates an Islamic wholesale investment bank licence.,https://www.citi.com/icg/sa/emea/bahrain/assets/docs/citi_annual_report_2024_final.pdf
+BH-184,MODEL_CORRECTION,GFH Bank BSC Islamic Wholesale banking licence confirmed 2026.,https://gfh.com/wp-content/uploads/2026/11/Board-Meeting-Results-Q3-2026-Combined.pdf
+BH-197,MODEL_CORRECTION,BOKI Bahrain foreign Islamic wholesale branch.,https://bokintl.com/about-us/
+BH-241,MODEL_CORRECTION,Duplicate Bahrain BOKI source record; do not count separately.,https://bokintl.com/about-us/
+EG_BANK_006,MODEL_CORRECTION,Bank of Cairo conventional commercial banking evidenced by loans and interest; group parent is Banque Misr.,https://www.bdc.com.eg/bdcwebsite/dam/jcr:021fcf3c-47c0-443b-810d-050e7ac05fbe/BDC-Earnings%20Release-Sept-2026.pdf
+EG_BANK_008,MODEL_CORRECTION,"Alexbank conventional commercial bank, subsidiary of Intesa Sanpaolo.",https://www.alexbank.com/document/en/publications/ALEX/2025/financial-statement/financial-statement-december-2025/ALEXBANK%20Financials%20FY12-2025-%20EN.pdf
+EG_BANK_013,MODEL_CORRECTION,Credit Agricole Egypt conventional commercial banking; not same legal as CIB corporate bank.,https://www.ca-egypt.com/en/investor-relation/company-structure/shareholders-structure/
+EG_BANK_019,MODEL_CORRECTION,FABMISR bank conventional operations within FAB group; local legal-entity classification warrants independent licence recheck.,https://www.bankfab.com/en-eg/personal
+EG_BANK_021,MODEL_CORRECTION,Faisal Islamic Bank of Egypt dedicated Islamic institution.,https://www.faisalbank.com.eg/
+EG_BANK_030,MODEL_CORRECTION,Bank ABC Egypt official fact sheet describes it as commercial bank.,https://www.bank-abc.com/en/CountrySites/Egypt/AboutABC/fact-sheet
+KW-105,MODEL_CORRECTION,CBK approved conversion procedure 4 Nov 2026; not an Islamic bank until re-registered.,https://www.e-gulfbank.com/en/about-us/media/press-releases/2026/11/gulf-bank-granted-central-bank-of-kuwait-approval-to-proceed-with-conversion-to-a-bank-compliant-with-islamic-shariaa/

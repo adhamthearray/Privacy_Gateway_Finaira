@@ -1,0 +1,42 @@
+{
+  "aliases_enabled_for_lookup": 525,
+  "aliases_processed": 1524,
+  "aliases_review_or_historical": 999,
+  "approved_shared_cohort_keys": 33,
+  "backup_path": null,
+  "canonical_bank_records_reused": 302,
+  "cohorts_enabled_for_lookup": 46,
+  "cohorts_imported": 198,
+  "cohorts_review_or_separate": 152,
+  "database": "C:\\Users\\domma\\poc_4\\data\\processed\\finaira_generalization.db",
+  "do_not_merge_imported": 12,
+  "dry_run": false,
+  "duplicate_source_records_mapped": 1,
+  "existing_bank_records_before": 302,
+  "generated_at": "2026-11-15T11:37:36.687558+00:00",
+  "identities_in_approved_shared_cohorts": 109,
+  "input_records": 303,
+  "model_counts": {
+    "CONVENTIONAL": 192,
+    "HISTORICAL_UNDETERMINED": 16,
+    "ISLAMIC": 47,
+    "ISLAMIC_WINDOW": 5,
+    "MIXED": 3,
+    "NOT_A_BANK": 7,
+    "SPECIALIZED": 4,
+    "UNKNOWN": 29
+  },
+  "model_evidence_notes_imported": 14,
+  "record_class_counts": {
+    "BANK": 274,
+    "DUPLICATE_SOURCE_ROW": 1,
+    "HISTORICAL": 16,
+    "ISLAMIC_WINDOW": 5,
+    "NON_BANK_OR_REGULATOR": 7
+  },
+  "relationships_imported": 21,
+  "research_corrections_imported": 30,
+  "review_required_identity_records": 174,
+  "source_dir": "C:\\Users\\domma\\poc_4\\data\\sources\\bank\\model_safe_2026",
+  "unresolved_records": []
+}

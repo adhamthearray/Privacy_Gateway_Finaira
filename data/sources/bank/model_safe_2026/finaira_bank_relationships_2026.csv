@@ -1,0 +1,22 @@
+﻿from_record_id,to_record_id,relationship_type,impact_on_generalization,explanation,source_url
+AE-097,EG_BANK_008,CONTROLS_SUBSIDIARY,SHARE_ONLY_IF_MATCHING_MODEL_AND_CONTROL,Intesa controls ~80% of ALEXBANK,https://www.alexbank.com/document/en/publications/ALEX/2025/financial-statement/financial-statement-december-2025/ALEXBANK%20Financials%20FY12-2025-%20EN.pdf
+EG_BANK_001,EG_BANK_006,CONTROLS_SUBSIDIARY,SHARE_ONLY_IF_MATCHING_MODEL_AND_CONTROL,Banque Misr 55% of Banque du Caire after Nov 2026 IPO,https://www.bdc.com.eg/bdcwebsite/dam/jcr:021fcf3c-47c0-443b-810d-050e7ac05fbe/BDC-Earnings%20Release-Sept-2026.pdf
+BH-184,BH-174,CONTROLS_SUBSIDIARY,SHARE_ONLY_IF_MATCHING_MODEL_AND_CONTROL,GFH Bank owns 82.95% Khaleeji Bank,https://khaleeji.bank/wp-content/uploads/2026/05/Khaleeji-AR-English-2025.pdf
+AE-067,BH-183,SAME_CORPORATE_GROUP_DIFFERENT_MODEL,SEE_RELATIONSHIP_TYPE,"Citicorp owns Citi Islamic Investment Bank, Islamic vs conventional",https://www.citi.com/icg/sa/emea/bahrain/assets/docs/citi_annual_report_2024_final.pdf
+AE-075,OM-142,CONTROLLED_SUBSIDIARY_49_PERCENT,SHARE_ONLY_IF_MATCHING_MODEL_AND_CONTROL,Arab Bank PLC lists Oman Arab Bank as subsidiary despite only 49% equity,https://www.arabbank.com/mainmenu/home/about/Arab-Bank-Network
+OM-142,OM-148,CONTROLS_SUBSIDIARY_DIFFERENT_MODEL,SHARE_ONLY_IF_MATCHING_MODEL_AND_CONTROL,Oman Arab Bank owns Alizz Islamic Bank,https://www.oman-arabbank.com/wp-content/uploads/Oman-Arab-Bank-SAOG-FS-2025-2.pdf
+AE-100,BH-197,SAME_LEGAL_FOREIGN_BRANCH,SEE_RELATIONSHIP_TYPE,Both BOK International operations branch of Bank of Khartoum,https://bokintl.ae/wp-content/uploads/2025/11/BOK-International-UAE-Financial-Report-2024.pdf
+BH-197,BH-241,SAME_LICENSE_SOURCE_DUPLICATE,SEE_RELATIONSHIP_TYPE,"Likely same BOKI Bahrain branch, one active record, duplicate source preserved",https://bokintl.com/about-us/
+KW-103,KW-109,CONTROLS_SUBSIDIARY_DIFFERENT_MODEL,SHARE_ONLY_IF_MATCHING_MODEL_AND_CONTROL,NBK group controls Islamic Boubyan bank,https://www.nbk.com/about-nbk-group/our-network/
+AE-040,AE-050,CONTROLS_SUBSIDIARY_DIFFERENT_MODEL,SHARE_ONLY_IF_MATCHING_MODEL_AND_CONTROL,Emirates NBD and Emirates Islamic are different legal institutions,https://www.emiratesnbd.com/-/media/enbd/files/investor-relations/common-pdf/agm/corporate_governance_report_2024.pdf
+AE-055,AE-058,CONTROLS_SUBSIDIARY_DIFFERENT_MODEL,SHARE_ONLY_IF_MATCHING_MODEL_AND_CONTROL,ADCB owns Islamic Al Hilal Bank,https://www.adcb.com/en/multimedia/pdfs/2026/march/adcb-2025-annual-report-english.pdf
+BH-167,BH-173,CONTROLS_SUBSIDIARY_DIFFERENT_MODEL,SHARE_ONLY_IF_MATCHING_MODEL_AND_CONTROL,NBB majority owner of Bahrain Islamic Bank,https://nbbonline.com/about/
+QA-130,AE-077,CONTROLS_SUBSIDIARY_DIFFERENT_MODEL,SHARE_ONLY_IF_MATCHING_MODEL_AND_CONTROL,Masraf Al Rayan owns conventional Al Khaliji France bank,https://www.alkhaliji.ae/en/about-us/
+BH-171,BH-179,CONTROLS_SUBSIDIARY_DIFFERENT_MODEL,SHARE_ONLY_IF_MATCHING_MODEL_AND_CONTROL,Bank ABC and separately Islamic ABC Islamic,https://www.bank-abc.com/en/ShareholderRelations/Annual%20Reports/Annual-Report-2025.pdf
+AE-045,AE-100,MINORITY_STAKE_DO_NOT_MERGE,SEE_RELATIONSHIP_TYPE,"DIB holds 29.49% Bank of Khartoum, no demonstrated control",https://bankofkhartoum.com/sudan/investor-relations
+QA-124,AE-056,MINORITY_STAKE_DO_NOT_MERGE,SEE_RELATIONSHIP_TYPE,QNB owns 40% CBI UAE associate,https://www.qnb.com/sites/qnb/qnbqatar/document/ar/arInstitutionalppt
+SA-005,AE-075,MINORITY_AFFILIATE_DO_NOT_MERGE,SEE_RELATIONSHIP_TYPE,Arab National Bank 40% affiliate of Arab Bank PLC,https://www.arabbank.com/mainmenu/home/about/Arab-Bank-Network
+OM-147,OM-148,PROPOSED_MERGER_DO_NOT_MERGE,SEE_RELATIONSHIP_TYPE,Bank Nizwa offer to acquire Alizz is non-binding as of latest official evidence,https://www.msx.om/snapshot.aspx?s=OAB
+KW-105,KW-105,PENDING_CONVERSION,SEE_RELATIONSHIP_TYPE,Conventional bank pending Islamic re-registration,https://www.e-gulfbank.com/en/about-us/media/press-releases/2026/11/gulf-bank-granted-central-bank-of-kuwait-approval-to-proceed-with-conversion-to-a-bank-compliant-with-islamic-shariaa/
+BH-184,BH-184,RENAME_2026,SEE_RELATIONSHIP_TYPE,Former GFH Financial Group BSC now GFH Bank BSC same legal entity,https://gfh.com/wp-content/uploads/2026/11/Board-Meeting-Results-Q3-2026-Combined.pdf
+BH-245,BH-175,HISTORICAL_CONVERSION,SEE_RELATIONSHIP_TYPE,"Ahli United Bank Bahrain converted/renamed KFH Bahrain, date sensitivity matters",https://www.kfh.com/en/home/Investor-Relations/Global-Presence.html

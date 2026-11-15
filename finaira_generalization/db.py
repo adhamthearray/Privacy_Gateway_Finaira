@@ -306,6 +306,145 @@ class Bank(Base):
     source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
 
 
+class BankIdentityModel(Base):
+    """Source-preserving country operation and bank identity record."""
+    __tablename__ = "bank_identity_model_records"
+    record_id: Mapped[str] = mapped_column(String(40), primary_key=True)
+    canonical_bank_id: Mapped[str] = mapped_column(ForeignKey("banks.bank_id"), index=True)
+    country_code: Mapped[str] = mapped_column(String(2), index=True)
+    source_name_en: Mapped[str | None] = mapped_column(Text)
+    source_name_ar: Mapped[str | None] = mapped_column(Text)
+    family_id: Mapped[str | None] = mapped_column(String(80), index=True)
+    family_display_name: Mapped[str | None] = mapped_column(Text)
+    generalization_key: Mapped[str | None] = mapped_column(String(120), index=True)
+    bank_identity_id: Mapped[str | None] = mapped_column(String(120), index=True)
+    is_same_legal_bank_as_parent: Mapped[str | None] = mapped_column(String(40))
+    relationship_to_family: Mapped[str | None] = mapped_column(String(80), index=True)
+    banking_model_from_audit: Mapped[str | None] = mapped_column(String(60), index=True)
+    source_entity_kind: Mapped[str | None] = mapped_column(Text)
+    source_license_confirmation: Mapped[str | None] = mapped_column(Text)
+    group_relation_status: Mapped[str | None] = mapped_column(String(100), index=True)
+    family_evidence_basis: Mapped[str | None] = mapped_column(Text)
+    verified_family_source_urls: Mapped[str | None] = mapped_column(Text)
+    import_action: Mapped[str | None] = mapped_column(String(100), index=True)
+    historical_successor_record_id: Mapped[str | None] = mapped_column(String(40), index=True)
+    transition_effective_date: Mapped[str | None] = mapped_column(String(40))
+    review_note: Mapped[str | None] = mapped_column(Text)
+    country_license_review_needed: Mapped[str | None] = mapped_column(String(20))
+    original_category: Mapped[str | None] = mapped_column(String(100))
+    canonical_name_2026: Mapped[str | None] = mapped_column(Text)
+    former_legal_name: Mapped[str | None] = mapped_column(Text)
+    banking_model_effective: Mapped[str | None] = mapped_column(String(60), index=True)
+    historical_operating_model_pre_transition: Mapped[str | None] = mapped_column(Text)
+    banking_service_profile: Mapped[str | None] = mapped_column(Text)
+    model_evidence_tier: Mapped[str | None] = mapped_column(String(120), index=True)
+    banking_model_verified_source: Mapped[str | None] = mapped_column(Text)
+    status_asof_2026_11_15: Mapped[str | None] = mapped_column(Text)
+    record_class: Mapped[str | None] = mapped_column(String(40), index=True)
+    source_original_generalization_key: Mapped[str | None] = mapped_column(String(120))
+    proposed_model_aware_key: Mapped[str | None] = mapped_column(String(120), index=True)
+    safe_generalization_key: Mapped[str | None] = mapped_column(String(120), index=True)
+    automatic_grouping: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
+    identity_resolution_confidence: Mapped[str | None] = mapped_column(Text)
+    review_required: Mapped[bool] = mapped_column(Boolean, default=True, index=True)
+    review_reason: Mapped[str | None] = mapped_column(Text)
+    successor_model_aware_key_if_post_transition: Mapped[str | None] = mapped_column(String(120))
+    non_merge_reason: Mapped[str | None] = mapped_column(Text)
+    source_bank_register_url: Mapped[str | None] = mapped_column(Text)
+    banking_business_scope: Mapped[str | None] = mapped_column(Text)
+    original_model_confidence: Mapped[str | None] = mapped_column(String(60))
+    aliases_en: Mapped[str | None] = mapped_column(Text)
+    aliases_ar: Mapped[str | None] = mapped_column(Text)
+    former_names: Mapped[str | None] = mapped_column(Text)
+    arabic_name_confidence: Mapped[str | None] = mapped_column(String(80))
+    source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
+
+
+class BankModelAlias(Base):
+    """Every supplied model-safe alias, including aliases collapsed by legacy lookup constraints."""
+    __tablename__ = "bank_model_aliases"
+    alias_id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    record_id: Mapped[str] = mapped_column(ForeignKey("bank_identity_model_records.record_id"), index=True)
+    canonical_bank_id: Mapped[str] = mapped_column(ForeignKey("banks.bank_id"), index=True)
+    country_code: Mapped[str] = mapped_column(String(2), index=True)
+    bank_name_en: Mapped[str | None] = mapped_column(Text)
+    alias_text: Mapped[str] = mapped_column(Text)
+    normalized_alias: Mapped[str] = mapped_column(Text, index=True)
+    language: Mapped[str] = mapped_column(String(2), index=True)
+    alias_type: Mapped[str | None] = mapped_column(String(80), index=True)
+    category: Mapped[str | None] = mapped_column(String(80))
+    status: Mapped[str | None] = mapped_column(String(50), index=True)
+    review_required: Mapped[bool] = mapped_column(Boolean, default=True, index=True)
+    safe_generalization_key: Mapped[str | None] = mapped_column(String(120), index=True)
+    proposed_model_aware_key: Mapped[str | None] = mapped_column(String(120))
+    family_id: Mapped[str | None] = mapped_column(String(80), index=True)
+    bank_identity_id: Mapped[str | None] = mapped_column(String(120), index=True)
+    banking_model_effective: Mapped[str | None] = mapped_column(String(60), index=True)
+    automatic_grouping: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
+    enabled_for_lookup: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
+    source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
+
+
+class BankGeneralizationCohort(Base):
+    """Validated model-aware cohort supplied by the research package."""
+    __tablename__ = "bank_generalization_cohorts"
+    safe_generalization_key: Mapped[str] = mapped_column(String(120), primary_key=True)
+    model: Mapped[str] = mapped_column(String(60), index=True)
+    record_count: Mapped[int] = mapped_column(Integer)
+    countries: Mapped[str | None] = mapped_column(Text)
+    names: Mapped[str | None] = mapped_column(Text)
+    bank_record_ids: Mapped[str | None] = mapped_column(Text)
+    automatic_grouping: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
+    family_id: Mapped[str | None] = mapped_column(String(80), index=True)
+    eligible_for_lookup: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
+    eligibility_reason: Mapped[str | None] = mapped_column(Text)
+    source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
+
+
+class BankModelRelationshipEvidence(Base):
+    __tablename__ = "bank_model_relationship_evidence"
+    relationship_id: Mapped[str] = mapped_column(String(100), primary_key=True)
+    from_record_id: Mapped[str] = mapped_column(ForeignKey("bank_identity_model_records.record_id"), index=True)
+    to_record_id: Mapped[str] = mapped_column(ForeignKey("bank_identity_model_records.record_id"), index=True)
+    relationship_type: Mapped[str] = mapped_column(String(80), index=True)
+    impact_on_generalization: Mapped[str | None] = mapped_column(String(100))
+    explanation: Mapped[str | None] = mapped_column(Text)
+    source_url: Mapped[str | None] = mapped_column(Text)
+    source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
+
+
+class BankDoNotMerge(Base):
+    __tablename__ = "bank_model_do_not_merge"
+    exclusion_id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    record_a: Mapped[str] = mapped_column(ForeignKey("bank_identity_model_records.record_id"), index=True)
+    record_b: Mapped[str] = mapped_column(ForeignKey("bank_identity_model_records.record_id"), index=True)
+    why: Mapped[str | None] = mapped_column(Text)
+    collision_type: Mapped[str | None] = mapped_column(String(80), index=True)
+    source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
+
+
+class BankResearchCorrection(Base):
+    __tablename__ = "bank_model_research_corrections"
+    correction_id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    record_id: Mapped[str] = mapped_column(ForeignKey("bank_identity_model_records.record_id"), index=True)
+    description: Mapped[str | None] = mapped_column(Text)
+    old_values: Mapped[str | None] = mapped_column(Text)
+    new_values: Mapped[str | None] = mapped_column(Text)
+    source_url: Mapped[str | None] = mapped_column(Text)
+    evidence_tier: Mapped[str | None] = mapped_column(String(80), index=True)
+    source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
+
+
+class BankModelEvidenceNote(Base):
+    __tablename__ = "bank_model_evidence_notes"
+    note_id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    record_id: Mapped[str] = mapped_column(ForeignKey("bank_identity_model_records.record_id"), index=True)
+    risk: Mapped[str | None] = mapped_column(String(80), index=True)
+    detail: Mapped[str | None] = mapped_column(Text)
+    source_url: Mapped[str | None] = mapped_column(Text)
+    source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
+
+
 class BankAlias(Base):
     __tablename__ = "bank_aliases"
     alias_id: Mapped[str] = mapped_column(String(64), primary_key=True)

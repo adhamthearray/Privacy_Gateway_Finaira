@@ -40,7 +40,7 @@ The handoff remains at `C:\Users\domma\Downloads\Finaira_Generalization_DB_Codex
 
 ## Actual database schema
 
-The authoritative generated schema is [reports/database_schema.sql](../reports/database_schema.sql), and the inspected column/PK/FK/index inventory is [reports/schema_after.md](../reports/schema_after.md). SQLite currently contains 48 tables, with foreign keys enabled by the SQLAlchemy connection hook in `finaira_generalization/db.py`.
+The authoritative generated schema is [reports/database_schema.sql](../reports/database_schema.sql), and the inspected column/PK/FK/index inventory is [reports/schema_after.md](../reports/schema_after.md). SQLite currently contains 55 tables, with foreign keys enabled by the SQLAlchemy connection hook in `finaira_generalization/db.py`.
 
 ### Legacy/reference tables retained for compatibility
 
@@ -59,10 +59,17 @@ The legacy M49 tables are historical compatibility data only. Active NATIONALITY
 | `nationality_aliases_v2` | `alias_key` | `country_qid`, `source_id`; indexes on normalized alias/language | 916 (857 source-verified + 59 reviewed) |
 | `nationality_alias_review_provenance` | `provenance_id` | `alias_key`, `source_id`; unique alias/base/rule provenance | 67 |
 | `nationality_geo_joins` | `country_qid` | `country_qid`, `natural_earth_id`, `source_id`; status indexes | 239 |
-| `banks` | `bank_id` | `source_id`; finance-model index | 37 |
-| `bank_aliases` | `alias_id` | `bank_id`, `source_id`; normalized alias/language indexes | 86 |
+| `banks` | `bank_id` | `source_id`; finance-model index | 302 |
+| `bank_aliases` | `alias_id` | `bank_id`, `source_id`; normalized alias/language indexes | 1,569 |
 | `bank_evidence` | `evidence_id` | `bank_id`, `source_id` | 24 |
-| `bank_candidates` | `candidate_id` | `bank_id`, `source_id`; unique `(bank_id, level_code)` | 185 |
+| `bank_candidates` | `candidate_id` | `bank_id`, `source_id`; unique `(bank_id, level_code)` | 1,510 |
+| `bank_identity_model_records` | `record_id` | `canonical_bank_id`, `source_id`; family/model/review indexes | 303 |
+| `bank_model_aliases` | `alias_id` | source record, canonical bank, normalized alias, enabled indexes | 1,524 |
+| `bank_generalization_cohorts` | `safe_generalization_key` | source ID; model/eligibility indexes | 198 |
+| `bank_model_relationship_evidence` | `relationship_id` | two source-record FKs, source ID | 21 |
+| `bank_model_do_not_merge` | `exclusion_id` | two source-record FKs, collision index | 12 |
+| `bank_model_research_corrections` | `correction_id` | source-record FK, evidence index | 30 |
+| `bank_model_evidence_notes` | `note_id` | source-record FK, risk index | 14 |
 | `organizations` | `organization_qid` | `source_id`; status/kind indexes | 312 |
 | `organization_aliases` | `alias_id` | `organization_qid`, `source_id`; normalized alias/language indexes | 566 |
 | `industry_categories` | `category_code` | self-FK `parent_code`, `source_id` | 64 (63 source + virtual root) |
@@ -77,7 +84,7 @@ The legacy M49 tables are historical compatibility data only. Active NATIONALITY
 | `government_entity_categories` | `link_id` | entity/category/source FKs; bridge indexes | 24 |
 | `government_review_queue` | `review_id` | `entity_id`, `source_id` | 12 |
 
-All source-backed candidate records have source ID, source checksum through `data_sources`, verification/review state, and exact/local-only/suppression flags. Exact candidates are local-only; suppression candidates do not expose an input value. `disclosure_approved` is always false for bank candidates.
+All source-backed candidate records have source ID, source checksum through `data_sources`, verification/review state, and exact/local-only/suppression flags. Exact candidates are local-only; suppression candidates do not expose an input value. Legacy bank candidates keep `disclosure_approved=false`; an eligible model-safe cohort candidate sets it true only when the supplied model/relationship/review gates pass.
 
 ### ER diagram of the implemented relationships
 
@@ -97,6 +104,18 @@ erDiagram
   BANKS ||--o{ BANK_ALIASES : has
   BANKS ||--o{ BANK_EVIDENCE : supported_by
   BANKS ||--o{ BANK_CANDIDATES : materializes
+  DATA_SOURCES ||--o{ BANK_IDENTITY_MODEL_RECORDS : sources
+  BANKS ||--o{ BANK_IDENTITY_MODEL_RECORDS : country_operation
+  BANK_IDENTITY_MODEL_RECORDS ||--o{ BANK_MODEL_ALIASES : has
+  BANKS ||--o{ BANK_MODEL_ALIASES : resolves_to
+  DATA_SOURCES ||--o{ BANK_MODEL_ALIASES : sources
+  DATA_SOURCES ||--o{ BANK_GENERALIZATION_COHORTS : sources
+  BANK_IDENTITY_MODEL_RECORDS ||--o{ BANK_MODEL_RELATIONSHIP_EVIDENCE : from_record
+  BANK_IDENTITY_MODEL_RECORDS ||--o{ BANK_MODEL_RELATIONSHIP_EVIDENCE : to_record
+  BANK_IDENTITY_MODEL_RECORDS ||--o{ BANK_MODEL_DO_NOT_MERGE : excluded_a
+  BANK_IDENTITY_MODEL_RECORDS ||--o{ BANK_MODEL_DO_NOT_MERGE : excluded_b
+  BANK_IDENTITY_MODEL_RECORDS ||--o{ BANK_MODEL_RESEARCH_CORRECTIONS : corrected
+  BANK_IDENTITY_MODEL_RECORDS ||--o{ BANK_MODEL_EVIDENCE_NOTES : evidence
   DATA_SOURCES ||--o{ ORGANIZATIONS : sources
   ORGANIZATIONS ||--o{ ORGANIZATION_ALIASES : has
   ORGANIZATIONS ||--o{ ORGANIZATION_INDUSTRIES : has
@@ -130,12 +149,20 @@ erDiagram
 | organization review/exclusion CSVs | review/exclusion tables | no source row is promoted to verified |
 | government seed/aliases/categories/catalog/review queue | government tables | all 12 identity rows remain review-only; narrow branches gated |
 | existing ESCO/ISCO sources | legacy occupation tables and schemes | reused unchanged; no taxonomy fabricated |
+| model-safe identity CSV | `bank_identity_model_records` | 303 source operations preserved; `BH-241` maps to existing `BH-197` as a duplicate source row |
+| model-safe alias CSV | `bank_model_aliases` | all 1,524 aliases preserved; 525 enabled, 999 review/historical/blocked |
+| model-safe cohort CSV | `bank_generalization_cohorts` | 198 proposed keys; 46 usable keys, with 152 kept separate or review-gated |
+| relationship CSV | `bank_model_relationship_evidence` | 21 source relationships retained; relationship text does not override model/review gates |
+| do-not-merge CSV | `bank_model_do_not_merge` | 12 explicit exclusions enforced during alias/cohort resolution |
+| correction/evidence CSVs | `bank_model_research_corrections`, `bank_model_evidence_notes` | 30 corrections and 14 model-risk notes retained as provenance |
 
 `py -m finaira_generalization.cli import-handoff` performs a timestamped copy of the existing DB, creates additive tables, imports in one transaction, regenerates bank candidates, writes `reports/handoff_import_report.*`, and writes the full Natural Earth audit. A repeat import updates stable keys and leaves row counts unchanged. Failure rolls back the transaction.
 
 The runtime accepts `CORPORATION`, `ORGANIZATION`, and `UNIVERSITY` as compatible input labels and canonicalizes all three to `CORPORATION`. Organization-like exact candidates retain `source_semantic_kind` and source review flags in provenance. Industry candidates remain review-gated because the 312 identities are not production-verified.
 
 `reports/bank_inventory.csv` is a database export containing one row per bank alias, including the bank classification, evidence status, language, alias kind, review status, and enabled-for-lookup flag.
+
+The model-safe package is imported with `py scripts/import_bank_identity_model.py`; use `--dry-run` for validation and `--no-backup` only for disposable test databases. The actual migration report is [reports/bank_identity_model/migration_report.md](../reports/bank_identity_model/migration_report.md). The import reused 302 existing bank rows, mapped one duplicate source operation (`BH-241` → `BH-197`), preserved all 303 source records, enabled 525 aliases, and made 46 model-safe keys available. Of those, 33 approved cohort keys share a generalization across 109 operations; the remaining 152 keys remain review, historical, blocked, or unique/separate. `EG_BANK_001` and `EG_BANK_024` retain `review_required=YES`; their mixed classifications are not promoted to automatic shared grouping.
 
 ## Nationality lineage and join results
 
@@ -184,7 +211,7 @@ sequenceDiagram
   API-->>Caller: selected_candidate = null
 ```
 
-Bank candidates are regenerated from the final master: `EXACT → FINANCE_MODEL → BANKING_INSTITUTION → FINANCIAL_INSTITUTION → SUPPRESSED`. Organization-specific industry candidates are absent by default until both identity and company-to-industry links are approved; `include_review_candidates=True` exposes them only as `REVIEW_ONLY`. Government function/form branches are separate and hidden by default.
+Legacy bank candidates remain `EXACT → FINANCE_MODEL → BANKING_INSTITUTION → FINANCIAL_INSTITUTION → SUPPRESSED`. Model-safe source aliases use `EXACT → MODEL_SAFE_GROUP → SUPPRESSED`; the model-safe candidate representation is the supplied `safe_generalization_key`, not a fabricated bank label. A key is shared only when the source cohort permits it and all member records pass relationship, model, active-bank, and review gates. Conflicting, historical, unknown, mixed-review, or explicitly excluded aliases remain unresolved/review-only. Organization-specific industry candidates are absent by default until both identity and company-to-industry links are approved; `include_review_candidates=True` exposes them only as `REVIEW_ONLY`. Government function/form branches are separate and hidden by default.
 
 ## Bilingual examples for every supported type
 
