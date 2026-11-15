@@ -42,7 +42,8 @@ def test_nationality_variant_review_queue_is_gated():
 
 def test_nationality_deduplication_canonicalizes_same_iso_only():
     assert scalar("select count(*) from nationality_deduplications where deduplication_type='COUNTRY_QID'") == 2
-    assert scalar("select count(*) from nationality_deduplications where deduplication_type='ALIAS'") == 5
+    assert scalar("select count(*) from nationality_deduplications where deduplication_type='ALIAS'") == 18
+    assert scalar("select count(*) from nationality_deduplications") == 20
     assert scalar("select count(*) from nationality_countries where country_qid in ('Q219060', 'Q29999')") == 0
     assert scalar("select count(*) from nationality_countries where country_qid in ('Q23792', 'Q55')") == 2
     assert scalar("select count(*) from (select country_qid, language, normalized_alias from nationality_aliases_v2 group by country_qid, language, normalized_alias having count(*) > 1)") == 0

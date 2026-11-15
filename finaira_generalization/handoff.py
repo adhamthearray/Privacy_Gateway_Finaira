@@ -418,6 +418,7 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
             )
     reviewed_variant_keys = set()
     reviewed_provenance_keys = set()
+    reviewed_alias_first: dict[str, tuple[str, str, str, str, str]] = {}
     if variant_source is not None:
         for variant in _read_csv(NATIONALITY_VARIANT_REVIEW_CSV):
             if (_text(variant.get("review_decision")) or "").upper() != "APPROVED":
@@ -457,6 +458,27 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
             reviewed_variant_keys.add(key)
             base_alias = _text(variant.get("base_alias")) or alias
             derivation_rule = _text(variant.get("derivation_rule")) or "reviewed"
+            if key in reviewed_alias_first:
+                deduplication_rows.append({
+                    "deduplication_type": "ALIAS",
+                    "removed_key": _stable("reviewed-nationality-alias", raw_qid, iso, lang, normalized, alias, base_alias, derivation_rule, _text(variant.get("evidence_reference")) or ""),
+                    "kept_key": key,
+                    "removed_country_qid": raw_qid,
+                    "kept_country_qid": qid,
+                    "iso2": iso,
+                    "alias_text": alias,
+                    "normalized_alias": normalized,
+                    "language": lang,
+                    "reason": "DUPLICATE_REVIEWED_ALIAS_SAME_COUNTRY",
+                })
+                _put(
+                    session,
+                    NationalityDeduplication,
+                    _stable("nationality-deduplication", "REVIEWED_ALIAS", deduplication_rows[-1]["removed_key"], key),
+                    {**deduplication_rows[-1], "source_id": variant_source.source_id},
+                )
+            else:
+                reviewed_alias_first[key] = (raw_qid, iso, lang, normalized, alias)
             provenance_key = _stable("nationality-review-provenance", key, base_alias, derivation_rule)
             _put(
                 session,

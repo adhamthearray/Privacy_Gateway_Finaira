@@ -6,9 +6,9 @@
 - **nationality_aliases_v2**: 852
 - **nationality_reviewed_variants**: 54
 - **nationality_review_provenance**: 62
-- **nationality_deduplications**: 7
+- **nationality_deduplications**: 20
 - **nationality_country_qid_merges**: 2
-- **nationality_alias_merges**: 5
+- **nationality_alias_merges**: 18
 - **natural_earth_country_aliases**: 2233
 - **natural_earth_reviewed_country_aliases**: 31
 - **nationality_distinct_qids**: 237
