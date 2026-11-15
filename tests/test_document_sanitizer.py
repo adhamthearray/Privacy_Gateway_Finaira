@@ -14,15 +14,48 @@ def test_challenging_example_is_based_on_current_database_and_policy():
     result = prepare_document(payload, DB)
 
     assert result["summary"] == {
-        "pseudonymize_count": 3,
-        "generalize_count": 8,
+        "pseudonymize_count": 2,
+        "generalize_count": 9,
         "allow_count": 1,
         "selection_performed": False,
     }
     assert result["entities"]["E0003"]["generalization"]["status"] == "REVIEW_ONLY"
     assert result["entities"]["E0007"]["generalization"]["status"] == "VERIFIED"
     assert result["entities"]["E0008"]["generalization"]["status"] == "AMBIGUOUS"
+    assert result["entities"]["E0010"]["policy_action"] == "GENERALIZE"
+    assert result["entities"]["E0010"]["monetary_result"]["interpretation"]["normalized_amount"] == "12500"
     assert result["entities"]["E0012"]["generalization"]["status"] == "NOT_FOUND"
+
+
+def test_monetary_amount_is_generalized_with_three_unselected_options():
+    request = {
+        "document_id": "doc-money",
+        "text": "The amount is [[E1]].",
+        "entity_map": {
+            "E1": {
+                "label": "MONETARY_AMOUNT",
+                "original_text": "١٢٫٥ ألف ريال سعودي",
+                "placeholder": "[[E1]]",
+                "context": {"currency": "SAR"},
+            }
+        },
+    }
+
+    result = prepare_document(request, DB)
+    entity = result["entities"]["E1"]
+
+    assert entity["policy_action"] == "GENERALIZE"
+    assert entity["pseudonymization_form"] is None
+    assert entity["generalization"]["runtime_entity_type"] == "MONETARY_AMOUNT"
+    assert entity["generalization"]["selected_candidate"] is None
+    assert entity["monetary_result"]["interpretation"]["normalized_amount"] == "12500"
+    assert [item["level_code"] for item in entity["generalization_candidates"]] == [
+        "RANGE_BASED",
+        "ORDER_OF_MAGNITUDE",
+        "TASK_AWARE_THRESHOLD",
+    ]
+    assert entity["generalization_candidates"][0]["production_eligible"] is True
+    assert entity["generalization_candidates"][2]["missing_reason"] == "REQUIRES_THRESHOLD"
 
 
 def test_placeholder_document_returns_pseudonym_forms_without_echoing_originals():

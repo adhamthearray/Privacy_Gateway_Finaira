@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Any
 
 from finaira_generalization import GeneralizationDB
+from finaira_generalization.monetary import interpret_and_generalize_money
 
 from .mapping import MappingVault
 from .models import Entity
@@ -34,6 +35,12 @@ _DATABASE_INPUT_TYPES = {
     "AGE",
     "DATE",
 }
+
+_MONETARY_OPTION_LEVELS = (
+    ("RANGE_BASED", "range_based"),
+    ("ORDER_OF_MAGNITUDE", "order_of_magnitude"),
+    ("TASK_AWARE_THRESHOLD", "task_aware_threshold"),
+)
 
 
 def _input_language(value: str) -> str:
@@ -123,7 +130,13 @@ class DocumentSanitizer:
                     }
                     entry["pseudonymization_form"] = token
                 elif action == Action.GENERALIZE.value:
-                    entry.update(self._generalization_package(source_type, canonical_type, original_text, language))
+                    entry.update(self._generalization_package(
+                        source_type,
+                        canonical_type,
+                        original_text,
+                        language,
+                        supplied,
+                    ))
 
                 counts[action] += 1
                 output_entities[entity_id] = entry
@@ -148,7 +161,10 @@ class DocumentSanitizer:
         canonical_type: str,
         original_text: str,
         language: str,
+        supplied: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
+        if source_type == "MONETARY_AMOUNT":
+            return self._monetary_package(original_text, supplied or {})
         if source_type not in _DATABASE_INPUT_TYPES:
             return {
                 "generalization": {
@@ -181,6 +197,70 @@ class DocumentSanitizer:
                 "requires_selection": bool(candidates),
                 "selected_candidate": None,
             },
+            "generalization_candidates": candidates,
+        }
+
+    @staticmethod
+    def _monetary_package(original_text: str, supplied: dict[str, Any]) -> dict[str, Any]:
+        context = supplied.get("monetary_context") or supplied.get("context") or {}
+        if not isinstance(context, dict):
+            raise ValueError("MONETARY_CONTEXT_MUST_BE_OBJECT")
+        threshold_spec = supplied.get("threshold_spec")
+        if threshold_spec is not None and not isinstance(threshold_spec, dict):
+            raise ValueError("THRESHOLD_SPEC_MUST_BE_OBJECT")
+        result = interpret_and_generalize_money(
+            original_text,
+            context=context,
+            threshold_spec=threshold_spec,
+        )
+        candidates = []
+        for rank, (level_code, key) in enumerate(_MONETARY_OPTION_LEVELS):
+            option = dict(result["representations"].get(key) or {})
+            status = option.get("status", "UNAVAILABLE")
+            # An indeterminate comparison is informative but is not a
+            # production-selectable representation.
+            available = status in {"AVAILABLE", "TRUE", "FALSE"}
+            candidates.append({
+                "candidate_id": f"MONETARY_{level_code}",
+                "level_code": level_code,
+                "specificity_rank": rank,
+                "representation": option.get("en"),
+                "language": "bilingual",
+                "taxonomy": "FINAIR_MONETARY",
+                "taxonomy_code": level_code,
+                "source": "Finaira monetary interpreter",
+                "verification_status": "CONFIGURED",
+                "metadata": {
+                    "label_en": option.get("en"),
+                    "label_ar": option.get("ar"),
+                    "status": status,
+                    "reason": option.get("reason"),
+                    "is_exact": False,
+                    "is_local_only": False,
+                    "is_suppression": False,
+                    "provenance": {"interpreter": "finaira_generalization.monetary"},
+                },
+                "available": available,
+                "missing_reason": None if available else option.get("reason", status),
+                "label_en": option.get("en"),
+                "label_ar": option.get("ar"),
+                "is_exact": False,
+                "is_local_only": False,
+                "is_suppression": False,
+                "provenance": {"interpreter": "finaira_generalization.monetary"},
+                "production_eligible": available,
+            })
+        interpretation = result.get("interpretation") or {}
+        return {
+            "generalization": {
+                "status": interpretation.get("status"),
+                "reason_code": interpretation.get("status"),
+                "canonical_id": None,
+                "runtime_entity_type": "MONETARY_AMOUNT",
+                "requires_selection": any(item["production_eligible"] for item in candidates),
+                "selected_candidate": None,
+            },
+            "monetary_result": result,
             "generalization_candidates": candidates,
         }
 
