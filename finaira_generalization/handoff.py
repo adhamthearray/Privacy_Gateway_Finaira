@@ -40,6 +40,7 @@ from .db import (
     NationalityAliasV2,
     NationalityAliasReviewProvenance,
     NationalityCountry,
+    NationalityDeduplication,
     NationalityGeoJoin,
     Organization,
     OrganizationAlias,
@@ -165,12 +166,14 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
     )
     rows = _read_csv(source_path)
     ne_rows = _read_csv(ne_csv)
+    ne_by_qid = {row.get("wikidata_qid"): row for row in ne_rows if _text(row.get("wikidata_qid"))}
     # The expanded Wikidata source is a complete deterministic snapshot of
     # the supplied aliases plus the refreshed P1549 response. Rebuild only
     # these source-shaped rows so repeated refreshes cannot retain aliases
     # that disappeared from the snapshot or accumulate duplicates.
     session.execute(delete(NationalityAliasReviewProvenance))
     session.execute(delete(NationalityAliasV2))
+    session.execute(delete(NationalityDeduplication))
     session.execute(delete(NationalityGeoJoin))
     session.execute(delete(NationalityCountry))
     session.execute(delete(NaturalEarthCountryAlias))
@@ -187,7 +190,6 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
         _put(session, NaturalEarthCountry, row["natural_earth_id"], {"wikidata_qid": _text(row.get("wikidata_qid")), "iso_a2": _text(row.get("iso_a2")), "name_en": _text(row.get("name_en")), "name_ar": _text(row.get("name_ar")), "subregion": _text(row.get("subregion")), "region_un": _text(row.get("region_un")), "continent": _text(row.get("continent")), "source_id": ne_source.source_id, "source_version": "5.1.1"})
     country_alias_count = 0
     country_reviewed_alias_count = 0
-    ne_by_qid = {row.get("wikidata_qid"): row for row in ne_rows if _text(row.get("wikidata_qid"))}
     if country_alias_source is not None:
         for row in _read_csv(country_alias_path):
             qid = _qid(row.get("wikidata_qid") or row.get("country"))
@@ -231,18 +233,85 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
         if _text(row.get("iso_a2")):
             by_iso[row["iso_a2"].upper()].append(row)
 
-    by_qid_input: dict[str, tuple[str, str]] = {}
+    # A source snapshot can contain more than one Wikidata identity for the
+    # same current ISO country.  Natural Earth is the authority for choosing
+    # the runtime identity; other QIDs are retained only in the audit log.
+    raw_iso_by_qid: dict[str, str] = {}
+    raw_rows_by_qid: dict[str, list[dict[str, str]]] = defaultdict(list)
+    qids_by_iso: dict[str, set[str]] = defaultdict(set)
     for row in rows:
         qid = _qid(row.get("country"))
+        if not qid:
+            continue
         iso = (_text(row.get("iso2")) or "").upper()
-        if qid:
-            by_qid_input.setdefault(qid, (iso, _text(row.get("countryLabel")) or ""))
+        raw_iso_by_qid.setdefault(qid, iso)
+        raw_rows_by_qid[qid].append(row)
+        if iso:
+            qids_by_iso[iso].add(qid)
+
+    qid_canonical_map = {qid: qid for qid in raw_iso_by_qid}
+    for iso, qids in qids_by_iso.items():
+        if len(qids) <= 1:
+            continue
+        natural_qids = qids.intersection(ne_by_qid)
+        if len(natural_qids) != 1:
+            # Never guess where Natural Earth cannot select one identity.
+            continue
+        canonical_qid = next(iter(natural_qids))
+        for qid in qids:
+            qid_canonical_map[qid] = canonical_qid
+
+    canonical_iso_by_qid: dict[str, str] = {}
+    canonical_rows_by_qid: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for raw_qid, canonical_qid in qid_canonical_map.items():
+        canonical_rows_by_qid[canonical_qid].extend(raw_rows_by_qid[raw_qid])
+        canonical_iso_by_qid.setdefault(canonical_qid, raw_iso_by_qid[raw_qid])
+    for canonical_qid in canonical_rows_by_qid:
+        natural_iso = _text(ne_by_qid.get(canonical_qid, {}).get("iso_a2"))
+        if natural_iso:
+            canonical_iso_by_qid[canonical_qid] = natural_iso.upper()
+
+    deduplication_rows: list[dict[str, str]] = []
+    for raw_qid, canonical_qid in sorted(qid_canonical_map.items()):
+        if raw_qid == canonical_qid:
+            continue
+        iso = canonical_iso_by_qid.get(canonical_qid) or raw_iso_by_qid.get(raw_qid) or ""
+        deduplication_rows.append({
+            "deduplication_type": "COUNTRY_QID",
+            "removed_key": raw_qid,
+            "kept_key": canonical_qid,
+            "removed_country_qid": raw_qid,
+            "kept_country_qid": canonical_qid,
+            "iso2": iso,
+            "alias_text": "",
+            "normalized_alias": "",
+            "language": "",
+            "reason": "SAME_ISO_NATURAL_EARTH_CANONICAL_QID",
+        })
+
+    by_qid_input: dict[str, tuple[str, str]] = {}
+    for raw_qid, raw_rows in raw_rows_by_qid.items():
+        qid = qid_canonical_map[raw_qid]
+        iso = canonical_iso_by_qid.get(qid, raw_iso_by_qid.get(raw_qid, ""))
+        label = ""
+        for row in sorted(raw_rows, key=lambda item: _qid(item.get("country")) != qid):
+            label = _text(row.get("countryLabel")) or ""
+            if label:
+                break
+        by_qid_input.setdefault(qid, (iso, label))
     for qid, (iso, label) in sorted(by_qid_input.items()):
         _put(
             session,
             NationalityCountry,
             qid,
             {"iso2": iso, "country_label": label, "source_id": alias_source.source_id, "verification_status": "SOURCE_VERIFIED"},
+        )
+    for item in deduplication_rows:
+        _put(
+            session,
+            NationalityDeduplication,
+            _stable("nationality-deduplication", item["deduplication_type"], item["removed_key"], item["kept_key"], item["iso2"]),
+            {**item, "source_id": alias_source.source_id},
         )
 
     audit_rows = []
@@ -287,48 +356,104 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
         status_counts[status] += 1
         audit_rows.append({"country_qid": qid, "iso2": iso, "natural_earth_id": natural.get("natural_earth_id") if natural else "", "join_status": status, "match_method": method or "", "audit_note": note or ""})
 
-    alias_count = 0
+    # Collapse source spellings by canonical country, language, and normalized
+    # alias.  Keep one deterministic display spelling while recording every
+    # discarded source row in the audit table.
+    source_aliases: dict[tuple[str, str, str, str], list[tuple[str, str, str]]] = defaultdict(list)
     for row in rows:
-        qid = _qid(row.get("country"))
-        if not qid:
+        raw_qid = _qid(row.get("country"))
+        if not raw_qid:
             continue
+        qid = qid_canonical_map[raw_qid]
         lang = (_text(row.get("language")) or "").lower()
         alias = _text(row.get("nationality"))
-        iso = (_text(row.get("iso2")) or "").upper()
         if not alias or lang not in {"ar", "en"}:
             continue
-        key = _stable(qid, iso, lang, normalize(alias, lang), alias)
+        iso = canonical_iso_by_qid.get(qid, (_text(row.get("iso2")) or "").upper())
+        normalized = normalize(alias, lang)
+        source_aliases[(qid, iso, lang, normalized)].append((alias, raw_qid, (_text(row.get("iso2")) or "").upper()))
+
+    def _preferred_alias(items: list[tuple[str, str, str]], language: str) -> tuple[str, str, str]:
+        if language == "en":
+            return max(items, key=lambda item: (item[0][:1].isupper(), len(item[0]), item[0]))
+        return max(items, key=lambda item: (len(item[0]), item[0]))
+
+    alias_count = 0
+    source_alias_keys: dict[tuple[str, str, str, str], str] = {}
+    for (qid, iso, lang, normalized), items in sorted(source_aliases.items()):
+        preferred, preferred_raw_qid, _preferred_raw_iso = _preferred_alias(items, lang)
+        preferred_item = (preferred, preferred_raw_qid, _preferred_raw_iso)
+        kept_preferred = False
+        key = _stable("nationality-alias-canonical", qid, iso, lang, normalized)
+        source_alias_keys[(qid, iso, lang, normalized)] = key
         _put(
             session,
             NationalityAliasV2,
             key,
-            {"country_qid": qid, "iso2": iso, "alias_text": alias, "normalized_alias": normalize(alias, lang), "language": lang, "source_id": alias_source.source_id, "verification_status": "SOURCE_VERIFIED"},
+            {"country_qid": qid, "iso2": iso, "alias_text": preferred, "normalized_alias": normalized, "language": lang, "source_id": alias_source.source_id, "verification_status": "SOURCE_VERIFIED"},
         )
         alias_count += 1
+        for alias, raw_qid, raw_iso in items:
+            if not kept_preferred and (alias, raw_qid, raw_iso) == preferred_item:
+                kept_preferred = True
+                continue
+            reason = "DUPLICATE_COUNTRY_QID_SAME_ISO" if raw_qid != qid else "DUPLICATE_NORMALIZED_ALIAS_SAME_COUNTRY"
+            deduplication_rows.append({
+                "deduplication_type": "ALIAS",
+                "removed_key": _stable(raw_qid, raw_iso, lang, normalized, alias),
+                "kept_key": key,
+                "removed_country_qid": raw_qid,
+                "kept_country_qid": qid,
+                "iso2": iso,
+                "alias_text": alias,
+                "normalized_alias": normalized,
+                "language": lang,
+                "reason": reason,
+            })
+            _put(
+                session,
+                NationalityDeduplication,
+                _stable("nationality-deduplication", "ALIAS", raw_qid, key, lang, normalized, alias),
+                {**deduplication_rows[-1], "source_id": alias_source.source_id},
+            )
     reviewed_variant_keys = set()
-    reviewed_provenance_count = 0
+    reviewed_provenance_keys = set()
     if variant_source is not None:
         for variant in _read_csv(NATIONALITY_VARIANT_REVIEW_CSV):
             if (_text(variant.get("review_decision")) or "").upper() != "APPROVED":
                 continue
             if not _text(variant.get("evidence_reference")):
                 continue
-            qid = _qid(variant.get("candidate_qid"))
+            raw_qid = _qid(variant.get("candidate_qid"))
             lang = (_text(variant.get("language")) or "").lower()
             alias = _text(variant.get("corpus_value"))
             iso = (_text(variant.get("candidate_iso2")) or "").upper()
-            if not qid or qid not in by_qid_input or lang not in {"ar", "en"} or not alias:
+            if not raw_qid or raw_qid not in qid_canonical_map or lang not in {"ar", "en"} or not alias:
                 continue
+            qid = qid_canonical_map[raw_qid]
             natural_iso = (_text(by_qid.get(qid, {}).get("iso_a2")) or "").upper() if by_qid.get(qid) else ""
             if not iso or iso == "-99":
-                iso = natural_iso or by_qid_input[qid][0]
-            key = _stable(qid, iso, lang, normalize(alias, lang), alias)
-            _put(
-                session,
-                NationalityAliasV2,
-                key,
-                {"country_qid": qid, "iso2": iso or by_qid_input[qid][0], "alias_text": alias, "normalized_alias": normalize(alias, lang), "language": lang, "source_id": variant_source.source_id, "verification_status": "REVIEWED"},
-            )
+                iso = natural_iso or canonical_iso_by_qid[qid]
+            iso = iso or canonical_iso_by_qid[qid]
+            normalized = normalize(alias, lang)
+            alias_key_tuple = (qid, iso, lang, normalized)
+            key = source_alias_keys.get(alias_key_tuple)
+            if key is None:
+                key = _stable("nationality-alias-canonical", qid, iso, lang, normalized)
+                source_alias_keys[alias_key_tuple] = key
+                _put(
+                    session,
+                    NationalityAliasV2,
+                    key,
+                    {"country_qid": qid, "iso2": iso, "alias_text": alias, "normalized_alias": normalized, "language": lang, "source_id": variant_source.source_id, "verification_status": "REVIEWED"},
+                )
+            elif not session.get(NationalityAliasV2, key):
+                _put(
+                    session,
+                    NationalityAliasV2,
+                    key,
+                    {"country_qid": qid, "iso2": iso, "alias_text": alias, "normalized_alias": normalized, "language": lang, "source_id": variant_source.source_id, "verification_status": "REVIEWED"},
+                )
             reviewed_variant_keys.add(key)
             base_alias = _text(variant.get("base_alias")) or alias
             derivation_rule = _text(variant.get("derivation_rule")) or "reviewed"
@@ -339,13 +464,30 @@ def _import_nationality(session: Session, handoff_root: Path, metrics: dict, rep
                 provenance_key,
                 {"alias_key": key, "corpus_value": alias, "base_alias": base_alias, "derivation_rule": derivation_rule, "evidence_reference": _text(variant.get("evidence_reference")) or "", "review_status": "REVIEWED", "source_id": variant_source.source_id},
             )
-            reviewed_provenance_count += 1
+            reviewed_provenance_keys.add(provenance_key)
     report_dir.mkdir(parents=True, exist_ok=True)
     with (report_dir / "nationality_natural_earth_join_audit.csv").open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(audit_rows[0]))
         writer.writeheader()
         writer.writerows(audit_rows)
-    metrics.update({"nationality_aliases_v2": alias_count, "nationality_reviewed_variants": len(reviewed_variant_keys), "nationality_review_provenance": reviewed_provenance_count, "natural_earth_country_aliases": country_alias_count, "natural_earth_reviewed_country_aliases": country_reviewed_alias_count, "nationality_distinct_qids": len(by_qid_input), "natural_earth_rows": len(ne_rows), "natural_earth_join_status": dict(status_counts)})
+    dedup_fields = ["deduplication_type", "removed_key", "kept_key", "removed_country_qid", "kept_country_qid", "iso2", "alias_text", "normalized_alias", "language", "reason"]
+    with (report_dir / "nationality_deduplication_report.csv").open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=dedup_fields)
+        writer.writeheader()
+        writer.writerows(deduplication_rows)
+    metrics.update({
+        "nationality_aliases_v2": alias_count + len(reviewed_variant_keys - set(source_alias_keys.values())),
+        "nationality_reviewed_variants": len(reviewed_variant_keys),
+        "nationality_review_provenance": len(reviewed_provenance_keys),
+        "nationality_deduplications": len(deduplication_rows),
+        "nationality_country_qid_merges": sum(item["deduplication_type"] == "COUNTRY_QID" for item in deduplication_rows),
+        "nationality_alias_merges": sum(item["deduplication_type"] == "ALIAS" for item in deduplication_rows),
+        "natural_earth_country_aliases": country_alias_count,
+        "natural_earth_reviewed_country_aliases": country_reviewed_alias_count,
+        "nationality_distinct_qids": len(by_qid_input),
+        "natural_earth_rows": len(ne_rows),
+        "natural_earth_join_status": dict(status_counts),
+    })
 
 
 def _import_banks(session: Session, root: Path, metrics: dict, report_dir: Path):

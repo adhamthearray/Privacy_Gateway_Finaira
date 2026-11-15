@@ -717,6 +717,24 @@ CREATE TABLE nationality_countries (
 	FOREIGN KEY(source_id) REFERENCES data_sources (source_id)
 );
 
+-- table: nationality_deduplications
+CREATE TABLE nationality_deduplications (
+	deduplication_id VARCHAR(160) NOT NULL,
+	deduplication_type VARCHAR(40) NOT NULL,
+	removed_key VARCHAR(160) NOT NULL,
+	kept_key VARCHAR(160) NOT NULL,
+	removed_country_qid VARCHAR(20),
+	kept_country_qid VARCHAR(20),
+	iso2 VARCHAR(2),
+	alias_text TEXT,
+	normalized_alias TEXT,
+	language VARCHAR(2),
+	reason TEXT NOT NULL,
+	source_id INTEGER NOT NULL,
+	PRIMARY KEY (deduplication_id),
+	FOREIGN KEY(source_id) REFERENCES data_sources (source_id)
+);
+
 -- table: nationality_geo_joins
 CREATE TABLE nationality_geo_joins (
 	country_qid VARCHAR(20) NOT NULL,
@@ -1226,6 +1244,27 @@ CREATE INDEX ix_nationality_candidate_refs_iso2 ON nationality_candidate_refs (i
 
 -- index: ix_nationality_countries_iso2
 CREATE INDEX ix_nationality_countries_iso2 ON nationality_countries (iso2);
+
+-- index: ix_nationality_deduplications_deduplication_type
+CREATE INDEX ix_nationality_deduplications_deduplication_type ON nationality_deduplications (deduplication_type);
+
+-- index: ix_nationality_deduplications_iso2
+CREATE INDEX ix_nationality_deduplications_iso2 ON nationality_deduplications (iso2);
+
+-- index: ix_nationality_deduplications_kept_country_qid
+CREATE INDEX ix_nationality_deduplications_kept_country_qid ON nationality_deduplications (kept_country_qid);
+
+-- index: ix_nationality_deduplications_kept_key
+CREATE INDEX ix_nationality_deduplications_kept_key ON nationality_deduplications (kept_key);
+
+-- index: ix_nationality_deduplications_language
+CREATE INDEX ix_nationality_deduplications_language ON nationality_deduplications (language);
+
+-- index: ix_nationality_deduplications_removed_country_qid
+CREATE INDEX ix_nationality_deduplications_removed_country_qid ON nationality_deduplications (removed_country_qid);
+
+-- index: ix_nationality_deduplications_removed_key
+CREATE INDEX ix_nationality_deduplications_removed_key ON nationality_deduplications (removed_key);
 
 -- index: ix_nationality_geo_joins_iso2
 CREATE INDEX ix_nationality_geo_joins_iso2 ON nationality_geo_joins (iso2);

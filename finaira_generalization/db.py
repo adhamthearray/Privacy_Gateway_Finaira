@@ -265,6 +265,23 @@ class NationalityAliasV2(Base):
     verification_status: Mapped[str] = mapped_column(String(40), default="SOURCE_VERIFIED")
 
 
+class NationalityDeduplication(Base):
+    """Audit record for canonical nationality QID and alias merges."""
+    __tablename__ = "nationality_deduplications"
+    deduplication_id: Mapped[str] = mapped_column(String(160), primary_key=True)
+    deduplication_type: Mapped[str] = mapped_column(String(40), index=True)
+    removed_key: Mapped[str] = mapped_column(String(160), index=True)
+    kept_key: Mapped[str] = mapped_column(String(160), index=True)
+    removed_country_qid: Mapped[str | None] = mapped_column(String(20), index=True)
+    kept_country_qid: Mapped[str | None] = mapped_column(String(20), index=True)
+    iso2: Mapped[str | None] = mapped_column(String(2), index=True)
+    alias_text: Mapped[str | None] = mapped_column(Text)
+    normalized_alias: Mapped[str | None] = mapped_column(Text)
+    language: Mapped[str | None] = mapped_column(String(2), index=True)
+    reason: Mapped[str] = mapped_column(Text)
+    source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
+
+
 class NationalityAliasReviewProvenance(Base):
     __tablename__ = "nationality_alias_review_provenance"
     provenance_id: Mapped[str] = mapped_column(String(120), primary_key=True)

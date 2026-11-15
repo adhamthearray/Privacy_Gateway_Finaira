@@ -16,9 +16,9 @@ def scalar(sql):
 
 
 def test_natural_earth_join_and_runtime_source():
-    assert scalar("select count(*) from nationality_aliases_v2 where verification_status='SOURCE_VERIFIED'") == 857
-    assert scalar("select count(*) from nationality_aliases_v2 where verification_status='REVIEWED'") == 59
-    assert scalar("select count(*) from nationality_countries") == 239
+    assert scalar("select count(*) from nationality_aliases_v2 where verification_status='SOURCE_VERIFIED'") == 852
+    assert scalar("select count(*) from nationality_aliases_v2 where verification_status='REVIEWED'") == 54
+    assert scalar("select count(*) from nationality_countries") == 237
     assert scalar("select count(*) from natural_earth_countries") == 258
     assert scalar("select count(*) from natural_earth_country_aliases where verification_status='REVIEWED'") == 30
     assert scalar("select count(*) from nationality_geo_joins where join_status='MATCHED_QID'") == 230
@@ -35,9 +35,20 @@ def test_nationality_variant_review_queue_is_gated():
     assert len({row["corpus_value"] for row in rows if row["review_decision"] == "APPROVED"}) == 59
     assert sum(row["review_decision"] == "PENDING" for row in rows) == 15
     assert sum(row["review_decision"] == "REJECTED" for row in rows) == 1
-    assert scalar("select count(*) from nationality_aliases_v2") == 916
-    assert scalar("select count(*) from nationality_aliases_v2 where verification_status='REVIEWED'") == 59
-    assert scalar("select count(*) from nationality_alias_review_provenance") == 67
+    assert scalar("select count(*) from nationality_aliases_v2") == 906
+    assert scalar("select count(*) from nationality_aliases_v2 where verification_status='REVIEWED'") == 54
+    assert scalar("select count(*) from nationality_alias_review_provenance") == 62
+
+
+def test_nationality_deduplication_canonicalizes_same_iso_only():
+    assert scalar("select count(*) from nationality_deduplications where deduplication_type='COUNTRY_QID'") == 2
+    assert scalar("select count(*) from nationality_deduplications where deduplication_type='ALIAS'") == 5
+    assert scalar("select count(*) from nationality_countries where country_qid in ('Q219060', 'Q29999')") == 0
+    assert scalar("select count(*) from nationality_countries where country_qid in ('Q23792', 'Q55')") == 2
+    assert scalar("select count(*) from (select country_qid, language, normalized_alias from nationality_aliases_v2 group by country_qid, language, normalized_alias having count(*) > 1)") == 0
+    assert GeneralizationDB(DB).get_candidates("NATIONALITY", "Taiwanese", "en")["canonical_id"] == "Q865"
+    assert GeneralizationDB(DB).get_candidates("NATIONALITY", "Palestinian", "en")["canonical_id"] == "Q23792"
+    assert GeneralizationDB(DB).get_candidates("NATIONALITY", "French", "en")["resolution_status"] == "AMBIGUOUS"
 
 
 def test_reviewed_nationalities_and_pending_gates():
@@ -160,7 +171,7 @@ def test_government_review_default_and_optional_branches():
 
 
 def test_fk_integrity_and_idempotent_handoff_import():
-    before = {table: scalar(f"select count(*) from {table}") for table in ("banks", "bank_candidates", "organizations", "government_entities", "natural_earth_country_aliases", "nationality_aliases_v2", "nationality_alias_review_provenance")}
+    before = {table: scalar(f"select count(*) from {table}") for table in ("banks", "bank_candidates", "organizations", "government_entities", "natural_earth_country_aliases", "nationality_aliases_v2", "nationality_alias_review_provenance", "nationality_deduplications")}
     import_handoff(DB, report_dir="reports", backup=False)
     after_first = {table: scalar(f"select count(*) from {table}") for table in before}
     import_handoff(DB, report_dir="reports", backup=False)

@@ -723,7 +723,7 @@ Indexes: ix_nationality_alias_country_refs_iso2
 
 ## `nationality_alias_review_provenance`
 
-Rows: 67
+Rows: 62
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|
@@ -756,7 +756,7 @@ Indexes: ix_nationality_aliases_country_iso2, ix_nationality_aliases_language, i
 
 ## `nationality_aliases_v2`
 
-Rows: 916
+Rows: 906
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|
@@ -784,7 +784,7 @@ Indexes: ix_nationality_candidate_refs_iso2
 
 ## `nationality_countries`
 
-Rows: 239
+Rows: 237
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|
@@ -796,9 +796,30 @@ Rows: 239
 
 Indexes: ix_nationality_countries_iso2
 
+## `nationality_deduplications`
+
+Rows: 7
+
+| Column | Type | Key | Nullable | References | Purpose |
+|---|---|---|---|---|---|
+| deduplication_id | VARCHAR(160) | PK | NO |  | Persisted Finaira reference data or layered metadata for `nationality_deduplications`. |
+| deduplication_type | VARCHAR(40) |  | NO |  | Persisted Finaira reference data or layered metadata for `nationality_deduplications`. |
+| removed_key | VARCHAR(160) |  | NO |  | Persisted Finaira reference data or layered metadata for `nationality_deduplications`. |
+| kept_key | VARCHAR(160) |  | NO |  | Persisted Finaira reference data or layered metadata for `nationality_deduplications`. |
+| removed_country_qid | VARCHAR(20) |  | YES |  | Persisted Finaira reference data or layered metadata for `nationality_deduplications`. |
+| kept_country_qid | VARCHAR(20) |  | YES |  | Persisted Finaira reference data or layered metadata for `nationality_deduplications`. |
+| iso2 | VARCHAR(2) |  | YES |  | Persisted Finaira reference data or layered metadata for `nationality_deduplications`. |
+| alias_text | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `nationality_deduplications`. |
+| normalized_alias | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `nationality_deduplications`. |
+| language | VARCHAR(2) |  | YES |  | Persisted Finaira reference data or layered metadata for `nationality_deduplications`. |
+| reason | TEXT |  | NO |  | Persisted Finaira reference data or layered metadata for `nationality_deduplications`. |
+| source_id | INTEGER |  | NO | data_sources.source_id | Persisted Finaira reference data or layered metadata for `nationality_deduplications`. |
+
+Indexes: ix_nationality_deduplications_deduplication_type, ix_nationality_deduplications_iso2, ix_nationality_deduplications_kept_country_qid, ix_nationality_deduplications_kept_key, ix_nationality_deduplications_language, ix_nationality_deduplications_removed_country_qid, ix_nationality_deduplications_removed_key
+
 ## `nationality_geo_joins`
 
-Rows: 239
+Rows: 237
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|

@@ -507,6 +507,20 @@ erDiagram
         INTEGER source_id
         VARCHAR(40) verification_status
     }
+    nationality_deduplications {
+        VARCHAR(160) deduplication_id PK
+        VARCHAR(40) deduplication_type
+        VARCHAR(160) removed_key
+        VARCHAR(160) kept_key
+        VARCHAR(20) removed_country_qid
+        VARCHAR(20) kept_country_qid
+        VARCHAR(2) iso2
+        TEXT alias_text
+        TEXT normalized_alias
+        VARCHAR(2) language
+        TEXT reason
+        INTEGER source_id
+    }
     nationality_geo_joins {
         VARCHAR(20) country_qid PK
         VARCHAR(2) iso2
@@ -691,6 +705,7 @@ erDiagram
     generalization_candidates ||--o{ nationality_candidate_refs : "candidate_id"
     countries ||--o{ nationality_candidate_refs : "iso2"
     data_sources ||--o{ nationality_countries : "source_id"
+    data_sources ||--o{ nationality_deduplications : "source_id"
     nationality_countries ||--o{ nationality_geo_joins : "country_qid"
     natural_earth_countries ||--o{ nationality_geo_joins : "natural_earth_id"
     data_sources ||--o{ nationality_geo_joins : "source_id"

@@ -3,14 +3,17 @@
 - **batch_id**: handoff-2026-11-12-d67cf58c9452
 - **handoff_root**: C:\Users\domma\Downloads\Finaira_Generalization_DB_Codex_Handoff_2026-11-12_ext
 - **status**: COMPLETED
-- **nationality_aliases_v2**: 857
-- **nationality_reviewed_variants**: 59
-- **nationality_review_provenance**: 67
+- **nationality_aliases_v2**: 852
+- **nationality_reviewed_variants**: 54
+- **nationality_review_provenance**: 62
+- **nationality_deduplications**: 7
+- **nationality_country_qid_merges**: 2
+- **nationality_alias_merges**: 5
 - **natural_earth_country_aliases**: 2233
 - **natural_earth_reviewed_country_aliases**: 31
-- **nationality_distinct_qids**: 239
+- **nationality_distinct_qids**: 237
 - **natural_earth_rows**: 258
-- **natural_earth_join_status**: {'MATCHED_QID': 230, 'UNMATCHED': 7, 'MATCHED_ISO': 2}
+- **natural_earth_join_status**: {'MATCHED_QID': 230, 'UNMATCHED': 7}
 - **banks**: 37
 - **bank_model_counts**: {'MIXED': 9, 'CONVENTIONAL': 24, 'ISLAMIC': 4}
 - **bank_evidence**: 24

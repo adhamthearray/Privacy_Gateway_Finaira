@@ -40,7 +40,7 @@ The handoff remains at `C:\Users\domma\Downloads\Finaira_Generalization_DB_Codex
 
 ## Actual database schema
 
-The authoritative generated schema is [reports/database_schema.sql](../reports/database_schema.sql), and the inspected column/PK/FK/index inventory is [reports/schema_after.md](../reports/schema_after.md). SQLite currently contains 56 tables, with foreign keys enabled by the SQLAlchemy connection hook in `finaira_generalization/db.py`.
+The authoritative generated schema is [reports/database_schema.sql](../reports/database_schema.sql), and the inspected column/PK/FK/index inventory is [reports/schema_after.md](../reports/schema_after.md). SQLite currently contains 57 tables, with foreign keys enabled by the SQLAlchemy connection hook in `finaira_generalization/db.py`.
 
 ### Legacy/reference tables retained for compatibility
 
@@ -55,10 +55,11 @@ The legacy M49 tables are historical compatibility data only. Active NATIONALITY
 | `import_batches` | `batch_id` | import status audit | 1 |
 | `natural_earth_countries` | `natural_earth_id` | `source_id`; indexes on `wikidata_qid`, `iso_a2` | 258 |
 | `natural_earth_country_aliases` | `alias_id` | `natural_earth_id`, `source_id`; normalized alias/language indexes | 2,204 |
-| `nationality_countries` | `country_qid` | `source_id`; index on `iso2` | 239 |
-| `nationality_aliases_v2` | `alias_key` | `country_qid`, `source_id`; indexes on normalized alias/language | 916 (857 source-verified + 59 reviewed) |
-| `nationality_alias_review_provenance` | `provenance_id` | `alias_key`, `source_id`; unique alias/base/rule provenance | 67 |
-| `nationality_geo_joins` | `country_qid` | `country_qid`, `natural_earth_id`, `source_id`; status indexes | 239 |
+| `nationality_countries` | `country_qid` | `source_id`; index on `iso2` | 237 canonical current-country QIDs |
+| `nationality_aliases_v2` | `alias_key` | `country_qid`, `source_id`; indexes on normalized alias/language | 906 (852 source-verified + 54 newly reviewed; 5 approved variants reuse source aliases) |
+| `nationality_alias_review_provenance` | `provenance_id` | `alias_key`, `source_id`; unique alias/base/rule provenance | 62 |
+| `nationality_deduplications` | `deduplication_id` | indexes on type, removed/kept key, QIDs, ISO, language; source FK | 7 (2 QID merges + 5 alias merges) |
+| `nationality_geo_joins` | `country_qid` | `country_qid`, `natural_earth_id`, `source_id`; status indexes | 237 |
 | `banks` | `bank_id` | `source_id`; finance-model index | 302 |
 | `bank_aliases` | `alias_id` | `bank_id`, `source_id`; normalized alias/language indexes | 1,569 |
 | `bank_evidence` | `evidence_id` | `bank_id`, `source_id` | 24 |
@@ -95,6 +96,7 @@ erDiagram
   DATA_SOURCES ||--o{ NATIONALITY_COUNTRIES : sources
   DATA_SOURCES ||--o{ NATIONALITY_ALIASES_V2 : sources
   DATA_SOURCES ||--o{ NATIONALITY_ALIAS_REVIEW_PROVENANCE : sources
+  DATA_SOURCES ||--o{ NATIONALITY_DEDUPLICATIONS : sources
   DATA_SOURCES ||--o{ NATIONALITY_GEO_JOINS : sources
   NATIONALITY_COUNTRIES ||--o{ NATIONALITY_ALIASES_V2 : identifies
   NATIONALITY_ALIASES_V2 ||--o{ NATIONALITY_ALIAS_REVIEW_PROVENANCE : explains
@@ -139,8 +141,9 @@ erDiagram
 
 | Source | Destination | Authority/status handling |
 |---|---|---|
-| Supplied handoff aliases plus `data/sources/wikidata/wikidata_nationality_aliases_ar_en_v2.csv` | `nationality_countries`, `nationality_aliases_v2` | 857 source-verified Arabic/English Wikidata `P1549` aliases, QIDs extracted from URI, CC0 provenance |
-| `reports/nationality_improvement/nationality_variant_review_queue.csv` | `nationality_aliases_v2`, `nationality_alias_review_provenance` | 59 reviewed aliases from 67 approved derivation rows; pending/rejected rows remain disabled |
+| Supplied handoff aliases plus `data/sources/wikidata/wikidata_nationality_aliases_ar_en_v2.csv` | `nationality_countries`, `nationality_aliases_v2` | 857 raw source rows collapse to 852 unique canonical Arabic/English Wikidata `P1549` aliases; same-ISO QIDs are canonicalized from Natural Earth |
+| `reports/nationality_improvement/nationality_variant_review_queue.csv` | `nationality_aliases_v2`, `nationality_alias_review_provenance` | 59 distinct approved corpus values produce 54 new reviewed aliases; 5 reuse source aliases, and 62 unique evidence/provenance rows remain after duplicate derivations are collapsed |
+| Same-ISO canonicalization and normalized-alias deduplication | `nationality_deduplications`, `reports/nationality_deduplication_report.csv` | 2 QID merges and 5 alias merges; genuine different-country collisions remain ambiguous |
 | Official Natural Earth Admin-0 1:10m v5.1.1 ZIP | `natural_earth_countries` and derived CSV | 258 DBF rows; fields verified before conversion; public-domain terms |
 | Wikidata labels/aliases API export | `natural_earth_country_aliases` | 2,174 deduplicated Arabic/English aliases linked by Wikidata QID; source-verified and enabled for COUNTRY only |
 | Approved nationality variant review queue | `nationality_aliases_v2` | Only rows marked `APPROVED` with non-empty evidence are imported as `REVIEWED`; pending rows remain outside runtime |
@@ -182,7 +185,7 @@ flowchart LR
   G --> H[GeneralizationDB candidates]
 ```
 
-The runtime tries `WIKIDATAID` first. ISO A2 is used only when the QID is absent and exactly one Natural Earth row is available. Current audit: 233 QIDs; 223 `MATCHED_QID`, 2 `MATCHED_ISO`, 1 `MISMATCH` (Taiwan ISO representation), and 7 unresolved edge cases. No unresolved row receives a guessed region. See [reports/nationality_natural_earth_join_audit.csv](../reports/nationality_natural_earth_join_audit.csv).
+The runtime tries `WIKIDATAID` first. ISO A2 is used only when the QID is absent and exactly one Natural Earth row is available. Current audit: 237 canonical QIDs; 230 `MATCHED_QID` and 7 unresolved edge cases. No unresolved row receives a guessed region. Same-ISO duplicate QIDs are recorded in `nationality_deduplications`; different-country alias collisions are deliberately not merged. See [reports/nationality_natural_earth_join_audit.csv](../reports/nationality_natural_earth_join_audit.csv) and [reports/nationality_deduplication_report.csv](../reports/nationality_deduplication_report.csv).
 
 `COUNTRY` is a separate runtime path. It resolves verified Wikidata labels/aliases linked to Natural Earth by QID first, then Natural Earth `name_ar`, `name_en`, or validated `ISO_A2`, and returns Natural Earth exact, subregion, UN region, continent, and suppression candidates. Reviewed corpus variants are marked `REVIEWED` in exact-candidate provenance. Historical identities, ambiguous names, cities/regions, and malformed values remain suppressed. It never treats a country name as a nationality alias. Arabic regional labels remain unavailable unless Natural Earth supplies a verified Arabic field.
 
@@ -256,6 +259,11 @@ FROM nationality_countries nc
 JOIN nationality_geo_joins ng ON ng.country_qid = nc.country_qid
 LEFT JOIN natural_earth_countries ne ON ne.natural_earth_id = ng.natural_earth_id
 WHERE nc.country_qid = 'Q79';
+
+SELECT deduplication_type, removed_country_qid, kept_country_qid,
+       iso2, alias_text, reason
+FROM nationality_deduplications
+ORDER BY deduplication_type, iso2, alias_text;
 
 SELECT b.bank_id, b.finance_model, bc.level_code, bc.label_en,
        bc.is_local_only, bc.is_suppression, bc.disclosure_approved
@@ -388,8 +396,8 @@ banking models, entity kinds, licence statuses, and a research question.
 
 ## Counts, verification, and unresolved data
 
-- Natural Earth: 258 rows, source version 5.1.1; 239 nationality QIDs retained; 230 QID matches, 2 guarded ISO matches, and 7 unresolved legacy edge cases. Country lookup uses all 258 Natural Earth rows. NER-v1 COUNTRY coverage is 174/229 unique values (75.98%) and 2,904/3,009 spans (96.51%) after 31 approved review rows, deduplicated to 30 runtime aliases. The remaining 55 values and 105 spans are suppressed in `reports/ner_v1_generalization/missing_country.csv` and `reports/ner_v1_generalization/country_review_queue.csv`.
-- Nationality aliases: 857 source-verified Arabic and English `P1549` rows plus 59 reviewed Arabic variants across validated QIDs. The coverage export records 28 Natural Earth records with no verified Arabic/English demonym; no form is invented for them. The review provenance table preserves 67 derivation/evidence rows for 59 enabled aliases. COUNTRY has 2,174 source-verified Wikidata label/alias rows plus 30 reviewed current-country variants.
+- Natural Earth: 258 rows, source version 5.1.1; 237 canonical current-country QIDs retained after two same-ISO QID merges; 230 QID matches and 7 unresolved edge cases. Country lookup uses all 258 Natural Earth rows. NER-v1 COUNTRY coverage is 174/229 unique values (75.98%) and 2,904/3,009 spans (96.51%) after 31 approved review rows, deduplicated to 30 runtime aliases. The remaining 55 values and 105 spans are suppressed in `reports/ner_v1_generalization/missing_country.csv` and `reports/ner_v1_generalization/country_review_queue.csv`.
+- Nationality aliases: 857 raw source-verified Arabic and English `P1549` rows collapse to 852 unique source aliases, plus 54 newly stored reviewed aliases across validated QIDs. The coverage export records 28 Natural Earth records with no verified Arabic/English demonym; no form is invented for them. The review provenance table preserves 62 unique derivation/evidence rows for 59 distinct approved corpus values. The deduplication audit records 2 country-QID merges and 5 normalized-alias merges. COUNTRY has 2,174 source-verified Wikidata label/alias rows plus 30 reviewed current-country variants.
 - Egyptian baseline banks: 37 total; 24 conventional, 9 mixed, 4 Islamic; 86 aliases (50 English, 36 Arabic), 50 enabled English aliases and 36 enabled Arabic aliases; 47 are enabled by explicit `APPROVED_BY_USER` review status. 24 evidence rows cover 13 bank IDs; 185 baseline candidates; 37/37 official Arabic master names remain blank. Conventional labels retain `EVIDENCE_BY_ABSENCE_NOT_CONVENTIONAL_ONLY_PROOF` limitations. See `reports/bank_inventory.csv`.
 - Organizations: 312 QIDs; 191 source rows detected as corporations and 121 as universities, all stored under canonical `semantic_kind=CORPORATION`; 360 industry links; 73 concept mappings; 63 bilingual source categories; 48 missing Arabic organization names; all identities pending. No organization is production-verified by this import.
 - Government: 12 seed entities, 24 aliases, 17 categories, 63 review-catalog rows; all 24 aliases are enabled with explicit `APPROVED_BY_USER` status, while all 12 identity rows remain `REVIEW_REQUIRED` and all specific mappings remain review-only.
