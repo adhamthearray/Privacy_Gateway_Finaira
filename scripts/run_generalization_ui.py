@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import mimetypes
+import re
 import sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -18,6 +19,7 @@ sys.path.insert(0, str(ROOT))
 
 from finaira_generalization.candidates import BANK_MODEL_FORM_LABELS, GeneralizationDB
 from finaira_generalization.date_detector import detect_date
+from finaira_generalization.monetary import interpret_and_generalize_money
 from finaira_generalization.db import (
     Bank,
     BankAlias,
@@ -111,7 +113,7 @@ HTML = r"""<!doctype html>
           <option value="JOB_TITLE">JOB_TITLE (job titles and occupations)</option><option>COUNTRY</option>
           <option>NATIONALITY</option><option value="CORPORATION">CORPORATION (banks, universities, organizations)</option>
           <option>GOVERNMENT_ENTITY</option>
-          <option>AGE</option><option>DATE</option>
+          <option>AGE</option><option>DATE</option><option value="MONETARY_AMOUNT">MONETARY_AMOUNT (money)</option>
         </select>
       </div>
       <button type="submit">Query database</button>
@@ -149,6 +151,18 @@ HTML = r"""<!doctype html>
         </div>
       </div>
     </div>
+    <div id="money-context" class="date-context" hidden>
+      <div class="hint" style="margin-top:0;margin-bottom:10px">Money controls are optional. Currency is never required; leave these fields automatic for number-only amounts.</div>
+      <div class="date-context-grid">
+        <div><label for="money-locale">Locale</label><input id="money-locale" placeholder="e.g. en-US or ar-SA" autocomplete="off"></div>
+        <div><label for="money-currency">Currency hint</label><input id="money-currency" placeholder="e.g. SAR or EGP" autocomplete="off"></div>
+        <div><label for="money-scale">External scale</label><input id="money-scale" placeholder="e.g. thousand" autocomplete="off"></div>
+        <div><label for="threshold-operator">Threshold operator</label><select id="threshold-operator"><option value="">None</option><option value=">">&gt;</option><option value=">=">&gt;=</option><option value="&lt;">&lt;</option><option value="&lt;=">&lt;=</option><option value="=">=</option><option value="!=">!=</option><option>BETWEEN</option><option>OUTSIDE_RANGE</option></select></div>
+        <div><label for="threshold-value">Threshold value</label><input id="threshold-value" placeholder="e.g. 10000 or 1000,2000" autocomplete="off"></div>
+        <div><label for="threshold-currency">Threshold currency</label><input id="threshold-currency" placeholder="e.g. SAR" autocomplete="off"></div>
+      </div>
+      <label style="display:flex;align-items:center;gap:8px;margin-top:10px"><input id="same-unit-context" type="checkbox" style="width:auto"> Trusted same-unit context when only one side has currency</label>
+    </div>
     <div class="hint">The input language is detected automatically. Review-only matches appear as labeled previews and remain gated for production. This tool does not pseudonymize or select a disclosure policy.</div>
   </section>
 
@@ -157,6 +171,8 @@ HTML = r"""<!doctype html>
     <div class="panel" id="summary"></div>
     <h2>Final decision</h2>
     <div class="panel" id="final-decision"></div>
+    <h2 id="money-heading" style="display:none">Monetary interpretation and representations</h2>
+    <div id="money-result"></div>
     <h2>Candidate chain</h2>
     <div id="candidates"></div>
     <h2 id="aggregate-heading" style="display:none">Generalization from common matched hierarchy</h2>
@@ -177,12 +193,16 @@ const suggestionHeading = document.getElementById('suggestion-heading');
 const suggestions = document.getElementById('suggestions');
 const typeSelect = document.getElementById('type');
 const dateContext = document.getElementById('date-context');
+const moneyContext = document.getElementById('money-context');
+const moneyHeading = document.getElementById('money-heading');
+const moneyResult = document.getElementById('money-result');
 const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const json = value => esc(JSON.stringify(value ?? {}, null, 2));
 const cls = status => String(status || '').toLowerCase().replace(/[^a-z]/g, '');
 
 function syncDateContext() {
   dateContext.hidden = typeSelect.value !== 'DATE';
+  moneyContext.hidden = typeSelect.value !== 'MONETARY_AMOUNT';
 }
 
 typeSelect.addEventListener('change', syncDateContext);
@@ -207,7 +227,7 @@ function renderFinalDecision(data) {
   const why = (decision.why || []).map(item => `<li>${esc(item)}</li>`).join('');
   const path = (decision.path || []).map(item => `${esc(item.level_code)}${item.representation ? `: ${esc(item.representation)}` : ''}`).join(' â†’ ');
   const selected = decision.selected_candidate || {};
-  const actionClass = action === 'GENERALIZE' ? 'generalize' : action === 'GENERALIZE_PREVIEW' ? 'preview' : 'pseudonymize';
+  const actionClass = action === 'GENERALIZE' ? 'generalize' : action === 'GENERALIZE_PREVIEW' || action === 'OPTIONS_ONLY' ? 'preview' : 'pseudonymize';
   finalDecision.innerHTML = `<div class="status"><span class="badge ${actionClass}">${esc(action)}</span><span class="badge">${esc(decision.reason_code)}</span>${decision.preview_only ? '<span class="badge review">NEEDS REVIEW</span>' : ''}</div>`
     + `<div class="grid">${field('Final response', decision.final_response)}${field('English response', selected.label_en)}${field('Arabic response', selected.label_ar)}${field('Production action', decision.production_action)}${field('Match method', decision.match_method)}${field('Common ancestor', decision.common_ancestor)}${field('Matched values', decision.matched_count)}</div>`
     + `<div class="meta"><strong>Why</strong><ul>${why}</ul></div>`
@@ -219,6 +239,16 @@ function renderFinalDecision(data) {
 function render(data) {
   result.style.display = 'block';
   renderFinalDecision(data);
+  moneyHeading.style.display = data.monetary_result ? 'block' : 'none';
+  if (data.monetary_result) {
+    const money = data.monetary_result;
+    const interpretation = money.interpretation || {};
+    const reps = money.representations || {};
+    const representation = (label, item) => `<article class="candidate"><div class="candidate-head"><div><div class="candidate-title">${esc(label)}</div></div><span class="badge">${esc(item.status || 'UNKNOWN')}</span></div><div class="grid">${field('English', item.en)}${field('Arabic', item.ar)}${field('Reason', item.reason)}</div><details><summary>Representation details</summary><pre>${json(item)}</pre></details></article>`;
+    moneyResult.innerHTML = `<div class="panel"><div class="grid">${field('Interpretation status', interpretation.status)}${field('Pattern', interpretation.pattern)}${field('Qualifier', interpretation.qualifier)}${field('Normalized amount', interpretation.normalized_amount)}${field('Lower bound', interpretation.normalized_lower)}${field('Upper bound', interpretation.normalized_upper)}${field('Currency', interpretation.currency || 'Unspecified')}</div><div class="meta"><strong>All representation options</strong></div>${representation('Range-based', reps.range_based || {})}${representation('Order of magnitude', reps.order_of_magnitude || {})}${representation('Task-aware threshold', reps.task_aware_threshold || {})}<details><summary>Monetary interpretation details</summary><pre>${json(money)}</pre></details></div>`;
+  } else {
+    moneyResult.innerHTML = '';
+  }
   const status = data.resolution_status || 'UNKNOWN';
     summary.innerHTML = `<div class="status"><span class="badge ${cls(status)}">${esc(status)}</span>${data.match_status ? `<span class="badge ${cls(data.match_status)}">${esc(data.match_status)}</span>` : ''}${data.reason_code ? `<span class="badge">${esc(data.reason_code)}</span>` : ''}</div>`
     + `<div class="grid">${field('Entity type', data.entity_type)}${field('Source entity kind', data.source_entity_type)}${field('Canonical ID', data.canonical_id)}${field('Candidates', (data.candidates || []).length)}</div>`
@@ -255,6 +285,17 @@ form.addEventListener('submit', async event => {
       two_digit_year_base: document.getElementById('two-digit-year-base').value.trim(),
     };
     Object.entries(dateFields).forEach(([key, fieldValue]) => { if (fieldValue) params.set(key, fieldValue); });
+  } else if (type === 'MONETARY_AMOUNT') {
+    const moneyFields = {
+      money_locale: document.getElementById('money-locale').value.trim(),
+      money_currency: document.getElementById('money-currency').value.trim(),
+      money_scale: document.getElementById('money-scale').value.trim(),
+      threshold_operator: document.getElementById('threshold-operator').value,
+      threshold_value: document.getElementById('threshold-value').value.trim(),
+      threshold_currency: document.getElementById('threshold-currency').value.trim(),
+      same_unit_context: document.getElementById('same-unit-context').checked ? '1' : '',
+    };
+    Object.entries(moneyFields).forEach(([key, fieldValue]) => { if (fieldValue) params.set(key, fieldValue); });
   }
   summary.innerHTML = '<div class="empty">Querying the local database…</div>';
   finalDecision.innerHTML = '<div class="empty">Calculating the final deterministic decision...</div>';
@@ -905,6 +946,34 @@ def _date_detection_payload(value: str, context: dict) -> dict:
     }
 
 
+def _money_context(params: dict[str, list[str]]) -> tuple[dict, dict | None]:
+    context = {}
+    for parameter, field in (("money_locale", "locale"), ("money_currency", "currency"), ("money_scale", "scale")):
+        value = params.get(parameter, [""])[0].strip()
+        if value:
+            context[field] = value
+    operator = params.get("threshold_operator", [""])[0].strip()
+    threshold_value = params.get("threshold_value", [""])[0].strip()
+    threshold_currency = params.get("threshold_currency", [""])[0].strip()
+    if not operator and not threshold_value:
+        return context, None
+    if not operator or not threshold_value:
+        raise ValueError("Provide both a threshold operator and threshold value")
+    if operator in {"BETWEEN", "OUTSIDE_RANGE"}:
+        bounds = [part.strip() for part in re.split(r"[,;]|\s+to\s+", threshold_value, maxsplit=1) if part.strip()]
+        if len(bounds) != 2:
+            raise ValueError("BETWEEN thresholds require two values, such as 1000,2000")
+        threshold: object = bounds
+    else:
+        threshold = threshold_value
+    return context, {
+        "operator": operator,
+        "threshold": threshold,
+        "threshold_currency": threshold_currency or None,
+        "same_unit_context": params.get("same_unit_context", [""])[0] == "1",
+    }
+
+
 class Handler(BaseHTTPRequestHandler):
     db_path: Path
 
@@ -934,7 +1003,43 @@ class Handler(BaseHTTPRequestHandler):
                 self._send(json.dumps({"error": "Output language must be ar or en."}).encode(), "application/json", 400)
                 return
             try:
-                context = _date_context(params) if entity_type == "DATE" else {}
+                money_result = None
+                if entity_type == "DATE":
+                    context = _date_context(params)
+                elif entity_type == "MONETARY_AMOUNT":
+                    context, threshold_spec = _money_context(params)
+                    money_result = interpret_and_generalize_money(value, context=context, threshold_spec=threshold_spec)
+                else:
+                    context = {}
+                if money_result is not None:
+                    payload = {
+                        "entity_type": "MONETARY_AMOUNT",
+                        "resolution_status": money_result["interpretation"].get("status"),
+                        "reason_code": money_result["interpretation"].get("status"),
+                        "canonical_id": None,
+                        "selected_candidate": None,
+                        "candidates": [],
+                        "input_language": language,
+                        "monetary_result": money_result,
+                        "substring_search_performed": False,
+                        "substring_suggestions": [],
+                        "final_decision": {
+                            "action": "OPTIONS_ONLY",
+                            "final_response": None,
+                            "reason_code": "MONETARY_REPRESENTATIONS_RETURNED",
+                            "match_method": "INTERPRETATION_ONLY",
+                            "production_action": "NOT_SELECTED",
+                            "why": [
+                                "The value was interpreted as a known monetary entity.",
+                                "All three representations are returned without choosing one.",
+                                "JEV or a later policy component must select the representation.",
+                            ],
+                            "path": [],
+                            "matched_count": 0,
+                        },
+                    }
+                    self._send(json.dumps(payload, ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8")
+                    return
                 payload = GeneralizationDB(self.db_path).get_candidates(entity_type, value, "en", context=context, include_review_candidates=include_review, input_language=language)
                 payload["input_language"] = language
                 if entity_type == "DATE":

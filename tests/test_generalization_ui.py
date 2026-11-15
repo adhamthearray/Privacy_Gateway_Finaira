@@ -107,6 +107,22 @@ def test_ui_uses_one_job_title_selection_for_job_titles_and_occupations():
     assert '<option>OCCUPATION</option>' not in HTML
 
 
+def test_ui_exposes_monetary_interpretation_and_all_three_options():
+    assert 'value="MONETARY_AMOUNT">MONETARY_AMOUNT (money)' in HTML
+    assert 'id="money-locale"' in HTML
+    assert 'id="threshold-operator"' in HTML
+    result = _query_ui({"value": "١٢٫٥ ألف", "type": "MONETARY_AMOUNT"})
+    money = result["monetary_result"]
+    assert result["entity_type"] == "MONETARY_AMOUNT"
+    assert money["interpretation"]["normalized_amount"] == "12500"
+    assert money["representations"]["range_based"]["status"] == "AVAILABLE"
+    assert money["representations"]["order_of_magnitude"]["en"] == "Tens of thousands"
+    assert money["representations"]["task_aware_threshold"]["status"] == "REQUIRES_THRESHOLD"
+    assert result["final_decision"]["action"] == "OPTIONS_ONLY"
+    threshold = _query_ui({"value": "12500 SAR", "type": "MONETARY_AMOUNT", "threshold_operator": ">", "threshold_value": "10000", "threshold_currency": "SAR"})
+    assert threshold["monetary_result"]["representations"]["task_aware_threshold"]["status"] == "TRUE"
+
+
 def test_ui_detects_input_language_and_returns_bilingual_nationality_labels():
     result = _query_ui({"value": "سوري", "type": "NATIONALITY", "language": "en"})
     assert result["input_language"] == "ar"
