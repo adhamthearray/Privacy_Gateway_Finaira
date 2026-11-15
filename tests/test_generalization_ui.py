@@ -91,6 +91,11 @@ def test_ui_uses_one_corporation_selection_for_banks_universities_and_companies(
     assert university["source_entity_type"] == "UNIVERSITY"
 
 
+def test_ui_uses_one_job_title_selection_for_job_titles_and_occupations():
+    assert 'value="JOB_TITLE">JOB_TITLE (job titles and occupations)' in HTML
+    assert '<option>OCCUPATION</option>' not in HTML
+
+
 def test_ui_detects_input_language_and_returns_bilingual_nationality_labels():
     result = _query_ui({"value": "سوري", "type": "NATIONALITY", "language": "en"})
     assert result["input_language"] == "ar"

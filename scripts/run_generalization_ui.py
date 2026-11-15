@@ -107,7 +107,7 @@ HTML = r"""<!doctype html>
       <div>
         <label for="type">Entity type</label>
         <select id="type" name="type">
-          <option>JOB_TITLE</option><option>OCCUPATION</option><option>COUNTRY</option>
+          <option value="JOB_TITLE">JOB_TITLE (job titles and occupations)</option><option>COUNTRY</option>
           <option>NATIONALITY</option><option value="CORPORATION">CORPORATION (banks, universities, organizations)</option>
           <option>GOVERNMENT_ENTITY</option>
           <option>AGE</option><option>DATE</option>
