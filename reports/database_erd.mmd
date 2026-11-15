@@ -276,6 +276,27 @@ erDiagram
         VARCHAR(40) review_date
         TEXT notes
     }
+    corporation_aliases {
+        VARCHAR(160) alias_id PK
+        VARCHAR(160) corporation_id
+        VARCHAR(30) source_entity_type
+        VARCHAR(80) source_entity_id
+        TEXT alias_text
+        TEXT normalized_alias
+        VARCHAR(2) language
+        VARCHAR(60) verification_status
+        BOOLEAN enabled_for_lookup
+        INTEGER source_id
+    }
+    corporation_entities {
+        VARCHAR(160) corporation_id PK
+        VARCHAR(30) source_entity_type
+        VARCHAR(80) source_entity_id
+        TEXT name_en
+        TEXT name_ar
+        VARCHAR(60) verification_status
+        INTEGER source_id
+    }
     countries {
         VARCHAR(2) iso2 PK
         TEXT country_ar
@@ -668,6 +689,9 @@ erDiagram
     generalization_candidates ||--o{ candidate_metadata : "candidate_id"
     generalization_candidates ||--o{ candidate_provenance : "candidate_id"
     data_sources ||--o{ candidate_provenance : "source_id"
+    corporation_entities ||--o{ corporation_aliases : "corporation_id"
+    data_sources ||--o{ corporation_aliases : "source_id"
+    data_sources ||--o{ corporation_entities : "source_id"
     countries ||--o{ country_m49_links : "iso2"
     m49_regions ||--o{ country_m49_links : "subregion_code"
     m49_regions ||--o{ country_m49_links : "region_code"

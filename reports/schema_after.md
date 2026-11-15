@@ -402,6 +402,41 @@ Rows: 8609
 
 Indexes: ix_candidate_provenance_candidate_id
 
+## `corporation_aliases`
+
+Rows: 2135
+
+| Column | Type | Key | Nullable | References | Purpose |
+|---|---|---|---|---|---|
+| alias_id | VARCHAR(160) | PK | NO |  | Persisted Finaira reference data or layered metadata for `corporation_aliases`. |
+| corporation_id | VARCHAR(160) |  | NO | corporation_entities.corporation_id | Persisted Finaira reference data or layered metadata for `corporation_aliases`. |
+| source_entity_type | VARCHAR(30) |  | NO |  | Persisted Finaira reference data or layered metadata for `corporation_aliases`. |
+| source_entity_id | VARCHAR(80) |  | NO |  | Persisted Finaira reference data or layered metadata for `corporation_aliases`. |
+| alias_text | TEXT |  | NO |  | Persisted Finaira reference data or layered metadata for `corporation_aliases`. |
+| normalized_alias | TEXT |  | NO |  | Persisted Finaira reference data or layered metadata for `corporation_aliases`. |
+| language | VARCHAR(2) |  | NO |  | Persisted Finaira reference data or layered metadata for `corporation_aliases`. |
+| verification_status | VARCHAR(60) |  | NO |  | Persisted Finaira reference data or layered metadata for `corporation_aliases`. |
+| enabled_for_lookup | BOOLEAN |  | NO |  | Persisted Finaira reference data or layered metadata for `corporation_aliases`. |
+| source_id | INTEGER |  | NO | data_sources.source_id | Persisted Finaira reference data or layered metadata for `corporation_aliases`. |
+
+Indexes: ix_corporation_aliases_corporation_id, ix_corporation_aliases_enabled_for_lookup, ix_corporation_aliases_language, ix_corporation_aliases_normalized_alias, ix_corporation_aliases_source_entity_id, ix_corporation_aliases_source_entity_type, ix_corporation_aliases_verification_status
+
+## `corporation_entities`
+
+Rows: 614
+
+| Column | Type | Key | Nullable | References | Purpose |
+|---|---|---|---|---|---|
+| corporation_id | VARCHAR(160) | PK | NO |  | Persisted Finaira reference data or layered metadata for `corporation_entities`. |
+| source_entity_type | VARCHAR(30) |  | NO |  | Persisted Finaira reference data or layered metadata for `corporation_entities`. |
+| source_entity_id | VARCHAR(80) |  | NO |  | Persisted Finaira reference data or layered metadata for `corporation_entities`. |
+| name_en | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `corporation_entities`. |
+| name_ar | TEXT |  | YES |  | Persisted Finaira reference data or layered metadata for `corporation_entities`. |
+| verification_status | VARCHAR(60) |  | NO |  | Persisted Finaira reference data or layered metadata for `corporation_entities`. |
+| source_id | INTEGER |  | NO | data_sources.source_id | Persisted Finaira reference data or layered metadata for `corporation_entities`. |
+
+Indexes: ix_corporation_entities_source_entity_id, ix_corporation_entities_source_entity_type, ix_corporation_entities_verification_status
+
 ## `countries`
 
 Rows: 248
@@ -798,7 +833,7 @@ Indexes: ix_nationality_countries_iso2
 
 ## `nationality_deduplications`
 
-Rows: 7
+Rows: 20
 
 | Column | Type | Key | Nullable | References | Purpose |
 |---|---|---|---|---|---|

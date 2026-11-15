@@ -75,8 +75,12 @@ class GeneralizationDB:
 
     def get_candidates(self, entity_type, value, output_language="en", context=None, include_review_candidates=False, input_language=None):
         et = entity_type.upper()
+        requested_type = et
         lang = output_language.lower()
-        query_lang = (input_language or lang).lower()
+        # If the caller did not explicitly provide an input language, detect
+        # Arabic from the query itself.  Output language controls labels only;
+        # it must not make an Arabic alias query search the English index.
+        query_lang = (input_language or ("ar" if re.search(r"[\u0600-\u06ff]", value or "") else lang)).lower()
         context = context or {}
         # The public taxonomy has one organization-like runtime type.  Keep
         # accepting legacy/source labels for compatibility, but resolve them
@@ -98,15 +102,52 @@ class GeneralizationDB:
             if et == "NATIONALITY":
                 return self._nationality(session, value, lang, query_lang)
             if et == "BANK":
-                return self._bank(session, value, lang, include_review_candidates, query_lang)
+                return self._corporationize_bank_result(self._bank(session, value, lang, include_review_candidates, query_lang), lang)
             if et == "CORPORATION":
-                return self._organization(session, et, value, lang, include_review_candidates, query_lang)
+                return self._organization(session, et, value, lang, include_review_candidates, query_lang, requested_type)
             if et == "GOVERNMENT_ENTITY":
                 return self._government(session, value, lang, include_review_candidates, query_lang)
         return self._result(et, "UNSUPPORTED_ENTITY_TYPE", None, [], "UNSUPPORTED_ENTITY_TYPE")
 
     def _result(self, entity_type, status, canonical_id, candidates, reason=None):
         return {"entity_type": entity_type, "resolution_status": status, "reason_code": reason, "canonical_id": canonical_id, "selected_candidate": None, "candidates": candidates}
+
+    def _corporationize_bank_result(self, result, lang):
+        """Expose bank results in the unified CORPORATION runtime domain."""
+        generic = _candidate_dict(
+            candidate_id=stable_id("CORPORATION", "GENERIC"),
+            level_code="CORPORATION_GENERIC",
+            rank=max((item.get("specificity_rank", 0) for item in result.get("candidates", []) if not item.get("is_suppression")), default=0) + 1,
+            label_en="Corporation",
+            label_ar="شركة",
+            language=lang,
+            taxonomy="FINAIR_CORPORATION",
+            taxonomy_code=None,
+            source="Finaira corporation taxonomy",
+            verification_status="CONFIGURED",
+            provenance={"canonical_entity_type": "CORPORATION", "source_entity_type": "BANK"},
+            extra={"disclosure_approved": False, "fallback_only": True},
+        )
+        candidates = [item for item in result.get("candidates", []) if item.get("level_code") != "CORPORATION_GENERIC"]
+        suppression = [item for item in candidates if item.get("is_suppression")]
+        candidates = [item for item in candidates if not item.get("is_suppression")]
+        candidates.append(generic)
+        for item in suppression:
+            item["specificity_rank"] = max(item.get("specificity_rank", 99), generic["specificity_rank"] + 1)
+            candidates.append(item)
+        for item in candidates:
+            provenance = dict(item.get("provenance") or {})
+            provenance.setdefault("canonical_entity_type", "CORPORATION")
+            provenance.setdefault("source_entity_type", "BANK")
+            item["provenance"] = provenance
+        result["entity_type"] = "CORPORATION"
+        result["source_entity_type"] = "BANK"
+        result["canonical_entity_type"] = "CORPORATION"
+        # Preserve the established bank candidate-chain order.  The unified
+        # corporation fallback is appended after the bank-specific layers;
+        # callers can still use specificity_rank for hierarchy traversal.
+        result["candidates"] = candidates
+        return result
 
     @staticmethod
     def _occupation_phrase_key(value, lang):
@@ -562,42 +603,59 @@ class GeneralizationDB:
         candidates.append(_candidate_dict(candidate_id=stable_id("BANK_FALLBACK", "SUPPRESSED"), level_code="SUPPRESSED", rank=2, label_en=None, label_ar=None, language=lang, taxonomy="FINAIR_BANK", taxonomy_code=None, source="Finaira taxonomy", verification_status="CONFIGURED", is_suppression=True))
         return self._result("BANK", status, None, candidates, reason)
 
-    def _organization(self, session, entity_type, value, lang, include_review, query_lang=None):
+    def _organization(self, session, entity_type, value, lang, include_review, query_lang=None, source_hint="CORPORATION"):
         query_lang = query_lang or lang
         rows = session.scalars(select(OrganizationAlias).where(OrganizationAlias.normalized_alias == normalize(value, query_lang), OrganizationAlias.language == query_lang, OrganizationAlias.enabled_for_lookup.is_(True))).all()
         ids = {row.organization_qid for row in rows}
         if len(ids) > 1:
-            return self._organization_fallback(entity_type, lang, "AMBIGUOUS", "ALIAS_COLLISION")
+            return self._organization_fallback(entity_type, lang, "AMBIGUOUS", "ALIAS_COLLISION", source_hint)
         if not ids:
-            return self._organization_fallback(entity_type, lang, "NOT_FOUND", "UNRECOGNIZED_ORGANIZATION")
+            return self._organization_fallback(entity_type, lang, "NOT_FOUND", "UNRECOGNIZED_ORGANIZATION", source_hint)
         qid = next(iter(ids))
         org = session.get(Organization, qid)
         if session.scalar(select(OrganizationExclusion.exclusion_id).where(OrganizationExclusion.organization_qid == qid)):
-            return self._organization_fallback(entity_type, lang, "EXCLUDED", "EXCLUDED_ORGANIZATION")
-        # Source rows may retain their original semantic kind in review_flags,
-        # but the runtime taxonomy is deliberately CORPORATION for every
-        # organization-like record.
-        kind = "CORPORATION"
+            return self._organization_fallback(entity_type, lang, "EXCLUDED", "EXCLUDED_ORGANIZATION", source_hint)
+        # Source rows retain their original semantic kind in review_flags,
+        # while the runtime taxonomy is deliberately CORPORATION.
+        match = re.search(r"source_semantic_kind=([A-Z_]+)", org.review_flags or "")
+        source_kind = match.group(1) if match else ("UNIVERSITY" if source_hint == "UNIVERSITY" else "CORPORATION")
+        if source_kind not in {"UNIVERSITY", "CORPORATION"}:
+            source_kind = "CORPORATION"
         label_en = org.name_en or "Company"
         label_ar = org.name_ar
         source = self._source(session, org.source_id)
         verified_identity = org.identity_verification_status in {"VERIFIED", "APPROVED", "OFFICIAL"} and org.import_decision in {"VERIFIED", "APPROVED"}
         status = "MATCHED" if verified_identity else "REVIEW_ONLY"
-        candidates = [_candidate_dict(candidate_id=stable_id("ORG", qid, "EXACT"), level_code="EXACT", rank=0, label_en=label_en, label_ar=label_ar, language=lang, taxonomy="WIKIDATA_ORGANIZATION", taxonomy_code=qid, source=source, verification_status=org.identity_verification_status, is_exact=True, is_local_only=True, provenance={"source": source, "import_decision": org.import_decision, "review_flags": org.review_flags, "canonical_entity_type": "CORPORATION", "source_semantic_kind": org.semantic_kind})]
-        generic = ("ORGANIZATION_GENERIC", "Company", "شركة")
-        candidates.append(_candidate_dict(candidate_id=stable_id("ORG", kind, "GENERIC"), level_code=generic[0], rank=1, label_en=generic[1], label_ar=generic[2], language=lang, taxonomy="FINAIR_ORGANIZATION", taxonomy_code=None, source="Finaira taxonomy", verification_status="CONFIGURED"))
+        candidates = [_candidate_dict(candidate_id=stable_id("ORG", qid, "EXACT"), level_code="EXACT", rank=0, label_en=label_en, label_ar=label_ar, language=lang, taxonomy="WIKIDATA_ORGANIZATION", taxonomy_code=qid, source=source, verification_status=org.identity_verification_status, is_exact=True, is_local_only=True, provenance={"source": source, "import_decision": org.import_decision, "review_flags": org.review_flags, "canonical_entity_type": "CORPORATION", "source_entity_type": source_kind})]
+        if source_kind == "UNIVERSITY":
+            candidates.append(_candidate_dict(candidate_id=stable_id("CORPORATION", "UNIVERSITY_GENERIC"), level_code="UNIVERSITY_GENERIC", rank=1, label_en="University", label_ar="جامعة", language=lang, taxonomy="FINAIR_CORPORATION", taxonomy_code=None, source="Finaira corporation taxonomy", verification_status="CONFIGURED", provenance={"canonical_entity_type": "CORPORATION", "source_entity_type": "UNIVERSITY"}))
+            candidates.append(_candidate_dict(candidate_id=stable_id("CORPORATION", "GENERIC"), level_code="CORPORATION_GENERIC", rank=2, label_en="Corporation", label_ar="شركة", language=lang, taxonomy="FINAIR_CORPORATION", taxonomy_code=None, source="Finaira corporation taxonomy", verification_status="CONFIGURED", provenance={"canonical_entity_type": "CORPORATION", "source_entity_type": "UNIVERSITY"}))
+        else:
+            candidates.append(_candidate_dict(candidate_id=stable_id("CORPORATION", "GENERIC"), level_code="CORPORATION_GENERIC", rank=1, label_en="Corporation", label_ar="شركة", language=lang, taxonomy="FINAIR_CORPORATION", taxonomy_code=None, source="Finaira corporation taxonomy", verification_status="CONFIGURED", provenance={"canonical_entity_type": "CORPORATION", "source_entity_type": "CORPORATION"}))
         for link in session.scalars(select(OrganizationIndustry).where(OrganizationIndustry.organization_qid == qid)).all():
             mapping = session.get(IndustryQIDMapping, link.mapping_id) if link.mapping_id else None
             industry_verified = verified_identity and link.verification_status in {"VERIFIED", "APPROVED"} and mapping is not None and mapping.review_status in {"VERIFIED", "APPROVED"}
             if mapping is not None and (industry_verified or include_review):
-                candidates.append(_candidate_dict(candidate_id=stable_id("ORG", qid, link.link_id), level_code=link.subcategory_code or link.sector_code or "INDUSTRY", rank=2, label_en=mapping.subcategory_label_en, label_ar=mapping.subcategory_label_ar, language=lang, taxonomy="FINAIR_INDUSTRY", taxonomy_code=link.subcategory_code or link.sector_code, source=self._source(session, mapping.source_id), verification_status="VERIFIED" if industry_verified else "REVIEW_ONLY", dimension="INDUSTRY", provenance={"source": self._source(session, mapping.source_id), "organization_industry_status": link.verification_status, "mapping_status": mapping.review_status}, extra={"review_only": not industry_verified}))
+                candidates.append(_candidate_dict(candidate_id=stable_id("ORG", qid, link.link_id), level_code=link.subcategory_code or link.sector_code or "INDUSTRY", rank=3 if source_kind == "UNIVERSITY" else 2, label_en=mapping.subcategory_label_en, label_ar=mapping.subcategory_label_ar, language=lang, taxonomy="FINAIR_INDUSTRY", taxonomy_code=link.subcategory_code or link.sector_code, source=self._source(session, mapping.source_id), verification_status="VERIFIED" if industry_verified else "REVIEW_ONLY", dimension="INDUSTRY", provenance={"source": self._source(session, mapping.source_id), "organization_industry_status": link.verification_status, "mapping_status": mapping.review_status}, extra={"review_only": not industry_verified}))
         candidates.append(_candidate_dict(candidate_id=stable_id("ORG", qid, "SUPPRESSED"), level_code="SUPPRESSED", rank=99, label_en=None, label_ar=None, language=lang, taxonomy="FINAIR_ORGANIZATION", taxonomy_code=None, source="Finaira taxonomy", verification_status="CONFIGURED", is_suppression=True))
-        return self._result(entity_type, status, qid, sorted(candidates, key=lambda row: (row["specificity_rank"], row["candidate_id"])))
+        result = self._result("CORPORATION", status, qid, sorted(candidates, key=lambda row: (row["specificity_rank"], row["candidate_id"])))
+        result["source_entity_type"] = source_kind
+        result["canonical_entity_type"] = "CORPORATION"
+        return result
 
-    def _organization_fallback(self, entity_type, lang, status, reason):
-        code, en, ar = "ORGANIZATION_GENERIC", "Company", "شركة"
-        candidates = [_candidate_dict(candidate_id=stable_id("ORG_FALLBACK", code), level_code=code, rank=0, label_en=en, label_ar=ar, language=lang, taxonomy="FINAIR_ORGANIZATION", taxonomy_code=None, source="Finaira taxonomy", verification_status="CONFIGURED"), _candidate_dict(candidate_id=stable_id("ORG_FALLBACK", "SUPPRESSED"), level_code="SUPPRESSED", rank=1, label_en=None, label_ar=None, language=lang, taxonomy="FINAIR_ORGANIZATION", taxonomy_code=None, source="Finaira taxonomy", verification_status="CONFIGURED", is_suppression=True)]
-        return self._result("CORPORATION", status, None, candidates, reason)
+    def _organization_fallback(self, entity_type, lang, status, reason, source_hint="CORPORATION"):
+        if source_hint == "UNIVERSITY":
+            candidates = [
+                _candidate_dict(candidate_id=stable_id("CORPORATION", "UNIVERSITY_GENERIC"), level_code="UNIVERSITY_GENERIC", rank=0, label_en="University", label_ar="جامعة", language=lang, taxonomy="FINAIR_CORPORATION", taxonomy_code=None, source="Finaira corporation taxonomy", verification_status="CONFIGURED", provenance={"canonical_entity_type": "CORPORATION", "source_entity_type": "UNIVERSITY"}),
+                _candidate_dict(candidate_id=stable_id("CORPORATION", "GENERIC"), level_code="CORPORATION_GENERIC", rank=1, label_en="Corporation", label_ar="شركة", language=lang, taxonomy="FINAIR_CORPORATION", taxonomy_code=None, source="Finaira corporation taxonomy", verification_status="CONFIGURED", provenance={"canonical_entity_type": "CORPORATION", "source_entity_type": "UNIVERSITY"}),
+            ]
+        else:
+            candidates = [_candidate_dict(candidate_id=stable_id("CORPORATION", "GENERIC"), level_code="CORPORATION_GENERIC", rank=0, label_en="Corporation", label_ar="شركة", language=lang, taxonomy="FINAIR_CORPORATION", taxonomy_code=None, source="Finaira corporation taxonomy", verification_status="CONFIGURED", provenance={"canonical_entity_type": "CORPORATION", "source_entity_type": "CORPORATION"})]
+        candidates.append(_candidate_dict(candidate_id=stable_id("CORPORATION", "SUPPRESSED"), level_code="SUPPRESSED", rank=len(candidates), label_en=None, label_ar=None, language=lang, taxonomy="FINAIR_CORPORATION", taxonomy_code=None, source="Finaira corporation taxonomy", verification_status="CONFIGURED", is_suppression=True))
+        result = self._result("CORPORATION", status, None, candidates, reason)
+        result["source_entity_type"] = "UNIVERSITY" if source_hint == "UNIVERSITY" else "CORPORATION"
+        result["canonical_entity_type"] = "CORPORATION"
+        return result
 
     def _government(self, session, value, lang, include_review, query_lang=None):
         query_lang = query_lang or lang

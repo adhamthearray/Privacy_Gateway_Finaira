@@ -217,8 +217,8 @@ function render(data) {
   result.style.display = 'block';
   renderFinalDecision(data);
   const status = data.resolution_status || 'UNKNOWN';
-  summary.innerHTML = `<div class="status"><span class="badge ${cls(status)}">${esc(status)}</span>${data.match_status ? `<span class="badge ${cls(data.match_status)}">${esc(data.match_status)}</span>` : ''}${data.reason_code ? `<span class="badge">${esc(data.reason_code)}</span>` : ''}</div>`
-    + `<div class="grid">${field('Entity type', data.entity_type)}${field('Canonical ID', data.canonical_id)}${field('Candidates', (data.candidates || []).length)}</div>`
+    summary.innerHTML = `<div class="status"><span class="badge ${cls(status)}">${esc(status)}</span>${data.match_status ? `<span class="badge ${cls(data.match_status)}">${esc(data.match_status)}</span>` : ''}${data.reason_code ? `<span class="badge">${esc(data.reason_code)}</span>` : ''}</div>`
+    + `<div class="grid">${field('Entity type', data.entity_type)}${field('Source entity kind', data.source_entity_type)}${field('Canonical ID', data.canonical_id)}${field('Candidates', (data.candidates || []).length)}</div>`
     + (data.date_detection ? `<details><summary>Date detection details</summary><div class="grid">${field('Detector status', data.date_detection.status)}${field('Calendar', data.date_detection.calendar)}${field('Precision', data.date_detection.precision)}${field('Format family', data.date_detection.format_family)}${field('Detected date', data.date_detection.date_iso)}${field('Confidence', data.date_detection.confidence)}${field('Time', data.date_detection.time_text)}${field('Timezone', data.date_detection.timezone_text)}</div><pre>${json(data.date_detection)}</pre></details>` : '');
   const rows = data.candidates || [];
   if (!rows.length) { candidates.innerHTML = '<div class="empty">No candidates returned.</div>'; return; }
@@ -791,7 +791,7 @@ def final_decision(db_path: Path, entity_type: str, value: str, language: str, p
     if payload.get("resolution_status") == "REVIEW_ONLY":
         direct_candidate = next((item for item in payload.get("candidates", []) if item.get("is_exact") and not item.get("is_suppression")), None)
         if direct_candidate:
-            entity = payload.get("entity_type") or "entity"
+            entity = payload.get("source_entity_type") or payload.get("entity_type") or "entity"
             gate = "the banking model/generalization form" if entity == "BANK" else "the identity or supporting classification"
             priorities = {
                 "FINANCE_MODEL": 0,

@@ -113,7 +113,7 @@ def test_ui_review_only_corporation_explains_direct_match_gate():
     assert result["final_decision"]["action"] == "GENERALIZE_PREVIEW"
     assert result["final_decision"]["reason_code"] == "DIRECT_MATCH_REVIEW_PREVIEW"
     assert result["final_decision"]["match_method"] == "DIRECT_MATCH_REVIEW_PREVIEW"
-    assert result["final_decision"]["final_response"] == "Company"
+    assert result["final_decision"]["final_response"] == "University"
     assert result["final_decision"]["production_action"] == "PSEUDONYMIZE_REQUIRED"
     assert result["final_decision"]["matched_count"] == 1
 

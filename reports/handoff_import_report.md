@@ -34,3 +34,5 @@
 - **government_user_approved_aliases**: 24
 - **government_review_candidates**: 63
 - **government_review_queue**: 12
+- **corporation_entities**: 614
+- **corporation_aliases**: 2135

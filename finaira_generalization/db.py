@@ -586,6 +586,35 @@ class Organization(Base):
     source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
 
 
+class CorporationEntity(Base):
+    """Unified corporation-domain registry for corporations, universities, and banks."""
+    __tablename__ = "corporation_entities"
+    corporation_id: Mapped[str] = mapped_column(String(160), primary_key=True)
+    source_entity_type: Mapped[str] = mapped_column(String(30), index=True)
+    source_entity_id: Mapped[str] = mapped_column(String(80), index=True)
+    name_en: Mapped[str | None] = mapped_column(Text)
+    name_ar: Mapped[str | None] = mapped_column(Text)
+    verification_status: Mapped[str] = mapped_column(String(60), index=True)
+    source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
+    __table_args__ = (UniqueConstraint("source_entity_type", "source_entity_id", name="uq_corporation_source_entity"),)
+
+
+class CorporationAlias(Base):
+    """Unified lookup aliases while preserving the original source entity kind."""
+    __tablename__ = "corporation_aliases"
+    alias_id: Mapped[str] = mapped_column(String(160), primary_key=True)
+    corporation_id: Mapped[str] = mapped_column(ForeignKey("corporation_entities.corporation_id"), index=True)
+    source_entity_type: Mapped[str] = mapped_column(String(30), index=True)
+    source_entity_id: Mapped[str] = mapped_column(String(80), index=True)
+    alias_text: Mapped[str] = mapped_column(Text)
+    normalized_alias: Mapped[str] = mapped_column(Text, index=True)
+    language: Mapped[str] = mapped_column(String(2), index=True)
+    verification_status: Mapped[str] = mapped_column(String(60), index=True)
+    enabled_for_lookup: Mapped[bool] = mapped_column(Boolean, default=True, index=True)
+    source_id: Mapped[int] = mapped_column(ForeignKey("data_sources.source_id"))
+    __table_args__ = (UniqueConstraint("corporation_id", "normalized_alias", "language", name="uq_corporation_alias"),)
+
+
 class OrganizationAlias(Base):
     __tablename__ = "organization_aliases"
     alias_id: Mapped[str] = mapped_column(String(64), primary_key=True)

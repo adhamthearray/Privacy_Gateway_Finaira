@@ -1,6 +1,6 @@
 # Finaira generalization database
 
-Status: implemented and exercised locally on 2026-11-14. This layer is an offline, deterministic Arabic/English reference database. It returns all valid candidates and never selects one. The current NER-v1 coverage audit is in [reports/ner_v1_generalization](../reports/ner_v1_generalization); its `alias_review_queue.csv` is a review queue only and never promotes corpus text automatically. Historical integration notes and before/after comparisons are in [reports/generalization_coverage_improvement](../reports/generalization_coverage_improvement). NATIONALITY-specific review is documented in [reports/nationality_improvement](../reports/nationality_improvement).
+Status: implemented and exercised locally on 2026-11-15. This layer is an offline, deterministic Arabic/English reference database. It returns all valid candidates and never selects one. The current NER-v1 coverage audit is in [reports/ner_v1_generalization](../reports/ner_v1_generalization); its `alias_review_queue.csv` is a review queue only and never promotes corpus text automatically. Historical integration notes and before/after comparisons are in [reports/generalization_coverage_improvement](../reports/generalization_coverage_improvement). NATIONALITY-specific review is documented in [reports/nationality_improvement](../reports/nationality_improvement).
 
 ## Repository layout
 
@@ -46,6 +46,8 @@ The authoritative generated schema is [reports/database_schema.sql](../reports/d
 
 `data_sources(source_id PK, name UNIQUE, version, source_url, retrieved_at, license, checksum)`; `occupations(occupation_id PK, label_ar, label_en, isco_code, source_id FK, review_status)`; `occupation_aliases(alias_id PK, occupation_id FK, alias_text, normalized_alias, language, source_id FK, review_status)`; `isco_groups(isco_code PK, parent_code, level, label_ar, label_en, arabic_label_status)`; `nationality_aliases(alias_id PK, alias_text, normalized_alias, language, country_iso2, source_id FK, review_status)`; `countries(iso2 PK, legacy country/M49 labels and codes)`; `m49_regions(code PK, parent_code FK, level, labels)`; `country_m49_links(iso2 PK/FK, subregion_code FK, region_code FK)`; `age_bands`, `date_rules`, and their scheme bridge tables; `generalization_schemes`, `generalization_levels`, `generalization_candidates`, `candidate_metadata`, `candidate_provenance`, and typed occupation/nationality bridge tables; `build_metadata`.
 
+The SQLite file contains 59 tables. `corporation_entities` and `corporation_aliases` are the unified corporation-domain directory: banks and organization-directory rows (including universities) are materialized there with `source_entity_type` and `source_entity_id`, while the source-specific tables remain for evidence and review detail.
+
 The legacy M49 tables are historical compatibility data only. Active NATIONALITY retrieval uses `nationality_aliases_v2` → `nationality_geo_joins` → `natural_earth_countries`.
 
 ### Added handoff tables
@@ -74,6 +76,8 @@ The legacy M49 tables are historical compatibility data only. Active NATIONALITY
 | `bank_model_evidence_notes` | `note_id` | source-record FK, risk index | 14 |
 | `organizations` | `organization_qid` | `source_id`; status/kind indexes | 312 |
 | `organization_aliases` | `alias_id` | `organization_qid`, `source_id`; normalized alias/language indexes | 566 |
+| `corporation_entities` | `corporation_id` | `source_id`; source type and source ID indexes; unique source pair | 614 |
+| `corporation_aliases` | `alias_id` | `corporation_id`, source entity, source ID, normalized alias/language/status indexes | 2,135 |
 | `industry_categories` | `category_code` | self-FK `parent_code`, `source_id` | 64 (63 source + virtual root) |
 | `industry_qid_mappings` | `mapping_id` | `source_id`; QID/status/sector indexes | 73 |
 | `organization_industries` | `link_id` | organization and mapping FKs, `source_id`; bridge indexes | 360 |
@@ -129,6 +133,8 @@ erDiagram
   INDUSTRY_CATEGORIES ||--o{ INDUSTRY_CATEGORIES : parent_of
   ORGANIZATIONS ||--o{ ORGANIZATION_REVIEW_QUEUE : reviewed_in
   ORGANIZATIONS ||--o{ ORGANIZATION_EXCLUSIONS : excluded_by
+  DATA_SOURCES ||--o{ CORPORATION_ENTITIES : sources
+  CORPORATION_ENTITIES ||--o{ CORPORATION_ALIASES : has
   DATA_SOURCES ||--o{ GOVERNMENT_ENTITIES : sources
   GOVERNMENT_ENTITIES ||--o{ GOVERNMENT_ALIASES : has
   GOVERNMENT_ENTITIES ||--o{ GOVERNMENT_CANDIDATE_REVIEWS : catalogs
@@ -152,6 +158,7 @@ erDiagram
 | bank evidence CSV | `bank_evidence` | 24 evidence rows and 13 bank IDs |
 | bank aliases CSV | `bank_aliases` | old review source retained; only source-supported aliases enabled |
 | organization directory | `organizations`, aliases, industry bridge | all 312 use canonical `CORPORATION`; original UNIVERSITY/CORPORATION source kind is retained in `review_flags`; identities remain pending validation |
+| bank and organization directory materialization | `corporation_entities`, `corporation_aliases` | 302 banks plus 312 organization-directory rows share the corporation domain; aliases retain `BANK`, `UNIVERSITY`, or `CORPORATION` source kind and original source IDs |
 | taxonomy/mapping CSVs | `industry_categories`, `industry_qid_mappings` | 63 bilingual source categories + virtual root; mapping review state retained |
 | organization review/exclusion CSVs | review/exclusion tables | no source row is promoted to verified |
 | government seed/aliases/categories/catalog/review queue | government tables | all 12 identity rows remain review-only; narrow branches gated |
@@ -166,7 +173,15 @@ erDiagram
 
 `py -m finaira_generalization.cli import-handoff` performs a timestamped copy of the existing DB, creates additive tables, imports in one transaction, regenerates bank candidates, writes `reports/handoff_import_report.*`, and writes the full Natural Earth audit. A repeat import updates stable keys and leaves row counts unchanged. Failure rolls back the transaction.
 
-The runtime accepts `CORPORATION`, `ORGANIZATION`, and `UNIVERSITY` as compatible input labels and canonicalizes all three to `CORPORATION`. Organization-like exact candidates retain `source_semantic_kind` and source review flags in provenance. Industry candidates remain review-gated because the 312 identities are not production-verified.
+The runtime accepts `CORPORATION`, `ORGANIZATION`, and `UNIVERSITY` as compatible input labels and canonicalizes all three to `CORPORATION`. `BANK` also returns the canonical runtime entity type `CORPORATION`; `source_entity_type=BANK` remains in the result and candidate provenance. Organization-like exact candidates retain `source_semantic_kind` and source review flags in provenance. Industry candidates remain review-gated because the 312 identities are not production-verified.
+
+The layered corporation-domain hierarchy is deterministic:
+
+- A university resolves as exact university name → `UNIVERSITY_GENERIC` (`University` / `جامعة`) → `CORPORATION_GENERIC` (`Corporation` / `شركة`) → suppression. An unresolved `UNIVERSITY` query starts at the two generic levels.
+- A bank resolves as exact bank name → model-safe group when available → finance model (`Conventional bank`, `Mixed bank`, or `Islamic bank`, subject to its evidence gate) → banking institution → financial institution → `CORPORATION_GENERIC` → suppression. The model-safe and finance-model candidates preserve their existing verification and disclosure gates.
+- A generic corporation resolves as exact name → `CORPORATION_GENERIC` → suppression. Original source kind is never inferred from a name; it is copied from the source record or from the requested runtime type for a fallback.
+
+The final `CORPORATION_GENERIC` candidate is the broadest safe representation. Review-only exact identities and model-specific forms can be displayed as labeled previews, but their production action remains pseudonymization until the corresponding verification/disclosure gate is approved.
 
 `reports/bank_inventory.csv` is a database export containing one row per bank alias, including the bank classification, evidence status, language, alias kind, review status, and enabled-for-lookup flag.
 
@@ -366,6 +381,9 @@ Current integrated counts:
   1,483 normalized GCC aliases; 2 source duplicates were collapsed.
 - 266 audited classification rows, 5 Islamic-window parent relationships,
   and 1,510 bank candidates.
+- 614 unified corporation-domain entities: 302 bank source entities and 312
+  organization-directory entities, including university source kinds; 2,135
+  bilingual/source-preserving aliases.
 - Source model rows: 175 conventional, 43 Islamic, 5 Islamic windows, 4
   specialized/development, 16 unknown, 16 historical, and 7 not applicable.
 - Conservative licence status: 94 confirmed, 29 provisional, 40 requiring

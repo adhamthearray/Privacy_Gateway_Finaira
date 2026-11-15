@@ -47,6 +47,8 @@ from .db import (
     OrganizationExclusion,
     OrganizationIndustry,
     OrganizationReviewQueue,
+    CorporationAlias,
+    CorporationEntity,
     init_db,
 )
 from .natural_earth import extract_natural_earth_csv
@@ -677,6 +679,69 @@ def _import_government(session: Session, root: Path, metrics: dict):
     metrics.update({"government_entities": len(entity_rows), "government_categories": len(_read_csv(category_path)), "government_aliases": len(_read_csv(alias_path)), "government_user_approved_aliases": len(approval_rows), "government_review_candidates": len(_read_csv(candidate_path)), "government_review_queue": len(_read_csv(queue_path))})
 
 
+def _rebuild_corporation_directory(session: Session, metrics: dict):
+    """Materialize one corporation-domain registry over banks and organizations."""
+    session.execute(delete(CorporationAlias))
+    session.execute(delete(CorporationEntity))
+    entity_count = 0
+    alias_count = 0
+
+    for bank in session.scalars(select(Bank).order_by(Bank.bank_id)).all():
+        corporation_id = _stable("corporation-entity", "BANK", bank.bank_id)
+        _put(session, CorporationEntity, corporation_id, {
+            "source_entity_type": "BANK",
+            "source_entity_id": bank.bank_id,
+            "name_en": bank.name_en,
+            "name_ar": bank.name_ar,
+            "verification_status": bank.evidence_review_status or bank.evidence_status or "SOURCE_IMPORTED",
+            "source_id": bank.source_id,
+        })
+        entity_count += 1
+        for alias in session.scalars(select(BankAlias).where(BankAlias.bank_id == bank.bank_id).order_by(BankAlias.alias_id)).all():
+            _put(session, CorporationAlias, _stable("corporation-alias", corporation_id, alias.normalized_alias, alias.language), {
+                "corporation_id": corporation_id,
+                "source_entity_type": "BANK",
+                "source_entity_id": bank.bank_id,
+                "alias_text": alias.alias_text,
+                "normalized_alias": alias.normalized_alias,
+                "language": alias.language,
+                "verification_status": alias.review_status,
+                "enabled_for_lookup": alias.enabled_for_lookup,
+                "source_id": alias.source_id,
+            })
+            alias_count += 1
+
+    for organization in session.scalars(select(Organization).order_by(Organization.organization_qid)).all():
+        match = re.search(r"source_semantic_kind=([A-Z_]+)", organization.review_flags or "")
+        source_kind = match.group(1) if match else "CORPORATION"
+        if source_kind not in {"BANK", "UNIVERSITY", "CORPORATION"}:
+            source_kind = "CORPORATION"
+        corporation_id = _stable("corporation-entity", source_kind, organization.organization_qid)
+        _put(session, CorporationEntity, corporation_id, {
+            "source_entity_type": source_kind,
+            "source_entity_id": organization.organization_qid,
+            "name_en": organization.name_en,
+            "name_ar": organization.name_ar,
+            "verification_status": organization.identity_verification_status,
+            "source_id": organization.source_id,
+        })
+        entity_count += 1
+        for alias in session.scalars(select(OrganizationAlias).where(OrganizationAlias.organization_qid == organization.organization_qid).order_by(OrganizationAlias.alias_id)).all():
+            _put(session, CorporationAlias, _stable("corporation-alias", corporation_id, alias.normalized_alias, alias.language), {
+                "corporation_id": corporation_id,
+                "source_entity_type": source_kind,
+                "source_entity_id": organization.organization_qid,
+                "alias_text": alias.alias_text,
+                "normalized_alias": alias.normalized_alias,
+                "language": alias.language,
+                "verification_status": alias.verification_status,
+                "enabled_for_lookup": alias.enabled_for_lookup,
+                "source_id": alias.source_id,
+            })
+            alias_count += 1
+    metrics.update({"corporation_entities": entity_count, "corporation_aliases": alias_count})
+
+
 def import_handoff(
     db_path: str | Path = ROOT / "data/processed/finaira_generalization.db",
     handoff_root: str | Path = DEFAULT_HANDOFF,
@@ -718,6 +783,7 @@ def import_handoff(
             _import_banks(session, root, metrics, report)
             _import_organizations(session, root, metrics)
             _import_government(session, root, metrics)
+            _rebuild_corporation_directory(session, metrics)
             batch.status = "COMPLETED"
             batch.completed_at = datetime.now(timezone.utc).isoformat()
             batch.counts_json = json.dumps(metrics, ensure_ascii=False, sort_keys=True)

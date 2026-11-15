@@ -119,8 +119,15 @@ def test_bank_authority_and_evidence_flags():
     assert result["resolution_status"] == "MATCHED"
     assert [candidate["level_code"] for candidate in result["candidates"]] == [
         "EXACT", "FINANCE_MODEL", "MODEL_SAFE_GROUP", "BANKING_INSTITUTION",
-        "FINANCIAL_INSTITUTION", "SUPPRESSED",
+        "FINANCIAL_INSTITUTION", "CORPORATION_GENERIC", "SUPPRESSED",
     ]
+    assert result["entity_type"] == "CORPORATION"
+    assert result["source_entity_type"] == "BANK"
+    assert result["candidates"][-2]["representation"] == "Corporation"
+    arabic_result = GeneralizationDB(DB).get_candidates("BANK", "بنك قناة السويس", "en")
+    assert arabic_result["entity_type"] == "CORPORATION"
+    assert arabic_result["source_entity_type"] == "BANK"
+    assert arabic_result["candidates"][0]["label_en"] == "Suez Canal Bank"
     assert result["candidates"][0]["is_local_only"] is True
     assert result["candidates"][0]["metadata"].get("disclosure_approved", False) is False
     finance_model = next(candidate for candidate in result["candidates"] if candidate["level_code"] == "FINANCE_MODEL")
@@ -145,14 +152,26 @@ def test_organization_pending_identity_gates_specific_industry():
     assert all(candidate["level_code"] not in {"MFG_FOOD", "ICT_SOFTWARE"} for candidate in result["candidates"])
     organization = GeneralizationDB(DB).get_candidates("ORGANIZATION", "New Cairo Technological University", "en")
     assert organization["entity_type"] == "CORPORATION"
-    assert organization["candidates"][1]["representation"] == "Company"
+    assert organization["source_entity_type"] == "UNIVERSITY"
+    assert [candidate["level_code"] for candidate in organization["candidates"][:4]] == [
+        "EXACT", "UNIVERSITY_GENERIC", "CORPORATION_GENERIC", "SUPPRESSED",
+    ]
+    assert organization["candidates"][1]["representation"] == "University"
+    assert organization["candidates"][1]["provenance"]["source_entity_type"] == "UNIVERSITY"
     company = GeneralizationDB(DB).get_candidates("CORPORATION", "Edita Food Industries S.A.E.", "en")
     assert all(candidate["level_code"] not in {"MFG_FOOD", "MFG"} for candidate in company["candidates"])
     review = GeneralizationDB(DB).get_candidates("CORPORATION", "Edita Food Industries S.A.E.", "en", include_review_candidates=True)
     assert any(candidate["verification_status"] == "REVIEW_ONLY" for candidate in review["candidates"] if candidate["level_code"] not in {"EXACT", "COMPANY", "SUPPRESSED"})
     unknown = GeneralizationDB(DB).get_candidates("CORPORATION", "not a real company", "en")
     assert unknown["resolution_status"] == "NOT_FOUND"
-    assert [candidate["level_code"] for candidate in unknown["candidates"]] == ["ORGANIZATION_GENERIC", "SUPPRESSED"]
+    assert [candidate["level_code"] for candidate in unknown["candidates"]] == ["CORPORATION_GENERIC", "SUPPRESSED"]
+    university_unknown = GeneralizationDB(DB).get_candidates("UNIVERSITY", "not a real university", "en")
+    assert [candidate["level_code"] for candidate in university_unknown["candidates"]] == ["UNIVERSITY_GENERIC", "CORPORATION_GENERIC", "SUPPRESSED"]
+    assert university_unknown["source_entity_type"] == "UNIVERSITY"
+    assert scalar("select count(*) from corporation_entities") == 614
+    assert scalar("select count(*) from corporation_entities where source_entity_type='BANK'") == 302
+    assert scalar("select count(*) from corporation_entities where source_entity_type='UNIVERSITY'") > 0
+    assert scalar("select count(*) from corporation_aliases") == 2135
 
 
 def test_government_review_default_and_optional_branches():
@@ -172,7 +191,7 @@ def test_government_review_default_and_optional_branches():
 
 
 def test_fk_integrity_and_idempotent_handoff_import():
-    before = {table: scalar(f"select count(*) from {table}") for table in ("banks", "bank_candidates", "organizations", "government_entities", "natural_earth_country_aliases", "nationality_aliases_v2", "nationality_alias_review_provenance", "nationality_deduplications")}
+    before = {table: scalar(f"select count(*) from {table}") for table in ("banks", "bank_candidates", "organizations", "government_entities", "corporation_entities", "corporation_aliases", "natural_earth_country_aliases", "nationality_aliases_v2", "nationality_alias_review_provenance", "nationality_deduplications")}
     import_handoff(DB, report_dir="reports", backup=False)
     after_first = {table: scalar(f"select count(*) from {table}") for table in before}
     import_handoff(DB, report_dir="reports", backup=False)
