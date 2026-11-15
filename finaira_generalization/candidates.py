@@ -403,7 +403,12 @@ class GeneralizationDB:
         if exact_row is not None:
             exact = self._bank_row(session, exact_row, lang)
             exact_label_en = representative.canonical_name_2026 or representative.source_name_en or exact.get("label_en")
-            exact_label_ar = representative.source_name_ar or exact.get("label_ar")
+            approved_ar_alias = session.scalar(select(BankAlias).where(
+                BankAlias.bank_id == representative.canonical_bank_id,
+                BankAlias.language == "ar",
+                BankAlias.enabled_for_lookup.is_(True),
+            ).order_by(BankAlias.alias_id))
+            exact_label_ar = representative.source_name_ar or exact.get("label_ar") or (approved_ar_alias.alias_text if approved_ar_alias else None)
             exact["label_en"] = exact_label_en
             exact["label_ar"] = exact_label_ar
             exact["representation"] = exact_label_ar if lang == "ar" else exact_label_en

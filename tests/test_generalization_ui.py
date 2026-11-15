@@ -89,6 +89,15 @@ def test_ui_detects_input_language_and_returns_bilingual_nationality_labels():
     assert result["final_decision"]["action"] == "GENERALIZE"
 
 
+def test_ui_bank_model_exact_candidate_uses_approved_arabic_alias():
+    result = _query_ui({"value": "\u0628\u0646\u0643 \u0642\u0646\u0627\u0629 \u0627\u0644\u0633\u0648\u064a\u0633", "type": "BANK"})
+    assert result["canonical_id"] == "BANK_SUEZ_CANAL_BANK"
+    assert result["resolution_status"] == "REVIEW_ONLY"
+    exact = next(item for item in result["candidates"] if item["level_code"] == "EXACT")
+    assert exact["label_en"] == "Suez Canal Bank"
+    assert exact["label_ar"] == "\u0628\u0646\u0643 \u0642\u0646\u0627\u0629 \u0627\u0644\u0633\u0648\u064a\u0633"
+
+
 def test_ui_exposes_final_decision_for_all_generalizable_entity_types():
     cases = [
         ("JOB_TITLE", "technical director", "en", "GENERALIZE"),

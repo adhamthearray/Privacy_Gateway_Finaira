@@ -185,7 +185,8 @@ typeSelect.addEventListener('change', syncDateContext);
 syncDateContext();
 
 function field(label, value) {
-  return `<div class="field">${esc(label)}<strong>${esc(value === undefined || value === null || value === '' ? '—' : value)}</strong></div>`;
+  const shown = value && typeof value === 'object' ? (value.name || value.label || JSON.stringify(value)) : value;
+  return `<div class="field">${esc(label)}<strong>${esc(shown === undefined || shown === null || shown === '' ? '—' : shown)}</strong></div>`;
 }
 
 function bilingualFields(item) {
