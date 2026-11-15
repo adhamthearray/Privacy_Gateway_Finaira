@@ -112,3 +112,11 @@ per entity. `PSEUDONYMIZE` entities receive a request-scoped form such as
 candidate chain, including review status and `production_eligible`; no
 generalization candidate is selected. Use `--hide-review-candidates` only
 when a caller explicitly wants the gated candidates omitted.
+
+For a browser drag-and-drop interface:
+
+```powershell
+py -X utf8 scripts/run_document_sanitizer_ui.py
+```
+
+Open `http://127.0.0.1:8766/`, drop the JSON file, and click `Return policy JSON`.
