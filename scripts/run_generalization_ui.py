@@ -71,6 +71,7 @@ HTML = r"""<!doctype html>
     .verified { color:#052e16; background:var(--good); }
     .matched { color:#052e16; background:var(--good); }
     .generalize { color:#052e16; background:var(--good); }
+    .preview { color:#422006; background:var(--warn); }
     .pseudonymize { color:#450a0a; background:var(--bad); }
     .review { color:#422006; background:var(--warn); }
     .ambiguous { color:#431407; background:#fb923c; }
@@ -145,7 +146,7 @@ HTML = r"""<!doctype html>
         </div>
       </div>
     </div>
-    <div class="hint">The input language is detected automatically. Review-only results remain gated. This tool shows database candidates; it does not pseudonymize or select a disclosure policy.</div>
+    <div class="hint">The input language is detected automatically. Review-only matches appear as labeled previews and remain gated for production. This tool does not pseudonymize or select a disclosure policy.</div>
   </section>
 
   <section id="result" style="display:none">
@@ -203,8 +204,9 @@ function renderFinalDecision(data) {
   const why = (decision.why || []).map(item => `<li>${esc(item)}</li>`).join('');
   const path = (decision.path || []).map(item => `${esc(item.level_code)}${item.representation ? `: ${esc(item.representation)}` : ''}`).join(' â†’ ');
   const selected = decision.selected_candidate || {};
-  finalDecision.innerHTML = `<div class="status"><span class="badge ${action === 'GENERALIZE' ? 'generalize' : 'pseudonymize'}">${esc(action)}</span><span class="badge">${esc(decision.reason_code)}</span></div>`
-    + `<div class="grid">${field('Final response', decision.final_response)}${field('English response', selected.label_en)}${field('Arabic response', selected.label_ar)}${field('Match method', decision.match_method)}${field('Common ancestor', decision.common_ancestor)}${field('Matched values', decision.matched_count)}</div>`
+  const actionClass = action === 'GENERALIZE' ? 'generalize' : action === 'GENERALIZE_PREVIEW' ? 'preview' : 'pseudonymize';
+  finalDecision.innerHTML = `<div class="status"><span class="badge ${actionClass}">${esc(action)}</span><span class="badge">${esc(decision.reason_code)}</span>${decision.preview_only ? '<span class="badge review">NEEDS REVIEW</span>' : ''}</div>`
+    + `<div class="grid">${field('Final response', decision.final_response)}${field('English response', selected.label_en)}${field('Arabic response', selected.label_ar)}${field('Production action', decision.production_action)}${field('Match method', decision.match_method)}${field('Common ancestor', decision.common_ancestor)}${field('Matched values', decision.matched_count)}</div>`
     + `<div class="meta"><strong>Why</strong><ul>${why}</ul></div>`
     + `<div class="meta"><strong>Retained hierarchy</strong><div>${path || 'None'}</div></div>`
     + (decision.selected_candidate ? `<details><summary>Final candidate provenance</summary><pre>${json(decision.selected_candidate)}</pre></details>` : '')
@@ -215,7 +217,7 @@ function render(data) {
   result.style.display = 'block';
   renderFinalDecision(data);
   const status = data.resolution_status || 'UNKNOWN';
-  summary.innerHTML = `<div class="status"><span class="badge ${cls(status)}">${esc(status)}</span>${data.reason_code ? `<span class="badge">${esc(data.reason_code)}</span>` : ''}</div>`
+  summary.innerHTML = `<div class="status"><span class="badge ${cls(status)}">${esc(status)}</span>${data.match_status ? `<span class="badge ${cls(data.match_status)}">${esc(data.match_status)}</span>` : ''}${data.reason_code ? `<span class="badge">${esc(data.reason_code)}</span>` : ''}</div>`
     + `<div class="grid">${field('Entity type', data.entity_type)}${field('Canonical ID', data.canonical_id)}${field('Candidates', (data.candidates || []).length)}</div>`
     + (data.date_detection ? `<details><summary>Date detection details</summary><div class="grid">${field('Detector status', data.date_detection.status)}${field('Calendar', data.date_detection.calendar)}${field('Precision', data.date_detection.precision)}${field('Format family', data.date_detection.format_family)}${field('Detected date', data.date_detection.date_iso)}${field('Confidence', data.date_detection.confidence)}${field('Time', data.date_detection.time_text)}${field('Timezone', data.date_detection.timezone_text)}</div><pre>${json(data.date_detection)}</pre></details>` : '');
   const rows = data.candidates || [];
@@ -791,23 +793,44 @@ def final_decision(db_path: Path, entity_type: str, value: str, language: str, p
         if direct_candidate:
             entity = payload.get("entity_type") or "entity"
             gate = "the banking model/generalization form" if entity == "BANK" else "the identity or supporting classification"
-            return {
-                "action": "PSEUDONYMIZE",
-                "final_response": "PSEUDONYMIZE_REQUIRED",
-                "reason_code": "DIRECT_MATCH_REVIEW_GATED",
-                "match_method": "DIRECT_MATCH_REVIEW_GATED",
-                "why": [
-                    f"A direct {entity.lower()} alias match was found.",
-                    f"The entity is present, but {gate} is review-only.",
-                    "The review-only result cannot be used automatically, so pseudonymization is required.",
-                ],
-                "matched_count": 1,
-                "matched_suggestions": [],
-                "path": [
-                    {"level_code": item.get("level_code"), "representation": item.get("representation")}
-                    for item in payload.get("candidates", [])
-                ],
+            priorities = {
+                "FINANCE_MODEL": 0,
+                "ORGANIZATION_GENERIC": 1,
+                "GOVERNMENT_ENTITY_GENERIC": 1,
+                "BANKING_INSTITUTION": 3,
+                "FINANCIAL_INSTITUTION": 4,
             }
+            preview_candidates = [
+                item for item in payload.get("candidates", [])
+                if not item.get("is_exact") and not item.get("is_suppression") and item.get("representation")
+            ]
+            selected = min(
+                preview_candidates,
+                key=lambda item: (priorities.get(item.get("level_code"), 2), item.get("specificity_rank", 99), item.get("candidate_id", "")),
+                default=None,
+            )
+            if selected:
+                return {
+                    "action": "GENERALIZE_PREVIEW",
+                    "final_response": selected.get("representation"),
+                    "reason_code": "DIRECT_MATCH_REVIEW_PREVIEW",
+                    "match_method": "DIRECT_MATCH_REVIEW_PREVIEW",
+                    "production_action": "PSEUDONYMIZE_REQUIRED",
+                    "preview_only": True,
+                    "needs_review": True,
+                    "why": [
+                        f"A direct {entity.lower()} alias match was found.",
+                        f"The entity is present, but {gate} is review-only.",
+                        "This generalized form is shown as a review preview and is not approved for production use.",
+                    ],
+                    "selected_candidate": selected,
+                    "matched_count": 1,
+                    "matched_suggestions": [],
+                    "path": [
+                        {"level_code": item.get("level_code"), "representation": item.get("representation")}
+                        for item in payload.get("candidates", [])
+                    ],
+                }
     if payload.get("resolution_status") in {"AMBIGUOUS", "INVALID_INPUT", "NEEDS_CONTEXT", "UNSUPPORTED"}:
         reason = payload.get("reason_code") or payload.get("resolution_status")
         return _pseudonym_decision(
@@ -904,6 +927,7 @@ class Handler(BaseHTTPRequestHandler):
                 if entity_type == "DATE":
                     payload["date_detection"] = _date_detection_payload(value, context)
                 has_exact = any(item.get("is_exact") and not item.get("is_suppression") for item in payload.get("candidates", []))
+                payload["match_status"] = "REVIEW_ONLY_MATCH" if payload.get("resolution_status") == "REVIEW_ONLY" and has_exact else payload.get("resolution_status")
                 suggestions = []
                 if not has_exact:
                     payload["substring_search_performed"] = True

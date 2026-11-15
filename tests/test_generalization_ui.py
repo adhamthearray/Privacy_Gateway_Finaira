@@ -96,8 +96,12 @@ def test_ui_bank_model_exact_candidate_uses_approved_arabic_alias():
     exact = next(item for item in result["candidates"] if item["level_code"] == "EXACT")
     assert exact["label_en"] == "Suez Canal Bank"
     assert exact["label_ar"] == "\u0628\u0646\u0643 \u0642\u0646\u0627\u0629 \u0627\u0644\u0633\u0648\u064a\u0633"
-    assert result["final_decision"]["reason_code"] == "DIRECT_MATCH_REVIEW_GATED"
-    assert result["final_decision"]["match_method"] == "DIRECT_MATCH_REVIEW_GATED"
+    assert result["match_status"] == "REVIEW_ONLY_MATCH"
+    assert result["final_decision"]["action"] == "GENERALIZE_PREVIEW"
+    assert result["final_decision"]["reason_code"] == "DIRECT_MATCH_REVIEW_PREVIEW"
+    assert result["final_decision"]["match_method"] == "DIRECT_MATCH_REVIEW_PREVIEW"
+    assert result["final_decision"]["final_response"] == "Bank offering conventional and Islamic banking services"
+    assert result["final_decision"]["production_action"] == "PSEUDONYMIZE_REQUIRED"
     assert result["final_decision"]["matched_count"] == 1
 
 
@@ -105,8 +109,12 @@ def test_ui_review_only_corporation_explains_direct_match_gate():
     result = _query_ui({"value": "Ain Shams University", "type": "UNIVERSITY"})
     assert result["resolution_status"] == "REVIEW_ONLY"
     assert result["canonical_id"] == "Q2723670"
-    assert result["final_decision"]["reason_code"] == "DIRECT_MATCH_REVIEW_GATED"
-    assert result["final_decision"]["match_method"] == "DIRECT_MATCH_REVIEW_GATED"
+    assert result["match_status"] == "REVIEW_ONLY_MATCH"
+    assert result["final_decision"]["action"] == "GENERALIZE_PREVIEW"
+    assert result["final_decision"]["reason_code"] == "DIRECT_MATCH_REVIEW_PREVIEW"
+    assert result["final_decision"]["match_method"] == "DIRECT_MATCH_REVIEW_PREVIEW"
+    assert result["final_decision"]["final_response"] == "Company"
+    assert result["final_decision"]["production_action"] == "PSEUDONYMIZE_REQUIRED"
     assert result["final_decision"]["matched_count"] == 1
 
 
