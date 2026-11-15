@@ -31,6 +31,8 @@ from finaira_generalization.db import (
     NationalityAliasV2,
     Occupation,
     OccupationAlias,
+    CorporationAlias,
+    CorporationEntity,
     Organization,
     OrganizationAlias,
     make_engine,
@@ -106,8 +108,8 @@ HTML = r"""<!doctype html>
         <label for="type">Entity type</label>
         <select id="type" name="type">
           <option>JOB_TITLE</option><option>OCCUPATION</option><option>COUNTRY</option>
-          <option>NATIONALITY</option><option>BANK</option><option>CORPORATION</option>
-          <option>ORGANIZATION</option><option>UNIVERSITY</option><option>GOVERNMENT_ENTITY</option>
+          <option>NATIONALITY</option><option value="CORPORATION">CORPORATION (banks, universities, organizations)</option>
+          <option>GOVERNMENT_ENTITY</option>
           <option>AGE</option><option>DATE</option>
         </select>
       </div>
@@ -372,14 +374,14 @@ def substring_suggestions(db_path: Path, entity_type: str, value: str, output_la
                     seen.add(key)
                     suggestions.append({"canonical_id": row.country_qid, "alias_text": row.alias_text, "label": row.alias_text, "language": query_language, "match_kind": _match_kind(needle, haystack, index), "match_position": index, "verification_status": row.verification_status, "enabled_for_lookup": True, "source": "Wikidata demonym substring suggestion", "review_required": True})
             elif canonical_type == "CORPORATION":
-                rows = session.scalars(select(OrganizationAlias).where(OrganizationAlias.language == query_language, OrganizationAlias.normalized_alias.contains(needle, autoescape=True))).all()
+                rows = session.scalars(select(CorporationAlias).where(CorporationAlias.language == query_language, CorporationAlias.normalized_alias.contains(needle, autoescape=True))).all()
                 for row in rows:
                     haystack = normalize(row.alias_text, query_language); index = haystack.find(needle)
                     if index < 0: continue
-                    organization = session.get(Organization, row.organization_qid); key = (row.organization_qid, haystack, query_language)
+                    entity = session.get(CorporationEntity, row.corporation_id); key = (row.corporation_id, haystack, query_language)
                     if key in seen: continue
                     seen.add(key)
-                    suggestions.append({"canonical_id": row.organization_qid, "alias_text": row.alias_text, "label": (organization.name_ar if output_language == "ar" else organization.name_en) if organization else row.alias_text, "language": query_language, "match_kind": _match_kind(needle, haystack, index), "match_position": index, "verification_status": row.verification_status, "enabled_for_lookup": row.enabled_for_lookup, "source": "Wikidata organization substring suggestion", "review_required": True})
+                    suggestions.append({"canonical_id": row.source_entity_id, "alias_text": row.alias_text, "label": (entity.name_ar if output_language == "ar" else entity.name_en) if entity else row.alias_text, "language": query_language, "match_kind": _match_kind(needle, haystack, index), "match_position": index, "verification_status": row.verification_status, "enabled_for_lookup": row.enabled_for_lookup, "source": "Unified corporation alias substring suggestion", "source_entity_type": row.source_entity_type, "review_required": True})
             elif canonical_type == "GOVERNMENT_ENTITY":
                 rows = session.scalars(select(GovernmentAlias).where(GovernmentAlias.language == query_language, GovernmentAlias.normalized_alias.contains(needle, autoescape=True))).all()
                 for row in rows:

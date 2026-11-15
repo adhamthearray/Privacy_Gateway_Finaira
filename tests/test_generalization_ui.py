@@ -78,6 +78,19 @@ def test_ui_contains_date_context_controls():
     assert 'id="language"' not in HTML
 
 
+def test_ui_uses_one_corporation_selection_for_banks_universities_and_companies():
+    assert 'value="CORPORATION">CORPORATION (banks, universities, organizations)' in HTML
+    assert '<option>BANK</option>' not in HTML
+    assert '<option>UNIVERSITY</option>' not in HTML
+    assert '<option>ORGANIZATION</option>' not in HTML
+    bank = _query_ui({"value": "بنك قناة السويس", "type": "CORPORATION"})
+    assert bank["entity_type"] == "CORPORATION"
+    assert bank["source_entity_type"] == "BANK"
+    university = _query_ui({"value": "Ain Shams University", "type": "CORPORATION"})
+    assert university["entity_type"] == "CORPORATION"
+    assert university["source_entity_type"] == "UNIVERSITY"
+
+
 def test_ui_detects_input_language_and_returns_bilingual_nationality_labels():
     result = _query_ui({"value": "سوري", "type": "NATIONALITY", "language": "en"})
     assert result["input_language"] == "ar"

@@ -18,7 +18,8 @@ from .db import (
     GovernmentCandidateReview, GovernmentEntity, IndustryQIDMapping,
     NationalityAlias, NationalityAliasV2, NationalityGeoJoin,
     NationalityCountry, NaturalEarthCountry, NaturalEarthCountryAlias, Organization, OrganizationAlias,
-    OrganizationExclusion, OrganizationIndustry, OccupationAlias, make_engine,
+    OrganizationExclusion, OrganizationIndustry, CorporationAlias, CorporationEntity,
+    OccupationAlias, make_engine,
 )
 from .layers import stable_id
 from .normalization import normalize
@@ -104,7 +105,7 @@ class GeneralizationDB:
             if et == "BANK":
                 return self._corporationize_bank_result(self._bank(session, value, lang, include_review_candidates, query_lang), lang)
             if et == "CORPORATION":
-                return self._organization(session, et, value, lang, include_review_candidates, query_lang, requested_type)
+                return self._corporation(session, value, lang, include_review_candidates, query_lang, requested_type)
             if et == "GOVERNMENT_ENTITY":
                 return self._government(session, value, lang, include_review_candidates, query_lang)
         return self._result(et, "UNSUPPORTED_ENTITY_TYPE", None, [], "UNSUPPORTED_ENTITY_TYPE")
@@ -602,6 +603,26 @@ class GeneralizationDB:
         candidates = [_candidate_dict(candidate_id=stable_id("BANK_FALLBACK", code), level_code=code, rank=index, label_en=en, label_ar=ar, language=lang, taxonomy="FINAIR_BANK", taxonomy_code=None, source="Finaira taxonomy", verification_status="CONFIGURED") for index, (code, en, ar) in enumerate(labels)]
         candidates.append(_candidate_dict(candidate_id=stable_id("BANK_FALLBACK", "SUPPRESSED"), level_code="SUPPRESSED", rank=2, label_en=None, label_ar=None, language=lang, taxonomy="FINAIR_BANK", taxonomy_code=None, source="Finaira taxonomy", verification_status="CONFIGURED", is_suppression=True))
         return self._result("BANK", status, None, candidates, reason)
+
+    def _corporation(self, session, value, lang, include_review, query_lang=None, source_hint="CORPORATION"):
+        """Resolve the unified corporation domain before dispatching to evidence tables."""
+        query_lang = query_lang or lang
+        norm = normalize(value, query_lang)
+        aliases = session.scalars(select(CorporationAlias).where(
+            CorporationAlias.normalized_alias == norm,
+            CorporationAlias.language == query_lang,
+            CorporationAlias.enabled_for_lookup.is_(True),
+        )).all()
+        corporation_ids = {row.corporation_id for row in aliases}
+        if len(corporation_ids) > 1:
+            return self._organization_fallback("CORPORATION", lang, "AMBIGUOUS", "ALIAS_COLLISION", "CORPORATION")
+        if not corporation_ids:
+            return self._organization_fallback("CORPORATION", lang, "NOT_FOUND", "UNRECOGNIZED_ORGANIZATION", source_hint)
+        entity = session.get(CorporationEntity, next(iter(corporation_ids)))
+        source_kind = entity.source_entity_type if entity else "CORPORATION"
+        if source_kind == "BANK":
+            return self._corporationize_bank_result(self._bank(session, value, lang, include_review, query_lang), lang)
+        return self._organization(session, "CORPORATION", value, lang, include_review, query_lang, source_kind)
 
     def _organization(self, session, entity_type, value, lang, include_review, query_lang=None, source_hint="CORPORATION"):
         query_lang = query_lang or lang
