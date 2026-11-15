@@ -18,7 +18,7 @@ from finaira_generalization import GeneralizationDB
 # AGE and DATE remain on their existing deterministic rules.
 DB_ENTITY_TYPES = {
     "OCCUPATION", "JOB_TITLE", "NATIONALITY", "BANK", "CORPORATION",
-    "ORGANIZATION", "UNIVERSITY", "GOVERNMENT_ENTITY",
+    "ORGANIZATION", "UNIVERSITY", "COUNTRY", "GOVERNMENT_ENTITY",
 }
 
 # These describe the privacy context to assess; they do not prescribe a choice.
@@ -27,6 +27,7 @@ ENTITY_GUIDANCE = {
     "JOB_TITLE": "Assess whether the job title and its context could identify a person or reveal personal information.",
     "NATIONALITY": "Assess the sensitivity of nationality in this sentence and whether it could identify or expose a person. Do not infer residence, birthplace, ethnicity, or citizenship.",
     "BANK": "Assess whether naming the bank could reveal a person's financial relationship or activity in this sentence.",
+    "COUNTRY": "Assess whether the country name should be generalized to a broader geographic representation in this sentence.",
     "CORPORATION": "Assess whether naming the company could identify a person through an employment, legal, financial, or other relationship in this sentence.",
     "ORGANIZATION": "Assess whether naming the organization could reveal a person's affiliation or activity in this sentence.",
     "UNIVERSITY": "Assess whether naming the university could reveal a person's education or affiliation in this sentence.",

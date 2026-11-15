@@ -1,7 +1,7 @@
 import pytest
 from finaira import Entity, PipelineRequest, PrivacyPipeline
 from finaira.llm import MockLLM
-from finaira.policy import POLICY, Action
+from finaira.policy import POLICY, Action, canonical_entity_type, get_action
 from finaira.transformer import transform_document
 from finaira.audit import AuditLogger
 
@@ -13,6 +13,66 @@ def ent(text, typ, start, entity_id=None, language=None):
 def test_all_30_policies_and_only_three_actions():
     assert len(POLICY) == 30
     assert set(POLICY.values()) == set(Action)
+
+
+def test_country_generalizes_and_organization_aliases_are_corporation():
+    assert get_action("COUNTRY") == Action.GENERALIZE
+    assert canonical_entity_type("organization") == "CORPORATION"
+    assert canonical_entity_type("UNIVERSITY") == "CORPORATION"
+    assert get_action("ORGANIZATION") == Action.GENERALIZE
+    assert get_action("UNIVERSITY") == Action.GENERALIZE
+
+
+def test_country_uses_broadest_verified_natural_earth_representation():
+    value = "Egypt"
+    result = PrivacyPipeline().run(
+        PipelineRequest(value, [ent(value, "COUNTRY", 0, "country-1")])
+    )
+    assert result.status == "PASS"
+    assert result.protected_document == "Africa"
+    assert result.output == "Africa"
+
+
+def test_organization_and_university_are_sent_to_selector_as_corporation():
+    class FakeJEVSelector:
+        def __init__(self):
+            self.calls = []
+
+        def select_candidate(self, entity_type, value, sentence):
+            self.calls.append((entity_type, value, sentence))
+            return {"replacement": "Company", "selected_candidate": {}}
+
+    selector = FakeJEVSelector()
+    document = "Acme University"
+    start = document.index("Acme")
+    result = PrivacyPipeline(jev_selector=selector).run(
+        PipelineRequest(
+            document,
+            [ent("Acme", "ORGANIZATION", start, "org-1"),
+             ent("University", "UNIVERSITY", document.index("University"), "uni-1")],
+        )
+    )
+    assert result.status == "PASS"
+    assert [call[0] for call in selector.calls] == ["CORPORATION", "CORPORATION"]
+    assert result.protected_document == "Company Company"
+
+
+def test_unresolved_generalization_falls_back_to_request_pseudonym():
+    value = "Not A Real Country"
+    result = PrivacyPipeline().run(
+        PipelineRequest(value, [ent(value, "COUNTRY", 0, "country-unknown")])
+    )
+    assert result.status == "PASS"
+    assert result.protected_document == "__FN_COUNTRY_0001__"
+
+
+def test_country_without_verified_arabic_broad_label_falls_back_to_pseudonym():
+    value = "مصر"
+    result = PrivacyPipeline().run(
+        PipelineRequest(value, [ent(value, "COUNTRY", 0, "country-ar", "ar")])
+    )
+    assert result.status == "PASS"
+    assert result.protected_document == "__FN_COUNTRY_0001__"
 
 
 def test_repeated_identity_reuses_token_and_restores():

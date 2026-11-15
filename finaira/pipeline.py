@@ -1,9 +1,9 @@
 from .generalization import generalize
-from .jev_selector import DB_ENTITY_TYPES, JEVSelector
+from .jev_selector import JEVSelector
 from .llm import MockLLM
 from .mapping import MappingVault
 from .models import Entity, PipelineRequest, PipelineResult
-from .policy import Action, get_action
+from .policy import Action, canonical_entity_type, get_action
 from .prompt import ARABIC_SYSTEM_PROMPT
 from .restorer import restore
 from .transformer import transform_document
@@ -16,8 +16,102 @@ class PrivacyPipeline:
         self.llm = llm or MockLLM()
         self.date_level = date_level
         self.logger = logger or AuditLogger()
+        self._custom_jev_selector = jev_selector is not None
         self.jev_selector = jev_selector or JEVSelector()
         self.last_vault_cleared = False
+
+    @staticmethod
+    def _canonicalize_entity(entity: Entity) -> Entity:
+        canonical = canonical_entity_type(entity.type)
+        if canonical == entity.type:
+            return entity
+        return Entity(
+            type=canonical,
+            original_value=entity.original_value,
+            start=entity.start,
+            end=entity.end,
+            entity_id=entity.entity_id,
+            language=entity.language,
+            occurrence_index=entity.occurrence_index,
+        )
+
+    def _broadest_database_candidate(self, entity: Entity):
+        """Return the broadest safe verified candidate, or ``None``."""
+        database = getattr(self.jev_selector, "db", None)
+        if database is None:
+            return None
+        language = (entity.language or "en").lower()
+        result = database.get_candidates(
+            entity.type,
+            entity.original_value,
+            output_language=language,
+            context={},
+            include_review_candidates=False,
+        )
+        if result.get("resolution_status") not in {"MATCHED", "VERIFIED"}:
+            return None
+        eligible = []
+        for candidate in result.get("candidates", []):
+            metadata = candidate.get("metadata") or {}
+            provenance = candidate.get("provenance") or metadata.get("provenance") or {}
+            if candidate.get("is_suppression", metadata.get("is_suppression", False)):
+                continue
+            # Generalization must not return the original entity label. If a
+            # broader label is unavailable in the requested language, use the
+            # pseudonym fallback instead of leaking the exact value.
+            if candidate.get("is_exact", metadata.get("is_exact", False)):
+                continue
+            if metadata.get("review_only") or provenance.get("requires_policy_approval"):
+                continue
+            if metadata.get("disclosure_approved") is False:
+                continue
+            if not candidate.get("available", True) or not candidate.get("representation"):
+                continue
+            eligible.append(candidate)
+        if not eligible:
+            return None
+        return max(
+            eligible,
+            key=lambda row: (row.get("specificity_rank", 0), row.get("candidate_id", "")),
+        )
+
+    def _generalize_or_pseudonymize(self, entity, identity, request, vault):
+        """Use the broadest verified DB representation, else a pseudonym."""
+        database_types = {
+            "BANK", "COUNTRY", "NATIONALITY", "CORPORATION",
+            "GOVERNMENT_ENTITY", "JOB_TITLE", "OCCUPATION",
+        }
+        if entity.type in database_types and not self._custom_jev_selector:
+            candidate = self._broadest_database_candidate(entity)
+            if candidate is not None:
+                return candidate["representation"], Action.GENERALIZE.value
+            return vault.token_for(entity, identity, Action.PSEUDONYMIZE.value), Action.PSEUDONYMIZE.value
+
+        # Preserve the injectable selector contract used by existing callers
+        # and tests. A failed, suppressed, or unavailable selection becomes a
+        # request-scoped pseudonym rather than an unsafe generic value.
+        if entity.type in database_types and self._custom_jev_selector:
+            try:
+                selection = self.jev_selector.select_candidate(
+                    entity.type, entity.original_value, request.document
+                )
+                selected = selection.get("selected_candidate") or {}
+                if (
+                    selection.get("replacement")
+                    and not selected.get("is_suppression", False)
+                    and selection.get("fallback_reason") is None
+                ):
+                    return selection["replacement"], Action.GENERALIZE.value
+            except Exception:
+                pass
+            return vault.token_for(entity, identity, Action.PSEUDONYMIZE.value), Action.PSEUDONYMIZE.value
+
+        try:
+            return generalize(
+                entity, identity, request.scope, entity.language, self.date_level
+            ), Action.GENERALIZE.value
+        except (ValueError, TypeError):
+            return vault.token_for(entity, identity, Action.PSEUDONYMIZE.value), Action.PSEUDONYMIZE.value
 
     def run(self, request: PipelineRequest) -> PipelineResult:
         vault = MappingVault(); self.last_vault_cleared = False
@@ -27,7 +121,7 @@ class PrivacyPipeline:
         llm_request = None
         response = None
         try:
-            entities = [Entity.from_any(e) for e in request.entities]
+            entities = [self._canonicalize_entity(Entity.from_any(e)) for e in request.entities]
             if trace:
                 trace("request_received", document=request.document, entities=[e.__dict__ for e in entities], task=request.task)
             replacements = []
@@ -35,30 +129,26 @@ class PrivacyPipeline:
                 if not entity.original_value: raise ValueError("EMPTY_ENTITY")
                 identity = entity.entity_id or f"{entity.type}:{entity.occurrence_index if entity.occurrence_index is not None else index}"
                 action = get_action(entity.type)
+                effective_action = action.value
                 if action == Action.PSEUDONYMIZE:
                     value = vault.token_for(entity, identity, action.value)
                 elif action == Action.GENERALIZE:
                     if identity in vault.by_identity: value = vault.by_identity[identity].sanitized
                     else:
-                        if entity.type in DB_ENTITY_TYPES and (entity.language or "en").lower() == "en":
-                            selection = self.jev_selector.select_candidate(
-                                entity.type,
-                                entity.original_value,
-                                request.document,
-                            )
-                            value = selection["replacement"]
-                        else:
-                            value = generalize(entity, identity, request.scope, entity.language, self.date_level)
+                        value, effective_action = self._generalize_or_pseudonymize(
+                            entity, identity, request, vault
+                        )
                         # Avoid duplicating a unit already present immediately after the span.
                         following = request.document[entity.end:] if entity.end is not None else ""
                         if entity.type == "AGE" and entity.language == "ar" and following.lstrip().startswith("سنة"):
                             value = value.removesuffix(" سنة")
-                        vault.record_generalization(entity, identity, value)
+                        if effective_action == Action.GENERALIZE.value:
+                            vault.record_generalization(entity, identity, value)
                 else: value = entity.original_value
                 replacements.append((entity, value))
                 if trace:
                     trace("entity_processed", identity=identity, entity_type=entity.type,
-                          original=entity.original_value, sanitized=value, action=action.value)
+                          original=entity.original_value, sanitized=value, action=effective_action)
             if trace:
                 trace("mapping_created", mapping=vault.snapshot())
             protected = transform_document(request.document, replacements)

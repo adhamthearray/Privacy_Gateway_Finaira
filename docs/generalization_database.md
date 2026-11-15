@@ -399,4 +399,4 @@ After the rule-based date detector: `py -3 -m pytest -q` → **42 passed in 50.1
 
 After GCC bank classification integration: `py -3 -m pytest -q` → **46 passed in 41.33s**. The added tests cover audit provenance, conservative licence counts, Islamic windows and parent links, digital/unknown models, historical and non-bank records, duplicate reconciliation, alias preservation, safe ambiguity, foreign-key integrity, and repeated imports.
 
-This layer does not implement JEV-U, JEV-P, privacy scoring, utility ranking, policy/disclosure selection, external LLM or cloud calls, or a new pseudonymization vault. The existing `finaira` privacy pipeline remains separate and unchanged.
+This layer does not implement JEV-U, JEV-P, privacy scoring, utility ranking, policy/disclosure selection, external LLM or cloud calls, or a new pseudonymization vault. The `finaira` privacy pipeline now treats `COUNTRY` as `GENERALIZE`, canonicalizes `ORGANIZATION` and `UNIVERSITY` to `CORPORATION`, selects the broadest verified database candidate, and falls back to a request-scoped pseudonym when no safe candidate is available.

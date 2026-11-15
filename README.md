@@ -28,7 +28,7 @@ pipeline = PrivacyPipeline(logger=DebugLogger("logs/debug.log", print_console=Tr
 
 This prints and records every step, including the original input, mapping, sanitized document, sanitized response, validation, restored output, and cleanup. It is for local testing only because it exposes sensitive values.
 
-Only `PSEUDONYMIZE`, `GENERALIZE`, and `ALLOW` are supported. The vault is memory-only, request-scoped, never sent to the mock LLM, and cleared in `finally` on every exit path. Generalized values (nationality, age, date, company, bank, government entity, occupation, and job title) are intentionally not reversible.
+Only `PSEUDONYMIZE`, `GENERALIZE`, and `ALLOW` are supported. The vault is memory-only, request-scoped, never sent to the mock LLM, and cleared in `finally` on every exit path. Generalized values (country, nationality, age, date, company, bank, government entity, occupation, and job title) are intentionally not reversible. `ORGANIZATION` and `UNIVERSITY` are canonicalized to `CORPORATION` before policy evaluation. Database-backed generalization uses the broadest verified available representation; unresolved, ambiguous, review-only, suppressed, or unavailable cases fall back to a request-scoped pseudonym.
 
 The current POC supports English and basic Arabic age expressions/digits, ISO dates at six configurable levels, and a controlled nationality alias set in `finaira/generalization.py`. Unknown or ambiguous values fail safely; no external detector or LLM is used. The mock adapter can be tested with `MockLLM("invent")` or `MockLLM("leak")`.
 

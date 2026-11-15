@@ -18,11 +18,18 @@ POLICY: dict[str, Action] = {
     "APPLICATION_REFERENCE": Action.PSEUDONYMIZE, "PHONE_NUMBER": Action.PSEUDONYMIZE,
     "EMAIL_ADDRESS": Action.PSEUDONYMIZE, "DETAILED_ADDRESS": Action.PSEUDONYMIZE,
     "DATE": Action.GENERALIZE, "TIME": Action.ALLOW, "CITY": Action.ALLOW,
-    "COUNTRY": Action.ALLOW, "BRANCH": Action.PSEUDONYMIZE,
+    "COUNTRY": Action.GENERALIZE, "BRANCH": Action.PSEUDONYMIZE,
     "OCCUPATION": Action.GENERALIZE, "JOB_TITLE": Action.GENERALIZE,
     "NATIONALITY": Action.GENERALIZE, "AGE": Action.GENERALIZE,
     "MONETARY_AMOUNT": Action.PSEUDONYMIZE, "CURRENCY": Action.ALLOW,
     "QUANTITY": Action.ALLOW,
+}
+
+# Organization-like detector labels are compatibility inputs only. The
+# privacy policy has one canonical organization domain: CORPORATION.
+ENTITY_TYPE_ALIASES = {
+    "ORGANIZATION": "CORPORATION",
+    "UNIVERSITY": "CORPORATION",
 }
 
 PREFIX = {
@@ -39,6 +46,12 @@ PREFIX = {
 
 def get_action(entity_type: str) -> Action:
     try:
-        return POLICY[entity_type]
+        return POLICY[canonical_entity_type(entity_type)]
     except KeyError as exc:
         raise ValueError("UNSUPPORTED_ENTITY_TYPE") from exc
+
+
+def canonical_entity_type(entity_type: str) -> str:
+    """Return the runtime entity type used by the privacy policy."""
+    value = str(entity_type).upper()
+    return ENTITY_TYPE_ALIASES.get(value, value)
