@@ -1,9 +1,28 @@
+import json
+from pathlib import Path
+
 import pytest
 
 from finaira import prepare_document
 
 
 DB = "data/processed/finaira_generalization.db"
+
+
+def test_challenging_example_is_based_on_current_database_and_policy():
+    payload = json.loads(Path("examples/document_sanitizer_challenging_sample.json").read_text(encoding="utf-8"))
+    result = prepare_document(payload, DB)
+
+    assert result["summary"] == {
+        "pseudonymize_count": 3,
+        "generalize_count": 8,
+        "allow_count": 1,
+        "selection_performed": False,
+    }
+    assert result["entities"]["E0003"]["generalization"]["status"] == "REVIEW_ONLY"
+    assert result["entities"]["E0007"]["generalization"]["status"] == "VERIFIED"
+    assert result["entities"]["E0008"]["generalization"]["status"] == "AMBIGUOUS"
+    assert result["entities"]["E0012"]["generalization"]["status"] == "NOT_FOUND"
 
 
 def test_placeholder_document_returns_pseudonym_forms_without_echoing_originals():

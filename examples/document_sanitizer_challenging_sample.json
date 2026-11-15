@@ -1,0 +1,66 @@
+{
+  "document_id": "doc-challenge-001",
+  "text": "[[E0001]] emailed [[E0002]] about a transfer from [[E0003]] in [[E0004]]. [[E0001]] said they are [[E0005]] and work as [[E0007]] at [[E0006]]. The amount [[E0010]] was reported on [[E0008]] for age [[E0009]]. Currency: [[E0011]]. The bank [[E0003]] was mentioned again. An unknown employer [[E0012]] was also referenced.",
+  "entity_map": {
+    "E0001": {
+      "label": "PERSON_NAME",
+      "original_text": "Ahmed Ali",
+      "placeholder": "[[E0001]]"
+    },
+    "E0002": {
+      "label": "EMAIL_ADDRESS",
+      "original_text": "ahmed@example.com",
+      "placeholder": "[[E0002]]"
+    },
+    "E0003": {
+      "label": "BANK",
+      "original_text": "بنك قناة السويس",
+      "placeholder": "[[E0003]]"
+    },
+    "E0004": {
+      "label": "COUNTRY",
+      "original_text": "مصر",
+      "placeholder": "[[E0004]]"
+    },
+    "E0005": {
+      "label": "NATIONALITY",
+      "original_text": "سوري",
+      "placeholder": "[[E0005]]"
+    },
+    "E0006": {
+      "label": "UNIVERSITY",
+      "original_text": "New Cairo Technological University",
+      "placeholder": "[[E0006]]"
+    },
+    "E0007": {
+      "label": "JOB_TITLE",
+      "original_text": "مدير الموارد البشرية",
+      "placeholder": "[[E0007]]"
+    },
+    "E0008": {
+      "label": "DATE",
+      "original_text": "03/04/2026",
+      "placeholder": "[[E0008]]"
+    },
+    "E0009": {
+      "label": "AGE",
+      "original_text": "٢٧",
+      "placeholder": "[[E0009]]"
+    },
+    "E0010": {
+      "label": "MONETARY_AMOUNT",
+      "original_text": "١٢٫٥ ألف ريال سعودي",
+      "placeholder": "[[E0010]]"
+    },
+    "E0011": {
+      "label": "CURRENCY",
+      "original_text": "ريال سعودي",
+      "placeholder": "[[E0011]]"
+    },
+    "E0012": {
+      "label": "CORPORATION",
+      "original_text": "Acme Holdings",
+      "placeholder": "[[E0012]]"
+    }
+  }
+}

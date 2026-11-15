@@ -120,3 +120,7 @@ py -X utf8 scripts/run_document_sanitizer_ui.py
 ```
 
 Open `http://127.0.0.1:8766/`, drop the JSON file, and click `Return policy JSON`.
+For a broader test, use `examples/document_sanitizer_challenging_sample.json`; it
+includes repeated placeholders, Arabic and English values, a review-only bank,
+an ambiguous date, an unknown corporation, an age, a job title, and a monetary
+amount.
