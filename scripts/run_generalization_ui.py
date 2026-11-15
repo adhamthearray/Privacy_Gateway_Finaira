@@ -786,25 +786,28 @@ def final_decision(db_path: Path, entity_type: str, value: str, language: str, p
     direct = _final_from_direct(payload)
     if direct:
         return direct
-    if payload.get("resolution_status") == "REVIEW_ONLY" and payload.get("reason_code") == "BANK_MODEL_REVIEW_REQUIRED":
+    if payload.get("resolution_status") == "REVIEW_ONLY":
         direct_candidate = next((item for item in payload.get("candidates", []) if item.get("is_exact") and not item.get("is_suppression")), None)
-        return {
-            "action": "PSEUDONYMIZE",
-            "final_response": "PSEUDONYMIZE_REQUIRED",
-            "reason_code": "DIRECT_MATCH_REVIEW_GATED",
-            "match_method": "DIRECT_MATCH_REVIEW_GATED",
-            "why": [
-                "A direct bank alias match was found.",
-                "The bank identity is present, but its banking model/generalization form is review-only.",
-                "The review-only model candidate cannot be used automatically, so pseudonymization is required.",
-            ],
-            "matched_count": 1 if direct_candidate else 0,
-            "matched_suggestions": [],
-            "path": [
-                {"level_code": item.get("level_code"), "representation": item.get("representation")}
-                for item in payload.get("candidates", [])
-            ],
-        }
+        if direct_candidate:
+            entity = payload.get("entity_type") or "entity"
+            gate = "the banking model/generalization form" if entity == "BANK" else "the identity or supporting classification"
+            return {
+                "action": "PSEUDONYMIZE",
+                "final_response": "PSEUDONYMIZE_REQUIRED",
+                "reason_code": "DIRECT_MATCH_REVIEW_GATED",
+                "match_method": "DIRECT_MATCH_REVIEW_GATED",
+                "why": [
+                    f"A direct {entity.lower()} alias match was found.",
+                    f"The entity is present, but {gate} is review-only.",
+                    "The review-only result cannot be used automatically, so pseudonymization is required.",
+                ],
+                "matched_count": 1,
+                "matched_suggestions": [],
+                "path": [
+                    {"level_code": item.get("level_code"), "representation": item.get("representation")}
+                    for item in payload.get("candidates", [])
+                ],
+            }
     if payload.get("resolution_status") in {"AMBIGUOUS", "INVALID_INPUT", "NEEDS_CONTEXT", "UNSUPPORTED"}:
         reason = payload.get("reason_code") or payload.get("resolution_status")
         return _pseudonym_decision(

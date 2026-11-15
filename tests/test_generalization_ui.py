@@ -101,6 +101,15 @@ def test_ui_bank_model_exact_candidate_uses_approved_arabic_alias():
     assert result["final_decision"]["matched_count"] == 1
 
 
+def test_ui_review_only_corporation_explains_direct_match_gate():
+    result = _query_ui({"value": "Ain Shams University", "type": "UNIVERSITY"})
+    assert result["resolution_status"] == "REVIEW_ONLY"
+    assert result["canonical_id"] == "Q2723670"
+    assert result["final_decision"]["reason_code"] == "DIRECT_MATCH_REVIEW_GATED"
+    assert result["final_decision"]["match_method"] == "DIRECT_MATCH_REVIEW_GATED"
+    assert result["final_decision"]["matched_count"] == 1
+
+
 def test_ui_exposes_final_decision_for_all_generalizable_entity_types():
     cases = [
         ("JOB_TITLE", "technical director", "en", "GENERALIZE"),
