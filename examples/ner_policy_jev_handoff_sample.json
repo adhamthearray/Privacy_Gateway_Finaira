@@ -1,0 +1,40 @@
+{
+  "total_documents": 1,
+  "completed_documents": 1,
+  "handoffs": [
+    {
+      "document_id": "ner-demo-001",
+      "text": "[[E0001]] emailed [[E0002]] from [[E0003]] about [[E0004]]. [[E0001]] works at [[E0005]].",
+      "entity_map": {
+        "E0001": {
+          "label": "PERSON_NAME",
+          "original_text": "Alice Smith",
+          "placeholder": "[[E0001]]"
+        },
+        "E0002": {
+          "label": "EMAIL_ADDRESS",
+          "original_text": "alice@example.com",
+          "placeholder": "[[E0002]]"
+        },
+        "E0003": {
+          "label": "COUNTRY",
+          "original_text": "Egypt",
+          "placeholder": "[[E0003]]"
+        },
+        "E0004": {
+          "label": "MONETARY_AMOUNT",
+          "original_text": "12500 SAR",
+          "placeholder": "[[E0004]]",
+          "context": {
+            "currency": "SAR"
+          }
+        },
+        "E0005": {
+          "label": "CORPORATION",
+          "original_text": "Unknown Holdings",
+          "placeholder": "[[E0005]]"
+        }
+      }
+    }
+  ]
+}

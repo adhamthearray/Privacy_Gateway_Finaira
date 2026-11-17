@@ -19,6 +19,7 @@ from finaira_generalization.monetary import interpret_and_generalize_money
 
 from .mapping import MappingVault
 from .models import Entity
+from .policy_config import PolicyConfig
 from .policy import Action, canonical_entity_type, get_action
 
 
@@ -89,9 +90,11 @@ class DocumentSanitizer:
         db_path: str | Path = "data/processed/finaira_generalization.db",
         *,
         include_review_candidates: bool = True,
+        policy_config: PolicyConfig | dict[str, str] | None = None,
     ):
         self.db = GeneralizationDB(db_path)
         self.include_review_candidates = include_review_candidates
+        self.policy_config = policy_config if isinstance(policy_config, PolicyConfig) else PolicyConfig(policy_config)
 
     def prepare(self, request: dict[str, Any]) -> dict[str, Any]:
         document_id, text, entity_map = self._validate_request(request)
@@ -100,10 +103,18 @@ class DocumentSanitizer:
         counts = {Action.PSEUDONYMIZE.value: 0, Action.GENERALIZE.value: 0, Action.ALLOW.value: 0}
 
         try:
+            policy_overrides = request.get("policy_overrides") or {}
+            if not isinstance(policy_overrides, dict):
+                raise ValueError("POLICY_OVERRIDES_MUST_BE_OBJECT")
             for entity_id, supplied in entity_map.items():
                 source_type = str(supplied["label"]).strip().upper()
                 canonical_type = canonical_entity_type(source_type)
-                action = get_action(source_type).value
+                action = self.policy_config.action_for(
+                    source_type,
+                    entity_id=entity_id,
+                    supplied_action=supplied.get("policy_action"),
+                    overrides=policy_overrides,
+                )
                 original_text = str(supplied["original_text"])
                 placeholder = str(supplied["placeholder"])
                 language = _input_language(original_text)
@@ -162,6 +173,7 @@ class DocumentSanitizer:
             "document_id": document_id,
             "text": text,
             "entities": output_entities,
+            "policy_config": self.policy_config.to_dict(),
             "summary": {
                 "pseudonymize_count": counts[Action.PSEUDONYMIZE.value],
                 "generalize_count": counts[Action.GENERALIZE.value],

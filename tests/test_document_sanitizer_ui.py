@@ -60,3 +60,22 @@ def test_document_ui_returns_structured_validation_error():
     assert status == 400
     assert result["error"] == "PLACEHOLDER_NOT_FOUND:E1"
 
+
+def test_document_ui_accepts_ner_batch_envelope():
+    status, result = _post({
+        "total_documents": 1,
+        "completed_documents": 1,
+        "handoffs": [{
+            "document_id": "batch-001",
+            "text": "[[E1]] is from [[E2]].",
+            "entity_map": {
+                "E1": {"label": "PERSON_NAME", "original_text": "Alice", "placeholder": "[[E1]]"},
+                "E2": {"label": "COUNTRY", "original_text": "Egypt", "placeholder": "[[E2]]"},
+            },
+        }],
+    })
+    assert status == 200
+    assert result["handoffs"][0]["document_id"] == "batch-001"
+    assert result["jev_handoff"]["protocol"] == "finaira-policy-to-jev-v1"
+    assert result["jev_handoff"]["requests"]
+

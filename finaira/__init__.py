@@ -3,6 +3,7 @@
 from .models import Entity, PipelineRequest, PipelineResult
 from .pipeline import PrivacyPipeline
 from .document_sanitizer import DocumentSanitizer, prepare_document
+from .integration import NERPolicyJEVGateway
 
 __all__ = [
     "Entity",
@@ -11,4 +12,5 @@ __all__ = [
     "PrivacyPipeline",
     "DocumentSanitizer",
     "prepare_document",
+    "NERPolicyJEVGateway",
 ]

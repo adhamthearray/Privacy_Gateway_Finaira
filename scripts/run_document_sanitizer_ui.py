@@ -12,7 +12,7 @@ from urllib.parse import parse_qs, urlparse
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from finaira.document_sanitizer import prepare_document  # noqa: E402
+from finaira.integration import NERPolicyJEVGateway  # noqa: E402
 
 
 HTML = r"""<!doctype html>
@@ -48,7 +48,7 @@ HTML = r"""<!doctype html>
 <body>
   <main>
     <h1>Finaira Document Sanitizer</h1>
-    <p>Drop a placeholder-document JSON file, or paste JSON below. The output is JSON only: pseudonymization forms for policy-pseudonymized entities and unselected database candidates for generalizable entities.</p>
+    <p>Drop a single placeholder document or an NER batch handoff JSON file. The output is JSON only: pseudonymization forms, generalization candidates, and the downstream JEV selection handoff.</p>
     <section class="panel">
       <div id="drop" class="drop">Drop a <code>.json</code> file here</div>
       <div class="controls">
@@ -118,11 +118,10 @@ class Handler(BaseHTTPRequestHandler):
             request = json.loads(self.rfile.read(length).decode("utf-8"))
             query = parse_qs(urlparse(self.path).query)
             review = query.get("review", ["1"])[0] == "1"
-            result = prepare_document(
-                request,
+            result = NERPolicyJEVGateway(
                 self.db_path,
                 include_review_candidates=review,
-            )
+            ).prepare(request)
             body = json.dumps(result, ensure_ascii=False, indent=2).encode("utf-8")
             self._send(body, "application/json; charset=utf-8")
         except json.JSONDecodeError as exc:

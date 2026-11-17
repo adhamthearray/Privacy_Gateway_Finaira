@@ -124,3 +124,16 @@ For a broader test, use `examples/document_sanitizer_challenging_sample.json`; i
 includes repeated placeholders, Arabic and English values, a review-only bank,
 an ambiguous date, an unknown corporation, an age, a job title, and a monetary
 amount.
+
+For the upstream-NER and downstream-JEV integration contract, see
+`docs/ner_policy_jev_handoff.md` and run:
+
+```powershell
+py -X utf8 scripts/run_ner_policy_jev_gateway.py examples/ner_policy_jev_handoff_sample.json
+```
+
+Build the focused handoff ZIP for another developer:
+
+```powershell
+py -X utf8 scripts/create_ner_policy_jev_handoff_zip.py
+```
