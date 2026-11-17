@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import subprocess
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile
 
@@ -37,7 +38,20 @@ def main() -> int:
     with ZipFile(args.output, "w", compression=ZIP_DEFLATED) as archive:
         for path in files_to_package():
             relative = path.relative_to(ROOT).as_posix()
-            archive.write(path, f"{PACKAGE_ROOT}/{relative}")
+            archive_name = f"{PACKAGE_ROOT}/{relative}"
+            if relative == "data/processed/finaira_generalization.db":
+                # Tests and a running UI can hold a local SQLite copy open or
+                # update metadata. Package the committed database snapshot so
+                # the handoff is reproducible and never includes test residue.
+                clean_db = subprocess.run(
+                    ["git", "show", f"HEAD:{relative}"],
+                    cwd=ROOT,
+                    check=True,
+                    stdout=subprocess.PIPE,
+                ).stdout
+                archive.writestr(archive_name, clean_db)
+            else:
+                archive.write(path, archive_name)
     print(f"Created {args.output}")
     print(f"Files: {len(files_to_package())}")
     print(f"Bytes: {args.output.stat().st_size}")
