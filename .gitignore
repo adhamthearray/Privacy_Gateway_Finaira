@@ -3,3 +3,4 @@ logs/
 __pycache__/
 .pytest_cache/
 data/processed/*_backup_*.db
+dist/
