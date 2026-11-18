@@ -65,7 +65,7 @@ def test_golden_u_max_2_uses_job_category_and_location_pseudonym():
 def test_forbidden_original_and_unmatched_value_fall_back_to_typed_pseudonym():
     request = {
         "case_id": "case-unmatched",
-        "task": "customer_demographic_summary",
+        "task": "professional_summary",
         "document": "Customer nationality is Zzzland.",
         "entities": [{"id": "n1", "type": "NATIONALITY", "original": "Zzzland", "start": 24, "end": 31}],
     }

@@ -319,6 +319,8 @@ def _preserves(entity: EntitySpec, candidate_text: str, candidate_meta: Mapping[
             return entity.entity_type != "AGE"
         if profile.task_id == "nationality_country_eligibility":
             return entity.entity_type not in {"COUNTRY", "NATIONALITY"}
+        if profile.task_id == "customer_demographic_summary":
+            return entity.entity_type not in {"AGE", "COUNTRY", "NATIONALITY"}
         if profile.task_id in {"financial_field_extraction", "financial_transaction_summary"}:
             return entity.entity_type != "MONETARY_AMOUNT"
         return True
@@ -355,6 +357,13 @@ class V2Optimizer:
         self.db = GeneralizationDB(db_path)
         self.db_path = str(db_path)
         self.policy_config = policy_config or PolicyConfig()
+        self._lookup_cache: dict[tuple[str, str, str], dict[str, Any]] = {}
+
+    def _db_lookup(self, entity_type: str, value: str, language: str) -> dict[str, Any]:
+        key = (entity_type, value, language)
+        if key not in self._lookup_cache:
+            self._lookup_cache[key] = self.db.get_candidates(entity_type, value, output_language=language, include_review_candidates=False, input_language=language)
+        return self._lookup_cache[key]
 
     def prepare(self, request: OptimizationRequest | Mapping[str, Any], *, pseudonym_state: dict[str, Any] | None = None) -> tuple[OptimizationRequest, TaskProfile, dict[str, str]]:
         if not isinstance(request, OptimizationRequest):
@@ -387,7 +396,7 @@ class V2Optimizer:
         if entity.identity_key or entity.entity_type not in DATABASE_TYPES:
             return
         lookup_type = "CORPORATION" if entity.entity_type in {"ORGANIZATION", "UNIVERSITY"} else entity.entity_type
-        result = self.db.get_candidates(lookup_type, entity.original, output_language=entity.language, include_review_candidates=False, input_language=entity.language)
+        result = self._db_lookup(lookup_type, entity.original, entity.language)
         exact = [item for item in result.get("candidates", []) if item.get("is_exact") and not item.get("is_suppression")]
         if result.get("resolution_status") in PRODUCTION_STATUSES and len(exact) == 1 and result.get("canonical_id"):
             entity.canonical_id = entity.canonical_id or result.get("canonical_id")
@@ -408,7 +417,7 @@ class V2Optimizer:
                 raw_candidates.append({"candidate_id": f"MONETARY_{level}", "level_code": level, "representation": option.get("en"), "specificity_rank": rank + 1, "source": "Finaira monetary interpreter", "verification_status": "CONFIGURED", "metadata": {"label_en": option.get("en"), "label_ar": option.get("ar"), "status": option.get("status"), "preserves_facts": ("amount_currency_and_unit",) if option.get("status") == "AVAILABLE" else ()}})
         elif entity.entity_type in DATABASE_TYPES:
             lookup_type = "CORPORATION" if entity.entity_type in {"ORGANIZATION", "UNIVERSITY"} else entity.entity_type
-            result = self.db.get_candidates(lookup_type, entity.original, output_language=entity.language, include_review_candidates=False, input_language=entity.language)
+            result = self._db_lookup(lookup_type, entity.original, entity.language)
             lookup.update({"resolution_status": result.get("resolution_status"), "reason_code": result.get("reason_code"), "canonical_id": result.get("canonical_id"), "entity_type": result.get("entity_type")})
             entity.canonical_id = entity.canonical_id or result.get("canonical_id")
             exact = [item for item in result.get("candidates", []) if item.get("is_exact") and not item.get("is_suppression")]
@@ -421,7 +430,10 @@ class V2Optimizer:
         entity.candidates = [self._candidate_from_raw(entity, item, profile, pseudonym, max_rank=max_rank) for item in eligible]
         terminal_meta = {"candidate_id": f"PSEUDONYM_{entity.entity_type}_{entity.entity_id}", "level_code": "TYPED_PSEUDONYM", "method": "case_scoped_vault", "preserves_facts": ()}
         terminal_preserves = _preserves(entity, pseudonym, terminal_meta, profile, True)
-        entity.candidates.append(Candidate(entity.entity_id, entity.entity_type, pseudonym, "PSEUDONYMIZE", 0.0 if terminal_preserves else float(sum(1 for _ in profile.mandatory_facts)), 0.0, "TYPED_PSEUDONYM", "Finaira MappingVault", terminal_meta, terminal_preserves, True, False))
+        terminal_utility = entity.metadata.get("pseudonym_utility_loss")
+        if terminal_utility is None:
+            terminal_utility = 0.0 if terminal_preserves else float(sum(1 for _ in profile.mandatory_facts))
+        entity.candidates.append(Candidate(entity.entity_id, entity.entity_type, pseudonym, "PSEUDONYMIZE", float(terminal_utility), 0.0, "TYPED_PSEUDONYM", "Finaira MappingVault", terminal_meta, terminal_preserves, True, False))
 
     def _candidate_from_raw(self, entity: EntitySpec, raw: Mapping[str, Any], profile: TaskProfile, pseudonym: str, *, max_rank: int = 0) -> Candidate:
         meta = dict(raw.get("metadata") or {})
@@ -435,6 +447,10 @@ class V2Optimizer:
         terminal = bool(raw.get("terminal_pseudonym") or meta.get("terminal_pseudonym") or raw.get("transformation") == "PSEUDONYMIZE")
         preserves = _preserves(entity, text, meta, profile, terminal)
         utility = raw.get("utility_loss", meta.get("utility_loss"))
+        overrides = entity.metadata.get("utility_by_level") or {}
+        level_code = raw.get("level_code", meta.get("level_code"))
+        if level_code in overrides:
+            utility = overrides[level_code]
         if utility is None:
             utility = 0.0 if preserves else float(sum(1 for _ in profile.mandatory_facts))
         return Candidate(entity.entity_id, entity.entity_type, text, "PSEUDONYMIZE" if terminal else "GENERALIZE", float(utility), specificity, raw.get("level_code"), raw.get("source"), {**meta, "candidate_id": raw.get("candidate_id", meta.get("candidate_id")), "lookup_source": entity.lookup.get("mode", "supplied")}, preserves, terminal, False)

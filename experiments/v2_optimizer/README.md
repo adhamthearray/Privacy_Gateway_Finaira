@@ -34,9 +34,18 @@ budget sweep, and CSV/JSON export.
 
 ```powershell
 py -X utf8 -m pytest -q tests/test_v2_optimizer.py
+py -X utf8 scripts/run_v2_sentence_benchmark.py
 py -X utf8 -c "from finaira.v2 import run_benchmarks; import json; print(json.dumps(run_benchmarks(), indent=2))"
 py -X utf8 -m pytest -q
 ```
+
+The sentence benchmark generates 100 synthetic sentences from real repository
+values. Banks, countries, nationalities, occupations, corporations, and
+government values are admitted only after an exact/direct `MATCHED` or
+`VERIFIED` lookup; configured AGE/DATE values are labeled as configuration
+inputs. Each sentence carries upstream offsets and 5 policy-generalizable
+entities, alternating English and Arabic. Results are written to
+`reports/v2_optimizer/sentence_benchmark_results.json`.
 
 `V2Optimizer.independent_baseline()` chooses independently by utility, then
 specificity. `greedy_baseline()` applies global changes within the same budget.

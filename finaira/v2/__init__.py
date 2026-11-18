@@ -19,6 +19,7 @@ from .core import (
     make_golden_fixture,
 )
 from .benchmark import run_benchmarks, synthetic_benchmark_request
+from .sentence_benchmark import generate_sentence_requests, run_sentence_benchmark, verified_value_pools
 
 __all__ = [
     "CaseScopedPseudonymizer",
@@ -34,4 +35,7 @@ __all__ = [
     "make_golden_fixture",
     "run_benchmarks",
     "synthetic_benchmark_request",
+    "verified_value_pools",
+    "generate_sentence_requests",
+    "run_sentence_benchmark",
 ]
