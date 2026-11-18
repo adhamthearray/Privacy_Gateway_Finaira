@@ -1,0 +1,5 @@
+{
+  "status": "PENDING_GPU",
+  "model": "Qwen/Qwen3.5-4B",
+  "reason": "Official augmented-policy LoRA recipe and complete test evaluation require CUDA."
+}

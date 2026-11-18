@@ -1,0 +1,5 @@
+{
+  "status": "PENDING_GPU",
+  "reason": "Qwen3.5-4B LoRA requires CUDA/BF16 for the released recipe; no CUDA device is available locally.",
+  "model_id": "Qwen/Qwen3.5-4B"
+}

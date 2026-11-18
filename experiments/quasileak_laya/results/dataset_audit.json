@@ -1,0 +1,220 @@
+{
+  "dataset_path": "experiments\\quasileak_laya\\vendor\\QuasiLeak-Bench\\data\\quasileak_bench_data_full.jsonl",
+  "dataset_sha256": "9af4c3e4fc59f664d124448e81e514012b8608bfa3ee6ba0faba9c6b9b27a965",
+  "metadata_expected_sha256": "9af4c3e4fc59f664d124448e81e514012b8608bfa3ee6ba0faba9c6b9b27a965",
+  "metadata_expected_bytes": 37648925,
+  "row_check": {
+    "rows": 5000,
+    "unique_sample_ids": 5000,
+    "errors": [],
+    "valid": true
+  },
+  "split_counts": {
+    "train": 3500,
+    "validation": 500,
+    "test": 1000,
+    "subset_non_revealing": 1618,
+    "policy_shift": 500,
+    "sft_policy_shift": 500,
+    "smoke_train": 20
+  },
+  "profile_counts": {
+    "train": 350,
+    "validation": 50,
+    "test": 100
+  },
+  "profile_disjoint_train_validation_test": true,
+  "missing_membership_ids": {
+    "train": 0,
+    "validation": 0,
+    "test": 0,
+    "subset_non_revealing": 0,
+    "policy_shift": 0,
+    "sft_policy_shift": 0,
+    "smoke_train": 0
+  },
+  "metadata": {
+    "dataset": {
+      "name": "QuasiLeak-Bench-Full",
+      "documents": 5000,
+      "groups": 9099,
+      "singletons": 23041,
+      "spans": 23041,
+      "distractors": 12237,
+      "unique_profiles": 500,
+      "unique_contexts": 20
+    },
+    "attributes": [
+      "age",
+      "gender",
+      "nationality",
+      "education",
+      "occupation",
+      "income",
+      "relationship",
+      "health"
+    ],
+    "policy": {
+      "classes": [
+        "hide",
+        "keep",
+        "neutral"
+      ],
+      "require_complete_partition": true
+    },
+    "ids": {
+      "sample_id": "globally unique",
+      "profile_id": "globally identifies one immutable profile",
+      "context_id": "globally identifies one immutable context",
+      "group_id": "unique within sample",
+      "span_id": "unique within sample",
+      "distractor_id": "unique within sample"
+    },
+    "spans": {
+      "offset_convention": "half-open [start,end)",
+      "offset_unit": "Unicode code points in the decoded document string",
+      "text_must_equal_document_slice": true
+    },
+    "groups": {
+      "allowed_arities": [
+        2,
+        3,
+        4
+      ],
+      "cues_must_be_non_overlapping": true,
+      "arity_is_derived_from": "len(cue_ids)",
+      "distance": {
+        "values": [
+          "FAR",
+          "MEDIUM",
+          "NEAR"
+        ],
+        "semantics": "assigned construction-time placement condition"
+      },
+      "secondary_attributes": {
+        "semantics": "verified additional attribute binding used for reduced evaluation credit"
+      }
+    },
+    "confidence": {
+      "lift_definition": "max(0, (raw_confidence - base_rate) / (1 - base_rate))",
+      "bands": {
+        "CHANCE": "lift <= 0",
+        "WEAK": "0 < lift < 0.45",
+        "BORDERLINE": "0.45 <= lift < 0.50",
+        "MODERATE": "0.50 <= lift < 0.70",
+        "STRONG": "lift >= 0.70"
+      },
+      "band_role": "descriptive; verification decisions use the thresholds below",
+      "contracts_by_attribute": {
+        "age": {
+          "base_rate": 0.11,
+          "singleton_leak_bar_raw_confidence": 0.5105,
+          "joint_reveal_bar_raw_confidence": 0.555,
+          "singleton_metric_verdict": "nonleaking",
+          "joint_metric_verdict": "revealing",
+          "decision_rule": "attribute-specific chance-relative thresholds"
+        },
+        "gender": {
+          "base_rate": 0.5,
+          "singleton_leak_bar_raw_confidence": 0.725,
+          "joint_reveal_bar_raw_confidence": 0.75,
+          "singleton_metric_verdict": "nonleaking",
+          "joint_metric_verdict": "revealing",
+          "decision_rule": "attribute-specific chance-relative thresholds"
+        },
+        "nationality": {
+          "base_rate": 0.09,
+          "singleton_leak_bar_raw_confidence": 0.4995,
+          "joint_reveal_bar_raw_confidence": 0.545,
+          "singleton_metric_verdict": "nonleaking",
+          "joint_metric_verdict": "revealing",
+          "decision_rule": "attribute-specific chance-relative thresholds"
+        },
+        "education": {
+          "base_rate": 0.14,
+          "singleton_leak_bar_raw_confidence": 0.527,
+          "joint_reveal_bar_raw_confidence": 0.57,
+          "singleton_metric_verdict": "nonleaking",
+          "joint_metric_verdict": "revealing",
+          "decision_rule": "attribute-specific chance-relative thresholds"
+        },
+        "occupation": {
+          "base_rate": 0.09,
+          "singleton_leak_bar_raw_confidence": 0.4995,
+          "joint_reveal_bar_raw_confidence": 0.545,
+          "singleton_metric_verdict": "nonleaking",
+          "joint_metric_verdict": "revealing",
+          "decision_rule": "attribute-specific chance-relative thresholds"
+        },
+        "income": {
+          "base_rate": 0.25,
+          "singleton_leak_bar_raw_confidence": 0.5875,
+          "joint_reveal_bar_raw_confidence": 0.625,
+          "singleton_metric_verdict": "nonleaking",
+          "joint_metric_verdict": "revealing",
+          "decision_rule": "attribute-specific chance-relative thresholds"
+        },
+        "relationship": {
+          "base_rate": 0.167,
+          "singleton_leak_bar_raw_confidence": 0.54185,
+          "joint_reveal_bar_raw_confidence": 0.5835,
+          "singleton_metric_verdict": "nonleaking",
+          "joint_metric_verdict": "revealing",
+          "decision_rule": "attribute-specific chance-relative thresholds"
+        },
+        "health": {
+          "base_rate": 0.14,
+          "singleton_leak_bar_raw_confidence": 0.527,
+          "joint_reveal_bar_raw_confidence": 0.57,
+          "singleton_metric_verdict": "nonleaking",
+          "joint_metric_verdict": "revealing",
+          "decision_rule": "attribute-specific chance-relative thresholds"
+        }
+      }
+    },
+    "verification": {
+      "singleton_semantics": "each cue alone lies above chance and below its attribute's singleton leak bar",
+      "joint_semantics": "the complete cue group reaches its attribute's joint reveal bar",
+      "singleton_nonleaking_lift": "0 < lift < 0.45",
+      "joint_revealing_lift": "lift >= 0.50",
+      "accepted_group_condition": "every singleton is nonleaking and the joint is revealing",
+      "metric_verdict": [
+        "nonleaking",
+        "revealing"
+      ]
+    },
+    "derived_fields": {
+      "group_arity": "len(group.cue_ids)",
+      "group_attribute_for_span": "group selected by span.group_id",
+      "span_policy_verdict": "policy partition containing the group's attribute",
+      "span_text": "retained for usability although derivable from document offsets",
+      "canonical_group_explanation": "group.verification.joint.rationale"
+    },
+    "temporal_reference": {
+      "construction_year": 2026,
+      "semantics": "reference year for relative ages and calendar-dependent cues"
+    },
+    "scoring": {
+      "headline_metric": "P-GF1",
+      "scale": "0-100",
+      "parameters": {
+        "gamma": 2.0,
+        "iou": 0.75,
+        "rho_sec": 0.5,
+        "lambda_k": 1.0
+      },
+      "scorer": {
+        "path": "scorer/score.py",
+        "sha256": "2d4dd8f48595634af450810accfe5d492d32f63f54788023a702ef999f00b707"
+      }
+    },
+    "files": {
+      "archive": "data/quasileak_bench_data.zip",
+      "dataset": "quasileak_bench_data_full.jsonl",
+      "sha256": "9af4c3e4fc59f664d124448e81e514012b8608bfa3ee6ba0faba9c6b9b27a965",
+      "bytes": 37648925,
+      "lines": 5000
+    }
+  },
+  "valid": true
+}

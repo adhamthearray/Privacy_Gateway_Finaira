@@ -1,0 +1,30 @@
+{
+  "status": "PENDING_GPU",
+  "dataset": {
+    "documents": 5000,
+    "train": 3500,
+    "validation": 500,
+    "test": 1000,
+    "train_profiles": 350,
+    "validation_profiles": 50,
+    "test_profiles": 100,
+    "profile_disjoint": true,
+    "sha256": "9af4c3e4fc59f664d124448e81e514012b8608bfa3ee6ba0faba9c6b9b27a965"
+  },
+  "adapter": {
+    "validation_candidate_groups": 128000,
+    "validation_mean_span_recall": 0.1300508658008658,
+    "validation_mean_group_recall": 0.496,
+    "validation_cases_with_hidden_group_recalled": 0,
+    "primary_candidate_mode": "mined",
+    "oracle_mode": "diagnostic_only"
+  },
+  "models": {
+    "C0_BASE_LAYA": "PENDING_GPU",
+    "C1_QUASILEAK_LAYA": "PENDING_GPU",
+    "C2_QWEN_STANDARD_REPRODUCED": "PENDING_GPU",
+    "C3_QWEN_AUGMENTED_REPRODUCED": "PENDING_GPU"
+  },
+  "metrics": null,
+  "limitation": "No local CUDA device; no model accuracy, training, or GPU latency numbers are claimed."
+}

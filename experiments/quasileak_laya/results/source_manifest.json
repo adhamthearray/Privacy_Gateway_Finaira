@@ -1,0 +1,7 @@
+{
+  "quasileak_repository": "75987cdf029fac5fecce160bea218b458ed46dbb",
+  "laya_repository": "d1282e791d71e92f24f816ff3836e4fd1c2ded4a",
+  "dataset_archive": "vendor/QuasiLeak-Bench/data/quasileak_bench_data.zip",
+  "dataset_extracted": "vendor/QuasiLeak-Bench/data/quasileak_bench_data_full.jsonl",
+  "note": "Generated locally from the official repositories; use fetch_official_sources.py to recreate vendor checkouts."
+}

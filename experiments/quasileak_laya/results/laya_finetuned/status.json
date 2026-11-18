@@ -1,0 +1,5 @@
+{
+  "status": "PENDING_GPU",
+  "reason": "Laya fine-tuning requires a CUDA-capable device for the planned run; this machine exposes CPU-only PyTorch.",
+  "model_dir": "experiments\\quasileak_laya\\models\\convaiinnovations__laya"
+}

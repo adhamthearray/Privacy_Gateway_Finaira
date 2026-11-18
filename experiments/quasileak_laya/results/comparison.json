@@ -1,0 +1,60 @@
+{
+  "models": [
+    {
+      "model": "C0_BASE_LAYA",
+      "P-GF1": null,
+      "P-GP": null,
+      "P-GR": null,
+      "E-GF1": null,
+      "B-GF1": null,
+      "FAR": null,
+      "mean_latency_ms": null,
+      "p50_latency_ms": null,
+      "p95_latency_ms": null,
+      "p99_latency_ms": null,
+      "status": "PENDING_GPU"
+    },
+    {
+      "model": "C1_QUASILEAK_LAYA",
+      "P-GF1": null,
+      "P-GP": null,
+      "P-GR": null,
+      "E-GF1": null,
+      "B-GF1": null,
+      "FAR": null,
+      "mean_latency_ms": null,
+      "p50_latency_ms": null,
+      "p95_latency_ms": null,
+      "p99_latency_ms": null,
+      "status": "PENDING_GPU"
+    },
+    {
+      "model": "C2_QWEN_STANDARD_REPRODUCED",
+      "P-GF1": null,
+      "P-GP": null,
+      "P-GR": null,
+      "E-GF1": null,
+      "B-GF1": null,
+      "FAR": null,
+      "mean_latency_ms": null,
+      "p50_latency_ms": null,
+      "p95_latency_ms": null,
+      "p99_latency_ms": null,
+      "status": "PENDING_GPU"
+    },
+    {
+      "model": "C3_QWEN_AUGMENTED_REPRODUCED",
+      "P-GF1": null,
+      "P-GP": null,
+      "P-GR": null,
+      "E-GF1": null,
+      "B-GF1": null,
+      "FAR": null,
+      "mean_latency_ms": null,
+      "p50_latency_ms": null,
+      "p95_latency_ms": null,
+      "p99_latency_ms": null,
+      "status": "PENDING_GPU"
+    }
+  ]
+}

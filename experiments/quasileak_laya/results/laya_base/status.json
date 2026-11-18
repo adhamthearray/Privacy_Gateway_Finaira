@@ -1,0 +1,6 @@
+{
+  "status": "PENDING_GPU",
+  "reason": "Laya evaluation was not started because the requested auto/cuda lane has no CUDA device.",
+  "model": "convaiinnovations/laya",
+  "split": "test"
+}
