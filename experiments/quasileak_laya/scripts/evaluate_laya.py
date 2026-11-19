@@ -82,12 +82,15 @@ def main() -> int:
     ap.add_argument("--groups-per-call", type=int, default=8, help="Maximum candidate groups sent to one Laya call; keeps GPU memory bounded")
     ap.add_argument("--threshold", type=float, default=0.55)
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--progress-every", type=int, default=1, help="Print progress after this many completed documents")
     ap.add_argument("--resume", action="store_true")
     args = ap.parse_args()
     if args.groups_per_call < 1:
         ap.error("--groups-per-call must be at least 1")
     if args.chunk_size < 1:
         ap.error("--chunk-size must be at least 1")
+    if args.progress_every < 1:
+        ap.error("--progress-every must be at least 1")
     args.output_dir.mkdir(parents=True, exist_ok=True)
     try:
         import torch
@@ -107,6 +110,16 @@ def main() -> int:
         rows = rows[: args.limit]
 
     completed = _load_completed(raw_path) if args.resume else set()
+    initial_completed = sum(row["sample_id"] in completed for row in rows)
+    newly_completed = 0
+    progress_started = time.perf_counter()
+    print(
+        f"Starting {args.split}: {len(rows)} documents; "
+        f"already complete: {initial_completed}; "
+        f"max groups: {args.max_groups}; groups/call: {args.groups_per_call}; "
+        f"window batch: {args.chunk_size}",
+        flush=True,
+    )
     mode = "w" if not args.resume else "a"
     try:
         agent = _load_agent(args.model, args.device)
@@ -163,6 +176,19 @@ def main() -> int:
                 "end_to_end_ms": round(end_to_end, 4), "parse_ms": round(parse_ms, 4),
                 "success": not bool(error), "error_type": type(error).__name__ if error else "", "device": args.device,
             }); lat.flush(); os.fsync(lat.fileno())
+            newly_completed += 1
+            if newly_completed % args.progress_every == 0 or initial_completed + newly_completed == len(rows):
+                done = initial_completed + newly_completed
+                elapsed = time.perf_counter() - progress_started
+                rate = newly_completed / elapsed if elapsed > 0 else 0.0
+                remaining = (len(rows) - done) / rate if rate > 0 else None
+                eta = f", ETA {remaining / 60:.1f} min" if remaining is not None else ""
+                print(
+                    f"[{done}/{len(rows)}] {args.split} progress; "
+                    f"last={row['sample_id']}; model={model_ms:.1f} ms; "
+                    f"rate={rate:.2f} docs/s{eta}",
+                    flush=True,
+                )
 
     with raw_path.open(encoding="utf-8") as fh, prediction_path.open("w", encoding="utf-8", newline="\n") as pred:
         for line in fh:
