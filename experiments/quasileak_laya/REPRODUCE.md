@@ -26,7 +26,7 @@ py experiments/quasileak_laya/scripts/prepare_data.py ... --split train --traini
 py experiments/quasileak_laya/scripts/prepare_data.py ... --split validation --out experiments/quasileak_laya/results/laya_dev.jsonl
 ```
 
-Use `--max-groups 64` for a quick CPU smoke adapter and 256 or higher for a GPU run. The training JSONL contains gold positives; validation/test JSONL does not.
+Use `--max-groups 64` for a quick CPU smoke adapter and 256 or higher for a GPU run. The training JSONL contains gold positives; validation/test JSONL does not. During Laya evaluation, `--groups-per-call 8 --chunk-size 1` bounds T4 memory while retaining the full candidate list; increase `groups-per-call` only after measuring GPU headroom.
 
 ## Download model artifacts
 
@@ -49,11 +49,13 @@ py experiments/quasileak_laya/scripts/evaluate_laya.py `
   --dataset experiments/quasileak_laya/vendor/QuasiLeak-Bench/data/quasileak_bench_data_full.jsonl `
   --manifest experiments/quasileak_laya/vendor/QuasiLeak-Bench/data/splits/split_manifest.json `
   --split test --model experiments/quasileak_laya/models/convaiinnovations__laya `
-  --output-dir experiments/quasileak_laya/results/laya_base --device cuda
+  --output-dir experiments/quasileak_laya/results/laya_base --device cuda `
+  --groups-per-call 8 --chunk-size 1
 
 py experiments/quasileak_laya/scripts/evaluate_laya.py ... `
   --split test --model experiments/quasileak_laya/results/laya_finetuned `
-  --output-dir experiments/quasileak_laya/results/laya_finetuned --device cuda --resume
+  --output-dir experiments/quasileak_laya/results/laya_finetuned --device cuda `
+  --groups-per-call 8 --chunk-size 1 --resume
 ```
 
 The first evaluation should also be run on validation and passed to threshold calibration before the final test run.

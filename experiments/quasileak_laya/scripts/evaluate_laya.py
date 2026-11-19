@@ -49,6 +49,16 @@ def _load_agent(model: str, device: str):
     return laya.load(model, device=device, backend="eager")
 
 
+def _merge_usage(total: dict, current: dict) -> dict:
+    """Aggregate usage from multiple bounded Laya calls."""
+    for key, value in (current or {}).items():
+        if isinstance(value, (int, float)) and not isinstance(value, bool):
+            total[key] = total.get(key, 0) + value
+        elif key not in total:
+            total[key] = value
+    return total
+
+
 def _write_score(predictions: Path, dataset: Path, split: str, out: Path) -> None:
     import subprocess
     cmd = [sys.executable, str(VENDOR / "scorer" / "score.py"), "--predictions", str(predictions), "--dataset", str(dataset), "--split", split]
@@ -69,10 +79,15 @@ def main() -> int:
     ap.add_argument("--max-groups", type=int, default=256)
     ap.add_argument("--candidate-mode", choices=("mined", "oracle"), default="mined")
     ap.add_argument("--chunk-size", type=int, default=64)
+    ap.add_argument("--groups-per-call", type=int, default=8, help="Maximum candidate groups sent to one Laya call; keeps GPU memory bounded")
     ap.add_argument("--threshold", type=float, default=0.55)
     ap.add_argument("--limit", type=int)
     ap.add_argument("--resume", action="store_true")
     args = ap.parse_args()
+    if args.groups_per_call < 1:
+        ap.error("--groups-per-call must be at least 1")
+    if args.chunk_size < 1:
+        ap.error("--chunk-size must be at least 1")
     args.output_dir.mkdir(parents=True, exist_ok=True)
     try:
         import torch
@@ -111,16 +126,24 @@ def main() -> int:
                 continue
             started = time.perf_counter_ns()
             groups = _groups(row, args.max_groups, args.candidate_mode)
-            request = build_request(row, groups)
             answers = {}
+            usage = {}
             error = None
             model_start = time.perf_counter_ns()
-            try:
-                result = agent.predict_long(request["state"], request["questions"], batch_size=args.chunk_size)
-                answers = result.get("answers", {})
-            except Exception as exc:  # keep failed requests for audit/resume
-                result = {}
-                error = f"{type(exc).__name__}: {exc}"
+            for offset in range(0, len(groups), args.groups_per_call):
+                group_chunk = groups[offset : offset + args.groups_per_call]
+                request = build_request(row, group_chunk)
+                try:
+                    result = agent.predict_long(request["state"], request["questions"], batch_size=args.chunk_size)
+                    usage = _merge_usage(usage, result.get("usage", {}))
+                    chunk_answers = result.get("answers", {})
+                    for local_index in range(len(group_chunk)):
+                        local_key = f"group_{local_index:05d}"
+                        if local_key in chunk_answers:
+                            answers[f"group_{offset + local_index:05d}"] = chunk_answers[local_key]
+                except Exception as exc:  # keep failed requests for audit/resume
+                    error = f"{type(exc).__name__}: {exc}"
+                    break
             model_ms = (time.perf_counter_ns() - model_start) / 1_000_000
             parse_start = time.perf_counter_ns()
             prediction = prediction_from_answers(row, groups, answers, threshold=args.threshold) if not error else {"sample_id": row["sample_id"], "evidence": []}
@@ -129,14 +152,14 @@ def main() -> int:
             raw_row = {
                 "sample_id": row["sample_id"], "model": args.model, "split": args.split,
                 "candidate_groups": [g.as_dict() for g in groups], "answers": answers,
-                "result_usage": result.get("usage", {}), "prediction": prediction,
+                "result_usage": usage, "prediction": prediction,
                 "success": not bool(error), "error": error,
             }
             raw.write(json.dumps(raw_row, ensure_ascii=False, separators=(",", ":")) + "\n"); raw.flush(); os.fsync(raw.fileno())
             writer.writerow({
                 "sample_id": row["sample_id"], "model": args.model, "candidate_groups": len(groups),
-                "question_count": len(request["questions"]), "input_tokens": result.get("usage", {}).get("input_tokens"),
-                "windows": result.get("usage", {}).get("windows"), "model_ms": round(model_ms, 4),
+                "question_count": len(groups), "input_tokens": usage.get("input_tokens"),
+                "windows": usage.get("windows"), "model_ms": round(model_ms, 4),
                 "end_to_end_ms": round(end_to_end, 4), "parse_ms": round(parse_ms, 4),
                 "success": not bool(error), "error_type": type(error).__name__ if error else "", "device": args.device,
             }); lat.flush(); os.fsync(lat.fileno())
