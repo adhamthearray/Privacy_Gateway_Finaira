@@ -25,7 +25,7 @@
   "unresolved": 0,
   "average_normalized_loss": 0.11199999999999999,
   "detector_calls": 80,
-  "detector_seconds": 0.00040730065666139126,
+  "detector_seconds": 0.0004589997697621584,
   "verified_gold_initial_detection": {
     "gold_risk_cases": 30,
     "gold_control_cases": 20,
