@@ -1,0 +1,42 @@
+{
+  "cases": 50,
+  "statuses": {
+    "NO_RISK_AFTER_REPAIR": 30,
+    "NO_RISK_DETECTED": 20
+  },
+  "languages": {
+    "ar": {
+      "cases": 36,
+      "loss": 5.600000000000001,
+      "average_normalized_loss": 0.15555555555555559
+    },
+    "mixed": {
+      "cases": 9,
+      "loss": 0.0,
+      "average_normalized_loss": 0.0
+    },
+    "en": {
+      "cases": 5,
+      "loss": 0.0,
+      "average_normalized_loss": 0.0
+    }
+  },
+  "accepted_no_risk_detected": 50,
+  "unresolved": 0,
+  "average_normalized_loss": 0.11199999999999999,
+  "detector_calls": 80,
+  "detector_seconds": 0.00040730065666139126,
+  "verified_gold_initial_detection": {
+    "gold_risk_cases": 30,
+    "gold_control_cases": 20,
+    "true_positive": 30,
+    "false_positive": 0,
+    "false_negative": 0,
+    "true_negative": 20,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "scope": "Initial detector decision against the explicit synthetic finite-rule gold; not a real-world privacy metric."
+  },
+  "note": "No-risk detection is not a guarantee of privacy or absence of real-world inference."
+}

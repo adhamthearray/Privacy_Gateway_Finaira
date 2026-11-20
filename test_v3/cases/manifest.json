@@ -1,0 +1,22 @@
+{
+  "seed": 42,
+  "cases": 50,
+  "language_counts": {
+    "ar": 36,
+    "mixed": 9,
+    "en": 5
+  },
+  "risky_cases": 30,
+  "control_cases": 20,
+  "database_backed_entity_types": [
+    "AGE",
+    "JOB_TITLE",
+    "BANK",
+    "NATIONALITY",
+    "COUNTRY",
+    "DATE"
+  ],
+  "database_lookup_rule": "Each annotated source value requires a single MATCHED/VERIFIED exact/direct lookup; exact/raw candidates are observation-only and excluded from optimizer ladders.",
+  "repeated_identity_cases": 10,
+  "output": "cases/synthetic_cases.jsonl"
+}

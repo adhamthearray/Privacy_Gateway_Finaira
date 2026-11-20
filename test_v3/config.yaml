@@ -1,0 +1,12 @@
+case_limit: 50
+max_iterations: 8
+max_detector_calls_per_case: 40
+solver_time_limit_seconds: 5
+use_4bit: true
+seed: 42
+model_path: null
+base_model: Qwen/Qwen3.5-4B
+qlb_commit: 75987cdf029fac5fecce160bea218b458ed46dbb
+max_new_tokens: 2048
+shots: 0
+thinking: false
