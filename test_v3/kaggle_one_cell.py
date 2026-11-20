@@ -22,7 +22,9 @@ MODEL_PATH = None
 BASE_MODEL = "Qwen/Qwen3.5-4B"
 MAX_NEW_TOKENS = 2048
 
-HERE = Path(__file__).resolve().parent
+# ``__file__`` exists when this is run as a .py file but not when the same
+# code is pasted into a Kaggle notebook cell.
+HERE = Path(__file__).resolve().parent if "__file__" in globals() else Path.cwd()
 WORK = Path("/kaggle/working/test_v3_results")
 WORK.mkdir(parents=True, exist_ok=True)
 
