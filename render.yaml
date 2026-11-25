@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: finaira-laya-annotation
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: FINAIRA_AUTH_USERS
+        sync: false
+      - key: GRADIO_ANALYTICS_ENABLED
+        value: "False"
+

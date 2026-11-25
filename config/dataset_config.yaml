@@ -1,0 +1,27 @@
+seed: 20261126
+entity_types:
+  - CORPORATION
+  - BANK
+  - GOVERNMENT_ENTITY
+  - DATE
+  - OCCUPATION
+  - JOB_TITLE
+  - NATIONALITY
+  - AGE
+  - MONETARY_AMOUNT
+  - COUNTRY
+languages: [en, ar_msa, ar_egy, ar_en_mixed]
+pilot:
+  semantic_specs: 36
+  prompt_variants: 144
+  decisions: 1440
+splits:
+  train: 0.70
+  validation: 0.15
+  test: 0.15
+  grouping_key: contrast_group_id
+approval:
+  generated_status: PENDING_REVIEW
+  minimum_independent_reviews: 2
+  export_statuses: [APPROVED, ADJUDICATED]
+

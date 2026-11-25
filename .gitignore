@@ -1,0 +1,7 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+data/annotations.sqlite3*
+artifacts/
+reports/*.log
+

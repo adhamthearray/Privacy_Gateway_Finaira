@@ -1,0 +1,18 @@
+base_model: multilingual
+loss: soft-ce
+shuffle_options: true
+label_smoothing: 0.05
+seed: 20261126
+epochs: 3
+micro_batch: 8
+grad_accum: 8
+encoder_lr: 0.000025
+head_lr: 0.0001
+output_dir: artifacts/laya_relevance
+validation_file: data/validation.jsonl
+test_file: data/test.jsonl
+notes:
+  - "Values are a starting experiment configuration, not claimed optimal hyperparameters."
+  - "Training must not start until human-approved train and validation exports are non-empty."
+  - "Fit probability calibration on a held-out calibration partition, never on test."
+

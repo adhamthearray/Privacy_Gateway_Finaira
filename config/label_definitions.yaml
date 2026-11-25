@@ -1,0 +1,12 @@
+labels:
+  RELEVANT: "The task explicitly asks for or materially requires this information type."
+  SEMI_RELEVANT: "The type provides concrete, authorized supporting value, but the task remains correctly completable without it."
+  IRRELEVANT: "The type makes no meaningful contribution or is expressly excluded."
+annotation_metadata:
+  AMBIGUOUS_PENDING_REVIEW: "Insufficient or contradictory requirements; never exported as a model label."
+semi_relevant_rules:
+  - State the primary objective.
+  - Explain why the target type is not mandatory.
+  - Identify a concrete supporting contribution.
+  - Confirm that optional context is authorized.
+

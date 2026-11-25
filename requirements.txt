@@ -1,0 +1,10 @@
+gradio==6.27.0
+pandas==2.3.3
+PyYAML==6.0.3
+scikit-learn==1.7.2
+pytest==9.1.1
+SQLAlchemy==2.0.51
+psycopg[binary]==3.3.9
+# Laya is an optional training dependency. Install from its official package/repository
+# in a dedicated training environment after human-approved exports exist.
+

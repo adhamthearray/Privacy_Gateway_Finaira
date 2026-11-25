@@ -1,0 +1,8 @@
+{
+  "status": "BLOCKED_PENDING_HUMAN_REVIEW",
+  "evaluation_split": "test",
+  "approved_train_examples": 0,
+  "approved_evaluation_examples": 0,
+  "models": {},
+  "note": "No metric is ever computed from proposed synthetic labels."
+}

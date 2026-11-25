@@ -1,0 +1,363 @@
+{
+  "entity_count": 10,
+  "entities": {
+    "CORPORATION": {
+      "definition_en": "A legally or commercially organized company or business entity.",
+      "definition_ar": "شركة أو كيان تجاري منظم قانونياً أو تجارياً.",
+      "aliases": [
+        "company",
+        "employer",
+        "firm",
+        "شركة",
+        "مؤسسة تجارية"
+      ],
+      "egyptian_terms": [
+        "الشركة",
+        "مكان الشغل"
+      ],
+      "banking_synonyms": [
+        "corporate client",
+        "legal entity",
+        "employer organization"
+      ],
+      "related_concepts": [
+        "industry",
+        "incorporation",
+        "ownership"
+      ],
+      "common_confusions": [
+        "BANK",
+        "GOVERNMENT_ENTITY"
+      ],
+      "boundaries": "Includes commercial organizations; excludes a bank when bank identity is the semantic role and excludes public authorities.",
+      "relevance_examples": [
+        "identify the employer",
+        "verify the borrowing company",
+        "classify the corporate client"
+      ]
+    },
+    "BANK": {
+      "definition_en": "A bank or financial institution as an organization, not an account identifier.",
+      "definition_ar": "بنك أو مؤسسة مالية بصفتها جهة، وليس رقم حساب مصرفي.",
+      "aliases": [
+        "financial institution",
+        "lender",
+        "بنك",
+        "مصرف"
+      ],
+      "egyptian_terms": [
+        "البنك",
+        "البنك اللي العميل بيتعامل معاه"
+      ],
+      "banking_synonyms": [
+        "issuing bank",
+        "beneficiary bank",
+        "relationship bank"
+      ],
+      "related_concepts": [
+        "branch",
+        "banking relationship",
+        "lender"
+      ],
+      "common_confusions": [
+        "CORPORATION",
+        "GOVERNMENT_ENTITY",
+        "BANK_ACCOUNT_NUMBER"
+      ],
+      "boundaries": "Does not include account numbers, balances, or every institution merely because a banking task is discussed.",
+      "relevance_examples": [
+        "name the customer's bank",
+        "approved-bank check",
+        "identify the issuing institution"
+      ]
+    },
+    "GOVERNMENT_ENTITY": {
+      "definition_en": "A ministry, regulator, public authority, or government agency.",
+      "definition_ar": "وزارة أو جهة رقابية أو هيئة عامة أو وكالة حكومية.",
+      "aliases": [
+        "authority",
+        "regulator",
+        "ministry",
+        "هيئة",
+        "وزارة"
+      ],
+      "egyptian_terms": [
+        "الجهة الحكومية",
+        "الجهة الرقابية"
+      ],
+      "banking_synonyms": [
+        "supervisory authority",
+        "licensing authority",
+        "financial regulator"
+      ],
+      "related_concepts": [
+        "licensing",
+        "regulation",
+        "public administration"
+      ],
+      "common_confusions": [
+        "CORPORATION",
+        "BANK"
+      ],
+      "boundaries": "Excludes private companies and banks unless the institution is explicitly acting as a public authority.",
+      "relevance_examples": [
+        "identify the regulator",
+        "name the licensing ministry",
+        "route a complaint to an authority"
+      ]
+    },
+    "DATE": {
+      "definition_en": "A calendar date, deadline, period boundary, or event time.",
+      "definition_ar": "تاريخ تقويمي أو موعد نهائي أو حد زمني أو وقت حدث.",
+      "aliases": [
+        "deadline",
+        "approval date",
+        "effective date",
+        "تاريخ",
+        "موعد"
+      ],
+      "egyptian_terms": [
+        "إمتى",
+        "التاريخ"
+      ],
+      "banking_synonyms": [
+        "value date",
+        "maturity date",
+        "application date"
+      ],
+      "related_concepts": [
+        "timeline",
+        "tenure",
+        "chronology"
+      ],
+      "common_confusions": [
+        "AGE",
+        "DATE_OF_BIRTH",
+        "DURATION"
+      ],
+      "boundaries": "A birth date is a DATE occurrence; age is a derived demographic quantity. Application date and birth date have different roles.",
+      "relevance_examples": [
+        "loan approval date",
+        "transaction chronology",
+        "calculate a deadline"
+      ]
+    },
+    "OCCUPATION": {
+      "definition_en": "A broad profession, trade, or field of work.",
+      "definition_ar": "مهنة أو حرفة أو مجال عمل عام.",
+      "aliases": [
+        "profession",
+        "line of work",
+        "career field",
+        "مهنة",
+        "مجال العمل"
+      ],
+      "egyptian_terms": [
+        "مجال شغله",
+        "مهنته"
+      ],
+      "banking_synonyms": [
+        "occupational class",
+        "profession category",
+        "employment sector"
+      ],
+      "related_concepts": [
+        "employment",
+        "industry",
+        "professional field"
+      ],
+      "common_confusions": [
+        "JOB_TITLE"
+      ],
+      "boundaries": "Broad profession such as accounting or medicine; not a specific rank or position such as senior auditor.",
+      "relevance_examples": [
+        "occupation-based eligibility",
+        "classify profession",
+        "occupational risk band"
+      ]
+    },
+    "JOB_TITLE": {
+      "definition_en": "A specific organizational position, function, or rank held by a person.",
+      "definition_ar": "منصب أو وظيفة أو درجة تنظيمية محددة يشغلها الشخص.",
+      "aliases": [
+        "position",
+        "role title",
+        "rank",
+        "مسمى وظيفي",
+        "منصب"
+      ],
+      "egyptian_terms": [
+        "مسمّاه الوظيفي",
+        "منصبه"
+      ],
+      "banking_synonyms": [
+        "current position",
+        "employment title",
+        "seniority level"
+      ],
+      "related_concepts": [
+        "seniority",
+        "responsibility",
+        "employment"
+      ],
+      "common_confusions": [
+        "OCCUPATION"
+      ],
+      "boundaries": "Specific title such as senior auditor; not the broader profession of accounting.",
+      "relevance_examples": [
+        "extract current title",
+        "verify managerial rank",
+        "summarize employment position"
+      ]
+    },
+    "NATIONALITY": {
+      "definition_en": "A person's nationality or citizenship affiliation.",
+      "definition_ar": "جنسية الشخص أو انتماؤه القانوني كمواطن.",
+      "aliases": [
+        "citizenship",
+        "citizen status",
+        "جنسية",
+        "مواطنة"
+      ],
+      "egyptian_terms": [
+        "جنسيته",
+        "هو من جنسية إيه"
+      ],
+      "banking_synonyms": [
+        "citizenship status",
+        "nationality eligibility"
+      ],
+      "related_concepts": [
+        "passport",
+        "citizenship",
+        "national status"
+      ],
+      "common_confusions": [
+        "COUNTRY",
+        "COUNTRY_OF_RESIDENCE"
+      ],
+      "boundaries": "Nationality/citizenship is not country of residence, birth, employer, bank, or transaction destination.",
+      "relevance_examples": [
+        "citizenship verification",
+        "nationality eligibility",
+        "KYC nationality field"
+      ]
+    },
+    "AGE": {
+      "definition_en": "A person's age, age band, or age-related eligibility fact.",
+      "definition_ar": "عمر الشخص أو فئته العمرية أو حقيقة أهلية مرتبطة بالعمر.",
+      "aliases": [
+        "years old",
+        "age band",
+        "minimum age",
+        "عمر",
+        "سن"
+      ],
+      "egyptian_terms": [
+        "سنّه",
+        "عنده كام سنة"
+      ],
+      "banking_synonyms": [
+        "age eligibility",
+        "applicant age",
+        "age threshold"
+      ],
+      "related_concepts": [
+        "date of birth",
+        "adult status",
+        "eligibility"
+      ],
+      "common_confusions": [
+        "DATE",
+        "DATE_OF_BIRTH"
+      ],
+      "boundaries": "Age is not a calendar date; a date of birth can support age calculation but remains a DATE occurrence.",
+      "relevance_examples": [
+        "minimum-age check",
+        "age band segmentation",
+        "verify applicant age"
+      ]
+    },
+    "MONETARY_AMOUNT": {
+      "definition_en": "A quantity of money, independent of its business role or currency unit.",
+      "definition_ar": "كمية من المال بصرف النظر عن دورها التجاري أو وحدة العملة.",
+      "aliases": [
+        "amount",
+        "value",
+        "sum",
+        "مبلغ",
+        "قيمة مالية"
+      ],
+      "egyptian_terms": [
+        "المبلغ",
+        "كام فلوس"
+      ],
+      "banking_synonyms": [
+        "salary",
+        "balance",
+        "loan principal",
+        "installment",
+        "credit limit"
+      ],
+      "related_concepts": [
+        "monthly salary",
+        "loan amount",
+        "account balance",
+        "transaction value",
+        "insurance premium",
+        "monthly installment",
+        "debt amount",
+        "application fee",
+        "interest payment"
+      ],
+      "common_confusions": [
+        "CURRENCY",
+        "BANK"
+      ],
+      "boundaries": "The type covers many semantic roles. Requiring salary can make the type relevant without making every monetary occurrence relevant; currency alone is not an amount.",
+      "relevance_examples": [
+        "income threshold",
+        "loan-to-value calculation",
+        "extract account balance"
+      ]
+    },
+    "COUNTRY": {
+      "definition_en": "A country or jurisdiction in a role stated by the task.",
+      "definition_ar": "دولة أو نطاق قضائي وفق الدور المحدد في المهمة.",
+      "aliases": [
+        "jurisdiction",
+        "nation",
+        "state",
+        "دولة",
+        "بلد"
+      ],
+      "egyptian_terms": [
+        "البلد",
+        "الدولة"
+      ],
+      "banking_synonyms": [
+        "country of residence",
+        "tax jurisdiction",
+        "country of incorporation"
+      ],
+      "related_concepts": [
+        "residence",
+        "birth country",
+        "transaction destination",
+        "employer country",
+        "bank country",
+        "tax jurisdiction",
+        "incorporation country"
+      ],
+      "common_confusions": [
+        "NATIONALITY"
+      ],
+      "boundaries": "Country role matters: residence, citizenship, birth, bank location, employer location, and incorporation are not interchangeable. Prompt-only type classification cannot identify which document occurrences share the requested role.",
+      "relevance_examples": [
+        "country of residence",
+        "tax jurisdiction",
+        "incorporation country"
+      ]
+    }
+  }
+}

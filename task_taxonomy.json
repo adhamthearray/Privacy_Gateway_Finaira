@@ -1,0 +1,590 @@
+{
+  "family_count": 65,
+  "families": [
+    {
+      "id": "TF_001",
+      "name": "Customer identity summaries",
+      "subfamilies": [
+        "Customer identity summaries — extraction",
+        "Customer identity summaries — verification",
+        "Customer identity summaries — explanation"
+      ]
+    },
+    {
+      "id": "TF_002",
+      "name": "General customer profiling",
+      "subfamilies": [
+        "General customer profiling — extraction",
+        "General customer profiling — verification",
+        "General customer profiling — explanation"
+      ]
+    },
+    {
+      "id": "TF_003",
+      "name": "Financial profile summaries",
+      "subfamilies": [
+        "Financial profile summaries — extraction",
+        "Financial profile summaries — verification",
+        "Financial profile summaries — explanation"
+      ]
+    },
+    {
+      "id": "TF_004",
+      "name": "Income assessment",
+      "subfamilies": [
+        "Income assessment — extraction",
+        "Income assessment — verification",
+        "Income assessment — explanation"
+      ]
+    },
+    {
+      "id": "TF_005",
+      "name": "Loan applications",
+      "subfamilies": [
+        "Loan applications — extraction",
+        "Loan applications — verification",
+        "Loan applications — explanation"
+      ]
+    },
+    {
+      "id": "TF_006",
+      "name": "Mortgage eligibility",
+      "subfamilies": [
+        "Mortgage eligibility — extraction",
+        "Mortgage eligibility — verification",
+        "Mortgage eligibility — explanation"
+      ]
+    },
+    {
+      "id": "TF_007",
+      "name": "Minimum-age eligibility",
+      "subfamilies": [
+        "Minimum-age eligibility — extraction",
+        "Minimum-age eligibility — verification",
+        "Minimum-age eligibility — explanation"
+      ]
+    },
+    {
+      "id": "TF_008",
+      "name": "Occupation-based eligibility",
+      "subfamilies": [
+        "Occupation-based eligibility — extraction",
+        "Occupation-based eligibility — verification",
+        "Occupation-based eligibility — explanation"
+      ]
+    },
+    {
+      "id": "TF_009",
+      "name": "Nationality-based eligibility",
+      "subfamilies": [
+        "Nationality-based eligibility — extraction",
+        "Nationality-based eligibility — verification",
+        "Nationality-based eligibility — explanation"
+      ]
+    },
+    {
+      "id": "TF_010",
+      "name": "Country-based eligibility",
+      "subfamilies": [
+        "Country-based eligibility — extraction",
+        "Country-based eligibility — verification",
+        "Country-based eligibility — explanation"
+      ]
+    },
+    {
+      "id": "TF_011",
+      "name": "Employment verification",
+      "subfamilies": [
+        "Employment verification — extraction",
+        "Employment verification — verification",
+        "Employment verification — explanation"
+      ]
+    },
+    {
+      "id": "TF_012",
+      "name": "Employment-history summaries",
+      "subfamilies": [
+        "Employment-history summaries — extraction",
+        "Employment-history summaries — verification",
+        "Employment-history summaries — explanation"
+      ]
+    },
+    {
+      "id": "TF_013",
+      "name": "Job-title extraction",
+      "subfamilies": [
+        "Job-title extraction — extraction",
+        "Job-title extraction — verification",
+        "Job-title extraction — explanation"
+      ]
+    },
+    {
+      "id": "TF_014",
+      "name": "Occupational classification",
+      "subfamilies": [
+        "Occupational classification — extraction",
+        "Occupational classification — verification",
+        "Occupational classification — explanation"
+      ]
+    },
+    {
+      "id": "TF_015",
+      "name": "Employer verification",
+      "subfamilies": [
+        "Employer verification — extraction",
+        "Employer verification — verification",
+        "Employer verification — explanation"
+      ]
+    },
+    {
+      "id": "TF_016",
+      "name": "Corporate industry classification",
+      "subfamilies": [
+        "Corporate industry classification — extraction",
+        "Corporate industry classification — verification",
+        "Corporate industry classification — explanation"
+      ]
+    },
+    {
+      "id": "TF_017",
+      "name": "Corporate due diligence",
+      "subfamilies": [
+        "Corporate due diligence — extraction",
+        "Corporate due diligence — verification",
+        "Corporate due diligence — explanation"
+      ]
+    },
+    {
+      "id": "TF_018",
+      "name": "Banking relationship analysis",
+      "subfamilies": [
+        "Banking relationship analysis — extraction",
+        "Banking relationship analysis — verification",
+        "Banking relationship analysis — explanation"
+      ]
+    },
+    {
+      "id": "TF_019",
+      "name": "Bank identity extraction",
+      "subfamilies": [
+        "Bank identity extraction — extraction",
+        "Bank identity extraction — verification",
+        "Bank identity extraction — explanation"
+      ]
+    },
+    {
+      "id": "TF_020",
+      "name": "Approved-bank checks",
+      "subfamilies": [
+        "Approved-bank checks — extraction",
+        "Approved-bank checks — verification",
+        "Approved-bank checks — explanation"
+      ]
+    },
+    {
+      "id": "TF_021",
+      "name": "Account-balance extraction",
+      "subfamilies": [
+        "Account-balance extraction — extraction",
+        "Account-balance extraction — verification",
+        "Account-balance extraction — explanation"
+      ]
+    },
+    {
+      "id": "TF_022",
+      "name": "Income threshold checks",
+      "subfamilies": [
+        "Income threshold checks — extraction",
+        "Income threshold checks — verification",
+        "Income threshold checks — explanation"
+      ]
+    },
+    {
+      "id": "TF_023",
+      "name": "Debt-to-income calculations",
+      "subfamilies": [
+        "Debt-to-income calculations — extraction",
+        "Debt-to-income calculations — verification",
+        "Debt-to-income calculations — explanation"
+      ]
+    },
+    {
+      "id": "TF_024",
+      "name": "Loan-to-value calculations",
+      "subfamilies": [
+        "Loan-to-value calculations — extraction",
+        "Loan-to-value calculations — verification",
+        "Loan-to-value calculations — explanation"
+      ]
+    },
+    {
+      "id": "TF_025",
+      "name": "Loan amount extraction",
+      "subfamilies": [
+        "Loan amount extraction — extraction",
+        "Loan amount extraction — verification",
+        "Loan amount extraction — explanation"
+      ]
+    },
+    {
+      "id": "TF_026",
+      "name": "Monthly installment review",
+      "subfamilies": [
+        "Monthly installment review — extraction",
+        "Monthly installment review — verification",
+        "Monthly installment review — explanation"
+      ]
+    },
+    {
+      "id": "TF_027",
+      "name": "Affordability assessment",
+      "subfamilies": [
+        "Affordability assessment — extraction",
+        "Affordability assessment — verification",
+        "Affordability assessment — explanation"
+      ]
+    },
+    {
+      "id": "TF_028",
+      "name": "Cross-border transactions",
+      "subfamilies": [
+        "Cross-border transactions — extraction",
+        "Cross-border transactions — verification",
+        "Cross-border transactions — explanation"
+      ]
+    },
+    {
+      "id": "TF_029",
+      "name": "Country of residence verification",
+      "subfamilies": [
+        "Country of residence verification — extraction",
+        "Country of residence verification — verification",
+        "Country of residence verification — explanation"
+      ]
+    },
+    {
+      "id": "TF_030",
+      "name": "Tax jurisdiction checks",
+      "subfamilies": [
+        "Tax jurisdiction checks — extraction",
+        "Tax jurisdiction checks — verification",
+        "Tax jurisdiction checks — explanation"
+      ]
+    },
+    {
+      "id": "TF_031",
+      "name": "Citizenship verification",
+      "subfamilies": [
+        "Citizenship verification — extraction",
+        "Citizenship verification — verification",
+        "Citizenship verification — explanation"
+      ]
+    },
+    {
+      "id": "TF_032",
+      "name": "KYC document review",
+      "subfamilies": [
+        "KYC document review — extraction",
+        "KYC document review — verification",
+        "KYC document review — explanation"
+      ]
+    },
+    {
+      "id": "TF_033",
+      "name": "AML case summaries",
+      "subfamilies": [
+        "AML case summaries — extraction",
+        "AML case summaries — verification",
+        "AML case summaries — explanation"
+      ]
+    },
+    {
+      "id": "TF_034",
+      "name": "Transaction monitoring",
+      "subfamilies": [
+        "Transaction monitoring — extraction",
+        "Transaction monitoring — verification",
+        "Transaction monitoring — explanation"
+      ]
+    },
+    {
+      "id": "TF_035",
+      "name": "Suspicious activity explanations",
+      "subfamilies": [
+        "Suspicious activity explanations — extraction",
+        "Suspicious activity explanations — verification",
+        "Suspicious activity explanations — explanation"
+      ]
+    },
+    {
+      "id": "TF_036",
+      "name": "Fraud review",
+      "subfamilies": [
+        "Fraud review — extraction",
+        "Fraud review — verification",
+        "Fraud review — explanation"
+      ]
+    },
+    {
+      "id": "TF_037",
+      "name": "Application timeline analysis",
+      "subfamilies": [
+        "Application timeline analysis — extraction",
+        "Application timeline analysis — verification",
+        "Application timeline analysis — explanation"
+      ]
+    },
+    {
+      "id": "TF_038",
+      "name": "Transaction chronology",
+      "subfamilies": [
+        "Transaction chronology — extraction",
+        "Transaction chronology — verification",
+        "Transaction chronology — explanation"
+      ]
+    },
+    {
+      "id": "TF_039",
+      "name": "Date extraction",
+      "subfamilies": [
+        "Date extraction — extraction",
+        "Date extraction — verification",
+        "Date extraction — explanation"
+      ]
+    },
+    {
+      "id": "TF_040",
+      "name": "Deadline calculations",
+      "subfamilies": [
+        "Deadline calculations — extraction",
+        "Deadline calculations — verification",
+        "Deadline calculations — explanation"
+      ]
+    },
+    {
+      "id": "TF_041",
+      "name": "Employment tenure calculations",
+      "subfamilies": [
+        "Employment tenure calculations — extraction",
+        "Employment tenure calculations — verification",
+        "Employment tenure calculations — explanation"
+      ]
+    },
+    {
+      "id": "TF_042",
+      "name": "Government authority identification",
+      "subfamilies": [
+        "Government authority identification — extraction",
+        "Government authority identification — verification",
+        "Government authority identification — explanation"
+      ]
+    },
+    {
+      "id": "TF_043",
+      "name": "Licensing and registration",
+      "subfamilies": [
+        "Licensing and registration — extraction",
+        "Licensing and registration — verification",
+        "Licensing and registration — explanation"
+      ]
+    },
+    {
+      "id": "TF_044",
+      "name": "Regulator correspondence",
+      "subfamilies": [
+        "Regulator correspondence — extraction",
+        "Regulator correspondence — verification",
+        "Regulator correspondence — explanation"
+      ]
+    },
+    {
+      "id": "TF_045",
+      "name": "Complaint processing",
+      "subfamilies": [
+        "Complaint processing — extraction",
+        "Complaint processing — verification",
+        "Complaint processing — explanation"
+      ]
+    },
+    {
+      "id": "TF_046",
+      "name": "Customer-support responses",
+      "subfamilies": [
+        "Customer-support responses — extraction",
+        "Customer-support responses — verification",
+        "Customer-support responses — explanation"
+      ]
+    },
+    {
+      "id": "TF_047",
+      "name": "Credit application drafting",
+      "subfamilies": [
+        "Credit application drafting — extraction",
+        "Credit application drafting — verification",
+        "Credit application drafting — explanation"
+      ]
+    },
+    {
+      "id": "TF_048",
+      "name": "Audit report drafting",
+      "subfamilies": [
+        "Audit report drafting — extraction",
+        "Audit report drafting — verification",
+        "Audit report drafting — explanation"
+      ]
+    },
+    {
+      "id": "TF_049",
+      "name": "Financial summarization",
+      "subfamilies": [
+        "Financial summarization — extraction",
+        "Financial summarization — verification",
+        "Financial summarization — explanation"
+      ]
+    },
+    {
+      "id": "TF_050",
+      "name": "Customer segmentation",
+      "subfamilies": [
+        "Customer segmentation — extraction",
+        "Customer segmentation — verification",
+        "Customer segmentation — explanation"
+      ]
+    },
+    {
+      "id": "TF_051",
+      "name": "Risk-assessment documentation",
+      "subfamilies": [
+        "Risk-assessment documentation — extraction",
+        "Risk-assessment documentation — verification",
+        "Risk-assessment documentation — explanation"
+      ]
+    },
+    {
+      "id": "TF_052",
+      "name": "Contract review",
+      "subfamilies": [
+        "Contract review — extraction",
+        "Contract review — verification",
+        "Contract review — explanation"
+      ]
+    },
+    {
+      "id": "TF_053",
+      "name": "Financial comparison tasks",
+      "subfamilies": [
+        "Financial comparison tasks — extraction",
+        "Financial comparison tasks — verification",
+        "Financial comparison tasks — explanation"
+      ]
+    },
+    {
+      "id": "TF_054",
+      "name": "Multi-step financial calculations",
+      "subfamilies": [
+        "Multi-step financial calculations — extraction",
+        "Multi-step financial calculations — verification",
+        "Multi-step financial calculations — explanation"
+      ]
+    },
+    {
+      "id": "TF_055",
+      "name": "Multi-condition eligibility",
+      "subfamilies": [
+        "Multi-condition eligibility — extraction",
+        "Multi-condition eligibility — verification",
+        "Multi-condition eligibility — explanation"
+      ]
+    },
+    {
+      "id": "TF_056",
+      "name": "Task-specific extraction",
+      "subfamilies": [
+        "Task-specific extraction — extraction",
+        "Task-specific extraction — verification",
+        "Task-specific extraction — explanation"
+      ]
+    },
+    {
+      "id": "TF_057",
+      "name": "General document summarization",
+      "subfamilies": [
+        "General document summarization — extraction",
+        "General document summarization — verification",
+        "General document summarization — explanation"
+      ]
+    },
+    {
+      "id": "TF_058",
+      "name": "Exclusion-based summaries",
+      "subfamilies": [
+        "Exclusion-based summaries — extraction",
+        "Exclusion-based summaries — verification",
+        "Exclusion-based summaries — explanation"
+      ]
+    },
+    {
+      "id": "TF_059",
+      "name": "Out-of-scope tasks",
+      "subfamilies": [
+        "Out-of-scope tasks — extraction",
+        "Out-of-scope tasks — verification",
+        "Out-of-scope tasks — explanation"
+      ]
+    },
+    {
+      "id": "TF_060",
+      "name": "Broad or ambiguous requests",
+      "subfamilies": [
+        "Broad or ambiguous requests — extraction",
+        "Broad or ambiguous requests — verification",
+        "Broad or ambiguous requests — explanation"
+      ]
+    },
+    {
+      "id": "TF_061",
+      "name": "Beneficiary-bank verification",
+      "subfamilies": [
+        "Beneficiary-bank verification — extraction",
+        "Beneficiary-bank verification — verification",
+        "Beneficiary-bank verification — explanation"
+      ]
+    },
+    {
+      "id": "TF_062",
+      "name": "Corporate ownership review",
+      "subfamilies": [
+        "Corporate ownership review — extraction",
+        "Corporate ownership review — verification",
+        "Corporate ownership review — explanation"
+      ]
+    },
+    {
+      "id": "TF_063",
+      "name": "Payment due-date analysis",
+      "subfamilies": [
+        "Payment due-date analysis — extraction",
+        "Payment due-date analysis — verification",
+        "Payment due-date analysis — explanation"
+      ]
+    },
+    {
+      "id": "TF_064",
+      "name": "Professional seniority assessment",
+      "subfamilies": [
+        "Professional seniority assessment — extraction",
+        "Professional seniority assessment — verification",
+        "Professional seniority assessment — explanation"
+      ]
+    },
+    {
+      "id": "TF_065",
+      "name": "Regulatory jurisdiction routing",
+      "subfamilies": [
+        "Regulatory jurisdiction routing — extraction",
+        "Regulatory jurisdiction routing — verification",
+        "Regulatory jurisdiction routing — explanation"
+      ]
+    }
+  ]
+}
